@@ -82,8 +82,9 @@ test('하단 일시정지·재생이 읽기만 제어하며 인물/설정 메뉴
   await page.getByRole('button', { name: '일시정지', exact: true }).click();
   await page.clock.runFor(60000); await expect(page.locator('.chronicle-message:visible')).toHaveCount(1);
   await expect(page.locator('.reading-status')).toHaveText('잠시 멈췄습니다.');
-  await page.getByRole('button', { name: '재생', exact: true }).click(); await page.clock.runFor(15000);
-  expect(await page.locator('.chronicle-message:visible').count()).toBeGreaterThan(1);
+  await page.getByRole('button', { name: '재생', exact: true }).click();
+  await page.locator('#current-event .chronicle-message:visible').first().click();
+  await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(2);
   await page.getByRole('button', { name: '인물 관계 · 재산 · 법적 기록', exact: true }).click();
   await expect(page.locator('.people-list')).toContainText('미나');
   await expect(page.locator('.people-list')).toContainText('유죄 확정 전과: 없음');

@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
   await expect(page.locator('#current-event')).toBeAttached();
 });
 
-test('연대기 → 본문 → 화자별 대사 → 선택지 자동 공개, 기다림은 저장을 바꾸지 않는다', async ({ page }) => {
+test('기다려도 진행하지 않고 클릭마다 연대기 → 본문 → 대사 한 줄, 마지막에 선택지를 공개한다', async ({ page }) => {
   const before = await raw(page);
   await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(1);
   await expect(page.locator('.story .body')).toBeHidden();
@@ -18,36 +18,43 @@ test('연대기 → 본문 → 화자별 대사 → 선택지 자동 공개, 기
   await expect(page.locator('[data-choice="attack"]')).toBeDisabled();
   await page.locator('[data-choice="attack"]').dispatchEvent('click');
   expect(await raw(page)).toBe(before);
-  await page.clock.runFor(500);
+  await page.clock.runFor(60000);
   await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(1);
-  const duration = await page.locator('#current-event .chronicle-message').first().evaluate(el => Math.max(1400, Array.from(el.textContent ?? '').length * 125));
-  await page.clock.runFor(duration - 500);
-  await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(2);
-  await expect(page.locator('.story .body')).toBeHidden();
-  const timelineDuration = await page.locator('#current-event .chronicle-message').evaluateAll(rows => rows.slice(2).reduce((sum, el) => sum + Math.max(1400, Array.from(el.textContent ?? '').length * 125), 0));
-  const secondDuration = await page.locator('#current-event .chronicle-message').nth(1).evaluate(el => Math.max(1400, Array.from(el.textContent ?? '').length * 125));
-  await page.clock.runFor(secondDuration + timelineDuration);
+  const chronicleCount = await page.locator('#current-event .chronicle-message').count();
+  for (let i = 2; i <= chronicleCount; i++) {
+    await page.locator('#current-event .chronicle-message:visible').last().click();
+    await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(i);
+    await expect(page.locator('.story .body')).toBeHidden();
+  }
+  await page.locator('#current-event .chronicle-message:visible').last().click();
   await expect(page.locator('.story .body')).toBeVisible();
   await expect(page.locator('.dialogue-line:visible')).toHaveCount(0);
   await expect(page.locator('.choices')).toBeHidden();
-  const narrativeDuration = await page.locator('.story .body, .story .dialogue-line').evaluateAll(rows => rows.reduce((sum, el) => sum + Math.max(1400, Array.from(el.textContent ?? '').length * 125), 0));
-  await page.clock.runFor(narrativeDuration);
-  await expect(page.locator('.dialogue-line:visible')).toHaveCount(4);
+  for (let i = 1; i <= 4; i++) {
+    const line = i === 1 ? page.locator('.story .body') : page.locator('.dialogue-line:visible').last();
+    await line.click();
+    await expect(page.locator('.dialogue-line:visible')).toHaveCount(i);
+    if (i < 4) { await expect(page.locator('.choices')).toBeHidden(); await page.clock.runFor(60000); }
+  }
   await expect(page.locator('[data-choice="attack"]')).toBeVisible();
   await expect(page.locator('[data-choice="attack"]')).toBeEnabled();
   expect(await raw(page)).toBe(before);
 });
 
-test('내용 클릭은 속도만 높이고 즉시 선택지를 열지 않는다', async ({ page }) => {
+test('빠르게 표시 도중에도 내용 클릭은 한 줄만 추가하고 자동 진행을 멈춘다', async ({ page }) => {
   const before = await raw(page);
-  await page.locator('#current-event .chronicle-message:visible').first().click();
+  await page.getByRole('button', { name: '빠르게 표시', exact: true }).click();
   await expect(page.getByRole('button', { name: '빠르게 표시', exact: true })).toBeDisabled();
   await expect(page.locator('.choices')).toBeHidden();
-  await page.clock.runFor(320);
+  await page.clock.runFor(160);
+  await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(2);
+  await page.locator('#current-event .chronicle-message:visible').last().click();
+  await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(3);
+  await expect(page.getByRole('button', { name: '빠르게 표시', exact: true })).toBeEnabled();
+  await expect(page.locator('.choices')).toBeHidden();
+  await page.clock.runFor(60000);
   await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(3);
   await expect(page.locator('.choices')).toBeHidden();
-  await page.clock.runFor(5000);
-  await expect(page.locator('[data-choice="attack"]')).toBeEnabled();
   expect(await raw(page)).toBe(before);
 });
 

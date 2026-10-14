@@ -37,7 +37,7 @@ export class ReadingSequence {
       faster.disabled = this.fast || this.complete;
       skip.disabled = this.complete;
       if (options.pause) { options.pause.disabled = this.complete; options.pause.textContent = this.userPaused ? '재생' : '일시정지'; options.pause.setAttribute('aria-pressed', String(this.userPaused)); }
-      status.textContent = this.complete ? '선택을 기다립니다.' : this.userPaused ? '잠시 멈췄습니다.' : this.fast ? '빠르게 표시하고 있습니다…' : '한 줄씩 읽는 중 · 내용을 누르면 빠르게 표시';
+      status.textContent = this.complete ? '선택을 기다립니다.' : this.userPaused ? '잠시 멈췄습니다.' : this.fast ? '빠르게 표시 중 · 내용을 누르면 한 줄씩 진행' : '내용을 누르면 다음 한 줄 · 스킵하면 바로 선택';
       const active = steps[Math.max(0, this.shown - 1)];
       options.onStage?.(active?.stage ?? 'chronicle', active);
       (options.choiceButtons ?? [...surface.querySelectorAll<HTMLButtonElement>('[data-choice]')]).forEach(b => {
@@ -45,19 +45,18 @@ export class ReadingSequence {
       });
     };
     const schedule = () => {
-      if (this.complete || options.paused || this.userPaused) return;
-      const line = steps[this.shown - 1]?.element.textContent ?? '';
-      // 한글 약 8자/초. 짧은 줄도 읽을 틈을 두고 긴 문장은 직접 스크롤할 수 있다.
-      const delay = this.fast ? 160 : Math.max(1400, Array.from(line).length * 125);
-      this.timer = setTimeout(advance, delay);
+      if (this.complete || options.paused || this.userPaused || !this.fast) return;
+      // 자동 진행은 사용자가 빠르게 버튼을 눌렀을 때만 사용한다.
+      this.timer = setTimeout(advance, 160);
     };
     const advance = () => {
       if (this.shown >= steps.length) { this.complete = true; update(); options.onComplete?.(); return; }
       const step = steps[this.shown]!;
       const firstOfStage = this.shown === 0 || steps[this.shown - 1]!.stage !== step.stage;
-      this.shown++; update();
+      this.shown++; this.complete = this.shown >= steps.length; update();
       step.element.classList.add('reading-arrival');
       options.onReveal(step, firstOfStage);
+      if (this.complete) options.onComplete?.();
       schedule();
     };
     const accelerate = () => {
@@ -74,7 +73,9 @@ export class ReadingSequence {
     };
     const click = (event: MouseEvent) => {
       const target = event.target as Element;
-      if (!target.closest('button, a, input, summary, select, textarea, [role="button"]')) accelerate();
+      if (target.closest('button, a, input, summary, select, textarea, [role="button"], dialog, .past-chat') || this.complete || options.paused || this.userPaused) return;
+      // 클릭 한 번에 한 단계만 공개하고 자동 진행을 해제한다.
+      clearTimeout(this.timer); this.fast = false; advance();
     };
     surface.addEventListener('click', click); faster.addEventListener('click', accelerate); skip.addEventListener('click', skipAll);
     options.pause?.addEventListener('click', pause);

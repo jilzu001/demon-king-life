@@ -15,9 +15,10 @@ try {
     const before = await page.evaluate(() => localStorage.getItem('existence-sim:v1:run:demon-king'));
     await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(1);
     await expect(page.locator('.choices')).toBeHidden();
-    await page.clock.runFor(500); await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(1);
+    await page.clock.runFor(60000); await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(1);
     await page.locator('#current-event .chronicle-message:visible').first().click();
-    await page.clock.runFor(320); await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(3);
+    await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(2);
+    await page.clock.runFor(60000); await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(2);
     await expect(page.locator('.choices')).toBeHidden();
     await page.screenshot({ path: `docs/reading-${name}.png`, fullPage: true });
     await page.getByRole('button', { name: '스킵 · 바로 선택하기', exact: true }).click();
@@ -40,7 +41,7 @@ try {
     await expect(page.locator('[data-choice]')).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     expect(errors).toEqual([]);
-    console.log(`${name}: 순차 표시·클릭 가속·스킵·원장 보호·다음 장면·엔딩 복원 통과 (${url})`);
+    console.log(`${name}: 클릭당 한 줄·대기 중 진행 없음·스킵·원장 보호·다음 장면·엔딩 복원 통과 (${url})`);
     await context.close();
   }
 } finally { await browser.close(); }
