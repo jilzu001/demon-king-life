@@ -24,6 +24,9 @@ docs/v36-scroll-child-320-dpr2.png
 docs/v36-scroll-child-390-dpr1.png
 docs/v36-scroll-child-390-dpr2.png
 docs/v37-check.log
+docs/v37-public-confession.log
+docs/v37-public-dpr1.log
+docs/v37-public-dpr2.log
 docs/v37-review/ending_peace-PC.png
 docs/v37-review/ending_peace-모바일-320.png
 docs/v37-review/ending_throne-PC.png
@@ -60,6 +63,10 @@ docs/v37-review/provided-2.png
 docs/v37-review/provided-3.png
 docs/v37-review/provided-4.png
 docs/v37-review/provided-5.png
+docs/v37-review/public-confession-choice-PC.png
+docs/v37-review/public-confession-choice-mobile.png
+docs/v37-review/public-confession-speaker-PC.png
+docs/v37-review/public-confession-speaker-mobile.png
 docs/v37-review/scroll-child-1280-dpr1.png
 docs/v37-review/scroll-child-1280-dpr2.png
 docs/v37-review/scroll-child-320-dpr1.png
@@ -93,6 +100,7 @@ scripts/build-v37-speakers.py
 scripts/report-v37-visual.py
 scripts/v37-ui-fixtures.ts
 scripts/validate-compact.ts
+scripts/verify-confession-ui.ts
 scripts/verify-illustrations-ui.ts
 scripts/verify-pages-ui.ts
 scripts/verify-v37-public.mjs

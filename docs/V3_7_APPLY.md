@@ -1,6 +1,6 @@
 # v3.6 → v3.6.1 → v3.7 적용·검수
 
-기준일 2026-10-15. v3.7 적용 지시를 먼저 읽고 세 ZIP을 각각 spec 폴더에 원본 보관했다. 아래 로컬 검증은 완료했으며 공개 배포 확인은 마지막 항목과 구분한다.
+기준일 2026-10-15. v3.7 적용 지시를 먼저 읽고 세 ZIP을 각각 spec 폴더에 원본 보관했다. 아래 로컬·공개 검증과 기존 주소의 배포 확인을 완료했다.
 
 ## 순차 적용과 보호
 
@@ -73,5 +73,13 @@
 
 - 데이터: `content/events_v2_9.json`, `public/stories/demon-king-compact/{story,endings,ending_cinematics}.json`, `chapters/01_complete.json`, `public/assets/` manifest/정책/나무칼 원본 보관.
 - 실행: `src/app/main.ts`, `src/content/compact-contract.ts`, `src/persistence/{compact-compatible,compatibility,reselect}.ts`, `src/ui/{visual-identity,illustrations,compact-ending,pages}.ts`, `compact-speakers.json`, `src/styles/main.css`, `Start-Game.ps1`.
-- 검증: `scripts/validate-compact.ts`, `verify-illustrations-ui.ts`, `verify-pages-ui.ts`, `verify-v37-public.mjs`, `v37-ui-fixtures.ts`, 세 적용/보고 Python 스크립트, `tests/story/{compact,compact-upgrade,illustrations,visual-identity,content-v36}.test.ts`, `tests/e2e/compact.spec.ts`.
+- 검증: `scripts/validate-compact.ts`, `verify-illustrations-ui.ts`, `verify-pages-ui.ts`, `verify-v37-public.mjs`, `verify-confession-ui.ts`, `v37-ui-fixtures.ts`, 세 적용/보고 Python 스크립트, `tests/story/{compact,compact-upgrade,illustrations,visual-identity,content-v36}.test.ts`, `tests/e2e/compact.spec.ts`.
 - 기록/근거: 세 ZIP의 spec 원본 폴더, 이 보고서/CSV/JSON/스크린샷, `AGENTS.md`, `DEV_PROGRESS.md`, `WRITING_PROGRESS.md`, `CHANGELOG.md`, `HANDOFF.md`. 기록 초기화는27b5a81에서 확보했다.
+
+## 공개 배포 확인 — 완료
+
+- [플레이](https://jilzu001.github.io/demon-king-life/), 게임 소스 **c6bbd96935b60d75c67df0f7be19a2a9c8749bd6**, [Actions38648070275](https://github.com/jilzu001/demon-king-life/actions/runs/38648070275) build/deploy 모두 success. Ubuntu/Chromium에서도 동일 소스의 `npm run check` 단계가 통과했다.
+- 공개175개 파일(이미지167+스토리5+정책3) HTTP200/원본 바이트 일치.
+- 실제 공개 링크에서도 PC/모바일 세로4크기·150% 글자·두 읽기 방식·DPR1/2 **총240조합 종료코드0**. [공개DPR1](v37-public-dpr1.log), [공개DPR2](v37-public-dpr2.log).
+- 실제 빈 회차에서 출생→12세→20세 시험을 플레이해 네 선택/고백 원문·클릭·후속 대사·원장·같은 미나 초상화까지 PC/모바일2경로 종료코드0. [실제 플레이 로그](v37-public-confession.log), [모바일 네 번째 선택](v37-review/public-confession-choice-mobile.png), [모바일 후속 화자](v37-review/public-confession-speaker-mobile.png), [PC 선택](v37-review/public-confession-choice-PC.png).
+- 마지막 기록/검증 스크립트 커밋은 게임 소스를 변경하지 않는다. 실제 휴대기기/Safari/Firefox·65개 확장 실행과 새 나이별 CG는 위 미완료 항목 그대로다.
