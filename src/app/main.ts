@@ -15,9 +15,11 @@ import '../styles/main.css';
 import { isCompact, compactSlot } from '../content/compact-contract';
 import { loadCompactProgress, compactProgressKey, type CompactProgress } from '../ui/compact-progress';
 import { renderCompactEnding } from '../ui/compact-ending';
+import { resumeAtVisitedNode, backupBeforeReselect, loadReselectBackup, RESELECT_BACKUP_KEY } from '../persistence/reselect';
 
 const root = document.querySelector<HTMLDivElement>('#app')!;
-const compactMode = new URL(location.href).searchParams.get('edition') === 'compact';
+// 원작 UI는 로컬 회귀 검사 모드에서만 유지한다. 공개 빌드는 모든 주소에서 최신 판이다.
+const compactMode = import.meta.env.MODE !== 'archived-ui';
 const titleKey = compactMode ? 'demon-king:title-seen:compact' : 'demon-king:title-seen';
 let compactViewRun = '';
 let compactViewData: CompactProgress | null = null;
@@ -31,10 +33,6 @@ function updateCompactView(patch: Partial<CompactProgress>) {
   compactViewData = { ...compactView(), ...patch };
   try { localStorage.setItem(compactProgressKey(state), JSON.stringify(compactViewData)); }
   catch { compatibilityNotice = '게임 진행은 저장됐지만 화면 표시 위치는 저장할 수 없습니다. 새로고침하면 마지막 서술을 다시 보여줍니다.'; }
-}
-function switchEdition() {
-  if (busy || pending) return;
-  const url = new URL(location.href); url.searchParams.set('edition', compactMode ? 'original' : 'compact'); location.assign(url.href);
 }
 const textSizeKey = 'demon-king:ui:text-percent';
 let textPercent = 100;
@@ -52,11 +50,14 @@ let meta: Meta = { saveSchemaVersion: 1, discoveredEndings: {} };
 let pending: GameState | null = null;
 let pendingReceipt: TransitionReceipt | null = null;
 let pendingStory: PresentedStory | null = null;
+let pendingResumeRun = '';
+let resumeChoiceRun = '';
 let busy = false;
 let errorText = '';
 let compatibilityNotice = '';
 let openMenu: 'history' | 'settings' | 'people' | null = null;
 let historyExpanded = new Set<string>();
+let historyFocusNode: string | null = null;
 const reading = new ReadingSequence();
 let titleVisible = true;
 try { titleVisible = sessionStorage.getItem(titleKey) !== '1'; } catch { /* 저장 불가 환경에서도 시작할 수 있다. */ }
@@ -100,7 +101,27 @@ function commit(next: GameState, nextReceipt: TransitionReceipt | null = null, c
   const nextStore = makeStore(context);
   meta = nextStore.commit(next, !isCompact(context.manifest) || !context.cinematics);
   story = context; store = nextStore; state = next;
+  if (pendingResumeRun === next.runId) {
+    updateCompactView({ handledHistory: next.history.length, phase: 0, memoryIndex: 0 });
+    resumeChoiceRun = next.runId;
+    pendingResumeRun = '';
+  }
   pending = null; pendingReceipt = null; pendingStory = null; errorText = '';
+}
+function resumeFromEvent(nodeId?: string) {
+  if (busy || pending || !story || !state || !compactMode) return;
+  busy = true;
+  try {
+    const runId = crypto.randomUUID();
+    const next = nodeId ? resumeAtVisitedNode(story, state, nodeId, runId) : loadReselectBackup(window.localStorage, story, runId);
+    // 원장을 교체하기 전에 현재 회차 백업이 성공했는지 확인한다.
+    backupBeforeReselect(window.localStorage, state);
+    pendingResumeRun = next.runId;
+    compatibilityNotice = '';
+    commit(next);
+    openMenu = null; historyExpanded.clear();
+  } catch (error) { notify(error); }
+  finally { busy = false; render(); }
 }
 async function makeChoice(nodeId: string, choiceId: string) {
   if (busy || pending || !state || !story || root.querySelector('[data-reading="true"]')) return;
@@ -202,6 +223,10 @@ function render() {
     columns.scrollTop = scroll;
     const toolbar = renderToolbar(layout);
     bindReading(layout, columns, toolbar, story, state, launch);
+    if (resumeChoiceRun === state.runId && !state.ended && !openMenu) {
+      resumeChoiceRun = '';
+      toolbar.querySelector<HTMLButtonElement>('#reading-skip')!.click();
+    }
   } else {
     layout.append(element('section', '검증된 저장을 불러오지 못했습니다. 기존 저장을 백업한 뒤 새 회차를 시작하거나 호환되는 JSON을 가져오세요.', 'panel'));
     const toolbar = renderToolbar(layout); toolbar.querySelectorAll<HTMLButtonElement>('.reading-controls button').forEach(b => { b.disabled = true; });
@@ -233,7 +258,6 @@ function renderTitle(layout: HTMLElement) {
   title.append(element('p', '한 사람의 선택, 한 번의 일생', 'eyebrow'), element('h1', '가짜 마왕의 일생'), element('p', '선택은 행동의 시도입니다. 당신의 일생을 읽고, 다음 행동을 고르세요.', 'title-intro'));
   const start = button(state ? '이어하기' : '시작하기', enterGame, !story || (!state && Boolean(errorText))); start.dataset.enter = 'true'; title.append(start);
   title.append(element('p', compactMode ? '축소 완결판 · 13개 사건 · 7개 결말' : '원작 · 98개 장면 · 34개 결말', 'subtle'));
-  title.append(button(compactMode ? '원작 플레이 · 기존 저장 이어가기' : '축소 완결판 플레이', switchEdition, !story));
   const settings = button('설정', () => { openMenu = 'settings'; render(); }, !story); settings.setAttribute('aria-label', '저장 관리 · 엔딩 도감'); title.append(settings);
   layout.append(title);
 }
@@ -357,8 +381,7 @@ function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEle
 }
 function renderSettings(save: HTMLElement) {
   if (!story) return;
-  save.append(element('p', compactMode ? '축소 완결판 전용 저장 · 원작 저장은 그대로 보존됩니다.' : '원작 저장 · 축소 완결판은 별도 저장합니다.', 'subtle'));
-  save.append(button(compactMode ? '원작 플레이 · 기존 저장 이어가기' : '축소 완결판 플레이', switchEdition, busy || Boolean(pending)));
+  if (compactMode && state) save.append(button('지난 분기에서 이어하기', () => { openMenu = 'history'; render(); }, busy || Boolean(pending)));
   const display = element('section', undefined, 'display-settings');
   const label = element('label', '화면 전체 글자 크기'); label.htmlFor = 'text-size';
   const size = element('input'); size.id = 'text-size'; size.type = 'range'; size.min = '100'; size.max = '150'; size.step = '10'; size.value = String(textPercent);
@@ -481,6 +504,12 @@ function renderTimeline(layout: HTMLElement, content: PresentedStory, current: G
     const text = element('div'); const summary = element('p', event.summary, 'timeline-text'); summary.title = event.summary; text.append(summary);
     if (event.result) text.append(element('span', resultLabels[event.result], 'timeline-result'));
     item.append(text); list.append(item);
+    if (compactMode && event.nodeId) {
+      const openEvent = () => { if (busy || pending) return; historyFocusNode = event.nodeId!; historyExpanded.add(event.id); openMenu = 'history'; render(); };
+      item.tabIndex = 0; item.setAttribute('role', 'button'); item.setAttribute('aria-label', `${event.age}세 · ${event.title} · 분기 다시 선택`);
+      item.addEventListener('click', openEvent);
+      item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openEvent(); } });
+    }
   }
   const open = button('전체 기록', () => { if (busy) return; openMenu = 'history'; render(); }, busy); open.dataset.menu = 'true'; open.dataset.menuKind = 'history'; open.prepend(icon('book')); top.append(open);
   panel.append(list); layout.append(panel);
@@ -496,6 +525,11 @@ function renderMenu(layout: HTMLElement) {
   if (menuKind === 'settings') renderSettings(dialog);
   else if (menuKind === 'people' && story && state) renderPeople(dialog, story, state);
   else if (story && state) {
+    if (compactMode) {
+      dialog.append(element('p', '지나온 사건의 선택 직전부터 이어합니다. 이후 기록은 새 선택으로 바뀌며 발견한 엔딩은 유지됩니다.', 'subtle'));
+      let hasBackup = false; try { hasBackup = localStorage.getItem(RESELECT_BACKUP_KEY) !== null; } catch { /* 회차는 그대로 유지한다. */ }
+      if (hasBackup) dialog.append(button('재선택 전 회차 복원', () => resumeFromEvent(), busy || Boolean(pending)));
+    }
     for (const event of lifeEvents(story, state)) {
       const row = element('details', undefined, 'history-entry'); row.dataset.eventId = event.id;
       row.append(element('summary', `${event.age}세 · ${event.kind === 'origin' ? event.summary : event.title}`));
@@ -504,13 +538,21 @@ function renderMenu(layout: HTMLElement) {
       if (event.nodeId) {
         const node = story.nodes[event.nodeId]!;
         if (!isCompact(story.manifest)) row.append(renderNarrative(node.body, story.presentation?.nodes[event.nodeId]));
+        if (compactMode) {
+          const resume = button(event.nodeId === state.currentNodeId ? '이 사건 이어하기' : '여기부터 재선택', () => resumeFromEvent(event.nodeId), busy || Boolean(pending));
+          resume.dataset.resumeNode = event.nodeId; row.append(resume);
+        }
       }
-      row.open = historyExpanded.has(event.id);
+      row.open = compactMode || historyExpanded.has(event.id);
       row.addEventListener('toggle', () => { if (row.open) historyExpanded.add(event.id); else historyExpanded.delete(event.id); });
       dialog.append(row);
     }
   }
   layout.append(dialog); dialog.showModal();
+  if (menuKind === 'history' && historyFocusNode) {
+    const target = [...dialog.querySelectorAll<HTMLButtonElement>('[data-resume-node]')].find(b => b.dataset.resumeNode === historyFocusNode);
+    target?.scrollIntoView({ block: 'center', behavior: 'instant' }); target?.focus({ preventScroll: true }); historyFocusNode = null;
+  }
 }
 async function boot() {
   try {

@@ -1,5 +1,9 @@
 # GitHub Pages 공개 배포 — 2026-10-14
 
+## 최신 요청 반영
+
+원작 플레이 버튼/공개 진입을 제거하고 기본 주소와 바탕화면을 현재 판으로 연결했다. 전체 기록/최근 연대기/설정에서 지난 사건의 선택 직전으로 돌아가 재선택하고, 직전 회차를 복원할 수 있다. 도감과 과거 저장은 유지한다. 사용법/상태 보호/검증은 `RESELECT.md`, 실제 공개 확인은 `npx tsx scripts/verify-reselect-ui.ts https://jilzu001.github.io/demon-king-life/`이다. 아래의 원작 링크/전환 설명은 이전 배포 기록이다.
+
 ## 축소 완결판 v2.6
 
 - 새 판: https://jilzu001.github.io/demon-king-life/?edition=compact

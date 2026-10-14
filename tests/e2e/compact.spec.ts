@@ -151,7 +151,7 @@ test('본문 HTML은 문자로 표시하고 reduced-motion에서도 결말을 �
   await page.locator('.cinematic-content').click(); expect(await page.locator('[data-memory-node]').getAttribute('data-memory-node')).not.toBe(memory);
 });
 
-test('원작 저장과 도감을 유지하면서 모드를 오가고 다른 모드의 저장 가져오기를 거부한다', async ({ page }) => {
+test('원작 플레이 없이 기본 주소에서 현재 판을 실행하며 과거 저장과 도감을 보호한다', async ({ page }) => {
   const original = JSON.parse(readFileSync('public/stories/demon-king/story.json', 'utf8'));
   const state = { ...original.initialState, saveSchemaVersion: 1, storyId: original.id, storyVersion: original.version,
     runId: 'original-protected', currentNodeId: original.entryNodeId, endingId: null, ended: false,
@@ -165,11 +165,65 @@ test('원작 저장과 도감을 유지하면서 모드를 오가고 다른 모�
   const compactSave = await raw(page);
   await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
   await page.locator('#save-file').setInputFiles({ name: 'original.json', mimeType: 'application/json', buffer: Buffer.from(text) });
-  await expect(page.getByRole('alert')).toContainText('원작 모드'); expect(await raw(page)).toBe(compactSave);
+  await expect(page.getByRole('alert')).toContainText('현재 판과 호환되지'); expect(await raw(page)).toBe(compactSave);
   await page.goto('./?edition=original');
-  if (await page.evaluate(() => sessionStorage.getItem('demon-king:title-seen') !== '1')) {
-    await expect(page.locator('[data-enter]')).toBeEnabled(); await page.locator('[data-enter]').click();
-  }
   await expect(page.locator('#current-event')).toBeAttached();
   expect(await page.evaluate(key => localStorage.getItem(key), originalKey)).toBe(text); expect(await raw(page)).toBe(compactSave);
+  await expect(page.getByRole('button', { name: /원작 플레이|축소 완결판 플레이/ })).toHaveCount(0);
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
+  await expect(page.getByRole('button', { name: /원작 플레이|축소 완결판 플레이/ })).toHaveCount(0);
+});
+
+test('방문한 사건의 선택 직전으로 돌아가 다른 분기를 선택하고 새로고침 및 이전 회차 복원을 지원한다', async ({ page }) => {
+  await start(page); await select(page, 'family_accept'); await select(page, 'trust_mina'); await select(page, 'attack');
+  await scene(page); const previous = JSON.parse((await raw(page))!);
+  await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
+  await page.locator('.timeline-item[data-node-id="exam"]').click();
+  await expect(page.locator('[data-resume-node="exam"]')).toBeFocused();
+  await expect(page.locator('[data-resume-node="settlement"]')).toHaveCount(0);
+  await page.locator('[data-resume-node="exam"]').click();
+  await expect(page.locator('#choice-dialog')).toBeVisible();
+  const resumed = JSON.parse((await raw(page))!);
+  expect(resumed.currentNodeId).toBe('exam'); expect(resumed.age).toBe(20);
+  expect(resumed.history).toEqual(previous.history.slice(0, 2)); expect(resumed.flags).not.toContain('attacked_mina');
+  expect(resumed.runId).not.toBe(previous.runId); expect(resumed.rng.seed).toBe(previous.rng.seed);
+  expect(resumed.enteredNodeIds).toEqual(['birth', 'child', 'exam']);
+  await expect(page.locator('#choice-aftermath')).toHaveCount(0);
+  await expect(page.locator('[data-choice="refuse"]')).toBeEnabled();
+  await page.reload(); await expect(page.locator('#current-event')).toBeAttached(); expect(await raw(page)).toBe(JSON.stringify(resumed));
+  await select(page, 'refuse'); expect(JSON.parse((await raw(page))!).currentNodeId).toBe('petition');
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
+  await page.getByRole('button', { name: '지난 분기에서 이어하기', exact: true }).click();
+  await page.getByRole('button', { name: '재선택 전 회차 복원', exact: true }).click();
+  await expect(page.locator('#choice-dialog')).toBeVisible();
+  const recovered = JSON.parse((await raw(page))!);
+  expect({ ...recovered, runId: previous.runId }).toEqual(previous);
+  await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
+  await page.getByRole('button', { name: '전체 기록', exact: true }).click();
+  await page.locator('[data-resume-node="birth"]').click();
+  await expect(page.locator('#choice-dialog')).toBeVisible();
+  const birth = JSON.parse((await raw(page))!); expect(birth.age).toBe(0); expect(birth.history).toEqual([]);
+});
+
+test('종료 후에도 지난 분기를 재선택하고 엔딩 도감을 유지하며 저장 실패 시 원래 회차를 지킨다', async ({ page }) => {
+  await start(page); for (const id of ['family_accept', 'trust_mina', 'attack', 'escape_prison']) await select(page, id);
+  while (await page.locator('[data-ending-phase="3"]').count() === 0) await page.getByRole('button', { name: '이어서', exact: true }).click();
+  const ended = await raw(page);
+  await page.getByRole('button', { name: '설정', exact: true }).click();
+  await page.getByRole('button', { name: '지난 분기에서 이어하기', exact: true }).click();
+  await page.evaluate(key => {
+    const original = Storage.prototype.setItem;
+    Storage.prototype.setItem = function(k: string, value: string) { if (k === key) throw new Error('재선택 저장 차단'); return original.call(this, k, value); };
+    (window as Window & { __restoreStorage?: () => void }).__restoreStorage = () => { Storage.prototype.setItem = original; };
+  }, key);
+  await page.locator('[data-resume-node="exam"]').click();
+  await expect(page.getByRole('alert')).toContainText('재선택 저장 차단'); expect(await raw(page)).toBe(ended);
+  await expect(page.locator('#current-event')).toHaveCount(0);
+  await page.evaluate(() => (window as Window & { __restoreStorage?: () => void }).__restoreStorage!());
+  await page.getByRole('button', { name: '저장 다시 시도', exact: true }).click();
+  await expect(page.locator('#choice-dialog')).toBeVisible();
+  const resumed = JSON.parse((await raw(page))!); expect(resumed.ended).toBe(false); expect(resumed.currentNodeId).toBe('exam');
+  const collection = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), metaKey);
+  expect(collection.discoveredEndings['demon-king']).toContain('ending_escape');
+  await select(page, 'invoice'); expect(JSON.parse((await raw(page))!).currentNodeId).toBe('invoice');
 });

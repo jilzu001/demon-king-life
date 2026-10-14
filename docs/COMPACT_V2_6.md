@@ -3,8 +3,8 @@
 ## 실행과 범위
 
 - 새 판: https://jilzu001.github.io/demon-king-life/?edition=compact
-- 원작: https://jilzu001.github.io/demon-king-life/?edition=original
-- 기본 주소와 바탕화면 실행은 원작을 유지한다. 타이틀/설정의 판 전환 버튼으로 새 판에 진입할 수 있다.
+- 후속 사용자 요청으로 원작 플레이 버튼/공개 원작 진입을 제거했다. 기본 주소와 바탕화면 실행 모두 최신 판이다. 예전 `?edition=original` 주소도 최신 판으로 연결된다. 원작 JSON/저장 자체는 삭제하지 않았다.
+- 현재 회차의 방문 사건에서 다시 선택하는 기능은 `RESELECT.md`를 참고한다.
 - 이번에 받은 v2.3 → v2.5 → v2.6 중 마지막 v2.6을 실행한다. 최신 ZIP의 README, 문단/가독성/연대기 지침을 읽고 적용했다. 입력은 각각 `spec/content-v2.3-early-endings/`, `spec/content-v2.5-paragraph-fix/`, `spec/content-v2.6-compact-timeline/`에 보존했다.
 - 최신 원문은 13개 사건·28개 선택·7개 엔딩이다. 기존 98개 사건·340개 선택·34개 엔딩을 교체하거나 삭제하지 않고 별도 판으로 통합했다. 먼저 받은 98장면 v2 초안은 선택 47개 삭제/엔딩 9개 단절 문제 때문에 실행 콘텐츠로 배포하지 않았다.
 - ZIP 이름은 v2.6이나 내부 매니페스트는 `2.2.0-compact`이다. 오래된 README 첫 부분의 24선택/3엔딩 숫자와도 다르다. 실제 JSON/전수 결과를 기준으로 보고하며 원본 버전 문자열을 임의 수정하지 않았다.

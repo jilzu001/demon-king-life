@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('현재 크기보다 작아지지 않으며 모든 글자를 키워도 작은 화면의 조작과 선택 팝업을 유지한다', async ({ page }, info) => {
-  if (info.project.name !== 'PC') await page.setViewportSize({ width: 320, height: 568 });
+  if (!info.project.name.endsWith('PC')) await page.setViewportSize({ width: 320, height: 568 });
   await page.goto('./'); await enterGame(page); await skipReading(page); await lowerChoices(page);
   const before = await saved(page);
   await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();

@@ -65,7 +65,7 @@ test('위로 스크롤하거나 이전 사건 버튼을 누르면 실제 방문 
   await expect(page.locator('.past-chat')).toHaveCount(1);
   await expect(page.locator('.past-chat[data-node-id="dk20_disarmed"] .dialogue-line')).toHaveCount(4);
   await page.locator('.chat-feed').evaluate(el => { el.scrollTop = 0; });
-  if (info.project.name === 'PC') { await page.locator('.chat-feed').hover(); await page.mouse.wheel(0, -500); }
+  if (info.project.name.endsWith('PC')) { await page.locator('.chat-feed').hover(); await page.mouse.wheel(0, -500); }
   else await page.locator('.chat-feed').evaluate(feed => {
     const send = (type: string, y: number) => feed.dispatchEvent(new TouchEvent(type, { bubbles: true, touches: [new Touch({ identifier: 1, target: feed, clientY: y })] }));
     send('touchstart', 100); send('touchmove', 140); send('touchmove', 170);

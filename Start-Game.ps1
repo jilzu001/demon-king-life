@@ -12,9 +12,9 @@ function Test-GameServer {
         # Windows PowerShell 5.1은 charset 없는 UTF-8 응답의 한글을 잘못 읽을 수 있다.
         # 빌드 앱 구조와 영문 스토리 ID로 확인하여 HTTP 디코딩 차이를 피한다.
         if ($gamePage.Content -notmatch '/assets/index-' -or $gamePage.Content -notmatch 'id="app"') { return $false }
-        $gameManifest = Invoke-WebRequest -UseBasicParsing -Uri ($gameUrl + 'stories/demon-king/story.json') -TimeoutSec 1
+        $gameManifest = Invoke-WebRequest -UseBasicParsing -Uri ($gameUrl + 'stories/demon-king-compact/story.json') -TimeoutSec 1
         $gameData = $gameManifest.Content | ConvertFrom-Json
-        return ($gameData.id -eq 'demon-king' -and $gameData.version -in @('1.0.0', '1.1.0'))
+        return ($gameData.id -eq 'demon-king' -and $gameData.version -eq '2.2.0-compact')
     } catch { return $false }
 }
 

@@ -88,7 +88,7 @@ test('스킵은 한 번에 표시하고 새 장면에서는 다시 읽기, 연�
   await expect(page.getByRole('button', { name: '전체 기록', exact: true })).toBeDisabled();
   await page.getByRole('button', { name: '전체 기록', exact: true }).dispatchEvent('click');
   await expect(page.locator('.menu-dialog')).toHaveCount(0);
-  if (info.project.name !== 'PC') {
+  if (!info.project.name.endsWith('PC')) {
     const top = await page.locator('.life-panel').evaluate(el => el.getBoundingClientRect().top);
     expect(top).toBeGreaterThanOrEqual(0); expect(top).toBeLessThan(400);
   }

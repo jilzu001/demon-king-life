@@ -22,7 +22,7 @@ export function resolveCompatibleSave(active: PresentedStory, legacy: PresentedS
   const save = data as GameState;
   ensure(save.storyId === active.manifest.id, '다른 스토리의 세이브입니다.');
   if (save.storyVersion === active.manifest.version) return { story: active, state: decodeSave(active, text), notice: '' };
-  ensure(!isCompact(active.manifest), '축소 완결판과 원작의 저장은 별도입니다. 원작 모드에서 이 저장을 불러오세요.');
+  ensure(!isCompact(active.manifest), '이전 원작의 저장은 현재 판과 호환되지 않습니다. 기존 저장 파일은 보관해 주세요.');
   ensure(save.storyVersion === '1.0.0', '명시적인 이관 규칙이 없는 저장 버전입니다.');
   if (save.enteredNodeIds[0] === legacy.manifest.entryNodeId) {
     return { story: legacy, state: decodeSave(legacy, text), notice: '이 회차는 이전 엔진 예제의 기록을 그대로 이어갑니다. 새 회차부터 콘텐츠 v1.1이 적용됩니다.' };

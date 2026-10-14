@@ -195,6 +195,9 @@ body { overflow: hidden; }
 .cinematic-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; flex-shrink: 0; }
 .cinematic-actions button { text-align: center; font-size: calc(16px * var(--text-scale, 1)); }
 .compact-game .timeline { max-height: clamp(72px, 16vh, 130px); overflow-y: auto; }
+.compact-game .timeline-item[role="button"] { cursor: pointer; border-radius: 3px; }
+.compact-game .timeline-item[role="button"]:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+.history-entry [data-resume-node] { margin: 0 0 6px; }
 @media (max-width: 760px) {
   .game-shell { padding-left: 10px; padding-right: 10px; gap: 8px; }
   .game-header { gap: 6px; }
