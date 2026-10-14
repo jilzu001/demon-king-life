@@ -241,3 +241,7 @@ body { overflow: hidden; }
 .compact-game .timeline-age, .compact-game .timeline-text { font-size: calc(13px * var(--text-scale, 1)); line-height: 1.5; }
 .compact-game .timeline-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .display-settings + .display-settings { margin-top: 12px; }
+@media (max-width: 360px) {
+  .compact-game .game-header { grid-template-columns: clamp(48px, 15vw, 80px) minmax(0, 1fr) 52px; gap: 4px; }
+  .compact-game .stats > div { padding: 4px 2px; gap: 2px; }
+}

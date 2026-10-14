@@ -21,6 +21,7 @@
 - 초기4개 실패는 재로딩 직후 DOM을 기다리지 않은 검수 코드와 ‘돈을 받는다’는 문구에 gold effects가 있을 것이라는 검수 픽스처의 가정 때문이었다. 실제 원문 effects는 없고 gold0이다. DOM 대기를 고쳤고 후반 실제 상태로 검수했다. 금화를 임의 지급하거나 게임 논리를 바꾸지 않았다. 수정 후6개 모두 통과했다.
 - npm run check 종료0: 단위120+브라우저114=234개, 타입/스키마/현재319경로·8엔딩/보관 원작34엔딩/프로덕션 빌드 통과. [전체 로그](compact-controls/check.log).
 - 실제 빌드 PC1280×900·모바일 세로320×568/360×800/390×844/430×932, 스크롤/페이지·글자150%·확대100%·DPR1/2 각120개, 총240조합 통과. 능력치/연대기 한 줄·상단 기록/본문 모든 글자·그림 크기/화면 넘침·선택/원장 불변 확인. [DPR1](compact-controls/ui-dpr1.log), [DPR2](compact-controls/ui-dpr2.log).
+- 실제 빌드에서도 동일한 타이틀/밝기/150%6개 검사를 재실행해 통과했다. 배포 URL 검수용 `playwright.public.config.ts`를 사용하며 게임 소스는 변경하지 않는다. [빌드 조작 검사](compact-controls/built-controls.log).
 - 실제 빌드에서 출생부터 고백 후속 대사까지 PC/모바일2경로, PowerShell5.1 실행기 통과. [플레이 로그](compact-controls/play.log).
 - 타이틀150%는320×568/390×844/1280×900에서 첫 줄과 마지막 설정 버튼 접근까지 별도 확인했다. 가장 작은 높이에서는 타이틀 내부 스크롤로 모든 내용을 볼 수 있다.
 - 화면: [모바일 타이틀](compact-controls/title-모바일-320.png), [모바일 한 줄 표시](compact-controls/header-모바일-320.png), [모바일 페이지/DPR2](compact-controls/page-child-320-dpr2.png), [PC 타이틀](compact-controls/title-PC.png).
@@ -31,3 +32,11 @@
 `src/app/main.ts`, `src/styles/main.css`: 화면/읽기 조작 연결/표시 환경 설정. `tests/e2e/compact.spec.ts`와 기존 검수 스크립트들은 새 위치·한 줄·NPC 제거에 맞춰 갱신했다. 보관 원작의 상단 UI와 회귀는 유지한다. 스토리/선택 ID·판정 확률·effects·엔딩·저장 스키마·이미지 파일·집필 변경 없음.
 
 이전 [v3.7 이미지 보고서](V3_7_APPLY.md)는 c6bbd96 당시의 기록이다. 인물 정체성 검수와 본문/회상 그림은 유지하되, 이번 요청으로 공개 화면의 오른쪽 NPC 표시가 제거됐다.
+
+## 배포 서버 글꼴 차이 수정
+
+첫 배포e359965는 Windows 전체234개/빌드·240조합이 통과했으나 [Actions38651993227](https://github.com/jilzu001/demon-king-life/actions/runs/38651993227) Ubuntu/Chromium에서113/114개 브라우저 검사만 통과해 배포가 차단됐다. 실패는320px·150%·20세 능력치의 가로 넘침1개이며 기존 공개c6bbd96은 유지됐다. [서버 로그](compact-controls/ci-failure.log).
+
+로컬에서도 넓은 숫자 글꼴(Verdana)로 동일 현상을 재현했다. 나이 칸 client87/scroll89였다.360px 이하에서 오른쪽 기록 칸/상단 간격과 능력치 칸의 수평 여백만 조정해 client92/scroll92로 해결했다. 글자 크기나 검사 기준을 낮추지 않았다. 기본 글꼴과 넓은 글꼴을 모두 검사하고, 향후 실패 시 칸별 수치가 로그에 나오도록 보강했다.
+
+수정 후 타입/콘텐츠/분기/빌드와 PC·모바일 관련6개, 실제 빌드 관련6개 통과. [관련 검사](compact-controls/width-fix.log), [빌드](compact-controls/width-build.log), [실제 빌드 검사](compact-controls/width-built-controls.log). 스타일 검수 요소를 제거하는 코드의 Node 타입 오류는 표준 removeChild로 수정하고 타입/빌드를 재확인했다. 서버 전체 재검수/공개 검증은 완료 후 기록한다.

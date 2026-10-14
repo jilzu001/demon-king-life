@@ -94,10 +94,14 @@ test('150% 글자에서 능력치 한 칸은 한 줄이고 최근 연대기는 �
   await expect(page.locator('.life-panel h2, .life-panel button, #npc-image')).toHaveCount(0);
   await expect(page.locator('.game-header .header-history')).toHaveCount(1);
   const checkHeader = async () => {
-    expect(await page.locator('.stats > div').evaluateAll(cells => cells.every(cell => {
+    const boxes = await page.locator('.stats > div').evaluateAll(cells => cells.map(cell => {
       const label = cell.querySelector('small')!.getBoundingClientRect(); const value = cell.querySelector('strong')!.getBoundingClientRect();
-      return Math.abs(label.y + label.height / 2 - value.y - value.height / 2) < 1 && cell.scrollWidth <= cell.clientWidth;
-    }))).toBe(true);
+      return { text: cell.textContent, width: cell.clientWidth, scroll: cell.scrollWidth, centerDelta: Math.abs(label.y + label.height / 2 - value.y - value.height / 2) };
+    }));
+    for (const box of boxes) {
+      expect(box.centerDelta, JSON.stringify(box)).toBeLessThan(1);
+      expect(box.scroll, JSON.stringify(box)).toBeLessThanOrEqual(box.width);
+    }
     await expect(page.locator('.timeline-item')).toHaveCount(1);
     expect(await page.locator('.timeline-text').evaluate(el => el.clientHeight <= parseFloat(getComputedStyle(el).lineHeight) + 1)).toBe(true);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && document.documentElement.scrollHeight <= innerHeight + 1)).toBe(true);
@@ -105,6 +109,8 @@ test('150% 글자에서 능력치 한 칸은 한 줄이고 최근 연대기는 �
   await checkHeader();
   expect(await page.locator('#player-image').evaluate(el => getComputedStyle(el).objectFit)).toBe('cover');
   await select(page, 'family_accept'); await select(page, 'trust_mina'); await checkHeader();
+  const widerFont = await page.addStyleTag({ content: '.stats { font-family: Verdana, sans-serif; }' });
+  await checkHeader(); await widerFont.evaluate(element => { element.parentNode?.removeChild(element); });
   await page.locator('.header-history').click(); await expect(page.locator('.history-entry')).toHaveCount(3);
   await page.getByRole('button', { name: '닫기', exact: true }).click();
   await page.evaluate(({ key, state }) => {

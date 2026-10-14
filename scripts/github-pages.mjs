@@ -54,6 +54,15 @@ if (mode === 'inspect') {
     const jobs = await api(`${route}/actions/runs/${id}/jobs`);
     console.log(JSON.stringify(jobs.body.jobs?.map(job => ({ name: job.name, conclusion: job.conclusion, url: job.html_url,
       steps: job.steps?.map(step => ({ name: step.name, conclusion: step.conclusion })) })), null, 2));
+  } else if (mode === 'job-log') {
+    const id = process.argv[3]; if (!/^\d+$/.test(id ?? '')) throw new Error('워크플로 작업 ID 필요');
+    const response = await fetch(`https://api.github.com${route}/actions/jobs/${id}/logs`, {
+      headers: { Authorization: `Bearer ${credential}`, Accept: 'application/vnd.github+json', 'User-Agent': 'demon-king-pages-deployment' },
+    });
+    if (!response.ok) throw new Error(`작업 로그 요청 실패: HTTP${response.status}`);
+    const log = await response.text();
+    if (process.argv[4]) await (await import('node:fs/promises')).writeFile(process.argv[4], log);
+    console.log(log.split('\n').slice(-120).join('\n'));
   } else if (mode === 'dispatch') {
     await api(`${route}/actions/workflows/pages.yml/dispatches`, 'POST', { ref: 'main' });
     console.log('배포 워크플로 실행 요청 완료');
