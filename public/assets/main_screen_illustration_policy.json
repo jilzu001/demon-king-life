@@ -16,7 +16,8 @@
       "location"
     ],
     "maxImagesPerScene": 1,
-    "showOnlyRelevant": true
+    "showOnlyRelevant": true,
+    "selectionRule": "Scene-specific explicit illustration only; never force image for each event. When speaking/acting character is narrative focus, choose matching character or action CG over generic location background. If no confidently matching image, omit."
   },
   "responsive": {
     "mobile": {
@@ -30,7 +31,9 @@
       "width": "min(100%, 680px)"
     },
     "objectFit": "contain",
-    "avoidForcedCrop": true
+    "avoidForcedCrop": true,
+    "naturalSizeCap": true,
+    "upscale": "never; rendered dimensions must not exceed intrinsic pixel dimensions"
   },
   "performance": {
     "loading": "lazy",
@@ -47,5 +50,12 @@
     "preserveExistingStoryAndSaveSchema": true,
     "doNotAddCharactersFromAssetAliases": true,
     "fallbackWhenAssetMissing": "text-only"
+  },
+  "qualityGuidelines": {
+    "artDirection": "simple or diffuse lighting; simplified uncluttered backgrounds; clean cel shading; readable silhouettes",
+    "noArtificialUpscale": true,
+    "highResolutionAssets": "replace small source with truly higher-resolution artwork when needed, do not interpolate to fake detail",
+    "compression": "WebP quality 75-85; verify by eye; record real byte size",
+    "avoidMandatoryIllustration": true
   }
 }

@@ -1,0 +1,103 @@
+{
+  "source": "spec/content-v3.6-story-engine-art",
+  "preparedContent": "content/events_v2_9.json",
+  "runtimeEventsRegistered": false,
+  "activeRuntime": {
+    "version": "2.2.0-compact",
+    "scenes": 13,
+    "choices": 28,
+    "endings": 7
+  },
+  "extensionEvents": 65,
+  "extensionChoices": 195,
+  "protectedLogicEqualToV34": true,
+  "v35RewrittenIds": [
+    "mina_medal",
+    "mina_bridge",
+    "fake_awaken",
+    "birth_archive",
+    "orphan_registry",
+    "retired_king",
+    "princess_coronation",
+    "statue",
+    "peace_treaty",
+    "grandchild_question"
+  ],
+  "v36ResultOnlyIds": [
+    "birth_tax",
+    "village_well",
+    "school_map",
+    "first_wage",
+    "guard_toll",
+    "mina_festival"
+  ],
+  "repairedResultChoices": [
+    "birth_tax/birth_tax_1",
+    "birth_tax/birth_tax_2",
+    "birth_tax/birth_tax_3",
+    "village_well/village_well_1",
+    "village_well/village_well_2",
+    "village_well/village_well_3",
+    "school_map/school_map_1",
+    "school_map/school_map_2",
+    "school_map/school_map_3",
+    "first_wage/first_wage_1",
+    "first_wage/first_wage_2",
+    "first_wage/first_wage_3",
+    "guard_toll/guard_toll_1",
+    "guard_toll/guard_toll_2",
+    "guard_toll/guard_toll_3",
+    "mina_festival/mina_festival_1",
+    "mina_festival/mina_festival_2",
+    "mina_festival/mina_festival_3"
+  ],
+  "resultNarrativeRepairs": 15,
+  "asset": {
+    "id": "mina_wooden_sword",
+    "bytes": 63302,
+    "sha256": "c6f12ebea7497550da676fdf15da26dd1d5b7c51c8ad1be7b644fd718aa55050",
+    "width": 770,
+    "height": 575,
+    "runtimeScene": "child",
+    "age": 12,
+    "anchor": "미나는 당신에게 나무칼을 쥐여 줬다.",
+    "festivalCGMapping": false
+  },
+  "existingAssetsPreserved": true,
+  "originalRuntimeFiles": [
+    {
+      "file": "story.json",
+      "sha256": "39765eb96068a5a68686b6c356bb8443d2a007c6e4d8f2fa077650f113da0906",
+      "sameAsV26": true
+    },
+    {
+      "file": "characters.json",
+      "sha256": "dfbcc0fdc19b0b2df0ba2b0b851dd77d36fb9483f2d30bbe92c554420f2a3786",
+      "sameAsV26": true
+    },
+    {
+      "file": "endings.json",
+      "sha256": "0a4cb4b8e3982682dc672dd6110ec4ffa5eeaa109fc6591ba14652738edc4738",
+      "sameAsV26": true
+    },
+    {
+      "file": "ending_cinematics.json",
+      "sha256": "e4cfbf42af985d15ff371fcb4126bf523ab3ee8344f75a63d536ae82c4ace86b",
+      "sameAsV26": true
+    },
+    {
+      "file": "chapters/01_complete.json",
+      "sha256": "c1d0dcfbcf3862e7ab8fb68291e8dece405313f741a81eeac09484856290d623",
+      "sameAsV26": true
+    }
+  ],
+  "writing": {
+    "focusedUniqueIds": 22,
+    "v36RevisitedIds": 6,
+    "overlap": 6,
+    "originalAuthoredIds": 3,
+    "uniqueFocusedPercent": 33.8,
+    "reportedWorkCount": 28,
+    "reportedWorkCountIsNotUniqueCompletion": true
+  }
+}

@@ -183,7 +183,7 @@ body { overflow: hidden; }
 .story-prose { font-size: calc(clamp(16px, 4.2vw, 18px) * var(--text-scale, 1)); line-height: 1.75; overflow-wrap: anywhere; }
 .story-prose .story-paragraph, .chat-feed .story-prose .story-paragraph { font-size: inherit; line-height: 1.75; margin-block: 0 1.15em; white-space: pre-wrap; }
 .story-prose .story-paragraph:last-child { margin-bottom: 0; }
-.story-illustration { --illustration-limit: min(360px, 32dvh); width: min(100%, 680px, calc(var(--illustration-limit) * var(--illustration-ratio))); aspect-ratio: var(--illustration-ratio); margin: 0 auto 1.15em; break-inside: avoid; }
+.story-illustration { --illustration-limit: min(360px, 32dvh); width: min(100%, 680px, var(--asset-natural-width), calc(var(--illustration-limit) * var(--illustration-ratio))); max-width: min(100%, var(--asset-natural-width)); aspect-ratio: var(--illustration-ratio); margin: 0 auto 1.15em; break-inside: avoid; }
 .story-illustration img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 8px; }
 .page-window .story-illustration { --illustration-limit: min(360px, calc(var(--page-height, 40dvh) * .55)); margin-bottom: min(1.15em, calc(var(--page-height, 40dvh) * .08)); }
 @media (max-width: 760px) {

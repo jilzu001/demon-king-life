@@ -5,10 +5,12 @@ import { compactProgressKey } from '../src/ui/compact-progress';
 
 const url = process.argv[2] ?? 'http://127.0.0.1:4175/';
 const screenshots = process.argv.includes('--screenshots');
+const deviceScaleFactor = process.argv.includes('--high-dpi') ? 2 : 1;
 const story = await readExampleStory('demon-king-compact');
 const shared = ['family_accept', 'trust_mina'];
 const cases = [
   { id: 'birth', path: [], asset: 'village' },
+  { id: 'child', path: ['family_accept'], asset: 'mina_wooden_sword' },
   { id: 'exam', path: shared, asset: 'mina' },
   { id: 'prison', path: [...shared, 'attack'], asset: 'prison' },
   { id: 'hearing', path: [...shared, 'attack', 'forgive', 'ally', 'public_audit'], asset: 'mina' },
@@ -17,7 +19,7 @@ const cases = [
   { id: 'ending_throne', path: [...shared, 'invoice', 'threaten_king'], asset: 'royal_trial' },
 ];
 
-async function checkPageText(page: Page, label: string) {
+async function checkPageText(page: Page, label: string, screenshotPath?: string) {
   const seen = new Set<string>(); let all: string[] = []; let sawIllustration = false;
   const count = Number(await page.locator('.page-window').getAttribute('data-page-count'));
   for (let i = 0; i < count; i++) {
@@ -38,7 +40,11 @@ async function checkPageText(page: Page, label: string) {
     });
     all = result.all;
     for (const id of result.visible) { expect(seen.has(id)).toBe(false); seen.add(id); }
-    if (result.imageVisible) { sawIllustration = true; await expect.poll(() => page.locator('.story-illustration img').evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true); }
+    if (result.imageVisible) {
+      sawIllustration = true;
+      await expect.poll(() => page.locator('.story-illustration img').evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+      if (screenshotPath) await page.screenshot({ path: screenshotPath, animations: 'disabled' });
+    }
     expect(await page.locator('.chat-feed').evaluate(el => el.scrollTop)).toBe(0);
     if (i + 1 < count) await page.getByRole('button', { name: '다음 페이지', exact: true }).click();
   }
@@ -58,7 +64,7 @@ try {
       let state = createRun(story, 17, `illustration-${item.id}`);
       for (const id of item.path) state = choose(story, state, state.currentNodeId!, id).nextState;
       const saved = JSON.stringify(state);
-      const page = await browser.newPage({ viewport: { width: width!, height: height! } });
+      const page = await browser.newPage({ viewport: { width: width!, height: height! }, deviceScaleFactor });
       const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
       await page.addInitScript(({ saved, progressKey, count, mode }) => {
         localStorage.setItem('existence-sim:v1:run:demon-king:compact', saved);
@@ -71,7 +77,8 @@ try {
       await page.goto(url);
       if (!state.ended) {
         await expect(page.locator('#current-event')).toBeAttached();
-        if (mode === 'page') await checkPageText(page, `${width}×${height} ${item.id}`);
+        if (mode === 'page') await checkPageText(page, `${width}×${height} ${item.id}`,
+          screenshots && item.id === 'child' && [1280, 390, 320].includes(width!) ? `docs/v36-page-child-${width}-dpr${deviceScaleFactor}.png` : undefined);
         await page.locator('#reading-skip').click(); await expect(page.locator('#choice-dialog')).toBeVisible();
         await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
       } else await expect(page.locator('[data-ending-phase="0"]')).toBeVisible();
@@ -84,21 +91,24 @@ try {
         if (mode === 'scroll' || state.ended) await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
         const bounds = await image.evaluate((img: HTMLImageElement) => {
           const r = img.getBoundingClientRect();
-          return { width: r.width, height: r.height, ratio: Number(img.getAttribute('width')) / Number(img.getAttribute('height')), fit: getComputedStyle(img).objectFit };
+          return { width: r.width, height: r.height, naturalWidth: img.naturalWidth, naturalHeight: img.naturalHeight, ratio: Number(img.getAttribute('width')) / Number(img.getAttribute('height')), fit: getComputedStyle(img).objectFit };
         });
         expect(bounds.width).toBeLessThanOrEqual(Math.min(width! - 20, width! <= 760 ? 480 : 680) + 1);
         expect(bounds.height).toBeLessThanOrEqual((width! <= 760 ? 240 : 360) + 1);
+        expect(bounds.width).toBeLessThanOrEqual(bounds.naturalWidth + .5);
+        expect(bounds.height).toBeLessThanOrEqual(bounds.naturalHeight + .5);
         expect(bounds.width / bounds.height).toBeCloseTo(bounds.ratio, 2); expect(bounds.fit).toBe('contain');
       }
       await expect(page.locator('.timeline img, .choice-card img')).toHaveCount(0);
+      expect(await page.evaluate(() => visualViewport?.scale ?? 1)).toBe(1);
+      expect(await page.evaluate(() => devicePixelRatio)).toBe(deviceScaleFactor);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && document.documentElement.scrollHeight <= innerHeight + 1)).toBe(true);
       expect(await page.evaluate(() => localStorage.getItem('existence-sim:v1:run:demon-king:compact'))).toBe(saved);
-      if (screenshots && ['birth', 'hearing', 'ending_peace'].includes(item.id) && [1280, 390, 320].includes(width!)) {
-        if (mode === 'page' && !state.ended) for (let i = Number(await page.locator('.page-window').getAttribute('data-page-index')); i > 0; i--) await page.getByRole('button', { name: '이전 페이지', exact: true }).click();
-        await page.screenshot({ path: `docs/illustrated-${mode}-${item.id}-${width}.png`, animations: 'disabled' });
+      if (screenshots && mode === 'scroll' && ['child'].includes(item.id) && [1280, 390, 320].includes(width!)) {
+        await page.screenshot({ path: `docs/v36-${mode}-${item.id}-${width}-dpr${deviceScaleFactor}.png`, animations: 'disabled' });
       }
       expect(errors).toEqual([]); await page.close();
     }
-    console.log(`${width}×${height}: 스크롤/페이지·150% 글자·그림 6장면/텍스트 전용·글자 전체 노출·선택 팝업·저장 원장 보호 통과 (${url})`);
+    console.log(`${width}×${height}/DPR${deviceScaleFactor}: 스크롤/페이지·150% 글자·나무칼 CG/텍스트 전용·원본 크기 상한·글자 전체 노출·선택 팝업·저장 원장 보호 통과 (${url})`);
   }
 } finally { await browser.close(); }

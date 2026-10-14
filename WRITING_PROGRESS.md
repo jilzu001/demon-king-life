@@ -1,107 +1,102 @@
 # 집필 진행 기록
 
-기준일: 2026-10-14. 대상은 [v3.4 입력의 확장 사건 파일](spec/content-v3.4-illustrated/content/events_v2_9.json) **65개 사건**이다. 별도16개 핵심 사건/현재 공개13개 사건/보관 원작98개 사건은 이 분모에 합산하지 않는다. 게임 적용 상태는 [DEV_PROGRESS.md](DEV_PROGRESS.md)에서 관리한다.
+기준일: 2026-10-14. 원본은 [v3.6 통합 ZIP의65개 사건](spec/content-v3.6-story-engine-art/content/events_v2_9.json), 준비된 병합본은 [content/events_v2_9.json](content/events_v2_9.json)이다. 별도 핵심16사건/현재 공개13사건/보관 원작98사건은 이 분모에 합산하지 않는다. 집필과 게임 적용은 [DEV_PROGRESS.md](DEV_PROGRESS.md)에서 구분한다.
 
-## 초기 집계와 확인 수준
+## 집계 기준
 
-| 항목 | 초기 기준 | 확인 수준 |
+| 항목 | 집계 | 근거/범위 |
 | --- | --- | --- |
-| 전체 사건 | 65개 | JSON65개·고유 ID65개·선택195개 확인 |
-| 집중 집필 완료 | **22개 (33.8%)** | 사용자 제공 총계; ID별 근거 확인15개 + 추가7개 미확정 |
-| 추가 보완 대상 | **43개** | 사용자 제공 총계; 개별43개 ID는 아직 확정하지 않음 |
-| ID 분류 보류 | 50개 | 완료7개와 보완43개가 포함되는 후보 집합;50개 전부를 미완료로 표기하지 않음 |
+| 전체 | 65개·고유 ID65개·선택195개 | 실제 JSON 대조 |
+| 집중 재집필 내역 | **22개/65개 (33.8%)** | v3.1의9개 + v3.3의3개 + 새 v3.5 보고10개; 고유 ID22개 |
+| 집중 재집필 근거 없는 대상 | **43개** | 기존 집필3개와 v3.2 보강40개 포함; 문안이 없다는 의미 아님 |
+| v3.6 선택 결과 심화 | 6개/18개 선택 | 아래 기존22개에 전부 포함; 새 완료6개로 더하지 않음 |
+| 집필 이력 확인 | 25개 | 집중 재집필22개 + 별도 기존 집필3개;25개 고유 재집필 완료라는 뜻 아님 |
 
-사용자는 추가 완료7개의 ID를 모른다고 답했다. **22/65는 유지할 초기 집계이며22개 ID가 모두 검증됐다는 의미가 아니다.** 새 정보 전까지 나머지7개를 추측으로 골라 채우거나 진행률을15/65로 바꾸지 않는다. 자료 미확정과 추가 집필 필요는 구분한다.
+초기 사용자 기준22/65·보완43을 유지한다. 기존 기록의 확인15개는 ‘기존 집필3개 + 집중 재집필12개’의 넓은 범위였다. 새 v3.5 보고서와 실제10개 변경 문안이 도착해 **기존 집필과 집중 재집필을 분리**했다. 기존3개의 집필 확인을 취소한 것이 아니다. 이전에 알 수 없었던7개를 임의 선택해 채운 것도 아니다.
 
-## 완료 근거 확인15개
+동봉 WRITING_PROGRESS.md는28/65(43.1%)를 ‘누적 집중 보완’으로 제시한다. 그러나 이번6개 ID는 이미 v3.1/v3.3 재집필 목록에 포함된다. **28은22+6회의 작업 집계이며28개 고유 사건 완료율로 사용하지 않는다.** 문학적 최종 품질/실제 플레이/배포 완료 수치와도 다르다.
 
-- 기존3개: `unlock_marta_ledger`, `conditional_mina_apology`, `unlock_roen_guard`. [v3.2 보고서](spec/content-v3.4-illustrated/AUTHORING_REPORT_V3_2.json)의 기존집필3개, 작업 브랜치에 보존된 v2.9 원본3개 ID/본문/선택 결과와 대조했다.
-- v3.1 집중 재집필9개: [보고서](spec/content-v3.4-illustrated/AUTHORING_REPORT_V3_1.json)의 rewrittenIds와 JSON의 authoredRevision을 대조했다.
-- v3.3 재집필3개: [보고서](spec/content-v3.4-illustrated/AUTHORING_REPORT_V3_3.json)의 first_wage/queen_letter/new_demon과 JSON의 authoringPass를 대조했다.
+## 근거 자료
 
-이15개는 **집필 자료의 근거 확인**이다. 실제 게임의 사건 연동/도달/문학적 최종 검수 완료를 뜻하지 않는다. 현재 공개 앱에는65개 확장 사건이 아직 연결되지 않았다.
+- [v3.1 보고9개](spec/content-v3.6-story-engine-art/AUTHORING_REPORT_V3_1.json), [v3.3 보고3개](spec/content-v3.6-story-engine-art/AUTHORING_REPORT_V3_3.json): 기존 표식/원본 보고서와 동일.
+- [v3.5 보고10개](spec/content-v3.6-story-engine-art/AUTHORING_REPORT_V3_5.json): v3.4 대비 해당10개 본문과30개 선택 결과 변경 확인. 나머지 본문55개는 동일.
+- [v3.6 변경 지침](spec/content-v3.6-story-engine-art/CODEX_APPLY_V3_6.md): birth_tax/village_well/school_map/first_wage/guard_toll/mina_festival의18개 선택 결과 문단 보강. 해당6개 본문은 기존과 동일.
+- 기존3개: unlock_marta_ledger/conditional_mina_apology/unlock_roen_guard. v3.2의 기존 집필 보존 보고와 대조하며 집중 재집필22개에는 별도로 집계한다.
 
-[v3.2의65개 authored-or-expanded 보고](spec/content-v3.4-illustrated/CODEX_AUTHORING_V3_2.md)는 본문 보강을 포함한다. expanded_v3_2 표시, 문단 수·글자 수, JSON/스키마 통과만으로 집중 집필 완료를 늘리지 않는다. v3.3는3개만 다시 집필했다고 명시한다.
+## 사건 ID별 기록
 
-## 사건 ID별 현황
-
-| 사건 ID | 제목 | 집필 상태 | 근거 |
+| 사건 ID | 제목 | 집필 상태 | 근거/이번 변경 |
 | --- | --- | --- | --- |
-| `unlock_marta_ledger` | 여관 주인이 기억하는 손님 | 완료 근거 확인 | 기존 집필3개·v3.2 보존 보고 |
-| `conditional_mina_apology` | 용사의 사과는 늦게 온다 | 완료 근거 확인 | 기존 집필3개·v3.2 보존 보고 |
-| `unlock_roen_guard` | 처형 명령서의 빈칸 | 완료 근거 확인 | 기존 집필3개·v3.2 보존 보고 |
-| `birth_tax` | 여섯 살의 납세 고지서 | 완료 근거 확인 | v3.1 rewrittenIds·authoredRevision |
-| `village_well` | 우물 속에 빠진 마왕의 위엄 | 완료 근거 확인 | v3.1 rewrittenIds·authoredRevision |
-| `school_map` | 지도에서 지워진 집 | 완료 근거 확인 | v3.1 rewrittenIds·authoredRevision |
-| `first_wage` | 첫 월급과 적국 근로자 | 완료 근거 확인 | v3.3 rewrittenInThisPass·authoringPass |
-| `royal_portrait` | 마왕 심사장 초상화 | 완료 근거 확인 | v3.1 rewrittenIds·authoredRevision |
-| `guard_toll` | 성문에서 받는 입장료 | 완료 근거 확인 | v3.1 rewrittenIds·authoredRevision |
-| `mina_festival` | 축제의 용사와 마왕 | 완료 근거 확인 | v3.1 rewrittenIds·authoredRevision |
-| `herald` | 왕국 방송의 오보 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `prison_library` | 교도소 도서관의 금서 | 완료 근거 확인 | v3.1 rewrittenIds·authoredRevision |
-| `prison_cellmate` | 옆방의 전직 예언자 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `prison_meal` | 마왕 특별식 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `village_boycott` | 마왕 빵집 불매운동 | 완료 근거 확인 | v3.1 rewrittenIds·authoredRevision |
-| `mina_medal` | 미나의 훈장 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `apprentice` | 제자가 되겠다는 소년 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `palace_dinner` | 왕궁 만찬의 독배 | 완료 근거 확인 | v3.1 rewrittenIds·authoredRevision |
-| `royal_garden` | 왕실 정원의 금지 표지 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `king_tea` | 국왕의 차 한 잔 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `queen_letter` | 왕비의 봉인된 편지 | 완료 근거 확인 | v3.3 rewrittenInThisPass·authoringPass |
-| `queen_heir` | 왕비의 후계자 수업 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `noble_vote` | 47표의 왕위 계승 투표 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `wedding_contract` | 혼인 계약서의 작은 글씨 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `mina_bridge` | 다리 위의 오래된 친구 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `court_jester` | 궁정 광대의 실직 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `palace_fire` | 왕궁 화재와 구출 명단 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `tax_rebellion` | 마을 세금 폭동 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `fake_awaken` | 마왕 각성 의식 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `birth_archive` | 출생기록 보관소 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `ledger_copy` | 장부의 두 번째 필체 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `audit_witness` | 사라진 감사관 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `army_budget` | 병사들의 낡은 장화 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `king_speech` | 국왕의 대국민 연설 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `queen_audit` | 왕비의 비밀 회계사 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `hero_union` | 용사 노동조합 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `ministry_shred` | 파쇄기의 밤 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `court_lawyer` | 국선 변호인의 사직서 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `royal_press` | 왕실 기자회견 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `old_friend` | 미나의 첫 은퇴 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `orphan_registry` | 또 다른 마왕 아이 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `public_memorial` | 국가 피해자 추모비 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `retired_king` | 퇴위한 왕의 작은 집 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `princess_coronation` | 에리시아의 대관식 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `village_election` | 마을 촌장 선거 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `bread_union` | 빵집 노동자의 파업 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `statue` | 마왕 동상 제막식 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `old_mina` | 미나의 낡은 검 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `ledger_trial` | 숫자 뒤의 이름들 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `guard_daughter` | 근위병의 딸 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `royal_archive_open` | 왕실 기록관의 개방일 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `marta_funeral` | 마르타의 마지막 장부 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `veteran_pension` | 전쟁에 나가지 않은 참전용사 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `child_history` | 교과서 속의 당신 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `peace_treaty` | 존재하지 않는 나라와 평화협정 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `mina_reunion` | 동창회의 빈 의자 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `grandchild_question` | 아이의 무례한 질문 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `king_apology` | 왕의 사과 연습 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `last_audit` | 마지막 미지급금 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `hospital_name` | 병원 접수창구의 직업란 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `secret_child` | 왕궁의 이름 없는 아이 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `false_prophecy` | 가짜 예언을 파는 상인 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `enemy_diplomat` | 적국 외교관의 실체 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
-| `new_demon` | 두 번째 국가 지정 마왕 | 완료 근거 확인 | v3.3 rewrittenInThisPass·authoringPass |
-| `court_ghost` | 서류실의 유령 | 완료/보완 미확정 | v3.2 보강 표시만 확인 |
+| `unlock_marta_ledger` | 여관 주인이 기억하는 손님 | 기존 집필 확인·집중 보완 대상 | v3.2 기존 집필 보존 |
+| `conditional_mina_apology` | 용사의 사과는 늦게 온다 | 기존 집필 확인·집중 보완 대상 | v3.2 기존 집필 보존 |
+| `unlock_roen_guard` | 처형 명령서의 빈칸 | 기존 집필 확인·집중 보완 대상 | v3.2 기존 집필 보존 |
+| `birth_tax` | 여섯 살의 납세 고지서 | 집중 재집필 근거 확인 | v3.1 보고9개; v3.6 선택 결과3개 심화 |
+| `village_well` | 우물 속에 빠진 마왕의 위엄 | 집중 재집필 근거 확인 | v3.1 보고9개; v3.6 선택 결과3개 심화 |
+| `school_map` | 지도에서 지워진 집 | 집중 재집필 근거 확인 | v3.1 보고9개; v3.6 선택 결과3개 심화 |
+| `first_wage` | 첫 월급과 적국 근로자 | 집중 재집필 근거 확인 | v3.3 보고3개; v3.6 선택 결과3개 심화 |
+| `royal_portrait` | 마왕 심사장 초상화 | 집중 재집필 근거 확인 | v3.1 보고9개 |
+| `guard_toll` | 성문에서 받는 입장료 | 집중 재집필 근거 확인 | v3.1 보고9개; v3.6 선택 결과3개 심화 |
+| `mina_festival` | 축제의 용사와 마왕 | 집중 재집필 근거 확인 | v3.1 보고9개; v3.6 선택 결과3개 심화 |
+| `herald` | 왕국 방송의 오보 | 추가 보완 대상 | v3.2 보강 표시 |
+| `prison_library` | 교도소 도서관의 금서 | 집중 재집필 근거 확인 | v3.1 보고9개 |
+| `prison_cellmate` | 옆방의 전직 예언자 | 추가 보완 대상 | v3.2 보강 표시 |
+| `prison_meal` | 마왕 특별식 | 추가 보완 대상 | v3.2 보강 표시 |
+| `village_boycott` | 마왕 빵집 불매운동 | 집중 재집필 근거 확인 | v3.1 보고9개 |
+| `mina_medal` | 미나의 훈장 | 집중 재집필 근거 확인 | v3.5 보고10개 |
+| `apprentice` | 제자가 되겠다는 소년 | 추가 보완 대상 | v3.2 보강 표시 |
+| `palace_dinner` | 왕궁 만찬의 독배 | 집중 재집필 근거 확인 | v3.1 보고9개 |
+| `royal_garden` | 왕실 정원의 금지 표지 | 추가 보완 대상 | v3.2 보강 표시 |
+| `king_tea` | 국왕의 차 한 잔 | 추가 보완 대상 | v3.2 보강 표시 |
+| `queen_letter` | 왕비의 봉인된 편지 | 집중 재집필 근거 확인 | v3.3 보고3개 |
+| `queen_heir` | 왕비의 후계자 수업 | 추가 보완 대상 | v3.2 보강 표시 |
+| `noble_vote` | 47표의 왕위 계승 투표 | 추가 보완 대상 | v3.2 보강 표시 |
+| `wedding_contract` | 혼인 계약서의 작은 글씨 | 추가 보완 대상 | v3.2 보강 표시 |
+| `mina_bridge` | 다리 위의 오래된 친구 | 집중 재집필 근거 확인 | v3.5 보고10개 |
+| `court_jester` | 궁정 광대의 실직 | 추가 보완 대상 | v3.2 보강 표시 |
+| `palace_fire` | 왕궁 화재와 구출 명단 | 추가 보완 대상 | v3.2 보강 표시 |
+| `tax_rebellion` | 마을 세금 폭동 | 추가 보완 대상 | v3.2 보강 표시 |
+| `fake_awaken` | 마왕 각성 의식 | 집중 재집필 근거 확인 | v3.5 보고10개 |
+| `birth_archive` | 출생기록 보관소 | 집중 재집필 근거 확인 | v3.5 보고10개 |
+| `ledger_copy` | 장부의 두 번째 필체 | 추가 보완 대상 | v3.2 보강 표시 |
+| `audit_witness` | 사라진 감사관 | 추가 보완 대상 | v3.2 보강 표시 |
+| `army_budget` | 병사들의 낡은 장화 | 추가 보완 대상 | v3.2 보강 표시 |
+| `king_speech` | 국왕의 대국민 연설 | 추가 보완 대상 | v3.2 보강 표시 |
+| `queen_audit` | 왕비의 비밀 회계사 | 추가 보완 대상 | v3.2 보강 표시 |
+| `hero_union` | 용사 노동조합 | 추가 보완 대상 | v3.2 보강 표시 |
+| `ministry_shred` | 파쇄기의 밤 | 추가 보완 대상 | v3.2 보강 표시 |
+| `court_lawyer` | 국선 변호인의 사직서 | 추가 보완 대상 | v3.2 보강 표시 |
+| `royal_press` | 왕실 기자회견 | 추가 보완 대상 | v3.2 보강 표시 |
+| `old_friend` | 미나의 첫 은퇴 | 추가 보완 대상 | v3.2 보강 표시 |
+| `orphan_registry` | 또 다른 마왕 아이 | 집중 재집필 근거 확인 | v3.5 보고10개 |
+| `public_memorial` | 국가 피해자 추모비 | 추가 보완 대상 | v3.2 보강 표시 |
+| `retired_king` | 퇴위한 왕의 작은 집 | 집중 재집필 근거 확인 | v3.5 보고10개 |
+| `princess_coronation` | 에리시아의 대관식 | 집중 재집필 근거 확인 | v3.5 보고10개 |
+| `village_election` | 마을 촌장 선거 | 추가 보완 대상 | v3.2 보강 표시 |
+| `bread_union` | 빵집 노동자의 파업 | 추가 보완 대상 | v3.2 보강 표시 |
+| `statue` | 마왕 동상 제막식 | 집중 재집필 근거 확인 | v3.5 보고10개 |
+| `old_mina` | 미나의 낡은 검 | 추가 보완 대상 | v3.2 보강 표시 |
+| `ledger_trial` | 숫자 뒤의 이름들 | 추가 보완 대상 | v3.2 보강 표시 |
+| `guard_daughter` | 근위병의 딸 | 추가 보완 대상 | v3.2 보강 표시 |
+| `royal_archive_open` | 왕실 기록관의 개방일 | 추가 보완 대상 | v3.2 보강 표시 |
+| `marta_funeral` | 마르타의 마지막 장부 | 추가 보완 대상 | v3.2 보강 표시 |
+| `veteran_pension` | 전쟁에 나가지 않은 참전용사 | 추가 보완 대상 | v3.2 보강 표시 |
+| `child_history` | 교과서 속의 당신 | 추가 보완 대상 | v3.2 보강 표시 |
+| `peace_treaty` | 존재하지 않는 나라와 평화협정 | 집중 재집필 근거 확인 | v3.5 보고10개 |
+| `mina_reunion` | 동창회의 빈 의자 | 추가 보완 대상 | v3.2 보강 표시 |
+| `grandchild_question` | 아이의 무례한 질문 | 집중 재집필 근거 확인 | v3.5 보고10개 |
+| `king_apology` | 왕의 사과 연습 | 추가 보완 대상 | v3.2 보강 표시 |
+| `last_audit` | 마지막 미지급금 | 추가 보완 대상 | v3.2 보강 표시 |
+| `hospital_name` | 병원 접수창구의 직업란 | 추가 보완 대상 | v3.2 보강 표시 |
+| `secret_child` | 왕궁의 이름 없는 아이 | 추가 보완 대상 | v3.2 보강 표시 |
+| `false_prophecy` | 가짜 예언을 파는 상인 | 추가 보완 대상 | v3.2 보강 표시 |
+| `enemy_diplomat` | 적국 외교관의 실체 | 추가 보완 대상 | v3.2 보강 표시 |
+| `new_demon` | 두 번째 국가 지정 마왕 | 집중 재집필 근거 확인 | v3.3 보고3개 |
+| `court_ghost` | 서류실의 유령 | 추가 보완 대상 | v3.2 보강 표시 |
 
-## 새 자료 반영 규칙
+## 적용/검증 및 다음 자료
 
-1. 같은 사건 ID의 기존 본문/각 선택 결과와 새 자료·집필 보고서를 대조하고 해당 행의 상태/근거를 갱신한다. 새 ID는 임의 추가하거나 기존 선택/효과를 덮어쓰지 않는다.
-2. 추가7개가 확인되면 위50개 후보에서 해당 ID만 완료로 확정하고, 나머지43개의 보완 내역을 확정한다. 자료가 초기 총계와 다르면 차이/근거를 기록하며 조용히 숫자를 맞추지 않는다.
-3. 재집필은 같은 ID의 이력을 갱신하며 중복 완료로 집계하지 않는다. 실제 보완이 완료될 때만 완료 수/남은 수/완료율을 함께 갱신한다.
-4. 집필률, 게임 적용 상태, 실제 플레이 검수는 별도 관리한다. 기록 규칙은 [AGENTS.md](AGENTS.md)를 따른다.
-
-## 최근 확인 — 2026-10-14
-
-- 집필/콘텐츠 수정 없음. 원본 보고서·65개 ID·기존3개 본문/선택 결과·v3.1/v3.3 표식을 확인해 초기 기록만 작성했다.
-- 정적 문단 대조:65개 bodyParagraphs와 body,195개 resultParagraphs와 result 및 존재하는 resultNarrative가 일치했다. 이는 문단 데이터 확인이며 엔진 적용/작품 품질 검사로 계산하지 않는다.
-- 사용자 답변: 추가7개 ID는 알 수 없음. 추후 GPT 집필 자료 등 새 정보가 오면 위 규칙으로 대조/반영한다. 추가 확인 질문을 반복하지 않는다.
+- 이번에는6개 선택 결과 심화와 v3.5의10개 문안을 병합 준비했다. 원본 ZIP은 보존한다. 선택 ID/조건/effects/나이/우선순위/해금 조건은 기존65개와 동일하다.
+- ZIP의18개 result 문자열은 첫 문단만 담고 resultParagraphs에는 심화 문단이 있다. 제공된 배열을 그대로 합쳐 result18개와 존재하는 resultNarrative15개를 동기화했다.195개 결과의 문단/문자열이 일치하며 새 서술을 합성하지 않았다.
+- 현재 공개 게임은 아직13사건/7엔딩이고65개는 실행에 연결되지 않았다. 위 집필 갱신은 실제65개 통합 플레이 검증 완료를 뜻하지 않는다.
+- 새 자료가 오면 같은 ID의 본문/선택 결과/보고서를 대조한다. 재집필과 재보완은 같은 ID의 이력이며 중복 완료로 집계하지 않는다. 집계 기준이 바뀌면 이유를 기록한다.
+- 사용자는 이전 미확정7개를 모른다고 답했다. 자료 없는 항목을 추측으로 채우거나 추가 확인 질문을 반복하지 않는다. expanded_v3_2/글자 수/스키마 통과만으로 완료를 늘리지 않는다.

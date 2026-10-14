@@ -1,11 +1,12 @@
-import manifest from '../../spec/content-v3.4-illustrated/assets/assets.json';
-import policy from '../../spec/content-v3.4-illustrated/assets/main_screen_illustration_policy.json';
+import manifest from '../../spec/content-v3.6-story-engine-art/assets/assets.json';
+import policy from '../../spec/content-v3.6-story-engine-art/assets/main_screen_illustration_policy.json';
+import overrides from '../../spec/content-v3.6-story-engine-art/assets/scene_illustration_overrides_v3_6.json';
 import { element } from './dom';
 
 // 이미지 연결은 화면 전용이다. 스토리 ID/본문/선택/저장에는 기록하지 않는다.
-export const sceneIllustrations: Record<string, { asset: string; after?: string }> = {
+export const sceneIllustrations: Record<string, { asset: string; after?: string; age?: number }> = {
   birth: { asset: 'village' },
-  child: { asset: 'village' },
+  child: { asset: 'mina_wooden_sword', after: '미나는 당신에게 나무칼을 쥐여 줬다.', age: 12 },
   exam: { asset: 'mina' },
   prison: { asset: 'prison', after: '감옥에서' },
   princess: { asset: 'elysia' },
@@ -17,18 +18,32 @@ export const endingIllustrations: Record<string, { asset: string }> = {
   ending_throne: { asset: 'royal_trial' },
 };
 
-export function illustrationAsset(id: string, kind: 'scene' | 'ending' = 'scene') {
+type SceneContext = { body: string; age: number };
+export function illustrationAsset(id: string, kind: 'scene' | 'ending' = 'scene', context?: SceneContext) {
   const mapping = kind === 'scene' ? sceneIllustrations : endingIllustrations;
-  if (!policy.enabled || !Object.hasOwn(mapping, id)) return undefined;
+  if (!policy.enabled) return undefined;
+  if (kind === 'scene') {
+    const scene = Object.hasOwn(sceneIllustrations, id) ? sceneIllustrations[id]! : undefined;
+    if (scene?.age !== undefined && (!context || context.age !== scene.age || !context.body.includes(scene.after!))) return undefined;
+    if (!scene) {
+      // 동봉 명시 규칙만 따른다. 축제의 미나를 나무칼 CG와 자동으로 연결하지 않는다.
+      const override = overrides.rules.find(rule => rule.eventId === id);
+      if (!override || !context) return undefined;
+      return override.prefer.map(assetId => manifest.assets.find(asset => asset.id === assetId))
+        .find(asset => asset?.category === 'characters' && context.body.includes(asset.label));
+    }
+  }
+  if (!Object.hasOwn(mapping, id)) return undefined;
   return manifest.assets.find(asset => asset.id === mapping[id]!.asset);
 }
 
-export function renderIllustration(id: string, kind: 'scene' | 'ending' = 'scene', eager = false): HTMLElement | undefined {
-  const asset = illustrationAsset(id, kind);
-  if (!asset || !/^assets\/illustrations\/(characters|backgrounds|events)\/[a-z_]+\.webp$/.test(asset.path)) return undefined;
+export function renderIllustration(id: string, kind: 'scene' | 'ending' = 'scene', eager = false, context?: SceneContext): HTMLElement | undefined {
+  const asset = illustrationAsset(id, kind, context);
+  if (!asset || !/^assets\/illustrations\/(characters|backgrounds|events|event_cg)\/[a-z_]+\.webp$/.test(asset.path)) return undefined;
   const figure = element('figure', undefined, 'story-illustration');
   figure.dataset.assetId = asset.id;
   figure.style.setProperty('--illustration-ratio', String(asset.width / asset.height));
+  figure.style.setProperty('--asset-natural-width', `${asset.width}px`);
   const image = element('img');
   image.width = asset.width; image.height = asset.height;
   image.alt = asset.label; image.loading = eager ? 'eager' : 'lazy'; image.decoding = 'async';
@@ -39,8 +54,8 @@ export function renderIllustration(id: string, kind: 'scene' | 'ending' = 'scene
   return figure;
 }
 
-export function illustrateNarrative(prose: HTMLElement, nodeId: string, eager = false) {
-  const figure = renderIllustration(nodeId, 'scene', eager);
+export function illustrateNarrative(prose: HTMLElement, nodeId: string, eager = false, context?: SceneContext) {
+  const figure = renderIllustration(nodeId, 'scene', eager, context);
   if (!figure) return;
   const paragraphs = [...prose.querySelectorAll<HTMLElement>(':scope > .story-paragraph')];
   const anchor = sceneIllustrations[nodeId]?.after;

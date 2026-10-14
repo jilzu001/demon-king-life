@@ -63,6 +63,32 @@ test('그림 없는 사건은 텍스트로 진행하고 재판·엔딩 그림과
   const ended = await raw(page); await page.reload(); expect(await raw(page)).toBe(ended);
 });
 
+test('나무칼 그림은12세의 명시 문단과 함께 나타나며 원본 크기·선택·저장을 보호한다', async ({ page }) => {
+  await start(page); await select(page, 'family_accept'); const saved = await raw(page);
+  const figure = page.locator('#current-event .story-illustration');
+  await expect(figure).toHaveAttribute('data-asset-id', 'mina_wooden_sword'); await expect(figure).toBeHidden();
+  const node = chapter.nodes.find((n: { id: string }) => n.id === 'child');
+  const index = node.body.split(/\n[ \t]*\n+/).findIndex((p: string) => p.includes('미나는 당신에게 나무칼을 쥐여 줬다.'));
+  for (let i = 0; i < index; i++) await page.locator('#current-event .story-paragraph:visible').last().click();
+  await expect(figure).toBeVisible();
+  const image = figure.locator('img');
+  await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth === 770 && img.naturalHeight === 575)).toBe(true);
+  expect(await image.evaluate((img: HTMLImageElement) => { const r = img.getBoundingClientRect(); return r.width <= img.naturalWidth && r.height <= img.naturalHeight; })).toBe(true);
+  expect(await figure.evaluate(el => el.previousElementSibling!.textContent)).toContain('미나는 당신에게 나무칼을 쥐여 줬다.');
+  await expect(page.locator('#choice-dialog')).not.toBeVisible(); expect(await raw(page)).toBe(saved);
+  await select(page, 'trust_mina'); await scene(page);
+  await expect(page.locator('#current-event .story-illustration')).toHaveAttribute('data-asset-id', 'mina');
+  expect(JSON.parse((await raw(page))!).history).toHaveLength(2);
+});
+
+test('나무칼 CG가 없으면 빈 프레임 없이 친구 선택과 다음 사건으로 진행한다', async ({ page }) => {
+  await page.route('**/assets/illustrations/event_cg/mina_wooden_sword.webp', route => route.abort());
+  await start(page); await select(page, 'family_accept'); const saved = await raw(page);
+  await scene(page); await expect(page.locator('#current-event .story-illustration')).toHaveCount(0);
+  expect(await raw(page)).toBe(saved); await select(page, 'trust_mina');
+  expect(JSON.parse((await raw(page))!).currentNodeId).toBe('exam');
+});
+
 test('그림 로딩 실패 시 빈 프레임 없이 본문과 페이지·스크롤 선택을 계속한다', async ({ page }) => {
   await page.route('**/assets/illustrations/backgrounds/village.webp', route => route.abort());
   await start(page); const saved = await raw(page);

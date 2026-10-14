@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "endings": {
+    "ending_peace": {
+      "finalScene": "작은 가게의 마지막 불을 끄고 당신은 노을을 보았다. 세상은 당신을 마왕이라 불렀지만, 당신은 결국 자신의 하루를 살았다.",
+      "reflection": "마왕으로 태어난 줄 알았는데, 결국 사람으로 살았구나. 나쁘지 않은 인생이었다.",
+      "illustration": "sunset"
+    },
+    "ending_reform": {
+      "finalScene": "왕국이 사과하기까지 너무 많은 계절이 지났다. 그래도 다음 아이의 출생신고서에는 직업란이 비어 있었다. 당신은 그것을 보고 처음으로 이겼다고 생각했다.",
+      "reflection": "그때 포기했더라면 조금 편했을까. 그래도 이건 내가 남길 수 있는 가장 좋은 유산이다.",
+      "illustration": "scroll"
+    },
+    "ending_office": {
+      "finalScene": "당신은 더 이상 마왕이 아니었다. 다만 마왕이었던 덕분에 다른 사람들의 억울함을 알아보는 사람이 되었다.",
+      "reflection": "내 인생을 망친 서류로, 남의 인생을 구하게 될 줄이야.",
+      "illustration": "office"
+    },
+    "ending_escape": {
+      "finalScene": "무모한 탈옥은 왕국의 무기가 아니라 계단에서 끝났다.",
+      "reflection": "차라리 미나에게 한 번만 더 편지를 쓸 걸.",
+      "illustration": "stairs"
+    },
+    "ending_fire": {
+      "finalScene": "서류를 없애려다 사람의 삶과 자신의 미래를 태웠다.",
+      "reflection": "내 이름을 지우려다 다른 사람의 이름을 지웠구나.",
+      "illustration": "fire"
+    },
+    "ending_throne": {
+      "finalScene": "국왕 앞에서 소리친 용기는 처형장까지 이어졌다.",
+      "reflection": "돈은 못 받았는데 국방비는 올랐네. 정말 내 인생답다.",
+      "illustration": "crown"
+    },
+    "ending_ledger": {
+      "finalScene": "진실을 독점하려다 빈 종이만 남았다.",
+      "reflection": "누구라도 믿었더라면. 빈 종이보다는 나았을 텐데.",
+      "illustration": "book"
+    }
+  },
+  "replayRules": {
+    "onlyVisitedEvents": true,
+    "minEvents": 3,
+    "maxEvents": 8,
+    "showStageLabels": false
+  }
+}

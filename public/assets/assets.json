@@ -409,6 +409,15 @@
       "width": 128,
       "height": 91,
       "bytes": 1008
+    },
+    {
+      "id": "mina_wooden_sword",
+      "category": "event_cg",
+      "label": "어린 미나가 나무칼을 건네는 장면",
+      "path": "assets/illustrations/event_cg/mina_wooden_sword.webp",
+      "width": 770,
+      "height": 575,
+      "bytes": 63302
     }
   ],
   "suggestedMapping": {

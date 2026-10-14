@@ -509,7 +509,7 @@ function renderScene(layout: HTMLElement, content: PresentedStory, current: Game
   const title = element('h2', node.title); title.id = 'scene-title'; title.tabIndex = -1;
   heading.append(title);
   const narrative = renderNarrative(node.body, presentation, isCompact(content.manifest));
-  if (isCompact(content.manifest)) illustrateNarrative(narrative, node.id, !current.history.length);
+  if (isCompact(content.manifest)) illustrateNarrative(narrative, node.id, !current.history.length, { age: current.age, body: node.body });
   panel.append(heading, narrative);
   const dialog = element('dialog', undefined, 'choice-dialog'); dialog.id = 'choice-dialog';
   const top = element('div', undefined, 'choice-dialog-heading');
