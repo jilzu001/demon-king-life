@@ -9,7 +9,7 @@ export class PageReader {
   bind(options: {
     key: string; viewport: HTMLElement; content: HTMLElement; surface: HTMLElement; toolbar: HTMLElement;
     paused: boolean; canChoose: () => boolean; gates: HTMLElement[]; choiceButtons?: HTMLButtonElement[];
-    finishLabel: string; onComplete: () => void;
+    finishLabel: string; onComplete: () => void; onPage?: () => void;
   }) {
     this.detach();
     if (options.key !== this.key) { this.key = options.key; this.index = 0; this.complete = false; }
@@ -25,6 +25,7 @@ export class PageReader {
     const update = () => {
       this.index = Math.min(this.index, count - 1);
       content.style.transform = `translateX(${-this.index * pitch}px)`;
+      options.onPage?.();
       viewport.dataset.pageIndex = String(this.index); viewport.dataset.pageCount = String(count);
       surface.dataset.reading = String(!this.complete);
       status.textContent = `${this.index + 1} / ${count}페이지 · 누르면 다음 페이지`;

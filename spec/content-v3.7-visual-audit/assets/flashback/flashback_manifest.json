@@ -1,0 +1,102 @@
+{
+  "version": "v3.6-flashback-assets",
+  "source": "Single AI-generated collage cropped into 10 panels; not 10 separately generated images.",
+  "note": "Only display memories actually visited by player. Titles/ages in the reference montage are illustrative, NOT canonical story events.",
+  "assets": [
+    {
+      "file": "assets/flashback/fb_01_childhood_sword.webp",
+      "width": 294,
+      "height": 197,
+      "bytes": 15696,
+      "suggested_tags": [
+        "childhood",
+        "sword"
+      ]
+    },
+    {
+      "file": "assets/flashback/fb_02_training.webp",
+      "width": 283,
+      "height": 197,
+      "bytes": 13920,
+      "suggested_tags": [
+        "training"
+      ]
+    },
+    {
+      "file": "assets/flashback/fb_03_farewell.webp",
+      "width": 280,
+      "height": 197,
+      "bytes": 14712,
+      "suggested_tags": [
+        "farewell"
+      ]
+    },
+    {
+      "file": "assets/flashback/fb_04_royal_invitation.webp",
+      "width": 285,
+      "height": 197,
+      "bytes": 14240,
+      "suggested_tags": [
+        "royal",
+        "invitation"
+      ]
+    },
+    {
+      "file": "assets/flashback/fb_05_danger.webp",
+      "width": 286,
+      "height": 197,
+      "bytes": 9890,
+      "suggested_tags": [
+        "danger"
+      ]
+    },
+    {
+      "file": "assets/flashback/fb_06_friends.webp",
+      "width": 246,
+      "height": 194,
+      "bytes": 15876,
+      "suggested_tags": [
+        "friends"
+      ]
+    },
+    {
+      "file": "assets/flashback/fb_07_decision.webp",
+      "width": 252,
+      "height": 194,
+      "bytes": 9620,
+      "suggested_tags": [
+        "decision"
+      ]
+    },
+    {
+      "file": "assets/flashback/fb_08_loss.webp",
+      "width": 252,
+      "height": 194,
+      "bytes": 10492,
+      "suggested_tags": [
+        "loss"
+      ]
+    },
+    {
+      "file": "assets/flashback/fb_09_last_memory.webp",
+      "width": 254,
+      "height": 194,
+      "bytes": 7822,
+      "suggested_tags": [
+        "last",
+        "memory"
+      ]
+    },
+    {
+      "file": "assets/flashback/fb_10_royal_hall_wide.webp",
+      "width": 775,
+      "height": 343,
+      "bytes": 39424,
+      "suggested_tags": [
+        "royal",
+        "hall",
+        "wide"
+      ]
+    }
+  ]
+}

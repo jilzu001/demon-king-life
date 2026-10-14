@@ -6,16 +6,19 @@ import { element } from './dom';
 // 이미지 연결은 화면 전용이다. 스토리 ID/본문/선택/저장에는 기록하지 않는다.
 export const sceneIllustrations: Record<string, { asset: string; after?: string; age?: number }> = {
   birth: { asset: 'village' },
-  child: { asset: 'mina_wooden_sword', after: '미나는 당신에게 나무칼을 쥐여 줬다.', age: 12 },
+  child: { asset: 'mina', after: '미나는 당신에게 나무칼을 쥐여 줬다.', age: 12 },
   exam: { asset: 'mina' },
   prison: { asset: 'prison', after: '감옥에서' },
   princess: { asset: 'elysia' },
   hearing: { asset: 'mina', after: '미나가 증인석에서' },
   quiet: { asset: 'village' },
+  confession: { asset: 'mina', after: '미나는 검을 내리지 않았다.' },
+  confession_afterm: { asset: 'mina' },
+  confession_chaos: { asset: 'mina', after: '미나가 검을 내려놓았다.' },
 };
 export const endingIllustrations: Record<string, { asset: string }> = {
-  ending_peace: { asset: 'final_sunset' },
-  ending_throne: { asset: 'royal_trial' },
+  ending_peace: { asset: 'protagonist' },
+  ending_throne: { asset: 'king' },
 };
 
 type SceneContext = { body: string; age: number };

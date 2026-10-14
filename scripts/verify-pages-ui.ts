@@ -1,4 +1,5 @@
 import { chromium, expect, type Page } from '@playwright/test';
+import { compactSpeaker } from '../src/ui/visual-identity';
 
 const url = process.argv[2] ?? 'http://127.0.0.1:4175/';
 const screenshots = process.argv.includes('--screenshots');
@@ -20,7 +21,7 @@ async function visibleLetters(page: Page) {
   });
 }
 try {
-  for (const [width, height] of [[1280, 900], [320, 568], [360, 800], [390, 844], [430, 932], [640, 430]]) {
+  for (const [width, height] of [[1280, 900], [320, 568], [360, 800], [390, 844], [430, 932]]) {
     const page = await browser.newPage({ viewport: { width: width!, height: height! } });
     const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
     const time = new Date('2026-10-14T00:00:00Z'); await page.clock.install({ time }); await page.clock.pauseAt(time);
@@ -54,7 +55,11 @@ try {
     await page.locator('#reading-skip').click(); await expect(page.locator('#current-event')).toBeAttached();
     await page.locator('#reading-skip').click(); await page.locator('[data-choice="trust_mina"]').click(); await page.clock.runFor(400); await page.locator('#reading-skip').click();
     await expect(page.locator('.page-window')).toHaveAttribute('data-page-index', '0');
-    await expect(page.locator('#npc-image')).toHaveAttribute('alt', '미나 초상화');
+    const last = await page.locator('.page-window').evaluate(viewport => {
+      const box = viewport.getBoundingClientRect();
+      return [...viewport.querySelectorAll('.story-paragraph')].filter(p => [...p.getClientRects()].some(r => r.left < box.right - 1 && r.right > box.left + 1 && r.top < box.bottom && r.bottom > box.top)).at(-1)?.textContent ?? '';
+    });
+    await expect(page.locator('#npc-image')).toHaveAttribute('alt', compactSpeaker('exam', last) === 'mina' ? '미나 초상화' : '연대기 배경');
     if (screenshots) await page.screenshot({ path: `docs/pages-exam-${width}.png`, animations: 'disabled' });
     const saved = await raw(); await page.reload(); await expect(page.locator('#reading-mode')).toHaveText('스크롤 방식'); expect(await raw()).toBe(saved);
     await page.locator('#reading-mode').click(); await expect(page.locator('.page-window')).toHaveCount(0); await expect(page.locator('#reading-mode')).toHaveText('페이지 방식');

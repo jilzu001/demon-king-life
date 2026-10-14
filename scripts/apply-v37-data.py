@@ -32,8 +32,4 @@ sentences = love['body'].rsplit(' 당신은 그날', 1)
 assert len(sentences) == 2
 cinematic['endings'][love['id']] = dict(finalScene=sentences[0], reflection='당신은 그날' + sentences[1], illustration='book')
 write(target / 'ending_cinematics.json', cinematic)
-flashbacks = source / 'assets/illustrations/flashbacks'
-destination = root / 'public/assets/illustrations/flashbacks'
-destination.mkdir(parents=True, exist_ok=True)
-for asset in flashbacks.glob('*.webp'):
-    (destination / asset.name).write_bytes(asset.read_bytes())
+# 미승인 회상 이미지는 spec 원본에 보관하며 공개 경로에 연결하지 않는다.

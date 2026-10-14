@@ -10,13 +10,17 @@ const story = await readExampleStory('demon-king-compact');
 const shared = ['family_accept', 'trust_mina'];
 const cases = [
   { id: 'birth', path: [], asset: 'village' },
-  { id: 'child', path: ['family_accept'], asset: 'mina_wooden_sword' },
+  { id: 'child', path: ['family_accept'], asset: 'mina' },
   { id: 'exam', path: shared, asset: 'mina' },
   { id: 'prison', path: [...shared, 'attack'], asset: 'prison' },
   { id: 'hearing', path: [...shared, 'attack', 'forgive', 'ally', 'public_audit'], asset: 'mina' },
   { id: 'audit', path: [...shared, 'attack', 'forgive', 'ally'], asset: null },
-  { id: 'ending_peace', path: [...shared, 'attack', 'forgive', 'ally', 'public_audit', 'walk_away', 'end_peace'], asset: 'final_sunset' },
-  { id: 'ending_throne', path: [...shared, 'invoice', 'threaten_king'], asset: 'royal_trial' },
+  { id: 'confession', path: [...shared, 'confess'], asset: 'mina' },
+  { id: 'confession_afterm', path: [...shared, 'confess', 'confess_sincere'], asset: 'mina' },
+  { id: 'confession_chaos', path: [...shared, 'confess', 'confess_absurd'], asset: 'mina' },
+  { id: 'ending_peace', path: [...shared, 'attack', 'forgive', 'ally', 'public_audit', 'walk_away', 'end_peace'], asset: 'protagonist' },
+  { id: 'ending_throne', path: [...shared, 'invoice', 'threaten_king'], asset: 'king' },
+  { id: 'ending_love_scandal', path: [...shared, 'confess', 'confess_absurd', 'embrace_fame'], asset: null },
 ];
 
 async function checkPageText(page: Page, label: string, screenshotPath?: string) {
@@ -78,7 +82,7 @@ try {
       if (!state.ended) {
         await expect(page.locator('#current-event')).toBeAttached();
         if (mode === 'page') await checkPageText(page, `${width}×${height} ${item.id}`,
-          screenshots && item.id === 'child' && [1280, 390, 320].includes(width!) ? `docs/v36-page-child-${width}-dpr${deviceScaleFactor}.png` : undefined);
+          screenshots && ['child', 'exam', 'confession'].includes(item.id) && [1280, 390, 320].includes(width!) ? `docs/v37-review/page-${item.id}-${width}-dpr${deviceScaleFactor}.png` : undefined);
         await page.locator('#reading-skip').click(); await expect(page.locator('#choice-dialog')).toBeVisible();
         await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
       } else await expect(page.locator('[data-ending-phase="0"]')).toBeVisible();
@@ -104,11 +108,11 @@ try {
       expect(await page.evaluate(() => devicePixelRatio)).toBe(deviceScaleFactor);
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && document.documentElement.scrollHeight <= innerHeight + 1)).toBe(true);
       expect(await page.evaluate(() => localStorage.getItem('existence-sim:v1:run:demon-king:compact'))).toBe(saved);
-      if (screenshots && mode === 'scroll' && ['child'].includes(item.id) && [1280, 390, 320].includes(width!)) {
-        await page.screenshot({ path: `docs/v36-${mode}-${item.id}-${width}-dpr${deviceScaleFactor}.png`, animations: 'disabled' });
+      if (screenshots && mode === 'scroll' && ['child', 'exam', 'confession'].includes(item.id) && [1280, 390, 320].includes(width!)) {
+        await page.screenshot({ path: `docs/v37-review/${mode}-${item.id}-${width}-dpr${deviceScaleFactor}.png`, animations: 'disabled' });
       }
       expect(errors).toEqual([]); await page.close();
     }
-    console.log(`${width}×${height}/DPR${deviceScaleFactor}: 스크롤/페이지·150% 글자·나무칼 CG/텍스트 전용·원본 크기 상한·글자 전체 노출·선택 팝업·저장 원장 보호 통과 (${url})`);
+    console.log(`${width}×${height}/DPR${deviceScaleFactor}: 스크롤/페이지·150% 글자·동일 미나/고백/텍스트 전용·원본 크기 상한·글자 전체 노출·선택 팝업·저장 원장 보호 통과 (${url})`);
   }
 } finally { await browser.close(); }

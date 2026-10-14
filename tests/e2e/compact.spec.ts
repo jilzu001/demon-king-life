@@ -1,5 +1,8 @@
 import { test, expect, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+const fixtures = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/v37-ui-fixtures.ts'], { encoding: 'utf8' }));
+const COMPACT_V37_BACKUP_KEY = 'existence-sim:v1:backup:before-v3.7:demon-king:compact';
 
 const key = 'existence-sim:v1:run:demon-king:compact';
 const metaKey = 'existence-sim:v1:meta:demon-king:compact';
@@ -25,6 +28,85 @@ async function select(page: Page, id: string) {
 }
 test.beforeEach(async ({ page }) => {
   const time = new Date('2026-10-14T00:00:00Z'); await page.clock.install({ time }); await page.clock.pauseAt(time);
+});
+
+test('고백은 네 번째 선택으로 표시되고 실제 화자만 초상화가 나타나며 내레이션에 퇴장한다', async ({ page }) => {
+  await start(page); for (const id of ['family_accept', 'trust_mina']) await select(page, id);
+  await expect(page.locator('#npc-image')).toHaveAttribute('alt', '연대기 배경');
+  const lines = chapter.nodes.find((n: { id: string }) => n.id === 'exam').body.split('\n\n');
+  for (let index = 1; index <= 9; index++) {
+    await page.locator('#current-event .story-paragraph:visible').last().click();
+    await expect(page.locator('#npc-image')).toHaveAttribute('alt', index === 8 ? '미나 초상화' : '연대기 배경');
+    if (index === 8) {
+      expect(await page.locator('#npc-image').getAttribute('src')).toBe(await page.locator('.story-illustration img').getAttribute('src'));
+      await page.screenshot({ path: `docs/v37-review/exam-speaker-${test.info().project.name}.png`, animations: 'disabled' });
+    }
+    expect(lines[index]).toBeDefined();
+  }
+  await scene(page); await expect(page.locator('[data-choice]')).toHaveCount(4);
+  await expect(page.locator('[data-choice="confess"] .choice-title')).toHaveText('미나에게 사랑한다고 고백한다.');
+  await select(page, 'confess'); expect(JSON.parse((await raw(page))!).currentNodeId).toBe('confession');
+  await page.locator('#current-event .story-paragraph:visible').last().click();
+  await page.locator('#current-event .story-paragraph:visible').last().click();
+  await expect(page.locator('#npc-image')).toHaveAttribute('alt', '연대기 배경');
+  await page.locator('#current-event .story-paragraph:visible').last().click();
+  await expect(page.locator('#npc-image')).toHaveAttribute('alt', '미나 초상화');
+  await select(page, 'confess_sincere');
+  expect(JSON.parse((await raw(page))!).currentNodeId).toBe('confession_afterm');
+  await select(page, 'support_mina');
+  await page.reload(); expect(JSON.parse((await raw(page))!).history.map((h: { choiceId: string }) => h.choiceId)).toContain('confess');
+});
+
+test('구버전 실제 저장은 원문 백업 후 이어지고 감사관/미나/에리시아 교체와 페이지 내레이션을 보호한다', async ({ page }) => {
+  const old = fixtures.old;
+  const saved = JSON.stringify(old);
+  await page.addInitScript(({ saved, key }) => {
+    localStorage.setItem(key, saved); sessionStorage.setItem('demon-king:title-seen:compact', '1');
+    localStorage.setItem('demon-king:compact-view:v37-old-save', JSON.stringify({ handledHistory: 5, phase: 0, memoryIndex: 0 }));
+  }, { saved, key });
+  await page.goto('./'); await expect(page.locator('#current-event')).toBeAttached();
+  expect(JSON.parse((await raw(page))!)).toEqual({ ...old, storyVersion: '2.3.0-compact' });
+  expect(JSON.parse((await page.evaluate(key => localStorage.getItem(key), COMPACT_V37_BACKUP_KEY))!).run).toBe(saved);
+  for (let index = 1; index <= 18; index++) {
+    await page.locator('#current-event .story-paragraph:visible').last().click();
+    await expect(page.locator('#npc-image')).toHaveAttribute('alt', index === 15 ? '미나 초상화' : index === 17 ? '에리시아 초상화' : '연대기 배경');
+  }
+  await page.locator('#reading-mode').click();
+  const count = Number(await page.locator('.page-window').getAttribute('data-page-count'));
+  for (let i = 0; i < count; i++) {
+    const actor = await page.locator('.page-window').evaluate(viewport => {
+      const box = viewport.getBoundingClientRect();
+      return [...viewport.querySelectorAll('.story-paragraph')].filter(p => [...p.getClientRects()].some(r => r.left < box.right - 1 && r.right > box.left + 1 && r.top < box.bottom && r.bottom > box.top)).at(-1)?.textContent;
+    });
+    const expected = actor === '“이건 사람의 인생을 훔친 일이야.”' ? '미나 초상화' : actor === '“그래서 법으로 이겨야 해요. 화를 낸다고 장부가 열리진 않으니까.”' ? '에리시아 초상화' : '연대기 배경';
+    await expect(page.locator('#npc-image')).toHaveAttribute('alt', expected);
+    if (i + 1 < count) await page.getByRole('button', { name: '다음 페이지', exact: true }).click();
+  }
+});
+
+test('선택2·3·4·5개는 전부 표시되고 각 선택과 마지막 항목을 클릭할 수 있다', async ({ page }) => {
+  const state = fixtures.exam;
+  for (const count of [2, 3, 4, 5]) for (let selected = 0; selected < count; selected++) {
+    const fixture = structuredClone(chapter);
+    const exam = fixture.nodes.find((n: { id: string }) => n.id === 'exam');
+    if (count === 5) exam.choices.push({ ...structuredClone(exam.choices[2]), id: 'test_fifth', text: '검수용 다섯 번째 선택', outcomes: exam.choices[2].outcomes.map((o: { id: string }) => ({ ...o, id: 'out_test_fifth' })) });
+    exam.choices = exam.choices.slice(0, count);
+    await page.route('**/stories/demon-king-compact/chapters/01_complete.json', route => route.fulfill({ json: fixture }));
+    await page.goto('./');
+    await page.evaluate(({ key, state }) => {
+      localStorage.setItem(key, JSON.stringify(state)); sessionStorage.setItem('demon-king:title-seen:compact', '1');
+      localStorage.setItem('demon-king:compact-view:choices-audit', JSON.stringify({ handledHistory: 2, phase: 0, memoryIndex: 0 }));
+      localStorage.setItem('demon-king:ui:text-percent', '150');
+    }, { key, state });
+    await page.reload(); await scene(page);
+    await expect(page.locator('[data-choice]')).toHaveCount(count);
+    const choice = exam.choices[selected];
+    await page.locator(`[data-choice="${choice.id}"]`).scrollIntoViewIfNeeded();
+    await page.locator(`[data-choice="${choice.id}"]`).click();
+    await expect(page.locator('#choice-aftermath')).toBeVisible();
+    expect(JSON.parse((await raw(page))!).history.at(-1).choiceId).toBe(choice.id);
+    await page.unroute('**/stories/demon-king-compact/chapters/01_complete.json');
+  }
 });
 
 test('본문 그림은 관련 문단과 함께 나타나고 클릭당 한 문단·연대기·선택 팝업을 유지한다', async ({ page }) => {
@@ -59,20 +141,20 @@ test('그림 없는 사건은 텍스트로 진행하고 재판·엔딩 그림과
   await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
   await expect(page.locator('.choice-launch')).toBeVisible(); await page.locator('.choice-launch').click();
   await select(page, 'walk_away'); await select(page, 'end_peace');
-  await expect(page.locator('[data-ending-phase="0"] .story-illustration img')).toHaveAttribute('alt', '마지막 장면');
+  await expect(page.locator('[data-ending-phase="0"] .story-illustration img')).toHaveAttribute('alt', '주인공');
   const ended = await raw(page); await page.reload(); expect(await raw(page)).toBe(ended);
 });
 
-test('나무칼 그림은12세의 명시 문단과 함께 나타나며 원본 크기·선택·저장을 보호한다', async ({ page }) => {
+test('나무칼 장면은 미나 기준 초상화로 대체하고 문단·원본 크기·선택·저장을 보호한다', async ({ page }) => {
   await start(page); await select(page, 'family_accept'); const saved = await raw(page);
   const figure = page.locator('#current-event .story-illustration');
-  await expect(figure).toHaveAttribute('data-asset-id', 'mina_wooden_sword'); await expect(figure).toBeHidden();
+  await expect(figure).toHaveAttribute('data-asset-id', 'mina'); await expect(figure).toBeHidden();
   const node = chapter.nodes.find((n: { id: string }) => n.id === 'child');
   const index = node.body.split(/\n[ \t]*\n+/).findIndex((p: string) => p.includes('미나는 당신에게 나무칼을 쥐여 줬다.'));
   for (let i = 0; i < index; i++) await page.locator('#current-event .story-paragraph:visible').last().click();
   await expect(figure).toBeVisible();
   const image = figure.locator('img');
-  await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth === 770 && img.naturalHeight === 575)).toBe(true);
+  await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth === 320 && img.naturalHeight === 505)).toBe(true);
   expect(await image.evaluate((img: HTMLImageElement) => { const r = img.getBoundingClientRect(); return r.width <= img.naturalWidth && r.height <= img.naturalHeight; })).toBe(true);
   expect(await figure.evaluate(el => el.previousElementSibling!.textContent)).toContain('미나는 당신에게 나무칼을 쥐여 줬다.');
   await expect(page.locator('#choice-dialog')).not.toBeVisible(); expect(await raw(page)).toBe(saved);
@@ -81,8 +163,8 @@ test('나무칼 그림은12세의 명시 문단과 함께 나타나며 원본 �
   expect(JSON.parse((await raw(page))!).history).toHaveLength(2);
 });
 
-test('나무칼 CG가 없으면 빈 프레임 없이 친구 선택과 다음 사건으로 진행한다', async ({ page }) => {
-  await page.route('**/assets/illustrations/event_cg/mina_wooden_sword.webp', route => route.abort());
+test('미나 기본 초상화가 없으면 빈 프레임 없이 친구 선택과 다음 사건으로 진행한다', async ({ page }) => {
+  await page.route('**/assets/illustrations/characters/mina.webp', route => route.abort());
   await start(page); await select(page, 'family_accept'); const saved = await raw(page);
   await scene(page); await expect(page.locator('#current-event .story-illustration')).toHaveCount(0);
   expect(await raw(page)).toBe(saved); await select(page, 'trust_mina');
@@ -146,13 +228,14 @@ test('연대기는 방문한 사건의 독립 요약만 한 줄로 표시하고 
   await page.getByRole('button', { name: '선택지 보기', exact: true }).click(); await expect(page.locator('#choice-dialog')).toBeVisible();
 });
 
-test('7개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건만 회상하며 마지막에 중복 없이 해금된다', async ({ page }) => {
+test('8개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건만 회상하며 마지막에 중복 없이 해금된다', async ({ page }) => {
   const paths: Record<string, string[]> = {
     ending_escape: ['attack', 'escape_prison'], ending_fire: ['refuse', 'burn_office'], ending_throne: ['invoice', 'threaten_king'],
     ending_ledger: ['refuse', 'keep_records', 'ally', 'steal_ledger'],
     ending_peace: ['attack', 'forgive', 'ally', 'private_deal', 'take_money', 'end_peace'],
     ending_reform: ['attack', 'forgive', 'ally', 'private_deal', 'reject_money', 'end_reform'],
     ending_office: ['attack', 'forgive', 'ally', 'private_deal', 'buy_office', 'end_office'],
+    ending_love_scandal: ['confess', 'confess_absurd', 'embrace_fame'],
   };
   for (const [endingId, choices] of Object.entries(paths)) {
     await page.goto('./?edition=compact');
@@ -160,6 +243,7 @@ test('7개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건�
     await start(page);
     for (const id of ['family_accept', 'trust_mina', ...choices]) await select(page, id);
     await expect(page.locator('[data-ending-phase="0"]')).toBeVisible(); await expect(page.locator('.game-header')).toHaveCount(0);
+    if (endingId === 'ending_peace' || endingId === 'ending_throne') await page.screenshot({ path: `docs/v37-review/${endingId}-${test.info().project.name}.png`, animations: 'disabled' });
     const state = JSON.parse((await raw(page))!); expect(state.endingId).toBe(endingId);
     const beforeMeta = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), metaKey);
     expect(beforeMeta.discoveredEndings['demon-king'] ?? []).not.toContain(endingId);
@@ -167,10 +251,14 @@ test('7개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건�
     const memories: string[] = [];
     while (await page.locator('[data-ending-phase="1"]').count()) {
       const nodeId = await page.locator('[data-memory-node]').getAttribute('data-memory-node'); memories.push(nodeId!);
+      if (endingId === 'ending_peace' && nodeId === 'child') {
+        await expect(page.locator('[data-memory-node] .story-illustration')).toHaveAttribute('data-asset-id', 'mina');
+        await page.screenshot({ path: `docs/v37-review/memory-mina-${test.info().project.name}.png`, animations: 'disabled' });
+      }
       expect(state.history.map((h: { nodeId: string }) => h.nodeId)).toContain(nodeId);
       await page.getByRole('button', { name: '이어서', exact: true }).click();
     }
-    expect(memories.length).toBeLessThanOrEqual(8); expect(new Set(memories).size).toBe(memories.length);
+    expect(memories.length).toBeGreaterThanOrEqual(4); expect(memories.length).toBeLessThanOrEqual(8); expect(new Set(memories).size).toBe(memories.length);
     const originalOrder = state.history.map((h: { nodeId: string }) => h.nodeId).filter((id: string) => memories.includes(id)); expect(memories).toEqual(originalOrder);
     await expect(page.locator('[data-ending-phase="2"]')).toBeVisible();
     expect(await page.locator('.cinematic-shell').innerText()).not.toMatch(/마지막 순간|주마등|독백|엔딩카드|1\/4/);

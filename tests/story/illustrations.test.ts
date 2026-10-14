@@ -16,19 +16,24 @@ describe('본문 일러스트의 콘텐츠 보호와 실제 에셋', () => {
       expect(bytes.subarray(8, 12).toString()).toBe('WEBP');
     }
   });
-  it('나무칼 CG는 명시된12세 행동에서만 선택하고 축제/다른 나이/내용에는 억지 배치하지 않는다', () => {
+  it('미검증 나무칼 CG 대신 동일한 미나 기본 초상화를 표시한다', () => {
     const body = '미나는 당신에게 나무칼을 쥐여 줬다.';
-    expect(illustrationAsset('child', 'scene', { age: 12, body })?.id).toBe('mina_wooden_sword');
+    expect(illustrationAsset('child', 'scene', { age: 12, body })?.id).toBe('mina');
     expect(illustrationAsset('child')).toBeUndefined();
     expect(illustrationAsset('child', 'scene', { age: 20, body })).toBeUndefined();
     expect(illustrationAsset('child', 'scene', { age: 12, body: '다른 사건.' })).toBeUndefined();
     expect(illustrationAsset('mina_festival', 'scene', { age: 18, body: '미나는 나무칼을 들었다.' })?.id).toBe('mina');
     expect(illustrationAsset('mina_festival', 'scene', { age: 18, body: '인물이 없는 사건.' })).toBeUndefined();
   });
-  it('기존 스토리·선택·엔딩·상태 JSON이 기존 적용 원본과 바이트 단위로 동일하다', () => {
-    for (const file of ['story.json', 'characters.json', 'endings.json', 'ending_cinematics.json', 'chapters/01_complete.json']) {
+  it('캐릭터/초기 상태와 기존7엔딩의 연출을 유지한다', () => {
+    for (const file of ['characters.json']) {
       expect(readFileSync(`public/stories/demon-king-compact/${file}`)).toEqual(readFileSync(`spec/content-v2.6-compact-timeline/${file}`));
     }
+    const read = (root: string, file: string) => JSON.parse(readFileSync(`${root}/${file}`, 'utf8'));
+    const current = 'public/stories/demon-king-compact'; const old = 'spec/content-v2.6-compact-timeline';
+    expect(read(current, 'story.json').initialState).toEqual(read(old, 'story.json').initialState);
+    const cinemas = read(current, 'ending_cinematics.json').endings;
+    for (const [id, value] of Object.entries(read(old, 'ending_cinematics.json').endings)) expect(cinemas[id]).toEqual(value);
   });
   it('실제 사건만 연결하고 등록되지 않은 사건·별칭·잘못된 키에는 그림을 배정하지 않는다', () => {
     const nodes = JSON.parse(readFileSync('public/stories/demon-king-compact/chapters/01_complete.json', 'utf8')).nodes;
@@ -38,6 +43,6 @@ describe('본문 일러스트의 콘텐츠 보호와 실제 에셋', () => {
     for (const id of ['audit', 'settlement', 'exam_confession', 'constructor', '__proto__']) expect(illustrationAsset(id)).toBeUndefined();
     expect(illustrationAsset('exam')?.id).toBe('mina');
     expect(illustrationAsset('hearing')?.id).toBe('mina');
-    expect(illustrationAsset('ending_throne', 'ending')?.id).toBe('royal_trial');
+    expect(illustrationAsset('ending_throne', 'ending')?.id).toBe('king');
   });
 });

@@ -56,7 +56,10 @@ export function renderCompactEnding(layout: HTMLElement, story: PresentedStory, 
     const { entry, node } = memories[index]!;
     const choice = node.choices.find(c => c.id === entry.choiceId)!;
     content.dataset.memoryNode = node.id;
-    content.append(compactArt(memoryArtKey(node.id)), element('p', `${entry.age}세 · ${node.title}`, 'cinematic-memory-title'), element('p', choice.text, 'cinematic-text'));
+    // 실제 방문한 인물의 기준 초상화만 사용한다. 미승인 회상 CG는 연결하지 않는다.
+    const portrait = ['child', 'exam', 'confession', 'confession_afterm', 'confession_chaos'].includes(node.id)
+      ? renderIllustration('exam', 'scene', true) : undefined;
+    content.append(portrait ?? compactArt(memoryArtKey(node.id)), element('p', `${entry.age}세 · ${node.title}`, 'cinematic-memory-title'), element('p', choice.text, 'cinematic-text'));
   }
   if (phase === 2) content.append(element('p', cinematic.reflection, 'cinematic-text cinematic-reflection'));
   if (phase === 3) {

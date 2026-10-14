@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "rules": [
+    {
+      "eventId": "mina_festival",
+      "prefer": [
+        "mina",
+        "mina_wooden_sword"
+      ],
+      "note": "Only use wooden sword CG if exact scene depicts wooden sword; otherwise Mina portrait or no image"
+    }
+  ],
+  "dialogueSceneDefault": "character-first",
+  "noMatch": "omit-image",
+  "neverMandatory": true
+}

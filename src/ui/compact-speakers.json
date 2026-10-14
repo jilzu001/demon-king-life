@@ -1,0 +1,258 @@
+{
+  "birth": [],
+  "child": [
+    {
+      "index": 1,
+      "text": "“나 용사 될 거야.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 3,
+      "text": "“넌 마왕이잖아.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 5,
+      "text": "“서류상 마왕도 마왕이야. 용사 시험 설명서에 그렇게 써 있어.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 7,
+      "text": "“전투력 2.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 9,
+      "text": "“측정했어. 내 건 8,402.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 12,
+      "text": "“네가 칼을 놓친 거지.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 14,
+      "text": "“내가 용사가 되면,”",
+      "speaker": "mina"
+    },
+    {
+      "index": 16,
+      "text": "“널 안 죽이는 방법을 찾아볼게.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 18,
+      "text": "“시험에 나와.”",
+      "speaker": "mina"
+    }
+  ],
+  "exam": [
+    {
+      "index": 8,
+      "text": "“진짜 싸워야 해?”",
+      "speaker": "mina"
+    },
+    {
+      "index": 17,
+      "text": "“알아.”",
+      "speaker": "mina"
+    }
+  ],
+  "prison": [
+    {
+      "index": 6,
+      "text": "“저 사람은 날 해칠 능력이 없어요.”",
+      "speaker": "mina"
+    }
+  ],
+  "petition": [],
+  "invoice": [],
+  "princess": [
+    {
+      "index": 1,
+      "text": "“왕이 되고 싶나요?”",
+      "speaker": "erisia"
+    },
+    {
+      "index": 3,
+      "text": "“왕에게 필요한 건 전투력이 아니라 서명입니다. 그건 당신도 할 수 있겠죠.”",
+      "speaker": "erisia"
+    },
+    {
+      "index": 6,
+      "text": "“국왕은 마왕이 필요해요. 적이 있어야 국방비가 나오니까. 그런데 진짜 마왕은 위험하죠.”",
+      "speaker": "erisia"
+    },
+    {
+      "index": 8,
+      "text": "“당신이 왕국에서 가장 안전한 적입니다.”",
+      "speaker": "erisia"
+    },
+    {
+      "index": 10,
+      "text": "“정확한 평가죠.”",
+      "speaker": "erisia"
+    },
+    {
+      "index": 13,
+      "text": "“그러니까 같이 조사하자는 거예요.”",
+      "speaker": "erisia"
+    },
+    {
+      "index": 15,
+      "text": "“아버지의 왕좌가 필요하거든요.”",
+      "speaker": "erisia"
+    },
+    {
+      "index": 17,
+      "text": "“당신에게 거짓말할 이유가 없어요. 당신은 제 거짓말을 폭로할 힘도 없으니까.”",
+      "speaker": "erisia"
+    }
+  ],
+  "audit": [
+    {
+      "index": 1,
+      "text": "“마왕 관리 예산 200만 골드. 가족 지급 3천 골드. 차액 199만 7천 골드.”",
+      "speaker": "auditor"
+    },
+    {
+      "index": 4,
+      "text": "“아직 훔쳤다고 단정할 수 없습니다.”",
+      "speaker": "auditor"
+    },
+    {
+      "index": 6,
+      "text": "“특별관리 계정으로 이체됐습니다.”",
+      "speaker": "auditor"
+    },
+    {
+      "index": 8,
+      "text": "“국방부 특별관리과입니다.”",
+      "speaker": "auditor"
+    },
+    {
+      "index": 11,
+      "text": "“마왕의 존재를 관리합니다.”",
+      "speaker": "auditor"
+    },
+    {
+      "index": 13,
+      "text": "“그렇죠. 아주 효율적인 사업이었습니다.”",
+      "speaker": "auditor"
+    },
+    {
+      "index": 15,
+      "text": "“이건 사람의 인생을 훔친 일이야.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 17,
+      "text": "“그래서 법으로 이겨야 해요. 화를 낸다고 장부가 열리진 않으니까.”",
+      "speaker": "erisia"
+    }
+  ],
+  "hearing": [
+    {
+      "index": 13,
+      "text": "“저는 그를 제압해서 용사가 됐습니다. 그는 제 친구였고, 제가 평생 본 사람 중 가장 약했습니다.”",
+      "speaker": "mina"
+    }
+  ],
+  "settlement": [],
+  "quiet": [],
+  "final_trial": [
+    {
+      "index": 5,
+      "text": "“기뻐?”",
+      "speaker": "mina"
+    },
+    {
+      "index": 7,
+      "text": "“왜?”",
+      "speaker": "mina"
+    },
+    {
+      "index": 10,
+      "text": "“아니요. 다음 사람은 인생을 쓰지 않아도 되게 했잖아요.”",
+      "speaker": "erisia"
+    }
+  ],
+  "office": [],
+  "confession": [
+    {
+      "index": 3,
+      "text": "“지금? 내 국가고시 시험장에서?”",
+      "speaker": "mina"
+    },
+    {
+      "index": 5,
+      "text": "“넌 내가 합격하느냐 마느냐가 걸린 날에 왜 그러는데?”",
+      "speaker": "mina"
+    },
+    {
+      "index": 12,
+      "text": "“하나만 묻자.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 14,
+      "text": "“내가 오늘 시험을 안 보면, 넌 내일도 날 좋아할 거야?”",
+      "speaker": "mina"
+    }
+  ],
+  "confession_afterm": [
+    {
+      "index": 1,
+      "text": "“난 용사가 되고 싶어. 아주 어릴 때부터.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 3,
+      "text": "“근데 네가 다칠 걸 알면서 합격하는 건, 내가 생각한 용사가 아니야.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 9,
+      "text": "“당연히 안 하지.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 11,
+      "text": "“넌 내 꿈이랑 네 목숨을 같은 저울에 올렸어. 지금은 대답 못 해.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 14,
+      "text": "“그래도 한 가지는 말해 줄게. 다음엔 시험장이 아닌 곳에서 말해.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 17,
+      "text": "“그건 네가 사람답게 사는지 보고 결정할 거야.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 23,
+      "text": "“그런 말은 고백의 후속편으로 쓰지 마.”",
+      "speaker": "mina"
+    }
+  ],
+  "confession_chaos": [
+    {
+      "index": 6,
+      "text": "“너 진짜 죽기 싫구나.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 8,
+      "text": "“전투력은 안 평등하잖아.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 17,
+      "text": "“법률보다 먼저 상식상 불가능해.”",
+      "speaker": "mina"
+    }
+  ]
+}

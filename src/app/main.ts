@@ -14,6 +14,7 @@ import { ReadingSequence, type ReadingStep } from '../ui/reading';
 import { PageReader } from '../ui/pages';
 import { illustrateNarrative, readingCompanions } from '../ui/illustrations';
 import { portraitUrl, portraitCharacters, dialogueEmotion, type PortraitCharacter, type PortraitEmotion } from '../ui/portraits';
+import { canonicalPortrait, compactSpeaker, visiblePageSpeaker } from '../ui/visual-identity';
 import '../styles/main.css';
 import { isCompact, compactSlot } from '../content/compact-contract';
 import { loadCompactProgress, compactProgressKey, type CompactProgress } from '../ui/compact-progress';
@@ -252,9 +253,6 @@ function pageWindow(parent: HTMLElement, prose: HTMLElement) {
 }
 function bindPages(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLElement, current: GameState, launch: HTMLButtonElement) {
   launch.hidden = current.ended;
-  const focus = current.currentNodeId ? ({ child: 'mina', exam: 'mina', prison: 'mina', princess: 'erisia', audit: 'auditor', hearing: 'mina' } as Record<string, string>)[current.currentNodeId] : undefined;
-  const npc = layout.querySelector<HTMLImageElement>('#npc-image');
-  if (npc && focus && current.npcs[focus]?.alive) { npc.src = portraitUrl(import.meta.env.BASE_URL, focus as PortraitCharacter, current.age); npc.alt = `${story!.characters[focus]!.name} 초상화`; }
   const life = layout.querySelector<HTMLElement>('.life-panel')!;
   const sizePopup = () => {
     const floor = toolbar.getBoundingClientRect().height + 10;
@@ -271,6 +269,7 @@ function bindPages(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEleme
     toolbar, paused: Boolean(openMenu), canChoose: () => !busy && !pending,
     gates: [...layout.querySelectorAll<HTMLElement>('.choices'), ...(current.ended ? [] : [launch])],
     choiceButtons: [...layout.querySelectorAll<HTMLButtonElement>('[data-choice]')], finishLabel: current.ended ? '읽기 완료' : '선택지', onComplete: ready,
+    onPage: () => { if (current.currentNodeId) showCompactNpc(layout, story!, current, visiblePageSpeaker(columns.querySelector('.page-window')!, current.currentNodeId)); },
   });
 }
 function renderAftermath(layout: HTMLElement, content: PresentedStory, current: GameState) {
@@ -312,7 +311,7 @@ function renderTitle(layout: HTMLElement) {
 function renderStatus(layout: HTMLElement, current: GameState) {
   const header = element('header', undefined, 'game-header');
   const player = element('figure', undefined, 'portrait player-portrait');
-  const portrait = element('img'); portrait.id = 'player-image'; portrait.src = portraitUrl(import.meta.env.BASE_URL, 'player', current.age); portrait.alt = '주인공 초상화'; player.append(portrait); header.append(player);
+  const portrait = element('img'); portrait.id = 'player-image'; portrait.src = compactMode ? canonicalPortrait(import.meta.env.BASE_URL, 'player')! : portraitUrl(import.meta.env.BASE_URL, 'player', current.age); portrait.alt = '주인공 초상화'; player.append(portrait); header.append(player);
   const stats = element('section', undefined, 'stats'); stats.setAttribute('aria-label', '현재 능력치');
   for (const [label, value] of [['나이', `${current.age}세`], ['전투력', current.player.combat.toLocaleString('ko-KR')], ['마력', current.player.magic.toLocaleString('ko-KR')], ['금화', current.player.gold.toLocaleString('ko-KR')]]) {
     const stat = element('div'); stat.append(element('small', label), element('strong', value)); stats.append(stat);
@@ -378,6 +377,15 @@ function renderPreviousScenes(feed: HTMLElement, content: PresentedStory, curren
   feed.addEventListener('keydown', event => { if (['ArrowUp', 'PageUp', 'Home'].includes(event.key)) { upward = true; if (feed.scrollTop < 60) { prepend(); upward = false; } } });
   feed.addEventListener('scroll', () => { if (upward && feed.scrollTop < 60) { prepend(); upward = false; touchLoaded = true; } });
 }
+function showCompactNpc(layout: HTMLElement, content: PresentedStory, current: GameState, actor?: string) {
+  const image = layout.querySelector<HTMLImageElement>('#npc-image');
+  if (!image) return;
+  const url = actor && current.npcs[actor]?.alive ? canonicalPortrait(import.meta.env.BASE_URL, actor) : undefined;
+  image.src = url ?? art('background');
+  image.alt = url ? `${content.characters[actor!]!.name} 초상화` : '연대기 배경';
+  image.dataset.actor = url ? actor! : '';
+  image.onerror = () => { image.onerror = null; image.src = art('background'); image.alt = '연대기 배경'; image.dataset.actor = ''; };
+}
 function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLElement, content: PresentedStory, current: GameState, launch: HTMLButtonElement) {
   const steps: ReadingStep[] = [];
   for (const row of columns.querySelectorAll<HTMLElement>('#current-event .chronicle-message')) steps.push({ element: row, stage: 'chronicle' });
@@ -416,6 +424,11 @@ function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEle
     onStage: (stage, step) => {
       columns.querySelector<HTMLElement>('#current-event .scene-heading')!.hidden = stage === 'chronicle';
       const player = layout.querySelector<HTMLImageElement>('#player-image')!;
+      if (compactMode) {
+        showCompactNpc(layout, content, current, stage === 'scene' && current.currentNodeId ? compactSpeaker(current.currentNodeId, step?.element.textContent ?? '') : undefined);
+        player.src = canonicalPortrait(import.meta.env.BASE_URL, 'player')!;
+        return;
+      }
       if (stage === 'chronicle') { showNpc(); player.src = portraitUrl(import.meta.env.BASE_URL, 'player', current.age); }
       else if (current.currentNodeId) {
         const dialogues = content.presentation?.nodes[current.currentNodeId]?.dialogues ?? [];
@@ -423,8 +436,7 @@ function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEle
         const shown = dialogues.map((line, i) => ({ ...line, index: i })).slice(0, index + 1);
         const npc = [...shown].reverse().find(d => Object.values(content.characters).some(c => c.name === d.speaker));
         const defaultNpc = dialogues.find(d => Object.values(content.characters).some(c => c.name === d.speaker));
-        const compactFocus = isCompact(content.manifest) ? ({ child: 'mina', exam: 'mina', prison: 'mina', princess: 'erisia', audit: 'auditor', hearing: 'mina' } as Record<string, string>)[current.currentNodeId] : undefined;
-        showNpc(npc?.speaker ?? defaultNpc?.speaker ?? (compactFocus ? content.characters[compactFocus]?.name : undefined), npc ? dialogueEmotion(current.currentNodeId, npc.index) : 'neutral');
+        showNpc(npc?.speaker ?? defaultNpc?.speaker, npc ? dialogueEmotion(current.currentNodeId, npc.index) : 'neutral');
         const self = [...shown].reverse().find(d => d.speaker === '가짜 마왕');
         player.src = portraitUrl(import.meta.env.BASE_URL, 'player', current.age, self ? dialogueEmotion(current.currentNodeId, self.index) : 'neutral');
       }
