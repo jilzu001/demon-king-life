@@ -198,6 +198,17 @@ body { overflow: hidden; }
 .compact-game .timeline-item[role="button"] { cursor: pointer; border-radius: 3px; }
 .compact-game .timeline-item[role="button"]:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
 .history-entry [data-resume-node] { margin: 0 0 6px; }
+#reading-mode { flex-shrink: 0; min-height: 28px; padding: 2px 6px; font-size: calc(11px * var(--text-scale, 1)); line-height: 1.5; background: transparent; }
+.page-feed.chat-feed, .aftermath-frame.page-feed { overflow: hidden; }
+.page-window { flex: 1; min-height: 0; width: 100%; overflow: hidden; outline: none; position: relative; }
+.page-feed.chat-feed { display: flex; align-items: stretch; padding-top: 10px; padding-bottom: 10px; }
+.aftermath-frame.page-feed > .page-window { margin: 16px; width: calc(100% - 32px); }
+.page-pages { width: 100%; height: 100%; column-count: 1; column-gap: 32px; column-fill: auto; }
+.page-pages .story { padding-top: 0; padding-bottom: 0; }
+.page-pages .aftermath-prose { padding: 0; overflow: visible; }
+.page-pages :is(p, h2, h3) { orphans: 1; widows: 1; break-before: auto; break-after: auto; break-inside: auto; }
+@media (max-height: 650px) { .compact-game .timeline { max-height: 72px; } }
+@media (max-height: 500px) { .choice-dialog-heading { position: static; } }
 @media (max-width: 760px) {
   .game-shell { padding-left: 10px; padding-right: 10px; gap: 8px; }
   .game-header { gap: 6px; }

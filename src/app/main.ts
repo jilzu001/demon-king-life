@@ -10,6 +10,7 @@ import { lifeEvents, confirmedChoice, resultLabels } from '../ui/history';
 import { renderNarrative } from '../ui/narrative';
 import { element, button, icon } from '../ui/dom';
 import { ReadingSequence, type ReadingStep } from '../ui/reading';
+import { PageReader } from '../ui/pages';
 import { portraitUrl, portraitCharacters, dialogueEmotion, type PortraitCharacter, type PortraitEmotion } from '../ui/portraits';
 import '../styles/main.css';
 import { isCompact, compactSlot } from '../content/compact-contract';
@@ -41,6 +42,9 @@ try {
   if ([100, 110, 120, 130, 140, 150].includes(savedSize)) textPercent = savedSize;
 } catch { /* 화면 설정 저장이 불가능해도 기본 크기로 플레이한다. */ }
 document.documentElement.style.setProperty('--text-scale', String(textPercent / 100));
+const readModeKey = 'demon-king:ui:reading-mode';
+let readMode: 'scroll' | 'page' = 'scroll';
+try { if (compactMode && localStorage.getItem(readModeKey) === 'page') readMode = 'page'; } catch { /* 기본 스크롤 방식으로 읽는다. */ }
 let story: PresentedStory | null = null;
 let activeStory: PresentedStory | null = null;
 let legacyStory: PresentedStory | null = null;
@@ -59,6 +63,7 @@ let openMenu: 'history' | 'settings' | 'people' | null = null;
 let historyExpanded = new Set<string>();
 let historyFocusNode: string | null = null;
 const reading = new ReadingSequence();
+const pages = new PageReader();
 let titleVisible = true;
 try { titleVisible = sessionStorage.getItem(titleKey) !== '1'; } catch { /* 저장 불가 환경에서도 시작할 수 있다. */ }
 let viewKey = '';
@@ -157,6 +162,7 @@ function newRun() {
 
 function render() {
   reading.detach();
+  pages.detach();
   disposeLayout(); disposeLayout = () => {};
   const nextKey = sceneKey();
   const scroll = nextKey === viewKey ? root.querySelector<HTMLElement>('.chat-feed')?.scrollTop ?? 0 : 0;
@@ -170,6 +176,7 @@ function render() {
   root.replaceChildren();
   const layout = element('main', undefined, titleVisible ? 'title-shell' : cinematic ? 'cinematic-shell' : 'game-shell'); root.append(layout);
   if (compactMode) layout.classList.add('compact-game');
+  if (readMode === 'page') layout.classList.add('page-layout');
   if (titleVisible) renderTitle(layout);
   else if (state && !aftermath && !cinematic) renderStatus(layout, state);
   if (errorText) {
@@ -192,7 +199,7 @@ function render() {
   }
   if (cinematic && state) {
     disposeLayout = renderCompactEnding(layout, story, state, compactView(), {
-      paused: Boolean(openMenu), onProgress: patch => { updateCompactView(patch); render(); }, onRestart: newRun,
+      paused: Boolean(openMenu) || readMode === 'page', onProgress: patch => { updateCompactView(patch); render(); }, onRestart: newRun,
       onSettings: () => { openMenu = 'settings'; render(); },
     });
     if (openMenu) renderMenu(layout);
@@ -206,7 +213,7 @@ function render() {
     const past = element('aside', undefined, 'life-column'); past.setAttribute('aria-label', '나의 인생');
     renderTimeline(past, story, state); frame.append(past);
     const columns = element('div', undefined, 'game-columns chat-feed'); columns.setAttribute('aria-label', '사건과 대화'); columns.tabIndex = 0;
-    renderPreviousScenes(columns, story, state);
+    if (readMode !== 'page') renderPreviousScenes(columns, story, state);
     const present = element('section', undefined, 'event-column');
     present.id = 'current-event'; present.tabIndex = -1; present.setAttribute('aria-label', '현재 사건');
     const last = state.history.at(-1);
@@ -216,13 +223,15 @@ function render() {
       result.append(element('p', `지난 선택 판정: ${resultLabels[confirmed.outcome.result]} · ${state.history.length}번째 선택`, 'receipt-label'), element('p', `${confirmed.choice.text} → ${confirmed.destination}`, 'receipt-text')); present.append(result);
     }
     if (state.ended) renderEnding(present, story, state); else renderScene(present, story, state);
-    columns.append(present); frame.append(columns);
+    if (readMode === 'page') pageWindow(columns, present); else columns.append(present);
+    frame.append(columns);
     const launch = button('선택지 보기', () => { if (busy || pending) return; dismissedChoices = ''; root.querySelector<HTMLDialogElement>('#choice-dialog')?.showModal(); }, busy || Boolean(pending));
     launch.classList.add('choice-launch'); launch.dataset.whenReady = 'normal'; frame.append(launch);
     layout.append(frame);
-    columns.scrollTop = scroll;
+    columns.scrollTop = readMode === 'page' ? 0 : scroll;
     const toolbar = renderToolbar(layout);
-    bindReading(layout, columns, toolbar, story, state, launch);
+    if (readMode === 'page') bindPages(layout, columns, toolbar, state, launch);
+    else bindReading(layout, columns, toolbar, story, state, launch);
     if (resumeChoiceRun === state.runId && !state.ended && !openMenu) {
       resumeChoiceRun = '';
       toolbar.querySelector<HTMLButtonElement>('#reading-skip')!.click();
@@ -233,6 +242,35 @@ function render() {
   }
   if (openMenu) renderMenu(layout);
 }
+function pageWindow(parent: HTMLElement, prose: HTMLElement) {
+  parent.classList.add('page-feed');
+  const viewport = element('div', undefined, 'page-window'); viewport.tabIndex = 0; viewport.setAttribute('aria-label', '이야기 페이지');
+  const content = element('div', undefined, 'page-pages'); content.append(prose); viewport.append(content); parent.append(viewport);
+  return { viewport, content };
+}
+function bindPages(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLElement, current: GameState, launch: HTMLButtonElement) {
+  launch.hidden = current.ended;
+  const focus = current.currentNodeId ? ({ child: 'mina', exam: 'mina', prison: 'mina', princess: 'erisia', audit: 'auditor', hearing: 'mina' } as Record<string, string>)[current.currentNodeId] : undefined;
+  const npc = layout.querySelector<HTMLImageElement>('#npc-image');
+  if (npc && focus && current.npcs[focus]?.alive) { npc.src = portraitUrl(import.meta.env.BASE_URL, focus as PortraitCharacter, current.age); npc.alt = `${story!.characters[focus]!.name} 초상화`; }
+  const life = layout.querySelector<HTMLElement>('.life-panel')!;
+  const sizePopup = () => {
+    const floor = toolbar.getBoundingClientRect().height + 10;
+    layout.style.setProperty('--choice-floor', `${floor}px`);
+    layout.style.setProperty('--choice-space', `${Math.max(120, innerHeight - life.getBoundingClientRect().bottom - floor - 12)}px`);
+  };
+  const sizes = new ResizeObserver(sizePopup); sizes.observe(life); sizes.observe(toolbar); disposeLayout = () => sizes.disconnect(); sizePopup();
+  const ready = () => {
+    if (current.ended || pending || openMenu || dismissedChoices === sceneKey()) return;
+    const dialog = layout.querySelector<HTMLDialogElement>('#choice-dialog'); if (dialog && !dialog.open) dialog.showModal();
+  };
+  pages.bind({
+    key: sceneKey(), viewport: columns.querySelector('.page-window')!, content: columns.querySelector('.page-pages')!, surface: columns,
+    toolbar, paused: Boolean(openMenu), canChoose: () => !busy && !pending,
+    gates: [...layout.querySelectorAll<HTMLElement>('.choices'), ...(current.ended ? [] : [launch])],
+    choiceButtons: [...layout.querySelectorAll<HTMLButtonElement>('[data-choice]')], finishLabel: current.ended ? '읽기 완료' : '선택지', onComplete: ready,
+  });
+}
 function renderAftermath(layout: HTMLElement, content: PresentedStory, current: GameState) {
   const last = current.history.at(-1)!;
   const confirmed = confirmedChoice(content, last);
@@ -240,16 +278,24 @@ function renderAftermath(layout: HTMLElement, content: PresentedStory, current: 
   const heading = element('div', undefined, 'aftermath-heading');
   heading.append(element('p', `${last.age}세 · ${content.nodes[last.nodeId]!.title}`, 'eyebrow'), element('p', confirmed.choice.text, 'receipt-text'));
   frame.append(heading);
-  const prose = renderNarrative(confirmed.outcome.narrative!, undefined, true); prose.classList.add('aftermath-prose'); frame.append(prose); layout.append(frame);
+  const prose = renderNarrative(confirmed.outcome.narrative!, undefined, true); prose.classList.add('aftermath-prose');
+  const paged = readMode === 'page' ? pageWindow(frame, prose) : null;
+  if (!paged) frame.append(prose);
+  layout.append(frame);
   const toolbar = renderToolbar(layout);
   const steps: ReadingStep[] = [...prose.querySelectorAll<HTMLElement>('.story-paragraph')].map(element => ({ element, stage: 'scene' }));
   const runId = current.runId; const count = current.history.length;
+  const complete = () => { if (state?.runId !== runId || state.history.length !== count) return; updateCompactView({ handledHistory: count }); render(); };
+  if (paged) {
+    pages.bind({ key: `${sceneKey()}:aftermath`, ...paged, surface: frame, toolbar, paused: Boolean(openMenu), canChoose: () => false, gates: [], finishLabel: '이어서', onComplete: complete });
+    return;
+  }
   reading.bind({
     key: `${sceneKey()}:aftermath`, steps, surface: frame, controls: toolbar.querySelector('.reading-controls')!, status: toolbar.querySelector('.reading-status')!,
     faster: toolbar.querySelector('#reading-faster')!, skip: toolbar.querySelector('#reading-skip')!, pause: toolbar.querySelector('#reading-pause')!, keepControls: true,
     gates: [], paused: Boolean(openMenu), canChoose: () => false,
     onReveal: step => step.element.scrollIntoView({ block: 'nearest', behavior: 'instant' }), onSkip: () => {},
-    onComplete: () => { if (state?.runId !== runId || state.history.length !== count) return; updateCompactView({ handledHistory: count }); render(); },
+    onComplete: complete,
   });
 }
 function renderTitle(layout: HTMLElement) {
@@ -284,7 +330,16 @@ function renderToolbar(layout: HTMLElement) {
   const people = button('인물', () => { if (busy) return; openMenu = 'people'; render(); }, busy); people.setAttribute('aria-label', '인물 관계 · 재산 · 법적 기록'); people.dataset.menu = 'true'; people.dataset.menuKind = 'people';
   const settings = button('설정', () => { if (busy) return; openMenu = 'settings'; render(); }, busy); settings.setAttribute('aria-label', '저장 관리 · 엔딩 도감'); settings.dataset.menu = 'true'; settings.dataset.menuKind = 'settings';
   const buttons = element('div', undefined, 'toolbar-buttons'); buttons.append(controls, people, settings);
-  const statusRow = element('div', undefined, 'toolbar-status'); statusRow.append(status, element('span', pending ? '저장 미완료' : '자동 저장', 'save-indicator'));
+  const statusRow = element('div', undefined, 'toolbar-status'); statusRow.append(status);
+  if (compactMode) {
+    const mode = button(readMode === 'page' ? '스크롤 방식' : '페이지 방식', () => {
+      if (busy || pending) return;
+      readMode = readMode === 'page' ? 'scroll' : 'page';
+      try { localStorage.setItem(readModeKey, readMode); } catch { /* 화면에는 적용하고 세이브는 유지한다. */ }
+      render();
+    }, busy || Boolean(pending)); mode.id = 'reading-mode'; mode.dataset.menu = 'true'; statusRow.append(mode);
+  }
+  statusRow.append(element('span', pending ? '저장 미완료' : '자동 저장', 'save-indicator'));
   toolbar.append(statusRow, buttons); layout.append(toolbar); return toolbar;
 }
 function renderPreviousScenes(feed: HTMLElement, content: PresentedStory, current: GameState) {

@@ -227,3 +227,92 @@ test('종료 후에도 지난 분기를 재선택하고 엔딩 도감을 유지�
   expect(collection.discoveredEndings['demon-king']).toContain('ending_escape');
   await select(page, 'invoice'); expect(JSON.parse((await raw(page))!).currentNodeId).toBe('invoice');
 });
+
+test('페이지 방식은 한 페이지를 즉시 표시하고 자동으로 넘기거나 스크롤하지 않으며 방식 설정을 유지한다', async ({ page }) => {
+  await start(page); const before = await raw(page);
+  await page.getByRole('button', { name: '페이지 방식', exact: true }).click();
+  await expect(page.getByRole('button', { name: '스크롤 방식', exact: true })).toBeVisible();
+  await expect(page.locator('#current-event .story-paragraph[hidden]')).toHaveCount(0);
+  const first = await page.locator('.page-window').getAttribute('data-page-index');
+  const transform = await page.locator('.page-pages').evaluate(el => getComputedStyle(el).transform);
+  await page.clock.runFor(60000);
+  expect(await page.locator('.page-window').getAttribute('data-page-index')).toBe(first);
+  expect(await page.locator('.page-pages').evaluate(el => getComputedStyle(el).transform)).toBe(transform);
+  expect(await page.locator('.chat-feed').evaluate(el => el.scrollTop)).toBe(0); expect(await raw(page)).toBe(before);
+  await page.reload(); await expect(page.getByRole('button', { name: '스크롤 방식', exact: true })).toBeVisible();
+  expect(await raw(page)).toBe(before);
+});
+
+test('페이지를 모두 읽은 뒤에 선택지를 열고 선택 후 서술도 페이지로 읽으며 이전 페이지를 다시 볼 수 있다', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 640 }); await start(page);
+  await page.getByRole('button', { name: '페이지 방식', exact: true }).click();
+  const count = Number(await page.locator('.page-window').getAttribute('data-page-count')); expect(count).toBeGreaterThan(1);
+  await page.locator('.page-window').click(); await expect(page.locator('.page-window')).toHaveAttribute('data-page-index', '1');
+  await page.getByRole('button', { name: '이전 페이지', exact: true }).click(); await expect(page.locator('.page-window')).toHaveAttribute('data-page-index', '0');
+  for (let i = 1; i < count; i++) await page.getByRole('button', { name: '다음 페이지', exact: true }).click();
+  await expect(page.locator('#choice-dialog')).not.toBeVisible();
+  await page.getByRole('button', { name: '선택지', exact: true }).click(); await expect(page.locator('#choice-dialog')).toBeVisible();
+  await page.locator('[data-choice="family_accept"]').click(); await page.clock.runFor(400);
+  await expect(page.locator('#choice-aftermath .page-window')).toBeVisible();
+  const saved = await raw(page);
+  await page.clock.runFor(60000); await expect(page.locator('#choice-aftermath')).toBeVisible(); expect(await raw(page)).toBe(saved);
+  await page.locator('#reading-skip').click(); await expect(page.locator('#current-event')).toBeAttached();
+  await expect(page.locator('.page-window')).toHaveAttribute('data-page-index', '0');
+  await expect(page.locator('#choice-dialog')).not.toBeVisible(); expect(JSON.parse((await raw(page))!).age).toBe(12);
+});
+
+test('긴 문단도 실제 화면과 150% 글자에 맞춰 나뉘고 모든 글자가 빠짐없이 한 페이지씩 보인다', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 568 });
+  const data = structuredClone(chapter);
+  data.nodes[0].body = '첫머리. ' + '긴 문단은 글자와 화면 크기에 맞춰 여러 페이지로 나뉩니다. '.repeat(24) + '\n\n“끝까지 빠짐없이 읽었습니다.”';
+  await page.route('**/stories/demon-king-compact/chapters/01_complete.json', route => route.fulfill({ json: data }));
+  await start(page);
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
+  const size = page.getByLabel('화면 전체 글자 크기'); await size.focus(); await size.press('End'); await page.getByRole('button', { name: '닫기', exact: true }).click();
+  await page.getByRole('button', { name: '페이지 방식', exact: true }).click();
+  const count = Number(await page.locator('.page-window').getAttribute('data-page-count')); expect(count).toBeGreaterThan(2);
+  const seen = new Set<string>();
+  let expected: string[] = [];
+  for (let index = 0; index < count; index++) {
+    const result = await page.locator('.page-window').evaluate(viewport => {
+      const box = viewport.getBoundingClientRect(); const visible: string[] = []; const all: string[] = [];
+      for (const [p, element] of [...viewport.querySelectorAll('.story-paragraph')].entries()) {
+        const text = element.firstChild!;
+        for (let i = 0; i < text.textContent!.length; i++) {
+          if (/\s/.test(text.textContent![i]!)) continue;
+          const id = `${p}:${i}`; all.push(id);
+          const range = document.createRange(); range.setStart(text, i); range.setEnd(text, i + 1);
+          const r = range.getBoundingClientRect();
+          if (r.left >= box.left - 1 && r.right <= box.right + 1 && r.top >= box.top - 1 && r.bottom <= box.bottom + 1) visible.push(id);
+        }
+      }
+      return { visible, all };
+    });
+    expected = result.all; expect(result.visible.length).toBeGreaterThan(0);
+    for (const id of result.visible) { expect(seen.has(id)).toBe(false); seen.add(id); }
+    expect(await page.locator('.chat-feed').evaluate(el => el.scrollTop)).toBe(0);
+    if (index + 1 < count) await page.getByRole('button', { name: '다음 페이지', exact: true }).click();
+  }
+  expect([...seen].sort()).toEqual(expected.sort());
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('페이지와 스크롤을 전환하거나 화면·글자 크기를 바꿔도 회차와 기존 읽기 기능을 보존한다', async ({ page }) => {
+  await start(page); const before = await raw(page);
+  await page.getByRole('button', { name: '페이지 방식', exact: true }).click();
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
+  const size = page.getByLabel('화면 전체 글자 크기'); await size.focus(); await size.press('End');
+  await page.getByRole('button', { name: '닫기', exact: true }).click();
+  for (const [width, height] of [[360, 800], [430, 932], [640, 430]]) {
+    await page.setViewportSize({ width: width!, height: height! });
+    await expect(page.locator('.page-window')).toBeVisible();
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    expect(await page.locator('.chat-feed').evaluate(el => el.scrollTop)).toBe(0);
+  }
+  await page.getByRole('button', { name: '스크롤 방식', exact: true }).click();
+  await expect(page.locator('.page-window')).toHaveCount(0);
+  await expect(page.getByRole('button', { name: '빠르게 표시', exact: true })).toBeVisible();
+  await page.locator('#reading-skip').click(); await expect(page.locator('#choice-dialog')).toBeVisible(); expect(await raw(page)).toBe(before);
+  await page.locator('[data-choice="family_accept"]').click(); await expect(page.locator('#choice-aftermath')).toBeVisible();
+  expect(JSON.parse((await raw(page))!).history).toHaveLength(1);
+});
