@@ -3,12 +3,16 @@ import { validateCondition } from '../engine/conditions';
 import { validateEffect } from '../engine/effects';
 import { assertWorld } from '../engine/invariants';
 import { ensure, type Manifest, type Scene, type Character, type Ending, type Story } from '../engine/types';
+import { isCompact, adaptCompactChapter, adaptCompactEndings } from './compact-contract';
 
 export function safeContentPath(path: string): string {
   ensure(/^[a-z0-9_./-]+\.json$/.test(path) && !path.split('/').some(p => p === '..' || p === '.' || !p), `허용되지 않은 콘텐츠 파일 경로: ${path}`);
   return path;
 }
 export function assembleStory(manifestData: unknown, chapters: unknown[], characterData: unknown, endingData: unknown): Story {
+  if (isCompact(manifestData as Manifest)) {
+    chapters = chapters.map(adaptCompactChapter); endingData = adaptCompactEndings(endingData);
+  }
   validateSchema('story', manifestData); validateSchema('characters', characterData); validateSchema('endings', endingData);
   for (const chapter of chapters) validateSchema('chapter', chapter);
   const manifest = manifestData as Manifest;
@@ -26,7 +30,7 @@ export function assembleStory(manifestData: unknown, chapters: unknown[], charac
   register(story.endings, (endingData as { endings: Ending[] }).endings);
   for (const chapter of chapters) register(story.nodes, (chapter as { nodes: Scene[] }).nodes);
   const entry = story.nodes[manifest.entryNodeId];
-  ensure(entry && entry.age >= manifest.initialState.age, '시작 장면 누락 또는 초기 시간 역행');
+  ensure(entry, '시작 장면 누락');
   assertWorld(story, manifest.initialState);
   const unique = (list: { id: string }[], label: string) => ensure(new Set(list.map(x => x.id)).size === list.length, `${label}: 중복 ID`);
   const text = (value: string) => ensure(value.trim().length, '공백만 있는 콘텐츠 문구');
@@ -47,6 +51,7 @@ export function assembleStory(manifestData: unknown, chapters: unknown[], charac
       if (choice.enabledWhen) validateCondition(story, choice.enabledWhen);
       ensure(Number.isSafeInteger(choice.outcomes.reduce((sum, outcome) => sum + outcome.weight, 0)), '결과 가중치 합계 범위 초과');
       for (const outcome of choice.outcomes) {
+        if (outcome.narrative !== undefined) text(outcome.narrative);
         if (outcome.when) validateCondition(story, outcome.when);
         for (const effect of outcome.effects ?? []) validateEffect(story, effect);
         if (outcome.to.kind === 'node') {

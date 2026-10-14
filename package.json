@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "validate:content": "tsx scripts/validate-content.ts",
+    "validate:content": "tsx scripts/validate-content.ts && tsx scripts/validate-compact.ts",
     "simulate:all": "tsx scripts/simulate-all-routes.ts",
     "build": "npm run typecheck && npm run validate:content && npm run simulate:all && vite build",
     "check": "npm run typecheck && npm test && npm run validate:content && npm run simulate:all && npm run test:e2e && npm run build"

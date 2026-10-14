@@ -1,6 +1,7 @@
 import type { PresentedStory } from '../content/presentation';
 import { evaluate } from '../engine/conditions';
 import type { GameState, HistoryEntry, Outcome } from '../engine/types';
+import { isCompact } from '../content/compact-contract';
 
 export const resultLabels: Record<Outcome['result'], string> = { success: '성공', failure: '실패', mixed: '복합 결과', neutral: '중립 결과' };
 export type LifeEvent = {
@@ -26,13 +27,13 @@ export function lifeEvents(story: PresentedStory, state: GameState): LifeEvent[]
     const confirmed = history ? confirmedChoice(story, history) : null;
     events.push({
       id: `scene:${nodeId}`, age: node.age, title: node.title,
-      summary: story.presentation?.nodes[nodeId]?.chronicleSummary ?? node.title,
+      summary: node.chronicleSummary ?? story.presentation?.nodes[nodeId]?.chronicleSummary ?? node.title,
       kind: 'scene', nodeId, ...(confirmed ? { choiceText: confirmed.choice.text, result: confirmed.outcome.result, destination: confirmed.destination } : {}),
     });
   }
   if (state.endingId) {
     const ending = story.endings[state.endingId]!;
-    events.push({ id: `ending:${ending.id}`, age: state.age, title: ending.title, summary: ending.body, kind: 'ending' });
+    events.push({ id: `ending:${ending.id}`, age: state.age, title: ending.title, summary: isCompact(story.manifest) ? ending.title : ending.body, kind: 'ending' });
   }
   // 안정 정렬: 같은 나이의 실제 진행 순서를 유지한다.
   return events.sort((a, b) => a.age - b.age);

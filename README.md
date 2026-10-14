@@ -1,4 +1,8 @@
-# 가짜 마왕의 일생 — 콘텐츠 v1.1
+# 가짜 마왕의 일생 — 원작과 축소 완결판
+
+[축소 완결판 v2.6 플레이](https://jilzu001.github.io/demon-king-life/?edition=compact) · [원작 34엔딩 플레이](https://jilzu001.github.io/demon-king-life/?edition=original)
+
+제공된 최신 v2.6 ZIP의 축소판(13개 사건·28개 선택·7개 엔딩)을 별도 모드로 통합했습니다. 독립 한 줄 연대기, 문단 사이 여백, 선택 후 서술, 실제 경험 회상과 결말 화면을 제공합니다. 원작 콘텐츠와 저장/도감을 보존하며 기본 주소는 원작입니다. 타이틀/설정에서 판을 전환할 수 있습니다. 상세 검증과 원본 상태 효과 누락은 [적용 보고서](docs/COMPACT_V2_6.md)에 있습니다.
 
 [바로 플레이](https://jilzu001.github.io/demon-king-life/) · [GitHub 저장소](https://github.com/jilzu001/demon-king-life)
 

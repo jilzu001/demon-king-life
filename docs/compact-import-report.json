@@ -1,0 +1,165 @@
+{
+  "sourcePackage": "demon_king_v2_6_compact_timeline_codex.zip",
+  "manifestVersion": "2.2.0-compact",
+  "rawCompactFiles": [
+    {
+      "file": "story.json",
+      "bytes": 1212,
+      "sha256": "39765eb96068a5a68686b6c356bb8443d2a007c6e4d8f2fa077650f113da0906",
+      "identical": true
+    },
+    {
+      "file": "characters.json",
+      "bytes": 1200,
+      "sha256": "dfbcc0fdc19b0b2df0ba2b0b851dd77d36fb9483f2d30bbe92c554420f2a3786",
+      "identical": true
+    },
+    {
+      "file": "endings.json",
+      "bytes": 2453,
+      "sha256": "0a4cb4b8e3982682dc672dd6110ec4ffa5eeaa109fc6591ba14652738edc4738",
+      "identical": true
+    },
+    {
+      "file": "ending_cinematics.json",
+      "bytes": 2260,
+      "sha256": "e4cfbf42af985d15ff371fcb4126bf523ab3ee8344f75a63d536ae82c4ace86b",
+      "identical": true
+    },
+    {
+      "file": "chapters/01_complete.json",
+      "bytes": 43065,
+      "sha256": "c1d0dcfbcf3862e7ab8fb68291e8dece405313f741a81eeac09484856290d623",
+      "identical": true
+    }
+  ],
+  "protectedOriginalFiles": [
+    {
+      "file": "story.json",
+      "bytes": 1304,
+      "sha256": "ef50c639d6b71d0c5dd1ca71c2472e59bb795b3478ca5949957e9b4e50e94d0d",
+      "identical": true
+    },
+    {
+      "file": "characters.json",
+      "bytes": 1200,
+      "sha256": "dfbcc0fdc19b0b2df0ba2b0b851dd77d36fb9483f2d30bbe92c554420f2a3786",
+      "identical": true
+    },
+    {
+      "file": "endings.json",
+      "bytes": 14661,
+      "sha256": "43083800c9a3b174f293609f129ae2b211d5783fd455634e4f47d5ebec02ec7a",
+      "identical": true
+    },
+    {
+      "file": "presentation.json",
+      "bytes": 34547,
+      "sha256": "7bc146a763fa32ff8daa9a87942d25f6409daf0d9e2b4ffeac8f5534f4929606",
+      "identical": true
+    },
+    {
+      "file": "chapters/01_youth.json",
+      "bytes": 164730,
+      "sha256": "7a582c521309868cacb2259f92f770215b0b8dc6c90c4c7a27d1095142100ebb",
+      "identical": true
+    },
+    {
+      "file": "chapters/02_twists.json",
+      "bytes": 81244,
+      "sha256": "450c85c230600fa6d66bd6e35c70e256e33f2437563d2d63b7da43b8ad07ba48",
+      "identical": true
+    },
+    {
+      "file": "chapters/03_accounts.json",
+      "bytes": 51354,
+      "sha256": "b52f9d9f51f56f7f27a588ac395cfb7a30003a2024c35df9425106e698e4eccd",
+      "identical": true
+    },
+    {
+      "file": "chapters/04_afterlife.json",
+      "bytes": 17339,
+      "sha256": "b3a9d5815c730bc93fa917c5627d8322831e8670eb47f56907f7e7c630c4f4c1",
+      "identical": true
+    }
+  ],
+  "originalGraph": {
+    "states": 8175,
+    "transitions": 30668,
+    "terminalPaths": 4935390988,
+    "maxDepth": 25,
+    "endings": {
+      "end_blade": 1,
+      "end_cells_bride": 1,
+      "end_contempt": 4,
+      "end_magic_tax": 1,
+      "end_bench_revolution": 3,
+      "end_spoon_escape": 8,
+      "end_archive_arson": 4,
+      "end_electoral_fraud": 33,
+      "end_foreign_customs": 37,
+      "end_insurance_cells": 5988,
+      "end_local_fraud": 381,
+      "end_fake_evidence": 381,
+      "end_banquet_spoons": 3927,
+      "end_procurement_trial": 5794,
+      "end_counterfeit_docs": 9821,
+      "end_vote_ledger": 57913,
+      "end_fake_pedigree": 4027,
+      "end_wall_vs_demon": 38883,
+      "end_false_scandal": 387844,
+      "end_mana_deepfake": 1188386,
+      "end_throne_chair": 462781,
+      "end_ruined_by_wealth": 9129123,
+      "end_archive_repeat": 4719025,
+      "end_conspiracy_channel": 20523015,
+      "end_archivist_legacy": 158182911,
+      "end_no_title": 1113181065,
+      "end_expensive_paper": 1113181065,
+      "end_pension_king": 1113181065,
+      "end_collective_reform": 40945509,
+      "end_slow_reform": 954998154,
+      "end_unforced_truce": 67115812,
+      "end_auction_lord": 277870734,
+      "end_winning_villain": 26188746,
+      "end_market_gardener": 34008546
+    },
+    "reachableNodes": 98,
+    "warnings": []
+  },
+  "compactGraph": {
+    "states": 27,
+    "transitions": 34,
+    "terminalPaths": 147,
+    "maxDepth": 9,
+    "endings": {
+      "ending_escape": 1,
+      "ending_fire": 1,
+      "ending_throne": 1,
+      "ending_ledger": 18,
+      "ending_peace": 54,
+      "ending_reform": 36,
+      "ending_office": 36
+    },
+    "reachableNodes": 13,
+    "warnings": []
+  },
+  "previews": {
+    "distinctPaths": 20,
+    "coveredEndings": [
+      "ending_peace",
+      "ending_reform",
+      "ending_office",
+      "ending_escape",
+      "ending_fire",
+      "ending_throne",
+      "ending_ledger"
+    ],
+    "saveReplay": "통과"
+  },
+  "sourceLimitations": [
+    "파일명은 v2.6이나 내부 매니페스트 버전은 2.2.0-compact로 유지되어 있다.",
+    "합의금 서술에 대응하는 gold 효과, 유죄 서술에 대응하는 crimes/legalStatus 효과, 사망 서술에 대응하는 alive 효과가 원본에 없다. 서술에서 효과를 추측하지 않았다.",
+    "13개 사건 사이 연령 간격과 분기 합류 후 일부 과거 플래그 미반영은 제공된 원문 그대로이다."
+  ]
+}

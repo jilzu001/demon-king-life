@@ -1,5 +1,15 @@
 # GitHub Pages 공개 배포 — 2026-10-14
 
+## 축소 완결판 v2.6
+
+- 새 판: https://jilzu001.github.io/demon-king-life/?edition=compact
+- 원작: https://jilzu001.github.io/demon-king-life/?edition=original (기본 주소도 원작 유지)
+- 원작 98사건/34엔딩과 축소판13사건/7엔딩은 저장/도감을 각각 보존한다. 타이틀/설정에서 전환한다.
+- 최신 로컬 전체 검사: 104개 단위/통합+80개 브라우저, 타입/양쪽 콘텐츠/전수 분기/빌드 성공. 적용 보고서는 `COMPACT_V2_6.md`이다.
+- 실제 주소 확인: `npx tsx scripts/verify-compact-ui.ts https://jilzu001.github.io/demon-king-life/`. PC/320/360/390/430px에서 문단·읽기·선택 후 서술·150%글자·회상/저장 복원·원작 슬롯 보호를 확인한다. 로컬에서 `--screenshots`를 붙이면 검수 사진을 저장한다.
+
+아래는 최초 배포와 기존 화면의 검증 기록이다.
+
 - 게임: [가짜 마왕의 일생 플레이](https://jilzu001.github.io/demon-king-life/)
 - 소스: [jilzu001/demon-king-life](https://github.com/jilzu001/demon-king-life)
 - 첫 배포 검증: [성공한 Actions 실행](https://github.com/jilzu001/demon-king-life/actions/runs/38488632929)

@@ -10,10 +10,12 @@ export const runKey = (storyId: string) => `existence-sim:v1:run:${storyId}`;
 
 export class SaveStore {
   constructor(private readonly story: Story, private readonly getStorage: () => StoragePort,
-    private readonly knownEndingIds: ReadonlySet<string> = new Set(Object.keys(story.endings))) {}
-  raw(): string | null { return this.getStorage().getItem(runKey(this.story.manifest.id)); }
+    private readonly knownEndingIds: ReadonlySet<string> = new Set(Object.keys(story.endings)),
+    private readonly slotId = story.manifest.id) {}
+  private get metaKey() { return this.slotId === this.story.manifest.id ? META_KEY : `${META_KEY}:${this.slotId}`; }
+  raw(): string | null { return this.getStorage().getItem(runKey(this.slotId)); }
   loadMeta(): Meta {
-    const text = this.getStorage().getItem(META_KEY);
+    const text = this.getStorage().getItem(this.metaKey);
     const data = text === null ? { saveSchemaVersion: 1, discoveredEndings: {} } : parseJson(text, '엔딩 도감');
     validateSchema('meta', data);
     const meta = data as Meta;
@@ -25,17 +27,17 @@ export class SaveStore {
     const text = this.raw();
     return text === null ? null : decodeSave(this.story, text);
   }
-  commit(state: GameState): Meta {
+  commit(state: GameState, unlockEnding = true): Meta {
     assertState(this.story, state);
     const storage = this.getStorage();
-    const key = runKey(this.story.manifest.id);
-    const oldRun = storage.getItem(key); const oldMeta = storage.getItem(META_KEY);
+    const key = runKey(this.slotId);
+    const oldRun = storage.getItem(key); const oldMeta = storage.getItem(this.metaKey);
     const meta = this.loadMeta();
-    if (state.endingId) meta.discoveredEndings[state.storyId] = [...new Set([...(meta.discoveredEndings[state.storyId] ?? []), state.endingId])];
+    if (state.endingId && unlockEnding) meta.discoveredEndings[state.storyId] = [...new Set([...(meta.discoveredEndings[state.storyId] ?? []), state.endingId])];
     const runText = JSON.stringify(state); const metaText = JSON.stringify(meta);
     try {
       // 회차는 단일 JSON으로 기록한다. 변경 없는 도감은 다시 쓰지 않는다.
-      if (oldMeta !== metaText) storage.setItem(META_KEY, metaText);
+      if (oldMeta !== metaText) storage.setItem(this.metaKey, metaText);
       storage.setItem(key, runText);
       ensure(storage.getItem(key) === runText, '저장소 기록 확인 실패');
       return meta;
@@ -43,7 +45,7 @@ export class SaveStore {
       let rollbackFailed = false;
       try {
         if (storage.getItem(key) !== oldRun) oldRun === null ? storage.removeItem(key) : storage.setItem(key, oldRun);
-        if (storage.getItem(META_KEY) !== oldMeta) oldMeta === null ? storage.removeItem(META_KEY) : storage.setItem(META_KEY, oldMeta);
+        if (storage.getItem(this.metaKey) !== oldMeta) oldMeta === null ? storage.removeItem(this.metaKey) : storage.setItem(this.metaKey, oldMeta);
       } catch { rollbackFailed = true; }
       throw new GameError(`자동 저장 실패: ${error instanceof Error ? error.message : String(error)}. ${rollbackFailed ? '저장소 복구도 실패했습니다. JSON을 내보내고 저장소 상태를 확인하세요.' : '화면 전환을 중단했습니다. JSON 내보내기 또는 저장 재시도를 사용하세요.'}`);
     }

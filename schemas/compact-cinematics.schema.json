@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schemaVersion", "endings", "replayRules"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "endings": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
+      "additionalProperties": {
+        "type": "object",
+        "required": ["finalScene", "reflection", "illustration"],
+        "properties": {
+          "finalScene": { "type": "string", "minLength": 1 },
+          "reflection": { "type": "string", "minLength": 1 },
+          "illustration": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "replayRules": {
+      "type": "object",
+      "required": ["onlyVisitedEvents", "minEvents", "maxEvents", "showStageLabels"],
+      "properties": {
+        "onlyVisitedEvents": { "const": true },
+        "minEvents": { "type": "integer", "minimum": 0, "maximum": 8 },
+        "maxEvents": { "type": "integer", "minimum": 1, "maximum": 8 },
+        "showStageLabels": { "const": false }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

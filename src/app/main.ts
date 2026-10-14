@@ -4,7 +4,7 @@ import { evaluate } from '../engine/conditions';
 import { choose, createRun } from '../engine/transition';
 import { ensure, type GameState, type Meta, type TransitionReceipt } from '../engine/types';
 import { SaveStore } from '../persistence/save';
-import { backupBeforeImport, resolveCompatibleSave, BACKUP_KEY } from '../persistence/compatibility';
+import { backupBeforeImport, resolveCompatibleSave, backupKey } from '../persistence/compatibility';
 import type { PresentedStory } from '../content/presentation';
 import { lifeEvents, confirmedChoice, resultLabels } from '../ui/history';
 import { renderNarrative } from '../ui/narrative';
@@ -12,8 +12,30 @@ import { element, button, icon } from '../ui/dom';
 import { ReadingSequence, type ReadingStep } from '../ui/reading';
 import { portraitUrl, portraitCharacters, dialogueEmotion, type PortraitCharacter, type PortraitEmotion } from '../ui/portraits';
 import '../styles/main.css';
+import { isCompact, compactSlot } from '../content/compact-contract';
+import { loadCompactProgress, compactProgressKey, type CompactProgress } from '../ui/compact-progress';
+import { renderCompactEnding } from '../ui/compact-ending';
 
 const root = document.querySelector<HTMLDivElement>('#app')!;
+const compactMode = new URL(location.href).searchParams.get('edition') === 'compact';
+const titleKey = compactMode ? 'demon-king:title-seen:compact' : 'demon-king:title-seen';
+let compactViewRun = '';
+let compactViewData: CompactProgress | null = null;
+function compactView(): CompactProgress {
+  ensure(state, '회차가 없습니다.');
+  if (!compactViewData || compactViewRun !== state.runId) { compactViewRun = state.runId; compactViewData = loadCompactProgress(state); }
+  return compactViewData;
+}
+function updateCompactView(patch: Partial<CompactProgress>) {
+  ensure(state, '회차가 없습니다.');
+  compactViewData = { ...compactView(), ...patch };
+  try { localStorage.setItem(compactProgressKey(state), JSON.stringify(compactViewData)); }
+  catch { compatibilityNotice = '게임 진행은 저장됐지만 화면 표시 위치는 저장할 수 없습니다. 새로고침하면 마지막 서술을 다시 보여줍니다.'; }
+}
+function switchEdition() {
+  if (busy || pending) return;
+  const url = new URL(location.href); url.searchParams.set('edition', compactMode ? 'original' : 'compact'); location.assign(url.href);
+}
 const textSizeKey = 'demon-king:ui:text-percent';
 let textPercent = 100;
 try {
@@ -37,7 +59,7 @@ let openMenu: 'history' | 'settings' | 'people' | null = null;
 let historyExpanded = new Set<string>();
 const reading = new ReadingSequence();
 let titleVisible = true;
-try { titleVisible = sessionStorage.getItem('demon-king:title-seen') !== '1'; } catch { /* 저장 불가 환경에서도 시작할 수 있다. */ }
+try { titleVisible = sessionStorage.getItem(titleKey) !== '1'; } catch { /* 저장 불가 환경에서도 시작할 수 있다. */ }
 let viewKey = '';
 let dismissedChoices = '';
 let olderCount = 0;
@@ -45,7 +67,7 @@ let disposeLayout = () => {};
 function sceneKey() { return state && story ? `${story.manifest.version}:${state.runId}:${state.history.length}:${state.currentNodeId ?? state.endingId}` : ''; }
 function enterGame() {
   titleVisible = false;
-  try { sessionStorage.setItem('demon-king:title-seen', '1'); } catch { /* 게임 저장과 별개인 화면 표시 설정이다. */ }
+  try { sessionStorage.setItem(titleKey, '1'); } catch { /* 게임 저장과 별개인 화면 표시 설정이다. */ }
   if (!state) newRun(); else render();
 }
 function art(name: string) { return `${import.meta.env.BASE_URL}art/${name}-v1.webp`; }
@@ -68,7 +90,7 @@ function exportRun() {
 }
 function makeStore(context: PresentedStory) {
   const known = new Set([...Object.keys(activeStory?.endings ?? context.endings), ...Object.keys(legacyStory?.endings ?? {})]);
-  return new SaveStore(context, () => window.localStorage, known);
+  return new SaveStore(context, () => window.localStorage, known, isCompact(context.manifest) ? compactSlot : context.manifest.id);
 }
 function commit(next: GameState, nextReceipt: TransitionReceipt | null = null, context = story) {
   ensure(context, '저장소가 준비되지 않았습니다.');
@@ -76,7 +98,7 @@ function commit(next: GameState, nextReceipt: TransitionReceipt | null = null, c
   pendingReceipt = nextReceipt;
   pendingStory = context;
   const nextStore = makeStore(context);
-  meta = nextStore.commit(next);
+  meta = nextStore.commit(next, !isCompact(context.manifest) || !context.cinematics);
   story = context; store = nextStore; state = next;
   pending = null; pendingReceipt = null; pendingStory = null; errorText = '';
 }
@@ -106,7 +128,7 @@ function newRun() {
     const seed = crypto.getRandomValues(new Uint32Array(1))[0]!;
     commit(createRun(activeStory, seed, crypto.randomUUID()), null, activeStory);
     titleVisible = false;
-    try { sessionStorage.setItem('demon-king:title-seen', '1'); } catch { /* 화면 표시 설정만 실패한다. */ }
+    try { sessionStorage.setItem(titleKey, '1'); } catch { /* 화면 표시 설정만 실패한다. */ }
     compatibilityNotice = ''; openMenu = null; historyExpanded.clear();
   } catch (error) { notify(error); }
   finally { busy = false; render(); }
@@ -118,10 +140,17 @@ function render() {
   const nextKey = sceneKey();
   const scroll = nextKey === viewKey ? root.querySelector<HTMLElement>('.chat-feed')?.scrollTop ?? 0 : 0;
   if (nextKey !== viewKey) { olderCount = 0; dismissedChoices = ''; viewKey = nextKey; }
+  const last = state?.history.at(-1);
+  const aftermath = Boolean(story && state && isCompact(story.manifest) && last && compactView().handledHistory < state.history.length && confirmedChoice(story, last).outcome.narrative);
+  const cinematic = Boolean(story?.cinematics && state?.ended && !aftermath);
+  if (cinematic && state && story && compactView().phase === 3 && !(meta.discoveredEndings[state.storyId] ?? []).includes(state.endingId!)) {
+    try { meta = store!.commit(state); } catch (error) { errorText = error instanceof Error ? error.message : String(error); }
+  }
   root.replaceChildren();
-  const layout = element('main', undefined, titleVisible ? 'title-shell' : 'game-shell'); root.append(layout);
+  const layout = element('main', undefined, titleVisible ? 'title-shell' : cinematic ? 'cinematic-shell' : 'game-shell'); root.append(layout);
+  if (compactMode) layout.classList.add('compact-game');
   if (titleVisible) renderTitle(layout);
-  else if (state) renderStatus(layout, state);
+  else if (state && !aftermath && !cinematic) renderStatus(layout, state);
   if (errorText) {
     const alert = element('section', undefined, 'error'); alert.setAttribute('role', 'alert');
     alert.append(element('p', errorText), element('p', '기존 회차를 확인하거나 JSON으로 백업하세요. 저장 성공 전에는 다음 장면을 표시하지 않습니다.'));
@@ -135,6 +164,19 @@ function render() {
   }
   if (!story) { if (!errorText) layout.append(element('p', '이야기를 불러오는 중입니다.')); return; }
   if (titleVisible) { if (openMenu) renderMenu(layout); return; }
+  if (aftermath && state && last) {
+    renderAftermath(layout, story, state);
+    if (openMenu) renderMenu(layout);
+    return;
+  }
+  if (cinematic && state) {
+    disposeLayout = renderCompactEnding(layout, story, state, compactView(), {
+      paused: Boolean(openMenu), onProgress: patch => { updateCompactView(patch); render(); }, onRestart: newRun,
+      onSettings: () => { openMenu = 'settings'; render(); },
+    });
+    if (openMenu) renderMenu(layout);
+    return;
+  }
   if (story.presentationWarning || compatibilityNotice) {
     const note = element('details', undefined, 'notice'); note.append(element('summary', '콘텐츠 및 저장 안내'), element('p', [compatibilityNotice, story.presentationWarning].filter(Boolean).join(' '))); layout.append(note);
   }
@@ -166,11 +208,32 @@ function render() {
   }
   if (openMenu) renderMenu(layout);
 }
+function renderAftermath(layout: HTMLElement, content: PresentedStory, current: GameState) {
+  const last = current.history.at(-1)!;
+  const confirmed = confirmedChoice(content, last);
+  const frame = element('section', undefined, 'life-frame aftermath-frame'); frame.id = 'choice-aftermath';
+  const heading = element('div', undefined, 'aftermath-heading');
+  heading.append(element('p', `${last.age}세 · ${content.nodes[last.nodeId]!.title}`, 'eyebrow'), element('p', confirmed.choice.text, 'receipt-text'));
+  frame.append(heading);
+  const prose = renderNarrative(confirmed.outcome.narrative!, undefined, true); prose.classList.add('aftermath-prose'); frame.append(prose); layout.append(frame);
+  const toolbar = renderToolbar(layout);
+  const steps: ReadingStep[] = [...prose.querySelectorAll<HTMLElement>('.story-paragraph')].map(element => ({ element, stage: 'scene' }));
+  const runId = current.runId; const count = current.history.length;
+  reading.bind({
+    key: `${sceneKey()}:aftermath`, steps, surface: frame, controls: toolbar.querySelector('.reading-controls')!, status: toolbar.querySelector('.reading-status')!,
+    faster: toolbar.querySelector('#reading-faster')!, skip: toolbar.querySelector('#reading-skip')!, pause: toolbar.querySelector('#reading-pause')!, keepControls: true,
+    gates: [], paused: Boolean(openMenu), canChoose: () => false,
+    onReveal: step => step.element.scrollIntoView({ block: 'nearest', behavior: 'instant' }), onSkip: () => {},
+    onComplete: () => { if (state?.runId !== runId || state.history.length !== count) return; updateCompactView({ handledHistory: count }); render(); },
+  });
+}
 function renderTitle(layout: HTMLElement) {
   const cover = element('img'); cover.src = art('background'); cover.alt = ''; cover.className = 'title-background'; layout.append(cover);
   const title = element('section', undefined, 'title-card');
   title.append(element('p', '한 사람의 선택, 한 번의 일생', 'eyebrow'), element('h1', '가짜 마왕의 일생'), element('p', '선택은 행동의 시도입니다. 당신의 일생을 읽고, 다음 행동을 고르세요.', 'title-intro'));
   const start = button(state ? '이어하기' : '시작하기', enterGame, !story || (!state && Boolean(errorText))); start.dataset.enter = 'true'; title.append(start);
+  title.append(element('p', compactMode ? '축소 완결판 · 13개 사건 · 7개 결말' : '원작 · 98개 장면 · 34개 결말', 'subtle'));
+  title.append(button(compactMode ? '원작 플레이 · 기존 저장 이어가기' : '축소 완결판 플레이', switchEdition, !story));
   const settings = button('설정', () => { openMenu = 'settings'; render(); }, !story); settings.setAttribute('aria-label', '저장 관리 · 엔딩 도감'); title.append(settings);
   layout.append(title);
 }
@@ -209,7 +272,8 @@ function renderPreviousScenes(feed: HTMLElement, content: PresentedStory, curren
     const node = content.nodes[id]!;
     const event = current.history.find(h => h.nodeId === id);
     const block = element('section', undefined, 'past-chat'); block.dataset.nodeId = id;
-    block.append(element('p', `${node.age}세 · ${node.title}`, 'eyebrow'), renderNarrative(node.body, content.presentation?.nodes[id]));
+    block.append(element('p', `${node.age}세 · ${node.title}`, 'eyebrow'));
+    if (!isCompact(content.manifest)) block.append(renderNarrative(node.body, content.presentation?.nodes[id]));
     if (event) { const result = confirmedChoice(content, event); block.append(element('p', `${result.choice.text} → ${resultLabels[result.outcome.result]} · ${result.destination}`, 'past-decision')); }
     older.prepend(block);
   };
@@ -278,7 +342,8 @@ function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEle
         const shown = dialogues.map((line, i) => ({ ...line, index: i })).slice(0, index + 1);
         const npc = [...shown].reverse().find(d => Object.values(content.characters).some(c => c.name === d.speaker));
         const defaultNpc = dialogues.find(d => Object.values(content.characters).some(c => c.name === d.speaker));
-        showNpc(npc?.speaker ?? defaultNpc?.speaker, npc ? dialogueEmotion(current.currentNodeId, npc.index) : 'neutral');
+        const compactFocus = isCompact(content.manifest) ? ({ child: 'mina', exam: 'mina', prison: 'mina', princess: 'erisia', audit: 'auditor', hearing: 'mina' } as Record<string, string>)[current.currentNodeId] : undefined;
+        showNpc(npc?.speaker ?? defaultNpc?.speaker ?? (compactFocus ? content.characters[compactFocus]?.name : undefined), npc ? dialogueEmotion(current.currentNodeId, npc.index) : 'neutral');
         const self = [...shown].reverse().find(d => d.speaker === '가짜 마왕');
         player.src = portraitUrl(import.meta.env.BASE_URL, 'player', current.age, self ? dialogueEmotion(current.currentNodeId, self.index) : 'neutral');
       }
@@ -292,6 +357,8 @@ function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEle
 }
 function renderSettings(save: HTMLElement) {
   if (!story) return;
+  save.append(element('p', compactMode ? '축소 완결판 전용 저장 · 원작 저장은 그대로 보존됩니다.' : '원작 저장 · 축소 완결판은 별도 저장합니다.', 'subtle'));
+  save.append(button(compactMode ? '원작 플레이 · 기존 저장 이어가기' : '축소 완결판 플레이', switchEdition, busy || Boolean(pending)));
   const display = element('section', undefined, 'display-settings');
   const label = element('label', '화면 전체 글자 크기'); label.htmlFor = 'text-size';
   const size = element('input'); size.id = 'text-size'; size.type = 'range'; size.min = '100'; size.max = '150'; size.step = '10'; size.value = String(textPercent);
@@ -319,7 +386,7 @@ function renderSettings(save: HTMLElement) {
   const tools = element('div', undefined, 'tools');
   const exportButton = button('회차 JSON 내보내기', exportRun, busy); exportButton.dataset.whenReady = 'normal'; tools.append(exportButton);
   const restart = button(state ? '새 회차 시작' : '기존 회차를 교체하고 시작', newRun, busy || Boolean(pending)); restart.dataset.whenReady = 'normal'; tools.append(restart);
-  let backup: string | null = null; try { backup = window.localStorage.getItem(BACKUP_KEY); } catch { /* 저장 오류는 기존 오류 영역에서 안내한다. */ }
+  let backup: string | null = null; try { backup = window.localStorage.getItem(backupKey(compactMode ? compactSlot : undefined)); } catch { /* 저장 오류는 기존 오류 영역에서 안내한다. */ }
   if (backup) tools.append(button('업데이트 전 회차 JSON 내보내기', () => {
     try {
       const original = parseJson(backup!, '이전 저장 백업') as { run: string | null };
@@ -336,7 +403,7 @@ function renderSettings(save: HTMLElement) {
       ensure(file.size <= MAX_JSON_BYTES, '파일 크기 제한(1MB)을 초과했습니다.');
       const text = new TextDecoder('utf-8', { fatal: true }).decode(await file.arrayBuffer());
       const resolved = resolveCompatibleSave(activeStory, legacyStory, text);
-      backupBeforeImport(window.localStorage);
+      backupBeforeImport(window.localStorage, compactMode ? compactSlot : undefined);
       commit(resolved.state, null, resolved.story); compatibilityNotice = resolved.notice; openMenu = null;
     } catch (error) { notify(error); }
     finally { busy = false; render(); }
@@ -356,12 +423,12 @@ function renderScene(layout: HTMLElement, content: PresentedStory, current: Game
   const presentation = content.presentation?.nodes[node.id];
   const events = lifeEvents(content, current);
   if (!current.history.length) for (const event of events.filter(event => event.kind === 'origin')) panel.append(element('p', `${event.age}세 · ${event.summary}`, 'chronicle-message'));
-  panel.append(element('p', `${node.age}세 · ${presentation?.chronicleSummary ?? node.title}`, 'chronicle-message'));
+  if (!isCompact(content.manifest)) panel.append(element('p', `${node.age}세 · ${presentation?.chronicleSummary ?? node.title}`, 'chronicle-message'));
   const heading = element('div', undefined, 'scene-heading');
   heading.append(element('p', `${current.age}세 · 현재 사건`, 'eyebrow'));
   if (presentation?.locationLabel) heading.append(element('p', presentation.locationLabel, 'location'));
   const title = element('h2', node.title); title.id = 'scene-title'; title.tabIndex = -1;
-  heading.append(title); panel.append(heading, renderNarrative(node.body, presentation));
+  heading.append(title); panel.append(heading, renderNarrative(node.body, presentation, isCompact(content.manifest)));
   const dialog = element('dialog', undefined, 'choice-dialog'); dialog.id = 'choice-dialog';
   const top = element('div', undefined, 'choice-dialog-heading');
   const prompt = element('h2', '어떻게 행동할까?', 'choice-prompt'); prompt.id = 'choice-title'; dialog.setAttribute('aria-labelledby', prompt.id);
@@ -411,7 +478,7 @@ function renderTimeline(layout: HTMLElement, content: PresentedStory, current: G
     const item = element('li', undefined, 'timeline-item'); item.dataset.eventId = event.id;
     if (event.nodeId) item.dataset.nodeId = event.nodeId;
     item.append(element('span', `${event.age}세`, 'timeline-age'));
-    const text = element('div'); text.append(element('p', event.summary, 'timeline-text'));
+    const text = element('div'); const summary = element('p', event.summary, 'timeline-text'); summary.title = event.summary; text.append(summary);
     if (event.result) text.append(element('span', resultLabels[event.result], 'timeline-result'));
     item.append(text); list.append(item);
   }
@@ -436,7 +503,7 @@ function renderMenu(layout: HTMLElement) {
       if (event.choiceText && event.result) row.append(element('p', `${event.choiceText} · ${resultLabels[event.result]} → ${event.destination}`, 'history-decision'));
       if (event.nodeId) {
         const node = story.nodes[event.nodeId]!;
-        row.append(renderNarrative(node.body, story.presentation?.nodes[event.nodeId]));
+        if (!isCompact(story.manifest)) row.append(renderNarrative(node.body, story.presentation?.nodes[event.nodeId]));
       }
       row.open = historyExpanded.has(event.id);
       row.addEventListener('toggle', () => { if (row.open) historyExpanded.add(event.id); else historyExpanded.delete(event.id); });
@@ -448,10 +515,10 @@ function renderMenu(layout: HTMLElement) {
 async function boot() {
   try {
     [activeStory, legacyStory] = await Promise.all([
-      loadBrowserStory(import.meta.env.BASE_URL), loadBrowserStory(import.meta.env.BASE_URL, 'demon-king-legacy-phase1'),
+      loadBrowserStory(import.meta.env.BASE_URL, compactMode ? 'demon-king-compact' : 'demon-king'), loadBrowserStory(import.meta.env.BASE_URL, 'demon-king-legacy-phase1'),
     ]);
     story = activeStory; store = makeStore(story);
-    backupBeforeImport(window.localStorage);
+    backupBeforeImport(window.localStorage, compactMode ? compactSlot : undefined);
     meta = store.loadMeta();
     const raw = store.raw();
     if (raw) {
@@ -463,5 +530,5 @@ async function boot() {
   finally { render(); }
 }
 // 브라우저 뒤로가기는 문서 이동만 한다. 게임 상태는 저장 원장으로만 복원한다.
-window.addEventListener('pageshow', event => { if (event.persisted) { state = null; pending = null; void boot(); } });
+window.addEventListener('pageshow', event => { if (event.persisted) { state = null; pending = null; compactViewData = null; compactViewRun = ''; void boot(); } });
 void boot();

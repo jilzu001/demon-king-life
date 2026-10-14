@@ -1,9 +1,10 @@
 import { validateSchema } from './schema';
 import { ensure, type Story } from '../engine/types';
+import type { CompactCinematics } from './cinematics';
 
 export type ScenePresentation = { chronicleSummary: string; locationLabel?: string; dialogues?: { speaker: string; text: string }[] };
 export type Presentation = { schemaVersion: 1; storyId: string; storyVersion: string; nodes: Record<string, ScenePresentation> };
-export type PresentedStory = Story & { presentation?: Presentation; presentationWarning?: string };
+export type PresentedStory = Story & { presentation?: Presentation; presentationWarning?: string; cinematics?: CompactCinematics };
 export function validatePresentation(story: Story, data: unknown): Presentation {
   validateSchema('presentation', data);
   const presentation = data as Presentation;

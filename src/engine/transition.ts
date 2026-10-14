@@ -14,7 +14,8 @@ export function createRun(story: Story, seed: number, runId: string): GameState 
     rng: { seed, state: seed }, history: [], enteredNodeIds: [story.manifest.entryNodeId],
   };
   const node = story.nodes[story.manifest.entryNodeId]!;
-  ensure(node.age >= state.age, '초기 장면 시간 역행');
+  // 시작 전 상태의 기준 나이와 첫 사건(출생 등)의 나이는 다를 수 있다.
+  // 실제 진행이 시작된 뒤의 시간 역행은 기존 전이 검사로 금지한다.
   state.age = node.age;
   applyEffects(story, state, node.entryEffects);
   ensure(state.player.crimes.join('|') === story.manifest.initialState.player.crimes.join('|'), '최초 진입만으로 전과 추가 금지');

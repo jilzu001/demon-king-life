@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "endings": [
+    {
+      "id": "ending_peace",
+      "kind": "good",
+      "title": "그냥 인간의 승리",
+      "body": "작은 가게의 마지막 불을 끄고 당신은 노을을 보았다. 세상은 당신을 마왕이라 불렀지만, 당신은 결국 자신의 하루를 살았다.",
+      "recapRules": [
+        {
+          "when": {
+            "op": "contains",
+            "path": "flags",
+            "value": "took_settlement"
+          },
+          "text": "당신은 5만 골드를 받았다. 그 돈으로 산 것은 과거의 용서가 아니라 남은 날의 자유였다."
+        },
+        {
+          "when": {
+            "op": "contains",
+            "path": "flags",
+            "value": "walked_away"
+          },
+          "text": "당신은 긴 재판 대신 조용한 삶을 선택했다. 가끔 후회했지만, 그 선택을 부끄러워하지는 않았다."
+        }
+      ]
+    },
+    {
+      "id": "ending_reform",
+      "kind": "good",
+      "title": "법전을 고친 마왕",
+      "body": "왕국이 사과하기까지 너무 많은 계절이 지났다. 그래도 다음 아이의 출생신고서에는 직업란이 비어 있었다. 당신은 그것을 보고 처음으로 이겼다고 생각했다.",
+      "recapRules": []
+    },
+    {
+      "id": "ending_office",
+      "kind": "good",
+      "title": "국가가 만든 적의 반격",
+      "body": "당신은 더 이상 마왕이 아니었다. 다만 마왕이었던 덕분에 다른 사람들의 억울함을 알아보는 사람이 되었다.",
+      "recapRules": []
+    },
+    {
+      "id": "ending_escape",
+      "kind": "bad",
+      "title": "계단 열일곱 개의 마왕",
+      "body": "무모한 탈옥은 왕국의 무기가 아니라 계단에서 끝났다.",
+      "recapRules": []
+    },
+    {
+      "id": "ending_fire",
+      "kind": "bad",
+      "title": "불타 버린 진실",
+      "body": "서류를 없애려다 사람의 삶과 자신의 미래를 태웠다.",
+      "recapRules": []
+    },
+    {
+      "id": "ending_throne",
+      "kind": "bad",
+      "title": "왕에게 삿대질한 마왕",
+      "body": "국왕 앞에서 소리친 용기는 처형장까지 이어졌다.",
+      "recapRules": []
+    },
+    {
+      "id": "ending_ledger",
+      "kind": "bad",
+      "title": "빈 장부의 주인",
+      "body": "진실을 독점하려다 빈 종이만 남았다.",
+      "recapRules": []
+    }
+  ]
+}

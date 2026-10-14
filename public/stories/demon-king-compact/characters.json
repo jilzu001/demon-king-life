@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "characters": [
+    {
+      "id": "mina",
+      "name": "미나",
+      "role": "hero_candidate_then_commander",
+      "traits": [
+        "전투력 8402",
+        "현실적",
+        "친구가 자신을 죽이려 한 일을 기억함",
+        "사적인 경계를 존중받고 싶어 함",
+        "무고한 사람을 죽이는 방식은 거부"
+      ]
+    },
+    {
+      "id": "erisia",
+      "name": "에리시아",
+      "role": "princess_political_actor",
+      "traits": [
+        "전투력 320",
+        "야심",
+        "협상과 증거 중시",
+        "결혼은 동의와 계약이 우선",
+        "정치적 실익을 따짐"
+      ]
+    },
+    {
+      "id": "king",
+      "name": "국왕",
+      "role": "aging_ruler",
+      "traits": [
+        "권위주의적",
+        "왕실의 체면 중시",
+        "서류는 믿지만 낯선 사위는 싫어함"
+      ]
+    },
+    {
+      "id": "auditor",
+      "name": "세렌",
+      "role": "public_auditor",
+      "traits": [
+        "확인된 사실과 의혹을 구분",
+        "증거 보전 중시",
+        "부패한 지출이라도 형사 유죄는 증빙에 따라 판정"
+      ]
+    }
+  ]
+}

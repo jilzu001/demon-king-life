@@ -180,6 +180,21 @@ body { overflow: hidden; }
 .text-size-controls input { width: 100%; min-width: 0; accent-color: var(--gold); }
 .text-size-controls button { padding: 8px; text-align: center; }
 .text-size-preview { padding: 10px; background: #2a323e; border-radius: 6px; }
+.story-prose { font-size: calc(clamp(16px, 4.2vw, 18px) * var(--text-scale, 1)); line-height: 1.75; overflow-wrap: anywhere; }
+.story-prose .story-paragraph, .chat-feed .story-prose .story-paragraph { font-size: inherit; line-height: 1.75; margin-block: 0 1.15em; white-space: pre-wrap; }
+.story-prose .story-paragraph:last-child { margin-bottom: 0; }
+.aftermath-heading { padding: 16px; border-bottom: 1px solid var(--line); }
+.aftermath-heading .eyebrow { font-size: calc(14px * var(--text-scale, 1)); }
+.aftermath-prose { flex: 1; min-height: 0; overflow-y: auto; padding: 20px 16px; }
+.cinematic-shell { height: 100dvh; max-width: 960px; margin: auto; padding: max(12px, env(safe-area-inset-top)) 16px max(12px, env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: 12px; }
+.cinematic-scene { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; outline: none; animation: arrive 180ms ease-out; }
+.cinematic-content { margin: auto; padding: 20px 8px; width: 100%; max-width: 680px; text-align: center; }
+.compact-art { display: block; width: min(260px, 80%); height: auto; aspect-ratio: 13 / 9; max-height: 28dvh; margin: 0 auto 20px; color: var(--gold); background: #202630; border-radius: 10px; }
+.cinematic-text { font-size: calc(clamp(18px, 4.5vw, 22px) * var(--text-scale, 1)); line-height: 1.8; white-space: pre-wrap; margin: 0 0 1.15em; }
+.cinematic-memory-title { color: var(--gold); font-size: calc(16px * var(--text-scale, 1)); }
+.cinematic-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; flex-shrink: 0; }
+.cinematic-actions button { text-align: center; font-size: calc(16px * var(--text-scale, 1)); }
+.compact-game .timeline { max-height: clamp(72px, 16vh, 130px); overflow-y: auto; }
 @media (max-width: 760px) {
   .game-shell { padding-left: 10px; padding-right: 10px; gap: 8px; }
   .game-header { gap: 6px; }

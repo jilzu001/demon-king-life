@@ -186,6 +186,10 @@
           "items": {
             "$ref": "#/$defs/effect"
           }
+        },
+        "narrative": {
+          "type": "string",
+          "minLength": 1
         }
       },
       "additionalProperties": false
@@ -321,6 +325,11 @@
           "items": {
             "$ref": "#/$defs/choice"
           }
+        },
+        "chronicleSummary": {
+          "type": "string",
+          "minLength": 5,
+          "pattern": "^[^\\r\\n\"“”]+$"
         }
       },
       "additionalProperties": false

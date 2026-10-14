@@ -6,6 +6,7 @@ import endingSchema from '../../schemas/endings.schema.json';
 import saveSchema from '../../schemas/save.schema.json';
 import metaSchema from '../../schemas/meta.schema.json';
 import presentationSchema from '../../schemas/presentation.schema.json';
+import compactCinematicsSchema from '../../schemas/compact-cinematics.schema.json';
 import { ensure } from '../engine/types';
 
 const ajv = new Ajv2020({ allErrors: true, strict: true, allowUnionTypes: true });
@@ -14,6 +15,7 @@ const validators = {
   characters: ajv.compile(characterSchema), endings: ajv.compile(endingSchema),
   save: ajv.compile(saveSchema), meta: ajv.compile(metaSchema),
   presentation: ajv.compile(presentationSchema),
+  compactCinematics: ajv.compile(compactCinematicsSchema),
 };
 export function validateSchema(kind: keyof typeof validators, data: unknown): void {
   const validator = validators[kind];

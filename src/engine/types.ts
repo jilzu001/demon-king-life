@@ -4,10 +4,10 @@ export type Condition =
   | { all: Condition[] } | { any: Condition[] } | { not: Condition };
 export type Effect = { op: 'set' | 'add' | 'addToSet' | 'removeFromSet'; path: string; value: Scalar };
 export type Destination = { kind: 'node' | 'ending'; id: string };
-export type Outcome = { id: string; when?: Condition; weight: number; result: 'success' | 'failure' | 'mixed' | 'neutral'; to: Destination; effects?: Effect[] };
+export type Outcome = { id: string; when?: Condition; weight: number; result: 'success' | 'failure' | 'mixed' | 'neutral'; to: Destination; effects?: Effect[]; narrative?: string };
 export type Choice = { id: string; text: string; description?: string; enabledWhen?: Condition; outcomes: Outcome[] };
 export type Chronicle = { age: number; text: string; when?: Condition; presence?: string[]; reference?: string[]; flashback?: string[] };
-export type Scene = { id: string; kind: 'scene'; age: number; title: string; body: string; chronicle?: Chronicle[]; entryEffects?: Effect[]; choices: Choice[] };
+export type Scene = { id: string; kind: 'scene'; age: number; title: string; body: string; chronicleSummary?: string; chronicle?: Chronicle[]; entryEffects?: Effect[]; choices: Choice[] };
 export type Character = { id: string; name: string; role: string; traits: string[] };
 export type Ending = { id: string; kind: 'happy' | 'normal' | 'bad' | 'bittersweet' | 'hidden' | 'absurd'; title: string; body: string; recapRules?: { when: Condition; text: string }[] };
 export type Player = { species: string; combat: number; magic: number; gold: number; alive: boolean; legalStatus: string; crimes: string[] };

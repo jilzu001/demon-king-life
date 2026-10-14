@@ -1,0 +1,9 @@
+{
+  "scenes": 13,
+  "choices": 28,
+  "endings": 7,
+  "early_bad_endings": 4,
+  "unreachable_scenes": 0,
+  "unreachable_endings": 0,
+  "broken_references": 0
+}

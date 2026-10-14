@@ -35,7 +35,7 @@ export function assertState(story: Story, state: GameState): void {
   ensure(state.enteredNodeIds[0] === story.manifest.entryNodeId, '최초 방문 장면 오류');
   for (const id of state.enteredNodeIds) ensure(Object.hasOwn(story.nodes, id), `알 수 없는 방문 장면: ${id}`);
   let current = story.manifest.entryNodeId;
-  let previousAge = story.manifest.initialState.age;
+  let previousAge = story.nodes[story.manifest.entryNodeId]!.age;
   for (let i = 0; i < state.history.length; i++) {
     const h = state.history[i]!;
     const node = story.nodes[current];

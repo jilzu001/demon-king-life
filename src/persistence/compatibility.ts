@@ -4,14 +4,17 @@ import type { PresentedStory } from '../content/presentation';
 import { ensure, type GameState } from '../engine/types';
 import { decodeSave } from './migrate';
 import { META_KEY, runKey, type StoragePort } from './save';
+import { isCompact } from '../content/compact-contract';
 
 export const BACKUP_KEY = 'existence-sim:v1:backup:before-content-v1.1';
-export function backupBeforeImport(storage: StoragePort): void {
-  const run = storage.getItem(runKey('demon-king')); const meta = storage.getItem(META_KEY);
-  if ((run !== null || meta !== null) && storage.getItem(BACKUP_KEY) === null) {
+export const backupKey = (slotId = 'demon-king') => slotId === 'demon-king' ? BACKUP_KEY : `existence-sim:v1:backup:before-import:${slotId}`;
+export function backupBeforeImport(storage: StoragePort, slotId = 'demon-king'): void {
+  const key = backupKey(slotId);
+  const run = storage.getItem(runKey(slotId)); const meta = storage.getItem(slotId === 'demon-king' ? META_KEY : `${META_KEY}:${slotId}`);
+  if ((run !== null || meta !== null) && storage.getItem(key) === null) {
     const backup = JSON.stringify({ run, meta });
-    storage.setItem(BACKUP_KEY, backup);
-    ensure(storage.getItem(BACKUP_KEY) === backup, '업데이트 전 저장 백업 확인 실패');
+    storage.setItem(key, backup);
+    ensure(storage.getItem(key) === backup, '업데이트 전 저장 백업 확인 실패');
   }
 }
 export function resolveCompatibleSave(active: PresentedStory, legacy: PresentedStory, text: string) {
@@ -19,6 +22,7 @@ export function resolveCompatibleSave(active: PresentedStory, legacy: PresentedS
   const save = data as GameState;
   ensure(save.storyId === active.manifest.id, '다른 스토리의 세이브입니다.');
   if (save.storyVersion === active.manifest.version) return { story: active, state: decodeSave(active, text), notice: '' };
+  ensure(!isCompact(active.manifest), '축소 완결판과 원작의 저장은 별도입니다. 원작 모드에서 이 저장을 불러오세요.');
   ensure(save.storyVersion === '1.0.0', '명시적인 이관 규칙이 없는 저장 버전입니다.');
   if (save.enteredNodeIds[0] === legacy.manifest.entryNodeId) {
     return { story: legacy, state: decodeSave(legacy, text), notice: '이 회차는 이전 엔진 예제의 기록을 그대로 이어갑니다. 새 회차부터 콘텐츠 v1.1이 적용됩니다.' };
