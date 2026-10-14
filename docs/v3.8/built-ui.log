@@ -1,0 +1,29 @@
+
+Running 12 tests using 1 worker
+
+(node:56348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:57624) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:57820) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 birth: 모든 선택의 표시·결과·저장·다음 진행 (6.0s)
+  ok  2 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 child: 모든 선택의 표시·결과·저장·다음 진행 (5.0s)
+  ok  3 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 quiet: 모든 선택의 표시·결과·저장·다음 진행 (4.0s)
+  ok  4 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 final_trial: 모든 선택의 표시·결과·저장·다음 진행 (4.0s)
+  ok  5 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 office: 모든 선택의 표시·결과·저장·다음 진행 (4.0s)
+  ok  6 [PC] › tests\e2e\compact.spec.ts:182:1 › 상단 NPC 없이 고백 네 번째 선택과 본문의 미나 기본 초상화를 유지한다 (4.8s)
+(node:47716) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:50016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:55340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  7 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 birth: 모든 선택의 표시·결과·저장·다음 진행 (5.7s)
+  ok  8 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 child: 모든 선택의 표시·결과·저장·다음 진행 (5.1s)
+  ok  9 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 quiet: 모든 선택의 표시·결과·저장·다음 진행 (4.0s)
+  ok 10 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 final_trial: 모든 선택의 표시·결과·저장·다음 진행 (3.9s)
+  ok 11 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 office: 모든 선택의 표시·결과·저장·다음 진행 (3.9s)
+  ok 12 [모바일-320] › tests\e2e\compact.spec.ts:182:1 › 상단 NPC 없이 고백 네 번째 선택과 본문의 미나 기본 초상화를 유지한다 (5.3s)
+
+  12 passed (1.1m)

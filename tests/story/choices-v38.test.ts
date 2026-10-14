@@ -62,14 +62,14 @@ it('v3.7의319종단 경로와 모든 중간 저장은 상태·원장·난수 �
   expect(terminals).toBe(319);
 });
 
-it('100시드에서 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다', () => {
+it.each(Array.from({ length: 100 }, (_, index) => index + 1))('시드 %i: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다', seed => {
   const paths: Record<string, string[]> = {
     birth: [], child: ['family_accept'],
     quiet: ['family_accept', 'trust_mina', 'attack', 'forgive', 'ally', 'private_deal', 'take_money'],
     final_trial: ['family_accept', 'trust_mina', 'attack', 'forgive', 'ally', 'public_audit', 'fight_case', 'reject_money'],
     office: ['family_accept', 'trust_mina', 'attack', 'forgive', 'ally', 'private_deal', 'buy_office'],
   };
-  for (let seed = 1; seed <= 100; seed++) for (const [nodeId, ids] of Object.entries(additions)) {
+  for (const [nodeId, ids] of Object.entries(additions)) {
     let state = createRun(previous, seed, `new-${seed}-${nodeId}`);
     for (const id of paths[nodeId]!) state = choose(previous, state, state.currentNodeId!, id).nextState;
     expect(state.currentNodeId).toBe(nodeId);
