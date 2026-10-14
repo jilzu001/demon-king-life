@@ -14,7 +14,7 @@ function Test-GameServer {
         if ($gamePage.Content -notmatch '/assets/index-' -or $gamePage.Content -notmatch 'id="app"') { return $false }
         $gameManifest = Invoke-WebRequest -UseBasicParsing -Uri ($gameUrl + 'stories/demon-king-compact/story.json') -TimeoutSec 1
         $gameData = $gameManifest.Content | ConvertFrom-Json
-        return ($gameData.id -eq 'demon-king' -and $gameData.version -eq '2.2.0-compact')
+        return ($gameData.id -eq 'demon-king' -and $gameData.version -in @('2.2.0-compact', '2.3.0-compact'))
     } catch { return $false }
 }
 

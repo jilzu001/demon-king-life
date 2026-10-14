@@ -5,6 +5,7 @@ import { choose, createRun } from '../engine/transition';
 import { ensure, type GameState, type Meta, type TransitionReceipt } from '../engine/types';
 import { SaveStore } from '../persistence/save';
 import { backupBeforeImport, resolveCompatibleSave, backupKey } from '../persistence/compatibility';
+import { backupBeforeCompactUpgrade } from '../persistence/compact-compatible';
 import type { PresentedStory } from '../content/presentation';
 import { lifeEvents, confirmedChoice, resultLabels } from '../ui/history';
 import { renderNarrative } from '../ui/narrative';
@@ -304,7 +305,7 @@ function renderTitle(layout: HTMLElement) {
   const title = element('section', undefined, 'title-card');
   title.append(element('p', '한 사람의 선택, 한 번의 일생', 'eyebrow'), element('h1', '가짜 마왕의 일생'), element('p', '선택은 행동의 시도입니다. 당신의 일생을 읽고, 다음 행동을 고르세요.', 'title-intro'));
   const start = button(state ? '이어하기' : '시작하기', enterGame, !story || (!state && Boolean(errorText))); start.dataset.enter = 'true'; title.append(start);
-  title.append(element('p', compactMode ? '축소 완결판 · 13개 사건 · 7개 결말' : '원작 · 98개 장면 · 34개 결말', 'subtle'));
+  title.append(element('p', compactMode && story ? `축소 완결판 · ${Object.keys(story.nodes).length}개 사건 · ${Object.keys(story.endings).length}개 결말` : '원작 · 98개 장면 · 34개 결말', 'subtle'));
   const settings = button('설정', () => { openMenu = 'settings'; render(); }, !story); settings.setAttribute('aria-label', '저장 관리 · 엔딩 도감'); title.append(settings);
   layout.append(title);
 }
@@ -620,6 +621,7 @@ async function boot() {
     ]);
     story = activeStory; store = makeStore(story);
     backupBeforeImport(window.localStorage, compactMode ? compactSlot : undefined);
+    if (compactMode) backupBeforeCompactUpgrade(window.localStorage);
     meta = store.loadMeta();
     const raw = store.raw();
     if (raw) {

@@ -2,6 +2,7 @@ import { choose, createRun } from '../engine/transition';
 import { ensure, type GameState, type Story } from '../engine/types';
 import { decodeSave } from './migrate';
 import type { StoragePort } from './save';
+import { decodeCompatibleCompact } from './compact-compatible';
 
 export const RESELECT_BACKUP_KEY = 'existence-sim:v1:backup:before-reselect:demon-king:compact';
 
@@ -30,6 +31,6 @@ export function backupBeforeReselect(storage: StoragePort, state: GameState): vo
 export function loadReselectBackup(storage: StoragePort, story: Story, runId: string): GameState {
   const text = storage.getItem(RESELECT_BACKUP_KEY);
   ensure(text, '복원할 재선택 전 회차가 없습니다.');
-  const restored = decodeSave(story, text);
+  const restored = decodeCompatibleCompact(story, text);
   return { ...restored, runId };
 }

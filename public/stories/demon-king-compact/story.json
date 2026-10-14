@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "demon-king",
-  "version": "2.2.0-compact",
+  "version": "2.3.0-compact",
   "title": "가짜 마왕의 일생",
   "entryNodeId": "birth",
   "chapters": [

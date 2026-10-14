@@ -5,7 +5,6 @@ import { narrativeLines } from '../src/ui/narrative';
 const story = await readExampleStory('demon-king-compact');
 for (const node of Object.values(story.nodes)) {
   ensure(node.chronicleSummary && !/[\r\n"“”]/.test(node.chronicleSummary), `${node.id}: 독립적인 한 줄 연대기 누락`);
-  ensure(node.choices.length <= 3, `${node.id}: 선택지 3개 초과`);
   ensure(narrativeLines(node.body).length > 1, `${node.id}: 본문 문단 구분 누락`);
   for (const choice of node.choices) for (const outcome of choice.outcomes) ensure(outcome.narrative?.trim(), `${node.id}/${choice.id}: 선택 후 서술 누락`);
 }

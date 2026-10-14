@@ -1,0 +1,3 @@
+.story-prose { font-size: clamp(16px, 4.2vw, 18px); line-height: 1.75; overflow-wrap: anywhere; }
+.story-prose .story-paragraph { margin: 0 0 1.15em; white-space: pre-wrap; }
+.story-prose .story-paragraph:last-child { margin-bottom: 0; }

@@ -5,6 +5,7 @@ import { ensure, type GameState } from '../engine/types';
 import { decodeSave } from './migrate';
 import { META_KEY, runKey, type StoragePort } from './save';
 import { isCompact } from '../content/compact-contract';
+import { decodeCompatibleCompact } from './compact-compatible';
 
 export const BACKUP_KEY = 'existence-sim:v1:backup:before-content-v1.1';
 export const backupKey = (slotId = 'demon-king') => slotId === 'demon-king' ? BACKUP_KEY : `existence-sim:v1:backup:before-import:${slotId}`;
@@ -22,6 +23,7 @@ export function resolveCompatibleSave(active: PresentedStory, legacy: PresentedS
   const save = data as GameState;
   ensure(save.storyId === active.manifest.id, '다른 스토리의 세이브입니다.');
   if (save.storyVersion === active.manifest.version) return { story: active, state: decodeSave(active, text), notice: '' };
+  if (isCompact(active.manifest) && save.storyVersion === '2.2.0-compact') return { story: active, state: decodeCompatibleCompact(active, text), notice: '이전 회차의 선택·상태·난수를 검증해 이어갑니다. 고백은 새 선택으로 추가되었습니다.' };
   ensure(!isCompact(active.manifest), '이전 원작의 저장은 현재 판과 호환되지 않습니다. 기존 저장 파일은 보관해 주세요.');
   ensure(save.storyVersion === '1.0.0', '명시적인 이관 규칙이 없는 저장 버전입니다.');
   if (save.enteredNodeIds[0] === legacy.manifest.entryNodeId) {

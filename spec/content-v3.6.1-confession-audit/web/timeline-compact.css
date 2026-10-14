@@ -1,0 +1,5 @@
+.life-timeline { max-height: clamp(72px, 16vh, 130px); overflow-y: auto; }
+.life-timeline__item { display:flex; gap:.45rem; min-width:0; align-items:baseline; }
+.life-timeline__age { flex:0 0 auto; }
+.life-timeline__summary { min-width:0; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+@media(min-width:900px){.game-layout{grid-template-columns:minmax(0,3fr) minmax(0,7fr);}}

@@ -1,0 +1,20 @@
+{
+  "base": "v3.4",
+  "release": "v3.5",
+  "eventsTotal": 65,
+  "fullyRewrittenEvents": 10,
+  "fullyRewrittenChoiceOutcomes": 30,
+  "eventIds": [
+    "mina_medal",
+    "mina_bridge",
+    "fake_awaken",
+    "birth_archive",
+    "orphan_registry",
+    "retired_king",
+    "princess_coronation",
+    "statue",
+    "peace_treaty",
+    "grandchild_question"
+  ],
+  "notes": "기존 이벤트 ID/선택 ID/조건/effects 보존. 이외 사건은 v3.4 원문 유지."
+}

@@ -147,6 +147,30 @@
               "narrative": "감독관은 웃음을 터뜨렸다가 당신이 정말 영수증을 쓰기 시작하자 웃음을 멈췄다."
             }
           ]
+        },
+        {
+          "id": "confess",
+          "text": "미나에게 사랑한다고 고백한다.",
+          "description": "시험장 한가운데서 가장 무모한 무기를 꺼낸다.",
+          "outcomes": [
+            {
+              "id": "out_confess",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "confession"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "confessed_at_exam"
+                }
+              ],
+              "narrative": "감독관의 펜이 멈췄다. 미나의 검도 멈췄다. 다만 합격 시계는 멈추지 않았다."
+            }
+          ]
         }
       ],
       "chronicleSummary": "20세에 미나의 용사 시험에서 내가 제압 대상이 됐다."
@@ -760,6 +784,198 @@
         }
       ],
       "chronicleSummary": "62세에 옛 마왕 관리청을 행정 피해 상담소로 바꿨다."
+    },
+    {
+      "id": "confession",
+      "kind": "scene",
+      "age": 20,
+      "title": "고백은 실기 점수에 포함되지 않는다",
+      "body": "시험장은 조용해졌다.\n\n“미나, 사실 예전부터 널 좋아했어.”\n\n미나는 검을 내리지 않았다.\n\n“지금? 내 국가고시 시험장에서?”\n\n“좋아한다는 말도 국가 허가를 받아야 해?”\n\n“넌 내가 합격하느냐 마느냐가 걸린 날에 왜 그러는데?”\n\n시험관이 헛기침했다.\n\n“개인적인 고백은 시험 성적에 반영되지 않습니다.”\n\n당신은 시험관을 노려봤다.\n\n“사람이 인생을 걸고 고백하는데 꼭 그런 말을 해야 합니까?”\n\n“저도 직장을 걸고 감독 중입니다.”\n\n미나는 잠시 눈을 감았다. 열두 살에 우물에서 나무칼을 건져 주던 얼굴이었다. 그녀는 당신의 고백이 진심인지, 칼을 피하려는 꾀인지 가늠하고 있었다.\n\n“하나만 묻자.”\n\n“뭐든.”\n\n“내가 오늘 시험을 안 보면, 넌 내일도 날 좋아할 거야?”\n\n당신은 대답을 준비하지 못했다. 살기 위해 꺼낸 말이 갑자기 진짜 인생의 질문이 되었다.\n\n시험관이 모래시계를 뒤집었다.\n\n“응시자 미나. 남은 시간 1분입니다. 참고로 청혼도 감점 사유는 아닙니다.”\n\n“그건 왜 알려줘요?”\n\n“작년엔 청혼이 나왔거든요.”\n\n당신과 미나는 동시에 시험관을 보았다.\n\n“합격했어요?”\n\n“결혼은 했습니다. 용사는 떨어졌고요.”",
+      "choices": [
+        {
+          "id": "confess_sincere",
+          "text": "미나가 시험을 포기하지 않아도 진심이라고 말한다.",
+          "description": "사랑은 상대의 꿈을 인질로 삼지 않는다.",
+          "outcomes": [
+            {
+              "id": "out_confess_sincere",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "confession_afterm"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "confession_sincere"
+                }
+              ],
+              "narrative": "당신은 쇠사슬을 잡았다. “네가 합격하더라도, 난 네가 좋았어.” 미나는 칼을 쥔 손에 힘을 풀었다."
+            }
+          ]
+        },
+        {
+          "id": "confess_attack",
+          "text": "고백이 안 통하자 미나를 기습한다.",
+          "description": "전투력 2의 마지막 도박을 건다.",
+          "outcomes": [
+            {
+              "id": "out_confess_attack",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "prison"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "attacked_mina"
+                }
+              ],
+              "narrative": "당신은 미나에게 돌진했다. 미나는 한 손으로 당신을 붙잡았다. “고백 다음에 살인 미수야?” 시험관이 답했다. “이제는 형사 사건입니다.”"
+            }
+          ]
+        },
+        {
+          "id": "confess_absurd",
+          "text": "시험관에게도 사랑한다고 말해 판정을 혼란시킨다.",
+          "description": "로맨스가 안 통하면 행정상 혼란을 노린다.",
+          "outcomes": [
+            {
+              "id": "out_confess_absurd",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "confession_chaos"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "confession_everyone"
+                }
+              ],
+              "narrative": "“시험관님도 좋아합니다!” 당신이 외쳤다. 시험관은 즉시 이해충돌 신고서를 꺼냈다."
+            }
+          ]
+        }
+      ],
+      "chronicleSummary": "20세 · 용사 시험장에서 미나에게 사랑을 고백했다."
+    },
+    {
+      "id": "confession_afterm",
+      "kind": "scene",
+      "age": 21,
+      "title": "검을 내린 사람",
+      "body": "미나는 검을 천천히 바닥에 놓았다.\n\n“난 용사가 되고 싶어. 아주 어릴 때부터.”\n\n“알아.”\n\n“근데 네가 다칠 걸 알면서 합격하는 건, 내가 생각한 용사가 아니야.”\n\n감독관이 종을 울렸다.\n\n“응시자 자진 포기. 다음 시험은 삼 년 후입니다.”\n\n미나가 입술을 깨물었다. 당신은 처음으로 자신이 살아남았다는 사실보다 그녀가 잃은 삼 년을 먼저 생각했다.\n\n시험장을 나오는 길, 당신은 말했다.\n\n“고백 대답은 안 해도 돼.”\n\n“당연히 안 하지.”\n\n“너무 단호한 거 아냐?”\n\n“넌 내 꿈이랑 네 목숨을 같은 저울에 올렸어. 지금은 대답 못 해.”\n\n“미안해.”\n\n미나는 걸음을 멈췄다.\n\n“그래도 한 가지는 말해 줄게. 다음엔 시험장이 아닌 곳에서 말해.”\n\n당신은 잠시 희망을 품었다.\n\n“그럼 가능성이 있다는 거야?”\n\n“그건 네가 사람답게 사는지 보고 결정할 거야.”\n\n그날 당신은 처음으로 마왕이라는 신분보다, 누군가에게 부끄럽지 않은 사람이 되는 일이 더 어렵다는 걸 배웠다.\n\n그리고 그날 밤, 국방부에서 서한이 왔다. ‘용사 시험에 협조하지 않은 마왕에게 지급되던 보호금이 정지됩니다.’\n\n당신은 편지를 미나에게 보여 주었다.\n\n“나, 네가 좋아서 고백했는데 실업자가 됐어.”\n\n미나가 웃음을 참았다.\n\n“그런 말은 고백의 후속편으로 쓰지 마.”",
+      "choices": [
+        {
+          "id": "support_mina",
+          "text": "미나의 재시험을 도우며 함께 진실을 조사한다.",
+          "description": "관계보다 먼저 그녀의 꿈을 존중한다.",
+          "outcomes": [
+            {
+              "id": "out_support_mina",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "princess"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "mina_mutual_respect"
+                }
+              ],
+              "narrative": "당신은 훈련 상대를 자처했다. 미나는 훈련 첫날 말했다. “넌 내 상대가 아니라 안전 수칙 교육용이야.”"
+            }
+          ]
+        },
+        {
+          "id": "leave_mina",
+          "text": "미나와 거리를 두고 국가에 직접 항의한다.",
+          "description": "진심을 말했지만 거절도 존중한다.",
+          "outcomes": [
+            {
+              "id": "out_leave_mina",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "petition"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "mina_distance"
+                }
+              ],
+              "narrative": "미나에게 편지를 남겼다. ‘널 탓하지 않을게. 대신 날 시험 문제로 만든 사람들은 찾아볼 거야.’"
+            }
+          ]
+        }
+      ],
+      "chronicleSummary": "21세 · 미나는 시험을 포기했고 두 사람의 관계가 달라졌다."
+    },
+    {
+      "id": "confession_chaos",
+      "kind": "scene",
+      "age": 20,
+      "title": "시험관에게 고백한 마왕",
+      "body": "“시험관님도 좋아합니다!”\n\n당신의 외침에 시험장 전체가 얼어붙었다.\n\n시험관은 깃펜을 떨어뜨렸다.\n\n“피고… 아니, 시험 대상자. 방금 뭐라고 하셨습니까?”\n\n“미나도 좋아하고 시험관님도 좋아합니다. 사랑은 평등하니까요.”\n\n미나가 검을 내려놓았다.\n\n“너 진짜 죽기 싫구나.”\n\n“사랑 앞에서는 모두 평등해.”\n\n“전투력은 안 평등하잖아.”\n\n시험관은 책상 서랍에서 ‘공직자 이해충돌 신고서’를 꺼냈다. 삼십 년 근무하면서 한 번도 써 본 적 없는 양식이었다.\n\n“시험 대상자와 사적인 관계가 생긴 것으로 간주되면 시험을 중단해야 합니다.”\n\n“그럼 중단하세요!”\n\n“잠깐. 제가 당신을 좋아한다고 한 적은 없습니다.”\n\n“일방적인 사랑도 사랑입니다.”\n\n“법률상 그렇지 않습니다.”\n\n당신은 미나를 바라보았다.\n\n“미나, 넌 법률상 날 좋아할 수 있니?”\n\n“법률보다 먼저 상식상 불가능해.”\n\n시험관은 결국 중단 결정을 내렸다. 판정 사유는 ‘예상하지 못한 정서적 난입’이었다.\n\n다음 날 신문은 ‘마왕, 용사 시험장서 삼각관계 조성’이라는 제목을 뽑았다. 실제로는 아무도 당신을 좋아한다고 하지 않았다는 사실이 기사 맨 끝에 작게 실렸다.",
+      "choices": [
+        {
+          "id": "own_scandal",
+          "text": "망신을 감수하고 시험 제도의 허점을 공개한다.",
+          "description": "웃음거리가 되어도 사건의 본질을 알린다.",
+          "outcomes": [
+            {
+              "id": "out_own_scandal",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "petition"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "chaos_whistleblower"
+                }
+              ],
+              "narrative": "“제가 이상한 말을 했죠. 그런데 사람이 시험 문제인 건 정상입니까?” 기자들의 펜이 처음으로 멈췄다."
+            }
+          ]
+        },
+        {
+          "id": "embrace_fame",
+          "text": "삼각관계 소문을 이용해 연애 상담소를 연다.",
+          "description": "마왕보다 연애 전문가가 더 잘 팔리는 나라.",
+          "outcomes": [
+            {
+              "id": "out_embrace_fame",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_love_scandal"
+              },
+              "effects": [],
+              "narrative": "연애 경험이 없는 당신의 상담소는 첫 달에 파산했다. 다만 시험관과 미나는 평생 그날을 잊지 못했다."
+            }
+          ]
+        }
+      ],
+      "chronicleSummary": "20세 · 시험관에게도 고백해 국가고시가 중단됐다."
     }
   ]
 }
