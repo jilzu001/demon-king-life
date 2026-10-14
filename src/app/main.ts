@@ -14,6 +14,13 @@ import { portraitUrl, portraitCharacters, dialogueEmotion, type PortraitCharacte
 import '../styles/main.css';
 
 const root = document.querySelector<HTMLDivElement>('#app')!;
+const textSizeKey = 'demon-king:ui:text-percent';
+let textPercent = 100;
+try {
+  const savedSize = Number(localStorage.getItem(textSizeKey));
+  if ([100, 110, 120, 130, 140, 150].includes(savedSize)) textPercent = savedSize;
+} catch { /* 화면 설정 저장이 불가능해도 기본 크기로 플레이한다. */ }
+document.documentElement.style.setProperty('--text-scale', String(textPercent / 100));
 let story: PresentedStory | null = null;
 let activeStory: PresentedStory | null = null;
 let legacyStory: PresentedStory | null = null;
@@ -285,6 +292,30 @@ function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEle
 }
 function renderSettings(save: HTMLElement) {
   if (!story) return;
+  const display = element('section', undefined, 'display-settings');
+  const label = element('label', '화면 전체 글자 크기'); label.htmlFor = 'text-size';
+  const size = element('input'); size.id = 'text-size'; size.type = 'range'; size.min = '100'; size.max = '150'; size.step = '10'; size.value = String(textPercent);
+  const output = element('output'); output.htmlFor = 'text-size';
+  const hint = element('p', '100%는 현재 기본 크기입니다. 더 작게 줄어들지 않습니다.', 'subtle');
+  const message = element('p', '', 'subtle'); message.setAttribute('role', 'status');
+  const update = (value: number) => {
+    textPercent = value; size.value = String(value);
+    document.documentElement.style.setProperty('--text-scale', String(value / 100));
+    output.textContent = `${value}%${value === 100 ? ' · 최소 크기' : ''}`;
+    size.setAttribute('aria-valuetext', output.textContent);
+    smaller.disabled = value === 100; larger.disabled = value === 150;
+  };
+  const change = (value: number) => {
+    update(value);
+    try { localStorage.setItem(textSizeKey, String(value)); message.textContent = ''; }
+    catch { message.textContent = '현재 화면에는 적용했습니다. 이 브라우저에서는 크기 설정을 저장할 수 없습니다.'; }
+  };
+  const smaller = button('작게', () => change(Math.max(100, textPercent - 10)));
+  const larger = button('크게', () => change(Math.min(150, textPercent + 10)));
+  size.addEventListener('input', () => change(Number(size.value)));
+  const controls = element('div', undefined, 'text-size-controls'); controls.append(smaller, size, larger);
+  update(textPercent);
+  display.append(label, output, controls, hint, element('p', '연대기와 대사, 선택지와 버튼까지 이 크기로 표시됩니다.', 'text-size-preview'), message); save.append(display);
   const tools = element('div', undefined, 'tools');
   const exportButton = button('회차 JSON 내보내기', exportRun, busy); exportButton.dataset.whenReady = 'normal'; tools.append(exportButton);
   const restart = button(state ? '새 회차 시작' : '기존 회차를 교체하고 시작', newRun, busy || Boolean(pending)); restart.dataset.whenReady = 'normal'; tools.append(restart);

@@ -15,10 +15,15 @@ try {
     const before = await page.evaluate(() => localStorage.getItem('existence-sim:v1:run:demon-king'));
     await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(1);
     await expect(page.locator('.choices')).toBeHidden();
-    await page.clock.runFor(60000); await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(1);
-    await page.locator('#current-event .chronicle-message:visible').first().click();
+    const delay = async () => page.locator('#current-event .chronicle-message:visible').last().evaluate(el => Math.max(2500, Array.from(el.textContent ?? '').length * 170));
+    await page.clock.runFor(await delay());
     await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(2);
-    await page.clock.runFor(60000); await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(2);
+    await page.locator('#current-event .chronicle-message:visible').last().click();
+    await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(3);
+    const nextDelay = await delay();
+    await page.clock.runFor(nextDelay - 1); await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(3);
+    await page.clock.runFor(1); await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(4);
+    await expect(page.locator('.portrait figcaption')).toHaveCount(0);
     await expect(page.locator('.choices')).toBeHidden();
     await page.screenshot({ path: `docs/reading-${name}.png`, fullPage: true });
     await page.getByRole('button', { name: '스킵 · 바로 선택하기', exact: true }).click();
@@ -41,7 +46,7 @@ try {
     await expect(page.locator('[data-choice]')).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     expect(errors).toEqual([]);
-    console.log(`${name}: 클릭당 한 줄·대기 중 진행 없음·스킵·원장 보호·다음 장면·엔딩 복원 통과 (${url})`);
+    console.log(`${name}: 천천히 자동 한 줄·클릭당 다음 한 줄·자동 진행 재개·스킵·원장 보호·다음 장면·엔딩 복원 통과 (${url})`);
     await context.close();
   }
 } finally { await browser.close(); }
