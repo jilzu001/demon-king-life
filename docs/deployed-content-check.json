@@ -1,0 +1,45 @@
+{
+  "url": "https://jilzu001.github.io/demon-king-life/",
+  "files": [
+    {
+      "file": "story.json",
+      "status": 200,
+      "sha256": "ef50c639d6b71d0c5dd1ca71c2472e59bb795b3478ca5949957e9b4e50e94d0d"
+    },
+    {
+      "file": "characters.json",
+      "status": 200,
+      "sha256": "dfbcc0fdc19b0b2df0ba2b0b851dd77d36fb9483f2d30bbe92c554420f2a3786"
+    },
+    {
+      "file": "endings.json",
+      "status": 200,
+      "sha256": "43083800c9a3b174f293609f129ae2b211d5783fd455634e4f47d5ebec02ec7a"
+    },
+    {
+      "file": "presentation.json",
+      "status": 200,
+      "sha256": "7bc146a763fa32ff8daa9a87942d25f6409daf0d9e2b4ffeac8f5534f4929606"
+    },
+    {
+      "file": "chapters/01_youth.json",
+      "status": 200,
+      "sha256": "7a582c521309868cacb2259f92f770215b0b8dc6c90c4c7a27d1095142100ebb"
+    },
+    {
+      "file": "chapters/02_twists.json",
+      "status": 200,
+      "sha256": "450c85c230600fa6d66bd6e35c70e256e33f2437563d2d63b7da43b8ad07ba48"
+    },
+    {
+      "file": "chapters/03_accounts.json",
+      "status": 200,
+      "sha256": "b52f9d9f51f56f7f27a588ac395cfb7a30003a2024c35df9425106e698e4eccd"
+    },
+    {
+      "file": "chapters/04_afterlife.json",
+      "status": 200,
+      "sha256": "b3a9d5815c730bc93fa917c5627d8322831e8670eb47f56907f7e7c630c4f4c1"
+    }
+  ]
+}

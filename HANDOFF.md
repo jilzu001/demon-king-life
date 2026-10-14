@@ -32,3 +32,13 @@
 - 최종 단위·통합 96개, 실제 Edge PC/320px 브라우저 34개, 구조·표시·전수 분기·타입·빌드 검사 통과. 실제 루트/하위 경로 빌드도 실행 확인했습니다. 사진은 `docs/v11-*.png`입니다. 상세 실패 이력과 한계는 `docs/CONTENT_V11_IMPORT.md`를 확인하세요.
 - 바탕화면 아이콘의 경로와 포트 4175는 유지합니다. 사용자가 시작한 숨김 서버가 새 `dist/`를 제공합니다. 서버가 없으면 바로가기가 시작합니다. `Start-Game.ps1 -NoBrowser`로 Windows PowerShell 5.1의 새 버전 인식을 확인했습니다. 하위 경로 QA용 별도 서버는 종료했습니다.
 - 다른 브라우저/실기기와 공개 배포는 미실시입니다. Python 도구는 jsonschema 미설치로 실행하지 않았으며 동일한 Schema를 Ajv와 실제 엔진 전수 검사로 검증했습니다.
+
+## 공개 배포 완료 — 2026-10-14
+
+- 사용자의 배포 요청에 따라 이 프로젝트만 Git 저장소로 만들고 `https://github.com/jilzu001/demon-king-life`에 게시했습니다. 플레이 주소는 `https://jilzu001.github.io/demon-king-life/`입니다. 다른 게임은 변경하지 않았습니다.
+- Git Credential Manager의 기존 인증을 메모리에서만 사용했습니다. GitHub Pages는 workflow 소스, main 푸시의 `pages.yml`은 전체 검증을 통과한 dist만 배포합니다. PR은 검증만 합니다.
+- 초기 배포 커밋 `77857fc1d37eb179bae25501385e248c5ccca517`, Actions 실행 `38488632929`의 build/deploy 모두 성공했습니다. 공개 콘텐츠 8개를 HTTP 200 및 원본 바이트 일치로 확인했습니다.
+- 로컬 단위/통합 96개, 브라우저 36개 통과. 320/360/390/430/768/1280px 반응형 검사를 추가했습니다. GitHub의 Ubuntu/Chromium에서도 전체 검증이 통과했습니다.
+- 공개 주소에서 로그인 없는 새 Edge 컨텍스트의 PC/320px 모바일 각각 3회 진행·복원, 19회 선택 후 `end_archivist_legacy`, 조기 사망 `end_blade`, 종료 후 새로고침을 확인했습니다. 페이지 오류 0개입니다.
+- 로컬 기본 build는 `/`, Actions build만 `/demon-king-life/`로 설정합니다. 기존 바탕화면 아이콘과 로컬 저장을 유지합니다. 로컬→공개 주소 진행 이전은 JSON 내보내기/가져오기를 이용합니다.
+- 상세 검증과 다음 업데이트 절차는 `docs/DEPLOYMENT.md`에 있습니다. 실제 휴대기기와 Safari/Firefox는 미검증입니다.
