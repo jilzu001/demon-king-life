@@ -1,6 +1,6 @@
 # 메인 화면·타이틀·글자 밝기 개편
 
-기준일 2026-10-15. 기존 게임 데이터/엔진/저장 버전2.3.0-compact는 유지하며 화면과 조작만 변경했다. 아래 로컬 회귀/실제 빌드 검수는 완료했으며 공개 배포 확인은 별도로 기록한다.
+기준일 2026-10-15. 기존 게임 데이터/엔진/저장 버전2.3.0-compact는 유지하며 화면과 조작만 변경했다. 로컬 회귀/실제 빌드와 공개 배포 검수까지 완료했다. 배포 게임은3da8e19이며 이후 기록만 갱신한 커밋과 구분한다.
 
 | 요청 | 적용 |
 | --- | --- |
@@ -25,7 +25,7 @@
 - 실제 빌드에서 출생부터 고백 후속 대사까지 PC/모바일2경로, PowerShell5.1 실행기 통과. [플레이 로그](compact-controls/play.log).
 - 타이틀150%는320×568/390×844/1280×900에서 첫 줄과 마지막 설정 버튼 접근까지 별도 확인했다. 가장 작은 높이에서는 타이틀 내부 스크롤로 모든 내용을 볼 수 있다.
 - 화면: [모바일 타이틀](compact-controls/title-모바일-320.png), [모바일 한 줄 표시](compact-controls/header-모바일-320.png), [모바일 페이지/DPR2](compact-controls/page-child-320-dpr2.png), [PC 타이틀](compact-controls/title-PC.png).
-- 공개 배포 확인은 진행 중이다. 실제 휴대기기/Safari/Firefox 검수는 별도 미실행이다.
+- 공개 배포 검수까지 통과했다. 실제 휴대기기/Safari/Firefox 검수는 별도 미실행이다.
 
 ## 변경 범위
 
@@ -39,4 +39,14 @@
 
 로컬에서도 넓은 숫자 글꼴(Verdana)로 동일 현상을 재현했다. 나이 칸 client87/scroll89였다.360px 이하에서 오른쪽 기록 칸/상단 간격과 능력치 칸의 수평 여백만 조정해 client92/scroll92로 해결했다. 글자 크기나 검사 기준을 낮추지 않았다. 기본 글꼴과 넓은 글꼴을 모두 검사하고, 향후 실패 시 칸별 수치가 로그에 나오도록 보강했다.
 
-수정 후 타입/콘텐츠/분기/빌드와 PC·모바일 관련6개, 실제 빌드 관련6개 통과. [관련 검사](compact-controls/width-fix.log), [빌드](compact-controls/width-build.log), [실제 빌드 검사](compact-controls/width-built-controls.log). 스타일 검수 요소를 제거하는 코드의 Node 타입 오류는 표준 removeChild로 수정하고 타입/빌드를 재확인했다. 서버 전체 재검수/공개 검증은 완료 후 기록한다.
+수정 후 타입/콘텐츠/분기/빌드와 PC·모바일 관련6개, 실제 빌드 관련6개 통과. [관련 검사](compact-controls/width-fix.log), [빌드](compact-controls/width-build.log), [실제 빌드 검사](compact-controls/width-built-controls.log). 스타일 검수 요소를 제거하는 코드의 Node 타입 오류는 표준 removeChild로 수정하고 타입/빌드를 재확인했다. 수정본의 서버 전체 재검수/공개 검증까지 아래와 같이 통과했다.
+
+
+## 최종 배포·공개 검증
+
+- 게임 커밋 **3da8e1943220256b03a59dc4d97ee60d70677eb6**, [Actions38653281775](https://github.com/jilzu001/demon-king-life/actions/runs/38653281775) build116156971708/deploy116158520434 성공. Ubuntu 전체 단위120+브라우저114=234개, 타입/스키마/현재319경로/원작34엔딩/빌드 통과. [서버 성공 로그](compact-controls/ci-success.log). 첫 CI 실패와 해결 과정은 위에 보존했다.
+- 수정 후 실제 로컬 빌드도 DPR1/2 각120개, 총240조합 종료0. [최종 DPR1](compact-controls/width-ui-dpr1.log), [최종 DPR2](compact-controls/width-ui-dpr2.log).
+- [공개 링크](https://jilzu001.github.io/demon-king-life/)에서 타이틀 복귀/이어하기/새로하기·밝기·150% 헤더/연대기 검사 **6개 통과**. [공개 조작 로그](compact-controls/public-controls.log).
+- 같은 공개 링크에서 PC1280×900/모바일 세로320×568·360×800·390×844·430×932,12상황×5크기×2읽기 방식 = **120조합** 종료0.150% 글자·최근 연대기 한 줄/능력치 한 줄·기록 접근·본문 전체 글자·그림/팝업/저장 불변 확인. [공개 화면 로그](compact-controls/public-layout.log).
+- `node scripts/verify-v37-public.mjs https://jilzu001.github.io/demon-king-life/` 종료0:175개(WebP167+JSON5+이미지 정책3) HTTP200/원본 바이트 동일. 이번 UI 변경으로 스토리·그림·정책 파일을 수정하지 않았다.
+- 검증은 Chromium 브라우저의 PC/모바일 세로 뷰포트로 수행했다. 실제 휴대기기/Safari/Firefox는 확인하지 않았다. 집필·65사건 확장 엔진 연결은 이번 범위에 포함하지 않는다.
