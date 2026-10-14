@@ -1,0 +1,48 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: compact.spec.ts >> v3.8 exam: 모든 선택의 표시·결과·저장·다음 진행
+- Location: tests\e2e\compact.spec.ts:37:26
+
+# Error details
+
+```
+Error: expect(locator).toContainText(expected) failed
+
+Locator: locator('.aftermath-prose')
+Timeout: 5000ms
+- Expected substring  - 7
++ Received string     + 1
+
+- 당신의 주먹은 미나의 갑옷에 닿기도 전에 멈췄다. 미나가 당신의 손목을 잡고 속삭였다.
+-
+- “왜 그랬어?”
+-
+- 당신은 대답 대신 말했다.
+-
+- “사랑해.” 감독관은 이를 공격 후 협박으로 기록했다.
++ 당신의 주먹은 미나의 갑옷에 닿기도 전에 멈췄다. 미나가 당신의 손목을 잡고 속삭였다.“왜 그랬어?”당신은 대답 대신 말했다.“사랑해.” 감독관은 이를 공격 후 협박으로 기록했다.
+
+Call log:
+  - Expect "toContainText" locator('.aftermath-prose') with timeout 5000ms
+  - waiting for locator('.aftermath-prose')
+    14 × locator resolved to <div class="narrative story-prose aftermath-prose">…</div>
+       - unexpected value "당신의 주먹은 미나의 갑옷에 닿기도 전에 멈췄다. 미나가 당신의 손목을 잡고 속삭였다.“왜 그랬어?”당신은 대답 대신 말했다.“사랑해.” 감독관은 이를 공격 후 협박으로 기록했다."
+
+```
+
+```yaml
+- paragraph: 당신의 주먹은 미나의 갑옷에 닿기도 전에 멈췄다. 미나가 당신의 손목을 잡고 속삭였다.
+```
+
+# Test source
+
+```ts
+  1   | import { test, expect, type Page } from '@playwright/test';
+  2   | import { readFileSync } from 'node:fs';
+  3   | import { execFileSync } from 'node:child_process';

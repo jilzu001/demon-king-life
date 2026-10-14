@@ -1,0 +1,1101 @@
+{
+  "baselineCommit": "260857c",
+  "date": "2026-10-15",
+  "scope": "현재 공개 핵심판. UI 구성 변경 없음. 보관 원작과 준비본65개는 보존.",
+  "counts": {
+    "nodes": 16,
+    "oldChoices": 36,
+    "newChoices": 43,
+    "changedNodes": 5,
+    "addedChoices": 7,
+    "endings": 8
+  },
+  "changes": [
+    {
+      "nodeId": "birth",
+      "before": 1,
+      "after": 3,
+      "added": [
+        {
+          "choiceId": "family_appeal",
+          "outcomeId": "out_family_appeal",
+          "flag": "birth_appealed",
+          "destination": {
+            "kind": "node",
+            "id": "child"
+          }
+        },
+        {
+          "choiceId": "family_invoice",
+          "outcomeId": "out_family_invoice",
+          "flag": "birth_wage_claim",
+          "destination": {
+            "kind": "node",
+            "id": "child"
+          }
+        }
+      ]
+    },
+    {
+      "nodeId": "child",
+      "before": 1,
+      "after": 3,
+      "added": [
+        {
+          "choiceId": "mina_contract",
+          "outcomeId": "out_mina_contract",
+          "flag": "mina_safety_pact",
+          "destination": {
+            "kind": "node",
+            "id": "exam"
+          }
+        },
+        {
+          "choiceId": "mina_rival",
+          "outcomeId": "out_mina_rival",
+          "flag": "mina_rival_promise",
+          "destination": {
+            "kind": "node",
+            "id": "exam"
+          }
+        }
+      ]
+    },
+    {
+      "nodeId": "quiet",
+      "before": 1,
+      "after": 2,
+      "added": [
+        {
+          "choiceId": "peace_open",
+          "outcomeId": "out_peace_open",
+          "flag": "peace_helped_child",
+          "destination": {
+            "kind": "ending",
+            "id": "ending_peace"
+          }
+        }
+      ]
+    },
+    {
+      "nodeId": "final_trial",
+      "before": 1,
+      "after": 2,
+      "added": [
+        {
+          "choiceId": "reform_read",
+          "outcomeId": "out_reform_read",
+          "flag": "reform_public_reading",
+          "destination": {
+            "kind": "ending",
+            "id": "ending_reform"
+          }
+        }
+      ]
+    },
+    {
+      "nodeId": "office",
+      "before": 1,
+      "after": 2,
+      "added": [
+        {
+          "choiceId": "office_close",
+          "outcomeId": "out_office_close",
+          "flag": "office_opened_space",
+          "destination": {
+            "kind": "ending",
+            "id": "ending_office"
+          }
+        }
+      ]
+    }
+  ],
+  "remainingPlayableExceptions": [],
+  "terminalExclusions": [
+    "ending_peace",
+    "ending_reform",
+    "ending_office",
+    "ending_escape",
+    "ending_fire",
+    "ending_throne",
+    "ending_ledger",
+    "ending_love_scandal"
+  ],
+  "transitionExclusions": [],
+  "prepared65": {
+    "events": 65,
+    "belowTwo": [],
+    "runtimeConnected": false
+  },
+  "sourceDriftNotApplied": [
+    {
+      "nodeId": "birth",
+      "ignoredFieldChanges": [
+        "chronicleSummary"
+      ],
+      "protectedMissingChoices": [],
+      "protectedAlteredChoices": []
+    },
+    {
+      "nodeId": "child",
+      "ignoredFieldChanges": [
+        "chronicleSummary"
+      ],
+      "protectedMissingChoices": [],
+      "protectedAlteredChoices": []
+    },
+    {
+      "nodeId": "exam",
+      "ignoredFieldChanges": [
+        "chronicleSummary"
+      ],
+      "protectedMissingChoices": [
+        "attack",
+        "refuse",
+        "invoice"
+      ],
+      "protectedAlteredChoices": [
+        "confess"
+      ]
+    },
+    {
+      "nodeId": "prison",
+      "ignoredFieldChanges": [
+        "chronicleSummary"
+      ],
+      "protectedMissingChoices": [],
+      "protectedAlteredChoices": []
+    },
+    {
+      "nodeId": "petition",
+      "ignoredFieldChanges": [
+        "chronicleSummary"
+      ],
+      "protectedMissingChoices": [],
+      "protectedAlteredChoices": []
+    },
+    {
+      "nodeId": "invoice",
+      "ignoredFieldChanges": [
+        "chronicleSummary"
+      ],
+      "protectedMissingChoices": [],
+      "protectedAlteredChoices": []
+    },
+    {
+      "nodeId": "princess",
+      "ignoredFieldChanges": [
+        "chronicleSummary"
+      ],
+      "protectedMissingChoices": [],
+      "protectedAlteredChoices": []
+    },
+    {
+      "nodeId": "audit",
+      "ignoredFieldChanges": [
+        "chronicleSummary"
+      ],
+      "protectedMissingChoices": [],
+      "protectedAlteredChoices": []
+    },
+    {
+      "nodeId": "hearing",
+      "ignoredFieldChanges": [
+        "chronicleSummary"
+      ],
+      "protectedMissingChoices": [],
+      "protectedAlteredChoices": []
+    },
+    {
+      "nodeId": "settlement",
+      "ignoredFieldChanges": [
+        "chronicleSummary"
+      ],
+      "protectedMissingChoices": [],
+      "protectedAlteredChoices": []
+    },
+    {
+      "nodeId": "quiet",
+      "ignoredFieldChanges": [
+        "chronicleSummary"
+      ],
+      "protectedMissingChoices": [],
+      "protectedAlteredChoices": []
+    },
+    {
+      "nodeId": "final_trial",
+      "ignoredFieldChanges": [
+        "chronicleSummary"
+      ],
+      "protectedMissingChoices": [],
+      "protectedAlteredChoices": []
+    },
+    {
+      "nodeId": "office",
+      "ignoredFieldChanges": [
+        "chronicleSummary"
+      ],
+      "protectedMissingChoices": [],
+      "protectedAlteredChoices": []
+    }
+  ],
+  "sameEndingPresentationBranches": [
+    "peace_open",
+    "reform_read",
+    "office_close"
+  ],
+  "protectedFiles": [
+    {
+      "path": "content/events_v2_9.json",
+      "sha256": "3d8c8a0a59104aefb99409cb381c2e1c267a542a052555572d9098ce33c2e132"
+    },
+    {
+      "path": "public/art/background-v1.webp",
+      "sha256": "41f65c493d09715763418a84e1e1b68036dcc0bfcca95a4fc69ddfd332494ea3"
+    },
+    {
+      "path": "public/art/portraits/auditor-early-angry-v2.webp",
+      "sha256": "071a49ebd04c3a1b795c92aa6c91f649a77214ddf8d8da5138052602ebc6f858"
+    },
+    {
+      "path": "public/art/portraits/auditor-early-confused-v2.webp",
+      "sha256": "ea75f69f8e876f071d5d8dbf928d71836b2cadeecba60342ae29fe9e0ea5816e"
+    },
+    {
+      "path": "public/art/portraits/auditor-early-joy-v2.webp",
+      "sha256": "c548de37d09e67704fa0fceb931ad295cce286468b682a307dff099dbbd28427"
+    },
+    {
+      "path": "public/art/portraits/auditor-early-neutral-v2.webp",
+      "sha256": "b4447f3a7b3db8a4edb189bbc1a42ab23b1cff83ffdfe3a4ab8b50bea3b889af"
+    },
+    {
+      "path": "public/art/portraits/auditor-early-sad-v2.webp",
+      "sha256": "eb67d4adcc1d11ea5f74f18089ca3f88d951ee79f06a1641ea0ba59285897ccb"
+    },
+    {
+      "path": "public/art/portraits/auditor-early-tired-v2.webp",
+      "sha256": "a013d6821678c9a9d59b1a1f12a5d4781d35c09aff3de4afd43bd523d6aebfb1"
+    },
+    {
+      "path": "public/art/portraits/auditor-mature-angry-v2.webp",
+      "sha256": "2f3b60d476d1f39b98258802227bbafa0cc3d804ecae1b9ed9575f5eb9cba923"
+    },
+    {
+      "path": "public/art/portraits/auditor-mature-confused-v2.webp",
+      "sha256": "1a185abe220b5e60e27a439d9d339807a2761bad6aa00a9efd92a1b94165b89a"
+    },
+    {
+      "path": "public/art/portraits/auditor-mature-joy-v2.webp",
+      "sha256": "b29118458ddcf48c54e5edc920999ddfbe2743d01707393babe36469752aba0b"
+    },
+    {
+      "path": "public/art/portraits/auditor-mature-neutral-v2.webp",
+      "sha256": "f0533c843b860116cc936f2201a2bfc002a725251664747e23a6da7751b35a60"
+    },
+    {
+      "path": "public/art/portraits/auditor-mature-sad-v2.webp",
+      "sha256": "a71ffd299edfb9e8d8711387156044fae30c6c4e31f16ca268159ea3ddaf6c59"
+    },
+    {
+      "path": "public/art/portraits/auditor-mature-tired-v2.webp",
+      "sha256": "c5a1c3d375ef9f6e9774bff0d3742f528fcc29e428c4708dbb6d61f13508fedb"
+    },
+    {
+      "path": "public/art/portraits/auditor-middle-angry-v2.webp",
+      "sha256": "7d5c248b95ed5df46fb52f92bfe08a79e8a90908ccb83b762fdfe9c35e8c8957"
+    },
+    {
+      "path": "public/art/portraits/auditor-middle-confused-v2.webp",
+      "sha256": "c559a6ac771ca04a48e4fdc0b37270cd7a27632827de92fa8b8c270bf0267934"
+    },
+    {
+      "path": "public/art/portraits/auditor-middle-joy-v2.webp",
+      "sha256": "cb55c26ab1ae60a88bfdc88389ee8256c696c8d9100e08d185a149c5b556447d"
+    },
+    {
+      "path": "public/art/portraits/auditor-middle-neutral-v2.webp",
+      "sha256": "331634c7c1ea14e879cb58df149d3fefabada709ba8c945e15d489beba756272"
+    },
+    {
+      "path": "public/art/portraits/auditor-middle-sad-v2.webp",
+      "sha256": "dc27592b423903b1a79f657f0ef9f1f34a697b6c5635b1a937efd379312a9d2e"
+    },
+    {
+      "path": "public/art/portraits/auditor-middle-tired-v2.webp",
+      "sha256": "80444801fecbf64e97fc6eb636bc3f14e2a54063f0cc4cf82e1cea69f803442e"
+    },
+    {
+      "path": "public/art/portraits/auditor-old-angry-v2.webp",
+      "sha256": "7c12b8ee0cb6f38496b5fb2af496847877e26c22bdd85c23ff52da96553f596d"
+    },
+    {
+      "path": "public/art/portraits/auditor-old-confused-v2.webp",
+      "sha256": "ece4cbbf1ce706d47d7e11d82d175d48d19e9ef5660806f19d47104dbada570e"
+    },
+    {
+      "path": "public/art/portraits/auditor-old-joy-v2.webp",
+      "sha256": "804239ec6ce0e9e4ded932e6fdea4f5aef6d6792535a4abdc2ced81af35a9790"
+    },
+    {
+      "path": "public/art/portraits/auditor-old-neutral-v2.webp",
+      "sha256": "b068ff0701127830c3a048521a88c6be15d4d7d2723a511cd3b6d726ef07ec4e"
+    },
+    {
+      "path": "public/art/portraits/auditor-old-sad-v2.webp",
+      "sha256": "633db4db8a40dd8a03a3314c91607d444bccac3cba324bcaadd811c78762582c"
+    },
+    {
+      "path": "public/art/portraits/auditor-old-tired-v2.webp",
+      "sha256": "b791f250b920fc2256e507fa49425294eacab3f4fab697362fed36ff153110a0"
+    },
+    {
+      "path": "public/art/portraits/erisia-early-angry-v2.webp",
+      "sha256": "a21c44cfde4e151411b6bb303c9ca17b1f2dfbec1bca93a3faf313c775ab7072"
+    },
+    {
+      "path": "public/art/portraits/erisia-early-confused-v2.webp",
+      "sha256": "e46f11760875cf1fb857e36b4a4c22104527461a0fb533c2ae29cd343a778d17"
+    },
+    {
+      "path": "public/art/portraits/erisia-early-joy-v2.webp",
+      "sha256": "4b5a59a74025c5227f8a43b2379405ae44de924871008824d6cdcb2cb54e24f7"
+    },
+    {
+      "path": "public/art/portraits/erisia-early-neutral-v2.webp",
+      "sha256": "b9651e944685287ea476c332af518d2fb0a45ec78fa2ada8877aa87e75aa33d4"
+    },
+    {
+      "path": "public/art/portraits/erisia-early-sad-v2.webp",
+      "sha256": "19f84f1806ccc66a5760b92bbb474d18331cca75c408e26ff42cf5658a518cc0"
+    },
+    {
+      "path": "public/art/portraits/erisia-early-tired-v2.webp",
+      "sha256": "f73302353b4f5d500663ff182b7d94f9a834306b551de0378d2a81199be9af84"
+    },
+    {
+      "path": "public/art/portraits/erisia-mature-angry-v2.webp",
+      "sha256": "92198d8f349853c09020bd8e432b2c96763ff65cfd3c6f3558ce231545e4cde3"
+    },
+    {
+      "path": "public/art/portraits/erisia-mature-confused-v2.webp",
+      "sha256": "fa28ffe2ec6737926fb4af81d5e5eae9b5f465192c85155ad4077c74af1a1c9b"
+    },
+    {
+      "path": "public/art/portraits/erisia-mature-joy-v2.webp",
+      "sha256": "cfe449d114543c2713ed94362eab2ba52921486d060d893bc8e3d5822deb3480"
+    },
+    {
+      "path": "public/art/portraits/erisia-mature-neutral-v2.webp",
+      "sha256": "f8b43379a52a2e992100d235351dd7acee14cf8553a101be275958aa43cacfa4"
+    },
+    {
+      "path": "public/art/portraits/erisia-mature-sad-v2.webp",
+      "sha256": "fdbd33b4825be75de94c7a962364ec02992b22f861a774b6e097b2175aa16ebe"
+    },
+    {
+      "path": "public/art/portraits/erisia-mature-tired-v2.webp",
+      "sha256": "146b9878864b4fd49efa5842a996104e6053bf6f8b0edd702f2bf3d8d2b9a984"
+    },
+    {
+      "path": "public/art/portraits/erisia-middle-angry-v2.webp",
+      "sha256": "a8c297e05024a18c0f5326533ff2ba363aef2afe44f5676d9494d5173bff8188"
+    },
+    {
+      "path": "public/art/portraits/erisia-middle-confused-v2.webp",
+      "sha256": "0e87b2042f160640dfda23691e41df7c65c58e40e808912ad474318898b47bf3"
+    },
+    {
+      "path": "public/art/portraits/erisia-middle-joy-v2.webp",
+      "sha256": "97bd7522bed052b546ed571f85cd117c1edd89d5a3a0c73165cf8f46046da753"
+    },
+    {
+      "path": "public/art/portraits/erisia-middle-neutral-v2.webp",
+      "sha256": "00d5691974d45bad9199e8a92c499ba22e91d8b6912a7978c413ccfa9611be80"
+    },
+    {
+      "path": "public/art/portraits/erisia-middle-sad-v2.webp",
+      "sha256": "9468bf5e5e57c16756aa8a3073e62f0d024ff4ac8b70b62358f6c8740523691c"
+    },
+    {
+      "path": "public/art/portraits/erisia-middle-tired-v2.webp",
+      "sha256": "22b2071cb29945dd8615cb803d22fac6fa6e22ed92a48e053f3805ec4562e6c5"
+    },
+    {
+      "path": "public/art/portraits/erisia-old-angry-v2.webp",
+      "sha256": "c5ce73f7ff399f6b903989149a75a4b7ed09ad2e7e1872d33361efbf496b1aa3"
+    },
+    {
+      "path": "public/art/portraits/erisia-old-confused-v2.webp",
+      "sha256": "3d362a221727bc6a423c2f9b4448cba8cb8866cc9dac6227e4168f31ffd8e2ca"
+    },
+    {
+      "path": "public/art/portraits/erisia-old-joy-v2.webp",
+      "sha256": "af6357b250e9842f51a47aa7f8f714fae71592c88ec286d1c4b146a72532f69a"
+    },
+    {
+      "path": "public/art/portraits/erisia-old-neutral-v2.webp",
+      "sha256": "de02003792a3a81b86d3b2cf1c45df08ae79d938fb585ce7181da0c13dc4ed4e"
+    },
+    {
+      "path": "public/art/portraits/erisia-old-sad-v2.webp",
+      "sha256": "4dcdb827d0233a89697f2efcc26d2bcc506f5d62680ff6a92a9e11c1bb077c61"
+    },
+    {
+      "path": "public/art/portraits/erisia-old-tired-v2.webp",
+      "sha256": "81932466c7485b2e91ca78f5fcf28a7fba79ae0691f5b53a4d0d4edb008b3af0"
+    },
+    {
+      "path": "public/art/portraits/gallery.html",
+      "sha256": "bfb0dca07b6016816fadaa1d1da163bf2469de702c35de1c5af2362780ae5a8d"
+    },
+    {
+      "path": "public/art/portraits/king-early-angry-v2.webp",
+      "sha256": "53d1259a292529ebcdc3516de42f1f48bfab60fd699cdac8986a58c8dcad7987"
+    },
+    {
+      "path": "public/art/portraits/king-early-confused-v2.webp",
+      "sha256": "625f0e5b727d7fd64c6dc9c1fedb98fae52f1c9e1163041cc36c2b6f12078f20"
+    },
+    {
+      "path": "public/art/portraits/king-early-joy-v2.webp",
+      "sha256": "6d270fb1fead720b66b65b6acb342e1824146a22366a387d4aeab4132a638afc"
+    },
+    {
+      "path": "public/art/portraits/king-early-neutral-v2.webp",
+      "sha256": "5f4f8db6a42347a13efe737517ebb22acb7c12c14457a3b95daedcc204ab572e"
+    },
+    {
+      "path": "public/art/portraits/king-early-sad-v2.webp",
+      "sha256": "48f548e520fbb0b017832f1b334e8b15c7aa706206068f4bb6d2129667aec8f6"
+    },
+    {
+      "path": "public/art/portraits/king-early-tired-v2.webp",
+      "sha256": "aa0025e3a47db8caebe6634b1c81e8f4563bfbcd6b1b422371a3b83847ec6fd0"
+    },
+    {
+      "path": "public/art/portraits/king-mature-angry-v2.webp",
+      "sha256": "c65b4aac068f2a8573f8935ca23a0817256f0730c4e5c9fce623d1c7301195f2"
+    },
+    {
+      "path": "public/art/portraits/king-mature-confused-v2.webp",
+      "sha256": "a54ac9cda82e3f856e7c554e89282d27a13ff091fbfed5003a3ded8ae5069006"
+    },
+    {
+      "path": "public/art/portraits/king-mature-joy-v2.webp",
+      "sha256": "50235d086cd9318e124f74a43db9d72ca3e98071d517f211a8e49b755056090e"
+    },
+    {
+      "path": "public/art/portraits/king-mature-neutral-v2.webp",
+      "sha256": "a028a29976af5179c25cc037f2e5faf99e668c53e40e0c6bb9707c3a0e3e57a6"
+    },
+    {
+      "path": "public/art/portraits/king-mature-sad-v2.webp",
+      "sha256": "5f53b73f2cf8265f52fd9ba4411b55042015ffe5e06deebdafced6f24d558d4f"
+    },
+    {
+      "path": "public/art/portraits/king-mature-tired-v2.webp",
+      "sha256": "e609f415c5c3f1bf90a30191171af0c9b6aaaad595ba88b99dfc23976fa7a3c1"
+    },
+    {
+      "path": "public/art/portraits/king-middle-angry-v2.webp",
+      "sha256": "211666c38f52b4a59187179caaf682d0f74731d68075232a25b1bca7a68d266f"
+    },
+    {
+      "path": "public/art/portraits/king-middle-confused-v2.webp",
+      "sha256": "510b35bb3ed1763a93c484e4ce1006aba62969dc24e24952138fb77374308ded"
+    },
+    {
+      "path": "public/art/portraits/king-middle-joy-v2.webp",
+      "sha256": "c791b91ca9fa06b9c7f2072132936a58c9a89f9ebd30922b57ee9e0d82a946e9"
+    },
+    {
+      "path": "public/art/portraits/king-middle-neutral-v2.webp",
+      "sha256": "768cbec61d207cb15cb8e0701e8a3134431c4e05952a1f1b769e2656b25526d3"
+    },
+    {
+      "path": "public/art/portraits/king-middle-sad-v2.webp",
+      "sha256": "1257a7ad02b4be294bd77524793602d10b319fdeb32406c8d7084065819a40cf"
+    },
+    {
+      "path": "public/art/portraits/king-middle-tired-v2.webp",
+      "sha256": "f9dd0f1fc968f1770b20d08feb8f1b5cb9b32016fc49b78fca1b24b8404120fa"
+    },
+    {
+      "path": "public/art/portraits/king-old-angry-v2.webp",
+      "sha256": "33b973cc73c5fbaf0a850b119387fa1d3539c06488dcfebf3dfda8f38fc604cb"
+    },
+    {
+      "path": "public/art/portraits/king-old-confused-v2.webp",
+      "sha256": "a237a7d354e17ad712d66dca0572ce1ea2c634e5c9c8224ea646b3fcc7635e10"
+    },
+    {
+      "path": "public/art/portraits/king-old-joy-v2.webp",
+      "sha256": "8f2c1bb15ae1bda1aa83c523b91b63cfc31982d7ec507de33867caaabea47dfe"
+    },
+    {
+      "path": "public/art/portraits/king-old-neutral-v2.webp",
+      "sha256": "997800b8bba6d45c88070201e5b51130d90b6f868e0cb1664fdffe8e5e53cde7"
+    },
+    {
+      "path": "public/art/portraits/king-old-sad-v2.webp",
+      "sha256": "46c145607f5bdf0662e92771b4c814f1e23eb21ab12d1845a7c9bc26d8a0c16b"
+    },
+    {
+      "path": "public/art/portraits/king-old-tired-v2.webp",
+      "sha256": "c7e649c008296913e74d6c8b816c7a5b5fa8da623a7573ec4552f43e8f162327"
+    },
+    {
+      "path": "public/art/portraits/mina-early-angry-v2.webp",
+      "sha256": "e0ef17ebd6720c003bd8e385907c5f5455a3e3eebe6e504d91f6cbb091056c66"
+    },
+    {
+      "path": "public/art/portraits/mina-early-confused-v2.webp",
+      "sha256": "0eb7bd49a75a5b5ef8a5967bc5eea8bc8cd0a56f6bc997881eda07092370a74b"
+    },
+    {
+      "path": "public/art/portraits/mina-early-joy-v2.webp",
+      "sha256": "04ec83d366f714298a566a23e9328e326d030dee6336217f3246c5f68740f833"
+    },
+    {
+      "path": "public/art/portraits/mina-early-neutral-v2.webp",
+      "sha256": "eafef0029c3412469f79a52fb09243ba5bfdcdc16cf80346c01f3919d01b0e2d"
+    },
+    {
+      "path": "public/art/portraits/mina-early-sad-v2.webp",
+      "sha256": "625d6e77940401a5d42beb098f07af2630e9bec0741299a400dafccf268c3526"
+    },
+    {
+      "path": "public/art/portraits/mina-early-tired-v2.webp",
+      "sha256": "561d88d4bce4fd3f2ae1af782c666b3ff5a5e23b46d8e1c2956b247e68adbecf"
+    },
+    {
+      "path": "public/art/portraits/mina-mature-angry-v2.webp",
+      "sha256": "0a1128a4a42ab094fea61ab5526d1dca206fcb465677ed8c18b4040ab896e092"
+    },
+    {
+      "path": "public/art/portraits/mina-mature-confused-v2.webp",
+      "sha256": "c9f41d5805d6b68f969da1c081ab558f245245150fedf74ad739d8726b93667b"
+    },
+    {
+      "path": "public/art/portraits/mina-mature-joy-v2.webp",
+      "sha256": "29b1986f4c34c9d7159e538ac753a3ccb26c48f36f46c43ee4f2b7e3bf6202ce"
+    },
+    {
+      "path": "public/art/portraits/mina-mature-neutral-v2.webp",
+      "sha256": "4a42b4413c31465f4222eaa93968c50fb93df76912696f1c42be4a500cda9622"
+    },
+    {
+      "path": "public/art/portraits/mina-mature-sad-v2.webp",
+      "sha256": "1d267cca293a8fb636ad14b8ddd1d5795ae35b8f13713db3c4fec01213b77e9b"
+    },
+    {
+      "path": "public/art/portraits/mina-mature-tired-v2.webp",
+      "sha256": "61fd7d692640f0132f7db2e5c7a1801d4178a28946fddeb839bdfc59e204902b"
+    },
+    {
+      "path": "public/art/portraits/mina-middle-angry-v2.webp",
+      "sha256": "298425c32ce025895266a6abe33b66bc4550d0a0aa4295c90450c3735767f051"
+    },
+    {
+      "path": "public/art/portraits/mina-middle-confused-v2.webp",
+      "sha256": "7e9f928e1c5f155721273bbce7cb91072d63557f75e1150dc4ce8af48268c68a"
+    },
+    {
+      "path": "public/art/portraits/mina-middle-joy-v2.webp",
+      "sha256": "fb5150d6cfaf6fe929c51c3b3394fedafd6797e31ec5caf2ee1d65a61b238d24"
+    },
+    {
+      "path": "public/art/portraits/mina-middle-neutral-v2.webp",
+      "sha256": "400b5e9613547e7ef7fcfa23753512466e2e59e3994f81a2aa884c10abbc86d1"
+    },
+    {
+      "path": "public/art/portraits/mina-middle-sad-v2.webp",
+      "sha256": "75381acfeb1f27fa3d42201a98cee0b1ad3d6721f77c1d38987e93436dfd0db8"
+    },
+    {
+      "path": "public/art/portraits/mina-middle-tired-v2.webp",
+      "sha256": "9506d0c5b49086a77d0a4d6ddb6560735dbcb85274806c3d59861d873adadbba"
+    },
+    {
+      "path": "public/art/portraits/mina-old-angry-v2.webp",
+      "sha256": "6f5d1d2bfe14887c25e47ae7d7c422c6e001048d6232dc94c58659c492f34f97"
+    },
+    {
+      "path": "public/art/portraits/mina-old-confused-v2.webp",
+      "sha256": "15c03943ad9e0f94183b7bacb879b2dcc5830a575fc7d32d66b5e84ca9bfb511"
+    },
+    {
+      "path": "public/art/portraits/mina-old-joy-v2.webp",
+      "sha256": "d9426c1358116d2e5656f20e1027569290d70a55993e7bc2264b30b96fe2d01c"
+    },
+    {
+      "path": "public/art/portraits/mina-old-neutral-v2.webp",
+      "sha256": "a7091ad0ff610a222baa5504953fc5cedd77b198e3b99d7fdc3896508abc7e20"
+    },
+    {
+      "path": "public/art/portraits/mina-old-sad-v2.webp",
+      "sha256": "b2c22b49413b5655cd109e8351e3439c4ea3c6b9a7e92ca9cab5c5727879e5c5"
+    },
+    {
+      "path": "public/art/portraits/mina-old-tired-v2.webp",
+      "sha256": "4727d7d0e04f0bab1bb5e37ce7883a89887158317523eb227e49faa679c81d1b"
+    },
+    {
+      "path": "public/art/portraits/player-early-angry-v2.webp",
+      "sha256": "dfb604b7ab7edb780aa37d96e19381ba2b54e425db6919937b8f9ef98b9bc515"
+    },
+    {
+      "path": "public/art/portraits/player-early-confused-v2.webp",
+      "sha256": "d508028d8805335df3fd3ac877dc7691b9fac75cf6edaa8ffd23347ccf199243"
+    },
+    {
+      "path": "public/art/portraits/player-early-joy-v2.webp",
+      "sha256": "827c117b01fc1af96fb220650481fbdae35b5d66b052e4eef439b47f8ffa71af"
+    },
+    {
+      "path": "public/art/portraits/player-early-neutral-v2.webp",
+      "sha256": "bd750e223a07252451d33fca05ee7358342ac48d02757b32b604cb48f1a5e4c4"
+    },
+    {
+      "path": "public/art/portraits/player-early-sad-v2.webp",
+      "sha256": "65257d1b36c9dc7aa93be0cef32c1979b0087873d84fe81e63bb36450b1e605c"
+    },
+    {
+      "path": "public/art/portraits/player-early-tired-v2.webp",
+      "sha256": "a5ebca742e9424bb6e5e25e22fc3b0b13c2db39a9b426fa9191247ebe983fd19"
+    },
+    {
+      "path": "public/art/portraits/player-mature-angry-v2.webp",
+      "sha256": "a971a1119d0b649aae26dd4d089c91f991a1fb6097d80eeed978dadcd90cc49d"
+    },
+    {
+      "path": "public/art/portraits/player-mature-confused-v2.webp",
+      "sha256": "d1d9b23f0a023021304f3139cc950f0c01b79d00ac3c23ddc034a3fd5489dfd9"
+    },
+    {
+      "path": "public/art/portraits/player-mature-joy-v2.webp",
+      "sha256": "5710712beb6acc7b284b50f9ad59b8b302f2a6ac0d19a47e0b4966d9f3c40b0b"
+    },
+    {
+      "path": "public/art/portraits/player-mature-neutral-v2.webp",
+      "sha256": "168b9adecb59cdc3979e5e9771e9be01f64fd141cc6d84e7521210b45a8b5232"
+    },
+    {
+      "path": "public/art/portraits/player-mature-sad-v2.webp",
+      "sha256": "38424f4c44a01580b237978d799f5aba2a6d395b96dceee1f7da71ff43d35eea"
+    },
+    {
+      "path": "public/art/portraits/player-mature-tired-v2.webp",
+      "sha256": "afc894c80ac6694b4bd8bc08962529e93c96b0302bc2796ff7e484133d5c0e8a"
+    },
+    {
+      "path": "public/art/portraits/player-middle-angry-v2.webp",
+      "sha256": "4609c462f67f2fa895beecfa4e4971c4fab14f7451696a05a4da3246e1a3e3c0"
+    },
+    {
+      "path": "public/art/portraits/player-middle-confused-v2.webp",
+      "sha256": "35131a9ca7900db9011488ebbd672ad0e5c9967bfcf31a019b109dd3c87906c3"
+    },
+    {
+      "path": "public/art/portraits/player-middle-joy-v2.webp",
+      "sha256": "1cc8aedd41e951685889777c608adf8a581d51e37462095641bb35790e9f7ae4"
+    },
+    {
+      "path": "public/art/portraits/player-middle-neutral-v2.webp",
+      "sha256": "dced7975e09b913b8586a3624bf0d4a9dae53ced64dbe7936c343fe182628d1c"
+    },
+    {
+      "path": "public/art/portraits/player-middle-sad-v2.webp",
+      "sha256": "f5c420f6093a0f214d6a77f077faeac2a78bfd01bc80cffa649b012334bca854"
+    },
+    {
+      "path": "public/art/portraits/player-middle-tired-v2.webp",
+      "sha256": "062bdcdd9da0eaa54fea8a83a213983d7490f4537090b8e104a9c7b04007a114"
+    },
+    {
+      "path": "public/art/portraits/player-old-angry-v2.webp",
+      "sha256": "85c25169dbde484cca323b9e6c3358610f6af70cc6dbec220ba9844c0fc2d894"
+    },
+    {
+      "path": "public/art/portraits/player-old-confused-v2.webp",
+      "sha256": "bd1765b21a263737840248f33f8a37cef79ccc0fc50c8ec87cfb37a4ccbaebf9"
+    },
+    {
+      "path": "public/art/portraits/player-old-joy-v2.webp",
+      "sha256": "738f61db565ba3c470c846cde8f38826a411dab9f09521dc4a0d0f0b4abbdd42"
+    },
+    {
+      "path": "public/art/portraits/player-old-neutral-v2.webp",
+      "sha256": "234f3ce348702aa418ccb47302e47c9a5702bcaec406ffbd7d12f12f85d82f1c"
+    },
+    {
+      "path": "public/art/portraits/player-old-sad-v2.webp",
+      "sha256": "aa5eeca0d86cd732b0639570989f9ee7cd1ca5c5f52d41b068f3b62725cec9bd"
+    },
+    {
+      "path": "public/art/portraits/player-old-tired-v2.webp",
+      "sha256": "b7376987c6c5394e2b9c14a6855de633a5d37fbb432bde6cddda28565fe8f2aa"
+    },
+    {
+      "path": "public/assets/assets.json",
+      "sha256": "b23ec1623c9c858db1fefb62d9ec475be94858a322c26cb7dd0b0ab5c94dad0f"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/forest.webp",
+      "sha256": "2249590db0019be90a0556bbfa2b75503d8cabd1244cb70f2e2c32f449f4230a"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/harbor.webp",
+      "sha256": "610df151ffcb3a838c4c9257887cc8d65256fc6f6ea4dafcce8d4426f2f39435"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/market.webp",
+      "sha256": "f1f25141d47f76aea15bc2e752f5c8fe8a3ebb4ecb15f4c5e0ea1bf1e5e5542b"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/palace.webp",
+      "sha256": "271cdb1c9b04b5386c42805083efbdc7c69c946592cc0b0f436c8eef9be92e91"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/prison.webp",
+      "sha256": "f461b47d02ecf942a3c6983b54a2bce38dc2bff1f52dbd4432c83ddc7bb0b7d2"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/tavern.webp",
+      "sha256": "c00e615ba088c27a22ef515ce51e88cccfea73e0b702a02576429f665d6d10db"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/throne_room.webp",
+      "sha256": "f3f06c44c9899eb7f8c213b599201f9cfde9b4378daadce37d5f155e5140a720"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/village.webp",
+      "sha256": "1a0cf9d52d93d6877625c2332b2eae6f802f8df8e07ec1d17a70f11190cad4ec"
+    },
+    {
+      "path": "public/assets/illustrations/characters/dark_nun.webp",
+      "sha256": "e9363b3cba887f60c91bdef2778331ff9df7230f44712832eac6c5394c24fd22"
+    },
+    {
+      "path": "public/assets/illustrations/characters/elysia.webp",
+      "sha256": "24ff06714f0bc6ccfebdd34c85da4f6077a33770aca55353ffd31440d5e9c739"
+    },
+    {
+      "path": "public/assets/illustrations/characters/jero.webp",
+      "sha256": "ad1a7bb517b9a7900a5a410b3412b923be6db36a18a65b8d6dc77cf193b6e649"
+    },
+    {
+      "path": "public/assets/illustrations/characters/king.webp",
+      "sha256": "db2542c0036babed6a648c1d18835234608c95809b40a2b7bf16f306ee4d5a22"
+    },
+    {
+      "path": "public/assets/illustrations/characters/kyle.webp",
+      "sha256": "4bc8ea63a85ca02377df50703bc6b5daee5458444b4ee228198648d128948e9a"
+    },
+    {
+      "path": "public/assets/illustrations/characters/mina.webp",
+      "sha256": "078ce69024369ea17e41b2d234eb95b1ff2a3e2894a3ebc6da9fb7ae2d7a98a8"
+    },
+    {
+      "path": "public/assets/illustrations/characters/protagonist.webp",
+      "sha256": "9d9e73743be09c63309743212659b295419ea8612eb5d745f223a8f93506ef1f"
+    },
+    {
+      "path": "public/assets/illustrations/characters/rao.webp",
+      "sha256": "f819a39e25d94c5e219f6a6f74b4b72c9922fa94df06db6e259f56327ad77c60"
+    },
+    {
+      "path": "public/assets/illustrations/characters/rina.webp",
+      "sha256": "c47b54caef495466cbe53bdd828cab4255ea0cd6f62b43adf6b3d8a1d8eda35a"
+    },
+    {
+      "path": "public/assets/illustrations/characters/seria.webp",
+      "sha256": "e8cf4c620c1c5c47f66a140b6ada9e0434ee54eb6a44c8fee4cdece8ee9924e6"
+    },
+    {
+      "path": "public/assets/illustrations/characters/yuri.webp",
+      "sha256": "7e5b45cfbc860e0afb5292f5b47cd8afd65a80685b8b7add9a2e7a35c34e77e9"
+    },
+    {
+      "path": "public/assets/illustrations/event_cg/mina_wooden_sword.webp",
+      "sha256": "c6f12ebea7497550da676fdf15da26dd1d5b7c51c8ad1be7b644fd718aa55050"
+    },
+    {
+      "path": "public/assets/illustrations/events/demon_protest.webp",
+      "sha256": "975c39176339ddb2a177b686069af60df7e1a4255e21abd49883c7edbb6b860c"
+    },
+    {
+      "path": "public/assets/illustrations/events/final_sunset.webp",
+      "sha256": "42fb2857e5d11e9aafc89fe7d0fb9ba8d18876bdd210fab487627c7b0e8a0491"
+    },
+    {
+      "path": "public/assets/illustrations/events/mina_retirement.webp",
+      "sha256": "657a794055888b75424ae348265d593827f916d8ab9eb95eda8be81dfbd06e79"
+    },
+    {
+      "path": "public/assets/illustrations/events/mina_romance.webp",
+      "sha256": "b173fac3b23a1c78108ff1c1ab0260875beb0e51154d5ae11e779ab8df33d0d8"
+    },
+    {
+      "path": "public/assets/illustrations/events/queens_letter.webp",
+      "sha256": "ff2f261b67cfc5bdea758419947f083cd923b92a56c3f9d7d8e80f6e3b36a59b"
+    },
+    {
+      "path": "public/assets/illustrations/events/royal_banquet.webp",
+      "sha256": "45c043713b86ed139aeefb9fa1cf04c3c501c74101d68a97b78cf7e81df8293d"
+    },
+    {
+      "path": "public/assets/illustrations/events/royal_trial.webp",
+      "sha256": "2a1220ac5dbf2c20ae0f8108df77aa52bb6f99c2eb0a82dd057c8e54a24072d3"
+    },
+    {
+      "path": "public/assets/illustrations/events/second_demon.webp",
+      "sha256": "fe58a9c708b9a11ef68aaf38d524eb288f8dd5f1a77b8f44f120f9f9fed6211e"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/angry.webp",
+      "sha256": "0b44595589977a9394455834262e90743f639b3124c4ffabc2cbf06632d8ee63"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/confused.webp",
+      "sha256": "567a5bb2a65a166df41f12552fab132a7f843c512a58c565783d398c39cf2725"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/embarrassed.webp",
+      "sha256": "e2793b0b02b95c93e61491776eafb09316c844480611b1a4ed97dc845084f606"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/happy.webp",
+      "sha256": "05aedc28e1548798ea287a8e4838a2f0b21414f80257aa0f8a654b56cc049575"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/neutral.webp",
+      "sha256": "6b66971856957800121ec0d3adcc76c4b61acec397b4638d51a3325724332f77"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/sad.webp",
+      "sha256": "25e567f2e71894bee9368b760a352b6e13b50dee8e5efeac08f6270d763c0fd3"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/smug.webp",
+      "sha256": "02627d773537d4ade12fddc05dc2b357bb2a7dfccc5a5ea100aa22a1d15702f5"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/surprised.webp",
+      "sha256": "cccfbb399991f6f6e082dd0cad61f46c44c89824e409039eca469932a4482354"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/thinking.webp",
+      "sha256": "d4f67f10184514ba96b4e5b48dfd5a759d2cc1097ff94ebea98b4f393d51e10b"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/tired.webp",
+      "sha256": "912b7a0f1d830091bb50b7e482dd57096825fcedff364efb520e05dbbbd0e873"
+    },
+    {
+      "path": "public/assets/illustrations/ui/achievements.webp",
+      "sha256": "ddb7bb2c180f2776e28933b93a56d548da9477b37cff61f88bca70a5a59365a3"
+    },
+    {
+      "path": "public/assets/illustrations/ui/affection.webp",
+      "sha256": "42c024487e4a7dfaffaea8f219c2a272d9acb94a08de7cbe322633e246e58589"
+    },
+    {
+      "path": "public/assets/illustrations/ui/money.webp",
+      "sha256": "58dce70d635e71821888caab9f63c24f60cfbfb7494002dc9efe197aff4b1d2c"
+    },
+    {
+      "path": "public/assets/illustrations/ui/reputation.webp",
+      "sha256": "8ae5f197ca9d23330d05abf22ff2775eca692dda3ccebdec16bc223e4af26d0a"
+    },
+    {
+      "path": "public/assets/illustrations/ui/return_title.webp",
+      "sha256": "f2cd2a5d43830d1e6c38262cff3c8ed8d45932c2d1bd20b47802bfe611282557"
+    },
+    {
+      "path": "public/assets/illustrations/ui/save.webp",
+      "sha256": "8aec83f944bb4adbc45b1ad0154467a4c883e7603c4d45d0122c46c382b568b2"
+    },
+    {
+      "path": "public/assets/illustrations/ui/settings.webp",
+      "sha256": "23cf92bd57e537aac14d817805156949e9dcc79e6576999f209aeeffe7496833"
+    },
+    {
+      "path": "public/assets/illustrations/ui/unlock.webp",
+      "sha256": "5e00d749f28e72604476c82fd7fd75be97d969566b15bc42b30dc07fc2bccdb4"
+    },
+    {
+      "path": "public/assets/main_screen_illustration_policy.json",
+      "sha256": "34187657264a2d24bc1748a1895bc731fbc9c1bd9c81876e60e6b0bedcd6c775"
+    },
+    {
+      "path": "public/assets/scene_illustration_overrides_v3_6.json",
+      "sha256": "6766f1a8ddd50d5802dc1de828034073a40f745d676dbe95ab3e2fdc96d5cd22"
+    },
+    {
+      "path": "public/stories/demon-king-compact/characters.json",
+      "sha256": "dfbcc0fdc19b0b2df0ba2b0b851dd77d36fb9483f2d30bbe92c554420f2a3786"
+    },
+    {
+      "path": "public/stories/demon-king-compact/ending_cinematics.json",
+      "sha256": "7d312eb944bb10fb849dd7289b7fa27f41f40e28485f3b3df8584558bb5d24a4"
+    },
+    {
+      "path": "public/stories/demon-king-compact/endings.json",
+      "sha256": "50d4ba42be60d09a466f66c5b33a022c0b67e9cf23f7c741c1837e1fff494b31"
+    },
+    {
+      "path": "public/stories/demon-king-compact/story.json",
+      "sha256": "ab2b9ac1a43ee3fd4728bd47e9091ed8f867693e012542af421fc36372b26e1e"
+    },
+    {
+      "path": "public/stories/demon-king-legacy-phase1/VERIFICATION_REPORT.txt",
+      "sha256": "ba014430e17c2f023ac027abb4a6969004fad0cbcb65414f4a8000a6851d3926"
+    },
+    {
+      "path": "public/stories/demon-king-legacy-phase1/chapters/01-example.json",
+      "sha256": "553b28f9c31b4f79d90f6c0ea2f63ae49d177502bb3db18b1575d3dcd7478ad9"
+    },
+    {
+      "path": "public/stories/demon-king-legacy-phase1/characters.json",
+      "sha256": "1899830411025f47769ed82dd1c923acf98138b7ca4e35e99a73e9baaff934a7"
+    },
+    {
+      "path": "public/stories/demon-king-legacy-phase1/endings.json",
+      "sha256": "8f7fc17a35925c68a5094ebf8bde5abd4488b6b34adac8614aabcf05f7448f89"
+    },
+    {
+      "path": "public/stories/demon-king-legacy-phase1/story.json",
+      "sha256": "b1ad1d94c881f76f678fce2d5177ed362b85b71c2527c8e3c9bbe29519f54b14"
+    },
+    {
+      "path": "public/stories/demon-king/VERIFICATION_REPORT.txt",
+      "sha256": "ba014430e17c2f023ac027abb4a6969004fad0cbcb65414f4a8000a6851d3926"
+    },
+    {
+      "path": "public/stories/demon-king/chapters/01-example.json",
+      "sha256": "553b28f9c31b4f79d90f6c0ea2f63ae49d177502bb3db18b1575d3dcd7478ad9"
+    },
+    {
+      "path": "public/stories/demon-king/chapters/01_youth.json",
+      "sha256": "7a582c521309868cacb2259f92f770215b0b8dc6c90c4c7a27d1095142100ebb"
+    },
+    {
+      "path": "public/stories/demon-king/chapters/02_twists.json",
+      "sha256": "450c85c230600fa6d66bd6e35c70e256e33f2437563d2d63b7da43b8ad07ba48"
+    },
+    {
+      "path": "public/stories/demon-king/chapters/03_accounts.json",
+      "sha256": "b52f9d9f51f56f7f27a588ac395cfb7a30003a2024c35df9425106e698e4eccd"
+    },
+    {
+      "path": "public/stories/demon-king/chapters/04_afterlife.json",
+      "sha256": "b3a9d5815c730bc93fa917c5627d8322831e8670eb47f56907f7e7c630c4f4c1"
+    },
+    {
+      "path": "public/stories/demon-king/characters.json",
+      "sha256": "dfbcc0fdc19b0b2df0ba2b0b851dd77d36fb9483f2d30bbe92c554420f2a3786"
+    },
+    {
+      "path": "public/stories/demon-king/endings.json",
+      "sha256": "43083800c9a3b174f293609f129ae2b211d5783fd455634e4f47d5ebec02ec7a"
+    },
+    {
+      "path": "public/stories/demon-king/presentation.json",
+      "sha256": "7bc146a763fa32ff8daa9a87942d25f6409daf0d9e2b4ffeac8f5534f4929606"
+    },
+    {
+      "path": "public/stories/demon-king/story.json",
+      "sha256": "ef50c639d6b71d0c5dd1ca71c2472e59bb795b3478ca5949957e9b4e50e94d0d"
+    },
+    {
+      "path": "schemas/chapter.schema.json",
+      "sha256": "1bfc89ba3dc52385bd869af51aeb7c98b0eb458804e38b86983307de81f57cb8"
+    },
+    {
+      "path": "schemas/characters.schema.json",
+      "sha256": "768fcf9eb51e6ea5b2dcaac81aea31460fdc4c9a5c2f2e64647f59b15a0b9d71"
+    },
+    {
+      "path": "schemas/compact-cinematics.schema.json",
+      "sha256": "7e81707e0eadf151c78c31d9f05fa69974caadef8d1ee6b40fe1b2d69b7fe49f"
+    },
+    {
+      "path": "schemas/endings.schema.json",
+      "sha256": "965d293f627c6ac630bf6d736bc0d30b85e97397cbf336ba0e6f2772fa46c330"
+    },
+    {
+      "path": "schemas/meta.schema.json",
+      "sha256": "96795b40fd767d837501711859345be917a5b73f3ca40806d41f8ca8c46ec968"
+    },
+    {
+      "path": "schemas/presentation.schema.json",
+      "sha256": "76a5b1e12a4c4a6ccf457880171b2d7919e7afbbf552a414658b90be1437f674"
+    },
+    {
+      "path": "schemas/save.schema.json",
+      "sha256": "c039f4777d47da70b84bd1f1acef28c18e886b32aa6ea28081adc723c1d31914"
+    },
+    {
+      "path": "schemas/story.schema.json",
+      "sha256": "f68cb3a7cf7bbb9fc7e26d13ccf39084256979b96c29309e1b4802729880c601"
+    },
+    {
+      "path": "src/app/main.ts",
+      "sha256": "5b91423ec517463d7cbf2e4442d5b30d7cc068913ef6e025bb9ee33b91b31ed8"
+    },
+    {
+      "path": "src/engine/conditions.ts",
+      "sha256": "544ee0ac5cd1f6c842c38e64e4c221da0ffb2187b648903f9b1ed80b93d81e8f"
+    },
+    {
+      "path": "src/engine/effects.ts",
+      "sha256": "a7e61666a2b53a7fc30ff6676c5e6481e2e8899d9054eb7f7b407e38ed4a17ff"
+    },
+    {
+      "path": "src/engine/invariants.ts",
+      "sha256": "af13192956f33f9914d84f284b343bcd99a2449e2308badaa4567af429345361"
+    },
+    {
+      "path": "src/engine/paths.ts",
+      "sha256": "909136db1cc0e0489175896d4f9237de4cafcbb0a5ae9ed1e7c266057a71b28e"
+    },
+    {
+      "path": "src/engine/random.ts",
+      "sha256": "26fbfecfd3ffe48fcbddb4556595af35749f20d323ee70580b9a99621c196779"
+    },
+    {
+      "path": "src/engine/transition.ts",
+      "sha256": "2a3cdb2ec490d5734d6f08427c59e523fcb53f8e1d69b2066f52da0ba58c067e"
+    },
+    {
+      "path": "src/engine/types.ts",
+      "sha256": "78f67d27d39236581005910c40ddc007c18afbc70614cef6cfcfc0da71f04d29"
+    },
+    {
+      "path": "src/persistence/compact-compatible.ts",
+      "sha256": "97e08346dbc96072a2301fafc275d92dd52ce4a0415a5d43de4c162364bece4a"
+    },
+    {
+      "path": "src/persistence/compatibility.ts",
+      "sha256": "cc99556a246118527257f186272fb8b605c5dc59411432811cd299e151396cb1"
+    },
+    {
+      "path": "src/persistence/migrate.ts",
+      "sha256": "84f1d7218e53d05725062d04863005aab521d15ac8b16028875c56af309c3fbe"
+    },
+    {
+      "path": "src/persistence/reselect.ts",
+      "sha256": "af59d1521a624f585e8047c946cb55ec853d2d6b5fa1c20aef28ffe1e2893c00"
+    },
+    {
+      "path": "src/persistence/save.ts",
+      "sha256": "6bdad3687de80f5c99ea65b8c2541e4dcb0f3fbfc0adcb81f1afc6653d48a37d"
+    },
+    {
+      "path": "src/styles/main.css",
+      "sha256": "d25397eab1146b6c09891e912039e1c39e8756024832112cd321f68406b635a4"
+    }
+  ]
+}

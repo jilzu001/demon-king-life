@@ -25,10 +25,10 @@ describe('축소 완결판 계약과 원작 보호', () => {
     expect(state.history.map(h => h.age)).toEqual([0, 12, 20, 21]);
     expect(decodeSave(story, JSON.stringify(state))).toEqual(state);
   });
-  it('16개 사건과8개 엔딩 및319개 종단 경로가 모두 도달한다', () => {
+  it('16개 사건과8개 엔딩 및5328개 종단 경로가 모두 도달한다', () => {
     const report = simulateAll(story);
     expect(report.reachableNodes).toBe(16); expect(Object.keys(report.endings)).toHaveLength(8);
-    expect(report.terminalPaths).toBe(319); expect(report.warnings).toEqual([]);
+    expect(report.terminalPaths).toBe(5328); expect(report.warnings).toEqual([]);
   });
   it('표시 분류 별칭을 변환해도 원본과 ID·효과·가중치·목적지를 바꾸지 않는다', () => {
     for (const source of raw.nodes) for (const c of source.choices) for (const o of c.outcomes) {

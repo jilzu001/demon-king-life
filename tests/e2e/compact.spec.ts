@@ -1,7 +1,12 @@
 import { test, expect, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
+import type { GameState } from '../../src/engine/types';
+import { narrativeLines } from '../../src/ui/narrative';
 const fixtures = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/v37-ui-fixtures.ts'], { encoding: 'utf8' }));
+const v38 = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/v38-choice-fixtures.ts'], { encoding: 'utf8' })) as {
+  id: string; state: GameState; choices: { id: string; text: string; description: string; next: GameState; narrative: string }[];
+}[];
 const COMPACT_V37_BACKUP_KEY = 'existence-sim:v1:backup:before-v3.7:demon-king:compact';
 
 const key = 'existence-sim:v1:run:demon-king:compact';
@@ -28,6 +33,59 @@ async function select(page: Page, id: string) {
 }
 test.beforeEach(async ({ page }) => {
   const time = new Date('2026-10-14T00:00:00Z'); await page.clock.install({ time }); await page.clock.pauseAt(time);
+});
+
+for (const event of v38) test(`v3.8 ${event.id}: 모든 선택의 표시·결과·저장·다음 진행`, async ({ page }) => {
+  test.setTimeout(60000);
+  const changed = ['birth', 'child', 'quiet', 'final_trial', 'office'].includes(event.id);
+  const newIds = ['family_appeal', 'family_invoice', 'mina_contract', 'mina_rival', 'peace_open', 'reform_read', 'office_close'];
+  const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
+  await page.goto('./');
+  for (const mode of changed ? ['scroll', 'page'] : ['scroll']) for (const selected of event.choices) {
+    await page.evaluate(({ key, state, mode }) => {
+      localStorage.setItem(key, JSON.stringify(state));
+      localStorage.setItem(`demon-king:compact-view:${state.runId}`, JSON.stringify({ handledHistory: state.history.length, phase: 0, memoryIndex: 0 }));
+      localStorage.setItem('demon-king:ui:text-percent', '150');
+      localStorage.setItem('demon-king:ui:reading-mode', mode);
+      sessionStorage.setItem('demon-king:title-seen:compact', '1');
+    }, { key, state: event.state, mode });
+    await page.reload(); await scene(page);
+    expect(JSON.parse((await raw(page))!)).toEqual(event.state);
+    await expect(page.locator('[data-choice]')).toHaveCount(event.choices.length);
+    for (const c of event.choices) {
+      const button = page.locator(`[data-choice="${c.id}"]`);
+      await expect(button).toBeEnabled();
+      await expect(button.locator('.choice-title')).toHaveText(c.text);
+      await expect(button).toContainText(c.description);
+    }
+    const button = page.locator(`[data-choice="${selected.id}"]`);
+    await button.scrollIntoViewIfNeeded(); await expect(button).toBeInViewport();
+    if (changed && selected === event.choices.at(-1) && mode === 'scroll') await page.screenshot({ path: `docs/v3.8/choices-${event.id}-${test.info().project.name}.png`, animations: 'disabled' });
+    await button.click(); await expect(page.locator('#choice-aftermath')).toBeVisible();
+    await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(narrativeLines(selected.narrative));
+    expect(JSON.parse((await raw(page))!)).toEqual(selected.next);
+    if (newIds.includes(selected.id)) {
+      await page.reload(); await expect(page.locator('#choice-aftermath')).toBeVisible();
+      await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(narrativeLines(selected.narrative));
+      expect(JSON.parse((await raw(page))!)).toEqual(selected.next);
+      if (mode === 'scroll') await page.screenshot({ path: `docs/v3.8/result-${selected.id}-${test.info().project.name}.png`, animations: 'disabled' });
+    }
+    await page.clock.runFor(400); await page.locator('#reading-skip').click();
+    await expect(page.locator('#choice-aftermath')).toHaveCount(0);
+    if (selected.next.ended) {
+      await expect(page.locator('[data-ending-phase="0"]')).toBeVisible();
+      if (newIds.includes(selected.id)) {
+        while (await page.locator('[data-ending-phase="3"]').count() === 0) await page.getByRole('button', { name: '이어서', exact: true }).click();
+        const meta = JSON.parse((await page.evaluate(key => localStorage.getItem(key), metaKey))!);
+        expect(meta.discoveredEndings['demon-king']).toContain(selected.next.endingId);
+      }
+    } else {
+      await scene(page);
+      expect(await page.locator('[data-choice]:enabled').count()).toBeGreaterThanOrEqual(2);
+    }
+    expect(JSON.parse((await raw(page))!)).toEqual(selected.next);
+  }
+  expect(errors).toEqual([]);
 });
 
 test('설정에서 타이틀로 돌아가도 회차를 유지하고 타이틀 새로하기만 새 회차를 만든다', async ({ page }) => {

@@ -1,4 +1,12 @@
-import { ensure, type Manifest } from '../engine/types';
+import { ensure, type Manifest, type Story } from '../engine/types';
+
+// 현재 공개 판의 배포 전 검사. 구 저장 재현용 과거 계약에는 적용하지 않는다.
+export function assertCompactChoiceMinimum(story: Story): void {
+  for (const node of Object.values(story.nodes)) {
+    ensure(node.choices.length >= 2, `${node.id}: 일반 사건은 최소 2개 선택지가 필요합니다. (현재 ${node.choices.length}개)`);
+  }
+  // 엔딩은 story.endings에 따로 있으며 선택 사건으로 세지 않는다.
+}
 
 export const compactSlot = 'demon-king:compact';
 export function isCompact(manifest: Manifest): boolean {

@@ -31,6 +31,54 @@
               "narrative": "부모는 첫 지원금으로 우유와 지붕 수리용 나무를 샀다. 그 돈이 어디에서 왔는지는 아무도 묻지 않았다."
             }
           ]
+        },
+        {
+          "id": "family_appeal",
+          "text": "부모는 마왕 등록에 이의를 신청한다.",
+          "description": "태어나자마자 행정심판이라니, 장래가 밝다.",
+          "outcomes": [
+            {
+              "id": "out_family_appeal",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "child"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "birth_appealed"
+                }
+              ],
+              "narrative": "어머니는 항의서를 제출했다. 서기관은 아기의 손도장을 받아야 접수된다고 했다. 당신의 첫 손바닥 자국은 반항의 증거가 되었고, 등록은 취소되지 않았다. 대신 가족은 매년 이의 신청서를 보낼 이유를 얻었다."
+            }
+          ]
+        },
+        {
+          "id": "family_invoice",
+          "text": "부모는 마왕 업무의 급여부터 요구한다.",
+          "description": "신생아에게 야근 수당은 나올까?",
+          "outcomes": [
+            {
+              "id": "out_family_invoice",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "child"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "birth_wage_claim"
+                }
+              ],
+              "narrative": "아버지는 급여 명세서를 요구했다. 서기관은 마왕은 국가가 지정한 위협이므로 무급이라고 설명했다. 아버지는 그 자리에서 체불임금 진정서를 썼다. 당신의 첫 생일 선물은 사건번호였다."
+            }
+          ]
         }
       ],
       "chronicleSummary": "출생신고 과정에서 인간인 내가 국가 지정 마왕으로 등록됐다."
@@ -63,6 +111,54 @@
                 }
               ],
               "narrative": "미나는 당신에게 매년 생일 선물을 주었다. 나무칼 대신 붕대였다."
+            }
+          ]
+        },
+        {
+          "id": "mina_contract",
+          "text": "미나에게 용사와 마왕의 안전협약을 쓰자고 한다.",
+          "description": "소꿉친구 사이에도 서류는 필요하다.",
+          "outcomes": [
+            {
+              "id": "out_mina_contract",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "exam"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "mina_safety_pact"
+                }
+              ],
+              "narrative": "미나는 계약서에 서명했다. ‘진짜로 위험하면 먼저 도망칠 것.’ 당신이 조항을 읽어 주자 미나는 마지막 줄에 덧붙였다. ‘혼자 도망치지 말 것.’ 훗날 그 문장은 누구에게도 쉽게 지워지지 않았다."
+            }
+          ]
+        },
+        {
+          "id": "mina_rival",
+          "text": "미나에게 내가 먼저 용사가 되겠다고 선언한다.",
+          "description": "전투력 2에도 꿈은 있다.",
+          "outcomes": [
+            {
+              "id": "out_mina_rival",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "exam"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "mina_rival_promise"
+                }
+              ],
+              "narrative": "미나는 한참 웃다가 낡은 나무칼을 다시 쥐여 줬다. “그럼 내 경쟁자네.” 당신은 칼을 들기도 전에 손목을 삐었다. 미나는 웃음을 멈추고 붕대를 감아 줬다. 경쟁은 시작부터 간호로 변했다."
             }
           ]
         }
@@ -725,6 +821,30 @@
               "narrative": "저녁 빵이 모두 팔렸다. 누군가 당신을 마왕이라 부르지 않은 하루였다. 이상하게도 그게 가장 큰 승리처럼 느껴졌다."
             }
           ]
+        },
+        {
+          "id": "peace_open",
+          "text": "가게 불을 한 시간 더 켜고 마지막 손님을 기다린다.",
+          "description": "평범한 밤에도 누군가는 갈 곳이 없다.",
+          "outcomes": [
+            {
+              "id": "out_peace_open",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_peace"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "peace_helped_child"
+                }
+              ],
+              "narrative": "문을 닫으려는 순간 낯선 아이가 들어왔다. 아이는 자신의 신분증에 적힌 이상한 직업을 보여 줬다. 당신은 아무것도 묻지 않고 따뜻한 빵부터 건넸다. 그날의 평화는 혼자 누리는 것이 아니었다."
+            }
+          ]
         }
       ],
       "chronicleSummary": "65세에 왕국 외곽에서 작은 빵집을 운영하며 평범하게 살았다."
@@ -753,6 +873,30 @@
               "narrative": "당신은 판결문 첫 장에 한 줄을 적었다. ‘태어난 아이에게 직업을 강요하지 말 것.’"
             }
           ]
+        },
+        {
+          "id": "reform_read",
+          "text": "판결문을 광장에 나가 직접 읽는다.",
+          "description": "서류에 적힌 문장이 사람에게 닿을 때까지.",
+          "outcomes": [
+            {
+              "id": "out_reform_read",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_reform"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "reform_public_reading"
+                }
+              ],
+              "narrative": "광장에는 당신보다 훨씬 어린 사람들이 모여 있었다. 당신은 판결문을 읽다가 목이 메었다. 군중 속 누군가가 다음 문장을 대신 읽었다. 법은 종이에 쓰였지만, 바뀌는 순간은 사람들의 목소리 속에 있었다."
+            }
+          ]
         }
       ],
       "chronicleSummary": "60세에 마왕 지정 제도가 위법이라는 판결을 받아냈다."
@@ -779,6 +923,30 @@
               },
               "effects": [],
               "narrative": "당신은 첫 줄에 적었다. ‘당신이 누구인지는 국가가 아니라 당신이 결정합니다.’"
+            }
+          ]
+        },
+        {
+          "id": "office_close",
+          "text": "마지막 신청서를 처리하고 관리청의 간판을 내린다.",
+          "description": "누군가는 끝났다고 말해 줘야 한다.",
+          "outcomes": [
+            {
+              "id": "out_office_close",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_office"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "office_opened_space"
+                }
+              ],
+              "narrative": "당신은 낡은 간판을 떼어 창고에 넣었다. 마지막 신청인은 문 앞에서 한참 서 있다가 물었다. “그럼 이제 어디로 가죠?” 당신은 빈 사무실을 가리켰다. “여긴 이제 누구나 들어와도 되는 곳이에요.”"
             }
           ]
         }

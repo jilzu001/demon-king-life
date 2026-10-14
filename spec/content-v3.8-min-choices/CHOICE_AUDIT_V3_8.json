@@ -1,0 +1,11 @@
+{
+  "source": "v3.7",
+  "target": "v3.8",
+  "core_scenes": 16,
+  "core_one_choice_before": 5,
+  "core_one_choice_after": 0,
+  "choices_added": 7,
+  "hybrid_events": 65,
+  "hybrid_events_below_two": 0,
+  "note": "기존 선택지/ID/분기 유지. 엔딩 장면은 동일 엔딩으로 이어지는 연출 선택지로 확장. 실제 게임 저장/렌더링은 Codex에서 검증 필요."
+}

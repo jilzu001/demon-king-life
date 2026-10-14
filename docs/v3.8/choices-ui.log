@@ -1,0 +1,53 @@
+[WebServer] (node:49476) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:44752) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 32 tests using 1 worker
+
+(node:51556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:52580) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:50224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 birth: 모든 선택의 표시·결과·저장·다음 진행 (7.1s)
+  ok  2 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 child: 모든 선택의 표시·결과·저장·다음 진행 (6.4s)
+  ok  3 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 exam: 모든 선택의 표시·결과·저장·다음 진행 (3.9s)
+  ok  4 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 prison: 모든 선택의 표시·결과·저장·다음 진행 (3.0s)
+  ok  5 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 petition: 모든 선택의 표시·결과·저장·다음 진행 (3.1s)
+  ok  6 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 invoice: 모든 선택의 표시·결과·저장·다음 진행 (3.0s)
+  ok  7 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 princess: 모든 선택의 표시·결과·저장·다음 진행 (3.0s)
+  ok  8 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 audit: 모든 선택의 표시·결과·저장·다음 진행 (2.9s)
+  ok  9 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 hearing: 모든 선택의 표시·결과·저장·다음 진행 (2.2s)
+  ok 10 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 settlement: 모든 선택의 표시·결과·저장·다음 진행 (3.0s)
+  ok 11 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 quiet: 모든 선택의 표시·결과·저장·다음 진행 (5.3s)
+  ok 12 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 final_trial: 모든 선택의 표시·결과·저장·다음 진행 (5.3s)
+  ok 13 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 office: 모든 선택의 표시·결과·저장·다음 진행 (5.4s)
+  ok 14 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 confession: 모든 선택의 표시·결과·저장·다음 진행 (3.0s)
+  ok 15 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 confession_afterm: 모든 선택의 표시·결과·저장·다음 진행 (2.3s)
+  ok 16 [PC] › tests\e2e\compact.spec.ts:38:26 › v3.8 confession_chaos: 모든 선택의 표시·결과·저장·다음 진행 (2.1s)
+(node:52160) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:36880) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:41148) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 17 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 birth: 모든 선택의 표시·결과·저장·다음 진행 (6.6s)
+  ok 18 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 child: 모든 선택의 표시·결과·저장·다음 진행 (5.9s)
+  ok 19 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 exam: 모든 선택의 표시·결과·저장·다음 진행 (3.4s)
+  ok 20 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 prison: 모든 선택의 표시·결과·저장·다음 진행 (2.6s)
+  ok 21 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 petition: 모든 선택의 표시·결과·저장·다음 진행 (2.8s)
+  ok 22 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 invoice: 모든 선택의 표시·결과·저장·다음 진행 (2.6s)
+  ok 23 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 princess: 모든 선택의 표시·결과·저장·다음 진행 (2.6s)
+  ok 24 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 audit: 모든 선택의 표시·결과·저장·다음 진행 (2.5s)
+  ok 25 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 hearing: 모든 선택의 표시·결과·저장·다음 진행 (2.2s)
+  ok 26 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 settlement: 모든 선택의 표시·결과·저장·다음 진행 (2.7s)
+  ok 27 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 quiet: 모든 선택의 표시·결과·저장·다음 진행 (4.5s)
+  ok 28 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 final_trial: 모든 선택의 표시·결과·저장·다음 진행 (4.5s)
+  ok 29 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 office: 모든 선택의 표시·결과·저장·다음 진행 (4.6s)
+  ok 30 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 confession: 모든 선택의 표시·결과·저장·다음 진행 (2.7s)
+  ok 31 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 confession_afterm: 모든 선택의 표시·결과·저장·다음 진행 (2.0s)
+  ok 32 [모바일-320] › tests\e2e\compact.spec.ts:38:26 › v3.8 confession_chaos: 모든 선택의 표시·결과·저장·다음 진행 (1.9s)
+
+  32 passed (2.1m)

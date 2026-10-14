@@ -1,0 +1,16 @@
+{
+  "totalEvents": 65,
+  "rewrittenEvents": 9,
+  "remainingOriginalDrafts": 56,
+  "rewrittenIds": [
+    "birth_tax",
+    "village_well",
+    "school_map",
+    "guard_toll",
+    "mina_festival",
+    "prison_library",
+    "palace_dinner",
+    "village_boycott",
+    "royal_portrait"
+  ]
+}

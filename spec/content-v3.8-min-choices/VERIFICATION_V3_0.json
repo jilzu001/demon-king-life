@@ -1,0 +1,10 @@
+{
+  "events": 65,
+  "newEvents": 62,
+  "existingEvents": 3,
+  "choiceCount": 195,
+  "uniqueIds": true,
+  "coreScenesUnchanged": true,
+  "endingsUnchanged": true,
+  "validation": "schema/static only; runtime not tested"
+}

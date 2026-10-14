@@ -1,0 +1,44 @@
+﻿사건ID,선택ID,선택문구,결과ID,도착유형,도착ID,선택으로 추가된 플래그,PC스크롤150%,모바일320스크롤150%,수정5사건페이지양쪽기기150%
+birth,family_accept,부모는 생계 때문에 마왕 등록을 받아들인다.,out_family_accept,node,child,subsidy_family,PASS,PASS,PASS
+birth,family_appeal,부모는 마왕 등록에 이의를 신청한다.,out_family_appeal,node,child,birth_appealed,PASS,PASS,PASS
+birth,family_invoice,부모는 마왕 업무의 급여부터 요구한다.,out_family_invoice,node,child,birth_wage_claim,PASS,PASS,PASS
+child,trust_mina,미나를 믿고 함께 자란다.,out_trust_mina,node,exam,mina_trusted,PASS,PASS,PASS
+child,mina_contract,미나에게 용사와 마왕의 안전협약을 쓰자고 한다.,out_mina_contract,node,exam,mina_safety_pact,PASS,PASS,PASS
+child,mina_rival,미나에게 내가 먼저 용사가 되겠다고 선언한다.,out_mina_rival,node,exam,mina_rival_promise,PASS,PASS,PASS
+exam,attack,먼저 미나를 공격해 운명을 바꿔 본다.,out_attack,node,prison,attacked_mina,PASS,PASS,별도 범위
+exam,refuse,시험 자체를 거부하고 항의한다.,out_refuse,node,petition,refused_exam,PASS,PASS,별도 범위
+exam,invoice,시험 출연료를 요구한다.,out_invoice,node,invoice,asked_fee,PASS,PASS,별도 범위
+exam,confess,미나에게 사랑한다고 고백한다.,out_confess,node,confession,confessed_at_exam,PASS,PASS,별도 범위
+prison,forgive,미나에게 편지를 쓰고 다시 시작한다.,out_forgive,node,princess,forgave_mina,PASS,PASS,별도 범위
+prison,resent,미나와 관계를 끊고 혼자 살아남기로 한다.,out_resent,node,princess,resented_mina,PASS,PASS,별도 범위
+prison,escape_prison,전투력 2로 교도소 정문을 돌파한다.,out_escape_prison,ending,ending_escape,,PASS,PASS,별도 범위
+petition,keep_records,서기관의 말을 기록해 증거를 모은다.,out_keep_records,node,princess,has_birth_clue,PASS,PASS,별도 범위
+petition,go_public,광장에서 출생신고의 비밀을 폭로한다.,out_go_public,node,princess,public_scandal,PASS,PASS,별도 범위
+petition,burn_office,출생신고소 서류를 전부 불태워 제도를 없앤다.,out_burn_office,ending,ending_fire,,PASS,PASS,별도 범위
+invoice,accept_invite,왕실 초대에 응한다.,out_accept_invite,node,princess,invoice_royal,PASS,PASS,별도 범위
+invoice,bring_mina,미나와 함께 왕실로 간다.,out_bring_mina,node,princess,mina_witness,PASS,PASS,별도 범위
+invoice,threaten_king,왕에게 직접 찾아가 200만 골드를 당장 내놓으라 협박한다.,out_threaten_king,ending,ending_throne,,PASS,PASS,별도 범위
+princess,ally,에리시아와 손잡고 장부를 추적한다.,out_ally,node,audit,princess_ally,PASS,PASS,별도 범위
+princess,tell_mina,장부를 미나에게 보여 주고 공개 조사를 요구한다.,out_tell_mina,node,audit,mina_ally,PASS,PASS,별도 범위
+princess,sell_secret,장부를 돌려주는 대가로 평생 연금을 요구한다.,out_sell_secret,node,audit,sold_secret,PASS,PASS,별도 범위
+audit,public_audit,공개 감사와 재판을 요구한다.,out_public_audit,node,hearing,public_audit,PASS,PASS,별도 범위
+audit,private_deal,왕실과 비공개 협상을 시도한다.,out_private_deal,node,settlement,private_deal,PASS,PASS,별도 범위
+audit,steal_ledger,감사실 원본 장부를 훔쳐 혼자 달아난다.,out_steal_ledger,ending,ending_ledger,,PASS,PASS,별도 범위
+hearing,fight_case,끝까지 국가 책임을 묻는다.,out_fight_case,node,settlement,fought_case,PASS,PASS,별도 범위
+hearing,walk_away,마왕 등록을 취소받고 평범한 삶으로 돌아간다.,out_walk_away,node,quiet,walked_away,PASS,PASS,별도 범위
+settlement,take_money,5만 골드를 받고 왕국을 떠난다.,out_take_money,node,quiet,took_settlement,PASS,PASS,별도 범위
+settlement,reject_money,합의를 거부하고 끝까지 공개 재판을 이어간다.,out_reject_money,node,final_trial,rejected_settlement,PASS,PASS,별도 범위
+settlement,buy_office,합의금 대신 마왕 관리청 건물과 장부를 요구한다.,out_buy_office,node,office,demanded_office,PASS,PASS,별도 범위
+quiet,end_peace,가게 문을 닫고 저녁 노을을 바라본다.,out_end_peace,ending,ending_peace,,PASS,PASS,PASS
+quiet,peace_open,가게 불을 한 시간 더 켜고 마지막 손님을 기다린다.,out_peace_open,ending,ending_peace,peace_helped_child,PASS,PASS,PASS
+final_trial,end_reform,판결문을 다음 세대에게 남긴다.,out_end_reform,ending,ending_reform,,PASS,PASS,PASS
+final_trial,reform_read,판결문을 광장에 나가 직접 읽는다.,out_reform_read,ending,ending_reform,reform_public_reading,PASS,PASS,PASS
+office,end_office,새로운 상담 신청서를 펼친다.,out_end_office,ending,ending_office,,PASS,PASS,PASS
+office,office_close,마지막 신청서를 처리하고 관리청의 간판을 내린다.,out_office_close,ending,ending_office,office_opened_space,PASS,PASS,PASS
+confession,confess_sincere,미나가 시험을 포기하지 않아도 진심이라고 말한다.,out_confess_sincere,node,confession_afterm,confession_sincere,PASS,PASS,별도 범위
+confession,confess_attack,고백이 안 통하자 미나를 기습한다.,out_confess_attack,node,prison,attacked_mina,PASS,PASS,별도 범위
+confession,confess_absurd,시험관에게도 사랑한다고 말해 판정을 혼란시킨다.,out_confess_absurd,node,confession_chaos,confession_everyone,PASS,PASS,별도 범위
+confession_afterm,support_mina,미나의 재시험을 도우며 함께 진실을 조사한다.,out_support_mina,node,princess,mina_mutual_respect,PASS,PASS,별도 범위
+confession_afterm,leave_mina,미나와 거리를 두고 국가에 직접 항의한다.,out_leave_mina,node,petition,mina_distance,PASS,PASS,별도 범위
+confession_chaos,own_scandal,망신을 감수하고 시험 제도의 허점을 공개한다.,out_own_scandal,node,petition,chaos_whistleblower,PASS,PASS,별도 범위
+confession_chaos,embrace_fame,삼각관계 소문을 이용해 연애 상담소를 연다.,out_embrace_fame,ending,ending_love_scandal,,PASS,PASS,별도 범위

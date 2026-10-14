@@ -8,9 +8,11 @@ import { compactSlot } from '../../src/content/compact-contract';
 import { runKey } from '../../src/persistence/save';
 import type { GameState } from '../../src/engine/types';
 const story = await readExampleStory('demon-king-compact');
-it('기존13사건28선택/7엔딩을 보호하고 작가의 고백 분기만 추가한다', () => {
+it('기존13사건28선택/7엔딩을 보호하며 고백과 v3.8 신규 선택만 덧붙인다', () => {
   for (const [id, old] of Object.entries(previousCompactStory.nodes)) {
-    expect(story.nodes[id]).toEqual(id === 'exam' ? { ...old, choices: [...old.choices, story.nodes.exam!.choices[3]] } : old);
+    const current = story.nodes[id]!;
+    expect({ ...current, choices: old.choices }).toEqual(old);
+    expect(current.choices.slice(0, old.choices.length)).toEqual(old.choices);
   }
   for (const [id, old] of Object.entries(previousCompactStory.endings)) expect(story.endings[id]).toEqual(old);
   const source = JSON.parse(readFileSync('spec/content-v3.6.1-confession-audit/chapters/01_complete.json', 'utf8'));
