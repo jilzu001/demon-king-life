@@ -1,0 +1,42 @@
+# 코덱스에 그대로 전달할 콘텐츠 v1.1.0 적용 지시
+
+이 ZIP은 새 웹게임 엔진이 아니라, 기존 《가짜 마왕의 일생》 콘텐츠 v1.0의 표현 강화판입니다.
+
+**절대 기존 엔진·분기를 재작성하지 마세요.** 기존 콘텐츠의 ID/조건/확률/효과/엔딩/초기값은 변경되지 않았습니다.
+
+1. ZIP의 `story.json`, `characters.json`, `endings.json`, `chapters/*.json`을 프로젝트의 `public/stories/demon-king/`에 업데이트합니다. 적용 전 기존 파일과 저장 데이터를 백업하세요.
+2. 신규 `presentation.json`도 동일한 위치에 복사합니다. 이 파일은 기존 챕터와 별개의 UI 표시용 사이드카로, `nodes[node.id]`에 `chronicleSummary`, `locationLabel`, `dialogues`가 있습니다.
+3. 콘텐츠 로더에 presentation.json **선택적 로딩**을 추가합니다. 없는 이전 스토리는 원래대로 동작해야 하며, 404인 경우 설명 가능한 폴백을 적용합니다. 로딩 자체가 실패해도 본편 진행을 막지 않습니다.
+4. 선택지 카드의 기존 `choice.description`을 제목 아래에 표시합니다. 선택지 텍스트 및 결과 판정에는 영향 없어야 합니다.
+5. 연대기 요약은 **방문한** 노드 ID에 대해서만 사용합니다. `history`의 방문 결과와 노드 ID를 사용해 순서대로 구성하고, 현재 도착 노드도 한 번 표시합니다. 첫 장면의 `chronicle` 출생 기록은 런 시작 시 1회만 삽입합니다. 98개 `chronicleSummary`를 처음부터 전부 나열하는 것은 심각한 버그입니다.
+6. 선택 후 실제 확정된 outcome / node 이동을 기록하고, 그 다음 장면의 요약을 보입니다. 확률 판정이 있기 전에 성공·실패를 미리 기록하지 마세요. 동일 나이의 여러 사건은 진행 순서를 보존합니다.
+7. `dialogues`가 존재하는 장면에서만 화자별 전체 대화를 현재 사건 본문 아래에 한꺼번에 표시합니다. 별도 클릭·대사 넘기기를 만들지 않습니다. 본문 `body`는 기존대로 유지합니다.
+8. `locationLabel`이 있으면 장소 상단 표기로 사용합니다. 없으면 숨깁니다. 이벤트마다 별도 일러스트 제작은 필요하지 않습니다.
+9. 기존 세이브는 로드 가능해야 합니다. 실제 방문 이력에서 복원할 수 없는 상세 대사는 임의로 재생성하지 말고 스토리 버전을 고려하세요. 현재 게임 선택지는 **원클릭 즉시 진행**입니다.
+10. 기존 엔진 검증 외에 새 `presentation.schema.json` 검증, 3회 이상 연속 진행, 분기 누설·저장 복원·모바일 UI·엔딩 회귀 테스트를 실행하세요.
+
+새 스키마의 요약용 TypeScript 타입 예시:
+
+```ts
+type ScenePresentation = {
+  chronicleSummary: string;
+  locationLabel?: string;
+  dialogues?: Array<{ speaker: string; text: string }>;
+};
+type Presentation = {
+  schemaVersion: 1;
+  storyId: string;
+  storyVersion: string;
+  nodes: Record<string, ScenePresentation>;
+};
+```
+
+검증 기준:
+- 98장면의 id 일치 및 요약 존재
+- 340개 모든 description 노출
+- 29개 주요 장면의 대화 116줄 표현
+- 로직과 분기 동작 v1.0 동일
+- 방문하지 않은 분기 기록의 노출 없음
+- 200만 금화 이체와 12만 금화 허위 납품의 사실 구분 유지
+
+기존 v1.0 파일은 백업하고 원본 데이터에 없는 엔딩이나 금전 지급을 만들지 마세요.

@@ -1,0 +1,22 @@
+{
+  "sceneCount": 98,
+  "newHandWrittenScenes": 14,
+  "newHandWrittenSceneIds": [
+    "dk20_exam",
+    "dk20_after_attack_confession",
+    "dk23_prison_book",
+    "dk24_mina_break",
+    "dk25_princess_meeting",
+    "dk26_budget_tip",
+    "dk27_mina_reunion",
+    "dk30_marriage_offer",
+    "dk39_succession_vote",
+    "dk44_quiet_life",
+    "dk49_settlement_desk",
+    "dk55_audit_truth",
+    "dk63_legacy_archive",
+    "dk71_final_review"
+  ],
+  "remainingSceneSpecificWritingNeeded": 84,
+  "warning": "Remaining scenes include scaffold dialogue derived from scene metadata; not web-novel-quality original writing. Not final."
+}

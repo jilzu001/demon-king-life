@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "sequence": [
+    "closing",
+    "memories",
+    "reflection",
+    "collection"
+  ],
+  "noVisibleStageLabels": true,
+  "scenes": [
+    {
+      "endingId": "end_blade",
+      "cardTitle": "용사 시험이 끝나지 않은 이유",
+      "tone": "bad",
+      "closingScene": "당신의 두 번째 공격은 마주 보고 있던 용사에게 제압됐다. 치명적인 상처를 입고 사망했다. 왕국은 시험 규정을 개정하며 사망자를 \"교육 장비\"로 기록했다.",
+      "innerVoice": "그날 다른 말을 했더라면 달라졌을까.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_cells_bride",
+      "cardTitle": "감옥의 결혼식장",
+      "tone": "bad",
+      "closingScene": "살인미수 혐의로 수감된 당신은 창살을 결혼식 축하 장식이라고 불렀다. 교도관은 규정집에 \"청혼은 접견 사유가 아님\"을 추가했다.",
+      "innerVoice": "평생 마왕이라는 이름을 벗으려 했는데, 마지막에 남은 건 죄목뿐이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_contempt",
+      "cardTitle": "법정에서 금지된 단어",
+      "tone": "bad",
+      "closingScene": "살인미수 재판에서 모욕과 폭동 선동을 이어가다 실형을 선고받았다. 당신의 직업란에는 여전히 마왕이라고 쓰여 있었다.",
+      "innerVoice": "그날 다른 말을 했더라면 달라졌을까.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_spoon_escape",
+      "cardTitle": "탈출왕의 최후",
+      "tone": "absurd",
+      "closingScene": "숟가락 하나로 감옥을 탈출하려다 벽을 3cm 파고 들켰다. 왕실은 처음으로 마왕 수감자용 식기를 바꾸었다.",
+      "innerVoice": "그래도 그때만큼은 내가 세상을 이긴 줄 알았다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_magic_tax",
+      "cardTitle": "마법으로 낸 벌금",
+      "tone": "absurd",
+      "closingScene": "마력이 0인데 마법으로 벌금을 냈다고 주장했다. 법원은 상상력으로 세금을 낼 수 없다고 판결했다. 당신은 지방세 역사관의 교육 사례로 남았다.",
+      "innerVoice": "세금와 얽힌 그날이 떠오른다. 지금 생각해도 말도 안 되는 선택이었다.",
+      "artKey": "scroll",
+      "priorityMemoryTags": [
+        "tax"
+      ]
+    },
+    {
+      "endingId": "end_archive_arson",
+      "cardTitle": "종이 한 장 때문에",
+      "tone": "bad",
+      "closingScene": "서류를 없애려다 보관소에 침입했고 붙잡혔다. 남겨둔 지문이 당신의 이름보다 선명했다. 미나는 다시는 당신과 같은 서류에 서명하지 않았다.",
+      "innerVoice": "평생 마왕이라는 이름을 벗으려 했는데, 마지막에 남은 건 죄목뿐이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_bench_revolution",
+      "cardTitle": "벤치 공화국 멸망",
+      "tone": "bad",
+      "closingScene": "우체국 앞 벤치에서 선포한 독립국은 도시 경비대의 퇴거 집행으로 사라졌다. 당신은 경비병을 공격해 유죄 판결을 받았다. 국경의 길이는 2미터였다.",
+      "innerVoice": "그날 다른 말을 했더라면 달라졌을까.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_foreign_customs",
+      "cardTitle": "출입국 신고서의 마왕",
+      "tone": "absurd",
+      "closingScene": "외교사절을 사칭한 사실이 밝혀져 입국이 거부됐다. 귀환 도중 작성한 자서전 제목은 《나는 두 나라의 마왕이었으나 한 나라에도 들어가지 못했다》였다.",
+      "innerVoice": "그래도 그때만큼은 내가 세상을 이긴 줄 알았다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_insurance_cells",
+      "cardTitle": "보험에 들지 못한 보험왕",
+      "tone": "bad",
+      "closingScene": "허위 위험을 팔아 돈을 벌던 당신은 계약서를 이용한 사기로 유죄 판결을 받았다. 교도소에서 판매한 \"마왕 수감 보험\"은 심사 단계에서 거절됐다.",
+      "innerVoice": "그날 다른 말을 했더라면 달라졌을까.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_local_fraud",
+      "cardTitle": "하수구 예산의 지하세계",
+      "tone": "bad",
+      "closingScene": "동네 하수구 공사비를 빼돌린 기록이 밝혀졌다. 당신의 전투력 2는 중요하지 않았다. 장부와 서명이 모든 싸움을 끝냈다.",
+      "innerVoice": "평생 마왕이라는 이름을 벗으려 했는데, 마지막에 남은 건 죄목뿐이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_electoral_fraud",
+      "cardTitle": "마왕 선거의 민주주의",
+      "tone": "bad",
+      "closingScene": "유권자를 협박한 선거 운동은 유죄로 끝났다. 후보 유세 포스터에는 당신의 눈에서 불꽃이 나오고 있었다. 법원은 사진 편집을 면책 사유로 인정하지 않았다.",
+      "innerVoice": "그날 다른 말을 했더라면 달라졌을까.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_fake_evidence",
+      "cardTitle": "조작된 반역의 증거",
+      "tone": "bad",
+      "closingScene": "에리시아를 반역자로 만들기 위해 꾸민 문서의 도장이 진짜와 달랐다. 감옥에서 당신은 모든 도장을 수집했지만 밖으로는 나가지 못했다.",
+      "innerVoice": "평생 마왕이라는 이름을 벗으려 했는데, 마지막에 남은 건 죄목뿐이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_banquet_spoons",
+      "cardTitle": "귀족의 은식기",
+      "tone": "absurd",
+      "closingScene": "국왕 앞에서 은숟가락을 훔치다 붙잡혔다. 첫 마왕 수난 이후 당신의 이름으로 왕궁 식기 반출 금지 규정이 제정됐다.",
+      "innerVoice": "지금 생각해도 말도 안 되는 선택이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_vote_ledger",
+      "cardTitle": "표는 금으로 살 수 없다",
+      "tone": "bad",
+      "closingScene": "귀족회의의 금전 거래 기록이 수사로 이어졌다. 당신의 정치적 생애는 매수한 표가 아니라 영수증의 수로 기억됐다.",
+      "innerVoice": "투표와 얽힌 그날이 떠오른다. 평생 마왕이라는 이름을 벗으려 했는데, 마지막에 남은 건 죄목뿐이었다.",
+      "artKey": "crown",
+      "priorityMemoryTags": [
+        "vote"
+      ]
+    },
+    {
+      "endingId": "end_fake_pedigree",
+      "cardTitle": "없는 조상의 왕위",
+      "tone": "bad",
+      "closingScene": "가짜 족보로 왕실과 혼인을 추진한 일이 드러났다. 상대가 서명을 한 적도 없는데 왕족에 편입됐다고 주장한 탓에 법원은 고개를 저었다.",
+      "innerVoice": "그날 다른 말을 했더라면 달라졌을까.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_procurement_trial",
+      "cardTitle": "두 배로 청구한 마왕",
+      "tone": "bad",
+      "closingScene": "왕실에 납품하지 않은 비용을 청구한 일이 감사에 걸렸다. 당신은 결국 자신의 마왕 전투력보다 회계 감사관을 더 무서워하게 됐다.",
+      "innerVoice": "평생 마왕이라는 이름을 벗으려 했는데, 마지막에 남은 건 죄목뿐이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_counterfeit_docs",
+      "cardTitle": "나라를 판 계약서",
+      "tone": "bad",
+      "closingScene": "기밀처럼 꾸민 위조 문서를 팔던 당신은 수사관에게 가짜 국왕 서명을 건넸다. 국가 반역은 아니었지만 위조죄로 실형을 살았다.",
+      "innerVoice": "그날 다른 말을 했더라면 달라졌을까.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_wall_vs_demon",
+      "cardTitle": "전투력 2와 벽의 승자",
+      "tone": "bad",
+      "closingScene": "귀족회의 벽을 무너뜨리려 돌진했다. 부서진 것은 벽이 아니라 당신의 어깨였다. 치료 뒤 공무집행 방해죄로 처벌받았다.",
+      "innerVoice": "평생 마왕이라는 이름을 벗으려 했는데, 마지막에 남은 건 죄목뿐이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_false_scandal",
+      "cardTitle": "단독 특종의 최후",
+      "tone": "bad",
+      "closingScene": "확인하지 않은 비밀을 기사로 팔았다. 거짓이 드러나 피해자들에게 배상하고 형사 처벌을 받았다. 마지막 신문 제목은 《마왕의 진실: 대부분 오보》였다.",
+      "innerVoice": "그날 다른 말을 했더라면 달라졌을까.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_mana_deepfake",
+      "cardTitle": "없는 마력을 편집하다",
+      "tone": "bad",
+      "closingScene": "마력이 깨어났다는 조작 영상을 만들었지만 손가락이 여섯 개로 표시됐다. 허위 영상 판매와 기망 행위가 적발돼 유죄 판결을 받았다.",
+      "innerVoice": "평생 마왕이라는 이름을 벗으려 했는데, 마지막에 남은 건 죄목뿐이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_throne_chair",
+      "cardTitle": "왕좌 사용료 10금화",
+      "tone": "absurd",
+      "closingScene": "왕좌에 앉아 국왕이라 선언했다. 경비대는 당신을 끌어냈고, 궁내부는 왕좌 세척비 10금화를 청구했다. 당신의 즉위 시간은 14초였다.",
+      "innerVoice": "지금 생각해도 말도 안 되는 선택이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_archive_repeat",
+      "cardTitle": "두 번째 보관소 침입",
+      "tone": "bad",
+      "closingScene": "서류를 없애면 지난 잘못까지 없어질 거라 믿었다. 이번엔 경비병이 이미 당신의 얼굴을 알고 있었다. 사건은 증거 인멸죄 유죄 판결로 끝났다.",
+      "innerVoice": "평생 마왕이라는 이름을 벗으려 했는데, 마지막에 남은 건 죄목뿐이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_ruined_by_wealth",
+      "cardTitle": "돈을 벌자마자 끝난 투자",
+      "tone": "bad",
+      "closingScene": "위험한 투자에 전 재산을 걸었다. 파산은 경제적 배드엔딩이었다. 첫날 길거리에서 주운 감자 한 알이 유일하게 남은 실물 자산이었다.",
+      "innerVoice": "그날 다른 말을 했더라면 달라졌을까.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_conspiracy_channel",
+      "cardTitle": "왕국에서 가장 큰 음모론 채널",
+      "tone": "absurd",
+      "closingScene": "음모론 방송은 돈이 됐다. 마지막으로 당신이 폭로한 건 \"나는 내가 누구인지도 모른다\"였다. 구독자는 늘었지만 정작 아무도 당신을 믿지 않았다.",
+      "innerVoice": "그래도 그때만큼은 내가 세상을 이긴 줄 알았다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_archivist_legacy",
+      "cardTitle": "행정과 괴물",
+      "tone": "neutral",
+      "closingScene": "당신은 자신에게 유리한 기록뿐 아니라 부끄러운 선택도 기증했다. 박물관 입구에는 작은 문구가 생겼다. \"이 사람은 마왕이 아니었다. 그러나 이 사람 덕분에 마왕 제도는 바뀌었다.\"",
+      "innerVoice": "다시 돌아간다면 다른 길을 택했을까.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_slow_reform",
+      "cardTitle": "한 장의 정정 신청서",
+      "tone": "neutral",
+      "closingScene": "박물관에 건넨 등록증은 마왕 제도를 질문하게 만들었다. 소중한 사람을 모두 되찾지는 못했지만 왕국은 더 이상 전투력 2인 인간을 강제로 훈련 교보재로 쓰지 않았다.",
+      "innerVoice": "마왕으로 산 세월도 결국 내 인생이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_no_title",
+      "cardTitle": "아무 직함도 남지 않았다",
+      "tone": "neutral",
+      "closingScene": "낡은 마왕 등록증을 태웠다. 박물관은 전시할 물건을 잃었지만 당신은 오래된 이름으로부터 벗어났다. 다음 날에도 세금 고지서는 정상적으로 도착했다.",
+      "innerVoice": "다시 돌아간다면 다른 길을 택했을까.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_auction_lord",
+      "cardTitle": "국보급 중고 마왕",
+      "tone": "absurd",
+      "closingScene": "첫 마왕 등록증이 경매에서 비싼 값에 팔렸다. 당신을 평생 감시하던 왕실은 세금 납부를 요구했다. \"마왕의 소득도 과세 대상입니다.\" 마왕은 결국 세금으로 나라를 정복했다.",
+      "innerVoice": "그래도 그때만큼은 내가 세상을 이긴 줄 알았다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_expensive_paper",
+      "cardTitle": "팔리지 않는 전설",
+      "tone": "absurd",
+      "closingScene": "왕국 경매장은 당신의 마왕 등록증을 \"국가적 희귀 문서\"로 소개했지만 아무도 입찰하지 않았다. 당신은 그것으로 탁자 다리를 고정했다.",
+      "innerVoice": "지금 생각해도 말도 안 되는 선택이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_pension_king",
+      "cardTitle": "연금의 마왕",
+      "tone": "absurd",
+      "closingScene": "당신은 국가가 71년간 마왕으로 대우했으니 마왕 경력으로 연금을 달라고 청구했다. 담당자는 \"마왕 경력은 공무원 재직기간이 아닙니다\"라고 답했다. 당신은 그 답장을 액자에 넣었다.",
+      "innerVoice": "국왕와 얽힌 그날이 떠오른다. 그래도 그때만큼은 내가 세상을 이긴 줄 알았다.",
+      "artKey": "crown",
+      "priorityMemoryTags": [
+        "king"
+      ]
+    },
+    {
+      "endingId": "end_market_gardener",
+      "cardTitle": "세계를 정복하지 않고 얻은 것",
+      "tone": "good",
+      "closingScene": "당신은 동네에서 가장 오래된 장갑 가게 주인이 됐다. 마왕이라서 불렀던 사람들이 이제는 문고리가 고장 나서 불렀다. 마지막으로 정복한 것은 동네 축제의 감자전 경연이었다.",
+      "innerVoice": "행복한 인생이었다. 적어도 내가 선택한 삶이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_unforced_truce",
+      "cardTitle": "이름만 남은 원수",
+      "tone": "good",
+      "closingScene": "미나는 새 직장을 이야기했고 당신은 낡은 등록증을 보여줬다. 둘은 결혼하지 않았다. 사과가 모든 상처를 지우지도 않았다. 다만 다시 헤어질 때 누구도 검을 뽑지 않았다.",
+      "innerVoice": "돌아보면 가진 것보다 함께한 사람이 더 많았다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_collective_reform",
+      "cardTitle": "이름이 여러 개인 승리",
+      "tone": "good",
+      "closingScene": "새 용사 시험장에는 \"상대의 동의 없는 전투 금지\"가 크게 적혀 있었다. 개정에 참여한 사람들의 이름은 너무 많아 당신 것은 세 번째 줄에 있었다. 당신은 그 순서가 마음에 들었다.",
+      "innerVoice": "행복한 인생이었다. 적어도 내가 선택한 삶이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    },
+    {
+      "endingId": "end_winning_villain",
+      "cardTitle": "악명도 자산이다",
+      "tone": "neutral",
+      "closingScene": "당신은 마왕이라는 이름으로 합법 상표 사업을 확장했다. 과거의 무리한 거래를 모두 후회한 것은 아니었다. 상속인은 당신이 착했는지보다 회사의 배당일을 먼저 물었다. 부자는 반드시 착할 필요가 없었다.",
+      "innerVoice": "마왕으로 산 세월도 결국 내 인생이었다.",
+      "artKey": "moon",
+      "priorityMemoryTags": []
+    }
+  ],
+  "memorySelection": {
+    "source": "actualPlayerHistoryOnly",
+    "max": 8,
+    "min": 1,
+    "order": "chronological",
+    "fallback": "doNotInvent"
+  },
+  "collection": {
+    "persist": "localStorage",
+    "storageKey": "demon-king-ending-collection-v2",
+    "uniqueBy": "endingId"
+  }
+}

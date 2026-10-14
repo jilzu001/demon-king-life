@@ -1,0 +1,540 @@
+{
+  "baseline": {
+    "scenes": 98,
+    "choices": 340,
+    "states": 8175,
+    "transitions": 30668,
+    "terminalPaths": 4935390988,
+    "maxDepth": 25,
+    "endings": {
+      "end_blade": 1,
+      "end_cells_bride": 1,
+      "end_contempt": 4,
+      "end_magic_tax": 1,
+      "end_bench_revolution": 3,
+      "end_spoon_escape": 8,
+      "end_archive_arson": 4,
+      "end_electoral_fraud": 33,
+      "end_foreign_customs": 37,
+      "end_insurance_cells": 5988,
+      "end_local_fraud": 381,
+      "end_fake_evidence": 381,
+      "end_banquet_spoons": 3927,
+      "end_procurement_trial": 5794,
+      "end_counterfeit_docs": 9821,
+      "end_vote_ledger": 57913,
+      "end_fake_pedigree": 4027,
+      "end_wall_vs_demon": 38883,
+      "end_false_scandal": 387844,
+      "end_mana_deepfake": 1188386,
+      "end_throne_chair": 462781,
+      "end_ruined_by_wealth": 9129123,
+      "end_archive_repeat": 4719025,
+      "end_conspiracy_channel": 20523015,
+      "end_archivist_legacy": 158182911,
+      "end_no_title": 1113181065,
+      "end_expensive_paper": 1113181065,
+      "end_pension_king": 1113181065,
+      "end_collective_reform": 40945509,
+      "end_slow_reform": 954998154,
+      "end_unforced_truce": 67115812,
+      "end_auction_lord": 277870734,
+      "end_winning_villain": 26188746,
+      "end_market_gardener": 34008546
+    },
+    "reachableNodes": 98,
+    "warnings": []
+  },
+  "draft": {
+    "scenes": 98,
+    "choices": 293,
+    "states": 3747,
+    "transitions": 11200,
+    "terminalPaths": 126195243,
+    "maxDepth": 22,
+    "endings": {
+      "end_cells_bride": 1,
+      "end_contempt": 4,
+      "end_magic_tax": 1,
+      "end_spoon_escape": 8,
+      "end_archive_arson": 4,
+      "end_foreign_customs": 19,
+      "end_electoral_fraud": 18,
+      "end_insurance_cells": 2228,
+      "end_local_fraud": 132,
+      "end_banquet_spoons": 1370,
+      "end_fake_evidence": 66,
+      "end_procurement_trial": 2118,
+      "end_counterfeit_docs": 3586,
+      "end_vote_ledger": 10698,
+      "end_wall_vs_demon": 7874,
+      "end_false_scandal": 62110,
+      "end_mana_deepfake": 221753,
+      "end_throne_chair": 71538,
+      "end_ruined_by_wealth": 947569,
+      "end_archive_repeat": 134774,
+      "end_conspiracy_channel": 1443757,
+      "end_archivist_legacy": 9992266,
+      "end_no_title": 60932490,
+      "end_slow_reform": 50940224,
+      "end_winning_villain": 1420635
+    },
+    "reachableNodes": 91,
+    "warnings": [
+      "도달 불가능 장면: dk23_prison_book",
+      "도달 불가능 장면: dk20_public_confession",
+      "도달 불가능 장면: dk21_street_activist",
+      "도달 불가능 장면: dk25_princess_reply",
+      "도달 불가능 장면: dk30_marriage_offer",
+      "도달 불가능 장면: dk34_erisia_partnership",
+      "도달 불가능 장면: dk39_mina_line",
+      "도달 불가능 엔딩: end_blade",
+      "도달 불가능 엔딩: end_bench_revolution",
+      "도달 불가능 엔딩: end_fake_pedigree",
+      "도달 불가능 엔딩: end_auction_lord",
+      "도달 불가능 엔딩: end_expensive_paper",
+      "도달 불가능 엔딩: end_pension_king",
+      "도달 불가능 엔딩: end_market_gardener",
+      "도달 불가능 엔딩: end_unforced_truce",
+      "도달 불가능 엔딩: end_collective_reform"
+    ]
+  },
+  "removedChoices": [
+    {
+      "nodeId": "dk20_exam",
+      "choiceId": "legal_protest"
+    },
+    {
+      "nodeId": "dk20_exam",
+      "choiceId": "love_confession"
+    },
+    {
+      "nodeId": "dk20_exam",
+      "choiceId": "surrender"
+    },
+    {
+      "nodeId": "dk20_disarmed",
+      "choiceId": "second_attack"
+    },
+    {
+      "nodeId": "dk22_prison",
+      "choiceId": "sell_confession"
+    },
+    {
+      "nodeId": "dk20_legal_protest",
+      "choiceId": "declare_republic"
+    },
+    {
+      "nodeId": "dk24_excon_restart",
+      "choiceId": "start_repair_shop"
+    },
+    {
+      "nodeId": "dk24_rights_start",
+      "choiceId": "meet_princess"
+    },
+    {
+      "nodeId": "dk24_merchant_start",
+      "choiceId": "hero_promotion"
+    },
+    {
+      "nodeId": "dk25_princess_meeting",
+      "choiceId": "inform_king"
+    },
+    {
+      "nodeId": "dk25_princess_meeting",
+      "choiceId": "propose_marriage"
+    },
+    {
+      "nodeId": "dk25_hero_centre",
+      "choiceId": "slip_test"
+    },
+    {
+      "nodeId": "dk25_theme_park",
+      "choiceId": "sell_to_state"
+    },
+    {
+      "nodeId": "dk26_princess_camp",
+      "choiceId": "ask_to_marry"
+    },
+    {
+      "nodeId": "dk27_small_business",
+      "choiceId": "donate_tools"
+    },
+    {
+      "nodeId": "dk27_calm_years",
+      "choiceId": "help_heroes"
+    },
+    {
+      "nodeId": "dk29_hero_reform",
+      "choiceId": "propose_to_mina"
+    },
+    {
+      "nodeId": "dk29_register_review",
+      "choiceId": "sell_legal_status"
+    },
+    {
+      "nodeId": "dk29_noble_auction",
+      "choiceId": "offer_princess_marriage"
+    },
+    {
+      "nodeId": "dk29_quiet_family",
+      "choiceId": "contact_mina"
+    },
+    {
+      "nodeId": "dk30_reform_votes",
+      "choiceId": "fake_attack"
+    },
+    {
+      "nodeId": "dk30_status_case",
+      "choiceId": "move_abroad"
+    },
+    {
+      "nodeId": "dk30_budget_entry",
+      "choiceId": "leak_partial"
+    },
+    {
+      "nodeId": "dk30_political_broker",
+      "choiceId": "refuse"
+    },
+    {
+      "nodeId": "dk30_marriage_offer",
+      "choiceId": "fabricate_inheritance"
+    },
+    {
+      "nodeId": "dk30_mina_dispute",
+      "choiceId": "sell_letters"
+    },
+    {
+      "nodeId": "dk30_business_future",
+      "choiceId": "finance_investigation"
+    },
+    {
+      "nodeId": "dk34_citizen_reform",
+      "choiceId": "ask_mina_out"
+    },
+    {
+      "nodeId": "dk34_erisia_partnership",
+      "choiceId": "betray_to_king"
+    },
+    {
+      "nodeId": "dk34_budget_notice",
+      "choiceId": "offer_silent_deal"
+    },
+    {
+      "nodeId": "dk34_business_turn",
+      "choiceId": "overinflate_brand"
+    },
+    {
+      "nodeId": "dk39_erisia_contract",
+      "choiceId": "leak_her_notes"
+    },
+    {
+      "nodeId": "dk39_truth_hearing",
+      "choiceId": "settle_registration"
+    },
+    {
+      "nodeId": "dk39_succession_vote",
+      "choiceId": "marry_erisia"
+    },
+    {
+      "nodeId": "dk44_erisia_alliance",
+      "choiceId": "try_child_king"
+    },
+    {
+      "nodeId": "dk44_investigation",
+      "choiceId": "blackmail_official"
+    },
+    {
+      "nodeId": "dk44_political_endgame",
+      "choiceId": "support_successor"
+    },
+    {
+      "nodeId": "dk49_audit_chamber",
+      "choiceId": "demand_share"
+    },
+    {
+      "nodeId": "dk49_settlement_desk",
+      "choiceId": "refuse_for_public_truth"
+    },
+    {
+      "nodeId": "dk49_life_result",
+      "choiceId": "old_corruption_question"
+    },
+    {
+      "nodeId": "dk55_audit_truth",
+      "choiceId": "sell_proof"
+    },
+    {
+      "nodeId": "dk55_personal_years",
+      "choiceId": "keep_money"
+    },
+    {
+      "nodeId": "dk71_final_review",
+      "choiceId": "sell_registration"
+    },
+    {
+      "nodeId": "dk71_final_review",
+      "choiceId": "challenge_age"
+    },
+    {
+      "nodeId": "dk71_final_review",
+      "choiceId": "retire_with_community"
+    },
+    {
+      "nodeId": "dk71_final_review",
+      "choiceId": "reply_to_mina"
+    },
+    {
+      "nodeId": "dk71_final_review",
+      "choiceId": "celebrate_reform"
+    }
+  ],
+  "preservedChoiceLogicChanges": [],
+  "unavailableEndings": [
+    "end_blade",
+    "end_bench_revolution",
+    "end_fake_pedigree",
+    "end_auction_lord",
+    "end_expensive_paper",
+    "end_pension_king",
+    "end_market_gardener",
+    "end_unforced_truce",
+    "end_collective_reform"
+  ],
+  "rawV11SaveCheck": "GameError: 선택 결과 원장 오류",
+  "protectedCandidate": {
+    "states": 8175,
+    "transitions": 30668,
+    "terminalPaths": 4935390988,
+    "maxDepth": 25,
+    "endings": {
+      "end_blade": 1,
+      "end_cells_bride": 1,
+      "end_contempt": 4,
+      "end_magic_tax": 1,
+      "end_bench_revolution": 3,
+      "end_spoon_escape": 8,
+      "end_archive_arson": 4,
+      "end_electoral_fraud": 33,
+      "end_foreign_customs": 37,
+      "end_insurance_cells": 5988,
+      "end_local_fraud": 381,
+      "end_fake_evidence": 381,
+      "end_banquet_spoons": 3927,
+      "end_procurement_trial": 5794,
+      "end_counterfeit_docs": 9821,
+      "end_vote_ledger": 57913,
+      "end_fake_pedigree": 4027,
+      "end_wall_vs_demon": 38883,
+      "end_false_scandal": 387844,
+      "end_mana_deepfake": 1188386,
+      "end_throne_chair": 462781,
+      "end_ruined_by_wealth": 9129123,
+      "end_archive_repeat": 4719025,
+      "end_conspiracy_channel": 20523015,
+      "end_archivist_legacy": 158182911,
+      "end_no_title": 1113181065,
+      "end_expensive_paper": 1113181065,
+      "end_pension_king": 1113181065,
+      "end_collective_reform": 40945509,
+      "end_slow_reform": 954998154,
+      "end_unforced_truce": 67115812,
+      "end_auction_lord": 277870734,
+      "end_winning_villain": 26188746,
+      "end_market_gardener": 34008546
+    },
+    "reachableNodes": 98,
+    "warnings": [],
+    "originalMechanicsMatch": true,
+    "originalSaveMatch": true
+  },
+  "schemaChecks": {
+    "mainContent": "통과",
+    "currentPresentation": "GameError: presentation: 스키마 오류 data/nodes/dk20_after_attack_confession must NOT have additional properties; data/nodes/dk20_disarmed must NOT have additional properties; data/nodes/dk20_escape must NOT have additional properties; data/nodes/dk20_exam must NOT have additional properties; data/nodes/dk20_fraud_pitch must NOT have additional properties; data/nodes/dk20_legal_protest must NOT have additional properties; data/nodes/dk20_public_confession must NOT have additional properties; data/nod",
+    "providedPresentation": {
+      "errorCount": 98,
+      "examples": [
+        {
+          "instancePath": "/nodes/dk20_after_attack_confession",
+          "schemaPath": "#/properties/nodes/additionalProperties/additionalProperties",
+          "keyword": "additionalProperties",
+          "params": {
+            "additionalProperty": "v2Authored"
+          },
+          "message": "must NOT have additional properties"
+        },
+        {
+          "instancePath": "/nodes/dk20_disarmed",
+          "schemaPath": "#/properties/nodes/additionalProperties/additionalProperties",
+          "keyword": "additionalProperties",
+          "params": {
+            "additionalProperty": "v2Authored"
+          },
+          "message": "must NOT have additional properties"
+        },
+        {
+          "instancePath": "/nodes/dk20_escape",
+          "schemaPath": "#/properties/nodes/additionalProperties/additionalProperties",
+          "keyword": "additionalProperties",
+          "params": {
+            "additionalProperty": "v2Authored"
+          },
+          "message": "must NOT have additional properties"
+        }
+      ]
+    },
+    "cinematicReferences": true
+  },
+  "authoredStatus": {
+    "sceneCount": 98,
+    "newHandWrittenScenes": 14,
+    "newHandWrittenSceneIds": [
+      "dk20_exam",
+      "dk20_after_attack_confession",
+      "dk23_prison_book",
+      "dk24_mina_break",
+      "dk25_princess_meeting",
+      "dk26_budget_tip",
+      "dk27_mina_reunion",
+      "dk30_marriage_offer",
+      "dk39_succession_vote",
+      "dk44_quiet_life",
+      "dk49_settlement_desk",
+      "dk55_audit_truth",
+      "dk63_legacy_archive",
+      "dk71_final_review"
+    ],
+    "remainingSceneSpecificWritingNeeded": 84,
+    "warning": "Remaining scenes include scaffold dialogue derived from scene metadata; not web-novel-quality original writing. Not final."
+  },
+  "v2AuthoredMarkers": [
+    "dk20_after_attack_confession",
+    "dk20_disarmed",
+    "dk20_escape",
+    "dk20_exam",
+    "dk20_fraud_pitch",
+    "dk21_assault_trial",
+    "dk21_fraud_caught",
+    "dk22_prison",
+    "dk23_prison_book",
+    "dk24_mina_break",
+    "dk25_princess_meeting",
+    "dk26_budget_tip",
+    "dk27_mina_reunion",
+    "dk30_budget_entry",
+    "dk30_marriage_offer",
+    "dk30_mina_dispute",
+    "dk30_reform_votes",
+    "dk30_status_case",
+    "dk34_budget_notice",
+    "dk34_ordinary_life",
+    "dk39_succession_vote",
+    "dk44_quiet_life",
+    "dk49_settlement_desk",
+    "dk55_audit_truth",
+    "dk63_legacy_archive",
+    "dk71_final_review"
+  ],
+  "dialogueDuplicatedInBodyAndSidecar": [
+    "dk20_exam",
+    "dk20_disarmed",
+    "dk20_after_attack_confession",
+    "dk21_assault_trial",
+    "dk22_prison",
+    "dk23_prison_book",
+    "dk23_release_excon",
+    "dk20_fraud_pitch",
+    "dk21_fraud_success",
+    "dk21_fraud_caught",
+    "dk22_fake_hero_business",
+    "dk22_fraud_press",
+    "dk20_legal_protest",
+    "dk20_public_confession",
+    "dk20_escape",
+    "dk21_clean_detention",
+    "dk21_rights_hearing",
+    "dk21_street_activist",
+    "dk22_road_show",
+    "dk24_excon_restart",
+    "dk24_rights_start",
+    "dk24_merchant_start",
+    "dk24_borderland",
+    "dk24_mina_break",
+    "dk25_princess_meeting",
+    "dk25_princess_reply",
+    "dk25_hero_centre",
+    "dk25_low_road",
+    "dk25_newsroom",
+    "dk25_theme_park",
+    "dk25_forged_risk",
+    "dk25_rights_union",
+    "dk25_civic_election",
+    "dk26_contract_negotiation",
+    "dk26_princess_camp",
+    "dk26_palace_informant",
+    "dk26_royal_scandal",
+    "dk26_workers_claim",
+    "dk26_mina_professional",
+    "dk26_budget_tip",
+    "dk26_village_life",
+    "dk27_insurance_empire",
+    "dk27_small_business",
+    "dk27_calm_years",
+    "dk27_local_office",
+    "dk27_mina_reunion",
+    "dk27_budget_first_trace",
+    "dk27_royal_banquet",
+    "dk27_erisia_distance",
+    "dk29_hero_reform",
+    "dk29_register_review",
+    "dk29_business_tribunal",
+    "dk29_noble_auction",
+    "dk29_quiet_family",
+    "dk30_reform_votes",
+    "dk30_status_case",
+    "dk30_budget_entry",
+    "dk30_political_broker",
+    "dk30_marriage_offer",
+    "dk30_mina_dispute",
+    "dk30_business_future",
+    "dk30_black_market",
+    "dk30_quiet_crossroads",
+    "dk30_border_crossroads",
+    "dk34_citizen_reform",
+    "dk34_law_defeat",
+    "dk34_erisia_partnership",
+    "dk34_budget_notice",
+    "dk34_business_turn",
+    "dk34_ordinary_life",
+    "dk34_political_machine",
+    "dk34_press_scandal",
+    "dk39_mina_line",
+    "dk39_erisia_contract",
+    "dk39_truth_hearing",
+    "dk39_succession_vote",
+    "dk39_press_court",
+    "dk39_quiet_chapter",
+    "dk44_personal_reckoning",
+    "dk44_erisia_alliance",
+    "dk44_investigation",
+    "dk44_public_scandal",
+    "dk44_political_endgame",
+    "dk44_quiet_life",
+    "dk49_audit_chamber",
+    "dk49_public_hearing",
+    "dk49_settlement_desk",
+    "dk49_political_backlash",
+    "dk49_life_result",
+    "dk49_reform_result",
+    "dk55_audit_truth",
+    "dk55_public_fallout",
+    "dk55_personal_years",
+    "dk55_reform_victory",
+    "dk63_legacy_archive",
+    "dk63_bitter_grievance",
+    "dk63_quiet_coda",
+    "dk71_final_review"
+  ],
+  "previewPathCount": 20,
+  "note": "v2 원본과 선택 보존 후보는 메모리에서만 검사했습니다. 공개 콘텐츠·엔진·세이브를 교체하지 않았습니다. 미리보기는 UI 통합 전 원문 읽기 순서 검사이며 집필 품질 완료 검증이 아닙니다."
+}

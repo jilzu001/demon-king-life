@@ -1,0 +1,256 @@
+{
+  "sceneCount": 98,
+  "choicesBefore": 340,
+  "choicesAfter": 293,
+  "handAuthoredDialogueScenes": 8,
+  "otherScenesStillNeedWriting": 90,
+  "removedChoices": [
+    {
+      "node": "dk20_exam",
+      "removed": [
+        "legal_protest",
+        "love_confession",
+        "surrender"
+      ]
+    },
+    {
+      "node": "dk20_disarmed",
+      "removed": [
+        "second_attack"
+      ]
+    },
+    {
+      "node": "dk22_prison",
+      "removed": [
+        "sell_confession"
+      ]
+    },
+    {
+      "node": "dk20_legal_protest",
+      "removed": [
+        "declare_republic"
+      ]
+    },
+    {
+      "node": "dk24_excon_restart",
+      "removed": [
+        "start_repair_shop"
+      ]
+    },
+    {
+      "node": "dk24_rights_start",
+      "removed": [
+        "meet_princess"
+      ]
+    },
+    {
+      "node": "dk24_merchant_start",
+      "removed": [
+        "hero_promotion"
+      ]
+    },
+    {
+      "node": "dk25_princess_meeting",
+      "removed": [
+        "inform_king",
+        "propose_marriage"
+      ]
+    },
+    {
+      "node": "dk25_hero_centre",
+      "removed": [
+        "slip_test"
+      ]
+    },
+    {
+      "node": "dk25_theme_park",
+      "removed": [
+        "sell_to_state"
+      ]
+    },
+    {
+      "node": "dk26_princess_camp",
+      "removed": [
+        "ask_to_marry"
+      ]
+    },
+    {
+      "node": "dk27_small_business",
+      "removed": [
+        "donate_tools"
+      ]
+    },
+    {
+      "node": "dk27_calm_years",
+      "removed": [
+        "help_heroes"
+      ]
+    },
+    {
+      "node": "dk29_hero_reform",
+      "removed": [
+        "propose_to_mina"
+      ]
+    },
+    {
+      "node": "dk29_register_review",
+      "removed": [
+        "sell_legal_status"
+      ]
+    },
+    {
+      "node": "dk29_noble_auction",
+      "removed": [
+        "offer_princess_marriage"
+      ]
+    },
+    {
+      "node": "dk29_quiet_family",
+      "removed": [
+        "contact_mina"
+      ]
+    },
+    {
+      "node": "dk30_reform_votes",
+      "removed": [
+        "fake_attack"
+      ]
+    },
+    {
+      "node": "dk30_status_case",
+      "removed": [
+        "move_abroad"
+      ]
+    },
+    {
+      "node": "dk30_budget_entry",
+      "removed": [
+        "leak_partial"
+      ]
+    },
+    {
+      "node": "dk30_political_broker",
+      "removed": [
+        "refuse"
+      ]
+    },
+    {
+      "node": "dk30_marriage_offer",
+      "removed": [
+        "fabricate_inheritance"
+      ]
+    },
+    {
+      "node": "dk30_mina_dispute",
+      "removed": [
+        "sell_letters"
+      ]
+    },
+    {
+      "node": "dk30_business_future",
+      "removed": [
+        "finance_investigation"
+      ]
+    },
+    {
+      "node": "dk34_citizen_reform",
+      "removed": [
+        "ask_mina_out"
+      ]
+    },
+    {
+      "node": "dk34_erisia_partnership",
+      "removed": [
+        "betray_to_king"
+      ]
+    },
+    {
+      "node": "dk34_budget_notice",
+      "removed": [
+        "offer_silent_deal"
+      ]
+    },
+    {
+      "node": "dk34_business_turn",
+      "removed": [
+        "overinflate_brand"
+      ]
+    },
+    {
+      "node": "dk39_erisia_contract",
+      "removed": [
+        "leak_her_notes"
+      ]
+    },
+    {
+      "node": "dk39_truth_hearing",
+      "removed": [
+        "settle_registration"
+      ]
+    },
+    {
+      "node": "dk39_succession_vote",
+      "removed": [
+        "marry_erisia"
+      ]
+    },
+    {
+      "node": "dk44_erisia_alliance",
+      "removed": [
+        "try_child_king"
+      ]
+    },
+    {
+      "node": "dk44_investigation",
+      "removed": [
+        "blackmail_official"
+      ]
+    },
+    {
+      "node": "dk44_political_endgame",
+      "removed": [
+        "support_successor"
+      ]
+    },
+    {
+      "node": "dk49_audit_chamber",
+      "removed": [
+        "demand_share"
+      ]
+    },
+    {
+      "node": "dk49_settlement_desk",
+      "removed": [
+        "refuse_for_public_truth"
+      ]
+    },
+    {
+      "node": "dk49_life_result",
+      "removed": [
+        "old_corruption_question"
+      ]
+    },
+    {
+      "node": "dk55_audit_truth",
+      "removed": [
+        "sell_proof"
+      ]
+    },
+    {
+      "node": "dk55_personal_years",
+      "removed": [
+        "keep_money"
+      ]
+    },
+    {
+      "node": "dk71_final_review",
+      "removed": [
+        "sell_registration",
+        "challenge_age",
+        "retire_with_community",
+        "reply_to_mina",
+        "celebrate_reform"
+      ]
+    }
+  ]
+}

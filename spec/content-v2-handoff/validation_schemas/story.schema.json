@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Story manifest",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "version",
+    "title",
+    "entryNodeId",
+    "chapters",
+    "charactersFile",
+    "endingsFile",
+    "initialState"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "entryNodeId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "minLength": 3
+    },
+    "chapters": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^chapters/[a-z0-9_./-]+\\.json$"
+      }
+    },
+    "charactersFile": {
+      "const": "characters.json"
+    },
+    "endingsFile": {
+      "const": "endings.json"
+    },
+    "initialState": {
+      "type": "object",
+      "required": [
+        "age",
+        "player",
+        "npcs",
+        "flags",
+        "inventory"
+      ],
+      "properties": {
+        "age": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "player": {
+          "type": "object",
+          "required": [
+            "species",
+            "combat",
+            "magic",
+            "gold",
+            "alive",
+            "legalStatus",
+            "crimes"
+          ],
+          "properties": {
+            "species": {
+              "type": "string",
+              "minLength": 1
+            },
+            "combat": {
+              "type": "number",
+              "minimum": 0
+            },
+            "magic": {
+              "type": "number",
+              "minimum": 0
+            },
+            "gold": {
+              "type": "number",
+              "minimum": 0
+            },
+            "alive": {
+              "type": "boolean"
+            },
+            "legalStatus": {
+              "type": "string",
+              "minLength": 1
+            },
+            "crimes": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]*$",
+                "minLength": 3
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "npcs": {
+          "type": "object",
+          "minProperties": 1,
+          "patternProperties": {
+            "^[a-z][a-z0-9_]*$": {
+              "type": "object",
+              "required": [
+                "alive",
+                "combat",
+                "trust",
+                "affection",
+                "relationship"
+              ],
+              "properties": {
+                "alive": {
+                  "type": "boolean"
+                },
+                "combat": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "trust": {
+                  "type": "integer",
+                  "minimum": -100,
+                  "maximum": 100
+                },
+                "affection": {
+                  "type": "integer",
+                  "minimum": -100,
+                  "maximum": 100
+                },
+                "relationship": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "flags": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "minLength": 3
+          }
+        },
+        "inventory": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-z][a-z0-9_]*$": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
