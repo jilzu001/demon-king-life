@@ -33,7 +33,8 @@ test('정사각 초상화·4칸 상태·연대기 배경/NPC 전환과 작은 �
   }
   await skipReading(page);
   await expect(page.locator('#npc-image')).toHaveAttribute('src', /mina-early-tired-v2\.webp/);
-  await expect(page.locator('#npc-name')).toHaveText('미나');
+  await expect(page.locator('#npc-image')).toHaveAttribute('alt', '미나 초상화');
+  await expect(page.locator('.portrait figcaption')).toHaveCount(0);
   const report = JSON.parse(readFileSync('docs/portrait-assets-v2.json', 'utf8'));
   const bytes = report.assets.reduce((sum: number, asset: { file: string }) => sum + statSync(asset.file).size, statSync('public/art/background-v1.webp').size);
   expect(bytes).toBeLessThan(400000);

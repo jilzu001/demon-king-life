@@ -112,7 +112,6 @@ body { overflow: hidden; }
 .game-header { display: grid; grid-template-columns: clamp(56px, 17vw, 96px) minmax(0, 1fr) clamp(56px, 17vw, 96px); gap: 10px; padding: 0; margin: 0; border: 0; flex-shrink: 0; }
 .portrait { margin: 0; position: relative; aspect-ratio: 1; border: 1px solid #746448; border-radius: 8px; overflow: hidden; background: #292b2d; }
 .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.portrait figcaption { position: absolute; bottom: 0; width: 100%; padding: 2px 4px; background: #11171de6; text-align: center; font-size: 11px; color: var(--gold); }
 .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, 1fr); gap: 6px; height: 100%; grid-column: auto; }
 .stats > div { display: flex; flex-direction: column; justify-content: center; text-align: center; min-width: 0; padding: 2px 5px; background: #242b35; border: 1px solid #414957; border-radius: 5px; }
 .stats small { font-size: 11px; line-height: 1.2; }

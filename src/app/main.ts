@@ -178,7 +178,7 @@ function renderStatus(layout: HTMLElement, current: GameState) {
   header.append(stats);
   const npc = element('figure', undefined, 'portrait npc-portrait');
   const image = element('img'); image.src = art('background'); image.alt = '연대기 배경'; image.id = 'npc-image';
-  const label = element('figcaption', '연대기'); label.id = 'npc-name'; npc.append(image, label); header.append(npc); layout.append(header);
+  npc.append(image); header.append(npc); layout.append(header);
 }
 function renderToolbar(layout: HTMLElement) {
   const toolbar = element('footer', undefined, 'game-toolbar'); toolbar.setAttribute('aria-label', '게임 조작');
@@ -242,8 +242,8 @@ function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEle
   const life = layout.querySelector<HTMLElement>('.life-panel')!; life.tabIndex = -1;
   const showNpc = (name?: string, emotion: PortraitEmotion = 'neutral') => {
     const id = Object.keys(content.characters).find(id => content.characters[id]!.name === name && current.npcs[id]?.alive && (portraitCharacters as readonly string[]).includes(id));
-    const image = layout.querySelector<HTMLImageElement>('#npc-image')!; const caption = layout.querySelector<HTMLElement>('#npc-name')!;
-    image.src = id ? portraitUrl(import.meta.env.BASE_URL, id as PortraitCharacter, current.age, emotion) : art('background'); image.alt = id ? `${name} 초상화` : '연대기 배경'; caption.textContent = id ? name! : '연대기';
+    const image = layout.querySelector<HTMLImageElement>('#npc-image')!;
+    image.src = id ? portraitUrl(import.meta.env.BASE_URL, id as PortraitCharacter, current.age, emotion) : art('background'); image.alt = id ? `${name} 초상화` : '연대기 배경';
   };
   const ready = () => {
     if (current.ended || pending || openMenu || dismissedChoices === sceneKey()) return;
