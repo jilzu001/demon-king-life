@@ -1,4 +1,4 @@
-export type ReadingStep = { element: HTMLElement; stage: 'chronicle' | 'scene' };
+export type ReadingStep = { element: HTMLElement; stage: 'chronicle' | 'scene'; companions?: HTMLElement[] };
 
 // 읽기 진행은 화면에서만 유지한다. 저장 원장·판정·난수에는 관여하지 않는다.
 export class ReadingSequence {
@@ -30,7 +30,10 @@ export class ReadingSequence {
     }
     const { steps, gates, controls, status, faster, skip, surface } = options;
     const update = () => {
-      steps.forEach((step, i) => { step.element.hidden = !this.complete && i >= this.shown; });
+      steps.forEach((step, i) => {
+        step.element.hidden = !this.complete && i >= this.shown;
+        step.companions?.forEach(illustration => { illustration.hidden = step.element.hidden; });
+      });
       gates.forEach(gate => { gate.hidden = !this.complete; });
       surface.dataset.reading = String(!this.complete);
       controls.hidden = this.complete && !options.keepControls;

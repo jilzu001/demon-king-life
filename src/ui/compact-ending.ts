@@ -2,6 +2,7 @@ import type { GameState } from '../engine/types';
 import type { PresentedStory } from '../content/presentation';
 import { element, button } from './dom';
 import type { CompactProgress } from './compact-progress';
+import { renderIllustration } from './illustrations';
 
 const drawings: Record<string, string> = {
   silhouette: 'M95 145Q100 105 130 104Q160 105 165 145 M114 80a16 16 0 1 0 32 0a16 16 0 1 0-32 0',
@@ -46,7 +47,11 @@ export function renderCompactEnding(layout: HTMLElement, story: PresentedStory, 
   scene.dataset.endingPhase = String(phase);
   scene.setAttribute('aria-label', '삶의 결말');
   const content = element('div', undefined, 'cinematic-content');
-  if (phase === 0) content.append(compactArt(cinematic.illustration), element('p', cinematic.finalScene, 'cinematic-text'));
+  if (phase === 0) {
+    content.append(element('p', cinematic.finalScene, 'cinematic-text'));
+    const illustration = renderIllustration(ending.id, 'ending');
+    if (illustration) content.append(illustration);
+  }
   if (phase === 1 && memories[index]) {
     const { entry, node } = memories[index]!;
     const choice = node.choices.find(c => c.id === entry.choiceId)!;

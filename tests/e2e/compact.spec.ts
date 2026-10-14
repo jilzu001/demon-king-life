@@ -27,6 +27,56 @@ test.beforeEach(async ({ page }) => {
   const time = new Date('2026-10-14T00:00:00Z'); await page.clock.install({ time }); await page.clock.pauseAt(time);
 });
 
+test('본문 그림은 관련 문단과 함께 나타나고 클릭당 한 문단·연대기·선택 팝업을 유지한다', async ({ page }) => {
+  await start(page); const saved = await raw(page);
+  await expect(page.locator('#current-event .story-illustration')).toBeVisible();
+  await expect(page.locator('#current-event .story-paragraph:visible')).toHaveCount(1);
+  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '마을');
+  await page.locator('.chat-feed').click();
+  await expect(page.locator('#current-event .story-paragraph:visible')).toHaveCount(2);
+  await page.locator('.chat-feed').click();
+  await expect(page.locator('#current-event .story-paragraph:visible')).toHaveCount(3);
+  await expect(page.locator('#choice-dialog')).not.toBeVisible();
+  await expect(page.locator('.timeline img, .choice-card img, .dialogue-line img')).toHaveCount(0);
+  await scene(page);
+  await expect(page.locator('#current-event .story-illustration')).toHaveCount(1);
+  expect(await raw(page)).toBe(saved);
+});
+
+test('그림 없는 사건은 텍스트로 진행하고 재판·엔딩 그림과 저장 후 복원을 보호한다', async ({ page }) => {
+  await start(page);
+  for (const id of ['family_accept', 'trust_mina']) await select(page, id);
+  await scene(page);
+  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '미나');
+  await select(page, 'attack'); await scene(page);
+  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '감옥');
+  await select(page, 'forgive'); await scene(page);
+  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '에리시아');
+  await select(page, 'ally'); await expect(page.locator('#current-event .story-illustration')).toHaveCount(0);
+  await select(page, 'public_audit'); await scene(page);
+  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '미나');
+  const saved = await raw(page); await page.reload(); await scene(page); expect(await raw(page)).toBe(saved);
+  await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
+  await expect(page.locator('.choice-launch')).toBeVisible(); await page.locator('.choice-launch').click();
+  await select(page, 'walk_away'); await select(page, 'end_peace');
+  await expect(page.locator('[data-ending-phase="0"] .story-illustration img')).toHaveAttribute('alt', '마지막 장면');
+  const ended = await raw(page); await page.reload(); expect(await raw(page)).toBe(ended);
+});
+
+test('그림 로딩 실패 시 빈 프레임 없이 본문과 페이지·스크롤 선택을 계속한다', async ({ page }) => {
+  await page.route('**/assets/illustrations/backgrounds/village.webp', route => route.abort());
+  await start(page); const saved = await raw(page);
+  await scene(page); await expect(page.locator('#current-event .story-illustration')).toHaveCount(0);
+  await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
+  await page.locator('#reading-mode').click();
+  await expect(page.locator('.page-window')).toBeVisible();
+  await expect(page.locator('#current-event .story-illustration')).toHaveCount(0);
+  await page.locator('#reading-skip').click(); await page.locator('.choice-launch').click(); await expect(page.locator('#choice-dialog')).toBeVisible();
+  expect(await raw(page)).toBe(saved);
+  await page.locator('[data-choice="family_accept"]').click(); await expect(page.locator('#choice-aftermath')).toBeVisible();
+  expect(JSON.parse((await raw(page))!).history).toHaveLength(1);
+});
+
 test('빈 줄마다 문단과 간격이 있고 대사 카드 중복 없이 본문 끝에서만 선택할 수 있다', async ({ page }) => {
   await start(page);
   expect(JSON.parse((await raw(page))!).age).toBe(0);
@@ -141,7 +191,8 @@ test('본문 HTML은 문자로 표시하고 reduced-motion에서도 결말을 �
   const malicious = structuredClone(chapter); malicious.nodes[0].body = '<img src=x onerror="window.__unsafe=1">\n\n“문자 그대로.”';
   await page.route('**/stories/demon-king-compact/chapters/01_complete.json', route => route.fulfill({ json: malicious }));
   await page.emulateMedia({ reducedMotion: 'reduce' }); await start(page); await scene(page);
-  await expect(page.locator('#current-event .story-prose img')).toHaveCount(0);
+  await expect(page.locator('#current-event .story-paragraph img')).toHaveCount(0);
+  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('src', /assets\/illustrations\/backgrounds\/village\.webp$/);
   expect(await page.evaluate(() => (window as Window & { __unsafe?: number }).__unsafe)).toBeUndefined();
   expect(await page.locator('#current-event .story-paragraph').first().textContent()).toContain('<img');
   for (const id of ['family_accept', 'trust_mina', 'attack', 'escape_prison']) await select(page, id);

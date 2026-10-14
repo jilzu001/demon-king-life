@@ -11,6 +11,7 @@ import { renderNarrative } from '../ui/narrative';
 import { element, button, icon } from '../ui/dom';
 import { ReadingSequence, type ReadingStep } from '../ui/reading';
 import { PageReader } from '../ui/pages';
+import { illustrateNarrative, readingCompanions } from '../ui/illustrations';
 import { portraitUrl, portraitCharacters, dialogueEmotion, type PortraitCharacter, type PortraitEmotion } from '../ui/portraits';
 import '../styles/main.css';
 import { isCompact, compactSlot } from '../content/compact-contract';
@@ -381,7 +382,7 @@ function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEle
   for (const row of columns.querySelectorAll<HTMLElement>('#current-event .chronicle-message')) steps.push({ element: row, stage: 'chronicle' });
   // 본문 한 단락과 각 화자의 대사를 순서대로 표시한다. 전체 기록은 즉시 열람 가능하다.
   for (const line of columns.querySelectorAll<HTMLElement>('#current-event .story .narrative > .body, #current-event .story .dialogue-line, #current-event .story > .body, #current-event .ending-recap')) {
-    steps.push({ element: line, stage: 'scene' });
+    steps.push({ element: line, stage: 'scene', companions: readingCompanions(line) });
   }
   const controls = toolbar.querySelector<HTMLElement>('.reading-controls')!;
   const status = toolbar.querySelector<HTMLElement>('.reading-status')!;
@@ -506,7 +507,10 @@ function renderScene(layout: HTMLElement, content: PresentedStory, current: Game
   heading.append(element('p', `${current.age}세 · 현재 사건`, 'eyebrow'));
   if (presentation?.locationLabel) heading.append(element('p', presentation.locationLabel, 'location'));
   const title = element('h2', node.title); title.id = 'scene-title'; title.tabIndex = -1;
-  heading.append(title); panel.append(heading, renderNarrative(node.body, presentation, isCompact(content.manifest)));
+  heading.append(title);
+  const narrative = renderNarrative(node.body, presentation, isCompact(content.manifest));
+  if (isCompact(content.manifest)) illustrateNarrative(narrative, node.id, !current.history.length);
+  panel.append(heading, narrative);
   const dialog = element('dialog', undefined, 'choice-dialog'); dialog.id = 'choice-dialog';
   const top = element('div', undefined, 'choice-dialog-heading');
   const prompt = element('h2', '어떻게 행동할까?', 'choice-prompt'); prompt.id = 'choice-title'; dialog.setAttribute('aria-labelledby', prompt.id);

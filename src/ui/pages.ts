@@ -38,6 +38,7 @@ export class PageReader {
     const measure = () => {
       const width = viewport.clientWidth;
       if (!width || !viewport.clientHeight) return;
+      viewport.style.setProperty('--page-height', `${viewport.clientHeight}px`);
       content.style.columnWidth = `${width}px`; pitch = width + 32;
       count = Math.max(1, Math.ceil((content.scrollWidth + 32 - .5) / pitch));
       update();
@@ -62,8 +63,11 @@ export class PageReader {
     previous.addEventListener('click', backward); next.addEventListener('click', advance); skip.addEventListener('click', skipAll);
     const resize = new ResizeObserver(measure); resize.observe(viewport);
     const textSize = new MutationObserver(measure); textSize.observe(document.documentElement, { attributes: true, attributeFilter: ['style'] });
+    const assetsChanged = () => queueMicrotask(measure);
+    content.addEventListener('load', assetsChanged, true); content.addEventListener('error', assetsChanged, true);
     this.cleanup = () => {
       resize.disconnect(); textSize.disconnect(); viewport.removeEventListener('click', click); viewport.removeEventListener('keydown', keyboard);
+      content.removeEventListener('load', assetsChanged, true); content.removeEventListener('error', assetsChanged, true);
       previous.removeEventListener('click', backward); next.removeEventListener('click', advance); skip.removeEventListener('click', skipAll);
     };
     measure();
