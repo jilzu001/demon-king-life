@@ -1,0 +1,239 @@
+{
+  "required": [
+    "age",
+    "player",
+    "npcs",
+    "flags",
+    "inventory",
+    "saveSchemaVersion",
+    "storyId",
+    "storyVersion",
+    "runId",
+    "currentNodeId",
+    "endingId",
+    "ended",
+    "rng",
+    "history",
+    "enteredNodeIds"
+  ],
+  "properties": {
+    "age": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "player": {
+      "type": "object",
+      "required": [
+        "species",
+        "combat",
+        "magic",
+        "gold",
+        "alive",
+        "legalStatus",
+        "crimes"
+      ],
+      "properties": {
+        "species": {
+          "type": "string",
+          "minLength": 1
+        },
+        "combat": {
+          "type": "number",
+          "minimum": 0
+        },
+        "magic": {
+          "type": "number",
+          "minimum": 0
+        },
+        "gold": {
+          "type": "number",
+          "minimum": 0
+        },
+        "alive": {
+          "type": "boolean"
+        },
+        "legalStatus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "crimes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "minLength": 3
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "npcs": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {
+        "^[a-z][a-z0-9_]*$": {
+          "type": "object",
+          "required": [
+            "alive",
+            "combat",
+            "trust",
+            "affection",
+            "relationship"
+          ],
+          "properties": {
+            "alive": {
+              "type": "boolean"
+            },
+            "combat": {
+              "type": "number",
+              "minimum": 0
+            },
+            "trust": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100
+            },
+            "affection": {
+              "type": "integer",
+              "minimum": -100,
+              "maximum": 100
+            },
+            "relationship": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "flags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*$",
+        "minLength": 3
+      }
+    },
+    "inventory": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-z][a-z0-9_]*$": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "saveSchemaVersion": {
+      "const": 1
+    },
+    "storyId": {
+      "type": "string",
+      "minLength": 3
+    },
+    "storyVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "runId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "currentNodeId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "endingId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ended": {
+      "type": "boolean"
+    },
+    "rng": {
+      "type": "object",
+      "properties": {
+        "seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        },
+        "state": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        }
+      },
+      "required": [
+        "seed",
+        "state"
+      ],
+      "additionalProperties": false
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "toId": {
+            "type": "string",
+            "minLength": 3
+          },
+          "nodeId": {
+            "type": "string",
+            "minLength": 3
+          },
+          "age": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "toKind": {
+            "enum": [
+              "node",
+              "ending"
+            ]
+          },
+          "outcomeId": {
+            "type": "string",
+            "minLength": 3
+          },
+          "choiceId": {
+            "type": "string",
+            "minLength": 3
+          }
+        },
+        "required": [
+          "age",
+          "nodeId",
+          "choiceId",
+          "outcomeId",
+          "toKind",
+          "toId"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 10000
+    },
+    "enteredNodeIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 3
+      },
+      "uniqueItems": true
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "title": "GameState v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

@@ -1,0 +1,26 @@
+{
+  "required": [
+    "saveSchemaVersion",
+    "discoveredEndings"
+  ],
+  "properties": {
+    "saveSchemaVersion": {
+      "const": 1
+    },
+    "discoveredEndings": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 3
+        },
+        "uniqueItems": true
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "title": "Ending collection v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

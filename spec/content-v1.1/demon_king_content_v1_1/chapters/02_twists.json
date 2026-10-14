@@ -1,0 +1,2548 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "dk30_reform_votes",
+      "kind": "scene",
+      "age": 30,
+      "title": "용사 시험 개혁안의 첫 표결",
+      "body": "새 법안은 마왕에게 시험 참여 거부권을 주자는 내용이다. 귀족들은 \"마왕에게도 권리가 있으면 다음엔 세금 환급도 요구할 것\"이라고 반대한다. 당신은 당연히 세금 환급이 궁금했다.",
+      "choices": [
+        {
+          "id": "keep_lobbying",
+          "text": "미나와 시민들을 설득해 표결을 밀어붙인다.",
+          "outcomes": [
+            {
+              "id": "reform_passed",
+              "weight": 2,
+              "result": "success",
+              "to": {
+                "kind": "node",
+                "id": "dk34_citizen_reform"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "hero_law_reformed"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.mina.trust",
+                  "value": 70
+                }
+              ]
+            },
+            {
+              "id": "reform_failed",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk34_law_defeat"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "hero_law_rejected"
+                }
+              ]
+            }
+          ],
+          "description": "왕국의 법은 연필과 인내심으로도 바뀐다."
+        },
+        {
+          "id": "trade_votes",
+          "text": "개혁안 지지와 맞바꿔 마왕 홍보 예산을 요구한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_political_machine",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_political_machine"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "traded_reform_support"
+                }
+              ]
+            }
+          ],
+          "description": "권리를 팔아 홍보비를 사겠다는 훌륭한 모순."
+        },
+        {
+          "id": "fake_attack",
+          "text": "표결장에서 가짜 마왕 습격을 연출한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_press_scandal",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk34_press_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "fake_parliament_attack"
+                }
+              ]
+            }
+          ],
+          "description": "법을 고치려 가짜 범죄부터 만들기로 했다."
+        },
+        {
+          "id": "leave_politics",
+          "text": "표결은 다른 사람들에게 맡기고 생계를 찾는다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_ordinary_life",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk34_ordinary_life"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "left_reform_politics"
+                }
+              ]
+            }
+          ],
+          "description": "표결에 지쳐도 공과금 납부는 남아 있다."
+        }
+      ]
+    },
+    {
+      "id": "dk30_status_case",
+      "kind": "scene",
+      "age": 30,
+      "title": "내 이름이 직업이 될 때",
+      "body": "민원실은 \"마왕 등록은 신분 정보인가, 직업인가, 국가보안시설인가\"라는 질문에 한 달째 답하지 못했다. 당신의 정정 신청서는 서랍 두 개를 왕복했다.",
+      "choices": [
+        {
+          "id": "sue_for_identity",
+          "text": "행정 오류 정정과 손해배상 청구를 시작한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_citizen_reform",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_citizen_reform"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "challenged_demon_registration"
+                }
+              ]
+            }
+          ],
+          "description": "마왕이 아니라 주민이라는 걸 법정에서 입증한다."
+        },
+        {
+          "id": "keep_registration",
+          "text": "등록을 유지하고 혜택을 정식으로 확인한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_budget_notice",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk34_budget_notice"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "kept_demon_registration"
+                }
+              ]
+            }
+          ],
+          "description": "괴로운 등록증에도 혜택이 있는지 따져본다."
+        },
+        {
+          "id": "move_abroad",
+          "text": "국경으로 떠나 마왕 아닌 일상을 구한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_ordinary_life",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk34_ordinary_life"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "left_for_quiet_life"
+                }
+              ]
+            }
+          ],
+          "description": "국경 너머에선 마왕 면허가 통하지 않는다."
+        },
+        {
+          "id": "marry_paper",
+          "text": "\"제 등록증과 혼인 신고하면 왕족이 되나요?\" 묻는다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_press_scandal",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_press_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "proposed_to_registration_card"
+                }
+              ]
+            }
+          ],
+          "description": "사람 대신 증명서와 혼인하려는 초현실적 민원."
+        }
+      ]
+    },
+    {
+      "id": "dk30_budget_entry",
+      "kind": "scene",
+      "age": 30,
+      "title": "첫 금전 기록",
+      "body": "감사관 세렌이 예산번호를 조회했다. 왕국 장부에는 마왕 관리사업으로 200만 금화가 기재돼 있었다. 그러나 지출 목적은 비공개. 세렌이 당신을 말렸다. \"의심과 증명은 다른 겁니다.\"",
+      "choices": [
+        {
+          "id": "seek_paper_trail",
+          "text": "지급일·결재자·계정을 하나씩 추적한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_budget_notice",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk34_budget_notice"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "budget_trace_started"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.auditor.trust",
+                  "value": 65
+                }
+              ]
+            }
+          ],
+          "description": "추리의 주인공은 숫자가 아니라 결재선이다."
+        },
+        {
+          "id": "demand_full_amount",
+          "text": "\"2백만 전액이 내 돈\"이라고 왕국에 청구한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_press_scandal",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk34_press_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "unfounded_budget_personal_claim"
+                }
+              ]
+            }
+          ],
+          "description": "계정 이체를 개인 입금으로 읽으면 큰일 난다."
+        },
+        {
+          "id": "leak_partial",
+          "text": "가려진 장부를 익명으로 신문에 전달한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_press_scandal",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_press_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "leaked_partial_budget"
+                }
+              ]
+            }
+          ],
+          "description": "가려진 장부가 신문에선 더 크게 보일 수도 있다."
+        },
+        {
+          "id": "walk_away",
+          "text": "위험한 조사를 접고 정직하게 돈을 번다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_business_turn",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk34_business_turn"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "gave_up_budget_inquiry"
+                }
+              ]
+            }
+          ],
+          "description": "2백만 금화보다 내일의 일당을 택한다."
+        }
+      ]
+    },
+    {
+      "id": "dk30_political_broker",
+      "kind": "scene",
+      "age": 30,
+      "title": "공화국에 왕이 많은 이유",
+      "body": "정치 브로커가 말한다. \"정치는 마왕보다 무섭습니다. 일단 마왕은 자기 이름으로 옵니다.\" 그는 귀족 후보 추천권을 거래하려 하지만, 합법적인 후원인지 표 매수인지 선이 흐릿하다.",
+      "choices": [
+        {
+          "id": "accept_dirty_deal",
+          "text": "검은 후원금을 받아 후보 지명에 도전한다.",
+          "outcomes": [
+            {
+              "id": "undetected_funding",
+              "weight": 2,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_political_machine"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "accepted_dark_political_funding"
+                },
+                {
+                  "op": "set",
+                  "path": "player.gold",
+                  "value": 3000
+                }
+              ]
+            },
+            {
+              "id": "audit_funding",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "ending",
+                "id": "end_vote_ledger"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "player.crimes",
+                  "value": "political_bribery_convicted"
+                },
+                {
+                  "op": "set",
+                  "path": "player.legalStatus",
+                  "value": "imprisoned"
+                }
+              ]
+            }
+          ],
+          "description": "출발선부터 현금 냄새가 나는 선거운동."
+        },
+        {
+          "id": "record_and_report",
+          "text": "불법 거래 정황을 녹취해 감사관에게 제출한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_budget_notice",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_budget_notice"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "reported_vote_broker"
+                }
+              ]
+            }
+          ],
+          "description": "거래에 필요한 건 계약서보다 녹음기다."
+        },
+        {
+          "id": "refuse",
+          "text": "깨끗한 후보 활동을 선언한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_citizen_reform",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk34_citizen_reform"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "clean_candidate"
+                }
+              ]
+            }
+          ],
+          "description": "깨끗한 정치는 비싸지만 후회가 적을 수도 있다."
+        },
+        {
+          "id": "announce_self_king",
+          "text": "\"국왕은 제가 합니다\"라고 즉석 기자회견을 연다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_press_scandal",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_press_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "self_declared_king"
+                }
+              ]
+            }
+          ],
+          "description": "국왕보다 먼저 기자회견 장소를 예약한다."
+        }
+      ]
+    },
+    {
+      "id": "dk30_marriage_offer",
+      "kind": "scene",
+      "age": 30,
+      "title": "왕녀의 결혼 계산서",
+      "body": "에리시아는 당신이 낸 청혼서를 검토했다. \"정략결혼은 사랑이 아니라 서로 줄 카드가 있어야 해요.\" 당신이 내민 것은 마왕 등록증과 미납 수도요금 고지서였다.",
+      "choices": [
+        {
+          "id": "offer_budget_research",
+          "text": "왕실 예산 수사에 협력하는 조건으로 정치 파트너십을 제안한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_erisia_partnership",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_erisia_partnership"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "erisia_budget_partnership"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.erisia.trust",
+                  "value": 55
+                }
+              ]
+            }
+          ],
+          "description": "혼인 서약보다 예산 공조 협약이 그럴듯하다."
+        },
+        {
+          "id": "promise_honesty",
+          "text": "재산과 전과를 숨기지 않고 교제 가능성만 묻는다.",
+          "outcomes": [
+            {
+              "id": "limited_interest",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_erisia_partnership"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "erisia_respects_candor"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.erisia.trust",
+                  "value": 50
+                }
+              ]
+            },
+            {
+              "id": "rejected",
+              "weight": 3,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk34_press_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "erisia_rejects_courtship"
+                }
+              ]
+            }
+          ],
+          "description": "전과와 무일푼까지 공개하는 솔직한 고백."
+        },
+        {
+          "id": "fabricate_inheritance",
+          "text": "가짜 왕족 족보로 결혼을 밀어붙인다.",
+          "outcomes": [
+            {
+              "id": "out_end_fake_pedigree",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "ending",
+                "id": "end_fake_pedigree"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "player.crimes",
+                  "value": "fraud_convicted"
+                },
+                {
+                  "op": "set",
+                  "path": "player.legalStatus",
+                  "value": "imprisoned"
+                }
+              ]
+            }
+          ],
+          "description": "조상님을 새로 만드는 건 등기보다 위험하다."
+        },
+        {
+          "id": "leave_erisia",
+          "text": "연애를 포기하고 소규모 장사를 한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_business_turn",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk34_business_turn"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "left_romantic_politics"
+                }
+              ]
+            }
+          ],
+          "description": "정략결혼 대신 장사로 생계를 꾸려본다."
+        }
+      ]
+    },
+    {
+      "id": "dk30_mina_dispute",
+      "kind": "scene",
+      "age": 30,
+      "title": "사과문에도 손익분기점이 있다",
+      "body": "미나가 편지를 돌려보냈다. \"사과는 고맙지만 내 이름을 이용하지는 마.\" 이미 여러 번 선을 넘었던 당신에겐 이 말이 낯설었다. 세렌은 왜 이런 회신까지 공증하려 하느냐고 물었다.",
+      "choices": [
+        {
+          "id": "respect_distance",
+          "text": "추가 연락 없이 미나의 의사를 존중한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_ordinary_life",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk34_ordinary_life"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "respected_mina_distance"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.mina.trust",
+                  "value": 20
+                }
+              ]
+            }
+          ],
+          "description": "그만 연락하는 것이 유일하게 필요한 배려다."
+        },
+        {
+          "id": "offer_public_reform",
+          "text": "사적인 관계를 요구하지 않고 시험 제도 개혁을 도와달라고 한다.",
+          "outcomes": [
+            {
+              "id": "conditional_accepted",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_citizen_reform"
+              },
+              "when": {
+                "op": "gte",
+                "path": "npcs.mina.trust",
+                "value": 0
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "mina_public_reform_dialogue"
+                }
+              ]
+            },
+            {
+              "id": "refused_approach",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk34_law_defeat"
+              },
+              "when": {
+                "op": "lt",
+                "path": "npcs.mina.trust",
+                "value": 0
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "mina_refused_contact"
+                }
+              ]
+            }
+          ],
+          "description": "사적인 사과와 공적인 협력을 구분해본다."
+        },
+        {
+          "id": "sell_letters",
+          "text": "미나의 편지를 유명인의 사생활 기사로 판다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_press_scandal",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk34_press_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "sold_mina_private_letters"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.mina.trust",
+                  "value": -100
+                }
+              ]
+            }
+          ],
+          "description": "답장 없는 우정에 저작권료를 붙인다."
+        },
+        {
+          "id": "propose_again",
+          "text": "\"이번엔 결혼이 아니라 공동 재산관리 계약\"을 제안한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_press_scandal",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk34_press_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "proposed_again_to_mina"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.mina.trust",
+                  "value": -100
+                }
+              ]
+            }
+          ],
+          "description": "공동 재산도 당사자 동의가 있어야 한다."
+        }
+      ]
+    },
+    {
+      "id": "dk30_business_future",
+      "kind": "scene",
+      "age": 30,
+      "title": "마왕 주식회사",
+      "body": "장사로 모은 돈이 조금 생겼다. 가장 큰 고객은 당신을 싫어하는 왕실이었다. \"훈련용 마왕 인형\" 주문서에 달린 품질기준은 실제 당신보다 높았다.",
+      "choices": [
+        {
+          "id": "focus_on_products",
+          "text": "안전 장갑과 훈련 장비를 꾸준히 판매한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_business_turn",
+              "weight": 1,
+              "result": "success",
+              "to": {
+                "kind": "node",
+                "id": "dk34_business_turn"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "honest_business_path"
+                },
+                {
+                  "op": "set",
+                  "path": "player.gold",
+                  "value": 2200
+                }
+              ]
+            }
+          ],
+          "description": "고객이 만족하는 건 전투력이 아니라 내구성이다."
+        },
+        {
+          "id": "bill_state",
+          "text": "왕실에 과장된 가격을 청구한다.",
+          "outcomes": [
+            {
+              "id": "billing_passed",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_political_machine"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "overbilled_state"
+                },
+                {
+                  "op": "set",
+                  "path": "player.gold",
+                  "value": 5100
+                }
+              ]
+            },
+            {
+              "id": "billing_caught",
+              "weight": 2,
+              "result": "failure",
+              "to": {
+                "kind": "ending",
+                "id": "end_procurement_trial"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "player.crimes",
+                  "value": "procurement_fraud_convicted"
+                },
+                {
+                  "op": "set",
+                  "path": "player.legalStatus",
+                  "value": "imprisoned"
+                }
+              ]
+            }
+          ],
+          "description": "나라를 상대로 바가지를 씌우는 상상은 위험하다."
+        },
+        {
+          "id": "finance_investigation",
+          "text": "상업 이익으로 마왕 예산 추적 활동을 후원한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_budget_notice",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_budget_notice"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "self_funded_budget_inquiry"
+                },
+                {
+                  "op": "set",
+                  "path": "player.gold",
+                  "value": 300
+                }
+              ]
+            }
+          ],
+          "description": "장사 수익을 증빙 추적에 다시 투자한다."
+        },
+        {
+          "id": "give_it_all_away",
+          "text": "가게를 직원들에게 넘기고 국경 마을로 간다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_ordinary_life",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk34_ordinary_life"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "gave_business_to_workers"
+                },
+                {
+                  "op": "set",
+                  "path": "player.gold",
+                  "value": 0
+                }
+              ]
+            }
+          ],
+          "description": "인생의 목표를 금화가 아닌 새 출발로 바꾼다."
+        }
+      ]
+    },
+    {
+      "id": "dk30_black_market",
+      "kind": "scene",
+      "age": 30,
+      "title": "명성을 현금화하는 방법",
+      "body": "정보상은 당신의 신분증을 보더니 \"진짜 마왕이면 감시도 진짜겠네요\"라고 말했다. 당신은 적당히 신뢰할 만한 거짓 정보를 찾아다녔다. 세상에 공짜 비밀은 없었다.",
+      "choices": [
+        {
+          "id": "sell_fake_secret",
+          "text": "왕국 안보 문서라고 속여 가짜 보고서를 판다.",
+          "outcomes": [
+            {
+              "id": "sold_document",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_press_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "sold_fake_security_info"
+                },
+                {
+                  "op": "set",
+                  "path": "player.gold",
+                  "value": 2400
+                }
+              ]
+            },
+            {
+              "id": "caught_selling",
+              "weight": 2,
+              "result": "failure",
+              "to": {
+                "kind": "ending",
+                "id": "end_counterfeit_docs"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "player.crimes",
+                  "value": "forgery_convicted"
+                },
+                {
+                  "op": "set",
+                  "path": "player.legalStatus",
+                  "value": "imprisoned"
+                }
+              ]
+            }
+          ],
+          "description": "기밀 표시를 찍는다고 내용이 진실이 되진 않는다."
+        },
+        {
+          "id": "turn_in_dealer",
+          "text": "정보상을 신고하고 합법적인 조사 활동을 시작한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_budget_notice",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_budget_notice"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "informed_on_information_broker"
+                }
+              ]
+            }
+          ],
+          "description": "밀거래의 영수증을 수사자료로 바꾼다."
+        },
+        {
+          "id": "become_real_broker",
+          "text": "위험을 감수하되 확인된 정보만 판매한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_business_turn",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_business_turn"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "legitimate_information_trade"
+                },
+                {
+                  "op": "set",
+                  "path": "player.gold",
+                  "value": 850
+                }
+              ]
+            }
+          ],
+          "description": "확인된 정보만 팔아도 적은 늘 수 있다."
+        }
+      ]
+    },
+    {
+      "id": "dk30_quiet_crossroads",
+      "kind": "scene",
+      "age": 30,
+      "title": "조용한 아침의 위험",
+      "body": "마왕 등록 안내문은 계속 왔지만 당신의 하루는 평범했다. 빵집 주인이 무료 빵을 줬다. 이유를 묻자 \"지난번에 우리 아이 구해주셨잖아요\"라고 답했다. 당신은 그 일을 기억하지 못했다.",
+      "choices": [
+        {
+          "id": "accept_kindness",
+          "text": "왜 도와줬는지 따지지 않고 빵을 받는다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_ordinary_life",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk34_ordinary_life"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "bakery_kindness"
+                }
+              ]
+            }
+          ],
+          "description": "무료 빵 한 조각이 마왕의 이력을 덮는다."
+        },
+        {
+          "id": "go_back_to_records",
+          "text": "그때의 일을 조사하다 마왕 안전 예산서를 발견한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_budget_notice",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_budget_notice"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "quiet_path_discovered_budget"
+                }
+              ]
+            }
+          ],
+          "description": "친절했던 과거의 단서가 예산서로 이어진다."
+        },
+        {
+          "id": "make_potato_guild",
+          "text": "감자 농부 협동조합을 설립한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_business_turn",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_business_turn"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "founded_potato_coop"
+                },
+                {
+                  "op": "set",
+                  "path": "player.gold",
+                  "value": 600
+                }
+              ]
+            }
+          ],
+          "description": "세계정복 대신 감자 가격을 안정시키자."
+        }
+      ]
+    },
+    {
+      "id": "dk30_border_crossroads",
+      "kind": "scene",
+      "age": 30,
+      "title": "나라 바깥에는 마왕 면허가 없다",
+      "body": "이웃 왕국은 당신의 마왕 등록증을 신분증으로 인정하지 않았다. 대신 제빵사 자격증을 만들 수 있다고 안내했다. 준비 비용은 무료였지만, 새 이름에는 국경의 냄새가 남았다.",
+      "choices": [
+        {
+          "id": "start_new_life",
+          "text": "새 이름으로 제빵을 배우고 정착한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_ordinary_life",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk34_ordinary_life"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "new_name_abroad"
+                }
+              ]
+            }
+          ],
+          "description": "새 자격증에는 마왕 등록번호가 없다."
+        },
+        {
+          "id": "sell_hometown_story",
+          "text": "마왕으로 착취당한 경험을 국외 언론에 제공한다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_press_scandal",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk34_press_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "foreign_press_story"
+                }
+              ]
+            }
+          ],
+          "description": "조국의 추문을 수출하는 새로운 직업."
+        },
+        {
+          "id": "return_for_money",
+          "text": "옛 나라의 장부에 미련이 남아 다시 돌아온다.",
+          "outcomes": [
+            {
+              "id": "out_dk34_budget_notice",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk34_budget_notice"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "returned_for_budget"
+                }
+              ]
+            }
+          ],
+          "description": "그리운 게 고향인지, 장부인지 알 수 없다."
+        }
+      ]
+    },
+    {
+      "id": "dk34_citizen_reform",
+      "kind": "scene",
+      "age": 34,
+      "title": "고친 것은 법 한 줄",
+      "body": "왕국은 용사 시험 규칙을 손볼 조짐을 보였다. 새 문구는 \"상대가 동의할 경우\"라는 짧은 여섯 글자였다. 미나는 입법 과정에서 누구를 죽이지도, 당신을 사랑하지도 않았다.",
+      "choices": [
+        {
+          "id": "protect_witnesses",
+          "text": "신분증 때문에 불이익을 받는 사람들의 증언을 모은다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_truth_hearing",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_truth_hearing"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "protected_reform_witnesses"
+                }
+              ]
+            }
+          ],
+          "description": "법률 한 줄 뒤에는 여러 사람의 삶이 있다."
+        },
+        {
+          "id": "stand_for_office",
+          "text": "실제 시민 지지를 기반으로 의회 입성을 노린다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_succession_vote",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_succession_vote"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "civic_political_path"
+                }
+              ]
+            }
+          ],
+          "description": "이번 지지자는 본인만이 아니길 바란다."
+        },
+        {
+          "id": "ask_mina_out",
+          "text": "업무가 끝났으니 이번에는 데이트하자고 묻는다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_mina_line",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_mina_line"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "asked_mina_after_reform"
+                }
+              ]
+            }
+          ],
+          "description": "개혁 회의 끝에 사적인 안건을 다시 올린다."
+        },
+        {
+          "id": "retire_from_fight",
+          "text": "이 정도면 됐다며 동네 생활로 돌아간다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_quiet_chapter",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk39_quiet_chapter"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "retired_from_reform"
+                }
+              ]
+            }
+          ],
+          "description": "완벽한 승리가 아니어도 오늘은 퇴근한다."
+        }
+      ]
+    },
+    {
+      "id": "dk34_law_defeat",
+      "kind": "scene",
+      "age": 34,
+      "title": "법안이 졌다고 생이 끝나진 않는다",
+      "body": "새로운 용사 시험법은 부결됐다. 찬성은 23명, 반대는 24명. 미나는 \"다시 제출하면 돼\"라고 말했다. 당신은 \"1표 차이면 맨 앞에 서면 안 돼?\"라고 했다.",
+      "choices": [
+        {
+          "id": "try_again",
+          "text": "실패 원인을 보완해 재입법을 추진한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_truth_hearing",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_truth_hearing"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "tried_second_reform"
+                }
+              ]
+            }
+          ],
+          "description": "한 표 차이는 패배이자 다음 전략서다."
+        },
+        {
+          "id": "attack_legislature",
+          "text": "귀족회의 벽을 부숴 표결을 뒤집으려 한다.",
+          "outcomes": [
+            {
+              "id": "out_end_wall_vs_demon",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "ending",
+                "id": "end_wall_vs_demon"
+              },
+              "effects": [
+                {
+                  "op": "set",
+                  "path": "player.legalStatus",
+                  "value": "imprisoned"
+                }
+              ]
+            }
+          ],
+          "description": "벽을 부수면 법률도 바뀐다고 믿는 전투력 2."
+        },
+        {
+          "id": "work_elsewhere",
+          "text": "정치는 포기하고 수리 일을 시작한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_quiet_chapter",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk39_quiet_chapter"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "changed_to_repair_work"
+                }
+              ]
+            }
+          ],
+          "description": "정치 대신 제대로 박힌 나사를 선택한다."
+        }
+      ]
+    },
+    {
+      "id": "dk34_erisia_partnership",
+      "kind": "scene",
+      "age": 34,
+      "title": "왕녀는 영수증부터 세었다",
+      "body": "에리시아는 당신을 정치 동업자로 받아들였지만, 부부가 되자는 뜻은 아니었다. 그녀는 실종된 왕세자 때문에 왕위 계승 갈등이 생긴 틈을 타 예산 공개안을 밀고 있었다.",
+      "choices": [
+        {
+          "id": "focus_on_ledger",
+          "text": "왕녀와 함께 문서 공개를 추진한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_truth_hearing",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_truth_hearing"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "erisia_open_budget_campaign"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.erisia.trust",
+                  "value": 70
+                }
+              ]
+            }
+          ],
+          "description": "왕녀와의 공동 목표는 결혼이 아니라 증빙이다."
+        },
+        {
+          "id": "offer_marriage_again",
+          "text": "\"동업을 세금 절감하려면 결혼이 낫겠죠\" 재청혼한다.",
+          "outcomes": [
+            {
+              "id": "reconsidered",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_erisia_contract"
+              },
+              "when": {
+                "op": "gte",
+                "path": "npcs.erisia.trust",
+                "value": 50
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "erisia_considered_marriage"
+                }
+              ]
+            },
+            {
+              "id": "no_again",
+              "weight": 3,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk39_erisia_contract"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "erisia_rejected_reproposal"
+                }
+              ]
+            }
+          ],
+          "description": "동업 계약을 청첩장으로 승격시키려 한다."
+        },
+        {
+          "id": "betray_to_king",
+          "text": "왕녀의 정치 계획을 국왕에게 팔려 한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_succession_vote",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk39_succession_vote"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "betrayed_erisia_again"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.erisia.trust",
+                  "value": -95
+                }
+              ]
+            }
+          ],
+          "description": "왕녀의 기밀을 왕에게 팔면 왕은 기뻐할까."
+        },
+        {
+          "id": "let_her_lead",
+          "text": "왕녀를 정치적 대표로 인정하고 뒤에서 돕는다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_erisia_contract",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_erisia_contract"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "erisia_leads"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.erisia.trust",
+                  "value": 80
+                }
+              ]
+            }
+          ],
+          "description": "주연 욕심을 버리면 일은 더 빨리 풀릴 수도 있다."
+        }
+      ]
+    },
+    {
+      "id": "dk34_budget_notice",
+      "kind": "scene",
+      "age": 34,
+      "title": "계정에 적힌 0의 개수",
+      "body": "회계 문서에는 200만 금화가 한 번에 사라진 것이 아니라 \"마왕 특별관리 계정\"으로 이체된 흔적이 나타났다. 가족 실수령은 3,000금화. 나머지 199만 7,000금화의 사용처는 여전히 비공개다.",
+      "choices": [
+        {
+          "id": "preserve_copies",
+          "text": "문서를 복사하고 원본을 보존해 후속 감사에 대비한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_truth_hearing",
+              "weight": 1,
+              "result": "success",
+              "to": {
+                "kind": "node",
+                "id": "dk39_truth_hearing"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "preserved_ledger_copy"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.auditor.trust",
+                  "value": 75
+                }
+              ]
+            }
+          ],
+          "description": "사본 두 장이 마왕의 발톱보다 유용하다."
+        },
+        {
+          "id": "declare_theft",
+          "text": "확인 없이 횡령 사건이라고 단정해 고발한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_press_court",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk39_press_court"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "premature_embezzlement_claim"
+                }
+              ]
+            }
+          ],
+          "description": "송금 기록만으로 범인을 확정할 수는 없다."
+        },
+        {
+          "id": "offer_silent_deal",
+          "text": "입을 다무는 대가로 왕실에 합의금을 요구한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_succession_vote",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_succession_vote"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "proposed_silence_for_gold"
+                }
+              ]
+            }
+          ],
+          "description": "입을 다무는 데 공식 견적서를 보내본다."
+        },
+        {
+          "id": "ask_erisia_help",
+          "text": "에리시아에게 예산 서류를 보여주고 협력을 구한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_erisia_contract",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_erisia_contract"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "erisia_has_ledger"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.erisia.trust",
+                  "value": 50
+                }
+              ]
+            }
+          ],
+          "description": "정치적 동맹에게 회계 숫자를 함께 보자고 한다."
+        }
+      ]
+    },
+    {
+      "id": "dk34_business_turn",
+      "kind": "scene",
+      "age": 34,
+      "title": "마왕이라는 상표",
+      "body": "당신의 작은 사업은 버텼다. 일부 손님은 당신이 진짜 마왕이라서 오고, 일부는 진짜 마왕이 아니라서 왔다. 어찌 됐든 장부는 적자를 벗어났다.",
+      "choices": [
+        {
+          "id": "secure_workers",
+          "text": "직원 지분을 보장하고 사업을 안정시키려 한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_quiet_chapter",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_quiet_chapter"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "worker_owned_business"
+                },
+                {
+                  "op": "set",
+                  "path": "player.gold",
+                  "value": 4000
+                }
+              ]
+            }
+          ],
+          "description": "마왕의 성보다 직원의 월급이 더 중요하다."
+        },
+        {
+          "id": "rent_noble_surname",
+          "text": "귀족에게 돈을 주고 성을 빌려 정치에 진출한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_succession_vote",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_succession_vote"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "rented_noble_name"
+                }
+              ]
+            }
+          ],
+          "description": "귀족 이름은 빌려도 신뢰까지 대여되진 않는다."
+        },
+        {
+          "id": "overinflate_brand",
+          "text": "전투력 2인 본인을 최강 마왕이라고 광고한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_press_court",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_press_court"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "overstated_magical_brand"
+                }
+              ]
+            }
+          ],
+          "description": "전투력 2에 최강이라는 수식어를 붙인다."
+        },
+        {
+          "id": "inspect_taxes",
+          "text": "수익에서 떼어간 국가 위험관리세의 목적을 조사한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_truth_hearing",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_truth_hearing"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "taxes_led_to_budget"
+                }
+              ]
+            }
+          ],
+          "description": "마왕 위험관리세는 대체 무슨 일을 관리하나."
+        }
+      ]
+    },
+    {
+      "id": "dk34_ordinary_life",
+      "kind": "scene",
+      "age": 34,
+      "title": "직업란을 비운 남자",
+      "body": "낯선 곳에서 작은 일을 하며 살았다. 아무도 당신에게 세계정복을 요구하지 않았다. 간혹 어린아이가 \"마왕 아저씨, 진짜 악당이에요?\"라고 물을 뿐이었다.",
+      "choices": [
+        {
+          "id": "build_roots",
+          "text": "새 마을 사람들과 관계를 쌓으며 평범하게 산다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_quiet_chapter",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk39_quiet_chapter"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "built_local_roots"
+                }
+              ]
+            }
+          ],
+          "description": "주민등록이 아니라 이웃의 이름을 외워본다."
+        },
+        {
+          "id": "write_memoir",
+          "text": "자신의 인생을 블랙코미디 회고록으로 써본다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_press_court",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_press_court"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "wrote_early_memoir"
+                }
+              ]
+            }
+          ],
+          "description": "실패가 많아서 소재만큼은 부족하지 않다."
+        },
+        {
+          "id": "check_benefit",
+          "text": "마왕 지원금이 어디로 갔는지 묻는 편지가 도착해 확인한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_truth_hearing",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_truth_hearing"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "reopened_budget_question"
+                }
+              ]
+            }
+          ],
+          "description": "지원금의 수신처가 자기 통장과 달라 보인다."
+        }
+      ]
+    },
+    {
+      "id": "dk34_political_machine",
+      "kind": "scene",
+      "age": 34,
+      "title": "왕국의 필요악",
+      "body": "국왕이 병에 걸리고 귀족회의가 두 파벌로 갈라졌다. 누구는 당신을 마왕이라 싫어하고, 누구는 마왕 후보가 표를 갈라놓는 데 유용하다고 했다. 당신의 지지자는 대부분 당신의 이름을 제대로 몰랐다.",
+      "choices": [
+        {
+          "id": "work_for_votes",
+          "text": "지역을 돌며 합법적인 지지를 확보한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_succession_vote",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_succession_vote"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "genuine_political_campaign"
+                }
+              ]
+            }
+          ],
+          "description": "후원금 대신 얼굴을 팔아 지지자를 찾는다."
+        },
+        {
+          "id": "bribe_delegates",
+          "text": "돈을 주고 귀족 표를 사기로 한다.",
+          "outcomes": [
+            {
+              "id": "bribery_pending",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_succession_vote"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "bribed_delegates"
+                }
+              ]
+            },
+            {
+              "id": "caught_bribery",
+              "weight": 2,
+              "result": "failure",
+              "to": {
+                "kind": "ending",
+                "id": "end_vote_ledger"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "player.crimes",
+                  "value": "political_bribery_convicted"
+                },
+                {
+                  "op": "set",
+                  "path": "player.legalStatus",
+                  "value": "imprisoned"
+                }
+              ]
+            }
+          ],
+          "description": "한 표의 가격을 묻는 순간 형량도 따라온다."
+        },
+        {
+          "id": "back_erisia",
+          "text": "왕녀의 정치적 복권을 추진한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_erisia_contract",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_erisia_contract"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "supported_erisia_restoration"
+                }
+              ]
+            }
+          ],
+          "description": "왕녀를 돕되 왕녀가 동의했는지는 따져봐야 한다."
+        }
+      ]
+    },
+    {
+      "id": "dk34_press_scandal",
+      "kind": "scene",
+      "age": 34,
+      "title": "기사가 산을 넘는다",
+      "body": "당신은 왕국 신문의 인기 가십이 됐다. 실제로 저지른 일보다 저지르지 않은 일이 더 크게 쓰였다. \"미나와 신혼\"이라는 기사 옆에 미나의 반박 성명도 실렸다.",
+      "choices": [
+        {
+          "id": "retract_lies",
+          "text": "허위 사실을 정정하고 사과한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_truth_hearing",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_truth_hearing"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "press_corrections"
+                }
+              ]
+            }
+          ],
+          "description": "거짓말은 발 빠르지만 정정문은 늦게 도착한다."
+        },
+        {
+          "id": "double_down",
+          "text": "악명을 이용해 돈벌이를 확대한다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_press_court",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_press_court"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "monetized_scandal"
+                }
+              ]
+            }
+          ],
+          "description": "악명도 브랜드라지만 환불 규정은 없다."
+        },
+        {
+          "id": "run_for_king",
+          "text": "화제성을 이용해 차기 왕위 후보로 나선다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_succession_vote",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_succession_vote"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "celebrity_king_campaign"
+                }
+              ]
+            }
+          ],
+          "description": "조회수를 왕위 계승권으로 착각하는 모험."
+        }
+      ]
+    },
+    {
+      "id": "dk39_mina_line",
+      "kind": "scene",
+      "age": 39,
+      "title": "어른이 된 친구에게",
+      "body": "미나는 이제 왕립 용사단장이다. 그녀는 안전규정 개정 회의에서 당신과 마주쳤다. \"네가 고른 일은 아직도 기록에 남아. 이번에는 내 이름으로 아무것도 결정하지 마.\" 당신은 그 말을 사랑 고백으로 해석하지 않기로 했다.",
+      "choices": [
+        {
+          "id": "apologize_without_reward",
+          "text": "답을 바라지 않고 과거의 행동에 사과한다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_personal_reckoning",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk44_personal_reckoning"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "sincere_apology_to_mina"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.mina.trust",
+                  "value": 55
+                }
+              ]
+            }
+          ],
+          "description": "이번 사과의 보상은 아무것도 받지 않는 것이다."
+        },
+        {
+          "id": "suggest_proposal",
+          "text": "\"그럼 이제 결혼?\"이라는 말을 또 꺼낸다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_personal_reckoning",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk44_personal_reckoning"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "unwanted_mina_proposal"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.mina.trust",
+                  "value": -80
+                }
+              ]
+            }
+          ],
+          "description": "또 청혼할 권리는 있어도 답변을 강요할 권리는 없다."
+        },
+        {
+          "id": "work_together",
+          "text": "용사 시험 피해자 조사에 미나와 함께 참여한다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_investigation",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk44_investigation"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "mina_aided_inquiry"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.mina.trust",
+                  "value": 65
+                }
+              ]
+            }
+          ],
+          "description": "우정 대신 안전규정이라는 공통 목표에 집중한다."
+        }
+      ]
+    },
+    {
+      "id": "dk39_erisia_contract",
+      "kind": "scene",
+      "age": 39,
+      "title": "왕녀는 계산을 틀리지 않는다",
+      "body": "에리시아의 정치적 기반은 아직 약했다. 그녀는 당신에게 선명한 계약서를 내밀었다. \"권력보다 먼저 누가 책임을 지는지 적어요.\" 당신이 처음으로 청혼서보다 긴 서류를 읽었다.",
+      "choices": [
+        {
+          "id": "sign_partnership",
+          "text": "정식 정치 동업 계약에 서명한다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_erisia_alliance",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk44_erisia_alliance"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "signed_erisia_partnership"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.erisia.trust",
+                  "value": 70
+                }
+              ]
+            }
+          ],
+          "description": "처음으로 청혼서보다 계약 조항을 열심히 읽는다."
+        },
+        {
+          "id": "offer_marriage_legal",
+          "text": "상호 동의와 재산분리를 전제로 혼인을 제안한다.",
+          "outcomes": [
+            {
+              "id": "consented_marriage",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk44_erisia_alliance"
+              },
+              "when": {
+                "op": "gte",
+                "path": "npcs.erisia.trust",
+                "value": 65
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "married_erisia"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.erisia.relationship",
+                  "value": "spouse"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.erisia.trust",
+                  "value": 65
+                }
+              ]
+            },
+            {
+              "id": "refused_marriage",
+              "weight": 3,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk44_erisia_alliance"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "erisia_refused_marriage"
+                }
+              ]
+            }
+          ],
+          "description": "사랑보다 동의와 재산분리가 먼저다."
+        },
+        {
+          "id": "leak_her_notes",
+          "text": "협상력을 높이려고 에리시아 문서를 귀족에게 판다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_investigation",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk44_investigation"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "leaked_erisia_notes"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.erisia.trust",
+                  "value": -100
+                }
+              ]
+            }
+          ],
+          "description": "협상의 지름길이 배신이라면 돌아오는 길은 길다."
+        },
+        {
+          "id": "walk_away",
+          "text": "정치적 계약을 거절하고 평범한 인생으로 돌아간다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_quiet_life",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk44_quiet_life"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "declined_erisia_contract"
+                }
+              ]
+            }
+          ],
+          "description": "정치를 내려놓으면 적어도 밤잠은 잘 수 있다."
+        }
+      ]
+    },
+    {
+      "id": "dk39_truth_hearing",
+      "kind": "scene",
+      "age": 39,
+      "title": "재무장관의 지워진 이름",
+      "body": "사망한 전임 재무장관이 출생신고 당시 마왕 등록을 승인한 기록이 나왔다. 장부에 찍힌 왕실 인장의 진위는 확인 중이다. 감사관 세렌은 \"마왕을 만들려는 정치적 의도가 있었을 가능성\"이라고만 기록했다.",
+      "choices": [
+        {
+          "id": "preserve_evidence",
+          "text": "기록을 보전하고 담당자에게 증언을 요청한다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_investigation",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk44_investigation"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "chain_of_custody"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.auditor.trust",
+                  "value": 80
+                }
+              ]
+            }
+          ],
+          "description": "왕실 인장도 감정서 없이는 그냥 도장이다."
+        },
+        {
+          "id": "announce_theory",
+          "text": "\"나를 마왕으로 만든 건 왕실이다\"라고 기자회견한다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_public_scandal",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk44_public_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "announced_registration_theory"
+                }
+              ]
+            }
+          ],
+          "description": "추정은 신문 제목에서 순식간에 확정으로 바뀐다."
+        },
+        {
+          "id": "settle_registration",
+          "text": "이름을 돌려받는 조건으로 조사를 중단한다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_quiet_life",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk44_quiet_life"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "applied_register_correction"
+                }
+              ]
+            }
+          ],
+          "description": "출생신고는 고칠 수 있어도 과거는 남는다."
+        },
+        {
+          "id": "call_mina_witness",
+          "text": "미나를 증인으로 요청한다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_personal_reckoning",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk44_personal_reckoning"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "requested_mina_testimony"
+                }
+              ]
+            }
+          ],
+          "description": "오래된 친구에게 사적인 답 대신 공적 증언을 묻는다."
+        }
+      ]
+    },
+    {
+      "id": "dk39_succession_vote",
+      "kind": "scene",
+      "age": 39,
+      "title": "왕위를 뽑는 투표",
+      "body": "국왕은 병석에 누웠고 두 왕자의 계승이 불확실해졌다. 귀족 47명이 후보를 논의한다. 당신의 출마 의사는 접수됐지만 합법적 계승권은 생기지 않았다.",
+      "choices": [
+        {
+          "id": "present_manifesto",
+          "text": "왕국 복지와 행정개혁 공약으로 공개 검증을 받는다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_political_endgame",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk44_political_endgame"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "presented_reform_platform"
+                }
+              ]
+            }
+          ],
+          "description": "혈통 대신 정책으로 귀족 47명을 설득한다."
+        },
+        {
+          "id": "promise_everyone_money",
+          "text": "당선되면 각 귀족에게 10만 금화를 지급하겠다고 약속한다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_public_scandal",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk44_public_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "promised_unfunded_bribes"
+                }
+              ]
+            }
+          ],
+          "description": "장부에 없는 470만 금화부터 뿌리겠단다."
+        },
+        {
+          "id": "marry_erisia",
+          "text": "왕녀와의 정략결혼을 시도해 정치적 지지를 얻는다.",
+          "outcomes": [
+            {
+              "id": "out_dk39_erisia_contract",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk39_erisia_contract"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "proposed_erisia_politically"
+                }
+              ]
+            }
+          ],
+          "description": "결혼하면 왕관도 공동명의가 될 줄 아는가."
+        },
+        {
+          "id": "call_mina_queen",
+          "text": "미나를 여왕 후보로 지명한다고 기자회견한다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_personal_reckoning",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk44_personal_reckoning"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "nominated_mina_without_consent"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.mina.trust",
+                  "value": -85
+                }
+              ]
+            }
+          ],
+          "description": "용사단장에게 허락받지 않은 여왕직을 선물한다."
+        }
+      ]
+    },
+    {
+      "id": "dk39_press_court",
+      "kind": "scene",
+      "age": 39,
+      "title": "가십과 증거의 차이",
+      "body": "당신을 믿는 기자보다 당신의 실수를 기다리는 기자가 많았다. 법원은 확인되지 않은 횡령 단정과 허위 광고를 구별해 심리했다. 근거 없는 말이 큰 사건을 만든 해였다.",
+      "choices": [
+        {
+          "id": "correct_public_record",
+          "text": "확인된 사실만 바로잡고 근거 없는 주장을 철회한다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_investigation",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk44_investigation"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "corrected_false_reporting"
+                }
+              ]
+            }
+          ],
+          "description": "사실과 상상을 분리하는 일이 마지막 방어다."
+        },
+        {
+          "id": "fake_leak",
+          "text": "왕실의 비밀을 꾸며 또 다른 특종을 만든다.",
+          "outcomes": [
+            {
+              "id": "out_end_false_scandal",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "ending",
+                "id": "end_false_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "player.crimes",
+                  "value": "defamation_convicted"
+                },
+                {
+                  "op": "set",
+                  "path": "player.legalStatus",
+                  "value": "imprisoned"
+                }
+              ]
+            }
+          ],
+          "description": "기사를 만들려다 사건 번호가 생길 수도 있다."
+        },
+        {
+          "id": "become_comedian",
+          "text": "가짜 마왕 이야기를 풍자 공연으로 바꾼다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_quiet_life",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk44_quiet_life"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "satire_profession"
+                },
+                {
+                  "op": "set",
+                  "path": "player.gold",
+                  "value": 700
+                }
+              ]
+            }
+          ],
+          "description": "거짓 특종 대신 자신을 웃음거리로 판다."
+        }
+      ]
+    },
+    {
+      "id": "dk39_quiet_chapter",
+      "kind": "scene",
+      "age": 39,
+      "title": "고향엔 오래된 손님이 있다",
+      "body": "마을에서 살아남는 데는 위대한 힘이 필요 없었다. 문을 고치고 일손을 거들면 됐다. 어느 날 빵집 주인이 말했다. \"혹시 우리 애가 옛날 용사 시험에서 살아남은 걸 기억하세요?\"",
+      "choices": [
+        {
+          "id": "help_child",
+          "text": "작은 가게를 도우며 다음 세대의 시험 준비를 돌본다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_quiet_life",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk44_quiet_life"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "mentored_local_child"
+                }
+              ]
+            }
+          ],
+          "description": "한 아이가 무사히 돌아오는 것이 진짜 업적이다."
+        },
+        {
+          "id": "write_testimony",
+          "text": "과거의 마왕 훈련 이야기를 기록으로 남긴다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_investigation",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk44_investigation"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "wrote_training_testimony"
+                }
+              ]
+            }
+          ],
+          "description": "자신의 치부도 기록할 마음의 준비가 필요하다."
+        },
+        {
+          "id": "sell_fake_hero_school",
+          "text": "허가 없는 용사 입시학원을 차린다.",
+          "outcomes": [
+            {
+              "id": "out_dk44_public_scandal",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk44_public_scandal"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "unauthorized_hero_tutoring"
+                }
+              ]
+            }
+          ],
+          "description": "학원 간판에 붙일 인허가 번호가 없다."
+        }
+      ]
+    }
+  ]
+}

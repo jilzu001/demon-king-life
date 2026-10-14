@@ -1,0 +1,18 @@
+{
+  "src/engine/conditions.ts": "544ee0ac5cd1f6c842c38e64e4c221da0ffb2187b648903f9b1ed80b93d81e8f",
+  "src/engine/effects.ts": "a7e61666a2b53a7fc30ff6676c5e6481e2e8899d9054eb7f7b407e38ed4a17ff",
+  "src/engine/invariants.ts": "4c583c256bd940630b145fa6f172083dc74400237dd1d2ac3604269d71df781b",
+  "src/engine/paths.ts": "909136db1cc0e0489175896d4f9237de4cafcbb0a5ae9ed1e7c266057a71b28e",
+  "src/engine/random.ts": "26fbfecfd3ffe48fcbddb4556595af35749f20d323ee70580b9a99621c196779",
+  "src/engine/transition.ts": "a059bcbddc6708161b074bec3a48dc78b2046490dbce88e9799616ab961a21a9",
+  "src/engine/types.ts": "039cb5eff2b4d48afdcf862b41a625a528e35676ea5c26f082e750b5b7881704",
+  "src/persistence/migrate.ts": "84f1d7218e53d05725062d04863005aab521d15ac8b16028875c56af309c3fbe",
+  "src/persistence/save.ts": "7964a54733ab4c6c83ed0a62ad433842f2c39098d59ca8a804ae4971a193113a",
+  "CANON.md": "b7b757320d6d60caf0d48e623753959a7f1598dcd58007cf660e239c51793514",
+  "public/stories/demon-king/chapters/01-example.json": "553b28f9c31b4f79d90f6c0ea2f63ae49d177502bb3db18b1575d3dcd7478ad9",
+  "public/stories/demon-king/story.json": "b1ad1d94c881f76f678fce2d5177ed362b85b71c2527c8e3c9bbe29519f54b14",
+  "public/stories/demon-king/characters.json": "1899830411025f47769ed82dd1c923acf98138b7ca4e35e99a73e9baaff934a7",
+  "public/stories/demon-king/endings.json": "8f7fc17a35925c68a5094ebf8bde5abd4488b6b34adac8614aabcf05f7448f89",
+  "schemas/save.schema.json": "cc39ebc68fff0789403041a6d3edf59cefed7cb8b27eb2195429d70199bc26d9",
+  "schemas/meta.schema.json": "96795b40fd767d837501711859345be917a5b73f3ca40806d41f8ca8c46ec968"
+}

@@ -1,0 +1,550 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "dk63_legacy_archive",
+      "kind": "scene",
+      "age": 63,
+      "title": "누가 기록을 기억하는가",
+      "body": "세렌은 은퇴하면서 오래된 장부 사본을 당신에게 돌려줬다. 미나도 은퇴했다는 소식이 들렸다. 당신을 처음 마왕으로 만든 서류는 이제 역사박물관의 전시 후보가 됐다. 전시장 제목은 \"행정과 괴물\"이었다.",
+      "choices": [
+        {
+          "id": "donate_documents",
+          "text": "자료와 자신의 허물을 함께 박물관에 기증한다.",
+          "outcomes": [
+            {
+              "id": "out_dk71_final_review",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk71_final_review"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "donated_complete_archive"
+                }
+              ]
+            }
+          ],
+          "description": "마왕의 흑역사도 역사박물관에선 사료가 된다."
+        },
+        {
+          "id": "erase_shame",
+          "text": "불편한 선택을 지운 깨끗한 자서전만 남긴다.",
+          "outcomes": [
+            {
+              "id": "out_dk71_final_review",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk71_final_review"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "edited_out_own_wrongdoing"
+                }
+              ]
+            }
+          ],
+          "description": "자서전의 검은 페이지를 뜯어내면 독자는 모를까."
+        },
+        {
+          "id": "meet_old_friend",
+          "text": "미나의 거절 여부를 존중하며 마지막 안부 편지를 보낸다.",
+          "outcomes": [
+            {
+              "id": "letter_welcomed",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk71_final_review"
+              },
+              "when": {
+                "op": "gte",
+                "path": "npcs.mina.trust",
+                "value": 0
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "mina_received_old_letter"
+                }
+              ]
+            },
+            {
+              "id": "letter_returned",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk71_final_review"
+              },
+              "when": {
+                "op": "lt",
+                "path": "npcs.mina.trust",
+                "value": 0
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "letter_returned_unopened"
+                }
+              ]
+            }
+          ],
+          "description": "답장을 기대하지 않는 편지가 가장 어려운 편지다."
+        }
+      ]
+    },
+    {
+      "id": "dk63_bitter_grievance",
+      "kind": "scene",
+      "age": 63,
+      "title": "마왕도 늙는다",
+      "body": "사람들은 당신을 기억하지만 무슨 일로 유명했는지는 잘 모른다. 어떤 이는 영웅이라 하고 어떤 이는 사기꾼이라 했다. 당신이 가장 두려운 것은 아무도 틀렸다고 말하지 않는 일이었다.",
+      "choices": [
+        {
+          "id": "make_peace",
+          "text": "자신의 실패를 인정하고 남은 사람들에게 사과한다.",
+          "outcomes": [
+            {
+              "id": "out_dk71_final_review",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk71_final_review"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "accepted_personal_fault"
+                }
+              ]
+            }
+          ],
+          "description": "과거의 손익계산서를 이제야 정직하게 쓴다."
+        },
+        {
+          "id": "blame_everyone",
+          "text": "국왕·미나·에리시아 탓만 하며 마지막 회고록을 쓴다.",
+          "outcomes": [
+            {
+              "id": "out_dk71_final_review",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk71_final_review"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "blamed_everyone_forever"
+                }
+              ]
+            }
+          ],
+          "description": "인생의 공범이 언제나 남뿐이었다고 주장한다."
+        },
+        {
+          "id": "rebuild_small",
+          "text": "남은 시간에 작은 동네 일을 도우려 한다.",
+          "outcomes": [
+            {
+              "id": "out_dk71_final_review",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk71_final_review"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "late_kindness"
+                }
+              ]
+            }
+          ],
+          "description": "대마왕의 마지막 정복지는 동네 공동창고다."
+        }
+      ]
+    },
+    {
+      "id": "dk63_quiet_coda",
+      "kind": "scene",
+      "age": 63,
+      "title": "감자값이 더 중요해진 날",
+      "body": "동네 가게가 문을 닫아 간판을 내렸다. 당신은 도우러 나갔다. 누군가 물었다. \"전설의 마왕이라면서요?\" 당신은 \"전설은 모르겠고 이 나사 좀 잡아요\"라고 답했다.",
+      "choices": [
+        {
+          "id": "keep_neighbors",
+          "text": "동네 사람들과 평범한 노년을 보낸다.",
+          "outcomes": [
+            {
+              "id": "out_dk71_final_review",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk71_final_review"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "quiet_community_finale"
+                }
+              ]
+            }
+          ],
+          "description": "혼자서 왕국을 갖는 것보다 곁에 사람이 낫다."
+        },
+        {
+          "id": "leave_behind_jokes",
+          "text": "삶을 유머로 기록해 다음 사람들에게 건넨다.",
+          "outcomes": [
+            {
+              "id": "out_dk71_final_review",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk71_final_review"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "left_comedy_manuscript"
+                }
+              ]
+            }
+          ],
+          "description": "잘못을 웃음으로 남기되 사실은 빼지 않는다."
+        },
+        {
+          "id": "visit_old_exam",
+          "text": "지금의 시험장을 구경하러 간다.",
+          "outcomes": [
+            {
+              "id": "out_dk71_final_review",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk71_final_review"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "saw_new_hero_exam"
+                }
+              ]
+            }
+          ],
+          "description": "첫 시험장으로 돌아가도 젊음은 재시험 불가다."
+        }
+      ]
+    },
+    {
+      "id": "dk71_final_review",
+      "kind": "scene",
+      "age": 71,
+      "title": "일흔하나에 다시 받은 등록증",
+      "body": "왕실 기록 보관소에서 당신에게 연락했다. 첫 마왕 등록증을 박물관에 기증해 달라는 요청이었다. 그 낡은 카드 한 장 때문에 누군가는 용사가 되고, 누군가는 예산을 집행했고, 당신은 인생의 절반을 민원실에서 보냈다.",
+      "choices": [
+        {
+          "id": "donate_and_say_truth",
+          "text": "등록증과 자신의 잘못까지 공개하며 기증한다.",
+          "outcomes": [
+            {
+              "id": "legacy_archives",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "end_archivist_legacy"
+              },
+              "when": {
+                "op": "contains",
+                "path": "flags",
+                "value": "donated_complete_archive"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "truthful_ending"
+                }
+              ]
+            },
+            {
+              "id": "legacy_without_archive",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "end_slow_reform"
+              },
+              "when": {
+                "not": {
+                  "op": "contains",
+                  "path": "flags",
+                  "value": "donated_complete_archive"
+                }
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "truthful_ending"
+                }
+              ]
+            }
+          ],
+          "description": "왕실 도장과 자기 잘못을 한 진열장에 놓는다."
+        },
+        {
+          "id": "burn_registration",
+          "text": "등록증을 태우고 인간으로 기억되길 선택한다.",
+          "outcomes": [
+            {
+              "id": "out_end_no_title",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "ending",
+                "id": "end_no_title"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "destroyed_registration_final"
+                }
+              ]
+            }
+          ],
+          "description": "종이는 타도 그 종이로 살았던 시간은 남는다."
+        },
+        {
+          "id": "sell_registration",
+          "text": "마왕 최초 등록증을 경매에 올린다.",
+          "outcomes": [
+            {
+              "id": "collectors_bidding",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "end_auction_lord"
+              },
+              "when": {
+                "op": "gte",
+                "path": "player.gold",
+                "value": 5000
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "auction_succeeded"
+                }
+              ]
+            },
+            {
+              "id": "no_buyers",
+              "weight": 2,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "end_expensive_paper"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "auction_failed"
+                }
+              ]
+            }
+          ],
+          "description": "인생의 골칫거리에 감정가를 매겨본다."
+        },
+        {
+          "id": "challenge_age",
+          "text": "마왕의 나이를 근거로 국가에 연금 소급 지급을 청구한다.",
+          "outcomes": [
+            {
+              "id": "out_end_pension_king",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "end_pension_king"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "pension_petition"
+                }
+              ]
+            }
+          ],
+          "description": "마왕 경력 71년, 국민연금 담당자의 표정이 궁금하다."
+        },
+        {
+          "id": "retire_with_community",
+          "text": "평생 키운 작은 가게와 동네 사람들을 돌보며 은퇴한다.",
+          "outcomes": [
+            {
+              "id": "out_end_market_gardener",
+              "weight": 1,
+              "result": "success",
+              "to": {
+                "kind": "ending",
+                "id": "end_market_gardener"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "chose_community_retirement"
+                }
+              ]
+            }
+          ],
+          "enabledWhen": {
+            "op": "contains",
+            "path": "flags",
+            "value": "built_local_roots"
+          },
+          "description": "왕국 대신 작은 가게와 이웃을 지키는 삶."
+        },
+        {
+          "id": "reply_to_mina",
+          "text": "미나가 받은 편지에 답이 오면, 조용히 차 한 잔 마시자고 한다.",
+          "outcomes": [
+            {
+              "id": "out_end_unforced_truce",
+              "weight": 1,
+              "result": "success",
+              "to": {
+                "kind": "ending",
+                "id": "end_unforced_truce"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "mutual_reconciliation"
+                }
+              ]
+            }
+          ],
+          "enabledWhen": {
+            "op": "contains",
+            "path": "flags",
+            "value": "mina_received_old_letter"
+          },
+          "description": "오래된 우정에 결말을 강요하지 않는 차 한 잔."
+        },
+        {
+          "id": "celebrate_reform",
+          "text": "개혁에 참여한 사람들의 이름을 함께 올린다.",
+          "outcomes": [
+            {
+              "id": "out_end_collective_reform",
+              "weight": 1,
+              "result": "success",
+              "to": {
+                "kind": "ending",
+                "id": "end_collective_reform"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "shared_reform_credit"
+                }
+              ]
+            }
+          ],
+          "enabledWhen": {
+            "op": "contains",
+            "path": "flags",
+            "value": "taught_next_heroes"
+          },
+          "description": "공로 표창장을 자기 이름 하나로 채우지 않는다."
+        },
+        {
+          "id": "incorporate_demon_brand",
+          "text": "예전에 벌어둔 돈으로 합법 사업을 확장하고 악명도 상표로 판다.",
+          "outcomes": [
+            {
+              "id": "out_end_winning_villain",
+              "weight": 1,
+              "result": "success",
+              "to": {
+                "kind": "ending",
+                "id": "end_winning_villain"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "retired_as_rich_villain"
+                }
+              ]
+            }
+          ],
+          "enabledWhen": {
+            "all": [
+              {
+                "op": "gte",
+                "path": "player.gold",
+                "value": 4000
+              },
+              {
+                "any": [
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "doubled_down_insurance"
+                  },
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "overbilled_state"
+                  },
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "accepted_dark_political_funding"
+                  }
+                ]
+              }
+            ]
+          },
+          "description": "악명을 상표로 바꾸는 마지막 사업계획서."
+        }
+      ]
+    }
+  ]
+}

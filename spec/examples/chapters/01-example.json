@@ -1,0 +1,476 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "dk20_confrontation",
+      "kind": "scene",
+      "age": 20,
+      "title": "첫 용사 시험",
+      "body": "미나가 검을 뽑았다. 그녀는 용사 시험에 합격하기 위해 등록 마왕인 당신을 쓰러뜨려야 한다.",
+      "choices": [
+        {
+          "id": "attack_mina",
+          "text": "미나를 공격하고 능력을 빼앗으려 한다.",
+          "outcomes": [
+            {
+              "id": "disarmed",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk20_disarmed"
+              },
+              "when": {
+                "op": "lt",
+                "path": "player.combat",
+                "value": 8402
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "attempted_attack_on_mina"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.mina.trust",
+                  "value": -90
+                }
+              ]
+            }
+          ],
+          "description": "전투력 2 대 8,402. 정면 공격은 무모하다."
+        },
+        {
+          "id": "stage_fight",
+          "text": "가짜 토벌극을 함께 꾸미자고 제안한다.",
+          "outcomes": [
+            {
+              "id": "she_hears_you",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk20_fraud_offer"
+              },
+              "when": {
+                "op": "gte",
+                "path": "npcs.mina.trust",
+                "value": 40
+              }
+            },
+            {
+              "id": "she_refuses",
+              "weight": 2,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk20_fraud_rejected"
+              },
+              "when": {
+                "op": "gte",
+                "path": "npcs.mina.trust",
+                "value": 40
+              }
+            },
+            {
+              "id": "bad_relations",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk20_fraud_rejected"
+              },
+              "when": {
+                "op": "lt",
+                "path": "npcs.mina.trust",
+                "value": 40
+              }
+            }
+          ],
+          "description": "미나의 신뢰가 높아도 받아들일 보장은 없다."
+        },
+        {
+          "id": "surrender",
+          "text": "싸우지 않고 체포에 협조한다.",
+          "outcomes": [
+            {
+              "id": "captured",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk20_voluntary_detained"
+              }
+            }
+          ]
+        },
+        {
+          "id": "run",
+          "text": "일단 도망쳐 본다.",
+          "outcomes": [
+            {
+              "id": "caught",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk20_caught_running"
+              }
+            }
+          ],
+          "description": "미나는 당신보다 압도적으로 강하다."
+        }
+      ],
+      "chronicle": [
+        {
+          "age": 0,
+          "text": "인간으로 태어났지만 등록 마왕이 되었다."
+        },
+        {
+          "age": 6,
+          "text": "부모는 마왕 육성 지원금을 받았다."
+        },
+        {
+          "age": 12,
+          "text": "학교에서 친구 미나를 처음 만났다."
+        },
+        {
+          "age": 17,
+          "text": "전투력 2로 마왕 자격 심사를 통과했다."
+        }
+      ]
+    },
+    {
+      "id": "dk20_disarmed",
+      "kind": "scene",
+      "age": 20,
+      "title": "칼날 앞의 고백",
+      "body": "당신이 검을 휘두르자 미나는 가볍게 쳐냈다. \"방금 나를 죽이려고 한 거야?\"",
+      "choices": [
+        {
+          "id": "confess",
+          "text": "갑자기 사랑을 고백한다.",
+          "outcomes": [
+            {
+              "id": "shocked",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "dk20_confession"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "confessed_to_mina_after_attack"
+                },
+                {
+                  "op": "set",
+                  "path": "npcs.mina.affection",
+                  "value": -80
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "keep_attacking",
+          "text": "끝까지 다시 공격한다.",
+          "outcomes": [
+            {
+              "id": "death",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "ending",
+                "id": "end_early_death"
+              },
+              "effects": [
+                {
+                  "op": "set",
+                  "path": "player.alive",
+                  "value": false
+                }
+              ]
+            }
+          ],
+          "description": "방어 수단도 도주 계획도 없다."
+        },
+        {
+          "id": "give_up",
+          "text": "무기를 버리고 체포에 협조한다.",
+          "outcomes": [
+            {
+              "id": "detained",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk20_voluntary_detained"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dk20_confession",
+      "kind": "scene",
+      "age": 20,
+      "title": "구애의 타이밍",
+      "body": "\"좋아하는 거랑 죽이려는 건 별개지.\" 미나는 말없이 당신을 포박했다.",
+      "choices": [
+        {
+          "id": "accept_arrest",
+          "text": "정식 재판을 받겠다고 한다.",
+          "outcomes": [
+            {
+              "id": "trial",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk21_trial"
+              }
+            }
+          ]
+        },
+        {
+          "id": "struggle",
+          "text": "포박을 풀고 도망치려 한다.",
+          "outcomes": [
+            {
+              "id": "caught",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "node",
+                "id": "dk20_caught_running"
+              }
+            }
+          ]
+        }
+      ],
+      "chronicle": [
+        {
+          "age": 20,
+          "text": "살해 시도 직후 고백했지만 미나의 호감은 돌아오지 않았다."
+        }
+      ]
+    },
+    {
+      "id": "dk20_caught_running",
+      "kind": "scene",
+      "age": 20,
+      "title": "도망도 실력이다",
+      "body": "미나는 당신을 가볍게 따라잡았다. \"생각보다 느리네.\"",
+      "choices": [
+        {
+          "id": "stop",
+          "text": "저항을 멈추고 체포된다.",
+          "outcomes": [
+            {
+              "id": "detained",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk20_voluntary_detained"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dk20_voluntary_detained",
+      "kind": "scene",
+      "age": 20,
+      "title": "마왕 생포",
+      "body": "미나는 당신을 안전하게 구금시설에 인계했다. 폭력 행위가 있었는지는 기록에 남는다.",
+      "choices": [
+        {
+          "id": "accept",
+          "text": "조사에 협조하고 처분을 기다린다.",
+          "outcomes": [
+            {
+              "id": "capture_ending",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "ending",
+                "id": "end_captured"
+              },
+              "effects": [
+                {
+                  "op": "set",
+                  "path": "player.legalStatus",
+                  "value": "detained"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dk20_fraud_offer",
+      "kind": "scene",
+      "age": 20,
+      "title": "나쁜 아이디어는 전염된다",
+      "body": "미나는 잠깐 고민했다. \"그거 들키면 나도 용사 자격 박탈인데?\"",
+      "choices": [
+        {
+          "id": "push_plan",
+          "text": "가짜 토벌 장면을 연출하자고 설득한다.",
+          "outcomes": [
+            {
+              "id": "scandal",
+              "weight": 2,
+              "result": "failure",
+              "to": {
+                "kind": "ending",
+                "id": "end_fraud_exposed"
+              },
+              "effects": [
+                {
+                  "op": "set",
+                  "path": "npcs.mina.trust",
+                  "value": -65
+                }
+              ]
+            },
+            {
+              "id": "fake_pass",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "end_fraud_passed"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "fraudulent_hero_exam"
+                }
+              ]
+            }
+          ],
+          "description": "예상 밖의 성공도 가능하지만 위험이 더 크다."
+        },
+        {
+          "id": "cancel",
+          "text": "계획을 접고 체포에 협조한다.",
+          "outcomes": [
+            {
+              "id": "detained",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk20_voluntary_detained"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dk20_fraud_rejected",
+      "kind": "scene",
+      "age": 20,
+      "title": "같은 편이 될 수 없는 날",
+      "body": "미나는 입을 다물었다. \"너 진짜 내가 걸려 있는 걸 모르니?\"",
+      "choices": [
+        {
+          "id": "surrender",
+          "text": "억지로 설득하지 않고 체포에 협조한다.",
+          "outcomes": [
+            {
+              "id": "detained",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "dk20_voluntary_detained"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dk21_trial",
+      "kind": "scene",
+      "age": 21,
+      "title": "다음 해의 재판",
+      "body": "재판부는 폭행 및 살인미수 정황을 검토했다. 고백 자체는 방어 논리가 되지 않았다.",
+      "choices": [
+        {
+          "id": "plead",
+          "text": "검증된 사실을 인정하고 형량을 다툰다.",
+          "outcomes": [
+            {
+              "id": "prison",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "ending",
+                "id": "end_prison"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "player.crimes",
+                  "value": "attempted_murder_convicted"
+                },
+                {
+                  "op": "set",
+                  "path": "player.legalStatus",
+                  "value": "imprisoned"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "deny",
+          "text": "검술 시범이었다고 거짓 주장한다.",
+          "outcomes": [
+            {
+              "id": "caught_lie",
+              "weight": 1,
+              "result": "failure",
+              "to": {
+                "kind": "ending",
+                "id": "end_prison"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "player.crimes",
+                  "value": "attempted_murder_convicted"
+                },
+                {
+                  "op": "set",
+                  "path": "player.legalStatus",
+                  "value": "imprisoned"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "entryEffects": [
+        {
+          "op": "set",
+          "path": "player.legalStatus",
+          "value": "under_trial"
+        }
+      ]
+    }
+  ]
+}

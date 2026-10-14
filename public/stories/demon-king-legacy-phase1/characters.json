@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "characters": [
+    {
+      "id": "mina",
+      "name": "미나",
+      "role": "hero_candidate",
+      "traits": [
+        "현실적",
+        "전투력 우수",
+        "불필요한 살인 기피"
+      ]
+    },
+    {
+      "id": "erisia",
+      "name": "에리시아",
+      "role": "princess",
+      "traits": [
+        "권력 지향",
+        "계산적",
+        "신중함"
+      ]
+    },
+    {
+      "id": "king",
+      "name": "국왕",
+      "role": "ruler",
+      "traits": [
+        "체면 중시",
+        "왕실 권위 우선"
+      ]
+    }
+  ]
+}

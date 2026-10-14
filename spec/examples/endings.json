@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "endings": [
+    {
+      "id": "end_early_death",
+      "kind": "bad",
+      "title": "전투력은 숫자였다",
+      "body": "두 번째 공격을 막으려던 미나의 반격으로 당신의 삶이 끝났다. 왕국은 이 사건을 역대 최단 마왕 토벌로 기록했다.",
+      "recapRules": [
+        {
+          "when": {
+            "op": "contains",
+            "path": "flags",
+            "value": "attempted_attack_on_mina"
+          },
+          "text": "20세, 당신은 이길 수 없는 친구에게 덤볐다."
+        }
+      ]
+    },
+    {
+      "id": "end_captured",
+      "kind": "normal",
+      "title": "살아 있는 시험 과제",
+      "body": "당신은 생포되었다. 미나는 목표를 달성했고, 당신의 다음 목표는 시설 식단 개선이었다."
+    },
+    {
+      "id": "end_fraud_exposed",
+      "kind": "bad",
+      "title": "최초의 부정 용사 시험",
+      "body": "가짜 토벌극이 발각됐다. 시험은 무효가 됐고, 미나는 당신을 더는 믿지 않았다."
+    },
+    {
+      "id": "end_fraud_passed",
+      "kind": "absurd",
+      "title": "합격했습니다, 가짜로요",
+      "body": "둘의 연기가 통했다. 미나는 용사가 됐지만 왕실 감사관이 다음 해 사건을 재조사할 예정이다."
+    },
+    {
+      "id": "end_prison",
+      "kind": "bad",
+      "title": "고백과 공소장",
+      "body": "당신은 살인미수 유죄를 선고받았다. 법원은 사랑 고백을 감형 사유로 인정하지 않았다."
+    }
+  ]
+}
