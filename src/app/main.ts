@@ -9,6 +9,7 @@ import type { PresentedStory } from '../content/presentation';
 import { lifeEvents, confirmedChoice, resultLabels } from '../ui/history';
 import { renderNarrative } from '../ui/narrative';
 import { element, button, icon } from '../ui/dom';
+import { ReadingSequence, type ReadingStep } from '../ui/reading';
 import '../styles/main.css';
 
 const root = document.querySelector<HTMLDivElement>('#app')!;
@@ -26,6 +27,7 @@ let errorText = '';
 let compatibilityNotice = '';
 let openMenu: 'history' | 'settings' | null = null;
 let historyExpanded = new Set<string>();
+const reading = new ReadingSequence();
 function notify(error: unknown) {
   errorText = error instanceof Error ? error.message : String(error);
   openMenu = null;
@@ -58,7 +60,7 @@ function commit(next: GameState, nextReceipt: TransitionReceipt | null = null, c
   pending = null; pendingReceipt = null; pendingStory = null; errorText = '';
 }
 async function makeChoice(nodeId: string, choiceId: string) {
-  if (busy || pending || !state || !story) return;
+  if (busy || pending || !state || !story || root.querySelector('[data-reading="true"]')) return;
   busy = true;
   // 같은 렌더링에서 큐에 쌓인 두 번째 클릭도 원래 nodeId 검사를 통과하지 못한다.
   root.querySelectorAll<HTMLButtonElement>('[data-choice]').forEach(b => { b.disabled = true; });
@@ -68,10 +70,10 @@ async function makeChoice(nodeId: string, choiceId: string) {
   } catch (error) { notify(error); }
   finally {
     render(); // 저장된 다음 장면을 보여주되 연속 클릭이 끝날 때까지 입력을 잠근다.
-    focusCurrentEvent();
     await new Promise(resolve => setTimeout(resolve, 400));
     busy = false;
-    root.querySelectorAll<HTMLButtonElement>('[data-choice]').forEach(b => { b.disabled = Boolean(pending) || b.dataset.enabled === 'false'; });
+    root.querySelectorAll<HTMLButtonElement>('[data-menu]').forEach(b => { b.disabled = false; });
+    root.querySelectorAll<HTMLButtonElement>('[data-choice]').forEach(b => { b.disabled = Boolean(pending) || b.dataset.enabled === 'false' || Boolean(root.querySelector('[data-reading="true"]')); });
     root.querySelectorAll<HTMLButtonElement>('[data-when-ready]').forEach(b => { b.disabled = Boolean(pending) && b.dataset.whenReady !== 'retry'; });
     const file = root.querySelector<HTMLInputElement>('#save-file'); if (file) file.disabled = Boolean(pending);
   }
@@ -97,14 +99,15 @@ function newRun() {
 }
 
 function render() {
+  reading.detach();
   root.replaceChildren();
   const layout = element('main', undefined, 'game-shell'); root.append(layout);
   const header = element('header', undefined, 'game-header');
   const brand = element('div', undefined, 'brand');
   brand.append(element('p', '한 사람의 선택, 한 번의 일생', 'eyebrow'), element('h1', '가짜 마왕의 일생'));
   const menus = element('nav', undefined, 'header-actions'); menus.setAttribute('aria-label', '게임 메뉴');
-  const historyButton = button('전체 기록', () => { openMenu = 'history'; render(); }); historyButton.prepend(icon('book'));
-  const settingsButton = button('설정', () => { openMenu = 'settings'; render(); }); settingsButton.prepend(icon('settings'));
+  const historyButton = button('전체 기록', () => { if (busy) return; openMenu = 'history'; render(); }, busy); historyButton.prepend(icon('book')); historyButton.dataset.menu = 'true';
+  const settingsButton = button('설정', () => { if (busy) return; openMenu = 'settings'; render(); }, busy); settingsButton.prepend(icon('settings')); settingsButton.dataset.menu = 'true';
   settingsButton.setAttribute('aria-label', '저장 관리 · 엔딩 도감'); menus.append(historyButton, settingsButton);
   header.append(brand, menus);
   if (state) {
@@ -121,7 +124,7 @@ function render() {
     alert.append(element('p', errorText), element('p', '기존 회차를 확인하거나 JSON으로 백업하세요. 저장 성공 전에는 다음 장면을 표시하지 않습니다.'));
     alert.append(button('회차 JSON 내보내기', exportRun));
     if (pending) {
-      const retry = button('저장 다시 시도', () => { try { commit(pending!, pendingReceipt, pendingStory); render(); focusCurrentEvent(); } catch (error) { notify(error); } }, busy);
+      const retry = button('저장 다시 시도', () => { try { commit(pending!, pendingReceipt, pendingStory); render(); } catch (error) { notify(error); } }, busy);
       retry.dataset.whenReady = 'retry'; alert.append(retry);
     }
     if (!story) alert.append(button('콘텐츠 다시 불러오기', boot));
@@ -145,11 +148,57 @@ function render() {
     }
     if (state.ended) renderEnding(present, story, state); else renderScene(present, story, state);
     columns.append(past, present); layout.append(columns);
+    bindReading(layout, columns, story, state);
   } else {
     layout.append(element('section', '검증된 저장을 불러오지 못했습니다. 기존 저장을 백업한 뒤 새 회차를 시작하거나 호환되는 JSON을 가져오세요.', 'panel'));
   }
   layout.append(element('footer', `선택은 행동의 시도입니다. · 콘텐츠 ${story.manifest.version} · ${pending ? '저장 미완료' : state ? '자동 저장 완료' : '저장 확인 필요'}`));
   if (openMenu) renderMenu(layout);
+}
+function bindReading(layout: HTMLElement, columns: HTMLElement, content: PresentedStory, current: GameState) {
+  const steps: ReadingStep[] = [];
+  const latest = new Set([current.currentNodeId, current.history.at(-1)?.nodeId]);
+  for (const row of columns.querySelectorAll<HTMLElement>('.timeline-item')) {
+    if (!current.history.length || latest.has(row.dataset.nodeId) || row.dataset.eventId?.startsWith('ending:')) {
+      steps.push({ element: row, stage: 'chronicle' });
+    }
+  }
+  // 본문 한 단락과 각 화자의 대사를 순서대로 표시한다. 전체 기록은 즉시 열람 가능하다.
+  for (const line of columns.querySelectorAll<HTMLElement>('.story .narrative > .body, .story .dialogue-line, .story > .body')) {
+    steps.push({ element: line, stage: 'scene' });
+  }
+  const controls = element('div', undefined, 'reading-controls');
+  const status = element('span', undefined, 'reading-status'); status.setAttribute('aria-live', 'polite');
+  const faster = button('빠르게 표시', () => {}); const skip = button('스킵', () => {});
+  skip.setAttribute('aria-label', '스킵 · 바로 선택하기'); controls.append(status, faster, skip);
+  layout.insertBefore(controls, columns);
+  const gates = [...columns.querySelectorAll<HTMLElement>('.choice-prompt, .choices, .story > h3, .story > ol, .story > .subtle, .story > button')];
+  const life = columns.querySelector<HTMLElement>('.life-panel')!; life.tabIndex = -1;
+  reading.bind({
+    key: `${content.manifest.version}:${current.runId}:${current.history.length}:${current.currentNodeId ?? current.endingId}`,
+    steps, surface: columns, controls, status, faster, skip, gates, paused: Boolean(openMenu),
+    canChoose: () => !busy && !pending,
+    onReveal: (step, first) => {
+      const offset = `${controls.getBoundingClientRect().height + 24}px`;
+      life.style.scrollMarginTop = offset;
+      columns.querySelector<HTMLElement>('#current-event')!.style.scrollMarginTop = offset;
+      if (first && step.stage === 'chronicle') {
+        life.focus({ preventScroll: true });
+        if (matchMedia('(max-width: 760px)').matches) life.scrollIntoView({ block: 'start', behavior: 'instant' });
+      }
+      if (step.stage === 'chronicle') {
+        const timeline = step.element.parentElement!;
+        if (getComputedStyle(timeline).overflowY === 'auto') timeline.scrollTop = timeline.scrollHeight;
+      } else if (first) focusCurrentEvent();
+    },
+    onSkip: () => {
+      const target = columns.querySelector<HTMLElement>('[data-choice][data-enabled="true"]') ?? columns.querySelector<HTMLElement>('.story > button');
+      if (target) {
+        const focus = target instanceof HTMLButtonElement && target.disabled ? columns.querySelector<HTMLElement>('#scene-title')! : target;
+        focus.focus({ preventScroll: true }); target.scrollIntoView({ block: 'center', behavior: 'instant' });
+      }
+    },
+  });
 }
 function renderSettings(save: HTMLElement) {
   if (!story) return;
@@ -236,22 +285,23 @@ function renderTimeline(layout: HTMLElement, content: PresentedStory, current: G
   for (const event of all.slice(-8)) {
     const item = element('li', undefined, 'timeline-item'); item.dataset.eventId = event.id;
     if (event.nodeId) item.dataset.nodeId = event.nodeId;
+    if (current.history.length && !all.slice(-3).some(recent => recent.id === event.id)) item.dataset.mobilePast = 'true';
     item.append(element('span', `${event.age}세`, 'timeline-age'));
     const text = element('div'); text.append(element('p', event.summary, 'timeline-text'));
     if (event.result) text.append(element('span', resultLabels[event.result], 'timeline-result'));
     item.append(text); list.append(item);
   }
   panel.append(list);
-  const open = button(`전체 인생 기록 · ${all.length}개`, () => { openMenu = 'history'; render(); }); open.classList.add('quiet-button'); panel.append(open); layout.append(panel);
+  const open = button(`전체 인생 기록 · ${all.length}개`, () => { if (busy) return; openMenu = 'history'; render(); }, busy); open.dataset.menu = 'true'; open.classList.add('quiet-button'); panel.append(open); layout.append(panel);
 }
 function renderMenu(layout: HTMLElement) {
   const dialog = element('dialog', undefined, 'menu-dialog');
   const menuKind = openMenu;
   const title = element('h2', menuKind === 'history' ? '전체 인생 기록' : '저장 관리 · 엔딩 도감'); title.id = 'menu-title';
   dialog.setAttribute('aria-labelledby', title.id);
-  const close = () => { openMenu = null; dialog.close(); dialog.remove(); document.querySelector<HTMLButtonElement>(menuKind === 'history' ? '.header-actions button:first-child' : '.header-actions button:last-child')?.focus(); };
+  const close = () => { openMenu = null; dialog.close(); render(); document.querySelector<HTMLButtonElement>(menuKind === 'history' ? '.header-actions button:first-child' : '.header-actions button:last-child')?.focus(); };
   const top = element('div', undefined, 'panel-heading'); top.append(title, button('닫기', close)); dialog.append(top);
-  dialog.addEventListener('cancel', () => { openMenu = null; });
+  dialog.addEventListener('cancel', event => { event.preventDefault(); close(); });
   if (menuKind === 'settings') renderSettings(dialog);
   else if (story && state) {
     for (const event of lifeEvents(story, state)) {

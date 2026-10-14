@@ -54,3 +54,9 @@ Actions가 성공한 뒤 실제 게임 주소도 확인하세요. 빌드나 테�
 실제 휴대기기에서의 터치/OS 확대와 Safari·Firefox는 확인하지 않았습니다. 모바일 UI는 Edge 및 Chromium의 화면 너비/모바일 에뮬레이션으로 검증했습니다.
 
 참고한 공식 문서: [GitHub Pages 사용자 지정 워크플로](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), [Pages REST API](https://docs.github.com/en/rest/pages/pages), [Node 설정 Action](https://github.com/actions/setup-node).
+
+## 연대기 읽기 흐름 업데이트
+
+연대기 순차 표시·클릭 가속·스킵을 추가한 로컬 검증은 단위/통합 96개와 브라우저 46개를 통과했습니다. 엔진/콘텐츠/저장 스키마는 그대로이며 기존 주소에 동일한 자동 검증/배포 절차를 적용합니다. 검증 범위와 해결한 문제는 `READING_UI.md`에 있습니다.
+
+공개 배포 뒤 `npx tsx scripts/verify-reading-ui.ts https://jilzu001.github.io/demon-king-life/`로 새 읽기 순서·스킵·원장 보호·새 장면·엔딩 복원을 확인합니다. 현재 Actions 결과는 [워크플로 실행 목록](https://github.com/jilzu001/demon-king-life/actions)에서 확인할 수 있습니다.

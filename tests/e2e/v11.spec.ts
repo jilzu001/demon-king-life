@@ -1,13 +1,14 @@
 import { test, expect, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
+import { skipReading } from './helpers';
 
 const contentRoot = 'public/stories/demon-king/';
 const manifest = JSON.parse(readFileSync(`${contentRoot}story.json`, 'utf8'));
 const nodes = Object.fromEntries(manifest.chapters.flatMap((f: string) => JSON.parse(readFileSync(contentRoot + f, 'utf8')).nodes).map((n: { id: string }) => [n.id, n]));
 const presentation = JSON.parse(readFileSync(`${contentRoot}presentation.json`, 'utf8'));
 const key = 'existence-sim:v1:run:demon-king';
-async function start(page: Page) { await page.goto('./'); await expect(page.getByRole('heading', { name: '가장 싼 마왕', exact: true })).toBeVisible(); }
-async function select(page: Page, id: string) { const b = page.locator(`[data-choice="${id}"]`); await expect(b).toBeEnabled(); await b.click(); }
+async function start(page: Page) { await page.goto('./'); await expect(page.getByRole('heading', { name: '가장 싼 마왕', exact: true })).toBeVisible(); await skipReading(page); }
+async function select(page: Page, id: string) { await skipReading(page); const b = page.locator(`[data-choice="${id}"]`); await expect(b).toBeEnabled(); await b.click(); await skipReading(page); }
 async function saved(page: Page) { return page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key); }
 
 test('새 콘텐츠·장소·전체 대사·선택 설명과 PC 2열/모바일 1열', async ({ page }, info) => {
@@ -31,14 +32,11 @@ test('3회 연속 선택·실제 연대기·분기 비노출·저장 복원·새
   await expect(page.locator('[data-node-id="dk20_disarmed"] .timeline-text')).toHaveText(presentation.nodes.dk20_disarmed.chronicleSummary);
   await expect(page.locator('.body')).toHaveText(nodes.dk20_disarmed.body);
   await expect(page.locator('[data-node-id="dk20_fraud_pitch"]')).toHaveCount(0);
-  await expect(page.locator('#current-event')).toBeFocused();
-  expect(await page.locator('#current-event').evaluate(e => e.getBoundingClientRect().top)).toBeGreaterThanOrEqual(0);
-  const visibleTop = await page.locator('#current-event').evaluate(e => e.getBoundingClientRect().top);
-  expect(visibleTop).toBeLessThan(await page.evaluate(() => innerHeight * .35));
+  await expect(page.locator('[data-choice="apologize"]')).toBeVisible();
   await select(page, 'apologize'); await select(page, 'plead_guilty');
   const checkpoint = await saved(page); expect(checkpoint.history).toHaveLength(3);
   expect(checkpoint.player.crimes).toEqual(['attempted_murder_convicted']);
-  const timeline = await page.locator('.timeline').innerText(); await page.reload(); await expect(page.getByRole('heading', { name: nodes.dk22_prison.title })).toBeVisible();
+  const timeline = await page.locator('.timeline').innerText(); await page.reload(); await expect(page.getByRole('heading', { name: nodes.dk22_prison.title })).toBeVisible(); await skipReading(page);
   expect(await page.locator('.timeline').innerText()).toBe(timeline); expect(await saved(page)).toEqual(checkpoint);
   await page.getByRole('button', { name: '전체 기록', exact: true }).click();
   await expect(page.locator('.history-entry')).toHaveCount(8);
@@ -80,6 +78,7 @@ test('조기 사망 엔딩 및 더블클릭 방지', async ({ page }) => {
   await start(page); await page.locator('[data-choice="attack"]').dblclick();
   await expect(page.getByRole('heading', { name: nodes.dk20_disarmed.title })).toBeVisible();
   await page.waitForTimeout(500); expect((await saved(page)).history).toHaveLength(1);
+  await expect(page.getByRole('dialog')).toHaveCount(0);
   await select(page, 'second_attack'); await expect(page.locator('[data-choice]')).toHaveCount(0);
   expect((await saved(page)).endingId).toBe('end_blade'); expect((await saved(page)).player.alive).toBe(false);
 });
@@ -100,6 +99,8 @@ test('정상 엔딩까지 원클릭으로 진행하며 최근 기록은 최대 8
   await start(page);
   for (let i = 0; i < 30; i++) {
     const current = await saved(page); if (current.ended) break;
+    await skipReading(page);
+    await expect(page.locator('[data-choice][data-enabled="true"]').first()).toBeEnabled();
     await page.locator('[data-choice]:enabled').first().click();
   }
   const end = await saved(page); expect(end.ended).toBe(true); expect(end.history.length).toBeGreaterThan(3);

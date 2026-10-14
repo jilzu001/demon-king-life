@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import { readFileSync } from 'node:fs';
+import { skipReading } from './helpers';
 const legacy = JSON.parse(readFileSync('public/stories/demon-king-legacy-phase1/story.json', 'utf8'));
 const legacyInitial = { ...legacy.initialState, saveSchemaVersion: 1, storyId: legacy.id, storyVersion: legacy.version,
   runId: 'browser-regression', currentNodeId: legacy.entryNodeId, endingId: null, ended: false,
@@ -7,8 +8,9 @@ const legacyInitial = { ...legacy.initialState, saveSchemaVersion: 1, storyId: l
 
 const key = 'existence-sim:v1:run:demon-king';
 async function select(page: Page, id: string) {
+  await skipReading(page);
   const choice = page.locator(`[data-choice="${id}"]`);
-  await expect(choice).toBeEnabled(); await choice.click();
+  await expect(choice).toBeEnabled(); await choice.click(); await skipReading(page);
 }
 async function saved(page: Page) {
   return page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
@@ -17,6 +19,7 @@ test.beforeEach(async ({ page }) => {
   await page.addInitScript(({ key, save }) => { if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(save)); }, { key, save: legacyInitial });
   await page.goto('./');
   await expect(page.getByRole('heading', { name: '첫 용사 시험' })).toBeVisible();
+  await skipReading(page);
 });
 
 test('공격·고백·재판·엔딩, 새로고침과 새 회차 도감 유지', async ({ page }) => {
