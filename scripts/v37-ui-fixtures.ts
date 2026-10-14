@@ -6,4 +6,6 @@ let old = createRun(previousCompactStory, 17, 'v37-old-save');
 for (const id of ['family_accept', 'trust_mina', 'attack', 'forgive', 'ally']) old = choose(previousCompactStory, old, old.currentNodeId!, id).nextState;
 let exam = createRun(story, 17, 'choices-audit');
 for (const id of ['family_accept', 'trust_mina']) exam = choose(story, exam, exam.currentNodeId!, id).nextState;
-console.log(JSON.stringify({ old, exam }));
+let late = createRun(story, 17, 'layout-late');
+for (const id of ['family_accept', 'trust_mina', 'attack', 'forgive', 'ally', 'private_deal', 'take_money']) late = choose(story, late, late.currentNodeId!, id).nextState;
+console.log(JSON.stringify({ old, exam, late }));

@@ -29,7 +29,7 @@ try {
       await page.locator('#reading-skip').click(); await expect(page.locator('#choice-aftermath')).toHaveCount(0);
     };
     await select('family_accept'); await select('trust_mina'); await scene();
-    const timelineTexts = await page.locator('.timeline-text').allTextContents(); expect(timelineTexts).toHaveLength(3);
+    const timelineTexts = await page.locator('.timeline-text').allTextContents(); expect(timelineTexts).toHaveLength(1);
     for (const text of timelineTexts) expect(text).not.toMatch(/[\n“”]/);
     expect(await page.locator('.timeline').evaluate(el => el.clientHeight)).toBeLessThanOrEqual(130);
     const recent = (await page.locator('.life-panel').boundingBox())!; const popup = (await page.locator('#choice-dialog').boundingBox())!;

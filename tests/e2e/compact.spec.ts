@@ -30,16 +30,100 @@ test.beforeEach(async ({ page }) => {
   const time = new Date('2026-10-14T00:00:00Z'); await page.clock.install({ time }); await page.clock.pauseAt(time);
 });
 
-test('고백은 네 번째 선택으로 표시되고 실제 화자만 초상화가 나타나며 내레이션에 퇴장한다', async ({ page }) => {
+test('설정에서 타이틀로 돌아가도 회차를 유지하고 타이틀 새로하기만 새 회차를 만든다', async ({ page }) => {
+  await start(page); await select(page, 'family_accept'); await select(page, 'trust_mina');
+  const saved = await raw(page);
+  await page.evaluate(key => localStorage.setItem(key, JSON.stringify({ saveSchemaVersion: 1, discoveredEndings: { 'demon-king': ['ending_escape'] } })), metaKey);
+  await page.reload();
+  const meta = await page.evaluate(key => localStorage.getItem(key), metaKey);
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
+  await page.getByRole('button', { name: '타이틀로 가기', exact: true }).click();
+  await expect(page.locator('.title-card')).toBeVisible(); await expect(page.locator('[data-enter]')).toHaveText('이어하기');
+  await page.clock.runFor(60000); expect(await raw(page)).toBe(saved);
+  await page.reload(); await expect(page.locator('.title-card')).toBeVisible(); expect(await raw(page)).toBe(saved);
+  await page.locator('[data-enter]').click(); await expect(page.locator('#current-event')).toBeAttached(); expect(await raw(page)).toBe(saved);
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
+  await page.getByRole('button', { name: '타이틀로 가기', exact: true }).click();
+  await page.getByRole('button', { name: '새로하기', exact: true }).click();
+  await expect(page.locator('#current-event')).toBeAttached();
+  const next = JSON.parse((await raw(page))!); expect(next.age).toBe(0); expect(next.history).toEqual([]); expect(next.runId).not.toBe(JSON.parse(saved!).runId);
+  expect(await page.evaluate(key => localStorage.getItem(key), metaKey)).toBe(meta);
+});
+
+test('글자 밝기는 모든 화면 글자에만 적용되고 회차·이미지·배경을 바꾸지 않으며 다시 불러와 유지된다', async ({ page }) => {
+  await start(page); const saved = await raw(page);
+  const colors = async () => {
+    await expect(page.locator('#scene-title')).toBeAttached();
+    return page.evaluate(() => ['body', '#scene-title', '.timeline-text', '.header-history', '.stats strong', '.game-toolbar button'].map(selector => getComputedStyle(document.querySelector(selector)!).color));
+  };
+  const original = await colors();
+  const background = await page.locator('.game-shell').evaluate(el => getComputedStyle(el).backgroundColor);
+  const picture = await page.locator('#player-image').getAttribute('src');
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
+  const slider = page.getByLabel('화면 전체 글자 밝기'); await slider.focus(); await slider.press('Home');
+  expect(new Set(await colors()).size).toBe(1); expect(await colors()).not.toEqual(original);
+  await expect(slider).toHaveAttribute('aria-valuetext', '0% · 짙은 회색');
+  await slider.press('End'); expect(await colors()).toEqual(original);
+  await slider.press('Home'); for (let i = 0; i < 10; i++) await slider.press('ArrowRight');
+  await expect(slider).toHaveAttribute('aria-valuetext', '50% · 부드러운 글자색');
+  const dimmed = await colors(); expect(dimmed).not.toEqual(original);
+  await page.getByRole('button', { name: '닫기', exact: true }).click(); await page.reload();
+  expect(await colors()).toEqual(dimmed); expect(await raw(page)).toBe(saved);
+  expect(await page.locator('#player-image').getAttribute('src')).toBe(picture);
+  expect(await page.locator('#player-image').evaluate(el => getComputedStyle(el).filter)).toBe('none');
+  expect(await page.locator('.game-shell').evaluate(el => getComputedStyle(el).backgroundColor)).toBe(background);
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
+  await page.getByRole('button', { name: '타이틀로 가기', exact: true }).click();
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
+  await expect(page.getByLabel('화면 전체 글자 밝기')).toHaveValue('50');
+  await page.getByRole('button', { name: '기본 밝기', exact: true }).click();
+  await page.getByRole('button', { name: '닫기', exact: true }).click(); await page.locator('[data-enter]').click();
+  expect(await colors()).toEqual(original); expect(await raw(page)).toBe(saved);
+  await page.evaluate(() => localStorage.setItem('demon-king:ui:text-brightness', '잘못된 값'));
+  await page.reload(); expect(await colors()).toEqual(original); expect(await raw(page)).toBe(saved);
+});
+
+test('150% 글자에서 능력치 한 칸은 한 줄이고 최근 연대기는 딱 한 줄이며 전체 기록은 상단에 있다', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('demon-king:ui:text-percent', '150'));
+  await page.goto('./'); await expect(page.locator('[data-enter]')).toBeEnabled();
+  expect(await page.locator('.title-background').evaluate(el => {
+    const r = el.getBoundingClientRect(); return getComputedStyle(el).objectFit === 'cover' && r.width === innerWidth && r.height === innerHeight;
+  })).toBe(true);
+  await page.screenshot({ path: `docs/compact-controls/title-${test.info().project.name}.png`, animations: 'disabled' });
+  await page.locator('[data-enter]').click();
+  await expect(page.locator('.life-panel h2, .life-panel button, #npc-image')).toHaveCount(0);
+  await expect(page.locator('.game-header .header-history')).toHaveCount(1);
+  const checkHeader = async () => {
+    expect(await page.locator('.stats > div').evaluateAll(cells => cells.every(cell => {
+      const label = cell.querySelector('small')!.getBoundingClientRect(); const value = cell.querySelector('strong')!.getBoundingClientRect();
+      return Math.abs(label.y + label.height / 2 - value.y - value.height / 2) < 1 && cell.scrollWidth <= cell.clientWidth;
+    }))).toBe(true);
+    await expect(page.locator('.timeline-item')).toHaveCount(1);
+    expect(await page.locator('.timeline-text').evaluate(el => el.clientHeight <= parseFloat(getComputedStyle(el).lineHeight) + 1)).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && document.documentElement.scrollHeight <= innerHeight + 1)).toBe(true);
+  };
+  await checkHeader();
+  expect(await page.locator('#player-image').evaluate(el => getComputedStyle(el).objectFit)).toBe('cover');
+  await select(page, 'family_accept'); await select(page, 'trust_mina'); await checkHeader();
+  await page.locator('.header-history').click(); await expect(page.locator('.history-entry')).toHaveCount(3);
+  await page.getByRole('button', { name: '닫기', exact: true }).click();
+  await page.evaluate(({ key, state }) => {
+    localStorage.setItem(key, JSON.stringify(state));
+    localStorage.setItem(`demon-king:compact-view:${state.runId}`, JSON.stringify({ handledHistory: state.history.length, phase: 0, memoryIndex: 0 }));
+  }, { key, state: fixtures.late });
+  await page.reload(); await expect(page.locator('#current-event')).toBeAttached(); expect(JSON.parse((await raw(page))!).age).toBe(65); await checkHeader();
+  await page.screenshot({ path: `docs/compact-controls/header-${test.info().project.name}.png`, animations: 'disabled' });
+});
+
+test('상단 NPC 없이 고백 네 번째 선택과 본문의 미나 기본 초상화를 유지한다', async ({ page }) => {
   await start(page); for (const id of ['family_accept', 'trust_mina']) await select(page, id);
-  await expect(page.locator('#npc-image')).toHaveAttribute('alt', '연대기 배경');
+  await expect(page.locator('#npc-image')).toHaveCount(0);
   const lines = chapter.nodes.find((n: { id: string }) => n.id === 'exam').body.split('\n\n');
   for (let index = 1; index <= 9; index++) {
     await page.locator('#current-event .story-paragraph:visible').last().click();
-    await expect(page.locator('#npc-image')).toHaveAttribute('alt', index === 8 ? '미나 초상화' : '연대기 배경');
     if (index === 8) {
-      expect(await page.locator('#npc-image').getAttribute('src')).toBe(await page.locator('.story-illustration img').getAttribute('src'));
-      await page.screenshot({ path: `docs/v37-review/exam-speaker-${test.info().project.name}.png`, animations: 'disabled' });
+      await expect(page.locator('.story-illustration')).toHaveAttribute('data-asset-id', 'mina');
+      await page.screenshot({ path: `docs/compact-controls/exam-${test.info().project.name}.png`, animations: 'disabled' });
     }
     expect(lines[index]).toBeDefined();
   }
@@ -48,16 +132,16 @@ test('고백은 네 번째 선택으로 표시되고 실제 화자만 초상화�
   await select(page, 'confess'); expect(JSON.parse((await raw(page))!).currentNodeId).toBe('confession');
   await page.locator('#current-event .story-paragraph:visible').last().click();
   await page.locator('#current-event .story-paragraph:visible').last().click();
-  await expect(page.locator('#npc-image')).toHaveAttribute('alt', '연대기 배경');
+  await expect(page.locator('#npc-image')).toHaveCount(0);
   await page.locator('#current-event .story-paragraph:visible').last().click();
-  await expect(page.locator('#npc-image')).toHaveAttribute('alt', '미나 초상화');
+  await expect(page.locator('.story-illustration')).toHaveAttribute('data-asset-id', 'mina');
   await select(page, 'confess_sincere');
   expect(JSON.parse((await raw(page))!).currentNodeId).toBe('confession_afterm');
   await select(page, 'support_mina');
   await page.reload(); expect(JSON.parse((await raw(page))!).history.map((h: { choiceId: string }) => h.choiceId)).toContain('confess');
 });
 
-test('구버전 실제 저장은 원문 백업 후 이어지고 감사관/미나/에리시아 교체와 페이지 내레이션을 보호한다', async ({ page }) => {
+test('구버전 저장은 원문 백업 후 이어지고 전체 기록과 페이지 진행을 보호한다', async ({ page }) => {
   const old = fixtures.old;
   const saved = JSON.stringify(old);
   await page.addInitScript(({ saved, key }) => {
@@ -69,17 +153,13 @@ test('구버전 실제 저장은 원문 백업 후 이어지고 감사관/미나
   expect(JSON.parse((await page.evaluate(key => localStorage.getItem(key), COMPACT_V37_BACKUP_KEY))!).run).toBe(saved);
   for (let index = 1; index <= 18; index++) {
     await page.locator('#current-event .story-paragraph:visible').last().click();
-    await expect(page.locator('#npc-image')).toHaveAttribute('alt', index === 15 ? '미나 초상화' : index === 17 ? '에리시아 초상화' : '연대기 배경');
   }
+  await expect(page.locator('#npc-image')).toHaveCount(0);
+  await expect(page.locator('.header-history')).toBeVisible();
   await page.locator('#reading-mode').click();
   const count = Number(await page.locator('.page-window').getAttribute('data-page-count'));
   for (let i = 0; i < count; i++) {
-    const actor = await page.locator('.page-window').evaluate(viewport => {
-      const box = viewport.getBoundingClientRect();
-      return [...viewport.querySelectorAll('.story-paragraph')].filter(p => [...p.getClientRects()].some(r => r.left < box.right - 1 && r.right > box.left + 1 && r.top < box.bottom && r.bottom > box.top)).at(-1)?.textContent;
-    });
-    const expected = actor === '“이건 사람의 인생을 훔친 일이야.”' ? '미나 초상화' : actor === '“그래서 법으로 이겨야 해요. 화를 낸다고 장부가 열리진 않으니까.”' ? '에리시아 초상화' : '연대기 배경';
-    await expect(page.locator('#npc-image')).toHaveAttribute('alt', expected);
+    await expect(page.locator('.header-history')).toBeVisible();
     if (i + 1 < count) await page.getByRole('button', { name: '다음 페이지', exact: true }).click();
   }
 });
@@ -217,7 +297,7 @@ test('선택 후 서술을 먼저 한 번 표시하며 새로고침 뒤 다음 �
 
 test('연대기는 방문한 사건의 독립 요약만 한 줄로 표시하고 전체 기록도 전문을 중복하지 않는다', async ({ page }) => {
   await start(page); await select(page, 'family_accept'); await select(page, 'trust_mina'); await scene(page);
-  expect(await page.locator('.timeline-text').allTextContents()).toEqual(chapter.nodes.slice(0, 3).map((n: { chronicleSummary: string }) => n.chronicleSummary));
+  expect(await page.locator('.timeline-text').allTextContents()).toEqual([chapter.nodes[2].chronicleSummary]);
   await expect(page.locator('.timeline-text').first()).toHaveCSS('white-space', 'nowrap');
   expect(await page.locator('.timeline').evaluate(el => el.clientHeight)).toBeLessThanOrEqual(130);
   await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
@@ -243,7 +323,7 @@ test('8개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건�
     await start(page);
     for (const id of ['family_accept', 'trust_mina', ...choices]) await select(page, id);
     await expect(page.locator('[data-ending-phase="0"]')).toBeVisible(); await expect(page.locator('.game-header')).toHaveCount(0);
-    if (endingId === 'ending_peace' || endingId === 'ending_throne') await page.screenshot({ path: `docs/v37-review/${endingId}-${test.info().project.name}.png`, animations: 'disabled' });
+    if (endingId === 'ending_peace' || endingId === 'ending_throne') await page.screenshot({ path: `docs/compact-controls/${endingId}-${test.info().project.name}.png`, animations: 'disabled' });
     const state = JSON.parse((await raw(page))!); expect(state.endingId).toBe(endingId);
     const beforeMeta = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), metaKey);
     expect(beforeMeta.discoveredEndings['demon-king'] ?? []).not.toContain(endingId);
@@ -253,7 +333,7 @@ test('8개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건�
       const nodeId = await page.locator('[data-memory-node]').getAttribute('data-memory-node'); memories.push(nodeId!);
       if (endingId === 'ending_peace' && nodeId === 'child') {
         await expect(page.locator('[data-memory-node] .story-illustration')).toHaveAttribute('data-asset-id', 'mina');
-        await page.screenshot({ path: `docs/v37-review/memory-mina-${test.info().project.name}.png`, animations: 'disabled' });
+        await page.screenshot({ path: `docs/compact-controls/memory-mina-${test.info().project.name}.png`, animations: 'disabled' });
       }
       expect(state.history.map((h: { nodeId: string }) => h.nodeId)).toContain(nodeId);
       await page.getByRole('button', { name: '이어서', exact: true }).click();
@@ -343,8 +423,8 @@ test('방문한 사건의 선택 직전으로 돌아가 다른 분기를 선택�
   await start(page); await select(page, 'family_accept'); await select(page, 'trust_mina'); await select(page, 'attack');
   await scene(page); const previous = JSON.parse((await raw(page))!);
   await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
-  await page.locator('.timeline-item[data-node-id="exam"]').click();
-  await expect(page.locator('[data-resume-node="exam"]')).toBeFocused();
+  await page.locator('.header-history').click();
+  await expect(page.locator('[data-resume-node="exam"]')).toBeVisible();
   await expect(page.locator('[data-resume-node="settlement"]')).toHaveCount(0);
   await page.locator('[data-resume-node="exam"]').click();
   await expect(page.locator('#choice-dialog')).toBeVisible();

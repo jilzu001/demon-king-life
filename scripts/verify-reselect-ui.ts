@@ -31,7 +31,7 @@ try {
     await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
     const size = page.getByLabel('화면 전체 글자 크기'); await size.focus(); await size.press('End');
     await page.getByRole('button', { name: '닫기', exact: true }).click();
-    await page.locator('.timeline-item[data-node-id="exam"]').click();
+    await page.locator('.header-history').click();
     await expect(page.locator('[data-resume-node]')).toHaveCount(4);
     expect(await page.locator('.menu-dialog').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
     if (snapshots) await page.screenshot({ path: `docs/reselect-history-${width}.png`, animations: 'disabled' });

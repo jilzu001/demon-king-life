@@ -14,7 +14,7 @@ import { ReadingSequence, type ReadingStep } from '../ui/reading';
 import { PageReader } from '../ui/pages';
 import { illustrateNarrative, readingCompanions } from '../ui/illustrations';
 import { portraitUrl, portraitCharacters, dialogueEmotion, type PortraitCharacter, type PortraitEmotion } from '../ui/portraits';
-import { canonicalPortrait, compactSpeaker, visiblePageSpeaker } from '../ui/visual-identity';
+import { canonicalPortrait } from '../ui/visual-identity';
 import '../styles/main.css';
 import { isCompact, compactSlot } from '../content/compact-contract';
 import { loadCompactProgress, compactProgressKey, type CompactProgress } from '../ui/compact-progress';
@@ -45,6 +45,14 @@ try {
   if ([100, 110, 120, 130, 140, 150].includes(savedSize)) textPercent = savedSize;
 } catch { /* 화면 설정 저장이 불가능해도 기본 크기로 플레이한다. */ }
 document.documentElement.style.setProperty('--text-scale', String(textPercent / 100));
+const textBrightnessKey = 'demon-king:ui:text-brightness';
+let textBrightness = 100;
+try {
+  const saved = localStorage.getItem(textBrightnessKey);
+  const value = Number(saved);
+  if (saved !== null && Number.isInteger(value) && value >= 0 && value <= 100 && value % 5 === 0) textBrightness = value;
+} catch { /* 게임 저장과 별개인 화면 설정이다. */ }
+document.documentElement.style.setProperty('--text-brightness', `${textBrightness}%`);
 const readModeKey = 'demon-king:ui:reading-mode';
 let readMode: 'scroll' | 'page' = 'scroll';
 try { if (compactMode && localStorage.getItem(readModeKey) === 'page') readMode = 'page'; } catch { /* 기본 스크롤 방식으로 읽는다. */ }
@@ -78,6 +86,17 @@ function enterGame() {
   titleVisible = false;
   try { sessionStorage.setItem(titleKey, '1'); } catch { /* 게임 저장과 별개인 화면 표시 설정이다. */ }
   if (!state) newRun(); else render();
+}
+function returnToTitle() {
+  if (busy || pending) return;
+  openMenu = null; titleVisible = true;
+  try { sessionStorage.removeItem(titleKey); } catch { /* 현재 화면에는 적용한다. */ }
+  render();
+}
+function historyButton() {
+  const open = button('전체 기록', () => { if (busy) return; openMenu = 'history'; render(); }, busy || Boolean(pending));
+  open.dataset.menu = 'true'; open.dataset.menuKind = 'history'; open.prepend(icon('book'));
+  return open;
 }
 function art(name: string) { return `${import.meta.env.BASE_URL}art/${name}-v1.webp`; }
 function notify(error: unknown) {
@@ -213,7 +232,7 @@ function render() {
   }
   if (state) {
     const frame = element('section', undefined, 'life-frame');
-    const past = element('aside', undefined, 'life-column'); past.setAttribute('aria-label', '나의 인생');
+    const past = element('aside', undefined, 'life-column'); past.setAttribute('aria-label', compactMode ? '최근 연대기' : '나의 인생');
     renderTimeline(past, story, state); frame.append(past);
     const columns = element('div', undefined, 'game-columns chat-feed'); columns.setAttribute('aria-label', '사건과 대화'); columns.tabIndex = 0;
     if (readMode !== 'page') renderPreviousScenes(columns, story, state);
@@ -269,7 +288,6 @@ function bindPages(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEleme
     toolbar, paused: Boolean(openMenu), canChoose: () => !busy && !pending,
     gates: [...layout.querySelectorAll<HTMLElement>('.choices'), ...(current.ended ? [] : [launch])],
     choiceButtons: [...layout.querySelectorAll<HTMLButtonElement>('[data-choice]')], finishLabel: current.ended ? '읽기 완료' : '선택지', onComplete: ready,
-    onPage: () => { if (current.currentNodeId) showCompactNpc(layout, story!, current, visiblePageSpeaker(columns.querySelector('.page-window')!, current.currentNodeId)); },
   });
 }
 function renderAftermath(layout: HTMLElement, content: PresentedStory, current: GameState) {
@@ -304,6 +322,7 @@ function renderTitle(layout: HTMLElement) {
   const title = element('section', undefined, 'title-card');
   title.append(element('p', '한 사람의 선택, 한 번의 일생', 'eyebrow'), element('h1', '가짜 마왕의 일생'), element('p', '선택은 행동의 시도입니다. 당신의 일생을 읽고, 다음 행동을 고르세요.', 'title-intro'));
   const start = button(state ? '이어하기' : '시작하기', enterGame, !story || (!state && Boolean(errorText))); start.dataset.enter = 'true'; title.append(start);
+  if (compactMode) title.append(button('새로하기', newRun, !activeStory || busy || Boolean(pending)));
   title.append(element('p', compactMode && story ? `축소 완결판 · ${Object.keys(story.nodes).length}개 사건 · ${Object.keys(story.endings).length}개 결말` : '원작 · 98개 장면 · 34개 결말', 'subtle'));
   const settings = button('설정', () => { openMenu = 'settings'; render(); }, !story); settings.setAttribute('aria-label', '저장 관리 · 엔딩 도감'); title.append(settings);
   layout.append(title);
@@ -317,6 +336,9 @@ function renderStatus(layout: HTMLElement, current: GameState) {
     const stat = element('div'); stat.append(element('small', label), element('strong', value)); stats.append(stat);
   }
   header.append(stats);
+  if (compactMode) {
+    const open = historyButton(); open.classList.add('header-history'); header.append(open); layout.append(header); return;
+  }
   const npc = element('figure', undefined, 'portrait npc-portrait');
   const image = element('img'); image.src = art('background'); image.alt = '연대기 배경'; image.id = 'npc-image';
   npc.append(image); header.append(npc); layout.append(header);
@@ -377,15 +399,6 @@ function renderPreviousScenes(feed: HTMLElement, content: PresentedStory, curren
   feed.addEventListener('keydown', event => { if (['ArrowUp', 'PageUp', 'Home'].includes(event.key)) { upward = true; if (feed.scrollTop < 60) { prepend(); upward = false; } } });
   feed.addEventListener('scroll', () => { if (upward && feed.scrollTop < 60) { prepend(); upward = false; touchLoaded = true; } });
 }
-function showCompactNpc(layout: HTMLElement, content: PresentedStory, current: GameState, actor?: string) {
-  const image = layout.querySelector<HTMLImageElement>('#npc-image');
-  if (!image) return;
-  const url = actor && current.npcs[actor]?.alive ? canonicalPortrait(import.meta.env.BASE_URL, actor) : undefined;
-  image.src = url ?? art('background');
-  image.alt = url ? `${content.characters[actor!]!.name} 초상화` : '연대기 배경';
-  image.dataset.actor = url ? actor! : '';
-  image.onerror = () => { image.onerror = null; image.src = art('background'); image.alt = '연대기 배경'; image.dataset.actor = ''; };
-}
 function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLElement, content: PresentedStory, current: GameState, launch: HTMLButtonElement) {
   const steps: ReadingStep[] = [];
   for (const row of columns.querySelectorAll<HTMLElement>('#current-event .chronicle-message')) steps.push({ element: row, stage: 'chronicle' });
@@ -425,7 +438,6 @@ function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEle
       columns.querySelector<HTMLElement>('#current-event .scene-heading')!.hidden = stage === 'chronicle';
       const player = layout.querySelector<HTMLImageElement>('#player-image')!;
       if (compactMode) {
-        showCompactNpc(layout, content, current, stage === 'scene' && current.currentNodeId ? compactSpeaker(current.currentNodeId, step?.element.textContent ?? '') : undefined);
         player.src = canonicalPortrait(import.meta.env.BASE_URL, 'player')!;
         return;
       }
@@ -450,6 +462,7 @@ function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEle
 }
 function renderSettings(save: HTMLElement) {
   if (!story) return;
+  if (!titleVisible) save.append(button('타이틀로 가기', returnToTitle, busy || Boolean(pending)));
   if (compactMode && state) save.append(button('지난 분기에서 이어하기', () => { openMenu = 'history'; render(); }, busy || Boolean(pending)));
   const display = element('section', undefined, 'display-settings');
   const label = element('label', '화면 전체 글자 크기'); label.htmlFor = 'text-size';
@@ -475,6 +488,28 @@ function renderSettings(save: HTMLElement) {
   const controls = element('div', undefined, 'text-size-controls'); controls.append(smaller, size, larger);
   update(textPercent);
   display.append(label, output, controls, hint, element('p', '연대기와 대사, 선택지와 버튼까지 이 크기로 표시됩니다.', 'text-size-preview'), message); save.append(display);
+  const brightness = element('section', undefined, 'display-settings');
+  const brightnessLabel = element('label', '화면 전체 글자 밝기'); brightnessLabel.htmlFor = 'text-brightness';
+  const slider = element('input'); slider.id = 'text-brightness'; slider.type = 'range'; slider.min = '0'; slider.max = '100'; slider.step = '5';
+  const brightnessOutput = element('output'); brightnessOutput.htmlFor = slider.id;
+  const brightnessMessage = element('p', '', 'subtle'); brightnessMessage.setAttribute('role', 'status');
+  const updateBrightness = (value: number) => {
+    textBrightness = value; slider.value = String(value);
+    document.documentElement.style.setProperty('--text-brightness', `${value}%`);
+    brightnessOutput.textContent = `${value}% · ${value === 0 ? '짙은 회색' : value === 100 ? '기존 밝기' : '부드러운 글자색'}`;
+    slider.setAttribute('aria-valuetext', brightnessOutput.textContent);
+    darker.disabled = value === 0; brighter.disabled = value === 100;
+    try { localStorage.setItem(textBrightnessKey, String(value)); brightnessMessage.textContent = ''; }
+    catch { brightnessMessage.textContent = '현재 화면에는 적용했습니다. 이 브라우저에서는 밝기 설정을 저장할 수 없습니다.'; }
+  };
+  const darker = button('어둡게', () => updateBrightness(Math.max(0, textBrightness - 5)));
+  const brighter = button('밝게', () => updateBrightness(Math.min(100, textBrightness + 5)));
+  slider.addEventListener('input', () => updateBrightness(Number(slider.value)));
+  const brightnessControls = element('div', undefined, 'text-size-controls'); brightnessControls.append(darker, slider, brighter);
+  slider.value = String(textBrightness); brightnessOutput.textContent = `${textBrightness}% · ${textBrightness === 0 ? '짙은 회색' : textBrightness === 100 ? '기존 밝기' : '부드러운 글자색'}`;
+  slider.setAttribute('aria-valuetext', brightnessOutput.textContent); darker.disabled = textBrightness === 0; brighter.disabled = textBrightness === 100;
+  brightness.append(brightnessLabel, brightnessOutput, brightnessControls, element('p', '짙은 회색부터 지금의 밝기까지 조절합니다. 그림과 배경은 그대로 유지됩니다.', 'subtle'), button('기본 밝기', () => updateBrightness(100)), brightnessMessage);
+  save.append(brightness);
   const tools = element('div', undefined, 'tools');
   const exportButton = button('회차 JSON 내보내기', exportRun, busy); exportButton.dataset.whenReady = 'normal'; tools.append(exportButton);
   const restart = button(state ? '새 회차 시작' : '기존 회차를 교체하고 시작', newRun, busy || Boolean(pending)); restart.dataset.whenReady = 'normal'; tools.append(restart);
@@ -566,10 +601,11 @@ function renderPeople(layout: HTMLElement, content: PresentedStory, current: Gam
 }
 function renderTimeline(layout: HTMLElement, content: PresentedStory, current: GameState) {
   const panel = element('section', undefined, 'panel life-panel');
-  const top = element('div', undefined, 'panel-heading'); top.append(element('h2', '나의 인생'), element('span', `${current.history.length}번의 선택`, 'subtle')); panel.append(top);
+  const top = element('div', undefined, 'panel-heading');
+  if (!compactMode) { top.append(element('h2', '나의 인생'), element('span', `${current.history.length}번의 선택`, 'subtle'), historyButton()); panel.append(top); }
   const all = lifeEvents(content, current);
   const list = element('ol', undefined, 'timeline'); list.setAttribute('aria-label', '실제 인생 연대기');
-  for (const event of all.slice(-3)) {
+  for (const event of all.slice(compactMode ? -1 : -3)) {
     const item = element('li', undefined, 'timeline-item'); item.dataset.eventId = event.id;
     if (event.nodeId) item.dataset.nodeId = event.nodeId;
     item.append(element('span', `${event.age}세`, 'timeline-age'));
@@ -583,7 +619,6 @@ function renderTimeline(layout: HTMLElement, content: PresentedStory, current: G
       item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openEvent(); } });
     }
   }
-  const open = button('전체 기록', () => { if (busy) return; openMenu = 'history'; render(); }, busy); open.dataset.menu = 'true'; open.dataset.menuKind = 'history'; open.prepend(icon('book')); top.append(open);
   panel.append(list); layout.append(panel);
 }
 function renderMenu(layout: HTMLElement) {

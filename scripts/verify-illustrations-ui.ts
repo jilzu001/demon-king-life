@@ -82,9 +82,16 @@ try {
       if (!state.ended) {
         await expect(page.locator('#current-event')).toBeAttached();
         if (mode === 'page') await checkPageText(page, `${width}×${height} ${item.id}`,
-          screenshots && ['child', 'exam', 'confession'].includes(item.id) && [1280, 390, 320].includes(width!) ? `docs/v37-review/page-${item.id}-${width}-dpr${deviceScaleFactor}.png` : undefined);
+          screenshots && ['child', 'exam', 'confession'].includes(item.id) && [1280, 390, 320].includes(width!) ? `docs/compact-controls/page-${item.id}-${width}-dpr${deviceScaleFactor}.png` : undefined);
         await page.locator('#reading-skip').click(); await expect(page.locator('#choice-dialog')).toBeVisible();
         await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
+        await expect(page.locator('#npc-image, .life-panel h2, .life-panel button')).toHaveCount(0);
+        await expect(page.locator('.header-history')).toBeVisible(); await expect(page.locator('.timeline-item')).toHaveCount(1);
+        expect(await page.locator('.timeline-text').evaluate(el => el.clientHeight <= parseFloat(getComputedStyle(el).lineHeight) + 1)).toBe(true);
+        expect(await page.locator('.stats > div').evaluateAll(cells => cells.every(cell => {
+          const a = cell.querySelector('small')!.getBoundingClientRect(); const b = cell.querySelector('strong')!.getBoundingClientRect();
+          return Math.abs(a.y + a.height / 2 - b.y - b.height / 2) < 1 && cell.scrollWidth <= cell.clientWidth;
+        }))).toBe(true);
       } else await expect(page.locator('[data-ending-phase="0"]')).toBeVisible();
       const figures = page.locator('.story-illustration');
       await expect(figures).toHaveCount(item.asset ? 1 : 0);
@@ -109,10 +116,10 @@ try {
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && document.documentElement.scrollHeight <= innerHeight + 1)).toBe(true);
       expect(await page.evaluate(() => localStorage.getItem('existence-sim:v1:run:demon-king:compact'))).toBe(saved);
       if (screenshots && mode === 'scroll' && ['child', 'exam', 'confession'].includes(item.id) && [1280, 390, 320].includes(width!)) {
-        await page.screenshot({ path: `docs/v37-review/${mode}-${item.id}-${width}-dpr${deviceScaleFactor}.png`, animations: 'disabled' });
+        await page.screenshot({ path: `docs/compact-controls/${mode}-${item.id}-${width}-dpr${deviceScaleFactor}.png`, animations: 'disabled' });
       }
       expect(errors).toEqual([]); await page.close();
     }
-    console.log(`${width}×${height}/DPR${deviceScaleFactor}: 스크롤/페이지·150% 글자·동일 미나/고백/텍스트 전용·원본 크기 상한·글자 전체 노출·선택 팝업·저장 원장 보호 통과 (${url})`);
+    console.log(`${width}×${height}/DPR${deviceScaleFactor}: 스크롤/페이지·150% 글자·상단 기록/능력치 한 줄/최근 연대기 한 줄·본문 크기 상한·글자 전체 노출·선택 팝업·저장 원장 보호 통과 (${url})`);
   }
 } finally { await browser.close(); }

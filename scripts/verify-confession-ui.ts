@@ -23,18 +23,19 @@ try {
     await expect(page.locator('[data-choice]')).toHaveCount(4);
     await expect(page.locator('[data-choice="confess"] .choice-title')).toHaveText('미나에게 사랑한다고 고백한다.');
     await page.locator('[data-choice="confess"]').scrollIntoViewIfNeeded();
-    await page.screenshot({ path: `docs/v37-review/public-confession-choice-${name}.png`, animations: 'disabled' });
+    await page.screenshot({ path: `docs/compact-controls/public-confession-choice-${name}.png`, animations: 'disabled' });
     await page.locator('[data-choice="confess"]').click();
     await expect(page.locator('#choice-aftermath')).toBeVisible();
     const state = await raw(); expect(state.currentNodeId).toBe('confession'); expect(state.history.at(-1).choiceId).toBe('confess');
     await page.clock.runFor(400); await page.locator('#reading-skip').click();
     await expect(page.locator('#current-event')).toBeAttached();
     for (let i = 0; i < 3; i++) await page.locator('#current-event .story-paragraph:visible').last().click();
-    await expect(page.locator('#npc-image')).toHaveAttribute('data-actor', 'mina');
-    expect(await page.locator('#npc-image').getAttribute('src')).toBe(await page.locator('.story-illustration img').getAttribute('src'));
-    await page.screenshot({ path: `docs/v37-review/public-confession-speaker-${name}.png`, animations: 'disabled' });
+    await expect(page.locator('#npc-image')).toHaveCount(0);
+    await expect(page.locator('.header-history')).toBeVisible();
+    await expect(page.locator('.story-illustration')).toHaveAttribute('data-asset-id', 'mina');
+    await page.screenshot({ path: `docs/compact-controls/public-confession-body-${name}.png`, animations: 'disabled' });
     expect(errors).toEqual([]);
-    console.log(`${name} ${width}×${height}: 실제 시작→20세시험·네 선택/고백 원문·고백 클릭/원장·후속 대사/동일 미나 초상화 통과 (${url})`);
+    console.log(`${name} ${width}×${height}: 실제 시작→20세시험·네 선택/고백 원문·고백 클릭/원장·후속 대사/본문 미나·상단 전체 기록 통과 (${url})`);
     await page.close();
   }
 } finally { await browser.close(); }
