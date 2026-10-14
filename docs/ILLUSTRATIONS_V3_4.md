@@ -43,6 +43,12 @@ npx tsx scripts/verify-illustrations-ui.ts http://127.0.0.1:4175/ --screenshots
 
 PC1280×900, 모바일 세로320×568/360×800/390×844/430×932, 글자150%, 스크롤/페이지 양쪽에서 출생·시험·감옥·재판·그림 없는 감사 사건·노을/국왕 결말 총70개 조합을 검사한다. 페이지의 모든 글자를 Range 좌표로 확인해 누락/중복 없이 한 번씩 보이는지, 이미지 전체 노출/비율/실제 로딩/선택 팝업/문서 넘침/원장 불변을 검사한다. 실제 휴대기기와 Safari/Firefox 검사는 포함하지 않는다.
 
+## 공개 배포 확인
+
+- 반영 커밋 `61194d948f4d0daff1677efdff3320bf48f75f12`. Actions [38552287323](https://github.com/jilzu001/demon-king-life/actions/runs/38552287323)의 build/deploy가 모두 성공했다. Ubuntu/Chromium에서 단위111개+브라우저98개=209개와 타입/콘텐츠/전수 분기/빌드를 전부 통과했다.
+- [실제 플레이 주소](https://jilzu001.github.io/demon-king-life/)에 위 검수 스크립트를 실행해70개 PC/모바일 세로 조합 모두 종료코드0으로 통과했다. 공개 이미지45개와 기존 JSON5개도 각각 HTTP200 및 로컬 원본 바이트 일치를 확인했다.
+- 로컬 빌드에서도 같은70개 검수가 통과했다. 마지막 수정 뒤 관련 PC/모바일14개 검사도 통과했다. Windows PowerShell5.1의 `Start-Game.ps1 -NoBrowser` 종료코드0으로 기존 바탕화면 서버 연결을 확인했다.
+
 ## 미연결 에셋39개
 
 `protagonist, king, seria, rina, kyle, jero, yuri, rao, dark_nun, palace, market, tavern, forest, harbor, throne_room, mina_romance, royal_banquet, demon_protest, mina_retirement, second_demon, queens_letter, neutral, surprised, happy, embarrassed, angry, sad, thinking, confused, smug, tired, affection, reputation, money, unlock, save, settings, achievements, return_title`.
@@ -52,3 +58,5 @@ PC1280×900, 모바일 세로320×568/360×800/390×844/430×932, 글자150%, �
 ## 이전 하이브리드 엔진 작업
 
 진행 중이던 v2.9 엔진 변경은 `integration/hybrid-v2-9`의 `a258e58`에 보존해 이번 안정된 화면 배포와 분리했다. 2026-10-14 사용자는 로엔 조건 `ending_execution` → `ending_throne` 연결을 승인했다. `src/content/hybrid-aliases.ts`에 원본 엔딩/조건 ID를 변경하지 않는 읽기 별칭을 기록한다. 현재 공개 스토리에는 로엔 사건이 없으므로 이번 일러스트만의 배포가 해금 사건을 새로 활성화하지 않는다.
+
+승인 뒤 해당 작업 브랜치의 `3d518af`에서 실제 사건 레지스트리의 기본 별칭까지 연결했다. 적격 다음 회차/20세에는 로엔을 선택하고 첫 회차/다른 엔딩/12세에는 제외되는 두 테스트와 타입/단위110개가 통과했다. 이 엔진 작업본은 아직 공개 배포하지 않았다.
