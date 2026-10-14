@@ -1,5 +1,7 @@
 # Phase 1 작업 인수인계
 
+현재 상태는 [DEV_PROGRESS.md](DEV_PROGRESS.md), 집필 현황은 [WRITING_PROGRESS.md](WRITING_PROGRESS.md), 작업 시작/종료 규칙은 [AGENTS.md](AGENTS.md)를 먼저 읽는다. 아래 내용은 이전 결정·검증 이력으로 보존하며 과거 판의 상태를 현재 구현으로 간주하지 않는다.
+
 ## 최신 요청 — v3.4 본문 일러스트 / PC와 모바일 세로
 
 - 공개 반영61194d948f4d0daff1677efdff3320bf48f75f12, Actions38552287323 build/deploy 성공. Ubuntu/Chromium 전체111단위+98브라우저=209개와 전수 분기/빌드 통과. 실제 공개 링크에서 PC/세로4크기·150% 글자·양쪽 읽기 방식70개 조합 종료코드0. 공개45WebP+기존5JSON HTTP200/바이트 동일. 로컬70개/최종관련14개/바탕화면용PowerShell5.1 -NoBrowser도 통과.
