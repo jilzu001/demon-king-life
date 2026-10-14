@@ -1,0 +1,55 @@
+{
+  "originalBytes": 14757328,
+  "bytes": 195516,
+  "reductionPercent": 98.68,
+  "assets": [
+    {
+      "name": "player",
+      "file": "public/art/player-v1.webp",
+      "originalBytes": 2199278,
+      "bytes": 4514,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "mina",
+      "file": "public/art/mina-v1.webp",
+      "originalBytes": 2353377,
+      "bytes": 6188,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "erisia",
+      "file": "public/art/erisia-v1.webp",
+      "originalBytes": 2277499,
+      "bytes": 5602,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "king",
+      "file": "public/art/king-v1.webp",
+      "originalBytes": 2334308,
+      "bytes": 5246,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "auditor",
+      "file": "public/art/auditor-v1.webp",
+      "originalBytes": 2319807,
+      "bytes": 5232,
+      "width": 256,
+      "height": 256
+    },
+    {
+      "name": "background",
+      "file": "public/art/background-v1.webp",
+      "originalBytes": 3273059,
+      "bytes": 168734,
+      "width": 1280,
+      "height": 853
+    }
+  ]
+}

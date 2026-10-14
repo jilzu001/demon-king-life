@@ -1,0 +1,48 @@
+{
+  "method": "내장 image_gen",
+  "purpose": "장식용 초상화와 배경, 외형은 정사 또는 새로운 사건으로 취급하지 않음",
+  "assets": [
+    {
+      "name": "player",
+      "prompt": "Use case: stylized-concept. Asset: single square game portrait. A young adult human with a modest unassuming expression, plain dark everyday medieval fantasy clothing, centered face and shoulders, subdued dark background. Semi-realistic painterly portrait with natural anatomy and soft cinematic light, calm serious tone, charcoal and ivory colors. Not a powerful demon: no horns, wings, crown, magic or heroic armor. This is decorative art for a weak human protagonist registered as a demon king in paperwork. No text, border, labels, watermark, extra people.",
+      "file": "public/art/player-v1.webp",
+      "originalSource": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-d1dd5968-0dfb-437b-b3b7-19d5d8a9ba02.png",
+      "originalFile": "public/art/player-v1.png"
+    },
+    {
+      "name": "mina",
+      "prompt": "Use case: stylized-concept. Asset: single square game portrait. Mina, a young adult human woman hero candidate, composed realistic expression, simple practical steel-and-cloth training armor, centered face and shoulders against a subdued dark background. Semi-realistic painterly portrait, natural anatomy and soft cinematic light, calm serious tone, charcoal and ivory colors. No crown, horns, magic, text, border, watermark, extra people. Character appearance is decorative design, not a new story event.",
+      "file": "public/art/mina-v1.webp",
+      "originalSource": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-1f02877d-5fad-4f06-88d5-75fe54a2225a.png",
+      "originalFile": "public/art/mina-v1.png"
+    },
+    {
+      "name": "erisia",
+      "prompt": "Use case: stylized-concept. Asset: single square game portrait. Erisia, an adult human princess and political negotiator, thoughtful confident expression, understated elegant royal formal clothing, centered face and shoulders on a subdued dark background. Semi-realistic painterly portrait, natural anatomy and soft cinematic light, calm serious tone, charcoal and ivory colors. No wedding imagery, no battle, no magic, no text, border, watermark, extra people. Neutral illustrative character design without implying a chosen relationship or story result.",
+      "file": "public/art/erisia-v1.webp",
+      "originalSource": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-eaea6180-97e0-4a49-9870-9a9ff79b333a.png",
+      "originalFile": "public/art/erisia-v1.png"
+    },
+    {
+      "name": "king",
+      "prompt": "Use case: stylized-concept. Asset: single square game portrait. An aging human king, reserved dignified expression, understated small crown and dark royal formal clothing, centered face and shoulders on a subdued dark background. Semi-realistic painterly portrait, natural anatomy, soft cinematic light, calm serious tone, charcoal and ivory colors. No battle, magic, text, border, watermark, extra people. Neutral decorative portrait without implying a story event.",
+      "file": "public/art/king-v1.webp",
+      "originalSource": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-846f8c17-a505-4e9e-8893-751e9424e9d0.png",
+      "originalFile": "public/art/king-v1.png"
+    },
+    {
+      "name": "auditor",
+      "prompt": "Use case: stylized-concept. Asset: single square game portrait. Seren, an adult human public auditor with an attentive thoughtful expression, gender-neutral appearance, modest medieval fantasy civil-service clothing, centered face and shoulders on a subdued dark background. Semi-realistic painterly portrait, natural anatomy and soft cinematic light, calm serious tone, charcoal and ivory colors. No crown, weapons, magic, text, border, watermark, extra people. Neutral decorative design without implying a story event.",
+      "file": "public/art/auditor-v1.webp",
+      "originalSource": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-781c7356-b62f-4b72-9756-0269f9e01cd5.png",
+      "originalFile": "public/art/auditor-v1.png"
+    },
+    {
+      "name": "background",
+      "prompt": "Use case: photorealistic-natural. Asset: background photograph for a fantasy text game's title screen and square scene tile. A quiet empty medieval stone courtyard adjoining a town administrative building, weathered stone, a wooden door, natural late-afternoon soft light, subtle realistic material textures, restrained charcoal, stone and muted gold tones. Landscape composition with coherent central crop usable as a square thumbnail. No people, no monsters, no battle, no banners with lettering, no identifiable real landmark, no text, border, watermark. Calm atmospheric scenery only, no specific story revelation.",
+      "file": "public/art/background-v1.webp",
+      "originalSource": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-2ad05fe6-8751-4b74-9c6a-f0cc0cfe6c2c.png",
+      "originalFile": "public/art/background-v1.png"
+    }
+  ]
+}

@@ -1,0 +1,1210 @@
+{
+  "requested": 100,
+  "neutral": 20,
+  "total": 120,
+  "bytes": 184826,
+  "maxBytes": 2106,
+  "originalBytes": 13479513,
+  "assets": [
+    {
+      "character": "player",
+      "age": "early",
+      "emotion": "joy",
+      "file": "public/art/portraits/player-early-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1462,
+      "sha256": "827c117b01fc1af96fb220650481fbdae35b5d66b052e4eef439b47f8ffa71af"
+    },
+    {
+      "character": "player",
+      "age": "middle",
+      "emotion": "joy",
+      "file": "public/art/portraits/player-middle-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1334,
+      "sha256": "1cc8aedd41e951685889777c608adf8a581d51e37462095641bb35790e9f7ae4"
+    },
+    {
+      "character": "player",
+      "age": "mature",
+      "emotion": "joy",
+      "file": "public/art/portraits/player-mature-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1456,
+      "sha256": "5710712beb6acc7b284b50f9ad59b8b302f2a6ac0d19a47e0b4966d9f3c40b0b"
+    },
+    {
+      "character": "player",
+      "age": "old",
+      "emotion": "joy",
+      "file": "public/art/portraits/player-old-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1568,
+      "sha256": "738f61db565ba3c470c846cde8f38826a411dab9f09521dc4a0d0f0b4abbdd42"
+    },
+    {
+      "character": "player",
+      "age": "early",
+      "emotion": "sad",
+      "file": "public/art/portraits/player-early-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1412,
+      "sha256": "65257d1b36c9dc7aa93be0cef32c1979b0087873d84fe81e63bb36450b1e605c"
+    },
+    {
+      "character": "player",
+      "age": "middle",
+      "emotion": "sad",
+      "file": "public/art/portraits/player-middle-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1322,
+      "sha256": "f5c420f6093a0f214d6a77f077faeac2a78bfd01bc80cffa649b012334bca854"
+    },
+    {
+      "character": "player",
+      "age": "mature",
+      "emotion": "sad",
+      "file": "public/art/portraits/player-mature-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1372,
+      "sha256": "38424f4c44a01580b237978d799f5aba2a6d395b96dceee1f7da71ff43d35eea"
+    },
+    {
+      "character": "player",
+      "age": "old",
+      "emotion": "sad",
+      "file": "public/art/portraits/player-old-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1410,
+      "sha256": "aa5eeca0d86cd732b0639570989f9ee7cd1ca5c5f52d41b068f3b62725cec9bd"
+    },
+    {
+      "character": "player",
+      "age": "early",
+      "emotion": "angry",
+      "file": "public/art/portraits/player-early-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1356,
+      "sha256": "dfb604b7ab7edb780aa37d96e19381ba2b54e425db6919937b8f9ef98b9bc515"
+    },
+    {
+      "character": "player",
+      "age": "middle",
+      "emotion": "angry",
+      "file": "public/art/portraits/player-middle-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1282,
+      "sha256": "4609c462f67f2fa895beecfa4e4971c4fab14f7451696a05a4da3246e1a3e3c0"
+    },
+    {
+      "character": "player",
+      "age": "mature",
+      "emotion": "angry",
+      "file": "public/art/portraits/player-mature-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1360,
+      "sha256": "a971a1119d0b649aae26dd4d089c91f991a1fb6097d80eeed978dadcd90cc49d"
+    },
+    {
+      "character": "player",
+      "age": "old",
+      "emotion": "angry",
+      "file": "public/art/portraits/player-old-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1400,
+      "sha256": "85c25169dbde484cca323b9e6c3358610f6af70cc6dbec220ba9844c0fc2d894"
+    },
+    {
+      "character": "player",
+      "age": "early",
+      "emotion": "tired",
+      "file": "public/art/portraits/player-early-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1382,
+      "sha256": "a5ebca742e9424bb6e5e25e22fc3b0b13c2db39a9b426fa9191247ebe983fd19"
+    },
+    {
+      "character": "player",
+      "age": "middle",
+      "emotion": "tired",
+      "file": "public/art/portraits/player-middle-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1368,
+      "sha256": "062bdcdd9da0eaa54fea8a83a213983d7490f4537090b8e104a9c7b04007a114"
+    },
+    {
+      "character": "player",
+      "age": "mature",
+      "emotion": "tired",
+      "file": "public/art/portraits/player-mature-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1340,
+      "sha256": "afc894c80ac6694b4bd8bc08962529e93c96b0302bc2796ff7e484133d5c0e8a"
+    },
+    {
+      "character": "player",
+      "age": "old",
+      "emotion": "tired",
+      "file": "public/art/portraits/player-old-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1430,
+      "sha256": "b7376987c6c5394e2b9c14a6855de633a5d37fbb432bde6cddda28565fe8f2aa"
+    },
+    {
+      "character": "player",
+      "age": "early",
+      "emotion": "confused",
+      "file": "public/art/portraits/player-early-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1402,
+      "sha256": "d508028d8805335df3fd3ac877dc7691b9fac75cf6edaa8ffd23347ccf199243"
+    },
+    {
+      "character": "player",
+      "age": "middle",
+      "emotion": "confused",
+      "file": "public/art/portraits/player-middle-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1362,
+      "sha256": "35131a9ca7900db9011488ebbd672ad0e5c9967bfcf31a019b109dd3c87906c3"
+    },
+    {
+      "character": "player",
+      "age": "mature",
+      "emotion": "confused",
+      "file": "public/art/portraits/player-mature-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1372,
+      "sha256": "d1d9b23f0a023021304f3139cc950f0c01b79d00ac3c23ddc034a3fd5489dfd9"
+    },
+    {
+      "character": "player",
+      "age": "old",
+      "emotion": "confused",
+      "file": "public/art/portraits/player-old-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1440,
+      "sha256": "bd1765b21a263737840248f33f8a37cef79ccc0fc50c8ec87cfb37a4ccbaebf9"
+    },
+    {
+      "character": "player",
+      "age": "early",
+      "emotion": "neutral",
+      "file": "public/art/portraits/player-early-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1378,
+      "sha256": "bd750e223a07252451d33fca05ee7358342ac48d02757b32b604cb48f1a5e4c4"
+    },
+    {
+      "character": "player",
+      "age": "middle",
+      "emotion": "neutral",
+      "file": "public/art/portraits/player-middle-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1366,
+      "sha256": "dced7975e09b913b8586a3624bf0d4a9dae53ced64dbe7936c343fe182628d1c"
+    },
+    {
+      "character": "player",
+      "age": "mature",
+      "emotion": "neutral",
+      "file": "public/art/portraits/player-mature-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1380,
+      "sha256": "168b9adecb59cdc3979e5e9771e9be01f64fd141cc6d84e7521210b45a8b5232"
+    },
+    {
+      "character": "player",
+      "age": "old",
+      "emotion": "neutral",
+      "file": "public/art/portraits/player-old-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1440,
+      "sha256": "234f3ce348702aa418ccb47302e47c9a5702bcaec406ffbd7d12f12f85d82f1c"
+    },
+    {
+      "character": "mina",
+      "age": "early",
+      "emotion": "joy",
+      "file": "public/art/portraits/mina-early-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1422,
+      "sha256": "04ec83d366f714298a566a23e9328e326d030dee6336217f3246c5f68740f833"
+    },
+    {
+      "character": "mina",
+      "age": "middle",
+      "emotion": "joy",
+      "file": "public/art/portraits/mina-middle-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1406,
+      "sha256": "fb5150d6cfaf6fe929c51c3b3394fedafd6797e31ec5caf2ee1d65a61b238d24"
+    },
+    {
+      "character": "mina",
+      "age": "mature",
+      "emotion": "joy",
+      "file": "public/art/portraits/mina-mature-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1376,
+      "sha256": "29b1986f4c34c9d7159e538ac753a3ccb26c48f36f46c43ee4f2b7e3bf6202ce"
+    },
+    {
+      "character": "mina",
+      "age": "old",
+      "emotion": "joy",
+      "file": "public/art/portraits/mina-old-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1432,
+      "sha256": "d9426c1358116d2e5656f20e1027569290d70a55993e7bc2264b30b96fe2d01c"
+    },
+    {
+      "character": "mina",
+      "age": "early",
+      "emotion": "sad",
+      "file": "public/art/portraits/mina-early-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1364,
+      "sha256": "625d6e77940401a5d42beb098f07af2630e9bec0741299a400dafccf268c3526"
+    },
+    {
+      "character": "mina",
+      "age": "middle",
+      "emotion": "sad",
+      "file": "public/art/portraits/mina-middle-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1360,
+      "sha256": "75381acfeb1f27fa3d42201a98cee0b1ad3d6721f77c1d38987e93436dfd0db8"
+    },
+    {
+      "character": "mina",
+      "age": "mature",
+      "emotion": "sad",
+      "file": "public/art/portraits/mina-mature-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1332,
+      "sha256": "1d267cca293a8fb636ad14b8ddd1d5795ae35b8f13713db3c4fec01213b77e9b"
+    },
+    {
+      "character": "mina",
+      "age": "old",
+      "emotion": "sad",
+      "file": "public/art/portraits/mina-old-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1380,
+      "sha256": "b2c22b49413b5655cd109e8351e3439c4ea3c6b9a7e92ca9cab5c5727879e5c5"
+    },
+    {
+      "character": "mina",
+      "age": "early",
+      "emotion": "angry",
+      "file": "public/art/portraits/mina-early-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1382,
+      "sha256": "e0ef17ebd6720c003bd8e385907c5f5455a3e3eebe6e504d91f6cbb091056c66"
+    },
+    {
+      "character": "mina",
+      "age": "middle",
+      "emotion": "angry",
+      "file": "public/art/portraits/mina-middle-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1352,
+      "sha256": "298425c32ce025895266a6abe33b66bc4550d0a0aa4295c90450c3735767f051"
+    },
+    {
+      "character": "mina",
+      "age": "mature",
+      "emotion": "angry",
+      "file": "public/art/portraits/mina-mature-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1346,
+      "sha256": "0a1128a4a42ab094fea61ab5526d1dca206fcb465677ed8c18b4040ab896e092"
+    },
+    {
+      "character": "mina",
+      "age": "old",
+      "emotion": "angry",
+      "file": "public/art/portraits/mina-old-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1428,
+      "sha256": "6f5d1d2bfe14887c25e47ae7d7c422c6e001048d6232dc94c58659c492f34f97"
+    },
+    {
+      "character": "mina",
+      "age": "early",
+      "emotion": "tired",
+      "file": "public/art/portraits/mina-early-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1374,
+      "sha256": "561d88d4bce4fd3f2ae1af782c666b3ff5a5e23b46d8e1c2956b247e68adbecf"
+    },
+    {
+      "character": "mina",
+      "age": "middle",
+      "emotion": "tired",
+      "file": "public/art/portraits/mina-middle-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1328,
+      "sha256": "9506d0c5b49086a77d0a4d6ddb6560735dbcb85274806c3d59861d873adadbba"
+    },
+    {
+      "character": "mina",
+      "age": "mature",
+      "emotion": "tired",
+      "file": "public/art/portraits/mina-mature-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1334,
+      "sha256": "61fd7d692640f0132f7db2e5c7a1801d4178a28946fddeb839bdfc59e204902b"
+    },
+    {
+      "character": "mina",
+      "age": "old",
+      "emotion": "tired",
+      "file": "public/art/portraits/mina-old-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1344,
+      "sha256": "4727d7d0e04f0bab1bb5e37ce7883a89887158317523eb227e49faa679c81d1b"
+    },
+    {
+      "character": "mina",
+      "age": "early",
+      "emotion": "confused",
+      "file": "public/art/portraits/mina-early-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1386,
+      "sha256": "0eb7bd49a75a5b5ef8a5967bc5eea8bc8cd0a56f6bc997881eda07092370a74b"
+    },
+    {
+      "character": "mina",
+      "age": "middle",
+      "emotion": "confused",
+      "file": "public/art/portraits/mina-middle-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1374,
+      "sha256": "7e9f928e1c5f155721273bbce7cb91072d63557f75e1150dc4ce8af48268c68a"
+    },
+    {
+      "character": "mina",
+      "age": "mature",
+      "emotion": "confused",
+      "file": "public/art/portraits/mina-mature-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1354,
+      "sha256": "c9f41d5805d6b68f969da1c081ab558f245245150fedf74ad739d8726b93667b"
+    },
+    {
+      "character": "mina",
+      "age": "old",
+      "emotion": "confused",
+      "file": "public/art/portraits/mina-old-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1414,
+      "sha256": "15c03943ad9e0f94183b7bacb879b2dcc5830a575fc7d32d66b5e84ca9bfb511"
+    },
+    {
+      "character": "mina",
+      "age": "early",
+      "emotion": "neutral",
+      "file": "public/art/portraits/mina-early-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1352,
+      "sha256": "eafef0029c3412469f79a52fb09243ba5bfdcdc16cf80346c01f3919d01b0e2d"
+    },
+    {
+      "character": "mina",
+      "age": "middle",
+      "emotion": "neutral",
+      "file": "public/art/portraits/mina-middle-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1302,
+      "sha256": "400b5e9613547e7ef7fcfa23753512466e2e59e3994f81a2aa884c10abbc86d1"
+    },
+    {
+      "character": "mina",
+      "age": "mature",
+      "emotion": "neutral",
+      "file": "public/art/portraits/mina-mature-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1308,
+      "sha256": "4a42b4413c31465f4222eaa93968c50fb93df76912696f1c42be4a500cda9622"
+    },
+    {
+      "character": "mina",
+      "age": "old",
+      "emotion": "neutral",
+      "file": "public/art/portraits/mina-old-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1354,
+      "sha256": "a7091ad0ff610a222baa5504953fc5cedd77b198e3b99d7fdc3896508abc7e20"
+    },
+    {
+      "character": "erisia",
+      "age": "early",
+      "emotion": "joy",
+      "file": "public/art/portraits/erisia-early-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 2106,
+      "sha256": "4b5a59a74025c5227f8a43b2379405ae44de924871008824d6cdcb2cb54e24f7"
+    },
+    {
+      "character": "erisia",
+      "age": "middle",
+      "emotion": "joy",
+      "file": "public/art/portraits/erisia-middle-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 2060,
+      "sha256": "97bd7522bed052b546ed571f85cd117c1edd89d5a3a0c73165cf8f46046da753"
+    },
+    {
+      "character": "erisia",
+      "age": "mature",
+      "emotion": "joy",
+      "file": "public/art/portraits/erisia-mature-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1990,
+      "sha256": "cfe449d114543c2713ed94362eab2ba52921486d060d893bc8e3d5822deb3480"
+    },
+    {
+      "character": "erisia",
+      "age": "old",
+      "emotion": "joy",
+      "file": "public/art/portraits/erisia-old-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1962,
+      "sha256": "af6357b250e9842f51a47aa7f8f714fae71592c88ec286d1c4b146a72532f69a"
+    },
+    {
+      "character": "erisia",
+      "age": "early",
+      "emotion": "sad",
+      "file": "public/art/portraits/erisia-early-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 2010,
+      "sha256": "19f84f1806ccc66a5760b92bbb474d18331cca75c408e26ff42cf5658a518cc0"
+    },
+    {
+      "character": "erisia",
+      "age": "middle",
+      "emotion": "sad",
+      "file": "public/art/portraits/erisia-middle-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 2014,
+      "sha256": "9468bf5e5e57c16756aa8a3073e62f0d024ff4ac8b70b62358f6c8740523691c"
+    },
+    {
+      "character": "erisia",
+      "age": "mature",
+      "emotion": "sad",
+      "file": "public/art/portraits/erisia-mature-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1914,
+      "sha256": "fdbd33b4825be75de94c7a962364ec02992b22f861a774b6e097b2175aa16ebe"
+    },
+    {
+      "character": "erisia",
+      "age": "old",
+      "emotion": "sad",
+      "file": "public/art/portraits/erisia-old-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1898,
+      "sha256": "4dcdb827d0233a89697f2efcc26d2bcc506f5d62680ff6a92a9e11c1bb077c61"
+    },
+    {
+      "character": "erisia",
+      "age": "early",
+      "emotion": "angry",
+      "file": "public/art/portraits/erisia-early-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 2006,
+      "sha256": "a21c44cfde4e151411b6bb303c9ca17b1f2dfbec1bca93a3faf313c775ab7072"
+    },
+    {
+      "character": "erisia",
+      "age": "middle",
+      "emotion": "angry",
+      "file": "public/art/portraits/erisia-middle-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1994,
+      "sha256": "a8c297e05024a18c0f5326533ff2ba363aef2afe44f5676d9494d5173bff8188"
+    },
+    {
+      "character": "erisia",
+      "age": "mature",
+      "emotion": "angry",
+      "file": "public/art/portraits/erisia-mature-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1916,
+      "sha256": "92198d8f349853c09020bd8e432b2c96763ff65cfd3c6f3558ce231545e4cde3"
+    },
+    {
+      "character": "erisia",
+      "age": "old",
+      "emotion": "angry",
+      "file": "public/art/portraits/erisia-old-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1906,
+      "sha256": "c5ce73f7ff399f6b903989149a75a4b7ed09ad2e7e1872d33361efbf496b1aa3"
+    },
+    {
+      "character": "erisia",
+      "age": "early",
+      "emotion": "tired",
+      "file": "public/art/portraits/erisia-early-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 2026,
+      "sha256": "f73302353b4f5d500663ff182b7d94f9a834306b551de0378d2a81199be9af84"
+    },
+    {
+      "character": "erisia",
+      "age": "middle",
+      "emotion": "tired",
+      "file": "public/art/portraits/erisia-middle-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1986,
+      "sha256": "22b2071cb29945dd8615cb803d22fac6fa6e22ed92a48e053f3805ec4562e6c5"
+    },
+    {
+      "character": "erisia",
+      "age": "mature",
+      "emotion": "tired",
+      "file": "public/art/portraits/erisia-mature-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1946,
+      "sha256": "146b9878864b4fd49efa5842a996104e6053bf6f8b0edd702f2bf3d8d2b9a984"
+    },
+    {
+      "character": "erisia",
+      "age": "old",
+      "emotion": "tired",
+      "file": "public/art/portraits/erisia-old-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1956,
+      "sha256": "81932466c7485b2e91ca78f5fcf28a7fba79ae0691f5b53a4d0d4edb008b3af0"
+    },
+    {
+      "character": "erisia",
+      "age": "early",
+      "emotion": "confused",
+      "file": "public/art/portraits/erisia-early-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 2012,
+      "sha256": "e46f11760875cf1fb857e36b4a4c22104527461a0fb533c2ae29cd343a778d17"
+    },
+    {
+      "character": "erisia",
+      "age": "middle",
+      "emotion": "confused",
+      "file": "public/art/portraits/erisia-middle-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1994,
+      "sha256": "0e87b2042f160640dfda23691e41df7c65c58e40e808912ad474318898b47bf3"
+    },
+    {
+      "character": "erisia",
+      "age": "mature",
+      "emotion": "confused",
+      "file": "public/art/portraits/erisia-mature-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1978,
+      "sha256": "fa28ffe2ec6737926fb4af81d5e5eae9b5f465192c85155ad4077c74af1a1c9b"
+    },
+    {
+      "character": "erisia",
+      "age": "old",
+      "emotion": "confused",
+      "file": "public/art/portraits/erisia-old-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1884,
+      "sha256": "3d362a221727bc6a423c2f9b4448cba8cb8866cc9dac6227e4168f31ffd8e2ca"
+    },
+    {
+      "character": "erisia",
+      "age": "early",
+      "emotion": "neutral",
+      "file": "public/art/portraits/erisia-early-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1954,
+      "sha256": "b9651e944685287ea476c332af518d2fb0a45ec78fa2ada8877aa87e75aa33d4"
+    },
+    {
+      "character": "erisia",
+      "age": "middle",
+      "emotion": "neutral",
+      "file": "public/art/portraits/erisia-middle-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1978,
+      "sha256": "00d5691974d45bad9199e8a92c499ba22e91d8b6912a7978c413ccfa9611be80"
+    },
+    {
+      "character": "erisia",
+      "age": "mature",
+      "emotion": "neutral",
+      "file": "public/art/portraits/erisia-mature-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1926,
+      "sha256": "f8b43379a52a2e992100d235351dd7acee14cf8553a101be275958aa43cacfa4"
+    },
+    {
+      "character": "erisia",
+      "age": "old",
+      "emotion": "neutral",
+      "file": "public/art/portraits/erisia-old-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1848,
+      "sha256": "de02003792a3a81b86d3b2cf1c45df08ae79d938fb585ce7181da0c13dc4ed4e"
+    },
+    {
+      "character": "king",
+      "age": "early",
+      "emotion": "joy",
+      "file": "public/art/portraits/king-early-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1696,
+      "sha256": "6d270fb1fead720b66b65b6acb342e1824146a22366a387d4aeab4132a638afc"
+    },
+    {
+      "character": "king",
+      "age": "middle",
+      "emotion": "joy",
+      "file": "public/art/portraits/king-middle-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1694,
+      "sha256": "c791b91ca9fa06b9c7f2072132936a58c9a89f9ebd30922b57ee9e0d82a946e9"
+    },
+    {
+      "character": "king",
+      "age": "mature",
+      "emotion": "joy",
+      "file": "public/art/portraits/king-mature-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1678,
+      "sha256": "50235d086cd9318e124f74a43db9d72ca3e98071d517f211a8e49b755056090e"
+    },
+    {
+      "character": "king",
+      "age": "old",
+      "emotion": "joy",
+      "file": "public/art/portraits/king-old-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1744,
+      "sha256": "8f2c1bb15ae1bda1aa83c523b91b63cfc31982d7ec507de33867caaabea47dfe"
+    },
+    {
+      "character": "king",
+      "age": "early",
+      "emotion": "sad",
+      "file": "public/art/portraits/king-early-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1806,
+      "sha256": "48f548e520fbb0b017832f1b334e8b15c7aa706206068f4bb6d2129667aec8f6"
+    },
+    {
+      "character": "king",
+      "age": "middle",
+      "emotion": "sad",
+      "file": "public/art/portraits/king-middle-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1792,
+      "sha256": "1257a7ad02b4be294bd77524793602d10b319fdeb32406c8d7084065819a40cf"
+    },
+    {
+      "character": "king",
+      "age": "mature",
+      "emotion": "sad",
+      "file": "public/art/portraits/king-mature-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1680,
+      "sha256": "5f53b73f2cf8265f52fd9ba4411b55042015ffe5e06deebdafced6f24d558d4f"
+    },
+    {
+      "character": "king",
+      "age": "old",
+      "emotion": "sad",
+      "file": "public/art/portraits/king-old-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1712,
+      "sha256": "46c145607f5bdf0662e92771b4c814f1e23eb21ab12d1845a7c9bc26d8a0c16b"
+    },
+    {
+      "character": "king",
+      "age": "early",
+      "emotion": "angry",
+      "file": "public/art/portraits/king-early-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1748,
+      "sha256": "53d1259a292529ebcdc3516de42f1f48bfab60fd699cdac8986a58c8dcad7987"
+    },
+    {
+      "character": "king",
+      "age": "middle",
+      "emotion": "angry",
+      "file": "public/art/portraits/king-middle-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1756,
+      "sha256": "211666c38f52b4a59187179caaf682d0f74731d68075232a25b1bca7a68d266f"
+    },
+    {
+      "character": "king",
+      "age": "mature",
+      "emotion": "angry",
+      "file": "public/art/portraits/king-mature-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1688,
+      "sha256": "c65b4aac068f2a8573f8935ca23a0817256f0730c4e5c9fce623d1c7301195f2"
+    },
+    {
+      "character": "king",
+      "age": "old",
+      "emotion": "angry",
+      "file": "public/art/portraits/king-old-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1726,
+      "sha256": "33b973cc73c5fbaf0a850b119387fa1d3539c06488dcfebf3dfda8f38fc604cb"
+    },
+    {
+      "character": "king",
+      "age": "early",
+      "emotion": "tired",
+      "file": "public/art/portraits/king-early-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1714,
+      "sha256": "aa0025e3a47db8caebe6634b1c81e8f4563bfbcd6b1b422371a3b83847ec6fd0"
+    },
+    {
+      "character": "king",
+      "age": "middle",
+      "emotion": "tired",
+      "file": "public/art/portraits/king-middle-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1730,
+      "sha256": "f9dd0f1fc968f1770b20d08feb8f1b5cb9b32016fc49b78fca1b24b8404120fa"
+    },
+    {
+      "character": "king",
+      "age": "mature",
+      "emotion": "tired",
+      "file": "public/art/portraits/king-mature-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1670,
+      "sha256": "e609f415c5c3f1bf90a30191171af0c9b6aaaad595ba88b99dfc23976fa7a3c1"
+    },
+    {
+      "character": "king",
+      "age": "old",
+      "emotion": "tired",
+      "file": "public/art/portraits/king-old-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1700,
+      "sha256": "c7e649c008296913e74d6c8b816c7a5b5fa8da623a7573ec4552f43e8f162327"
+    },
+    {
+      "character": "king",
+      "age": "early",
+      "emotion": "confused",
+      "file": "public/art/portraits/king-early-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1748,
+      "sha256": "625f0e5b727d7fd64c6dc9c1fedb98fae52f1c9e1163041cc36c2b6f12078f20"
+    },
+    {
+      "character": "king",
+      "age": "middle",
+      "emotion": "confused",
+      "file": "public/art/portraits/king-middle-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1756,
+      "sha256": "510b35bb3ed1763a93c484e4ce1006aba62969dc24e24952138fb77374308ded"
+    },
+    {
+      "character": "king",
+      "age": "mature",
+      "emotion": "confused",
+      "file": "public/art/portraits/king-mature-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1694,
+      "sha256": "a54ac9cda82e3f856e7c554e89282d27a13ff091fbfed5003a3ded8ae5069006"
+    },
+    {
+      "character": "king",
+      "age": "old",
+      "emotion": "confused",
+      "file": "public/art/portraits/king-old-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1714,
+      "sha256": "a237a7d354e17ad712d66dca0572ce1ea2c634e5c9c8224ea646b3fcc7635e10"
+    },
+    {
+      "character": "king",
+      "age": "early",
+      "emotion": "neutral",
+      "file": "public/art/portraits/king-early-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1736,
+      "sha256": "5f4f8db6a42347a13efe737517ebb22acb7c12c14457a3b95daedcc204ab572e"
+    },
+    {
+      "character": "king",
+      "age": "middle",
+      "emotion": "neutral",
+      "file": "public/art/portraits/king-middle-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1710,
+      "sha256": "768cbec61d207cb15cb8e0701e8a3134431c4e05952a1f1b769e2656b25526d3"
+    },
+    {
+      "character": "king",
+      "age": "mature",
+      "emotion": "neutral",
+      "file": "public/art/portraits/king-mature-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1702,
+      "sha256": "a028a29976af5179c25cc037f2e5faf99e668c53e40e0c6bb9707c3a0e3e57a6"
+    },
+    {
+      "character": "king",
+      "age": "old",
+      "emotion": "neutral",
+      "file": "public/art/portraits/king-old-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1780,
+      "sha256": "997800b8bba6d45c88070201e5b51130d90b6f868e0cb1664fdffe8e5e53cde7"
+    },
+    {
+      "character": "auditor",
+      "age": "early",
+      "emotion": "joy",
+      "file": "public/art/portraits/auditor-early-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1250,
+      "sha256": "c548de37d09e67704fa0fceb931ad295cce286468b682a307dff099dbbd28427"
+    },
+    {
+      "character": "auditor",
+      "age": "middle",
+      "emotion": "joy",
+      "file": "public/art/portraits/auditor-middle-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1224,
+      "sha256": "cb55c26ab1ae60a88bfdc88389ee8256c696c8d9100e08d185a149c5b556447d"
+    },
+    {
+      "character": "auditor",
+      "age": "mature",
+      "emotion": "joy",
+      "file": "public/art/portraits/auditor-mature-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1284,
+      "sha256": "b29118458ddcf48c54e5edc920999ddfbe2743d01707393babe36469752aba0b"
+    },
+    {
+      "character": "auditor",
+      "age": "old",
+      "emotion": "joy",
+      "file": "public/art/portraits/auditor-old-joy-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1288,
+      "sha256": "804239ec6ce0e9e4ded932e6fdea4f5aef6d6792535a4abdc2ced81af35a9790"
+    },
+    {
+      "character": "auditor",
+      "age": "early",
+      "emotion": "sad",
+      "file": "public/art/portraits/auditor-early-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1200,
+      "sha256": "eb67d4adcc1d11ea5f74f18089ca3f88d951ee79f06a1641ea0ba59285897ccb"
+    },
+    {
+      "character": "auditor",
+      "age": "middle",
+      "emotion": "sad",
+      "file": "public/art/portraits/auditor-middle-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1220,
+      "sha256": "dc27592b423903b1a79f657f0ef9f1f34a697b6c5635b1a937efd379312a9d2e"
+    },
+    {
+      "character": "auditor",
+      "age": "mature",
+      "emotion": "sad",
+      "file": "public/art/portraits/auditor-mature-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1254,
+      "sha256": "a71ffd299edfb9e8d8711387156044fae30c6c4e31f16ca268159ea3ddaf6c59"
+    },
+    {
+      "character": "auditor",
+      "age": "old",
+      "emotion": "sad",
+      "file": "public/art/portraits/auditor-old-sad-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1294,
+      "sha256": "633db4db8a40dd8a03a3314c91607d444bccac3cba324bcaadd811c78762582c"
+    },
+    {
+      "character": "auditor",
+      "age": "early",
+      "emotion": "angry",
+      "file": "public/art/portraits/auditor-early-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1200,
+      "sha256": "071a49ebd04c3a1b795c92aa6c91f649a77214ddf8d8da5138052602ebc6f858"
+    },
+    {
+      "character": "auditor",
+      "age": "middle",
+      "emotion": "angry",
+      "file": "public/art/portraits/auditor-middle-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1206,
+      "sha256": "7d5c248b95ed5df46fb52f92bfe08a79e8a90908ccb83b762fdfe9c35e8c8957"
+    },
+    {
+      "character": "auditor",
+      "age": "mature",
+      "emotion": "angry",
+      "file": "public/art/portraits/auditor-mature-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1228,
+      "sha256": "2f3b60d476d1f39b98258802227bbafa0cc3d804ecae1b9ed9575f5eb9cba923"
+    },
+    {
+      "character": "auditor",
+      "age": "old",
+      "emotion": "angry",
+      "file": "public/art/portraits/auditor-old-angry-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1262,
+      "sha256": "7c12b8ee0cb6f38496b5fb2af496847877e26c22bdd85c23ff52da96553f596d"
+    },
+    {
+      "character": "auditor",
+      "age": "early",
+      "emotion": "tired",
+      "file": "public/art/portraits/auditor-early-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1212,
+      "sha256": "a013d6821678c9a9d59b1a1f12a5d4781d35c09aff3de4afd43bd523d6aebfb1"
+    },
+    {
+      "character": "auditor",
+      "age": "middle",
+      "emotion": "tired",
+      "file": "public/art/portraits/auditor-middle-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1212,
+      "sha256": "80444801fecbf64e97fc6eb636bc3f14e2a54063f0cc4cf82e1cea69f803442e"
+    },
+    {
+      "character": "auditor",
+      "age": "mature",
+      "emotion": "tired",
+      "file": "public/art/portraits/auditor-mature-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1228,
+      "sha256": "c5a1c3d375ef9f6e9774bff0d3742f528fcc29e428c4708dbb6d61f13508fedb"
+    },
+    {
+      "character": "auditor",
+      "age": "old",
+      "emotion": "tired",
+      "file": "public/art/portraits/auditor-old-tired-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1296,
+      "sha256": "b791f250b920fc2256e507fa49425294eacab3f4fab697362fed36ff153110a0"
+    },
+    {
+      "character": "auditor",
+      "age": "early",
+      "emotion": "confused",
+      "file": "public/art/portraits/auditor-early-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1222,
+      "sha256": "ea75f69f8e876f071d5d8dbf928d71836b2cadeecba60342ae29fe9e0ea5816e"
+    },
+    {
+      "character": "auditor",
+      "age": "middle",
+      "emotion": "confused",
+      "file": "public/art/portraits/auditor-middle-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1256,
+      "sha256": "c559a6ac771ca04a48e4fdc0b37270cd7a27632827de92fa8b8c270bf0267934"
+    },
+    {
+      "character": "auditor",
+      "age": "mature",
+      "emotion": "confused",
+      "file": "public/art/portraits/auditor-mature-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1298,
+      "sha256": "1a185abe220b5e60e27a439d9d339807a2761bad6aa00a9efd92a1b94165b89a"
+    },
+    {
+      "character": "auditor",
+      "age": "old",
+      "emotion": "confused",
+      "file": "public/art/portraits/auditor-old-confused-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1334,
+      "sha256": "ece4cbbf1ce706d47d7e11d82d175d48d19e9ef5660806f19d47104dbada570e"
+    },
+    {
+      "character": "auditor",
+      "age": "early",
+      "emotion": "neutral",
+      "file": "public/art/portraits/auditor-early-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1210,
+      "sha256": "b4447f3a7b3db8a4edb189bbc1a42ab23b1cff83ffdfe3a4ab8b50bea3b889af"
+    },
+    {
+      "character": "auditor",
+      "age": "middle",
+      "emotion": "neutral",
+      "file": "public/art/portraits/auditor-middle-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1214,
+      "sha256": "331634c7c1ea14e879cb58df149d3fefabada709ba8c945e15d489beba756272"
+    },
+    {
+      "character": "auditor",
+      "age": "mature",
+      "emotion": "neutral",
+      "file": "public/art/portraits/auditor-mature-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1234,
+      "sha256": "f0533c843b860116cc936f2201a2bfc002a725251664747e23a6da7751b35a60"
+    },
+    {
+      "character": "auditor",
+      "age": "old",
+      "emotion": "neutral",
+      "file": "public/art/portraits/auditor-old-neutral-v2.webp",
+      "width": 128,
+      "height": 128,
+      "bytes": 1364,
+      "sha256": "b068ff0701127830c3a048521a88c6be15d4d7d2723a511cd3b6d726ef07ec4e"
+    }
+  ]
+}

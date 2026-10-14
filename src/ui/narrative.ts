@@ -7,8 +7,10 @@ export function renderNarrative(body: string, presentation?: ScenePresentation):
   narrative.append(element('p', body, 'body'));
   if (presentation?.dialogues?.length) {
     const dialogues = element('div', undefined, 'dialogues'); dialogues.setAttribute('aria-label', '현재 장면의 대화');
-    for (const dialogue of presentation.dialogues) {
+    for (const [index, dialogue] of presentation.dialogues.entries()) {
       const line = element('div', undefined, 'dialogue-line');
+      line.dataset.speaker = dialogue.speaker;
+      line.dataset.dialogueIndex = String(index);
       line.append(element('p', dialogue.speaker, 'speaker'), element('p', dialogue.text, 'dialogue-text')); dialogues.append(line);
     }
     narrative.append(dialogues);

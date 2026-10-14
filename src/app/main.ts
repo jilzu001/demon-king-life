@@ -10,6 +10,7 @@ import { lifeEvents, confirmedChoice, resultLabels } from '../ui/history';
 import { renderNarrative } from '../ui/narrative';
 import { element, button, icon } from '../ui/dom';
 import { ReadingSequence, type ReadingStep } from '../ui/reading';
+import { portraitUrl, portraitCharacters, dialogueEmotion, type PortraitCharacter, type PortraitEmotion } from '../ui/portraits';
 import '../styles/main.css';
 
 const root = document.querySelector<HTMLDivElement>('#app')!;
@@ -25,9 +26,22 @@ let pendingStory: PresentedStory | null = null;
 let busy = false;
 let errorText = '';
 let compatibilityNotice = '';
-let openMenu: 'history' | 'settings' | null = null;
+let openMenu: 'history' | 'settings' | 'people' | null = null;
 let historyExpanded = new Set<string>();
 const reading = new ReadingSequence();
+let titleVisible = true;
+try { titleVisible = sessionStorage.getItem('demon-king:title-seen') !== '1'; } catch { /* 저장 불가 환경에서도 시작할 수 있다. */ }
+let viewKey = '';
+let dismissedChoices = '';
+let olderCount = 0;
+let disposeLayout = () => {};
+function sceneKey() { return state && story ? `${story.manifest.version}:${state.runId}:${state.history.length}:${state.currentNodeId ?? state.endingId}` : ''; }
+function enterGame() {
+  titleVisible = false;
+  try { sessionStorage.setItem('demon-king:title-seen', '1'); } catch { /* 게임 저장과 별개인 화면 표시 설정이다. */ }
+  if (!state) newRun(); else render();
+}
+function art(name: string) { return `${import.meta.env.BASE_URL}art/${name}-v1.webp`; }
 function notify(error: unknown) {
   errorText = error instanceof Error ? error.message : String(error);
   openMenu = null;
@@ -78,21 +92,14 @@ async function makeChoice(nodeId: string, choiceId: string) {
     const file = root.querySelector<HTMLInputElement>('#save-file'); if (file) file.disabled = Boolean(pending);
   }
 }
-function focusCurrentEvent() {
-  const start = document.querySelector<HTMLElement>('#current-event');
-  if (!start) return;
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  start.focus({ preventScroll: true });
-  if (start.getBoundingClientRect().top < 0 || start.getBoundingClientRect().top > innerHeight * .35) {
-    start.scrollIntoView({ block: 'start', behavior: reduced ? 'instant' : 'smooth' });
-  }
-}
 function newRun() {
   if (busy || !activeStory) return;
   busy = true;
   try {
     const seed = crypto.getRandomValues(new Uint32Array(1))[0]!;
     commit(createRun(activeStory, seed, crypto.randomUUID()), null, activeStory);
+    titleVisible = false;
+    try { sessionStorage.setItem('demon-king:title-seen', '1'); } catch { /* 화면 표시 설정만 실패한다. */ }
     compatibilityNotice = ''; openMenu = null; historyExpanded.clear();
   } catch (error) { notify(error); }
   finally { busy = false; render(); }
@@ -100,25 +107,14 @@ function newRun() {
 
 function render() {
   reading.detach();
+  disposeLayout(); disposeLayout = () => {};
+  const nextKey = sceneKey();
+  const scroll = nextKey === viewKey ? root.querySelector<HTMLElement>('.chat-feed')?.scrollTop ?? 0 : 0;
+  if (nextKey !== viewKey) { olderCount = 0; dismissedChoices = ''; viewKey = nextKey; }
   root.replaceChildren();
-  const layout = element('main', undefined, 'game-shell'); root.append(layout);
-  const header = element('header', undefined, 'game-header');
-  const brand = element('div', undefined, 'brand');
-  brand.append(element('p', '한 사람의 선택, 한 번의 일생', 'eyebrow'), element('h1', '가짜 마왕의 일생'));
-  const menus = element('nav', undefined, 'header-actions'); menus.setAttribute('aria-label', '게임 메뉴');
-  const historyButton = button('전체 기록', () => { if (busy) return; openMenu = 'history'; render(); }, busy); historyButton.prepend(icon('book')); historyButton.dataset.menu = 'true';
-  const settingsButton = button('설정', () => { if (busy) return; openMenu = 'settings'; render(); }, busy); settingsButton.prepend(icon('settings')); settingsButton.dataset.menu = 'true';
-  settingsButton.setAttribute('aria-label', '저장 관리 · 엔딩 도감'); menus.append(historyButton, settingsButton);
-  header.append(brand, menus);
-  if (state) {
-    const stats = element('section', undefined, 'stats'); stats.setAttribute('aria-label', '현재 능력치');
-    const age = element('span', `${state.age}세`, 'age-stat'); stats.append(age);
-    for (const [label, value, type] of [['전투력', state.player.combat, 'sword'], ['마력', state.player.magic, null], ['금화', state.player.gold, 'coin']] as const) {
-      const stat = element('span'); if (type) stat.append(icon(type)); stat.append(element('small', label), element('strong', value.toLocaleString('ko-KR'))); stats.append(stat);
-    }
-    header.append(stats);
-  }
-  layout.append(header);
+  const layout = element('main', undefined, titleVisible ? 'title-shell' : 'game-shell'); root.append(layout);
+  if (titleVisible) renderTitle(layout);
+  else if (state) renderStatus(layout, state);
   if (errorText) {
     const alert = element('section', undefined, 'error'); alert.setAttribute('role', 'alert');
     alert.append(element('p', errorText), element('p', '기존 회차를 확인하거나 JSON으로 백업하세요. 저장 성공 전에는 다음 장면을 표시하지 않습니다.'));
@@ -131,13 +127,16 @@ function render() {
     layout.append(alert);
   }
   if (!story) { if (!errorText) layout.append(element('p', '이야기를 불러오는 중입니다.')); return; }
+  if (titleVisible) { if (openMenu) renderMenu(layout); return; }
   if (story.presentationWarning || compatibilityNotice) {
     const note = element('details', undefined, 'notice'); note.append(element('summary', '콘텐츠 및 저장 안내'), element('p', [compatibilityNotice, story.presentationWarning].filter(Boolean).join(' '))); layout.append(note);
   }
   if (state) {
-    const columns = element('div', undefined, 'game-columns');
+    const frame = element('section', undefined, 'life-frame');
     const past = element('aside', undefined, 'life-column'); past.setAttribute('aria-label', '나의 인생');
-    renderTimeline(past, story, state); renderPeople(past, story, state);
+    renderTimeline(past, story, state); frame.append(past);
+    const columns = element('div', undefined, 'game-columns chat-feed'); columns.setAttribute('aria-label', '사건과 대화'); columns.tabIndex = 0;
+    renderPreviousScenes(columns, story, state);
     const present = element('section', undefined, 'event-column');
     present.id = 'current-event'; present.tabIndex = -1; present.setAttribute('aria-label', '현재 사건');
     const last = state.history.at(-1);
@@ -147,57 +146,141 @@ function render() {
       result.append(element('p', `지난 선택 판정: ${resultLabels[confirmed.outcome.result]} · ${state.history.length}번째 선택`, 'receipt-label'), element('p', `${confirmed.choice.text} → ${confirmed.destination}`, 'receipt-text')); present.append(result);
     }
     if (state.ended) renderEnding(present, story, state); else renderScene(present, story, state);
-    columns.append(past, present); layout.append(columns);
-    bindReading(layout, columns, story, state);
+    columns.append(present); frame.append(columns);
+    const launch = button('선택지 보기', () => { if (busy || pending) return; dismissedChoices = ''; root.querySelector<HTMLDialogElement>('#choice-dialog')?.showModal(); }, busy || Boolean(pending));
+    launch.classList.add('choice-launch'); launch.dataset.whenReady = 'normal'; frame.append(launch);
+    layout.append(frame);
+    columns.scrollTop = scroll;
+    const toolbar = renderToolbar(layout);
+    bindReading(layout, columns, toolbar, story, state, launch);
   } else {
     layout.append(element('section', '검증된 저장을 불러오지 못했습니다. 기존 저장을 백업한 뒤 새 회차를 시작하거나 호환되는 JSON을 가져오세요.', 'panel'));
+    const toolbar = renderToolbar(layout); toolbar.querySelectorAll<HTMLButtonElement>('.reading-controls button').forEach(b => { b.disabled = true; });
   }
-  layout.append(element('footer', `선택은 행동의 시도입니다. · 콘텐츠 ${story.manifest.version} · ${pending ? '저장 미완료' : state ? '자동 저장 완료' : '저장 확인 필요'}`));
   if (openMenu) renderMenu(layout);
 }
-function bindReading(layout: HTMLElement, columns: HTMLElement, content: PresentedStory, current: GameState) {
-  const steps: ReadingStep[] = [];
-  const latest = new Set([current.currentNodeId, current.history.at(-1)?.nodeId]);
-  for (const row of columns.querySelectorAll<HTMLElement>('.timeline-item')) {
-    if (!current.history.length || latest.has(row.dataset.nodeId) || row.dataset.eventId?.startsWith('ending:')) {
-      steps.push({ element: row, stage: 'chronicle' });
-    }
+function renderTitle(layout: HTMLElement) {
+  const cover = element('img'); cover.src = art('background'); cover.alt = ''; cover.className = 'title-background'; layout.append(cover);
+  const title = element('section', undefined, 'title-card');
+  title.append(element('p', '한 사람의 선택, 한 번의 일생', 'eyebrow'), element('h1', '가짜 마왕의 일생'), element('p', '선택은 행동의 시도입니다. 당신의 일생을 읽고, 다음 행동을 고르세요.', 'title-intro'));
+  const start = button(state ? '이어하기' : '시작하기', enterGame, !story || (!state && Boolean(errorText))); start.dataset.enter = 'true'; title.append(start);
+  const settings = button('설정', () => { openMenu = 'settings'; render(); }, !story); settings.setAttribute('aria-label', '저장 관리 · 엔딩 도감'); title.append(settings);
+  layout.append(title);
+}
+function renderStatus(layout: HTMLElement, current: GameState) {
+  const header = element('header', undefined, 'game-header');
+  const player = element('figure', undefined, 'portrait player-portrait');
+  const portrait = element('img'); portrait.id = 'player-image'; portrait.src = portraitUrl(import.meta.env.BASE_URL, 'player', current.age); portrait.alt = '주인공 초상화'; player.append(portrait); header.append(player);
+  const stats = element('section', undefined, 'stats'); stats.setAttribute('aria-label', '현재 능력치');
+  for (const [label, value] of [['나이', `${current.age}세`], ['전투력', current.player.combat.toLocaleString('ko-KR')], ['마력', current.player.magic.toLocaleString('ko-KR')], ['금화', current.player.gold.toLocaleString('ko-KR')]]) {
+    const stat = element('div'); stat.append(element('small', label), element('strong', value)); stats.append(stat);
   }
+  header.append(stats);
+  const npc = element('figure', undefined, 'portrait npc-portrait');
+  const image = element('img'); image.src = art('background'); image.alt = '연대기 배경'; image.id = 'npc-image';
+  const label = element('figcaption', '연대기'); label.id = 'npc-name'; npc.append(image, label); header.append(npc); layout.append(header);
+}
+function renderToolbar(layout: HTMLElement) {
+  const toolbar = element('footer', undefined, 'game-toolbar'); toolbar.setAttribute('aria-label', '게임 조작');
+  const status = element('p', undefined, 'reading-status'); status.setAttribute('aria-live', 'polite');
+  const controls = element('nav', undefined, 'reading-controls'); controls.setAttribute('aria-label', '읽기 조작');
+  const faster = button('빠르게', () => {}); faster.setAttribute('aria-label', '빠르게 표시'); faster.id = 'reading-faster';
+  const skip = button('스킵', () => {}); skip.id = 'reading-skip'; skip.setAttribute('aria-label', '스킵 · 바로 선택하기');
+  const pause = button('일시정지', () => {}); pause.id = 'reading-pause'; controls.append(faster, skip, pause);
+  const people = button('인물', () => { if (busy) return; openMenu = 'people'; render(); }, busy); people.setAttribute('aria-label', '인물 관계 · 재산 · 법적 기록'); people.dataset.menu = 'true'; people.dataset.menuKind = 'people';
+  const settings = button('설정', () => { if (busy) return; openMenu = 'settings'; render(); }, busy); settings.setAttribute('aria-label', '저장 관리 · 엔딩 도감'); settings.dataset.menu = 'true'; settings.dataset.menuKind = 'settings';
+  const buttons = element('div', undefined, 'toolbar-buttons'); buttons.append(controls, people, settings);
+  const statusRow = element('div', undefined, 'toolbar-status'); statusRow.append(status, element('span', pending ? '저장 미완료' : '자동 저장', 'save-indicator'));
+  toolbar.append(statusRow, buttons); layout.append(toolbar); return toolbar;
+}
+function renderPreviousScenes(feed: HTMLElement, content: PresentedStory, current: GameState) {
+  const ids = [...current.enteredNodeIds].reverse().filter(id => id !== current.currentNodeId);
+  if (!ids.length) return;
+  const older = element('div', undefined, 'older-scenes');
+  const load = button('↑ 이전 사건 불러오기', () => prepend()); load.classList.add('load-older');
+  const add = (id: string) => {
+    const node = content.nodes[id]!;
+    const event = current.history.find(h => h.nodeId === id);
+    const block = element('section', undefined, 'past-chat'); block.dataset.nodeId = id;
+    block.append(element('p', `${node.age}세 · ${node.title}`, 'eyebrow'), renderNarrative(node.body, content.presentation?.nodes[id]));
+    if (event) { const result = confirmedChoice(content, event); block.append(element('p', `${result.choice.text} → ${resultLabels[result.outcome.result]} · ${result.destination}`, 'past-decision')); }
+    older.prepend(block);
+  };
+  for (const id of ids.slice(0, olderCount)) add(id);
+  const prepend = () => {
+    const id = ids[olderCount]; if (!id) return;
+    const height = feed.scrollHeight; add(id); olderCount++;
+    load.hidden = olderCount >= ids.length;
+    feed.scrollTop += feed.scrollHeight - height;
+  };
+  load.hidden = olderCount >= ids.length; feed.append(load, older);
+  let upward = false; let touchY = 0; let touchLoaded = false;
+  feed.addEventListener('wheel', event => { if (event.deltaY < 0) { upward = true; if (feed.scrollTop < 60) { prepend(); upward = false; } } }, { passive: true });
+  feed.addEventListener('touchstart', event => { touchY = event.touches[0]?.clientY ?? 0; touchLoaded = false; }, { passive: true });
+  feed.addEventListener('touchmove', event => {
+    if (!touchLoaded && (event.touches[0]?.clientY ?? 0) > touchY + 20) {
+      upward = true;
+      if (feed.scrollTop < 60) { prepend(); upward = false; touchLoaded = true; }
+    }
+  }, { passive: true });
+  feed.addEventListener('keydown', event => { if (['ArrowUp', 'PageUp', 'Home'].includes(event.key)) { upward = true; if (feed.scrollTop < 60) { prepend(); upward = false; } } });
+  feed.addEventListener('scroll', () => { if (upward && feed.scrollTop < 60) { prepend(); upward = false; touchLoaded = true; } });
+}
+function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLElement, content: PresentedStory, current: GameState, launch: HTMLButtonElement) {
+  const steps: ReadingStep[] = [];
+  for (const row of columns.querySelectorAll<HTMLElement>('#current-event .chronicle-message')) steps.push({ element: row, stage: 'chronicle' });
   // 본문 한 단락과 각 화자의 대사를 순서대로 표시한다. 전체 기록은 즉시 열람 가능하다.
-  for (const line of columns.querySelectorAll<HTMLElement>('.story .narrative > .body, .story .dialogue-line, .story > .body')) {
+  for (const line of columns.querySelectorAll<HTMLElement>('#current-event .story .narrative > .body, #current-event .story .dialogue-line, #current-event .story > .body, #current-event .ending-recap')) {
     steps.push({ element: line, stage: 'scene' });
   }
-  const controls = element('div', undefined, 'reading-controls');
-  const status = element('span', undefined, 'reading-status'); status.setAttribute('aria-live', 'polite');
-  const faster = button('빠르게 표시', () => {}); const skip = button('스킵', () => {});
-  skip.setAttribute('aria-label', '스킵 · 바로 선택하기'); controls.append(status, faster, skip);
-  layout.insertBefore(controls, columns);
-  const gates = [...columns.querySelectorAll<HTMLElement>('.choice-prompt, .choices, .story > h3, .story > ol, .story > .subtle, .story > button')];
-  const life = columns.querySelector<HTMLElement>('.life-panel')!; life.tabIndex = -1;
+  const controls = toolbar.querySelector<HTMLElement>('.reading-controls')!;
+  const status = toolbar.querySelector<HTMLElement>('.reading-status')!;
+  const faster = toolbar.querySelector<HTMLButtonElement>('#reading-faster')!; const skip = toolbar.querySelector<HTMLButtonElement>('#reading-skip')!;
+  const pause = toolbar.querySelector<HTMLButtonElement>('#reading-pause')!;
+  const gates = [...layout.querySelectorAll<HTMLElement>('.choices, #current-event .story > h3, #current-event .story > ol, #current-event .story > .subtle, #current-event .story > button'), ...(current.ended ? [] : [launch])];
+  launch.hidden = current.ended;
+  const life = layout.querySelector<HTMLElement>('.life-panel')!; life.tabIndex = -1;
+  const showNpc = (name?: string, emotion: PortraitEmotion = 'neutral') => {
+    const id = Object.keys(content.characters).find(id => content.characters[id]!.name === name && current.npcs[id]?.alive && (portraitCharacters as readonly string[]).includes(id));
+    const image = layout.querySelector<HTMLImageElement>('#npc-image')!; const caption = layout.querySelector<HTMLElement>('#npc-name')!;
+    image.src = id ? portraitUrl(import.meta.env.BASE_URL, id as PortraitCharacter, current.age, emotion) : art('background'); image.alt = id ? `${name} 초상화` : '연대기 배경'; caption.textContent = id ? name! : '연대기';
+  };
+  const ready = () => {
+    if (current.ended || pending || openMenu || dismissedChoices === sceneKey()) return;
+    const dialog = layout.querySelector<HTMLDialogElement>('#choice-dialog'); if (dialog && !dialog.open) dialog.showModal();
+  };
+  const sizePopup = () => {
+    const floor = toolbar.getBoundingClientRect().height + 10;
+    layout.style.setProperty('--choice-floor', `${floor}px`);
+    layout.style.setProperty('--choice-space', `${Math.max(120, innerHeight - life.getBoundingClientRect().bottom - floor - 12)}px`);
+  };
+  const sizes = new ResizeObserver(sizePopup); sizes.observe(life); sizes.observe(toolbar); sizes.observe(layout);
+  disposeLayout = () => sizes.disconnect(); sizePopup();
   reading.bind({
-    key: `${content.manifest.version}:${current.runId}:${current.history.length}:${current.currentNodeId ?? current.endingId}`,
-    steps, surface: columns, controls, status, faster, skip, gates, paused: Boolean(openMenu),
+    key: sceneKey(),
+    steps, surface: columns.parentElement!, controls, status, faster, skip, pause, keepControls: true,
+    choiceButtons: [...layout.querySelectorAll<HTMLButtonElement>('[data-choice]')], gates, paused: Boolean(openMenu),
     canChoose: () => !busy && !pending,
+    onStage: (stage, step) => {
+      columns.querySelector<HTMLElement>('#current-event .scene-heading')!.hidden = stage === 'chronicle';
+      const player = layout.querySelector<HTMLImageElement>('#player-image')!;
+      if (stage === 'chronicle') { showNpc(); player.src = portraitUrl(import.meta.env.BASE_URL, 'player', current.age); }
+      else if (current.currentNodeId) {
+        const dialogues = content.presentation?.nodes[current.currentNodeId]?.dialogues ?? [];
+        const index = Number(step?.element.dataset.dialogueIndex ?? -1);
+        const shown = dialogues.map((line, i) => ({ ...line, index: i })).slice(0, index + 1);
+        const npc = [...shown].reverse().find(d => Object.values(content.characters).some(c => c.name === d.speaker));
+        const defaultNpc = dialogues.find(d => Object.values(content.characters).some(c => c.name === d.speaker));
+        showNpc(npc?.speaker ?? defaultNpc?.speaker, npc ? dialogueEmotion(current.currentNodeId, npc.index) : 'neutral');
+        const self = [...shown].reverse().find(d => d.speaker === '가짜 마왕');
+        player.src = portraitUrl(import.meta.env.BASE_URL, 'player', current.age, self ? dialogueEmotion(current.currentNodeId, self.index) : 'neutral');
+      }
+    },
     onReveal: (step, first) => {
-      const offset = `${controls.getBoundingClientRect().height + 24}px`;
-      life.style.scrollMarginTop = offset;
-      columns.querySelector<HTMLElement>('#current-event')!.style.scrollMarginTop = offset;
-      if (first && step.stage === 'chronicle') {
-        life.focus({ preventScroll: true });
-        if (matchMedia('(max-width: 760px)').matches) life.scrollIntoView({ block: 'start', behavior: 'instant' });
-      }
-      if (step.stage === 'chronicle') {
-        const timeline = step.element.parentElement!;
-        if (getComputedStyle(timeline).overflowY === 'auto') timeline.scrollTop = timeline.scrollHeight;
-      } else if (first) focusCurrentEvent();
+      if (first && step.stage === 'chronicle') life.focus({ preventScroll: true });
+      step.element.scrollIntoView({ block: 'nearest', behavior: 'instant' });
     },
-    onSkip: () => {
-      const target = columns.querySelector<HTMLElement>('[data-choice][data-enabled="true"]') ?? columns.querySelector<HTMLElement>('.story > button');
-      if (target) {
-        const focus = target instanceof HTMLButtonElement && target.disabled ? columns.querySelector<HTMLElement>('#scene-title')! : target;
-        focus.focus({ preventScroll: true }); target.scrollIntoView({ block: 'center', behavior: 'instant' });
-      }
-    },
+    onSkip: () => {}, onComplete: ready,
   });
 }
 function renderSettings(save: HTMLElement) {
@@ -240,10 +323,20 @@ function renderScene(layout: HTMLElement, content: PresentedStory, current: Game
   const node = content.nodes[current.currentNodeId!]!;
   const panel = element('section', undefined, 'panel story');
   const presentation = content.presentation?.nodes[node.id];
-  panel.append(element('p', `${current.age}세 · 현재 사건`, 'eyebrow'));
-  if (presentation?.locationLabel) panel.append(element('p', presentation.locationLabel, 'location'));
+  const events = lifeEvents(content, current);
+  if (!current.history.length) for (const event of events.filter(event => event.kind === 'origin')) panel.append(element('p', `${event.age}세 · ${event.summary}`, 'chronicle-message'));
+  panel.append(element('p', `${node.age}세 · ${presentation?.chronicleSummary ?? node.title}`, 'chronicle-message'));
+  const heading = element('div', undefined, 'scene-heading');
+  heading.append(element('p', `${current.age}세 · 현재 사건`, 'eyebrow'));
+  if (presentation?.locationLabel) heading.append(element('p', presentation.locationLabel, 'location'));
   const title = element('h2', node.title); title.id = 'scene-title'; title.tabIndex = -1;
-  panel.append(title, renderNarrative(node.body, presentation), element('p', '어떻게 행동할까?', 'choice-prompt'));
+  heading.append(title); panel.append(heading, renderNarrative(node.body, presentation));
+  const dialog = element('dialog', undefined, 'choice-dialog'); dialog.id = 'choice-dialog';
+  const top = element('div', undefined, 'choice-dialog-heading');
+  const prompt = element('h2', '어떻게 행동할까?', 'choice-prompt'); prompt.id = 'choice-title'; dialog.setAttribute('aria-labelledby', prompt.id);
+  const lower = () => { dismissedChoices = sceneKey(); dialog.close(); root.querySelector<HTMLButtonElement>('.choice-launch')?.focus({ preventScroll: true }); };
+  top.append(prompt, button('잠시 내리기', lower)); dialog.append(top);
+  dialog.addEventListener('cancel', event => { event.preventDefault(); lower(); });
   const choices = element('div', undefined, 'choices');
   for (const [index, choice] of node.choices.entries()) {
     const enabled = evaluate(content, current, choice.enabledWhen);
@@ -257,22 +350,23 @@ function renderScene(layout: HTMLElement, content: PresentedStory, current: Game
     b.append(element('span', String.fromCharCode(65 + index), 'choice-letter'), text);
     choices.append(b);
   }
-  panel.append(choices); layout.append(panel);
+  dialog.append(choices); layout.append(panel, dialog);
 }
 function renderEnding(layout: HTMLElement, content: PresentedStory, current: GameState) {
   const ending = content.endings[current.endingId!]!;
   const panel = element('section', undefined, 'panel story');
-  panel.append(element('p', `회차 종료 · ${current.age}세`, 'eyebrow'));
+  panel.append(element('p', `${current.age}세 · 회차 종료`, 'chronicle-message'));
+  const heading = element('div', undefined, 'scene-heading'); heading.append(element('p', `회차 종료 · ${current.age}세`, 'eyebrow'));
   const title = element('h2', ending.title); title.id = 'scene-title'; title.tabIndex = -1;
-  panel.append(title, element('p', ending.body, 'body'));
-  for (const rule of ending.recapRules ?? []) if (evaluate(content, current, rule.when)) panel.append(element('p', rule.text));
+  heading.append(title); panel.append(heading, element('p', ending.body, 'body'));
+  for (const rule of ending.recapRules ?? []) if (evaluate(content, current, rule.when)) panel.append(element('p', rule.text, 'ending-recap'));
   const highlights = element('ol');
   for (const entry of current.history.slice(-5)) highlights.append(element('li', `${entry.age}세 · ${content.nodes[entry.nodeId]!.choices.find(c => c.id === entry.choiceId)!.text}`));
   panel.append(element('h3', '실제로 남긴 선택'), highlights, element('p', `발견 엔딩 ID: ${ending.id}`, 'subtle'));
   const restart = button('새 회차 시작', newRun, busy || Boolean(pending)); restart.dataset.whenReady = 'normal'; panel.append(restart); layout.append(panel);
 }
 function renderPeople(layout: HTMLElement, content: PresentedStory, current: GameState) {
-  const people = element('details', undefined, 'panel'); people.append(element('summary', '인물 관계 · 재산 · 법적 기록'));
+  const people = element('div', undefined, 'people-list');
   for (const [id, npc] of Object.entries(current.npcs)) people.append(element('p', `${content.characters[id]!.name} · ${npc.alive ? '생존' : '사망'} · 전투력 ${npc.combat.toLocaleString('ko-KR')} · 신뢰 ${npc.trust} · 호감 ${npc.affection} · 관계 ${npc.relationship}`));
   people.append(element('p', `법적 상태: ${current.player.legalStatus}`), element('p', `유죄 확정 전과: ${current.player.crimes.join(', ') || '없음'}`), element('p', `소지품: ${Object.entries(current.inventory).map(([id, n]) => `${id} ${n}`).join(', ') || '없음'}`));
   layout.append(people);
@@ -282,27 +376,27 @@ function renderTimeline(layout: HTMLElement, content: PresentedStory, current: G
   const top = element('div', undefined, 'panel-heading'); top.append(element('h2', '나의 인생'), element('span', `${current.history.length}번의 선택`, 'subtle')); panel.append(top);
   const all = lifeEvents(content, current);
   const list = element('ol', undefined, 'timeline'); list.setAttribute('aria-label', '실제 인생 연대기');
-  for (const event of all.slice(-8)) {
+  for (const event of all.slice(-3)) {
     const item = element('li', undefined, 'timeline-item'); item.dataset.eventId = event.id;
     if (event.nodeId) item.dataset.nodeId = event.nodeId;
-    if (current.history.length && !all.slice(-3).some(recent => recent.id === event.id)) item.dataset.mobilePast = 'true';
     item.append(element('span', `${event.age}세`, 'timeline-age'));
     const text = element('div'); text.append(element('p', event.summary, 'timeline-text'));
     if (event.result) text.append(element('span', resultLabels[event.result], 'timeline-result'));
     item.append(text); list.append(item);
   }
-  panel.append(list);
-  const open = button(`전체 인생 기록 · ${all.length}개`, () => { if (busy) return; openMenu = 'history'; render(); }, busy); open.dataset.menu = 'true'; open.classList.add('quiet-button'); panel.append(open); layout.append(panel);
+  const open = button('전체 기록', () => { if (busy) return; openMenu = 'history'; render(); }, busy); open.dataset.menu = 'true'; open.dataset.menuKind = 'history'; open.prepend(icon('book')); top.append(open);
+  panel.append(list); layout.append(panel);
 }
 function renderMenu(layout: HTMLElement) {
   const dialog = element('dialog', undefined, 'menu-dialog');
   const menuKind = openMenu;
-  const title = element('h2', menuKind === 'history' ? '전체 인생 기록' : '저장 관리 · 엔딩 도감'); title.id = 'menu-title';
+  const title = element('h2', menuKind === 'history' ? '전체 인생 기록' : menuKind === 'people' ? '인물 관계 · 재산 · 법적 기록' : '저장 관리 · 엔딩 도감'); title.id = 'menu-title';
   dialog.setAttribute('aria-labelledby', title.id);
-  const close = () => { openMenu = null; dialog.close(); render(); document.querySelector<HTMLButtonElement>(menuKind === 'history' ? '.header-actions button:first-child' : '.header-actions button:last-child')?.focus(); };
+  const close = () => { openMenu = null; dialog.close(); render(); document.querySelector<HTMLButtonElement>(`[data-menu-kind="${menuKind}"]`)?.focus(); };
   const top = element('div', undefined, 'panel-heading'); top.append(title, button('닫기', close)); dialog.append(top);
   dialog.addEventListener('cancel', event => { event.preventDefault(); close(); });
   if (menuKind === 'settings') renderSettings(dialog);
+  else if (menuKind === 'people' && story && state) renderPeople(dialog, story, state);
   else if (story && state) {
     for (const event of lifeEvents(story, state)) {
       const row = element('details', undefined, 'history-entry'); row.dataset.eventId = event.id;
@@ -333,7 +427,7 @@ async function boot() {
       const resolved = resolveCompatibleSave(activeStory, legacyStory, raw);
       compatibilityNotice = resolved.notice; commit(resolved.state, null, resolved.story);
     }
-    else newRun();
+    else if (!titleVisible) newRun();
   } catch (error) { notify(error); }
   finally { render(); }
 }

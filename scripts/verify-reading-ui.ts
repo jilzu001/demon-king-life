@@ -1,4 +1,5 @@
 import { chromium, expect } from '@playwright/test';
+import { enterGame } from '../tests/e2e/helpers';
 
 const url = process.argv[2] ?? 'http://127.0.0.1:4175/';
 const browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_CHANNEL || 'msedge' });
@@ -9,14 +10,14 @@ try {
     page.on('pageerror', error => errors.push(error.message));
     const time = new Date('2026-10-14T00:00:00Z');
     await page.clock.install({ time }); await page.clock.pauseAt(time);
-    await page.goto(url);
-    await expect(page.getByRole('heading', { name: '가장 싼 마왕', exact: true })).toBeVisible();
+    await page.goto(url); await enterGame(page);
+    await expect(page.locator('#current-event')).toBeAttached();
     const before = await page.evaluate(() => localStorage.getItem('existence-sim:v1:run:demon-king'));
-    await expect(page.locator('.timeline-item:visible')).toHaveCount(1);
+    await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(1);
     await expect(page.locator('.choices')).toBeHidden();
-    await page.clock.runFor(500); await expect(page.locator('.timeline-item:visible')).toHaveCount(1);
-    await page.locator('.timeline-text:visible').click();
-    await page.clock.runFor(320); await expect(page.locator('.timeline-item:visible')).toHaveCount(3);
+    await page.clock.runFor(500); await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(1);
+    await page.locator('#current-event .chronicle-message:visible').first().click();
+    await page.clock.runFor(320); await expect(page.locator('#current-event .chronicle-message:visible')).toHaveCount(3);
     await expect(page.locator('.choices')).toBeHidden();
     await page.screenshot({ path: `docs/reading-${name}.png`, fullPage: true });
     await page.getByRole('button', { name: '스킵 · 바로 선택하기', exact: true }).click();
@@ -33,7 +34,7 @@ try {
     await page.clock.runFor(400);
     const ended = await page.evaluate(() => localStorage.getItem('existence-sim:v1:run:demon-king'));
     expect(JSON.parse(ended!).endingId).toBe('end_blade');
-    await page.reload(); await expect(page.getByRole('button', { name: '스킵 · 바로 선택하기', exact: true })).toBeVisible();
+    await page.reload(); await expect(page.locator('#current-event')).toBeAttached();
     await page.getByRole('button', { name: '스킵 · 바로 선택하기', exact: true }).click();
     expect(await page.evaluate(() => localStorage.getItem('existence-sim:v1:run:demon-king'))).toBe(ended);
     await expect(page.locator('[data-choice]')).toHaveCount(0);

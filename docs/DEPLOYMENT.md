@@ -60,3 +60,11 @@ Actions가 성공한 뒤 실제 게임 주소도 확인하세요. 빌드나 테�
 연대기 순차 표시·클릭 가속·스킵을 추가한 로컬 검증은 단위/통합 96개와 브라우저 46개를 통과했습니다. 엔진/콘텐츠/저장 스키마는 그대로이며 기존 주소에 동일한 자동 검증/배포 절차를 적용합니다. 검증 범위와 해결한 문제는 `READING_UI.md`에 있습니다.
 
 공개 배포 뒤 `npx tsx scripts/verify-reading-ui.ts https://jilzu001.github.io/demon-king-life/`로 새 읽기 순서·스킵·원장 보호·새 장면·엔딩 복원을 확인합니다. 현재 Actions 결과는 [워크플로 실행 목록](https://github.com/jilzu001/demon-king-life/actions)에서 확인할 수 있습니다.
+
+## 최신 타이틀·대화창·초상화 업데이트
+
+로컬 최종 `npm run check`는 단위/통합 98개, PC/모바일 브라우저 60개와 전체 콘텐츠/분기/타입/빌드를 통과했습니다. 실제 빌드 PC/390px/320×568에서도 팝업 위 연대기, 잠시 내리기/복원, 이전 사건, 저장 보호가 통과했습니다. 공개 반영에는 기존 main 자동 검증/배포를 사용합니다.
+
+초상화 120개 전체 약 185KB, 배경 포함 약 354KB입니다. 원본 PNG나 큰 시트는 public에 넣지 않습니다. 현재 게임이 필요한 초상화만 불러옵니다. 공개 [초상화 모음](https://jilzu001.github.io/demon-king-life/art/portraits/gallery.html)에서 모든 연령·감정을 확인할 수 있습니다.
+
+배포 후 `npx tsx scripts/verify-chat-ui.ts https://jilzu001.github.io/demon-king-life/`와 `node scripts/verify-published-art.mjs https://jilzu001.github.io/demon-king-life/`로 실제 UI와 120개 이미지 원본 일치를 확인합니다. 상세 내용은 `CHAT_UI.md`, `portrait-assets-v2.json`, `portrait-prompts-v2.json`입니다.
