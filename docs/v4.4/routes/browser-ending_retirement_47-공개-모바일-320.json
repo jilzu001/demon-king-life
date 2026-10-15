@@ -1,0 +1,38 @@
+{
+  "endingId": "ending_retirement_47",
+  "choices": [
+    "family_invoice",
+    "trust_mina",
+    "attack",
+    "forgive",
+    "ally",
+    "public_audit",
+    "explore_route_retirement_47",
+    "commit_route_retirement_47",
+    "route_retirement_47_collect"
+  ],
+  "age": 47,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "prison",
+    "princess",
+    "audit",
+    "hearing",
+    "bridge_route_retirement_47"
+  ],
+  "image": "/demon-king-life/assets/illustrations/ending_v4_3/retirement_coins.webp",
+  "statuses": [
+    200,
+    200
+  ],
+  "bounds": {
+    "width": 244,
+    "height": 137.25,
+    "naturalWidth": 640,
+    "naturalHeight": 360
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

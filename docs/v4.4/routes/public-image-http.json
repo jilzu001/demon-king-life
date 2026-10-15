@@ -1,0 +1,147 @@
+{
+  "base": "https://jilzu001.github.io/demon-king-life/",
+  "endingReferences": 20,
+  "uniqueFiles": 19,
+  "rows": [
+    {
+      "endingId": "ending_peace",
+      "path": "assets/illustrations/events/final_sunset.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 16234
+    },
+    {
+      "endingId": "ending_reform",
+      "path": "assets/illustrations/events/royal_trial.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 22290
+    },
+    {
+      "endingId": "ending_office",
+      "path": "assets/illustrations/events/demon_protest.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 27460
+    },
+    {
+      "endingId": "ending_escape",
+      "path": "assets/illustrations/backgrounds/prison.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 14144
+    },
+    {
+      "endingId": "ending_fire",
+      "path": "assets/illustrations/events/queens_letter.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 21672
+    },
+    {
+      "endingId": "ending_throne",
+      "path": "assets/illustrations/backgrounds/throne_room.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 18508
+    },
+    {
+      "endingId": "ending_ledger",
+      "path": "assets/illustrations/events/queens_letter.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 21672
+    },
+    {
+      "endingId": "ending_love_scandal",
+      "path": "assets/illustrations/events/mina_romance.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 24350
+    },
+    {
+      "endingId": "ending_mina_renounced",
+      "path": "assets/illustrations/ending_v4_3/rain_shelter.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 26712
+    },
+    {
+      "endingId": "ending_mina_wedding",
+      "path": "assets/illustrations/ending_v4_3/wedding_lanterns.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 22246
+    },
+    {
+      "endingId": "ending_confession_unanswered",
+      "path": "assets/illustrations/ending_v4_3/river_bench.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 19924
+    },
+    {
+      "endingId": "ending_common_enemy",
+      "path": "assets/illustrations/ending_v4_3/truth_hearing.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 20912
+    },
+    {
+      "endingId": "ending_double_license",
+      "path": "assets/illustrations/ending_v4_3/double_certificate.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 14188
+    },
+    {
+      "endingId": "ending_retirement_47",
+      "path": "assets/illustrations/ending_v4_3/retirement_coins.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 15390
+    },
+    {
+      "endingId": "ending_paid_defeat",
+      "path": "assets/illustrations/ending_v4_3/festival_defeat.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 23676
+    },
+    {
+      "endingId": "ending_taxpayer",
+      "path": "assets/illustrations/ending_v4_3/tax_celebration.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 17750
+    },
+    {
+      "endingId": "ending_king",
+      "path": "assets/illustrations/ending_v4_3/crown_self.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 23150
+    },
+    {
+      "endingId": "ending_bankrupt",
+      "path": "assets/illustrations/ending_v4_3/empty_treasury.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 18126
+    },
+    {
+      "endingId": "ending_true_demon",
+      "path": "assets/illustrations/ending_v4_3/sealed_demon.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 20500
+    },
+    {
+      "endingId": "ending_mother_petition",
+      "path": "assets/illustrations/ending_v4_3/mother_letter.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 15080
+    }
+  ]
+}

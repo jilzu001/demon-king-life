@@ -1,0 +1,37 @@
+{
+  "endingId": "ending_mina_renounced",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "confess",
+    "confess_sincere",
+    "support_mina",
+    "explore_route_mina_renounced",
+    "commit_route_mina_renounced",
+    "route_mina_renounced_stay"
+  ],
+  "age": 55,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "confession",
+    "confession_afterm",
+    "princess",
+    "setup_route_mina_renounced",
+    "bridge_route_mina_renounced"
+  ],
+  "image": "/demon-king-life/assets/illustrations/ending_v4_3/rain_shelter.webp",
+  "statuses": [
+    200,
+    200
+  ],
+  "bounds": {
+    "width": 640,
+    "height": 360,
+    "naturalWidth": 640,
+    "naturalHeight": 360
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "build",
+    "conclusion": "success",
+    "url": "https://github.com/jilzu001/demon-king-life/actions/runs/38685846229/job/116260363398",
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v6",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-node@v7",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npm ci",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run npx playwright install --with-deps chromium",
+        "conclusion": "success"
+      },
+      {
+        "name": "Verify types, engine, content, all branches, browser UI and build",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/upload-pages-artifact@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-node@v7",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v6",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "name": "deploy",
+    "conclusion": "success",
+    "url": "https://github.com/jilzu001/demon-king-life/actions/runs/38685846229/job/116263220209",
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/configure-pages@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/deploy-pages@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ]
+  }
+]

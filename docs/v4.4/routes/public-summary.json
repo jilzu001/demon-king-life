@@ -1,0 +1,417 @@
+{
+  "deploymentCommit": "14698259e30f080561c447eed5f1ebd12cb9f843",
+  "workflow": "https://github.com/jilzu001/demon-king-life/actions/runs/38685846229",
+  "base": "https://jilzu001.github.io/demon-king-life/",
+  "localAndCI": {
+    "unit": 250,
+    "browser": 190,
+    "total": 440
+  },
+  "publicBrowserPass": 40,
+  "reachableEndings": 20,
+  "unreachableEndings": 0,
+  "imageReferences": 20,
+  "uniqueWebPFiles": 19,
+  "rows": [
+    {
+      "endingId": "ending_bankrupt",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/empty_treasury.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_bankrupt-공개-PC.json"
+    },
+    {
+      "endingId": "ending_bankrupt",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/empty_treasury.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_bankrupt-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_common_enemy",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/truth_hearing.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_common_enemy-공개-PC.json"
+    },
+    {
+      "endingId": "ending_common_enemy",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/truth_hearing.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_common_enemy-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_confession_unanswered",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/river_bench.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_confession_unanswered-공개-PC.json"
+    },
+    {
+      "endingId": "ending_confession_unanswered",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/river_bench.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_confession_unanswered-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_double_license",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/double_certificate.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_double_license-공개-PC.json"
+    },
+    {
+      "endingId": "ending_double_license",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/double_certificate.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_double_license-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_escape",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/backgrounds/prison.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_escape-공개-PC.json"
+    },
+    {
+      "endingId": "ending_escape",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/backgrounds/prison.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_escape-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_fire",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/events/queens_letter.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_fire-공개-PC.json"
+    },
+    {
+      "endingId": "ending_fire",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/events/queens_letter.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_fire-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_king",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/crown_self.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_king-공개-PC.json"
+    },
+    {
+      "endingId": "ending_king",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/crown_self.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_king-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_ledger",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/events/queens_letter.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_ledger-공개-PC.json"
+    },
+    {
+      "endingId": "ending_ledger",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/events/queens_letter.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_ledger-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_love_scandal",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/events/mina_romance.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_love_scandal-공개-PC.json"
+    },
+    {
+      "endingId": "ending_love_scandal",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/events/mina_romance.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_love_scandal-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_mina_renounced",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/rain_shelter.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_mina_renounced-공개-PC.json"
+    },
+    {
+      "endingId": "ending_mina_renounced",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/rain_shelter.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_mina_renounced-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_mina_wedding",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/wedding_lanterns.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_mina_wedding-공개-PC.json"
+    },
+    {
+      "endingId": "ending_mina_wedding",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/wedding_lanterns.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_mina_wedding-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_mother_petition",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/mother_letter.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_mother_petition-공개-PC.json"
+    },
+    {
+      "endingId": "ending_mother_petition",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/mother_letter.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_mother_petition-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_office",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/events/demon_protest.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_office-공개-PC.json"
+    },
+    {
+      "endingId": "ending_office",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/events/demon_protest.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_office-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_paid_defeat",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/festival_defeat.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_paid_defeat-공개-PC.json"
+    },
+    {
+      "endingId": "ending_paid_defeat",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/festival_defeat.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_paid_defeat-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_peace",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/events/final_sunset.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_peace-공개-PC.json"
+    },
+    {
+      "endingId": "ending_peace",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/events/final_sunset.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_peace-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_reform",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/events/royal_trial.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_reform-공개-PC.json"
+    },
+    {
+      "endingId": "ending_reform",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/events/royal_trial.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_reform-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_retirement_47",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/retirement_coins.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_retirement_47-공개-PC.json"
+    },
+    {
+      "endingId": "ending_retirement_47",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/retirement_coins.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_retirement_47-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_taxpayer",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/tax_celebration.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_taxpayer-공개-PC.json"
+    },
+    {
+      "endingId": "ending_taxpayer",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/tax_celebration.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_taxpayer-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_throne",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/backgrounds/throne_room.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_throne-공개-PC.json"
+    },
+    {
+      "endingId": "ending_throne",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/backgrounds/throne_room.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_throne-공개-모바일-320.json"
+    },
+    {
+      "endingId": "ending_true_demon",
+      "platform": "PC",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/sealed_demon.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_true_demon-공개-PC.json"
+    },
+    {
+      "endingId": "ending_true_demon",
+      "platform": "mobile",
+      "image": "/demon-king-life/assets/illustrations/ending_v4_3/sealed_demon.webp",
+      "statuses": [
+        200,
+        200
+      ],
+      "evidence": "browser-ending_true_demon-공개-모바일-320.json"
+    }
+  ]
+}

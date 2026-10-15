@@ -1,0 +1,38 @@
+{
+  "endingId": "ending_reform",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "attack",
+    "forgive",
+    "ally",
+    "public_audit",
+    "fight_case",
+    "reject_money",
+    "end_reform"
+  ],
+  "age": 60,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "prison",
+    "audit",
+    "hearing",
+    "settlement",
+    "final_trial"
+  ],
+  "image": "/demon-king-life/assets/illustrations/events/royal_trial.webp",
+  "statuses": [
+    200,
+    200
+  ],
+  "bounds": {
+    "width": 243.984375,
+    "height": 215.015625,
+    "naturalWidth": 640,
+    "naturalHeight": 564
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

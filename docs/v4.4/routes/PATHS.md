@@ -24,3 +24,5 @@
 | ending_bankrupt | 왕국을 파산시킨 마왕 | 60세 | family_accept → trust_mina → attack → forgive → ally → public_audit → explore_route_bankrupt → commit_route_bankrupt → route_bankrupt_protect | assets/illustrations/ending_v4_3/empty_treasury.webp |
 | ending_true_demon | 진짜 마왕을 발견했다 | 53세 | family_accept → trust_mina → attack → forgive → ally → public_audit → explore_route_true_demon → commit_route_true_demon → route_true_demon_evacuate | assets/illustrations/ending_v4_3/sealed_demon.webp |
 | ending_mother_petition | 내 아들은 마왕이 아닙니다 | 65세 | family_appeal → trust_mina → attack → forgive → ally → explore_route_mother_petition → commit_route_mother_petition → route_mother_petition_read | assets/illustrations/ending_v4_3/mother_letter.webp |
+
+모든20개 경로는 배포1469825의 공개 사이트에서 PC/모바일 각각 직접 실행해 통과했다. 각 행의 엔딩 이미지 HTTP200/원본 비율·크기, 마지막 카드 해금/다른19개 잠금, 저장 복원/도감 상세를 확인했다. [공개40개 결과](public-summary.json), [전체 로그](public-browser.log).

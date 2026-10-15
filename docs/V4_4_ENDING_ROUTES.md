@@ -39,6 +39,8 @@
 ## 최종 결과 / 남은 항목
 
 - 로컬 `npm run check` 종료 코드0: 단위250개/14파일 + 브라우저190개 = **440개** 통과. 타입·콘텐츠·원작34엔딩·현재20엔딩/14,555경로·최종 Vite 빌드까지 성공했다. [전체 회귀 로그](v4.4/routes/check.log). 새 검증 환경용 `playwright.routes.config.ts`도 최종 타입 검사에 포함됐다.
-- 현재 로컬 작업본의 실제 도달 불가능 엔딩은0개다. 공개 배포와 공개 주소 검증은 후속 상태를 기록한다.
+- 실제 도달 불가능 엔딩은0개다. 코드1469825를 [Actions38685846229](https://github.com/jilzu001/demon-king-life/actions/runs/38685846229)에서 서버250단위+190브라우저=440개·타입/콘텐츠/분기/빌드·배포까지 통과했다. [서버 전체 빌드 로그](v4.4/routes/ci-build.log), [배포 단계 결과](v4.4/routes/deployment.json).
+- 공개 [플레이 주소](https://jilzu001.github.io/demon-king-life/)에서20개 매핑/19WebP의 HTTP200·MIME·원본 바이트 일치, 기존 이미지167개/스토리5개/정책3개 총175파일 HTTP200·원본 일치를 확인했다. [엔딩 이미지 결과](v4.4/routes/public-image-http.json), [기존 파일 결과](v4.4/routes/public-protected-http.log).
+- 배포 후 실제 공개 URL에서 PC/모바일 각각20개, **총40개 새 게임 플레이 전부 통과**했다. 실제 선택·중간 저장/복원·주마등·마지막 카드 해금·나머지19개 잠금·도감 상세/동일 WebP/HTTP200·크기/비율을 확인했다. [공개 전체 로그](v4.4/routes/public-browser.log), [20엔딩×2화면 증거 목록](v4.4/routes/public-summary.json). 실제 도달 불가능 엔딩/미연결 경로는0개다.
 - 원본 기존 장면 재사용8개/신규 회상 합성12개의 전용 원화 보완은 별도 작업이다. 실제 휴대기기/Safari/Firefox/실제 티스토리 글 CSP는 미검증이다.
 - 집필 변경은 신규 연결부의 개연성 보정뿐이며65개 집중 집필 기준22/65·보완43은 유지한다.

@@ -1,0 +1,33 @@
+{
+  "endingId": "ending_ledger",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "attack",
+    "forgive",
+    "ally",
+    "steal_ledger"
+  ],
+  "age": 41,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "prison",
+    "princess",
+    "audit"
+  ],
+  "image": "/demon-king-life/assets/illustrations/events/queens_letter.webp",
+  "statuses": [
+    200,
+    200
+  ],
+  "bounds": {
+    "width": 408.5,
+    "height": 360,
+    "naturalWidth": 640,
+    "naturalHeight": 564
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

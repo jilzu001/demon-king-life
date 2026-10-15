@@ -1,0 +1,119 @@
+2026-10-15T05:25:51.4563984Z ./assets/illustrations/characters/jero.webp
+2026-10-15T05:25:51.4564344Z ./assets/illustrations/characters/king.webp
+2026-10-15T05:25:51.4564722Z ./assets/illustrations/characters/protagonist.webp
+2026-10-15T05:25:51.4565083Z ./assets/illustrations/ending_v4_3/
+2026-10-15T05:25:51.4565450Z ./assets/illustrations/ending_v4_3/river_bench.webp
+2026-10-15T05:25:51.4565874Z ./assets/illustrations/ending_v4_3/empty_treasury.webp
+2026-10-15T05:25:51.4566294Z ./assets/illustrations/ending_v4_3/mother_letter.webp
+2026-10-15T05:25:51.4566709Z ./assets/illustrations/ending_v4_3/truth_hearing.webp
+2026-10-15T05:25:51.4567108Z ./assets/illustrations/ending_v4_3/crown_self.webp
+2026-10-15T05:25:51.4567507Z ./assets/illustrations/ending_v4_3/sealed_demon.webp
+2026-10-15T05:25:51.4567937Z ./assets/illustrations/ending_v4_3/retirement_coins.webp
+2026-10-15T05:25:51.4568384Z ./assets/illustrations/ending_v4_3/double_certificate.webp
+2026-10-15T05:25:51.4568839Z ./assets/illustrations/ending_v4_3/wedding_lanterns.webp
+2026-10-15T05:25:51.4569279Z ./assets/illustrations/ending_v4_3/tax_celebration.webp
+2026-10-15T05:25:51.4569707Z ./assets/illustrations/ending_v4_3/festival_defeat.webp
+2026-10-15T05:25:51.4570115Z ./assets/illustrations/ending_v4_3/rain_shelter.webp
+2026-10-15T05:25:51.4570448Z ./assets/illustrations/ui/
+2026-10-15T05:25:51.4570750Z ./assets/illustrations/ui/reputation.webp
+2026-10-15T05:25:51.4571095Z ./assets/illustrations/ui/affection.webp
+2026-10-15T05:25:51.4571433Z ./assets/illustrations/ui/unlock.webp
+2026-10-15T05:25:51.4571780Z ./assets/illustrations/ui/achievements.webp
+2026-10-15T05:25:51.4572118Z ./assets/illustrations/ui/money.webp
+2026-10-15T05:25:51.4572442Z ./assets/illustrations/ui/settings.webp
+2026-10-15T05:25:51.4572770Z ./assets/illustrations/ui/save.webp
+2026-10-15T05:25:51.4573102Z ./assets/illustrations/ui/return_title.webp
+2026-10-15T05:25:51.4573430Z ./assets/illustrations/backgrounds/
+2026-10-15T05:25:51.4573914Z ./assets/illustrations/backgrounds/market.webp
+2026-10-15T05:25:51.4574320Z ./assets/illustrations/backgrounds/palace.webp
+2026-10-15T05:25:51.4574829Z ./assets/illustrations/backgrounds/harbor.webp
+2026-10-15T05:25:51.4575229Z ./assets/illustrations/backgrounds/prison.webp
+2026-10-15T05:25:51.4575624Z ./assets/illustrations/backgrounds/village.webp
+2026-10-15T05:25:51.4576005Z ./assets/illustrations/backgrounds/forest.webp
+2026-10-15T05:25:51.4576380Z ./assets/illustrations/backgrounds/tavern.webp
+2026-10-15T05:25:51.4576786Z ./assets/illustrations/backgrounds/throne_room.webp
+2026-10-15T05:25:51.4577144Z ./assets/illustrations/event_cg/
+2026-10-15T05:25:51.4577511Z ./assets/illustrations/event_cg/mina_wooden_sword.webp
+2026-10-15T05:25:51.4577895Z ./assets/illustrations/expressions/
+2026-10-15T05:25:51.4578255Z ./assets/illustrations/expressions/smug.webp
+2026-10-15T05:25:51.4578622Z ./assets/illustrations/expressions/sad.webp
+2026-10-15T05:25:51.4579120Z ./assets/illustrations/expressions/tired.webp
+2026-10-15T05:25:51.4579506Z ./assets/illustrations/expressions/confused.webp
+2026-10-15T05:25:51.4579900Z ./assets/illustrations/expressions/neutral.webp
+2026-10-15T05:25:51.4580281Z ./assets/illustrations/expressions/angry.webp
+2026-10-15T05:25:51.4580647Z ./assets/illustrations/expressions/happy.webp
+2026-10-15T05:25:51.4581029Z ./assets/illustrations/expressions/surprised.webp
+2026-10-15T05:25:51.4581444Z ./assets/illustrations/expressions/embarrassed.webp
+2026-10-15T05:25:51.4581849Z ./assets/illustrations/expressions/thinking.webp
+2026-10-15T05:25:51.4582144Z ./index.html
+2026-10-15T05:25:51.4582513Z ##[endgroup]
+2026-10-15T05:25:51.4592580Z ##[end-action id=__actions_upload-pages-artifact.__run;outcome=success;conclusion=success;duration_ms=24]
+2026-10-15T05:25:51.4595941Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run_2]
+2026-10-15T05:25:51.4600708Z ##[end-action id=__actions_upload-pages-artifact.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-15T05:25:51.4603366Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run_3]
+2026-10-15T05:25:51.4607205Z ##[end-action id=__actions_upload-pages-artifact.__run_3;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-15T05:25:51.4609186Z ##[start-action display=Upload artifact;id=__actions_upload-pages-artifact.upload-artifact]
+2026-10-15T05:25:51.4707461Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-15T05:25:51.4707880Z with:
+2026-10-15T05:25:51.4708082Z   name: github-pages
+2026-10-15T05:25:51.4708348Z   path: /home/runner/work/_temp/artifact.tar
+2026-10-15T05:25:51.4708639Z   retention-days: 1
+2026-10-15T05:25:51.4708863Z   if-no-files-found: error
+2026-10-15T05:25:51.4709104Z   compression-level: 6
+2026-10-15T05:25:51.4709326Z   overwrite: false
+2026-10-15T05:25:51.4709540Z   include-hidden-files: false
+2026-10-15T05:25:51.4709770Z env:
+2026-10-15T05:25:51.4709959Z   PLAYWRIGHT_CHANNEL: chromium
+2026-10-15T05:25:51.4710232Z   VITE_BASE_PATH: /demon-king-life/
+2026-10-15T05:25:51.4710491Z ##[endgroup]
+2026-10-15T05:25:51.6465294Z (node:12329) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-15T05:25:51.6466907Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-15T05:25:51.6543199Z With the provided path, there will be 1 file uploaded
+2026-10-15T05:25:51.6557230Z Artifact name is valid!
+2026-10-15T05:25:51.6558440Z Root directory input is valid!
+2026-10-15T05:25:51.8808340Z Beginning upload of artifact content to blob storage
+2026-10-15T05:25:51.9669969Z (node:12329) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-15T05:25:52.0940823Z Uploaded bytes 1454695
+2026-10-15T05:25:52.1129468Z Finished uploading artifact content to blob storage!
+2026-10-15T05:25:52.1131430Z SHA256 digest of uploaded artifact zip is 1955ed84dee1dc0d27ffaf1fa9796159ec3f3bba423fb6360d96e2fe8a482bb1
+2026-10-15T05:25:52.1133183Z Finalizing artifact upload
+2026-10-15T05:25:52.3591437Z Artifact github-pages.zip successfully finalized. Artifact ID 11950966335
+2026-10-15T05:25:52.3592943Z Artifact github-pages has been successfully uploaded! Final size is 1454695 bytes. Artifact ID is 11950966335
+2026-10-15T05:25:52.3599258Z Artifact download URL: https://github.com/jilzu001/demon-king-life/actions/runs/38685846229/artifacts/11950966335
+2026-10-15T05:25:52.3719889Z ##[end-action id=__actions_upload-pages-artifact.upload-artifact;outcome=success;conclusion=success;duration_ms=910]
+2026-10-15T05:25:52.3826605Z Post job cleanup.
+2026-10-15T05:25:52.4944681Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-f0c8774faea8f22a6cf4c63ad97faa8329727801d7cf559971def07cb32338d0, not saving cache.
+2026-10-15T05:25:52.5074495Z Post job cleanup.
+2026-10-15T05:25:52.5964595Z [command]/usr/bin/git version
+2026-10-15T05:25:52.5998230Z git version 2.55.0
+2026-10-15T05:25:52.6039007Z Temporarily overriding HOME='/home/runner/work/_temp/ad06640f-4293-42b7-82ee-b720cba0781d' before making global git config changes
+2026-10-15T05:25:52.6040613Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-15T05:25:52.6044994Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/demon-king-life/demon-king-life
+2026-10-15T05:25:52.6077902Z Removing SSH command configuration
+2026-10-15T05:25:52.6085696Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-15T05:25:52.6124228Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-15T05:25:52.6384320Z Removing HTTP extra header
+2026-10-15T05:25:52.6393440Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-15T05:25:52.6437889Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-15T05:25:52.6684406Z Removing includeIf entries pointing to credentials config files
+2026-10-15T05:25:52.6692659Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-15T05:25:52.6744573Z includeif.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git.path
+2026-10-15T05:25:52.6746483Z includeif.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git/worktrees/*.path
+2026-10-15T05:25:52.6749688Z includeif.gitdir:/github/workspace/.git.path
+2026-10-15T05:25:52.6750938Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-15T05:25:52.6754059Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git.path
+2026-10-15T05:25:52.6788425Z /home/runner/work/_temp/git-credentials-67f275a1-0576-4664-be38-a70097d7e7d9.config
+2026-10-15T05:25:52.6813233Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git.path /home/runner/work/_temp/git-credentials-67f275a1-0576-4664-be38-a70097d7e7d9.config
+2026-10-15T05:25:52.6855319Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git/worktrees/*.path
+2026-10-15T05:25:52.6892424Z /home/runner/work/_temp/git-credentials-67f275a1-0576-4664-be38-a70097d7e7d9.config
+2026-10-15T05:25:52.6905686Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-67f275a1-0576-4664-be38-a70097d7e7d9.config
+2026-10-15T05:25:52.6956008Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-15T05:25:52.6990977Z /github/runner_temp/git-credentials-67f275a1-0576-4664-be38-a70097d7e7d9.config
+2026-10-15T05:25:52.7004564Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-67f275a1-0576-4664-be38-a70097d7e7d9.config
+2026-10-15T05:25:52.7057340Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-15T05:25:52.7093125Z /github/runner_temp/git-credentials-67f275a1-0576-4664-be38-a70097d7e7d9.config
+2026-10-15T05:25:52.7105713Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-67f275a1-0576-4664-be38-a70097d7e7d9.config
+2026-10-15T05:25:52.7148691Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-15T05:25:52.7404402Z Removing credentials config '/home/runner/work/_temp/git-credentials-67f275a1-0576-4664-be38-a70097d7e7d9.config'
+2026-10-15T05:25:52.7557533Z Cleaning up orphan processes
+2026-10-15T05:25:52.7908834Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
