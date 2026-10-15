@@ -1,0 +1,33 @@
+{
+  "implementationCommit": "bbc2ac854f40219d9a850dbf3acb72d544a69b36",
+  "actionsRun": 38823548978,
+  "actionsUrl": "https://github.com/jilzu001/demon-king-life/actions/runs/38823548978",
+  "deployment": "success",
+  "serverNpmCheck": {
+    "unitPassed": 263,
+    "browserPassed": 235,
+    "browserSkipped": 1,
+    "totalPassed": 498
+  },
+  "publicBrowser": {
+    "passed": 85,
+    "skipped": 1,
+    "endingCount": 20,
+    "platforms": [
+      "PC",
+      "mobile-portrait"
+    ]
+  },
+  "layoutCombinations": 120,
+  "currentStoryTerminalPaths": 91664,
+  "warnings": 0,
+  "publicWebpCount": 226,
+  "publicWebpBytes": 7358254,
+  "installedCount": 187,
+  "installedBytes": 6836526,
+  "largestWebpBytes": 193116,
+  "protectedRuntimeFiles": 35,
+  "physicalDevicesTested": false,
+  "actualTistoryPostTested": false,
+  "playUrl": "https://jilzu001.github.io/demon-king-life/"
+}

@@ -1,0 +1,37 @@
+{
+  "endingId": "ending_peace",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "attack",
+    "forgive",
+    "ally",
+    "public_audit",
+    "walk_away",
+    "end_peace"
+  ],
+  "age": 65,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "prison",
+    "princess",
+    "audit",
+    "hearing",
+    "quiet"
+  ],
+  "image": "/demon-king-life/assets/illustrations/ending_v4_6/ending_peace.webp",
+  "statuses": [
+    200,
+    200
+  ],
+  "bounds": {
+    "width": 244,
+    "height": 183,
+    "naturalWidth": 960,
+    "naturalHeight": 720
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

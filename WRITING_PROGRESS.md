@@ -1,6 +1,6 @@
 # 집필 진행 기록
 
-기준일: 2026-10-15. 원본은 [v3.6 통합 ZIP의65개 사건](spec/content-v3.6-story-engine-art/content/events_v2_9.json), 준비된 병합본은 [content/events_v2_9.json](content/events_v2_9.json)이다. 별도 핵심16사건(기존13+고백3)/보관 원작98사건은 이 분모에 합산하지 않는다. 집필과 게임 적용은 [DEV_PROGRESS.md](DEV_PROGRESS.md)에서 구분한다.
+기준일: 2026-10-16. 원본은 [v3.6 통합 ZIP의65개 사건](spec/content-v3.6-story-engine-art/content/events_v2_9.json), 준비된 병합본은 [content/events_v2_9.json](content/events_v2_9.json)이다. 별도 핵심16사건(기존13+고백3)/보관 원작98사건은 이 분모에 합산하지 않는다. 집필과 게임 적용은 [DEV_PROGRESS.md](DEV_PROGRESS.md)에서 구분한다.
 
 ## 집계 기준
 

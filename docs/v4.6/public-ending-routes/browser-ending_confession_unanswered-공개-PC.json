@@ -1,0 +1,38 @@
+{
+  "endingId": "ending_confession_unanswered",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "confess",
+    "confess_sincere",
+    "leave_mina",
+    "keep_records",
+    "explore_route_confession_unanswered",
+    "commit_route_confession_unanswered",
+    "route_confession_unanswered_listen"
+  ],
+  "age": 65,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "confession",
+    "confession_afterm",
+    "petition",
+    "princess",
+    "bridge_route_confession_unanswered"
+  ],
+  "image": "/demon-king-life/assets/illustrations/ending_v4_6/ending_confession_unanswered.webp",
+  "statuses": [
+    200,
+    200
+  ],
+  "bounds": {
+    "width": 480,
+    "height": 360,
+    "naturalWidth": 960,
+    "naturalHeight": 720
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

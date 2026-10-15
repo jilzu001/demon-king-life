@@ -1,0 +1,31 @@
+{
+  "endingId": "ending_love_scandal",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "confess",
+    "confess_absurd",
+    "embrace_fame"
+  ],
+  "age": 20,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "confession",
+    "confession_chaos"
+  ],
+  "image": "/demon-king-life/assets/illustrations/ending_v4_6/ending_love_scandal.webp",
+  "statuses": [
+    200,
+    200
+  ],
+  "bounds": {
+    "width": 244,
+    "height": 183,
+    "naturalWidth": 960,
+    "naturalHeight": 720
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}
