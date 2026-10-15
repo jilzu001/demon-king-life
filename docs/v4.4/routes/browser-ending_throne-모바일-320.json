@@ -1,0 +1,29 @@
+{
+  "endingId": "ending_throne",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "invoice",
+    "threaten_king"
+  ],
+  "age": 21,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "invoice"
+  ],
+  "image": "/phase1-test/assets/illustrations/backgrounds/throne_room.webp",
+  "statuses": [
+    200,
+    304
+  ],
+  "bounds": {
+    "width": 243.984375,
+    "height": 155.921875,
+    "naturalWidth": 640,
+    "naturalHeight": 409
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

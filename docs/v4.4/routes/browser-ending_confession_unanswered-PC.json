@@ -1,0 +1,38 @@
+{
+  "endingId": "ending_confession_unanswered",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "confess",
+    "confess_sincere",
+    "leave_mina",
+    "keep_records",
+    "explore_route_confession_unanswered",
+    "commit_route_confession_unanswered",
+    "route_confession_unanswered_listen"
+  ],
+  "age": 65,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "confession",
+    "confession_afterm",
+    "petition",
+    "princess",
+    "bridge_route_confession_unanswered"
+  ],
+  "image": "/phase1-test/assets/illustrations/ending_v4_3/river_bench.webp",
+  "statuses": [
+    200,
+    304
+  ],
+  "bounds": {
+    "width": 640,
+    "height": 360,
+    "naturalWidth": 640,
+    "naturalHeight": 360
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

@@ -1,0 +1,37 @@
+{
+  "endingId": "ending_mina_wedding",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "confess",
+    "confess_sincere",
+    "support_mina",
+    "explore_route_mina_wedding",
+    "commit_route_mina_wedding",
+    "route_mina_wedding_challenge"
+  ],
+  "age": 65,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "confession",
+    "confession_afterm",
+    "princess",
+    "setup_route_mina_wedding",
+    "bridge_route_mina_wedding"
+  ],
+  "image": "/phase1-test/assets/illustrations/ending_v4_3/wedding_lanterns.webp",
+  "statuses": [
+    200,
+    304
+  ],
+  "bounds": {
+    "width": 244,
+    "height": 137.25,
+    "naturalWidth": 640,
+    "naturalHeight": 360
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

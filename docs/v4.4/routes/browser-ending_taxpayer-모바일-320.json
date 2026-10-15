@@ -1,0 +1,37 @@
+{
+  "endingId": "ending_taxpayer",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "invoice",
+    "accept_invite",
+    "ally",
+    "explore_route_taxpayer",
+    "commit_route_taxpayer",
+    "route_taxpayer_receipt"
+  ],
+  "age": 65,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "invoice",
+    "princess",
+    "audit",
+    "setup_route_taxpayer",
+    "bridge_route_taxpayer"
+  ],
+  "image": "/phase1-test/assets/illustrations/ending_v4_3/tax_celebration.webp",
+  "statuses": [
+    200,
+    304
+  ],
+  "bounds": {
+    "width": 244,
+    "height": 137.25,
+    "naturalWidth": 640,
+    "naturalHeight": 360
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

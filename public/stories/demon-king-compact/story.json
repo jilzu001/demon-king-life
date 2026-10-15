@@ -5,7 +5,8 @@
   "title": "가짜 마왕의 일생",
   "entryNodeId": "birth",
   "chapters": [
-    "chapters/01_complete.json"
+    "chapters/01_complete.json",
+    "chapters/02_ending_routes.json"
   ],
   "charactersFile": "characters.json",
   "endingsFile": "endings.json",

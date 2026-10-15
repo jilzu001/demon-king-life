@@ -2,6 +2,7 @@ import type { PresentedStory } from '../content/presentation';
 import { evaluate } from '../engine/conditions';
 import type { GameState, HistoryEntry, Outcome } from '../engine/types';
 import { isCompact } from '../content/compact-contract';
+import { routeYears } from '../content/route-years';
 
 export const resultLabels: Record<Outcome['result'], string> = { success: '성공', failure: '실패', mixed: '복합 결과', neutral: '중립 결과' };
 export type LifeEvent = {
@@ -23,6 +24,7 @@ export function lifeEvents(story: PresentedStory, state: GameState): LifeEvent[]
     .map((line, index) => ({ id: `origin:${index}`, age: line.age, title: '성장 기록', summary: line.text, kind: 'origin' }));
   for (const nodeId of state.enteredNodeIds) {
     const node = story.nodes[nodeId]!;
+    for (const year of routeYears(story, state, nodeId)) events.push({ id: year.id, age: year.age, title: '그해의 인생 기록', summary: year.text, kind: 'origin' });
     const history = state.history.find(h => h.nodeId === nodeId);
     const confirmed = history ? confirmedChoice(story, history) : null;
     events.push({

@@ -1,0 +1,191 @@
+[
+  {
+    "endingId": "ending_mina_renounced",
+    "anchor": "princess",
+    "setup": "setup_route_mina_renounced",
+    "bridge": "bridge_route_mina_renounced",
+    "setupAge": 29,
+    "endingAge": 55,
+    "requiredFlags": [
+      "confessed_at_exam",
+      "confession_sincere",
+      "mina_mutual_respect",
+      "supported_mina_after_exam",
+      "defended_mina_independence"
+    ],
+    "requiredPeople": [
+      "mina"
+    ]
+  },
+  {
+    "endingId": "ending_mina_wedding",
+    "anchor": "princess",
+    "setup": "setup_route_mina_wedding",
+    "bridge": "bridge_route_mina_wedding",
+    "setupAge": 47,
+    "endingAge": 65,
+    "requiredFlags": [
+      "confessed_at_exam",
+      "confession_sincere",
+      "mina_mutual_respect",
+      "mina_explicit_reciprocity",
+      "years_of_mutual_trust"
+    ],
+    "requiredPeople": [
+      "mina"
+    ]
+  },
+  {
+    "endingId": "ending_confession_unanswered",
+    "anchor": "princess",
+    "setup": "setup_route_confession_unanswered",
+    "bridge": "bridge_route_confession_unanswered",
+    "setupAge": 29,
+    "endingAge": 65,
+    "requiredFlags": [
+      "confessed_at_exam",
+      "mina_distance",
+      "respected_mina_boundary"
+    ],
+    "requiredPeople": [
+      "mina"
+    ]
+  },
+  {
+    "endingId": "ending_common_enemy",
+    "anchor": "audit",
+    "setup": "setup_route_common_enemy",
+    "bridge": "bridge_route_common_enemy",
+    "setupAge": 41,
+    "endingAge": 60,
+    "requiredFlags": [
+      "refused_exam",
+      "mina_testified_truthfully",
+      "joint_public_evidence"
+    ],
+    "requiredPeople": [
+      "mina"
+    ]
+  },
+  {
+    "endingId": "ending_double_license",
+    "anchor": "princess",
+    "setup": "setup_route_double_license",
+    "bridge": "bridge_route_double_license",
+    "setupAge": 29,
+    "endingAge": 36,
+    "requiredFlags": [
+      "mina_rival_promise",
+      "refused_exam",
+      "hero_license_earned_legally"
+    ],
+    "requiredPeople": [
+      "mina"
+    ]
+  },
+  {
+    "endingId": "ending_retirement_47",
+    "anchor": "hearing",
+    "setup": "setup_route_retirement_47",
+    "bridge": "bridge_route_retirement_47",
+    "setupAge": 47,
+    "endingAge": 47,
+    "requiredFlags": [
+      "birth_wage_claim",
+      "claimed_service_years",
+      "rejected_50000_settlement"
+    ],
+    "requiredPeople": []
+  },
+  {
+    "endingId": "ending_paid_defeat",
+    "anchor": "princess",
+    "setup": "setup_route_paid_defeat",
+    "bridge": "bridge_route_paid_defeat",
+    "setupAge": 29,
+    "endingAge": 54,
+    "requiredFlags": [
+      "asked_fee",
+      "licensed_defeat_show",
+      "no_real_injury_policy"
+    ],
+    "requiredPeople": []
+  },
+  {
+    "endingId": "ending_taxpayer",
+    "anchor": "audit",
+    "setup": "setup_route_taxpayer",
+    "bridge": "bridge_route_taxpayer",
+    "setupAge": 41,
+    "endingAge": 65,
+    "requiredFlags": [
+      "asked_fee",
+      "honest_business_books",
+      "paid_taxes_years"
+    ],
+    "requiredPeople": []
+  },
+  {
+    "endingId": "ending_king",
+    "anchor": "hearing",
+    "setup": "setup_route_king",
+    "bridge": "bridge_route_king",
+    "setupAge": 47,
+    "endingAge": 60,
+    "requiredFlags": [
+      "princess_ally",
+      "constitutional_succession",
+      "public_consent",
+      "elysia_equal_partner"
+    ],
+    "requiredPeople": [
+      "erisia"
+    ]
+  },
+  {
+    "endingId": "ending_bankrupt",
+    "anchor": "hearing",
+    "setup": "setup_route_bankrupt",
+    "bridge": "bridge_route_bankrupt",
+    "setupAge": 47,
+    "endingAge": 60,
+    "requiredFlags": [
+      "public_audit",
+      "class_action_win",
+      "evidence_preserved",
+      "rejected_private_buyout"
+    ],
+    "requiredPeople": []
+  },
+  {
+    "endingId": "ending_true_demon",
+    "anchor": "hearing",
+    "setup": "setup_route_true_demon",
+    "bridge": "bridge_route_true_demon",
+    "setupAge": 47,
+    "endingAge": 53,
+    "requiredFlags": [
+      "princess_ally",
+      "public_audit",
+      "verified_experiment_receipts",
+      "sealed_gate_discovered"
+    ],
+    "requiredPeople": [
+      "mina"
+    ]
+  },
+  {
+    "endingId": "ending_mother_petition",
+    "anchor": "audit",
+    "setup": "setup_route_mother_petition",
+    "bridge": "bridge_route_mother_petition",
+    "setupAge": 41,
+    "endingAge": 65,
+    "requiredFlags": [
+      "birth_appealed",
+      "kept_family_petition",
+      "pursued_name_restoration"
+    ],
+    "requiredPeople": []
+  }
+]

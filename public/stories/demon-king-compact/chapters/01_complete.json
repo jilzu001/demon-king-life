@@ -577,6 +577,321 @@
               "narrative": "에리시아는 잠시 침묵했다.\n\n“정말 작은 사람이군요.”\n\n당신은 대답했다.\n\n“국가가 그렇게 키웠습니다.”"
             }
           ]
+        },
+        {
+          "id": "explore_route_mina_renounced",
+          "text": "합격증 대신 지킬 곳 — 사정을 자세히 알아본다.",
+          "description": "지금까지의 선택으로 이어진 일을 살펴봅니다. 이후에 참여 여부를 직접 결정합니다.",
+          "enabledWhen": {
+            "all": [
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "confessed_at_exam"
+              },
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "confession_sincere"
+              },
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "mina_mutual_respect"
+              },
+              {
+                "op": "eq",
+                "path": "npcs.mina.alive",
+                "value": true
+              },
+              {
+                "op": "gte",
+                "path": "npcs.mina.trust",
+                "value": 50
+              }
+            ]
+          },
+          "outcomes": [
+            {
+              "id": "enter_route_mina_renounced",
+              "when": {
+                "all": [
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "confessed_at_exam"
+                  },
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "confession_sincere"
+                  },
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "mina_mutual_respect"
+                  },
+                  {
+                    "op": "eq",
+                    "path": "npcs.mina.alive",
+                    "value": true
+                  },
+                  {
+                    "op": "gte",
+                    "path": "npcs.mina.trust",
+                    "value": 50
+                  }
+                ]
+              },
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "setup_route_mina_renounced"
+              },
+              "narrative": "당신은 지금까지 남긴 기록을 챙겼다. 합격증 대신 지킬 곳에 관한 이야기를 직접 확인하기로 했다."
+            }
+          ]
+        },
+        {
+          "id": "explore_route_mina_wedding",
+          "text": "고백의 대답은 계약이 아니다 — 사정을 자세히 알아본다.",
+          "description": "지금까지의 선택으로 이어진 일을 살펴봅니다. 이후에 참여 여부를 직접 결정합니다.",
+          "enabledWhen": {
+            "all": [
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "confessed_at_exam"
+              },
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "confession_sincere"
+              },
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "mina_mutual_respect"
+              },
+              {
+                "op": "eq",
+                "path": "npcs.mina.alive",
+                "value": true
+              },
+              {
+                "op": "gte",
+                "path": "npcs.mina.trust",
+                "value": 50
+              }
+            ]
+          },
+          "outcomes": [
+            {
+              "id": "enter_route_mina_wedding",
+              "when": {
+                "all": [
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "confessed_at_exam"
+                  },
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "confession_sincere"
+                  },
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "mina_mutual_respect"
+                  },
+                  {
+                    "op": "eq",
+                    "path": "npcs.mina.alive",
+                    "value": true
+                  },
+                  {
+                    "op": "gte",
+                    "path": "npcs.mina.trust",
+                    "value": 50
+                  }
+                ]
+              },
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "setup_route_mina_wedding"
+              },
+              "narrative": "당신은 지금까지 남긴 기록을 챙겼다. 고백의 대답은 계약이 아니다에 관한 이야기를 직접 확인하기로 했다."
+            }
+          ]
+        },
+        {
+          "id": "explore_route_confession_unanswered",
+          "text": "답장을 재촉하지 않기 — 사정을 자세히 알아본다.",
+          "description": "지금까지의 선택으로 이어진 일을 살펴봅니다. 이후에 참여 여부를 직접 결정합니다.",
+          "enabledWhen": {
+            "all": [
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "confessed_at_exam"
+              },
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "mina_distance"
+              },
+              {
+                "op": "eq",
+                "path": "npcs.mina.alive",
+                "value": true
+              },
+              {
+                "op": "gte",
+                "path": "npcs.mina.trust",
+                "value": 50
+              }
+            ]
+          },
+          "outcomes": [
+            {
+              "id": "enter_route_confession_unanswered",
+              "when": {
+                "all": [
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "confessed_at_exam"
+                  },
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "mina_distance"
+                  },
+                  {
+                    "op": "eq",
+                    "path": "npcs.mina.alive",
+                    "value": true
+                  },
+                  {
+                    "op": "gte",
+                    "path": "npcs.mina.trust",
+                    "value": 50
+                  }
+                ]
+              },
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "setup_route_confession_unanswered"
+              },
+              "narrative": "당신은 지금까지 남긴 기록을 챙겼다. 답장을 재촉하지 않기에 관한 이야기를 직접 확인하기로 했다."
+            }
+          ]
+        },
+        {
+          "id": "explore_route_double_license",
+          "text": "전투력보다 큰 응시 요건 — 사정을 자세히 알아본다.",
+          "description": "지금까지의 선택으로 이어진 일을 살펴봅니다. 이후에 참여 여부를 직접 결정합니다.",
+          "enabledWhen": {
+            "all": [
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "mina_rival_promise"
+              },
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "refused_exam"
+              },
+              {
+                "op": "eq",
+                "path": "npcs.mina.alive",
+                "value": true
+              },
+              {
+                "op": "gte",
+                "path": "npcs.mina.trust",
+                "value": 50
+              }
+            ]
+          },
+          "outcomes": [
+            {
+              "id": "enter_route_double_license",
+              "when": {
+                "all": [
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "mina_rival_promise"
+                  },
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "refused_exam"
+                  },
+                  {
+                    "op": "eq",
+                    "path": "npcs.mina.alive",
+                    "value": true
+                  },
+                  {
+                    "op": "gte",
+                    "path": "npcs.mina.trust",
+                    "value": 50
+                  }
+                ]
+              },
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "setup_route_double_license"
+              },
+              "narrative": "당신은 지금까지 남긴 기록을 챙겼다. 전투력보다 큰 응시 요건에 관한 이야기를 직접 확인하기로 했다."
+            }
+          ]
+        },
+        {
+          "id": "explore_route_paid_defeat",
+          "text": "유료 패배의 사업자등록 — 사정을 자세히 알아본다.",
+          "description": "지금까지의 선택으로 이어진 일을 살펴봅니다. 이후에 참여 여부를 직접 결정합니다.",
+          "enabledWhen": {
+            "all": [
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "asked_fee"
+              }
+            ]
+          },
+          "outcomes": [
+            {
+              "id": "enter_route_paid_defeat",
+              "when": {
+                "all": [
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "asked_fee"
+                  }
+                ]
+              },
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "setup_route_paid_defeat"
+              },
+              "narrative": "당신은 지금까지 남긴 기록을 챙겼다. 유료 패배의 사업자등록에 관한 이야기를 직접 확인하기로 했다."
+            }
+          ]
         }
       ],
       "chronicleSummary": "29세에 에리시아 공주로부터 마왕 관리 예산 장부를 받았다."
@@ -653,6 +968,131 @@
               "narrative": "장부를 품고 달아나는 일은 쉬웠다. 문제는 글씨가 마법 잉크였다는 사실이다. 감사실 밖으로 나오자 글씨가 모두 사라졌다. 빈 장부를 들고 서 있던 당신은 왕실 문서 절도죄로 체포됐다. 에리시아는 면회실에서 말했다.\n\n“당신이 왕국에서 가장 안전한 적인 이유를 다시 확인했네요.”\n\n당신은 웃으려다 실패했다. 서른 해 뒤에도 사람들은 당신을 ‘빈 장부를 훔친 마왕’으로 기억했다."
             }
           ]
+        },
+        {
+          "id": "explore_route_common_enemy",
+          "text": "서로 다른 증언 — 사정을 자세히 알아본다.",
+          "description": "지금까지의 선택으로 이어진 일을 살펴봅니다. 이후에 참여 여부를 직접 결정합니다.",
+          "enabledWhen": {
+            "all": [
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "refused_exam"
+              },
+              {
+                "op": "eq",
+                "path": "npcs.mina.alive",
+                "value": true
+              },
+              {
+                "op": "gte",
+                "path": "npcs.mina.trust",
+                "value": 50
+              }
+            ]
+          },
+          "outcomes": [
+            {
+              "id": "enter_route_common_enemy",
+              "when": {
+                "all": [
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "refused_exam"
+                  },
+                  {
+                    "op": "eq",
+                    "path": "npcs.mina.alive",
+                    "value": true
+                  },
+                  {
+                    "op": "gte",
+                    "path": "npcs.mina.trust",
+                    "value": 50
+                  }
+                ]
+              },
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "setup_route_common_enemy"
+              },
+              "narrative": "당신은 지금까지 남긴 기록을 챙겼다. 서로 다른 증언에 관한 이야기를 직접 확인하기로 했다."
+            }
+          ]
+        },
+        {
+          "id": "explore_route_taxpayer",
+          "text": "유일하게 정확한 장부 — 사정을 자세히 알아본다.",
+          "description": "지금까지의 선택으로 이어진 일을 살펴봅니다. 이후에 참여 여부를 직접 결정합니다.",
+          "enabledWhen": {
+            "all": [
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "asked_fee"
+              }
+            ]
+          },
+          "outcomes": [
+            {
+              "id": "enter_route_taxpayer",
+              "when": {
+                "all": [
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "asked_fee"
+                  }
+                ]
+              },
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "setup_route_taxpayer"
+              },
+              "narrative": "당신은 지금까지 남긴 기록을 챙겼다. 유일하게 정확한 장부에 관한 이야기를 직접 확인하기로 했다."
+            }
+          ]
+        },
+        {
+          "id": "explore_route_mother_petition",
+          "text": "어머니가 보낸 등기 — 사정을 자세히 알아본다.",
+          "description": "지금까지의 선택으로 이어진 일을 살펴봅니다. 이후에 참여 여부를 직접 결정합니다.",
+          "enabledWhen": {
+            "all": [
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "birth_appealed"
+              }
+            ]
+          },
+          "outcomes": [
+            {
+              "id": "enter_route_mother_petition",
+              "when": {
+                "all": [
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "birth_appealed"
+                  }
+                ]
+              },
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "setup_route_mother_petition"
+              },
+              "narrative": "당신은 지금까지 남긴 기록을 챙겼다. 어머니가 보낸 등기에 관한 이야기를 직접 확인하기로 했다."
+            }
+          ]
         }
       ],
       "chronicleSummary": "41세에 마왕 관리 예산 199만 7천 골드의 행방을 추적했다."
@@ -709,6 +1149,186 @@
                 }
               ],
               "narrative": "당신은 출생신고소에 가서 새 서류를 받았다. 직업란은 비어 있었다. 태어나 처음으로 빈칸이 마음에 들었다."
+            }
+          ]
+        },
+        {
+          "id": "explore_route_retirement_47",
+          "text": "마왕도 근속연수를 셉니다 — 사정을 자세히 알아본다.",
+          "description": "지금까지의 선택으로 이어진 일을 살펴봅니다. 이후에 참여 여부를 직접 결정합니다.",
+          "enabledWhen": {
+            "all": [
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "birth_wage_claim"
+              }
+            ]
+          },
+          "outcomes": [
+            {
+              "id": "enter_route_retirement_47",
+              "when": {
+                "all": [
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "birth_wage_claim"
+                  }
+                ]
+              },
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "setup_route_retirement_47"
+              },
+              "narrative": "당신은 지금까지 남긴 기록을 챙겼다. 마왕도 근속연수를 셉니다에 관한 이야기를 직접 확인하기로 했다."
+            }
+          ]
+        },
+        {
+          "id": "explore_route_king",
+          "text": "왕국을 대표할 사람이 없다 — 사정을 자세히 알아본다.",
+          "description": "지금까지의 선택으로 이어진 일을 살펴봅니다. 이후에 참여 여부를 직접 결정합니다.",
+          "enabledWhen": {
+            "all": [
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "princess_ally"
+              },
+              {
+                "op": "eq",
+                "path": "npcs.erisia.alive",
+                "value": true
+              }
+            ]
+          },
+          "outcomes": [
+            {
+              "id": "enter_route_king",
+              "when": {
+                "all": [
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "princess_ally"
+                  },
+                  {
+                    "op": "eq",
+                    "path": "npcs.erisia.alive",
+                    "value": true
+                  }
+                ]
+              },
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "setup_route_king"
+              },
+              "narrative": "당신은 지금까지 남긴 기록을 챙겼다. 왕국을 대표할 사람이 없다에 관한 이야기를 직접 확인하기로 했다."
+            }
+          ]
+        },
+        {
+          "id": "explore_route_bankrupt",
+          "text": "한 사람의 사건이 아니었다 — 사정을 자세히 알아본다.",
+          "description": "지금까지의 선택으로 이어진 일을 살펴봅니다. 이후에 참여 여부를 직접 결정합니다.",
+          "enabledWhen": {
+            "all": [
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "public_audit"
+              }
+            ]
+          },
+          "outcomes": [
+            {
+              "id": "enter_route_bankrupt",
+              "when": {
+                "all": [
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "public_audit"
+                  }
+                ]
+              },
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "setup_route_bankrupt"
+              },
+              "narrative": "당신은 지금까지 남긴 기록을 챙겼다. 한 사람의 사건이 아니었다에 관한 이야기를 직접 확인하기로 했다."
+            }
+          ]
+        },
+        {
+          "id": "explore_route_true_demon",
+          "text": "봉인 시설의 사용 내역 — 사정을 자세히 알아본다.",
+          "description": "지금까지의 선택으로 이어진 일을 살펴봅니다. 이후에 참여 여부를 직접 결정합니다.",
+          "enabledWhen": {
+            "all": [
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "princess_ally"
+              },
+              {
+                "op": "contains",
+                "path": "flags",
+                "value": "public_audit"
+              },
+              {
+                "op": "eq",
+                "path": "npcs.mina.alive",
+                "value": true
+              },
+              {
+                "op": "gte",
+                "path": "npcs.mina.trust",
+                "value": 50
+              }
+            ]
+          },
+          "outcomes": [
+            {
+              "id": "enter_route_true_demon",
+              "when": {
+                "all": [
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "princess_ally"
+                  },
+                  {
+                    "op": "contains",
+                    "path": "flags",
+                    "value": "public_audit"
+                  },
+                  {
+                    "op": "eq",
+                    "path": "npcs.mina.alive",
+                    "value": true
+                  },
+                  {
+                    "op": "gte",
+                    "path": "npcs.mina.trust",
+                    "value": 50
+                  }
+                ]
+              },
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "setup_route_true_demon"
+              },
+              "narrative": "당신은 지금까지 남긴 기록을 챙겼다. 봉인 시설의 사용 내역에 관한 이야기를 직접 확인하기로 했다."
             }
           ]
         }

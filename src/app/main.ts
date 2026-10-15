@@ -20,6 +20,7 @@ import { isCompact, compactSlot } from '../content/compact-contract';
 import { loadCompactProgress, compactProgressKey, type CompactProgress } from '../ui/compact-progress';
 import { renderCompactEnding } from '../ui/compact-ending';
 import { endingGalleryEntries, galleryEndingIds } from '../content/ending-gallery';
+import { routeBody } from '../content/route-years';
 import { renderEndingGallery, renderEndingDetail } from '../ui/ending-gallery';
 import { resumeAtVisitedNode, backupBeforeReselect, loadReselectBackup, RESELECT_BACKUP_KEY } from '../persistence/reselect';
 
@@ -569,7 +570,7 @@ function renderScene(layout: HTMLElement, content: PresentedStory, current: Game
   if (presentation?.locationLabel) heading.append(element('p', presentation.locationLabel, 'location'));
   const title = element('h2', node.title); title.id = 'scene-title'; title.tabIndex = -1;
   heading.append(title);
-  const narrative = renderNarrative(node.body, presentation, isCompact(content.manifest));
+  const narrative = renderNarrative(routeBody(content, current, node.id), presentation, isCompact(content.manifest));
   if (isCompact(content.manifest)) illustrateNarrative(narrative, node.id, !current.history.length, { age: current.age, body: node.body });
   panel.append(heading, narrative);
   const dialog = element('dialog', undefined, 'choice-dialog'); dialog.id = 'choice-dialog';
@@ -581,6 +582,7 @@ function renderScene(layout: HTMLElement, content: PresentedStory, current: Game
   const choices = element('div', undefined, 'choices');
   for (const [index, choice] of node.choices.entries()) {
     const enabled = evaluate(content, current, choice.enabledWhen);
+    if (choice.id.startsWith('explore_route_') && !enabled) continue;
     const b = button('', () => makeChoice(node.id, choice.id), !enabled || busy || Boolean(pending));
     b.dataset.choice = choice.id; b.dataset.enabled = String(enabled); b.classList.add('choice-card');
     b.setAttribute('aria-label', choice.text);

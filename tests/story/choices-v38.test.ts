@@ -12,7 +12,8 @@ import type { GameState } from '../../src/engine/types';
 const read = (path: string) => JSON.parse(readFileSync(path, 'utf8'));
 const current = await readExampleStory('demon-king-compact');
 const baseline = read('backups/before-v3.8/01_complete.json');
-const previous = await loadStory(async path => path === 'chapters/01_complete.json' ? baseline : read(`public/stories/demon-king-compact/${path}`));
+const previous = await loadStory(async path => path === 'story.json' ? read('backups/before-v4.4/story.json') : path === 'chapters/01_complete.json' ? baseline : read(`backups/before-v4.4/${path}`));
+const v38 = await loadStory(async path => read(`backups/before-v4.4/${path}`));
 const source = read('spec/content-v3.8-min-choices/chapters/01_complete.json');
 const additions: Record<string, string[]> = {
   birth: ['family_appeal', 'family_invoice'], child: ['mina_contract', 'mina_rival'],
@@ -20,10 +21,10 @@ const additions: Record<string, string[]> = {
 };
 
 it('최신 16사건/36선택은 그대로 두고 지정한 5사건의 작가 선택 7개만 병합한다', () => {
-  expect(Object.keys(current.nodes)).toEqual(Object.keys(previous.nodes));
+  expect(Object.keys(v38.nodes)).toEqual(Object.keys(previous.nodes));
   let added = 0;
   for (const [id, old] of Object.entries(previous.nodes)) {
-    const node = current.nodes[id]!;
+    const node = v38.nodes[id]!;
     expect({ ...node, choices: old.choices }).toEqual(old);
     expect(node.choices.slice(0, old.choices.length)).toEqual(old.choices);
     const extra = node.choices.slice(old.choices.length);
@@ -32,11 +33,11 @@ it('최신 16사건/36선택은 그대로 두고 지정한 5사건의 작가 선
     added += extra.length;
   }
   expect(added).toBe(7);
-  expect(current.manifest).toEqual(previous.manifest);
-  expect(current.endings).toEqual(previous.endings);
-  expect(current.characters).toEqual(previous.characters);
-  expect(current.nodes.exam!.choices.map(c => c.id)).toEqual(['attack', 'refuse', 'invoice', 'confess']);
-  expect(current.nodes.exam!.choices[3]!.text).toBe('미나에게 사랑한다고 고백한다.');
+  expect(v38.manifest).toEqual(previous.manifest);
+  expect(v38.endings).toEqual(previous.endings);
+  expect(v38.characters).toEqual(previous.characters);
+  expect(v38.nodes.exam!.choices.map(c => c.id)).toEqual(['attack', 'refuse', 'invoice', 'confess']);
+  expect(v38.nodes.exam!.choices[3]!.text).toBe('미나에게 사랑한다고 고백한다.');
 });
 
 it('일반 사건은 최소2개이며 0·1개 회귀를 거부하고 엔딩은 별도 유형으로 보호한다', () => {
@@ -45,7 +46,7 @@ it('일반 사건은 최소2개이며 0·1개 회귀를 거부하고 엔딩은 �
     const broken = structuredClone(current); broken.nodes.birth!.choices = broken.nodes.birth!.choices.slice(0, count);
     expect(() => assertCompactChoiceMinimum(broken)).toThrow(/birth.*최소 2개/);
   }
-  expect(Object.values(current.endings)).toHaveLength(8);
+  expect(Object.values(current.endings)).toHaveLength(20);
   const events = read('content/events_v2_9.json').events;
   expect(events).toHaveLength(65);
   for (const event of events) expect(event.choices.length).toBeGreaterThanOrEqual(2);

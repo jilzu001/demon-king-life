@@ -113,7 +113,7 @@ for (const event of v38) test(`v3.8 ${event.id}: 모든 선택의 표시·결과
     }, { key, state: event.state, mode });
     await page.reload(); await scene(page);
     expect(JSON.parse((await raw(page))!)).toEqual(event.state);
-    await expect(page.locator('[data-choice]')).toHaveCount(event.choices.length);
+    await expect(page.locator('[data-choice]:not([data-choice^="explore_route_"])')).toHaveCount(event.choices.length);
     for (const c of event.choices) {
       const button = page.locator(`[data-choice="${c.id}"]`);
       await expect(button).toBeEnabled();

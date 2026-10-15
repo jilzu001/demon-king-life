@@ -10,8 +10,8 @@ describe('본문 일러스트의 콘텐츠 보호와 실제 에셋', () => {
     expect(new Set(manifest.assets.map(a => a.id)).size).toBe(46);
     for (const asset of manifest.assets) {
       const bytes = readFileSync(`public/${asset.path}`);
-      expect(bytes).toEqual(readFileSync(`spec/content-v3.6-story-engine-art/${asset.path}`));
-      if (asset.id !== 'mina_wooden_sword') expect(bytes).toEqual(readFileSync(`spec/content-v3.4-illustrated/${asset.path}`));
+      expect(bytes.equals(readFileSync(`spec/content-v3.6-story-engine-art/${asset.path}`)), asset.path).toBe(true);
+      if (asset.id !== 'mina_wooden_sword') expect(bytes.equals(readFileSync(`spec/content-v3.4-illustrated/${asset.path}`)), asset.path).toBe(true);
       expect(bytes.length).toBe(asset.bytes);
       expect(bytes.subarray(0, 4).toString()).toBe('RIFF');
       expect(bytes.subarray(8, 12).toString()).toBe('WEBP');

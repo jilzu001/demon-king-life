@@ -1,0 +1,1594 @@
+[
+  {
+    "endingId": "ending_escape",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "escape_prison"
+    ],
+    "title": "계단 열일곱 개의 마왕",
+    "age": 21,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "attack",
+        "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "prison"
+      },
+      {
+        "age": 21,
+        "nodeId": "prison",
+        "choiceId": "escape_prison",
+        "outcomeId": "out_escape_prison",
+        "toKind": "ending",
+        "toId": "ending_escape"
+      }
+    ],
+    "artwork": "assets/illustrations/backgrounds/prison.webp",
+    "body": "무모한 탈옥은 왕국의 무기가 아니라 계단에서 끝났다.",
+    "finalChoice": "escape_prison",
+    "imageBytes": 14144
+  },
+  {
+    "endingId": "ending_fire",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "burn_office"
+    ],
+    "title": "불타 버린 진실",
+    "age": 21,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "refuse",
+        "outcomeId": "out_refuse",
+        "toKind": "node",
+        "toId": "petition"
+      },
+      {
+        "age": 21,
+        "nodeId": "petition",
+        "choiceId": "burn_office",
+        "outcomeId": "out_burn_office",
+        "toKind": "ending",
+        "toId": "ending_fire"
+      }
+    ],
+    "artwork": "assets/illustrations/events/queens_letter.webp",
+    "body": "서류를 없애려다 사람의 삶과 자신의 미래를 태웠다.",
+    "finalChoice": "burn_office",
+    "imageBytes": 21672
+  },
+  {
+    "endingId": "ending_throne",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "threaten_king"
+    ],
+    "title": "왕에게 삿대질한 마왕",
+    "age": 21,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "invoice",
+        "outcomeId": "out_invoice",
+        "toKind": "node",
+        "toId": "invoice"
+      },
+      {
+        "age": 21,
+        "nodeId": "invoice",
+        "choiceId": "threaten_king",
+        "outcomeId": "out_threaten_king",
+        "toKind": "ending",
+        "toId": "ending_throne"
+      }
+    ],
+    "artwork": "assets/illustrations/backgrounds/throne_room.webp",
+    "body": "국왕 앞에서 소리친 용기는 처형장까지 이어졌다.",
+    "finalChoice": "threaten_king",
+    "imageBytes": 18508
+  },
+  {
+    "endingId": "ending_ledger",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "steal_ledger"
+    ],
+    "title": "빈 장부의 주인",
+    "age": 41,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "attack",
+        "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "prison"
+      },
+      {
+        "age": 21,
+        "nodeId": "prison",
+        "choiceId": "forgive",
+        "outcomeId": "out_forgive",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "ally",
+        "outcomeId": "out_ally",
+        "toKind": "node",
+        "toId": "audit"
+      },
+      {
+        "age": 41,
+        "nodeId": "audit",
+        "choiceId": "steal_ledger",
+        "outcomeId": "out_steal_ledger",
+        "toKind": "ending",
+        "toId": "ending_ledger"
+      }
+    ],
+    "artwork": "assets/illustrations/events/queens_letter.webp",
+    "body": "진실을 독점하려다 빈 종이만 남았다.",
+    "finalChoice": "steal_ledger",
+    "imageBytes": 21672
+  },
+  {
+    "endingId": "ending_peace",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "walk_away",
+      "end_peace"
+    ],
+    "title": "그냥 인간의 승리",
+    "age": 65,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "attack",
+        "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "prison"
+      },
+      {
+        "age": 21,
+        "nodeId": "prison",
+        "choiceId": "forgive",
+        "outcomeId": "out_forgive",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "ally",
+        "outcomeId": "out_ally",
+        "toKind": "node",
+        "toId": "audit"
+      },
+      {
+        "age": 41,
+        "nodeId": "audit",
+        "choiceId": "public_audit",
+        "outcomeId": "out_public_audit",
+        "toKind": "node",
+        "toId": "hearing"
+      },
+      {
+        "age": 47,
+        "nodeId": "hearing",
+        "choiceId": "walk_away",
+        "outcomeId": "out_walk_away",
+        "toKind": "node",
+        "toId": "quiet"
+      },
+      {
+        "age": 65,
+        "nodeId": "quiet",
+        "choiceId": "end_peace",
+        "outcomeId": "out_end_peace",
+        "toKind": "ending",
+        "toId": "ending_peace"
+      }
+    ],
+    "artwork": "assets/illustrations/events/final_sunset.webp",
+    "body": "작은 가게의 마지막 불을 끄고 당신은 노을을 보았다. 세상은 당신을 마왕이라 불렀지만, 당신은 결국 자신의 하루를 살았다.",
+    "finalChoice": "end_peace",
+    "imageBytes": 16234
+  },
+  {
+    "endingId": "ending_reform",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "fight_case",
+      "reject_money",
+      "end_reform"
+    ],
+    "title": "법전을 고친 마왕",
+    "age": 60,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "attack",
+        "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "prison"
+      },
+      {
+        "age": 21,
+        "nodeId": "prison",
+        "choiceId": "forgive",
+        "outcomeId": "out_forgive",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "ally",
+        "outcomeId": "out_ally",
+        "toKind": "node",
+        "toId": "audit"
+      },
+      {
+        "age": 41,
+        "nodeId": "audit",
+        "choiceId": "public_audit",
+        "outcomeId": "out_public_audit",
+        "toKind": "node",
+        "toId": "hearing"
+      },
+      {
+        "age": 47,
+        "nodeId": "hearing",
+        "choiceId": "fight_case",
+        "outcomeId": "out_fight_case",
+        "toKind": "node",
+        "toId": "settlement"
+      },
+      {
+        "age": 47,
+        "nodeId": "settlement",
+        "choiceId": "reject_money",
+        "outcomeId": "out_reject_money",
+        "toKind": "node",
+        "toId": "final_trial"
+      },
+      {
+        "age": 60,
+        "nodeId": "final_trial",
+        "choiceId": "end_reform",
+        "outcomeId": "out_end_reform",
+        "toKind": "ending",
+        "toId": "ending_reform"
+      }
+    ],
+    "artwork": "assets/illustrations/events/royal_trial.webp",
+    "body": "왕국이 사과하기까지 너무 많은 계절이 지났다. 그래도 다음 아이의 출생신고서에는 직업란이 비어 있었다. 당신은 그것을 보고 처음으로 이겼다고 생각했다.",
+    "finalChoice": "end_reform",
+    "imageBytes": 22290
+  },
+  {
+    "endingId": "ending_office",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "fight_case",
+      "buy_office",
+      "end_office"
+    ],
+    "title": "국가가 만든 적의 반격",
+    "age": 62,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "attack",
+        "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "prison"
+      },
+      {
+        "age": 21,
+        "nodeId": "prison",
+        "choiceId": "forgive",
+        "outcomeId": "out_forgive",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "ally",
+        "outcomeId": "out_ally",
+        "toKind": "node",
+        "toId": "audit"
+      },
+      {
+        "age": 41,
+        "nodeId": "audit",
+        "choiceId": "public_audit",
+        "outcomeId": "out_public_audit",
+        "toKind": "node",
+        "toId": "hearing"
+      },
+      {
+        "age": 47,
+        "nodeId": "hearing",
+        "choiceId": "fight_case",
+        "outcomeId": "out_fight_case",
+        "toKind": "node",
+        "toId": "settlement"
+      },
+      {
+        "age": 47,
+        "nodeId": "settlement",
+        "choiceId": "buy_office",
+        "outcomeId": "out_buy_office",
+        "toKind": "node",
+        "toId": "office"
+      },
+      {
+        "age": 62,
+        "nodeId": "office",
+        "choiceId": "end_office",
+        "outcomeId": "out_end_office",
+        "toKind": "ending",
+        "toId": "ending_office"
+      }
+    ],
+    "artwork": "assets/illustrations/events/demon_protest.webp",
+    "body": "당신은 더 이상 마왕이 아니었다. 다만 마왕이었던 덕분에 다른 사람들의 억울함을 알아보는 사람이 되었다.",
+    "finalChoice": "end_office",
+    "imageBytes": 27460
+  },
+  {
+    "endingId": "ending_love_scandal",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_absurd",
+      "embrace_fame"
+    ],
+    "title": "사랑은 합격하지 못했다",
+    "age": 20,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "confess",
+        "outcomeId": "out_confess",
+        "toKind": "node",
+        "toId": "confession"
+      },
+      {
+        "age": 20,
+        "nodeId": "confession",
+        "choiceId": "confess_absurd",
+        "outcomeId": "out_confess_absurd",
+        "toKind": "node",
+        "toId": "confession_chaos"
+      },
+      {
+        "age": 20,
+        "nodeId": "confession_chaos",
+        "choiceId": "embrace_fame",
+        "outcomeId": "out_embrace_fame",
+        "toKind": "ending",
+        "toId": "ending_love_scandal"
+      }
+    ],
+    "artwork": "assets/illustrations/events/mina_romance.webp",
+    "body": "마왕으로 살기 싫었던 당신은 연애 상담사로 다시 태어났다. 고객들은 당신의 이력을 보고 웃었다. 첫 번째 상담에서 당신은 “시험관에게도 고백해 보세요”라고 말했다. 고객은 돈을 돌려 달라고 했다. 스물두 살, 가게 문은 닫혔다. 당신은 그날 처음으로 사랑과 장사는 둘 다 상대방의 동의가 필요하다는 사실을 깨달았다.",
+    "finalChoice": "embrace_fame",
+    "imageBytes": 24350
+  },
+  {
+    "endingId": "ending_mina_renounced",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "support_mina",
+      "explore_route_mina_renounced",
+      "commit_route_mina_renounced",
+      "route_mina_renounced_stay"
+    ],
+    "title": "용사를 포기한 용사",
+    "age": 55,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "confess",
+        "outcomeId": "out_confess",
+        "toKind": "node",
+        "toId": "confession"
+      },
+      {
+        "age": 20,
+        "nodeId": "confession",
+        "choiceId": "confess_sincere",
+        "outcomeId": "out_confess_sincere",
+        "toKind": "node",
+        "toId": "confession_afterm"
+      },
+      {
+        "age": 21,
+        "nodeId": "confession_afterm",
+        "choiceId": "support_mina",
+        "outcomeId": "out_support_mina",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "explore_route_mina_renounced",
+        "outcomeId": "enter_route_mina_renounced",
+        "toKind": "node",
+        "toId": "setup_route_mina_renounced"
+      },
+      {
+        "age": 29,
+        "nodeId": "setup_route_mina_renounced",
+        "choiceId": "commit_route_mina_renounced",
+        "outcomeId": "out_commit_route_mina_renounced",
+        "toKind": "node",
+        "toId": "bridge_route_mina_renounced"
+      },
+      {
+        "age": 55,
+        "nodeId": "bridge_route_mina_renounced",
+        "choiceId": "route_mina_renounced_stay",
+        "outcomeId": "out_route_mina_renounced_stay",
+        "toKind": "ending",
+        "toId": "ending_mina_renounced"
+      }
+    ],
+    "artwork": "assets/illustrations/ending_v4_3/rain_shelter.webp",
+    "body": "구호소 창문에 비가 두드렸다. 미나는 젖은 장화를 벗으며 당신이 가져온 빵 봉지를 받았다. 왕국은 그녀를 용사로 부르지 않았다. 시험을 거부한 응시자의 이름은 무효 처리됐고, 세 번의 재심에서도 결과는 같았다.\n\n“후회해?” 당신이 물었다.\n\n미나는 빵을 반으로 나눴다. “시험은 후회하지 않아. 다만 그때 네가 다칠까 봐 무서웠던 게 아직도 화나.”\n\n당신은 고개를 끄덕였다. 자신을 구해 준 사람이 잃어버린 시간을 대신 살아 줄 수는 없었다. 그래서 그녀가 재시험을 준비할 때 서류를 날랐고, 구호소를 열 때 지붕을 고쳤다. 사랑을 고백한 날부터 매년 곁에 있었다는 이유로 답을 요구하지는 않았다.\n\n저녁이 되자 아이 하나가 미나의 낡은 갑옷을 가리켰다. “용사님, 진짜 마왕을 이겨 봤어요?”\n\n미나는 당신을 보며 씩 웃었다. “아니. 한 명은 끝까지 못 이겼어.”\n\n당신은 대꾸하지 않았다. 이긴 사람과 진 사람 대신, 살아남아 서로를 살핀 두 사람이 있었다.",
+    "finalChoice": "route_mina_renounced_stay",
+    "imageBytes": 26712
+  },
+  {
+    "endingId": "ending_mina_wedding",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "support_mina",
+      "explore_route_mina_wedding",
+      "commit_route_mina_wedding",
+      "route_mina_wedding_challenge"
+    ],
+    "title": "마왕의 결혼식",
+    "age": 65,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "confess",
+        "outcomeId": "out_confess",
+        "toKind": "node",
+        "toId": "confession"
+      },
+      {
+        "age": 20,
+        "nodeId": "confession",
+        "choiceId": "confess_sincere",
+        "outcomeId": "out_confess_sincere",
+        "toKind": "node",
+        "toId": "confession_afterm"
+      },
+      {
+        "age": 21,
+        "nodeId": "confession_afterm",
+        "choiceId": "support_mina",
+        "outcomeId": "out_support_mina",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "explore_route_mina_wedding",
+        "outcomeId": "enter_route_mina_wedding",
+        "toKind": "node",
+        "toId": "setup_route_mina_wedding"
+      },
+      {
+        "age": 47,
+        "nodeId": "setup_route_mina_wedding",
+        "choiceId": "commit_route_mina_wedding",
+        "outcomeId": "out_commit_route_mina_wedding",
+        "toKind": "node",
+        "toId": "bridge_route_mina_wedding"
+      },
+      {
+        "age": 65,
+        "nodeId": "bridge_route_mina_wedding",
+        "choiceId": "route_mina_wedding_challenge",
+        "outcomeId": "out_route_mina_wedding_challenge",
+        "toKind": "ending",
+        "toId": "ending_mina_wedding"
+      }
+    ],
+    "artwork": "assets/illustrations/ending_v4_3/wedding_lanterns.webp",
+    "body": "주례가 서류를 넘기더니 목을 가다듬었다. “용사와 마왕의 혼인은 관련 법령에 선례가 없습니다.”\n\n미나는 꽃다발을 내려놓았다. “저도 전투력 8,402인 신부의 선례를 못 봤는데요.”\n\n“그럼 추가 심사를…”\n\n“오늘 밥값은 누가 냅니까?” 미나가 물었다. 주례는 대답하지 못했다.\n\n당신은 웃다가 눈물이 났다. 스무 살 시험장에서 그녀에게 고백한 뒤, 두 사람은 오래 떨어져 살았다. 서로 다른 선택을 했고, 미나는 몇 번이나 당신이 기대하는 대답을 거절했다. 다시 친구가 되기까지 십 년, 서로의 삶에 초대받기까지 그보다 더 오래 걸렸다. 결혼은 그 세월의 상장이 아니라 두 사람이 오늘 새로 내린 결정이었다.\n\n미나가 당신의 손을 잡았다. “자, 다시 물어봐.”\n\n“나랑 같이 살아 줄래?”\n\n“늦었어. 이미 짐 다 옮겼어.”\n\n하객석에서 웃음이 터졌다. 법령은 아직 개정되지 않았지만, 둘은 서로의 이름을 분명하게 불렀다. 그날 가장 중요한 등록은 출석부에 적힌 하객들의 축하 한마디였다.",
+    "finalChoice": "route_mina_wedding_challenge",
+    "imageBytes": 22246
+  },
+  {
+    "endingId": "ending_confession_unanswered",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "leave_mina",
+      "keep_records",
+      "explore_route_confession_unanswered",
+      "commit_route_confession_unanswered",
+      "route_confession_unanswered_listen"
+    ],
+    "title": "평생 답을 듣지 못한 고백",
+    "age": 65,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "confess",
+        "outcomeId": "out_confess",
+        "toKind": "node",
+        "toId": "confession"
+      },
+      {
+        "age": 20,
+        "nodeId": "confession",
+        "choiceId": "confess_sincere",
+        "outcomeId": "out_confess_sincere",
+        "toKind": "node",
+        "toId": "confession_afterm"
+      },
+      {
+        "age": 21,
+        "nodeId": "confession_afterm",
+        "choiceId": "leave_mina",
+        "outcomeId": "out_leave_mina",
+        "toKind": "node",
+        "toId": "petition"
+      },
+      {
+        "age": 21,
+        "nodeId": "petition",
+        "choiceId": "keep_records",
+        "outcomeId": "out_keep_records",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "explore_route_confession_unanswered",
+        "outcomeId": "enter_route_confession_unanswered",
+        "toKind": "node",
+        "toId": "setup_route_confession_unanswered"
+      },
+      {
+        "age": 29,
+        "nodeId": "setup_route_confession_unanswered",
+        "choiceId": "commit_route_confession_unanswered",
+        "outcomeId": "out_commit_route_confession_unanswered",
+        "toKind": "node",
+        "toId": "bridge_route_confession_unanswered"
+      },
+      {
+        "age": 65,
+        "nodeId": "bridge_route_confession_unanswered",
+        "choiceId": "route_confession_unanswered_listen",
+        "outcomeId": "out_route_confession_unanswered_listen",
+        "toKind": "ending",
+        "toId": "ending_confession_unanswered"
+      }
+    ],
+    "artwork": "assets/illustrations/ending_v4_3/river_bench.webp",
+    "body": "마을 축제의 마지막 불꽃이 강물에 떨어졌다. 미나는 벤치에 앉아 보온병을 열었다. 머리칼에는 흰빛이 섞였고, 당신은 계단을 오르기 전부터 무릎을 걱정하는 나이가 됐다.\n\n“그날 대답 말이야.” 미나가 입을 열었다.\n\n“스무 살 때?”\n\n“응. 네가 쇠사슬에 묶여 있던 날.”\n\n당신은 웃었다. “나는 오늘도 그때처럼 긴장해야 해?”\n\n미나는 잔을 건넸다. “그날 나는 널 좋아했을 수도 있어. 하지만 나 자신을 더 알고 싶었어.”\n\n오래도록 상상한 대답은 생각보다 조용했다. 이 말이 서른 살에 왔더라면 삶이 달라졌을까. 당신은 잠깐 생각하다 그 질문을 내려놓았다. 둘 다 다른 곳에서 살아남았고, 웃을 만한 사람들과 헤어질 만한 사람들을 만났다. 한 번의 고백이 두 사람의 모든 시간을 소유할 수는 없었다.\n\n“늦었지?” 미나가 물었다.\n\n“아니. 대답을 듣기엔 딱 좋은 밤이야.”\n\n당신은 고개를 들어 마지막 불꽃을 보았다. 그것은 오래전의 불꽃과 닮지 않았지만, 분명히 아름다웠다.",
+    "finalChoice": "route_confession_unanswered_listen",
+    "imageBytes": 19924
+  },
+  {
+    "endingId": "ending_common_enemy",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "keep_records",
+      "tell_mina",
+      "explore_route_common_enemy",
+      "commit_route_common_enemy",
+      "route_common_enemy_publish"
+    ],
+    "title": "우리의 적은 서로가 아니었다",
+    "age": 60,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "refuse",
+        "outcomeId": "out_refuse",
+        "toKind": "node",
+        "toId": "petition"
+      },
+      {
+        "age": 21,
+        "nodeId": "petition",
+        "choiceId": "keep_records",
+        "outcomeId": "out_keep_records",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "tell_mina",
+        "outcomeId": "out_tell_mina",
+        "toKind": "node",
+        "toId": "audit"
+      },
+      {
+        "age": 41,
+        "nodeId": "audit",
+        "choiceId": "explore_route_common_enemy",
+        "outcomeId": "enter_route_common_enemy",
+        "toKind": "node",
+        "toId": "setup_route_common_enemy"
+      },
+      {
+        "age": 41,
+        "nodeId": "setup_route_common_enemy",
+        "choiceId": "commit_route_common_enemy",
+        "outcomeId": "out_commit_route_common_enemy",
+        "toKind": "node",
+        "toId": "bridge_route_common_enemy"
+      },
+      {
+        "age": 60,
+        "nodeId": "bridge_route_common_enemy",
+        "choiceId": "route_common_enemy_publish",
+        "outcomeId": "out_route_common_enemy_publish",
+        "toKind": "ending",
+        "toId": "ending_common_enemy"
+      }
+    ],
+    "artwork": "assets/illustrations/ending_v4_3/truth_hearing.webp",
+    "body": "청문회장의 문이 열리자 미나가 먼저 걸어 들어왔다. 그녀의 가슴에는 훈장 대신 작은 나무칼 모양 브로치가 달려 있었다.\n\n“당신은 마왕을 제압한 국가 공인 용사였습니까?” 의장이 물었다.\n\n“아니요.” 미나가 말했다. “제압한 건 친구였어요. 국가가 그렇게 부르라고 해서 용사가 됐죠.”\n\n당신은 옆자리에 앉아 시험 당시의 동의서 빈칸을 보여 주었다. 그 빈칸 하나를 보존하기 위해 두 사람은 서로 다른 길에서 오래 싸웠다. 미나의 증언 때문에 당신이 받은 상처가 사라지지는 않았다. 당신의 용서 없이도 그녀는 진실을 말할 수 있었다.\n\n장부에는 200만 골드가 집행된 기록이 있었지만, 가족에게 돌아온 돈은 3천 골드뿐이었다. 나머지 199만 7천 골드가 향한 계정도 공개됐다. 감사관은 아직 횡령 여부를 단정하지 않았다. 다만 한 사람을 국가의 적으로 등록한 과정은 명백히 드러났다.\n\n방청석의 아이가 물었다. “그럼 진짜 마왕은 누구였어요?”\n\n미나는 당신을 봤고 당신은 미나를 봤다.\n\n“그 질문부터 잘못됐어.” 당신이 대답했다.\n\n그날 두 사람은 전쟁을 이기지 않았다. 전쟁이라 부르던 거짓말의 제목을 지웠다.",
+    "finalChoice": "route_common_enemy_publish",
+    "imageBytes": 20912
+  },
+  {
+    "endingId": "ending_double_license",
+    "choices": [
+      "family_accept",
+      "mina_rival",
+      "refuse",
+      "keep_records",
+      "explore_route_double_license",
+      "commit_route_double_license",
+      "route_double_license_claim"
+    ],
+    "title": "국가 공인 용사이자 마왕",
+    "age": 36,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "mina_rival",
+        "outcomeId": "out_mina_rival",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "refuse",
+        "outcomeId": "out_refuse",
+        "toKind": "node",
+        "toId": "petition"
+      },
+      {
+        "age": 21,
+        "nodeId": "petition",
+        "choiceId": "keep_records",
+        "outcomeId": "out_keep_records",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "explore_route_double_license",
+        "outcomeId": "enter_route_double_license",
+        "toKind": "node",
+        "toId": "setup_route_double_license"
+      },
+      {
+        "age": 29,
+        "nodeId": "setup_route_double_license",
+        "choiceId": "commit_route_double_license",
+        "outcomeId": "out_commit_route_double_license",
+        "toKind": "node",
+        "toId": "bridge_route_double_license"
+      },
+      {
+        "age": 36,
+        "nodeId": "bridge_route_double_license",
+        "choiceId": "route_double_license_claim",
+        "outcomeId": "out_route_double_license_claim",
+        "toKind": "ending",
+        "toId": "ending_double_license"
+      }
+    ],
+    "artwork": "assets/illustrations/ending_v4_3/double_certificate.webp",
+    "body": "당신은 두 장의 자격증을 한 손에 들었다. 하나는 국가 지정 마왕 등록증, 다른 하나는 국가 공인 용사 면허였다.\n\n“같은 사람이 둘 다 할 수 있어요?” 당신이 묻자 직원은 규정을 한 장씩 넘겼다.\n\n“마왕은 국가가 지정합니다.”\n\n“용사는 시험에 합격하면 되죠?”\n\n“네.”\n\n“그러면 저를 잡은 저에게 포상금 주세요.”\n\n직원은 서류를 보다가 고개를 들었다. “포상금 수령인과 토벌 대상자의 주민번호가 같은데요.”\n\n“국가 데이터가 정확하네요.”\n\n마침내 내무부에서 해석을 내놨다. ‘마왕 본인이 마왕을 토벌하는 경우, 국가 위협이 스스로 제거됐다고 간주할 수 있음.’ 국방부는 반대했다. 위협이 제거되면 내년 예산을 다시 짜야 했기 때문이다.\n\n미나는 당신의 두 면허증을 보며 한참 웃었다. “열두 살 때 네가 나보다 먼저 용사 되겠다고 했잖아.”\n\n“그래서 했지.”\n\n“어떻게?”\n\n“검 대신 민원 넣는 방법을 배웠어.”\n\n국가는 새로운 직종을 만들었다. ‘용사·마왕 겸직자.’ 당신이 출근하자 직원들은 두 번 인사했다.",
+    "finalChoice": "route_double_license_claim",
+    "imageBytes": 14188
+  },
+  {
+    "endingId": "ending_retirement_47",
+    "choices": [
+      "family_invoice",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_retirement_47",
+      "commit_route_retirement_47",
+      "route_retirement_47_collect"
+    ],
+    "title": "마왕 퇴직금 47골드",
+    "age": 47,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_invoice",
+        "outcomeId": "out_family_invoice",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "attack",
+        "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "prison"
+      },
+      {
+        "age": 21,
+        "nodeId": "prison",
+        "choiceId": "forgive",
+        "outcomeId": "out_forgive",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "ally",
+        "outcomeId": "out_ally",
+        "toKind": "node",
+        "toId": "audit"
+      },
+      {
+        "age": 41,
+        "nodeId": "audit",
+        "choiceId": "public_audit",
+        "outcomeId": "out_public_audit",
+        "toKind": "node",
+        "toId": "hearing"
+      },
+      {
+        "age": 47,
+        "nodeId": "hearing",
+        "choiceId": "explore_route_retirement_47",
+        "outcomeId": "enter_route_retirement_47",
+        "toKind": "node",
+        "toId": "setup_route_retirement_47"
+      },
+      {
+        "age": 47,
+        "nodeId": "setup_route_retirement_47",
+        "choiceId": "commit_route_retirement_47",
+        "outcomeId": "out_commit_route_retirement_47",
+        "toKind": "node",
+        "toId": "bridge_route_retirement_47"
+      },
+      {
+        "age": 47,
+        "nodeId": "bridge_route_retirement_47",
+        "choiceId": "route_retirement_47_collect",
+        "outcomeId": "out_route_retirement_47_collect",
+        "toKind": "ending",
+        "toId": "ending_retirement_47"
+      }
+    ],
+    "artwork": "assets/illustrations/ending_v4_3/retirement_coins.webp",
+    "body": "노동위원회는 이례적으로 당신의 근로 사실을 인정했다. 왕국력 800년 출생, 같은 날 마왕 발령, 현재까지 해임 기록 없음. 재직 기간 사십칠 년.\n\n“그럼 퇴직금은 얼마입니까?”\n\n위원은 기침을 했다. “사십칠 골드입니다.”\n\n“연봉이 아니라요?”\n\n“급여가 지급된 기록이 없어 최저 산식을 적용했습니다. 한 해에 한 골드죠.”\n\n당신은 오만 골드짜리 합의서를 꺼냈다. 그 금액을 거절하고 온 이유는 서류가 ‘피해 사실을 인정하지 않는다’고 적혀 있었기 때문이다. 위원은 그 합의서를 보더니 계산기를 다시 두드렸다. 그래도 숫자는 사십칠이었다.\n\n복도에서 미나가 물었다. “이겼어?”\n\n“응. 나라가 날 사십칠 년 동안 고용한 건 인정했어.”\n\n“그럼 왜 그 얼굴이야?”\n\n당신은 동전 주머니를 흔들었다. “내 평생의 월급 소리가 생각보다 작아서.”\n\n그날 저녁 당신은 그 돈으로 사람들을 불러 밥을 샀다. 계산하고 남은 동전은 없었다. 하지만 노동위원회 결정문은 전국의 서류 노동자에게 돌았다. 누군가는 당신보다 많은 돈을 받아낼지도 몰랐다.",
+    "finalChoice": "route_retirement_47_collect",
+    "imageBytes": 15390
+  },
+  {
+    "endingId": "ending_paid_defeat",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "accept_invite",
+      "explore_route_paid_defeat",
+      "commit_route_paid_defeat",
+      "route_paid_defeat_coach"
+    ],
+    "title": "토벌당하는 게 직업입니다",
+    "age": 54,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "invoice",
+        "outcomeId": "out_invoice",
+        "toKind": "node",
+        "toId": "invoice"
+      },
+      {
+        "age": 21,
+        "nodeId": "invoice",
+        "choiceId": "accept_invite",
+        "outcomeId": "out_accept_invite",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "explore_route_paid_defeat",
+        "outcomeId": "enter_route_paid_defeat",
+        "toKind": "node",
+        "toId": "setup_route_paid_defeat"
+      },
+      {
+        "age": 29,
+        "nodeId": "setup_route_paid_defeat",
+        "choiceId": "commit_route_paid_defeat",
+        "outcomeId": "out_commit_route_paid_defeat",
+        "toKind": "node",
+        "toId": "bridge_route_paid_defeat"
+      },
+      {
+        "age": 54,
+        "nodeId": "bridge_route_paid_defeat",
+        "choiceId": "route_paid_defeat_coach",
+        "outcomeId": "out_route_paid_defeat_coach",
+        "toKind": "ending",
+        "toId": "ending_paid_defeat"
+      }
+    ],
+    "artwork": "assets/illustrations/ending_v4_3/festival_defeat.webp",
+    "body": "토요일 오전 아홉 시, 당신은 마왕 망토를 둘렀다. 한때 왕국이 당신을 물리치기 위해 쓴 돈은 200만 골드였지만, 오늘 입장료는 아이 한 명당 세 골드였다.\n\n“마왕아, 각오해라!”\n\n여섯 살 아이가 스펀지 검을 휘둘렀다. 당신은 쓰러졌다. 아이는 환호했고 뒤에 서 있던 보호자는 사진을 찍었다.\n\n“마왕님, 너무 빨리 지시는데요?” 직원이 속삭였다.\n\n“전투력 2를 속일 순 없잖아.”\n\n당신은 계약서에 ‘실제 공격 금지, 넘어질 때 보호 매트 필수, 제압 대상자의 사전 동의 필수’라는 조항을 새겼다. 스무 살 시험장에는 없던 문장이었다. 매일 패배하는 직업을 택했지만 어느 패배도 강요당하지 않았다.\n\n어느 날 미나가 관객석에 앉았다. 어린아이가 당신을 쓰러뜨리자 미나가 박수를 쳤다. “드디어 실전에 강해졌네.”\n\n“지는 기술이야.”\n\n“그것도 기술이지.”\n\n그날 매출은 역대 최고였다. 왕국은 당신을 ‘자발적 토벌 교육 산업의 선구자’로 표창하려 했다. 당신은 표창장 대신 추가 안전 매트 두 장을 요청했다.",
+    "finalChoice": "route_paid_defeat_coach",
+    "imageBytes": 23676
+  },
+  {
+    "endingId": "ending_taxpayer",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "accept_invite",
+      "ally",
+      "explore_route_taxpayer",
+      "commit_route_taxpayer",
+      "route_taxpayer_receipt"
+    ],
+    "title": "왕국 최고의 납세자",
+    "age": 65,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "invoice",
+        "outcomeId": "out_invoice",
+        "toKind": "node",
+        "toId": "invoice"
+      },
+      {
+        "age": 21,
+        "nodeId": "invoice",
+        "choiceId": "accept_invite",
+        "outcomeId": "out_accept_invite",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "ally",
+        "outcomeId": "out_ally",
+        "toKind": "node",
+        "toId": "audit"
+      },
+      {
+        "age": 41,
+        "nodeId": "audit",
+        "choiceId": "explore_route_taxpayer",
+        "outcomeId": "enter_route_taxpayer",
+        "toKind": "node",
+        "toId": "setup_route_taxpayer"
+      },
+      {
+        "age": 41,
+        "nodeId": "setup_route_taxpayer",
+        "choiceId": "commit_route_taxpayer",
+        "outcomeId": "out_commit_route_taxpayer",
+        "toKind": "node",
+        "toId": "bridge_route_taxpayer"
+      },
+      {
+        "age": 65,
+        "nodeId": "bridge_route_taxpayer",
+        "choiceId": "route_taxpayer_receipt",
+        "outcomeId": "out_route_taxpayer_receipt",
+        "toKind": "ending",
+        "toId": "ending_taxpayer"
+      }
+    ],
+    "artwork": "assets/illustrations/ending_v4_3/tax_celebration.webp",
+    "body": "국왕은 순금으로 만든 납세 표창장을 들고 당신을 바라봤다.\n\n“국가에 대한 충성에 감사드립니다.”\n\n“저는 국가 지정 마왕인데요.”\n\n재무장관이 속삭였다. “납세 의무는 직업과 무관합니다.”\n\n당신은 평생 모아 둔 영수증을 꺼냈다. 출연료를 달라고 했을 때 국가는 당신에게 지급할 돈이 없다고 했지만, 당신이 번 돈의 세금을 받을 때는 한 번도 문을 닫은 적이 없었다. 마왕 토벌 예산의 행방을 묻는 민원은 아직 심의 중이었다.\n\n“그럼 이 세금으로 마왕을 토벌합니까?”\n\n“네. 국가 안보를 위해서죠.”\n\n“제가 돈을 내고 저를 잡는 건가요?”\n\n“세금은 공공의 재산입니다.”\n\n당신은 마이크 앞에서 조용히 말했다. “그렇다면 공공의 재산이 어디로 갔는지 공공이 알게 해 주세요.”\n\n그날 국민은 처음으로 납세자 표창식보다 예산 사용 내역에 관심을 보였다. 왕국은 당신에게 두 번째 표창을 검토했다. 첫 번째 표창을 망친 공로였다.",
+    "finalChoice": "route_taxpayer_receipt",
+    "imageBytes": 17750
+  },
+  {
+    "endingId": "ending_king",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_king",
+      "commit_route_king",
+      "route_king_abolish"
+    ],
+    "title": "마왕, 국왕이 되다",
+    "age": 60,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "attack",
+        "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "prison"
+      },
+      {
+        "age": 21,
+        "nodeId": "prison",
+        "choiceId": "forgive",
+        "outcomeId": "out_forgive",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "ally",
+        "outcomeId": "out_ally",
+        "toKind": "node",
+        "toId": "audit"
+      },
+      {
+        "age": 41,
+        "nodeId": "audit",
+        "choiceId": "public_audit",
+        "outcomeId": "out_public_audit",
+        "toKind": "node",
+        "toId": "hearing"
+      },
+      {
+        "age": 47,
+        "nodeId": "hearing",
+        "choiceId": "explore_route_king",
+        "outcomeId": "enter_route_king",
+        "toKind": "node",
+        "toId": "setup_route_king"
+      },
+      {
+        "age": 47,
+        "nodeId": "setup_route_king",
+        "choiceId": "commit_route_king",
+        "outcomeId": "out_commit_route_king",
+        "toKind": "node",
+        "toId": "bridge_route_king"
+      },
+      {
+        "age": 60,
+        "nodeId": "bridge_route_king",
+        "choiceId": "route_king_abolish",
+        "outcomeId": "out_route_king_abolish",
+        "toKind": "ending",
+        "toId": "ending_king"
+      }
+    ],
+    "artwork": "assets/illustrations/ending_v4_3/crown_self.webp",
+    "body": "당신은 왕관을 썼다. 생각보다 무거웠다. 전투력 2의 목은 어린 시절부터 부당한 명령을 버텼지만 금속의 무게에는 별 소질이 없었다.\n\n에리시아가 옆에서 작은 목소리로 말했다. “웃으세요. 이번에는 서류에 정말 당신 이름이 있어요.”\n\n“이름 대신 마왕이라고 쓴 건 아니고?”\n\n“세 번 확인했어요.”\n\n당신은 시민의회가 임시 국왕으로 추대한 이유를 알았다. 누구도 왕좌를 원하지 않았고, 당신은 이미 국가의 이름짓기에 반평생을 빼앗긴 사람이었다. 에리시아는 정치적 동맹이었지 당신을 대신 소유하는 사람이 아니었다.\n\n취임 첫날 국방부 장관이 예산안을 올렸다. ‘국가 지정 마왕 토벌비: 50만 골드.’\n\n“그 마왕이 누굽니까?”\n\n“폐하이십니다.”\n\n“제가 저를 토벌하는 데 세금을 내라고요?”\n\n장관은 잠시 망설였다. “전례가 있습니다.”\n\n당신은 붉은 펜을 들었다. 처음으로 왕실 서류를 찢지 않고도 한 줄을 지울 권한이 있었다. 왕관이 대단해서가 아니었다. 누군가가 국가를 잘못 만들었고, 시민들이 함께 고칠 권한을 맡긴 덕분이었다.",
+    "finalChoice": "route_king_abolish",
+    "imageBytes": 23150
+  },
+  {
+    "endingId": "ending_bankrupt",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_bankrupt",
+      "commit_route_bankrupt",
+      "route_bankrupt_protect"
+    ],
+    "title": "왕국을 파산시킨 마왕",
+    "age": 60,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "attack",
+        "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "prison"
+      },
+      {
+        "age": 21,
+        "nodeId": "prison",
+        "choiceId": "forgive",
+        "outcomeId": "out_forgive",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "ally",
+        "outcomeId": "out_ally",
+        "toKind": "node",
+        "toId": "audit"
+      },
+      {
+        "age": 41,
+        "nodeId": "audit",
+        "choiceId": "public_audit",
+        "outcomeId": "out_public_audit",
+        "toKind": "node",
+        "toId": "hearing"
+      },
+      {
+        "age": 47,
+        "nodeId": "hearing",
+        "choiceId": "explore_route_bankrupt",
+        "outcomeId": "enter_route_bankrupt",
+        "toKind": "node",
+        "toId": "setup_route_bankrupt"
+      },
+      {
+        "age": 47,
+        "nodeId": "setup_route_bankrupt",
+        "choiceId": "commit_route_bankrupt",
+        "outcomeId": "out_commit_route_bankrupt",
+        "toKind": "node",
+        "toId": "bridge_route_bankrupt"
+      },
+      {
+        "age": 60,
+        "nodeId": "bridge_route_bankrupt",
+        "choiceId": "route_bankrupt_protect",
+        "outcomeId": "out_route_bankrupt_protect",
+        "toKind": "ending",
+        "toId": "ending_bankrupt"
+      }
+    ],
+    "artwork": "assets/illustrations/ending_v4_3/empty_treasury.webp",
+    "body": "재무부의 가장 큰 숫자는 당신의 이름 옆에 쓰여 있지 않았다. 전국에서 같은 등록 피해를 당한 사람들의 배상액을 모두 더한 결과였다. 왕국은 그 금액을 당장 마련할 수 없었다.\n\n“마왕이 나라를 파산시켰다!” 신문이 외쳤다.\n\n당신은 기사에 빨간 줄을 그었다. “나라가 저희에게 빚을 진 거죠.”\n\n감사관 세렌이 고개를 끄덕였다. 그녀는 200만 골드 중 가족에게 지급된 3천 골드와 특별관리 계정으로 넘어간 199만 7천 골드를 분리해 기록했다. 돈의 최종 용도에 대한 조사도 계속됐다. 미확인 금액이 곧 횡령이라는 주장에는 동의하지 않았다.\n\n국왕은 구제 기금을 마련하기 위해 황금 마차를 팔겠다고 했다. 당신은 장부를 봤다. 마차 한 대 값으로 피해자 열 명의 치료비가 나왔다. 왕국은 여전히 아름다운 제국이었지만, 이제 아름다움을 증명하기 위해 다른 사람의 인생을 저당 잡힐 수 없었다.\n\n몇 년에 걸친 분할 배상 계획이 통과됐다. 당신은 첫 수표를 받기 전에 아이들이 다니는 학교와 병원이 닫히지 않는지부터 확인했다. 법원은 돈을 주라고 했고, 당신은 누가 어떤 순서로 살아갈지 묻는 일을 시작했다.",
+    "finalChoice": "route_bankrupt_protect",
+    "imageBytes": 18126
+  },
+  {
+    "endingId": "ending_true_demon",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_true_demon",
+      "commit_route_true_demon",
+      "route_true_demon_evacuate"
+    ],
+    "title": "진짜 마왕을 발견했다",
+    "age": 53,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_accept",
+        "outcomeId": "out_family_accept",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "attack",
+        "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "prison"
+      },
+      {
+        "age": 21,
+        "nodeId": "prison",
+        "choiceId": "forgive",
+        "outcomeId": "out_forgive",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "ally",
+        "outcomeId": "out_ally",
+        "toKind": "node",
+        "toId": "audit"
+      },
+      {
+        "age": 41,
+        "nodeId": "audit",
+        "choiceId": "public_audit",
+        "outcomeId": "out_public_audit",
+        "toKind": "node",
+        "toId": "hearing"
+      },
+      {
+        "age": 47,
+        "nodeId": "hearing",
+        "choiceId": "explore_route_true_demon",
+        "outcomeId": "enter_route_true_demon",
+        "toKind": "node",
+        "toId": "setup_route_true_demon"
+      },
+      {
+        "age": 47,
+        "nodeId": "setup_route_true_demon",
+        "choiceId": "commit_route_true_demon",
+        "outcomeId": "out_commit_route_true_demon",
+        "toKind": "node",
+        "toId": "bridge_route_true_demon"
+      },
+      {
+        "age": 53,
+        "nodeId": "bridge_route_true_demon",
+        "choiceId": "route_true_demon_evacuate",
+        "outcomeId": "out_route_true_demon_evacuate",
+        "toKind": "ending",
+        "toId": "ending_true_demon"
+      }
+    ],
+    "artwork": "assets/illustrations/ending_v4_3/sealed_demon.webp",
+    "body": "왕궁 지하에서 낡은 철문을 열자 거대한 그림자가 숨을 쉬었다. 왕국은 반세기 동안 당신을 가짜 마왕으로 관리했다. 그 사이 일부 관리들은 진짜 위협을 연구했다.\n\n“이 돈이 전부 여기 들어간 겁니까?” 당신이 물었다.\n\n감사관이 고개를 저었다. “아직 아닙니다. 특별관리 계정의 사용처 중 일부만 확인됐어요. 횡령인지 합법 집행인지는 다른 문제입니다.”\n\n그림자가 말했다. “너도 마왕인가?”\n\n“서류로는 그렇다.”\n\n“그럼 왜 이렇게 약하지?”\n\n“사람을 겁주는 일은 주로 국가가 해 줘서.”\n\n미나는 검을 뽑지 않았다. 전투력 8,402인 그녀도 문 너머의 힘을 가늠하지 못했다. 당신은 문 앞의 비상 대피도를 펼쳤다. 진짜 마왕이 있다고 해서 국가가 당신에게 저지른 일이 정당해지는 것은 아니었다.\n\n대화는 의외로 길어졌다. 그림자는 자신을 깨운 사람들이 공포를 먹여 키웠다고 말했다. 마왕은 전설의 존재가 아니라 왕국이 기른 침묵이었다. 당신은 칼 대신 경보를 울렸다. 사람들은 대피했고, 미나는 봉인실의 출입문을 지켰다.\n\n그날 이후 왕국은 마왕이라는 단어를 쓸 때마다 누구를 가리키는지 먼저 증명해야 했다.",
+    "finalChoice": "route_true_demon_evacuate",
+    "imageBytes": 20500
+  },
+  {
+    "endingId": "ending_mother_petition",
+    "choices": [
+      "family_appeal",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "explore_route_mother_petition",
+      "commit_route_mother_petition",
+      "route_mother_petition_read"
+    ],
+    "title": "내 아들은 마왕이 아닙니다",
+    "age": 65,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "family_appeal",
+        "outcomeId": "out_family_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "trust_mina",
+        "outcomeId": "out_trust_mina",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "attack",
+        "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "prison"
+      },
+      {
+        "age": 21,
+        "nodeId": "prison",
+        "choiceId": "forgive",
+        "outcomeId": "out_forgive",
+        "toKind": "node",
+        "toId": "princess"
+      },
+      {
+        "age": 29,
+        "nodeId": "princess",
+        "choiceId": "ally",
+        "outcomeId": "out_ally",
+        "toKind": "node",
+        "toId": "audit"
+      },
+      {
+        "age": 41,
+        "nodeId": "audit",
+        "choiceId": "explore_route_mother_petition",
+        "outcomeId": "enter_route_mother_petition",
+        "toKind": "node",
+        "toId": "setup_route_mother_petition"
+      },
+      {
+        "age": 41,
+        "nodeId": "setup_route_mother_petition",
+        "choiceId": "commit_route_mother_petition",
+        "outcomeId": "out_commit_route_mother_petition",
+        "toKind": "node",
+        "toId": "bridge_route_mother_petition"
+      },
+      {
+        "age": 65,
+        "nodeId": "bridge_route_mother_petition",
+        "choiceId": "route_mother_petition_read",
+        "outcomeId": "out_route_mother_petition_read",
+        "toKind": "ending",
+        "toId": "ending_mother_petition"
+      }
+    ],
+    "artwork": "assets/illustrations/ending_v4_3/mother_letter.webp",
+    "body": "출생신고소의 창구는 예전보다 낮아졌다. 사람들의 편의를 위해 고쳤다고 했다. 당신은 늙어 허리를 굽혔으므로 그 설명이 조금 우스웠다.\n\n직원이 낡은 봉투를 내밀었다. 왕국력 800년, 출생신고 당일 접수. 당신 이름의 첫 글자보다 어머니의 서명이 더 크게 쓰여 있었다.\n\n‘내 아들은 마왕이 아닙니다. 제 품에서 울고 있는 인간입니다.’\n\n당신은 그 문장을 소리 내지 못했다. 어린 시절 어머니는 서류를 내러 갈 때마다 돌아오는 길에 빵을 한 개씩 사 주었다. 당신은 늘 빵만 기억했다. 그날의 기다림이 어머니에게는 얼마나 길었는지 몰랐다.\n\n직원이 조심스럽게 물었다. “이 서류는 보존할까요?”\n\n“네.” 당신이 말했다. “답변도 같이 남겨 주세요.”\n\n답변서는 반려였다. ‘국가 안보상 등록 변경 불가.’ 사람을 설명하지 않는 문장이었다. 어머니는 그 반려 도장 아래 작게 적어 두었다. ‘그래도 엄마는 네 이름을 안다.’\n\n당신은 서류를 품에 안고 밖으로 나왔다. 마왕 지정이 끝났다는 공고는 아직 붙지 않았지만, 한 사람이 당신을 누구보다 먼저 제대로 불렀다는 증거가 남아 있었다.",
+    "finalChoice": "route_mother_petition_read",
+    "imageBytes": 15080
+  }
+]

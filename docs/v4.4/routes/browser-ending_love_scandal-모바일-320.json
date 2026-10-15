@@ -1,0 +1,31 @@
+{
+  "endingId": "ending_love_scandal",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "confess",
+    "confess_absurd",
+    "embrace_fame"
+  ],
+  "age": 20,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "confession",
+    "confession_chaos"
+  ],
+  "image": "/phase1-test/assets/illustrations/events/mina_romance.webp",
+  "statuses": [
+    200,
+    304
+  ],
+  "bounds": {
+    "width": 243.984375,
+    "height": 215.015625,
+    "naturalWidth": 640,
+    "naturalHeight": 564
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

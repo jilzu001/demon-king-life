@@ -1,0 +1,306 @@
+{
+  "baseline": "67158ce",
+  "byte_identical_count": 75,
+  "files": [
+    {
+      "path": "content/events_v2_9.json",
+      "sha256": "3d8c8a0a59104aefb99409cb381c2e1c267a542a052555572d9098ce33c2e132"
+    },
+    {
+      "path": "public/assets/assets.json",
+      "sha256": "b23ec1623c9c858db1fefb62d9ec475be94858a322c26cb7dd0b0ab5c94dad0f"
+    },
+    {
+      "path": "public/assets/ending_art_manifest_v4_4.json",
+      "sha256": "4d8ee9495672fe046b1ff70ab165f12d011a339f3245896d521ea836eb830111"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/forest.webp",
+      "sha256": "2249590db0019be90a0556bbfa2b75503d8cabd1244cb70f2e2c32f449f4230a"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/harbor.webp",
+      "sha256": "610df151ffcb3a838c4c9257887cc8d65256fc6f6ea4dafcce8d4426f2f39435"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/market.webp",
+      "sha256": "f1f25141d47f76aea15bc2e752f5c8fe8a3ebb4ecb15f4c5e0ea1bf1e5e5542b"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/palace.webp",
+      "sha256": "271cdb1c9b04b5386c42805083efbdc7c69c946592cc0b0f436c8eef9be92e91"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/prison.webp",
+      "sha256": "f461b47d02ecf942a3c6983b54a2bce38dc2bff1f52dbd4432c83ddc7bb0b7d2"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/tavern.webp",
+      "sha256": "c00e615ba088c27a22ef515ce51e88cccfea73e0b702a02576429f665d6d10db"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/throne_room.webp",
+      "sha256": "f3f06c44c9899eb7f8c213b599201f9cfde9b4378daadce37d5f155e5140a720"
+    },
+    {
+      "path": "public/assets/illustrations/backgrounds/village.webp",
+      "sha256": "1a0cf9d52d93d6877625c2332b2eae6f802f8df8e07ec1d17a70f11190cad4ec"
+    },
+    {
+      "path": "public/assets/illustrations/characters/dark_nun.webp",
+      "sha256": "e9363b3cba887f60c91bdef2778331ff9df7230f44712832eac6c5394c24fd22"
+    },
+    {
+      "path": "public/assets/illustrations/characters/elysia.webp",
+      "sha256": "24ff06714f0bc6ccfebdd34c85da4f6077a33770aca55353ffd31440d5e9c739"
+    },
+    {
+      "path": "public/assets/illustrations/characters/jero.webp",
+      "sha256": "ad1a7bb517b9a7900a5a410b3412b923be6db36a18a65b8d6dc77cf193b6e649"
+    },
+    {
+      "path": "public/assets/illustrations/characters/king.webp",
+      "sha256": "db2542c0036babed6a648c1d18835234608c95809b40a2b7bf16f306ee4d5a22"
+    },
+    {
+      "path": "public/assets/illustrations/characters/kyle.webp",
+      "sha256": "4bc8ea63a85ca02377df50703bc6b5daee5458444b4ee228198648d128948e9a"
+    },
+    {
+      "path": "public/assets/illustrations/characters/mina.webp",
+      "sha256": "078ce69024369ea17e41b2d234eb95b1ff2a3e2894a3ebc6da9fb7ae2d7a98a8"
+    },
+    {
+      "path": "public/assets/illustrations/characters/protagonist.webp",
+      "sha256": "9d9e73743be09c63309743212659b295419ea8612eb5d745f223a8f93506ef1f"
+    },
+    {
+      "path": "public/assets/illustrations/characters/rao.webp",
+      "sha256": "f819a39e25d94c5e219f6a6f74b4b72c9922fa94df06db6e259f56327ad77c60"
+    },
+    {
+      "path": "public/assets/illustrations/characters/rina.webp",
+      "sha256": "c47b54caef495466cbe53bdd828cab4255ea0cd6f62b43adf6b3d8a1d8eda35a"
+    },
+    {
+      "path": "public/assets/illustrations/characters/seria.webp",
+      "sha256": "e8cf4c620c1c5c47f66a140b6ada9e0434ee54eb6a44c8fee4cdece8ee9924e6"
+    },
+    {
+      "path": "public/assets/illustrations/characters/yuri.webp",
+      "sha256": "7e5b45cfbc860e0afb5292f5b47cd8afd65a80685b8b7add9a2e7a35c34e77e9"
+    },
+    {
+      "path": "public/assets/illustrations/ending_v4_3/crown_self.webp",
+      "sha256": "225e84891b74e34a05b4a671a5919cdbea1aba72b98906781fbf6c7b96329d6b"
+    },
+    {
+      "path": "public/assets/illustrations/ending_v4_3/double_certificate.webp",
+      "sha256": "7422326851d59ea5d0e74c482ff97264fb6422febd540676330d97808a7fd5bd"
+    },
+    {
+      "path": "public/assets/illustrations/ending_v4_3/empty_treasury.webp",
+      "sha256": "aaa3fed93a841037046cd105da301045608d2e5341bb5c7412620b05b86cbec1"
+    },
+    {
+      "path": "public/assets/illustrations/ending_v4_3/festival_defeat.webp",
+      "sha256": "432827376a3eefd20afd88555e86fc94478bce8f99b35a80259ec4eb9755e4c6"
+    },
+    {
+      "path": "public/assets/illustrations/ending_v4_3/mother_letter.webp",
+      "sha256": "174069c5eb04c65ec10f577b2b4bb84c2427cebcd14fdb0478b77f3cbd866cce"
+    },
+    {
+      "path": "public/assets/illustrations/ending_v4_3/rain_shelter.webp",
+      "sha256": "ef748e69e04582eaeb29d47cba733d76ec6504271681defbed08b9b989a3f036"
+    },
+    {
+      "path": "public/assets/illustrations/ending_v4_3/retirement_coins.webp",
+      "sha256": "58ebad7ea6552567d65601a6c2de6dccb471167e2533393b9ed270a171949981"
+    },
+    {
+      "path": "public/assets/illustrations/ending_v4_3/river_bench.webp",
+      "sha256": "8a31b827ff569eeadff4a04a10fca9d4782eb4ad8e94db7592e63dda03990549"
+    },
+    {
+      "path": "public/assets/illustrations/ending_v4_3/sealed_demon.webp",
+      "sha256": "7a5ca6424807b2035ec71cec42b2aa7330e64e311165abaedece415e72fbd9da"
+    },
+    {
+      "path": "public/assets/illustrations/ending_v4_3/tax_celebration.webp",
+      "sha256": "0965952da0cfd9a14f34720aef160ba2fb2945bea228d5ee26fa89ff918fac8a"
+    },
+    {
+      "path": "public/assets/illustrations/ending_v4_3/truth_hearing.webp",
+      "sha256": "1a1ffc120bcaae79b630d420eb958020255f02753e6fc1fd8c225709113f6f25"
+    },
+    {
+      "path": "public/assets/illustrations/ending_v4_3/wedding_lanterns.webp",
+      "sha256": "cb43abf854f2c9db92e241212a5ce3a3fbdbe09f5774b181c6c525559299d492"
+    },
+    {
+      "path": "public/assets/illustrations/event_cg/mina_wooden_sword.webp",
+      "sha256": "c6f12ebea7497550da676fdf15da26dd1d5b7c51c8ad1be7b644fd718aa55050"
+    },
+    {
+      "path": "public/assets/illustrations/events/demon_protest.webp",
+      "sha256": "975c39176339ddb2a177b686069af60df7e1a4255e21abd49883c7edbb6b860c"
+    },
+    {
+      "path": "public/assets/illustrations/events/final_sunset.webp",
+      "sha256": "42fb2857e5d11e9aafc89fe7d0fb9ba8d18876bdd210fab487627c7b0e8a0491"
+    },
+    {
+      "path": "public/assets/illustrations/events/mina_retirement.webp",
+      "sha256": "657a794055888b75424ae348265d593827f916d8ab9eb95eda8be81dfbd06e79"
+    },
+    {
+      "path": "public/assets/illustrations/events/mina_romance.webp",
+      "sha256": "b173fac3b23a1c78108ff1c1ab0260875beb0e51154d5ae11e779ab8df33d0d8"
+    },
+    {
+      "path": "public/assets/illustrations/events/queens_letter.webp",
+      "sha256": "ff2f261b67cfc5bdea758419947f083cd923b92a56c3f9d7d8e80f6e3b36a59b"
+    },
+    {
+      "path": "public/assets/illustrations/events/royal_banquet.webp",
+      "sha256": "45c043713b86ed139aeefb9fa1cf04c3c501c74101d68a97b78cf7e81df8293d"
+    },
+    {
+      "path": "public/assets/illustrations/events/royal_trial.webp",
+      "sha256": "2a1220ac5dbf2c20ae0f8108df77aa52bb6f99c2eb0a82dd057c8e54a24072d3"
+    },
+    {
+      "path": "public/assets/illustrations/events/second_demon.webp",
+      "sha256": "fe58a9c708b9a11ef68aaf38d524eb288f8dd5f1a77b8f44f120f9f9fed6211e"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/angry.webp",
+      "sha256": "0b44595589977a9394455834262e90743f639b3124c4ffabc2cbf06632d8ee63"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/confused.webp",
+      "sha256": "567a5bb2a65a166df41f12552fab132a7f843c512a58c565783d398c39cf2725"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/embarrassed.webp",
+      "sha256": "e2793b0b02b95c93e61491776eafb09316c844480611b1a4ed97dc845084f606"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/happy.webp",
+      "sha256": "05aedc28e1548798ea287a8e4838a2f0b21414f80257aa0f8a654b56cc049575"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/neutral.webp",
+      "sha256": "6b66971856957800121ec0d3adcc76c4b61acec397b4638d51a3325724332f77"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/sad.webp",
+      "sha256": "25e567f2e71894bee9368b760a352b6e13b50dee8e5efeac08f6270d763c0fd3"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/smug.webp",
+      "sha256": "02627d773537d4ade12fddc05dc2b357bb2a7dfccc5a5ea100aa22a1d15702f5"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/surprised.webp",
+      "sha256": "cccfbb399991f6f6e082dd0cad61f46c44c89824e409039eca469932a4482354"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/thinking.webp",
+      "sha256": "d4f67f10184514ba96b4e5b48dfd5a759d2cc1097ff94ebea98b4f393d51e10b"
+    },
+    {
+      "path": "public/assets/illustrations/expressions/tired.webp",
+      "sha256": "912b7a0f1d830091bb50b7e482dd57096825fcedff364efb520e05dbbbd0e873"
+    },
+    {
+      "path": "public/assets/illustrations/ui/achievements.webp",
+      "sha256": "ddb7bb2c180f2776e28933b93a56d548da9477b37cff61f88bca70a5a59365a3"
+    },
+    {
+      "path": "public/assets/illustrations/ui/affection.webp",
+      "sha256": "42c024487e4a7dfaffaea8f219c2a272d9acb94a08de7cbe322633e246e58589"
+    },
+    {
+      "path": "public/assets/illustrations/ui/money.webp",
+      "sha256": "58dce70d635e71821888caab9f63c24f60cfbfb7494002dc9efe197aff4b1d2c"
+    },
+    {
+      "path": "public/assets/illustrations/ui/reputation.webp",
+      "sha256": "8ae5f197ca9d23330d05abf22ff2775eca692dda3ccebdec16bc223e4af26d0a"
+    },
+    {
+      "path": "public/assets/illustrations/ui/return_title.webp",
+      "sha256": "f2cd2a5d43830d1e6c38262cff3c8ed8d45932c2d1bd20b47802bfe611282557"
+    },
+    {
+      "path": "public/assets/illustrations/ui/save.webp",
+      "sha256": "8aec83f944bb4adbc45b1ad0154467a4c883e7603c4d45d0122c46c382b568b2"
+    },
+    {
+      "path": "public/assets/illustrations/ui/settings.webp",
+      "sha256": "23cf92bd57e537aac14d817805156949e9dcc79e6576999f209aeeffe7496833"
+    },
+    {
+      "path": "public/assets/illustrations/ui/unlock.webp",
+      "sha256": "5e00d749f28e72604476c82fd7fd75be97d969566b15bc42b30dc07fc2bccdb4"
+    },
+    {
+      "path": "public/assets/main_screen_illustration_policy.json",
+      "sha256": "34187657264a2d24bc1748a1895bc731fbc9c1bd9c81876e60e6b0bedcd6c775"
+    },
+    {
+      "path": "public/assets/scene_illustration_overrides_v3_6.json",
+      "sha256": "6766f1a8ddd50d5802dc1de828034073a40f745d676dbe95ab3e2fdc96d5cd22"
+    },
+    {
+      "path": "src/engine/conditions.ts",
+      "sha256": "544ee0ac5cd1f6c842c38e64e4c221da0ffb2187b648903f9b1ed80b93d81e8f"
+    },
+    {
+      "path": "src/engine/effects.ts",
+      "sha256": "a7e61666a2b53a7fc30ff6676c5e6481e2e8899d9054eb7f7b407e38ed4a17ff"
+    },
+    {
+      "path": "src/engine/invariants.ts",
+      "sha256": "af13192956f33f9914d84f284b343bcd99a2449e2308badaa4567af429345361"
+    },
+    {
+      "path": "src/engine/paths.ts",
+      "sha256": "909136db1cc0e0489175896d4f9237de4cafcbb0a5ae9ed1e7c266057a71b28e"
+    },
+    {
+      "path": "src/engine/random.ts",
+      "sha256": "26fbfecfd3ffe48fcbddb4556595af35749f20d323ee70580b9a99621c196779"
+    },
+    {
+      "path": "src/engine/transition.ts",
+      "sha256": "2a3cdb2ec490d5734d6f08427c59e523fcb53f8e1d69b2066f52da0ba58c067e"
+    },
+    {
+      "path": "src/engine/types.ts",
+      "sha256": "78f67d27d39236581005910c40ddc007c18afbc70614cef6cfcfc0da71f04d29"
+    },
+    {
+      "path": "src/persistence/compact-compatible.ts",
+      "sha256": "97e08346dbc96072a2301fafc275d92dd52ce4a0415a5d43de4c162364bece4a"
+    },
+    {
+      "path": "src/persistence/compatibility.ts",
+      "sha256": "cc99556a246118527257f186272fb8b605c5dc59411432811cd299e151396cb1"
+    },
+    {
+      "path": "src/persistence/migrate.ts",
+      "sha256": "84f1d7218e53d05725062d04863005aab521d15ac8b16028875c56af309c3fbe"
+    },
+    {
+      "path": "src/persistence/reselect.ts",
+      "sha256": "af59d1521a624f585e8047c946cb55ec853d2d6b5fa1c20aef28ffe1e2893c00"
+    },
+    {
+      "path": "src/persistence/save.ts",
+      "sha256": "6bdad3687de80f5c99ea65b8c2541e4dcb0f3fbfc0adcb81f1afc6653d48a37d"
+    }
+  ]
+}

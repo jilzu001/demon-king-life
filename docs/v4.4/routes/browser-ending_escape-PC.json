@@ -1,0 +1,29 @@
+{
+  "endingId": "ending_escape",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "attack",
+    "escape_prison"
+  ],
+  "age": 21,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "prison"
+  ],
+  "image": "/phase1-test/assets/illustrations/backgrounds/prison.webp",
+  "statuses": [
+    200,
+    304
+  ],
+  "bounds": {
+    "width": 563.3125,
+    "height": 360,
+    "naturalWidth": 640,
+    "naturalHeight": 409
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

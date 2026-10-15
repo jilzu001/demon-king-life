@@ -1,0 +1,31 @@
+
+> demon-king-phase1@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.4 C:/Users/jilzu/OneDrive/Codex/make_game_test/demon-king
+
+ ❯ tests/story/illustrations.test.ts (4 tests | 1 failed) 8031ms
+   ❯ 본문 일러스트의 콘텐츠 보호와 실제 에셋 (4)
+     × 기존45개와 신규1개 WebP를 원본 그대로 배포하며 크기·경로가 일치한다 8009ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/story/illustrations.test.ts > 본문 일러스트의 콘텐츠 보호와 실제 에셋 > 기존45개와 신규1개 WebP를 원본 그대로 배포하며 크기·경로가 일치한다
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ tests/story/illustrations.test.ts:8:3
+      6|
+      7| describe('본문 일러스트의 콘텐츠 보호와 실제 에셋', () => {
+      8|   it('기존45개와 신규1개 WebP를 원본 그대로 배포하며 크기·경로가 일치한다', () => {
+       |   ^
+      9|     expect(manifest.assets).toHaveLength(46);
+     10|     expect(new Set(manifest.assets.map(a => a.id)).size).toBe(46);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 13 passed (14)
+      Tests  1 failed | 249 passed (250)
+   Start at  14:00:44
+   Duration  29.74s (tests 82%, import 16%, transform 2%)

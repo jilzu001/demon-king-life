@@ -1,0 +1,38 @@
+{
+  "endingId": "ending_office",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "attack",
+    "forgive",
+    "ally",
+    "public_audit",
+    "fight_case",
+    "buy_office",
+    "end_office"
+  ],
+  "age": 62,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "prison",
+    "audit",
+    "hearing",
+    "settlement",
+    "office"
+  ],
+  "image": "/phase1-test/assets/illustrations/events/demon_protest.webp",
+  "statuses": [
+    200,
+    304
+  ],
+  "bounds": {
+    "width": 408.5,
+    "height": 360,
+    "naturalWidth": 640,
+    "naturalHeight": 564
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

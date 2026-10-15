@@ -40,6 +40,66 @@
       "finalScene": "마왕으로 살기 싫었던 당신은 연애 상담사로 다시 태어났다. 고객들은 당신의 이력을 보고 웃었다. 첫 번째 상담에서 당신은 “시험관에게도 고백해 보세요”라고 말했다. 고객은 돈을 돌려 달라고 했다. 스물두 살, 가게 문은 닫혔다.",
       "reflection": "당신은 그날 처음으로 사랑과 장사는 둘 다 상대방의 동의가 필요하다는 사실을 깨달았다.",
       "illustration": "assets/illustrations/events/mina_romance.webp"
+    },
+    "ending_mina_renounced": {
+      "finalScene": "구호소의 불이 꺼지자 미나는 나무칼을 문 옆에 세웠다. 전설의 검은 아니었지만, 두 사람이 처음으로 지키겠다고 했던 약속의 모양이었다.",
+      "reflection": "그녀의 꿈을 빼앗은 세상을 바꿀 수는 없어도, 그녀가 다시 고르는 삶을 방해하지는 않았다.",
+      "illustration": "assets/illustrations/ending_v4_3/rain_shelter.webp"
+    },
+    "ending_mina_wedding": {
+      "finalScene": "주례의 도장이 없던 혼인 서약서 아래에 미나가 손으로 작은 나무칼을 그렸다. 두 사람은 그걸 액자에 넣었다.",
+      "reflection": "사랑은 시험장에서 합격하지 못했지만, 오늘은 누구도 채점하지 않았다.",
+      "illustration": "assets/illustrations/ending_v4_3/wedding_lanterns.webp"
+    },
+    "ending_confession_unanswered": {
+      "finalScene": "강둑의 벤치는 아무 말도 남기지 않았다. 두 사람은 각자의 집으로 돌아갔고, 내일이면 다시 다른 하루가 시작될 터였다.",
+      "reflection": "답이 없어서 실패한 사랑도 아니다. 함께 살지 않았다고 없던 시간이 되는 것도 아니다.",
+      "illustration": "assets/illustrations/ending_v4_3/river_bench.webp"
+    },
+    "ending_common_enemy": {
+      "finalScene": "청문회장 밖에서 미나가 손을 내밀었다. 당신은 잠시 망설이다 잡았다. 악수는 판결이 아니라 앞으로의 약속이었다.",
+      "reflection": "우리는 누가 이기는지 오래 다퉜다. 이제 누구도 시험 문제가 되지 않게 할 차례다.",
+      "illustration": "assets/illustrations/ending_v4_3/truth_hearing.webp"
+    },
+    "ending_double_license": {
+      "finalScene": "당신의 책상에는 용사 표창장과 마왕 수배 전단이 나란히 걸렸다. 둘 다 본인 사진이라 신분 확인은 쉬웠다.",
+      "reflection": "전투력은 여전히 2였다. 그래도 나라의 규정은 내가 이겼다.",
+      "illustration": "assets/illustrations/ending_v4_3/double_certificate.webp"
+    },
+    "ending_retirement_47": {
+      "finalScene": "지갑은 텅 비었지만 재직증명서에는 당신이 직접 쓴 한 줄이 남았다. ‘업무 내용: 살아 있기.’",
+      "reflection": "국가가 정한 값이 내 인생의 값은 아니다. 다만 계산식은 꼭 공개해야겠다.",
+      "illustration": "assets/illustrations/ending_v4_3/retirement_coins.webp"
+    },
+    "ending_paid_defeat": {
+      "finalScene": "체험장 문에 오늘의 마지막 안내문이 붙었다. ‘마왕은 오후 여섯 시에 퇴근합니다. 내일도 살아서 출근합니다.’",
+      "reflection": "같은 패배라도 내가 동의하면 공연이고, 동의하지 않으면 폭력이다.",
+      "illustration": "assets/illustrations/ending_v4_3/festival_defeat.webp"
+    },
+    "ending_taxpayer": {
+      "finalScene": "사진 속 국왕과 당신은 나란히 웃었다. 사진 아래에는 작은 글씨로 ‘국가 안보 위협 대상자 겸 모범 납세자’라고 적혔다.",
+      "reflection": "모두가 돈을 낸다. 그렇다면 모두가 질문할 수 있어야 한다.",
+      "illustration": "assets/illustrations/ending_v4_3/tax_celebration.webp"
+    },
+    "ending_king": {
+      "finalScene": "옥좌 뒤에 오래된 수배 전단이 걸려 있었다. 당신은 그것을 없애지 않았다. 권력을 잡은 사람이 잊지 말아야 할 사람의 얼굴이었기 때문이다.",
+      "reflection": "내 이름으로 다른 사람의 인생을 정하는 왕이 되지 않겠다.",
+      "illustration": "assets/illustrations/ending_v4_3/crown_self.webp"
+    },
+    "ending_bankrupt": {
+      "finalScene": "재무부 현관에 새 표지판이 붙었다. ‘국가 회생 절차 진행 중.’ 그 아래에는 ‘민원인 출입 가능’이라는 작은 글씨가 있었다.",
+      "reflection": "내가 나라를 망친 게 아니다. 빚을 감추고도 멀쩡한 척하던 나라가 이제 계산하기 시작했다.",
+      "illustration": "assets/illustrations/ending_v4_3/empty_treasury.webp"
+    },
+    "ending_true_demon": {
+      "finalScene": "철문이 닫히자 그림자가 마지막으로 물었다. “너는 누구였지?” 당신은 처음으로 주저 없이 자기 이름을 말했다.",
+      "reflection": "진짜 괴물이 있다는 사실은 가짜 괴물로 살게 한 세월의 면죄부가 아니다.",
+      "illustration": "assets/illustrations/ending_v4_3/sealed_demon.webp"
+    },
+    "ending_mother_petition": {
+      "finalScene": "낡은 종이가 바람에 들썩였다. 당신은 엄지손가락으로 접힌 귀퉁이를 눌렀다. 어머니의 손이 그곳을 몇 번이나 접었을지 알 것 같았다.",
+      "reflection": "내 이름을 되찾는 데 평생이 걸렸지만, 누군가는 태어난 날부터 나를 알고 있었다.",
+      "illustration": "assets/illustrations/ending_v4_3/mother_letter.webp"
     }
   },
   "replayRules": {
