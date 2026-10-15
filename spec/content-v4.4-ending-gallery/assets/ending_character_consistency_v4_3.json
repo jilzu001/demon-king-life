@@ -1,0 +1,25 @@
+{
+  "version": "v4.3",
+  "canonIdentityByPath": {
+    "protagonist": "assets/illustrations/characters/protagonist.webp",
+    "mina": "assets/illustrations/characters/mina.webp",
+    "elysia": "assets/illustrations/characters/elysia.webp",
+    "king": "assets/illustrations/characters/king.webp",
+    "seria": "assets/illustrations/characters/seria.webp",
+    "rina": "assets/illustrations/characters/rina.webp",
+    "kyle": "assets/illustrations/characters/kyle.webp",
+    "jero": "assets/illustrations/characters/jero.webp",
+    "yuri": "assets/illustrations/characters/yuri.webp",
+    "rao": "assets/illustrations/characters/rao.webp",
+    "dark_nun": "assets/illustrations/characters/dark_nun.webp"
+  },
+  "protagonist": "흑발, 짙은 붉은기 눈, 검붉은 망토 / 약한 인간, 전투력 2, 마력 0",
+  "mina": "은발, 맑은 청회색 눈, 검은 훈련복/갑옷. 금발로 변경 금지. 고령 얼굴 임의 재생성 금지",
+  "elysia": "금발 공주, 붉은 궁정 의상. 미나와 혼동 금지",
+  "king": "수염 있는 중장년 국왕, 왕관과 모피 망토",
+  "noMixedCharacters": true,
+  "newImages": "derived-from-approved-canonical-art; no style transfer",
+  "sourceImagesUnchanged": true,
+  "approvedForEngine": false,
+  "finalReviewRequired": true
+}

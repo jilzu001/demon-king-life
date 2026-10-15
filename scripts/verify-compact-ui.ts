@@ -60,8 +60,11 @@ try {
     }
     await expect(page.locator('[data-ending-phase="2"]')).toBeVisible(); await page.getByRole('button', { name: '이어서', exact: true }).click();
     await expect(page.locator('[data-ending-phase="3"] h1')).toHaveText('계단 열일곱 개의 마왕');
-    const art = (await page.locator('.compact-art').boundingBox())!;
-    expect(art.height).toBeGreaterThan(60); expect(art.height).toBeLessThanOrEqual(height * .28 + 1);
+    const image = page.locator('[data-ending-phase="3"] .ending-art img');
+    await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+    const art = (await image.boundingBox())!;
+    expect(art.height).toBeGreaterThan(60); expect(art.height).toBeLessThanOrEqual(361);
+    await expect(page.locator('[data-ending-phase="3"] svg')).toHaveCount(0);
     await page.clock.runFor(180);
     if (screenshots) await page.screenshot({ path: `docs/compact-ending-${name}.png` });
     const before = await saved(); await page.reload(); await expect(page.locator('[data-ending-phase="3"]')).toBeVisible(); expect(await saved()).toBe(before);

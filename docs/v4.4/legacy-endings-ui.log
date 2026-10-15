@@ -1,0 +1,25 @@
+[WebServer] (node:35764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:65204) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:68408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:62888) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:59680) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [PC] › tests\e2e\compact.spec.ts:334:1 › 그림 없는 사건은 텍스트로 진행하고 재판·엔딩 그림과 저장 후 복원을 보호한다 (4.6s)
+  ok 2 [PC] › tests\e2e\compact.spec.ts:438:1 › 8개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건만 회상하며 마지막에 중복 없이 해금된다 (23.2s)
+(node:55684) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:9628) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:63892) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 3 [모바일-320] › tests\e2e\compact.spec.ts:334:1 › 그림 없는 사건은 텍스트로 진행하고 재판·엔딩 그림과 저장 후 복원을 보호한다 (3.9s)
+  ok 4 [모바일-320] › tests\e2e\compact.spec.ts:438:1 › 8개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건만 회상하며 마지막에 중복 없이 해금된다 (24.7s)
+
+  4 passed (1.2m)

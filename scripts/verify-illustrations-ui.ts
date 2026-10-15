@@ -2,6 +2,7 @@ import { chromium, expect, type Page } from '@playwright/test';
 import { readExampleStory } from './read-story';
 import { createRun, choose } from '../src/engine/transition';
 import { compactProgressKey } from '../src/ui/compact-progress';
+import { endingArtworkPath } from '../src/content/ending-gallery';
 
 const url = process.argv[2] ?? 'http://127.0.0.1:4175/';
 const screenshots = process.argv.includes('--screenshots');
@@ -93,19 +94,23 @@ try {
           return Math.abs(a.y + a.height / 2 - b.y - b.height / 2) < 1 && cell.scrollWidth <= cell.clientWidth;
         }))).toBe(true);
       } else await expect(page.locator('[data-ending-phase="0"]')).toBeVisible();
-      const figures = page.locator('.story-illustration');
-      await expect(figures).toHaveCount(item.asset ? 1 : 0);
-      if (item.asset) {
-        await expect(figures).toHaveAttribute('data-asset-id', item.asset);
+      const figures = page.locator(state.ended ? '.ending-art' : '.story-illustration');
+      await expect(figures).toHaveCount(state.ended || item.asset ? 1 : 0);
+      if (state.ended || item.asset) {
+        await expect(figures).toHaveAttribute(state.ended ? 'data-ending-art' : 'data-asset-id', state.ended ? state.endingId! : item.asset!);
         if (mode === 'scroll' || state.ended) await figures.scrollIntoViewIfNeeded();
         const image = figures.locator('img');
         if (mode === 'scroll' || state.ended) await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
         const bounds = await image.evaluate((img: HTMLImageElement) => {
           const r = img.getBoundingClientRect();
-          return { width: r.width, height: r.height, naturalWidth: img.naturalWidth, naturalHeight: img.naturalHeight, ratio: Number(img.getAttribute('width')) / Number(img.getAttribute('height')), fit: getComputedStyle(img).objectFit };
+          return { width: r.width, height: r.height, naturalWidth: img.naturalWidth, naturalHeight: img.naturalHeight, ratio: img.naturalWidth / img.naturalHeight, fit: getComputedStyle(img).objectFit, source: img.currentSrc };
         });
         expect(bounds.width).toBeLessThanOrEqual(Math.min(width! - 20, width! <= 760 ? 480 : 680) + 1);
-        expect(bounds.height).toBeLessThanOrEqual((width! <= 760 ? 240 : 360) + 1);
+        expect(bounds.height).toBeLessThanOrEqual((state.ended ? 360 : width! <= 760 ? 240 : 360) + 1);
+        if (state.ended) {
+          expect(bounds.source.endsWith(`/${endingArtworkPath(state.endingId!)}`)).toBe(true);
+          await expect(page.locator('[data-ending-phase="0"] svg')).toHaveCount(0);
+        }
         expect(bounds.width).toBeLessThanOrEqual(bounds.naturalWidth + .5);
         expect(bounds.height).toBeLessThanOrEqual(bounds.naturalHeight + .5);
         expect(bounds.width / bounds.height).toBeCloseTo(bounds.ratio, 2); expect(bounds.fit).toBe('contain');

@@ -1,0 +1,16 @@
+{
+  "base": "v4.2 cumulative",
+  "existingEndingsKeptIdentical": true,
+  "existingCinematicsKeptIdentical": true,
+  "originalEndings": 8,
+  "newEndings": 12,
+  "totalEndings": 20,
+  "knownPreviousFlagsValidated": true,
+  "newRouteQualificationScenes": 12,
+  "newFinalChoiceScenes": 12,
+  "newFinalChoices": 24,
+  "newArt": 12,
+  "newArtTotalBytes": 237654,
+  "engineStatus": "not-connected; Codex integration required",
+  "visualStatus": "provisional canonical portrait collages, not newly illustrated character faces"
+}

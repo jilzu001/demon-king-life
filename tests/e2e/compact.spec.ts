@@ -3,6 +3,13 @@ import { readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import type { GameState } from '../../src/engine/types';
 import { narrativeLines } from '../../src/ui/narrative';
+const galleryCatalog = JSON.parse(readFileSync('spec/content-v4.4-ending-gallery/content/ending_gallery_v4_4.json', 'utf8')) as {
+  endings: { id: string; title: string; description: string; fullText: string; kind: string }[];
+};
+const galleryArt = JSON.parse(readFileSync('spec/content-v4.4-ending-gallery/assets/ending_art_manifest_v4_4.json', 'utf8')).artByEndingId as Record<string, string>;
+const galleryEndingIds = galleryCatalog.endings.map(entry => entry.id);
+const endingGalleryEntries = () => galleryCatalog.endings;
+const endingArtworkPath = (id: string) => galleryArt[id];
 const fixtures = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/v37-ui-fixtures.ts'], { encoding: 'utf8' }));
 const v38 = JSON.parse(execFileSync(process.execPath, ['--import', 'tsx', 'scripts/v38-choice-fixtures.ts'], { encoding: 'utf8' })) as {
   id: string; state: GameState; choices: { id: string; text: string; description: string; next: GameState; narrative: string }[];
@@ -33,6 +40,61 @@ async function select(page: Page, id: string) {
 }
 test.beforeEach(async ({ page }) => {
   const time = new Date('2026-10-14T00:00:00Z'); await page.clock.install({ time }); await page.clock.pauseAt(time);
+});
+
+test('v4.4 도감20개는 잠김 내용을 숨기고 획득 상세/동일 WebP/닫기/저장 기록을 보호한다', async ({ page }) => {
+  test.setTimeout(90000);
+  await page.addInitScript(() => localStorage.setItem('demon-king:ui:text-percent', '150'));
+  await start(page); const saved = await raw(page);
+  const artRequests: string[] = [];
+  const paths = galleryEndingIds.map(id => endingArtworkPath(id)!);
+  page.on('request', request => { if (paths.some(path => new URL(request.url()).pathname.endsWith(`/${path}`))) artRequests.push(request.url()); });
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
+  await expect(page.locator('.ending-gallery-list li')).toHaveCount(20);
+  await expect(page.locator('.ending-gallery')).toContainText('발견한 엔딩 0 / 20');
+  await expect(page.locator('[data-ending-detail], .ending-detail, .menu-dialog img')).toHaveCount(0);
+  expect(artRequests).toEqual([]); expect(await raw(page)).toBe(saved);
+  // 상세 렌더링 전수 검수용 영구 도감 픽스처. 실제 도달/해금 테스트와 구분한다.
+  const meta = JSON.stringify({ saveSchemaVersion: 1, discoveredEndings: { 'demon-king': galleryEndingIds } });
+  await page.evaluate(({ metaKey, meta }) => localStorage.setItem(metaKey, meta), { metaKey, meta });
+  await page.reload(); await expect(page.locator('#current-event')).toBeAttached();
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
+  for (const entry of endingGalleryEntries()) {
+    await page.locator(`[data-ending-detail="${entry.id}"]`).click();
+    await expect(page.locator('.ending-detail')).toHaveAttribute('data-ending-detail-id', entry.id);
+    await expect(page.locator('.ending-description')).toHaveText(entry.description);
+    const currentBody = JSON.parse(readFileSync('public/stories/demon-king-compact/endings.json', 'utf8')).endings.find((e: { id: string }) => e.id === entry.id)?.body ?? entry.fullText;
+    await expect(page.locator('.ending-full-text p')).toHaveText(narrativeLines(currentBody));
+    const image = page.locator('.ending-detail .ending-art img');
+    await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+    const bounds = await image.evaluate((img: HTMLImageElement) => {
+      const r = img.getBoundingClientRect(); return { width: r.width, height: r.height, naturalWidth: img.naturalWidth, naturalHeight: img.naturalHeight, fit: getComputedStyle(img).objectFit, source: img.currentSrc };
+    });
+    expect(bounds.source.endsWith(`/${endingArtworkPath(entry.id)}`)).toBe(true);
+    expect(bounds.width).toBeLessThanOrEqual(bounds.naturalWidth + 1); expect(bounds.height).toBeLessThanOrEqual(Math.min(360, bounds.naturalHeight) + 1);
+    expect(bounds.width / bounds.height).toBeCloseTo(bounds.naturalWidth / bounds.naturalHeight, 2); expect(bounds.fit).toBe('contain');
+    await expect(page.locator('.ending-detail svg')).toHaveCount(0);
+    expect(await page.locator('.menu-dialog').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
+    if (['ending_peace', 'ending_love_scandal', 'ending_mina_wedding', 'ending_king', 'ending_true_demon'].includes(entry.id)) await page.screenshot({ path: `docs/v4.4/gallery-${entry.id}-${test.info().project.name}.png`, animations: 'disabled' });
+    await page.getByRole('button', { name: '닫기', exact: true }).click();
+    await expect(page.locator('.ending-detail')).toHaveCount(0); await expect(page.locator('.ending-gallery-list li')).toHaveCount(20);
+    await expect(page.locator(`[data-ending-detail="${entry.id}"]`)).toBeFocused();
+    expect(await raw(page)).toBe(saved);
+    expect(await page.evaluate(key => localStorage.getItem(key), metaKey)).toBe(meta);
+  }
+});
+
+test('v4.4 엔딩 그림404는 글만 표시하고 SVG로 대체하지 않으며 획득 기록을 유지한다', async ({ page }) => {
+  await start(page); const saved = await raw(page);
+  const meta = JSON.stringify({ saveSchemaVersion: 1, discoveredEndings: { 'demon-king': ['ending_peace'] } });
+  await page.evaluate(({ key, meta }) => localStorage.setItem(key, meta), { key: metaKey, meta });
+  await page.route('**/assets/illustrations/events/final_sunset.webp', route => route.fulfill({ status: 404, body: '' }));
+  await page.reload(); await expect(page.locator('#current-event')).toBeAttached();
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click(); await page.locator('[data-ending-detail="ending_peace"]').click();
+  await expect(page.locator('.ending-art-fallback')).toBeVisible(); await expect(page.locator('.ending-detail img, .ending-detail svg')).toHaveCount(0);
+  await expect(page.locator('.ending-full-text p')).not.toHaveCount(0);
+  expect(await raw(page)).toBe(saved); expect(await page.evaluate(key => localStorage.getItem(key), metaKey)).toBe(meta);
+  await page.getByRole('button', { name: '닫기', exact: true }).click(); await expect(page.locator('[data-ending-detail="ending_peace"]')).toBeVisible();
 });
 
 for (const event of v38) test(`v3.8 ${event.id}: 모든 선택의 표시·결과·저장·다음 진행`, async ({ page }) => {
@@ -285,7 +347,8 @@ test('그림 없는 사건은 텍스트로 진행하고 재판·엔딩 그림과
   await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
   await expect(page.locator('.choice-launch')).toBeVisible(); await page.locator('.choice-launch').click();
   await select(page, 'walk_away'); await select(page, 'end_peace');
-  await expect(page.locator('[data-ending-phase="0"] .story-illustration img')).toHaveAttribute('alt', '주인공');
+  await expect(page.locator('[data-ending-phase="0"] .ending-art img')).toHaveAttribute('src', /assets\/illustrations\/events\/final_sunset\.webp$/);
+  await expect(page.locator('[data-ending-phase="0"] svg')).toHaveCount(0);
   const ended = await raw(page); await page.reload(); expect(await raw(page)).toBe(ended);
 });
 
@@ -373,6 +436,7 @@ test('연대기는 방문한 사건의 독립 요약만 한 줄로 표시하고 
 });
 
 test('8개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건만 회상하며 마지막에 중복 없이 해금된다', async ({ page }) => {
+  test.setTimeout(90000);
   const paths: Record<string, string[]> = {
     ending_escape: ['attack', 'escape_prison'], ending_fire: ['refuse', 'burn_office'], ending_throne: ['invoice', 'threaten_king'],
     ending_ledger: ['refuse', 'keep_records', 'ally', 'steal_ledger'],
@@ -387,17 +451,24 @@ test('8개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건�
     await start(page);
     for (const id of ['family_accept', 'trust_mina', ...choices]) await select(page, id);
     await expect(page.locator('[data-ending-phase="0"]')).toBeVisible(); await expect(page.locator('.game-header')).toHaveCount(0);
-    if (endingId === 'ending_peace' || endingId === 'ending_throne') await page.screenshot({ path: `docs/compact-controls/${endingId}-${test.info().project.name}.png`, animations: 'disabled' });
+    const firstArt = page.locator('[data-ending-phase="0"] .ending-art img');
+    await expect.poll(() => firstArt.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+    const firstArtSource = await firstArt.getAttribute('src'); expect(firstArtSource!.endsWith(`/${endingArtworkPath(endingId)}`)).toBe(true);
+    await expect(page.locator('[data-ending-phase="0"] svg')).toHaveCount(0);
+    if (endingId === 'ending_peace' || endingId === 'ending_throne') await page.screenshot({ path: `docs/v4.4/${endingId}-${test.info().project.name}.png`, animations: 'disabled' });
     const state = JSON.parse((await raw(page))!); expect(state.endingId).toBe(endingId);
     const beforeMeta = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), metaKey);
     expect(beforeMeta.discoveredEndings['demon-king'] ?? []).not.toContain(endingId);
+    await page.getByRole('button', { name: '설정', exact: true }).click();
+    await expect(page.locator(`.ending-gallery [data-ending-detail="${endingId}"]`)).toHaveCount(0);
+    await page.getByRole('button', { name: '닫기', exact: true }).click();
     await page.getByRole('button', { name: '이어서', exact: true }).click();
     const memories: string[] = [];
     while (await page.locator('[data-ending-phase="1"]').count()) {
       const nodeId = await page.locator('[data-memory-node]').getAttribute('data-memory-node'); memories.push(nodeId!);
       if (endingId === 'ending_peace' && nodeId === 'child') {
         await expect(page.locator('[data-memory-node] .story-illustration')).toHaveAttribute('data-asset-id', 'mina');
-        await page.screenshot({ path: `docs/compact-controls/memory-mina-${test.info().project.name}.png`, animations: 'disabled' });
+        await page.screenshot({ path: `docs/v4.4/memory-mina-${test.info().project.name}.png`, animations: 'disabled' });
       }
       expect(state.history.map((h: { nodeId: string }) => h.nodeId)).toContain(nodeId);
       await page.getByRole('button', { name: '이어서', exact: true }).click();
@@ -407,9 +478,18 @@ test('8개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건�
     await expect(page.locator('[data-ending-phase="2"]')).toBeVisible();
     expect(await page.locator('.cinematic-shell').innerText()).not.toMatch(/마지막 순간|주마등|독백|엔딩카드|1\/4/);
     await page.getByRole('button', { name: '이어서', exact: true }).click(); await expect(page.locator('[data-ending-phase="3"] h1')).toBeVisible();
+    await expect(page.locator('[data-ending-phase="3"] .ending-art img')).toHaveAttribute('src', firstArtSource!);
+    await expect(page.locator('[data-ending-phase="3"] svg')).toHaveCount(0);
     await page.reload(); await expect(page.locator('[data-ending-phase="3"]')).toBeVisible();
     const collection = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), metaKey);
     expect(collection.discoveredEndings['demon-king'].filter((id: string) => id === endingId)).toHaveLength(1);
+    expect(await raw(page)).toBe(JSON.stringify(state));
+    await page.getByRole('button', { name: '도감 보기', exact: true }).click();
+    await page.locator(`[data-ending-detail="${endingId}"]`).click();
+    await expect(page.locator('.ending-detail .ending-art img')).toHaveAttribute('src', firstArtSource!);
+    await page.getByRole('button', { name: '닫기', exact: true }).click();
+    await expect(page.locator('.ending-gallery-list li')).toHaveCount(20);
+    await page.getByRole('button', { name: '닫기', exact: true }).click();
     expect(await raw(page)).toBe(JSON.stringify(state));
   }
 });

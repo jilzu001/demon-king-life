@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "hooks": [
+    {
+      "id": "annual_echo_04_a_child",
+      "sourceId": "annual_04",
+      "flag": "annual_04_a",
+      "targetLayer": "core",
+      "targetId": "child",
+      "text": "미나가 나누어 먹던 감자를 기억할지는 알 수 없었다. 그러나 당신에게는 그날의 평범한 점심이 지금까지도 작은 위안으로 남아 있었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_07_a_exam",
+      "sourceId": "annual_07",
+      "flag": "annual_07_a",
+      "targetLayer": "core",
+      "targetId": "exam",
+      "text": "낡은 냄비 뚜껑이 떠올랐다. 미나는 늘 강했고, 당신은 그 힘이 누구를 다치게 할지보다 어떻게 멈출지 궁금했다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_07_b_exam",
+      "sourceId": "annual_07",
+      "flag": "annual_07_b",
+      "targetLayer": "core",
+      "targetId": "exam",
+      "text": "어릴 적 서로 다치게 하지 않겠다고 서명한 종이가 생각났다. 법이 인정하지 않는 약속도 사람에게는 무게가 있었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_09_a_princess",
+      "sourceId": "annual_09",
+      "flag": "annual_09_a",
+      "targetLayer": "core",
+      "targetId": "princess",
+      "text": "당신은 한때 부모의 실제 노동을 숙제로 발표했다. 지금도 거창한 직함보다 일을 해낸 사람의 이름이 먼저 떠올랐다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_13_a_quiet",
+      "sourceId": "annual_13",
+      "flag": "annual_13_a",
+      "targetLayer": "core",
+      "targetId": "quiet",
+      "text": "열세 살에 꿈꾸던 빵 냄새가 어느 날 문득 가까워졌다. 그때는 직업란에 적은 장난 같은 답이었지만 이제는 하루를 여는 일이었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_16_a_audit",
+      "sourceId": "annual_16",
+      "flag": "annual_16_a",
+      "targetLayer": "core",
+      "targetId": "audit",
+      "text": "열여섯 살에 받아 두었던 전투력 측정표가 아직 있었다. 숫자가 불리한 날에도 사실을 그대로 남기기로 했던 버릇이었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_18_a_hearing",
+      "sourceId": "annual_18",
+      "flag": "annual_18_a",
+      "targetLayer": "core",
+      "targetId": "hearing",
+      "text": "열여덟 살의 첫 일당을 받아 내던 날이 생각났다. 하루 노동도 빼앗기지 않으려고 했는데 수십 년은 더더욱 그럴 수 없었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_18_b_hearing",
+      "sourceId": "annual_18",
+      "flag": "annual_18_b",
+      "targetLayer": "core",
+      "targetId": "hearing",
+      "text": "열여덟 살에 뒷문으로 감자를 나르고도 썩은 감자를 받지 않았던 일이 떠올랐다. 당신은 그때부터 거절하는 법을 배운 셈이었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_19_a_exam",
+      "sourceId": "annual_19",
+      "flag": "annual_19_a",
+      "targetLayer": "core",
+      "targetId": "exam",
+      "text": "지난해 베껴 둔 시험 공고가 책상 서랍에 있었다. ‘실기 대상자 별도 통지’라는 문장이 실제 사람의 목숨을 뜻하게 되었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_19_b_exam",
+      "sourceId": "annual_19",
+      "flag": "annual_19_b",
+      "targetLayer": "core",
+      "targetId": "exam",
+      "text": "지난해 시험 대상자의 동의를 물었을 때 창구를 세 번 돌고도 답을 받지 못했다. 오늘은 그 답을 시험장 전체가 듣게 될 것이다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_22_a_audit",
+      "sourceId": "annual_22",
+      "flag": "annual_22_a",
+      "targetLayer": "core",
+      "targetId": "audit",
+      "text": "당신은 월세를 올린 근거조차 계약서에서 따졌던 사람이다. 이제는 훨씬 큰 숫자에 근거를 물을 차례였다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_24_b_hearing",
+      "sourceId": "annual_24",
+      "flag": "annual_24_b",
+      "targetLayer": "core",
+      "targetId": "hearing",
+      "text": "한때 동네 아이들의 연극에 마왕의 변호인 역할을 추가했다. 가벼운 무대에서 했던 질문이 이제 실제 법정의 공기가 되었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_27_b_audit",
+      "sourceId": "annual_27",
+      "flag": "annual_27_b",
+      "targetLayer": "core",
+      "targetId": "audit",
+      "text": "그네줄 하나를 살 돈이 없다던 회의가 떠올랐다. 숫자를 공개하라고 묻던 그날처럼, 이번에도 당신은 항목부터 확인했다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_31_b_audit",
+      "sourceId": "annual_31",
+      "flag": "annual_31_b",
+      "targetLayer": "core",
+      "targetId": "audit",
+      "text": "오래된 구두를 버리지 않고 수선하던 날을 기억했다. 잘못된 제도를 버리는 것만이 답일지, 안쪽의 톱니부터 고칠 수 있을지 아직 몰랐다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_34_a_hearing",
+      "sourceId": "annual_34",
+      "flag": "annual_34_a",
+      "targetLayer": "core",
+      "targetId": "hearing",
+      "text": "자원봉사 명단에서 자기 이름이 빠진 이유를 따져 물었을 때 받은 사본이 있었다. 작은 차별을 증명하는 종이가 이제는 여러 장이었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_37_b_hearing",
+      "sourceId": "annual_37",
+      "flag": "annual_37_b",
+      "targetLayer": "core",
+      "targetId": "hearing",
+      "text": "고물상에서 산 손편지의 ‘빨래를 걷어 줘’라는 문장이 떠올랐다. 역사는 훈장뿐 아니라 이런 부탁으로도 이어지는 것인지 모른다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_40_a_audit",
+      "sourceId": "annual_40",
+      "flag": "annual_40_a",
+      "targetLayer": "core",
+      "targetId": "audit",
+      "text": "마흔 살 검진 결과에 ‘특이 소견 없음’이 있었다. 국가가 위협이라 부르는 몸도, 의사에게는 돌봐야 할 사람의 몸이었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_44_b_hearing",
+      "sourceId": "annual_44",
+      "flag": "annual_44_b",
+      "targetLayer": "core",
+      "targetId": "hearing",
+      "text": "‘국민 정서상 필요’라는 답변을 받은 포스터가 생각났다. 정서는 모호했지만 그걸 이유로 세금이 쓰였다는 사실은 모호하지 않았다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_46_a_hearing",
+      "sourceId": "annual_46",
+      "flag": "annual_46_a",
+      "targetLayer": "core",
+      "targetId": "hearing",
+      "text": "지난해 날짜와 숫자를 정리하며 증언을 연습했다. 지금은 그 종이가 손바닥 안에서 덜 떨렸다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_46_b_hearing",
+      "sourceId": "annual_46",
+      "flag": "annual_46_b",
+      "targetLayer": "core",
+      "targetId": "hearing",
+      "text": "지난해 연습한 증언 끝에는 잃어버린 시간이 적혀 있었다. 돈으로는 증명할 수 없는 항목이었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_49_a_quiet",
+      "sourceId": "annual_49",
+      "flag": "annual_49_a",
+      "targetLayer": "core",
+      "targetId": "quiet",
+      "text": "한 노인의 묵은 청구서를 들어 주던 일이 떠올랐다. 자기 문제가 끝나도 다른 사람의 이야기는 끝나지 않는다는 사실을 배웠다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_49_b_office",
+      "sourceId": "annual_49",
+      "flag": "annual_49_b",
+      "targetLayer": "core",
+      "targetId": "office",
+      "text": "오래된 청구서가 향할 새 부서를 찾아 주던 일이 있었다. 누군가의 민원이 제때 도착하게 하는 일도 뜻밖에 삶의 일부가 되었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_52_a_quiet",
+      "sourceId": "annual_52",
+      "flag": "annual_52_a",
+      "targetLayer": "core",
+      "targetId": "quiet",
+      "text": "도시 지도에서 사라진 골목의 이름을 여백에 적었던 날을 떠올렸다. 지워진 삶에도 누군가는 이름을 다시 써 줄 수 있었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_55_a_office",
+      "sourceId": "annual_55",
+      "flag": "annual_55_a",
+      "targetLayer": "core",
+      "targetId": "office",
+      "text": "뿔이 왜 없느냐고 묻던 아이에게 마왕은 서류라는 말을 했었다. 오늘도 누군가 같은 질문을 한다면 종이 대신 사람부터 보여 주고 싶었다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_57_b_final_trial",
+      "sourceId": "annual_57",
+      "flag": "annual_57_b",
+      "targetLayer": "core",
+      "targetId": "final_trial",
+      "text": "어린 질문자에게 오래된 기록을 건네던 날이 떠올랐다. 한 사람의 판결보다 다음 사람이 읽고 묻는 방식이 더 중요할지 몰랐다.",
+      "appendOnlyWhenFlagSet": true
+    },
+    {
+      "id": "annual_echo_63_a_quiet",
+      "sourceId": "annual_63",
+      "flag": "annual_63_a",
+      "targetLayer": "core",
+      "targetId": "quiet",
+      "text": "눈 덮인 길을 쓸며 들은 ‘고맙다’는 말이 떠올랐다. 당신이 평생 받고 싶었던 인정은 어쩌면 그만큼 짧고 선명한 것이었다.",
+      "appendOnlyWhenFlagSet": true
+    }
+  ],
+  "engineIntegrationRequired": true
+}

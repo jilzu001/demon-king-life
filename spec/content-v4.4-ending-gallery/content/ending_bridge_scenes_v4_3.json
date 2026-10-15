@@ -1,0 +1,841 @@
+{
+  "schemaVersion": 1,
+  "status": "integration-required",
+  "scenes": [
+    {
+      "id": "bridge_route_mina_renounced",
+      "kind": "scene",
+      "age": 55,
+      "title": "55세, 왕국 외곽의 작은 구호소",
+      "bodyParagraphs": [
+        "미나의 정식 용사 자격은 끝내 돌아오지 않았다.",
+        "구호소 창문에 비가 두드렸다. 미나는 젖은 장화를 벗으며 당신이 가져온 빵 봉지를 받았다. 왕국은 그녀를 용사로 부르지 않았다. 시험을 거부한 응시자의 이름은 무효 처리됐고, 세 번의 재심에서도 결과는 같았다."
+      ],
+      "chronicleSummary": "55세, 왕국 외곽의 작은 구호소에서 중요한 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "confessed_at_exam",
+          "confession_sincere",
+          "mina_mutual_respect",
+          "supported_mina_after_exam",
+          "defended_mina_independence"
+        ]
+      },
+      "choices": [
+        {
+          "id": "route_mina_renounced_stay",
+          "text": "미나가 지켜 온 구호소를 함께 지킨다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_mina_renounced_stay",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_mina_renounced"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_mina_renounced_stay"
+                }
+              ],
+              "narrative": "구호소의 불이 꺼지자 미나는 나무칼을 문 옆에 세웠다. 전설의 검은 아니었지만, 두 사람이 처음으로 지키겠다고 했던 약속의 모양이었다."
+            }
+          ]
+        },
+        {
+          "id": "route_mina_renounced_leave",
+          "text": "서로의 삶을 존중하며 마지막으로 응원한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_mina_renounced_leave",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_mina_renounced"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_mina_renounced_leave"
+                }
+              ],
+              "narrative": "그녀의 꿈을 빼앗은 세상을 바꿀 수는 없어도, 그녀가 다시 고르는 삶을 방해하지는 않았다."
+            }
+          ]
+        }
+      ],
+      "implementationStatus": "proposal_requires_codex"
+    },
+    {
+      "id": "bridge_route_mina_wedding",
+      "kind": "scene",
+      "age": 65,
+      "title": "65세, 작은 마을 예식장",
+      "bodyParagraphs": [
+        "주례가 왕국 혼인법 제13조를 펼쳤다.",
+        "주례가 서류를 넘기더니 목을 가다듬었다. “용사와 마왕의 혼인은 관련 법령에 선례가 없습니다.”"
+      ],
+      "chronicleSummary": "65세, 작은 마을 예식장에서 중요한 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "confessed_at_exam",
+          "confession_sincere",
+          "mina_mutual_respect",
+          "mina_explicit_reciprocity",
+          "years_of_mutual_trust"
+        ]
+      },
+      "choices": [
+        {
+          "id": "route_mina_wedding_challenge",
+          "text": "국가 등록과 관계없이 서로의 이름으로 서약한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_mina_wedding_challenge",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_mina_wedding"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_mina_wedding_challenge"
+                }
+              ],
+              "narrative": "주례의 도장이 없던 혼인 서약서 아래에 미나가 손으로 작은 나무칼을 그렸다. 두 사람은 그걸 액자에 넣었다."
+            }
+          ]
+        },
+        {
+          "id": "route_mina_wedding_wait",
+          "text": "혼인법 개정을 기다리는 대신 오늘의 축하를 누린다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_mina_wedding_wait",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_mina_wedding"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_mina_wedding_wait"
+                }
+              ],
+              "narrative": "사랑은 시험장에서 합격하지 못했지만, 오늘은 누구도 채점하지 않았다."
+            }
+          ]
+        }
+      ],
+      "implementationStatus": "proposal_requires_codex"
+    },
+    {
+      "id": "bridge_route_confession_unanswered",
+      "kind": "scene",
+      "age": 65,
+      "title": "65세, 강둑의 오래된 벤치",
+      "bodyParagraphs": [
+        "미나는 오래전 고백에 대한 대답을 꺼냈다.",
+        "마을 축제의 마지막 불꽃이 강물에 떨어졌다. 미나는 벤치에 앉아 보온병을 열었다. 머리칼에는 흰빛이 섞였고, 당신은 계단을 오르기 전부터 무릎을 걱정하는 나이가 됐다."
+      ],
+      "chronicleSummary": "65세, 강둑의 오래된 벤치에서 중요한 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "confessed_at_exam",
+          "mina_distance",
+          "respected_mina_boundary"
+        ]
+      },
+      "choices": [
+        {
+          "id": "route_confession_unanswered_listen",
+          "text": "대답보다 그동안의 이야기를 듣는다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_confession_unanswered_listen",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_confession_unanswered"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_confession_unanswered_listen"
+                }
+              ],
+              "narrative": "강둑의 벤치는 아무 말도 남기지 않았다. 두 사람은 각자의 집으로 돌아갔고, 내일이면 다시 다른 하루가 시작될 터였다."
+            }
+          ]
+        },
+        {
+          "id": "route_confession_unanswered_smile",
+          "text": "서로 잘 살아온 것을 먼저 축하한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_confession_unanswered_smile",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_confession_unanswered"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_confession_unanswered_smile"
+                }
+              ],
+              "narrative": "답이 없어서 실패한 사랑도 아니다. 함께 살지 않았다고 없던 시간이 되는 것도 아니다."
+            }
+          ]
+        }
+      ],
+      "implementationStatus": "proposal_requires_codex"
+    },
+    {
+      "id": "bridge_route_common_enemy",
+      "kind": "scene",
+      "age": 60,
+      "title": "60세, 왕국 공개 청문회",
+      "bodyParagraphs": [
+        "대형 스크린에 오래된 용사 시험 채점표가 나타났다.",
+        "청문회장의 문이 열리자 미나가 먼저 걸어 들어왔다. 그녀의 가슴에는 훈장 대신 작은 나무칼 모양 브로치가 달려 있었다."
+      ],
+      "chronicleSummary": "60세, 왕국 공개 청문회에서 중요한 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "refused_exam",
+          "mina_testified_truthfully",
+          "joint_public_evidence"
+        ]
+      },
+      "choices": [
+        {
+          "id": "route_common_enemy_publish",
+          "text": "국민 누구나 볼 수 있도록 원자료를 공개한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_common_enemy_publish",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_common_enemy"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_common_enemy_publish"
+                }
+              ],
+              "narrative": "청문회장 밖에서 미나가 손을 내밀었다. 당신은 잠시 망설이다 잡았다. 악수는 판결이 아니라 앞으로의 약속이었다."
+            }
+          ]
+        },
+        {
+          "id": "route_common_enemy_testify",
+          "text": "미나와 번갈아 시험 당시의 진술을 한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_common_enemy_testify",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_common_enemy"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_common_enemy_testify"
+                }
+              ],
+              "narrative": "우리는 누가 이기는지 오래 다퉜다. 이제 누구도 시험 문제가 되지 않게 할 차례다."
+            }
+          ]
+        }
+      ],
+      "implementationStatus": "proposal_requires_codex"
+    },
+    {
+      "id": "bridge_route_double_license",
+      "kind": "scene",
+      "age": 36,
+      "title": "36세, 왕국 자격증 발급 창구",
+      "bodyParagraphs": [
+        "전투력 2로 응시 가능한 행정 구제형 용사 시험에 합격했다.",
+        "당신은 두 장의 자격증을 한 손에 들었다. 하나는 국가 지정 마왕 등록증, 다른 하나는 국가 공인 용사 면허였다."
+      ],
+      "chronicleSummary": "36세, 왕국 자격증 발급 창구에서 중요한 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "mina_rival_promise",
+          "refused_exam",
+          "hero_license_earned_legally"
+        ]
+      },
+      "choices": [
+        {
+          "id": "route_double_license_claim",
+          "text": "마왕 토벌 포상금을 본인에게 청구한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_double_license_claim",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_double_license"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_double_license_claim"
+                }
+              ],
+              "narrative": "당신의 책상에는 용사 표창장과 마왕 수배 전단이 나란히 걸렸다. 둘 다 본인 사진이라 신분 확인은 쉬웠다."
+            }
+          ]
+        },
+        {
+          "id": "route_double_license_audit",
+          "text": "모순된 두 자격증을 감사관에게 제출한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_double_license_audit",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_double_license"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_double_license_audit"
+                }
+              ],
+              "narrative": "전투력은 여전히 2였다. 그래도 나라의 규정은 내가 이겼다."
+            }
+          ]
+        }
+      ],
+      "implementationStatus": "proposal_requires_codex"
+    },
+    {
+      "id": "bridge_route_retirement_47",
+      "kind": "scene",
+      "age": 47,
+      "title": "47세, 왕국 노동위원회",
+      "bodyParagraphs": [
+        "당신은 태어날 때부터 국가가 지정한 직무를 수행했다고 주장했다.",
+        "노동위원회는 이례적으로 당신의 근로 사실을 인정했다. 왕국력 800년 출생, 같은 날 마왕 발령, 현재까지 해임 기록 없음. 재직 기간 사십칠 년."
+      ],
+      "chronicleSummary": "47세, 왕국 노동위원회에서 중요한 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "birth_wage_claim",
+          "claimed_service_years",
+          "rejected_50000_settlement"
+        ]
+      },
+      "choices": [
+        {
+          "id": "route_retirement_47_collect",
+          "text": "47골드를 받고 영수증에 이의를 적는다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_retirement_47_collect",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_retirement_47"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_retirement_47_collect"
+                }
+              ],
+              "narrative": "지갑은 텅 비었지만 재직증명서에는 당신이 직접 쓴 한 줄이 남았다. ‘업무 내용: 살아 있기.’"
+            }
+          ]
+        },
+        {
+          "id": "route_retirement_47_refuse",
+          "text": "한 골드씩 직접 세어 모욕적인 산식을 공개한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_retirement_47_refuse",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_retirement_47"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_retirement_47_refuse"
+                }
+              ],
+              "narrative": "국가가 정한 값이 내 인생의 값은 아니다. 다만 계산식은 꼭 공개해야겠다."
+            }
+          ]
+        }
+      ],
+      "implementationStatus": "proposal_requires_codex"
+    },
+    {
+      "id": "bridge_route_paid_defeat",
+      "kind": "scene",
+      "age": 54,
+      "title": "54세, 주말 마왕 토벌 체험장",
+      "bodyParagraphs": [
+        "마왕을 토벌하면 기념 도장을 찍어 주는 체험장이 대박 났다.",
+        "토요일 오전 아홉 시, 당신은 마왕 망토를 둘렀다. 한때 왕국이 당신을 물리치기 위해 쓴 돈은 200만 골드였지만, 오늘 입장료는 아이 한 명당 세 골드였다."
+      ],
+      "chronicleSummary": "54세, 주말 마왕 토벌 체험장에서 중요한 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "asked_fee",
+          "licensed_defeat_show",
+          "no_real_injury_policy"
+        ]
+      },
+      "choices": [
+        {
+          "id": "route_paid_defeat_coach",
+          "text": "아이들에게 안전하게 지는 법을 가르친다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_paid_defeat_coach",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_paid_defeat"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_paid_defeat_coach"
+                }
+              ],
+              "narrative": "체험장 문에 오늘의 마지막 안내문이 붙었다. ‘마왕은 오후 여섯 시에 퇴근합니다. 내일도 살아서 출근합니다.’"
+            }
+          ]
+        },
+        {
+          "id": "route_paid_defeat_expand",
+          "text": "왕국 최초의 비폭력 용사 체험 협회를 만든다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_paid_defeat_expand",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_paid_defeat"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_paid_defeat_expand"
+                }
+              ],
+              "narrative": "같은 패배라도 내가 동의하면 공연이고, 동의하지 않으면 폭력이다."
+            }
+          ]
+        }
+      ],
+      "implementationStatus": "proposal_requires_codex"
+    },
+    {
+      "id": "bridge_route_taxpayer",
+      "kind": "scene",
+      "age": 65,
+      "title": "65세, 국왕의 납세자 표창식",
+      "bodyParagraphs": [
+        "왕국은 재무부 추산 세금을 가장 성실하게 낸 사람을 발표했다.",
+        "국왕은 순금으로 만든 납세 표창장을 들고 당신을 바라봤다."
+      ],
+      "chronicleSummary": "65세, 국왕의 납세자 표창식에서 중요한 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "asked_fee",
+          "honest_business_books",
+          "paid_taxes_years"
+        ]
+      },
+      "choices": [
+        {
+          "id": "route_taxpayer_receipt",
+          "text": "표창장 대신 사용 내역 공개를 요구한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_taxpayer_receipt",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_taxpayer"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_taxpayer_receipt"
+                }
+              ],
+              "narrative": "사진 속 국왕과 당신은 나란히 웃었다. 사진 아래에는 작은 글씨로 ‘국가 안보 위협 대상자 겸 모범 납세자’라고 적혔다."
+            }
+          ]
+        },
+        {
+          "id": "route_taxpayer_photo",
+          "text": "국왕 옆에서 수배 전단을 함께 들고 사진을 찍는다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_taxpayer_photo",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_taxpayer"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_taxpayer_photo"
+                }
+              ],
+              "narrative": "모두가 돈을 낸다. 그렇다면 모두가 질문할 수 있어야 한다."
+            }
+          ]
+        }
+      ],
+      "implementationStatus": "proposal_requires_codex"
+    },
+    {
+      "id": "bridge_route_king",
+      "kind": "scene",
+      "age": 60,
+      "title": "60세, 왕국 임시 추대식",
+      "bodyParagraphs": [
+        "정권 붕괴 뒤 시민의회가 당신을 임시 국왕으로 추대했다.",
+        "당신은 왕관을 썼다. 생각보다 무거웠다. 전투력 2의 목은 어린 시절부터 부당한 명령을 버텼지만 금속의 무게에는 별 소질이 없었다."
+      ],
+      "chronicleSummary": "60세, 왕국 임시 추대식에서 중요한 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "princess_ally",
+          "constitutional_succession",
+          "public_consent",
+          "elysia_equal_partner"
+        ]
+      },
+      "choices": [
+        {
+          "id": "route_king_abolish",
+          "text": "첫 칙령으로 사람을 마왕으로 지정하는 제도를 폐지한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_king_abolish",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_king"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_king_abolish"
+                }
+              ],
+              "narrative": "옥좌 뒤에 오래된 수배 전단이 걸려 있었다. 당신은 그것을 없애지 않았다. 권력을 잡은 사람이 잊지 말아야 할 사람의 얼굴이었기 때문이다."
+            }
+          ]
+        },
+        {
+          "id": "route_king_resign",
+          "text": "왕관을 의회에 반납하고 대통령 선거를 제안한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_king_resign",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_king"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_king_resign"
+                }
+              ],
+              "narrative": "내 이름으로 다른 사람의 인생을 정하는 왕이 되지 않겠다."
+            }
+          ]
+        }
+      ],
+      "implementationStatus": "proposal_requires_codex"
+    },
+    {
+      "id": "bridge_route_bankrupt",
+      "kind": "scene",
+      "age": 60,
+      "title": "60세, 왕국 재무부 긴급회의",
+      "bodyParagraphs": [
+        "전국의 국가 지정 피해자에게 배상하라는 확정 판결이 나왔다.",
+        "재무부의 가장 큰 숫자는 당신의 이름 옆에 쓰여 있지 않았다. 전국에서 같은 등록 피해를 당한 사람들의 배상액을 모두 더한 결과였다. 왕국은 그 금액을 당장 마련할 수 없었다."
+      ],
+      "chronicleSummary": "60세, 왕국 재무부 긴급회의에서 중요한 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "public_audit",
+          "class_action_win",
+          "evidence_preserved",
+          "rejected_private_buyout"
+        ]
+      },
+      "choices": [
+        {
+          "id": "route_bankrupt_protect",
+          "text": "국민 생계 예산부터 보호하는 지급 계획을 제안한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_bankrupt_protect",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_bankrupt"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_bankrupt_protect"
+                }
+              ],
+              "narrative": "재무부 현관에 새 표지판이 붙었다. ‘국가 회생 절차 진행 중.’ 그 아래에는 ‘민원인 출입 가능’이라는 작은 글씨가 있었다."
+            }
+          ]
+        },
+        {
+          "id": "route_bankrupt_publish",
+          "text": "왕실의 불필요한 지출을 공개하고 구조조정을 요구한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_bankrupt_publish",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_bankrupt"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_bankrupt_publish"
+                }
+              ],
+              "narrative": "내가 나라를 망친 게 아니다. 빚을 감추고도 멀쩡한 척하던 나라가 이제 계산하기 시작했다."
+            }
+          ]
+        }
+      ],
+      "implementationStatus": "proposal_requires_codex"
+    },
+    {
+      "id": "bridge_route_true_demon",
+      "kind": "scene",
+      "age": 53,
+      "title": "53세, 왕궁 지하의 봉인된 연구실",
+      "bodyParagraphs": [
+        "특별관리 계정의 일부 지출이 오래된 봉인 시설로 이어졌다.",
+        "왕궁 지하에서 낡은 철문을 열자 거대한 그림자가 숨을 쉬었다. 왕국은 반세기 동안 당신을 가짜 마왕으로 관리했다. 그 사이 일부 관리들은 진짜 위협을 연구했다."
+      ],
+      "chronicleSummary": "53세, 왕궁 지하의 봉인된 연구실에서 중요한 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "princess_ally",
+          "public_audit",
+          "verified_experiment_receipts",
+          "sealed_gate_discovered"
+        ]
+      },
+      "choices": [
+        {
+          "id": "route_true_demon_evacuate",
+          "text": "봉인을 깨지 않고 주민을 대피시킬 증거를 공개한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_true_demon_evacuate",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_true_demon"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_true_demon_evacuate"
+                }
+              ],
+              "narrative": "철문이 닫히자 그림자가 마지막으로 물었다. “너는 누구였지?” 당신은 처음으로 주저 없이 자기 이름을 말했다."
+            }
+          ]
+        },
+        {
+          "id": "route_true_demon_negotiate",
+          "text": "미나와 함께 그 존재의 의도를 확인한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_true_demon_negotiate",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_true_demon"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_true_demon_negotiate"
+                }
+              ],
+              "narrative": "진짜 괴물이 있다는 사실은 가짜 괴물로 살게 한 세월의 면죄부가 아니다."
+            }
+          ]
+        }
+      ],
+      "implementationStatus": "proposal_requires_codex"
+    },
+    {
+      "id": "bridge_route_mother_petition",
+      "kind": "scene",
+      "age": 65,
+      "title": "65세, 오래된 출생신고소",
+      "bodyParagraphs": [
+        "어머니가 제출한 첫 이의신청서가 기록 보관소에서 발견됐다.",
+        "출생신고소의 창구는 예전보다 낮아졌다. 사람들의 편의를 위해 고쳤다고 했다. 당신은 늙어 허리를 굽혔으므로 그 설명이 조금 우스웠다."
+      ],
+      "chronicleSummary": "65세, 오래된 출생신고소에서 중요한 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "birth_appealed",
+          "kept_family_petition",
+          "pursued_name_restoration"
+        ]
+      },
+      "choices": [
+        {
+          "id": "route_mother_petition_read",
+          "text": "어머니의 글씨를 처음부터 끝까지 읽는다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_mother_petition_read",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_mother_petition"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_mother_petition_read"
+                }
+              ],
+              "narrative": "낡은 종이가 바람에 들썩였다. 당신은 엄지손가락으로 접힌 귀퉁이를 눌렀다. 어머니의 손이 그곳을 몇 번이나 접었을지 알 것 같았다."
+            }
+          ]
+        },
+        {
+          "id": "route_mother_petition_display",
+          "text": "그 편지를 다른 아이들의 진정서 곁에 전시한다.",
+          "description": "이 선택으로 해당 삶의 결말을 확정한다.",
+          "outcomes": [
+            {
+              "id": "out_route_mother_petition_display",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "ending",
+                "id": "ending_mother_petition"
+              },
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "ending_decision_ending_mother_petition_display"
+                }
+              ],
+              "narrative": "내 이름을 되찾는 데 평생이 걸렸지만, 누군가는 태어난 날부터 나를 알고 있었다."
+            }
+          ]
+        }
+      ],
+      "implementationStatus": "proposal_requires_codex"
+    }
+  ]
+}

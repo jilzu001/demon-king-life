@@ -1,0 +1,18 @@
+1280×900/DPR1: 스크롤/페이지·150% 글자·상단 기록/능력치 한 줄/최근 연대기 한 줄·본문 크기 상한·글자 전체 노출·선택 팝업·저장 원장 보호 통과 (http://127.0.0.1:4175/)
+320×568/DPR1: 스크롤/페이지·150% 글자·상단 기록/능력치 한 줄/최근 연대기 한 줄·본문 크기 상한·글자 전체 노출·선택 팝업·저장 원장 보호 통과 (http://127.0.0.1:4175/)
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.goto: net::ERR_HTTP_RESPONSE_CODE_FAILURE at http://127.0.0.1:4175/
+Call log:
+  - navigating to "http://127.0.0.1:4175/", waiting until "load"
+
+    at <anonymous> (C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\scripts\verify-illustrations-ui.ts:82:18) {
+  log: [
+    '  - navigating to "http://127.0.0.1:4175/", waiting until "load"'
+  ],
+  name: 'Error'
+}
+
+Node.js v24.18.0

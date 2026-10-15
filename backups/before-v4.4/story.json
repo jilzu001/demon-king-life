@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "demon-king",
+  "version": "2.3.0-compact",
+  "title": "가짜 마왕의 일생",
+  "entryNodeId": "birth",
+  "chapters": [
+    "chapters/01_complete.json"
+  ],
+  "charactersFile": "characters.json",
+  "endingsFile": "endings.json",
+  "initialState": {
+    "age": 20,
+    "player": {
+      "species": "human",
+      "combat": 2,
+      "magic": 0,
+      "gold": 0,
+      "alive": true,
+      "legalStatus": "registered_demon_king",
+      "crimes": []
+    },
+    "npcs": {
+      "mina": {
+        "alive": true,
+        "combat": 8402,
+        "trust": 50,
+        "affection": 0,
+        "relationship": "childhood_friend"
+      },
+      "erisia": {
+        "alive": true,
+        "combat": 320,
+        "trust": 0,
+        "affection": 0,
+        "relationship": "stranger"
+      },
+      "king": {
+        "alive": true,
+        "combat": 10,
+        "trust": 0,
+        "affection": 0,
+        "relationship": "stranger"
+      },
+      "auditor": {
+        "alive": true,
+        "combat": 4,
+        "trust": 0,
+        "affection": 0,
+        "relationship": "stranger"
+      }
+    },
+    "flags": [
+      "registration_is_believed_accidental"
+    ],
+    "inventory": {}
+  }
+}

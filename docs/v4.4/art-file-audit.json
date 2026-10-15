@@ -1,0 +1,222 @@
+[
+  {
+    "endingId": "ending_peace",
+    "path": "assets/illustrations/events/final_sunset.webp",
+    "width": 640,
+    "height": 564,
+    "bytes": 16234,
+    "format": "WEBP",
+    "alreadyPublic": true,
+    "samePublicBytes": true,
+    "sha256": "42fb2857e5d11e9aafc89fe7d0fb9ba8d18876bdd210fab487627c7b0e8a0491"
+  },
+  {
+    "endingId": "ending_reform",
+    "path": "assets/illustrations/events/royal_trial.webp",
+    "width": 640,
+    "height": 564,
+    "bytes": 22290,
+    "format": "WEBP",
+    "alreadyPublic": true,
+    "samePublicBytes": true,
+    "sha256": "2a1220ac5dbf2c20ae0f8108df77aa52bb6f99c2eb0a82dd057c8e54a24072d3"
+  },
+  {
+    "endingId": "ending_office",
+    "path": "assets/illustrations/events/demon_protest.webp",
+    "width": 640,
+    "height": 564,
+    "bytes": 27460,
+    "format": "WEBP",
+    "alreadyPublic": true,
+    "samePublicBytes": true,
+    "sha256": "975c39176339ddb2a177b686069af60df7e1a4255e21abd49883c7edbb6b860c"
+  },
+  {
+    "endingId": "ending_escape",
+    "path": "assets/illustrations/backgrounds/prison.webp",
+    "width": 640,
+    "height": 409,
+    "bytes": 14144,
+    "format": "WEBP",
+    "alreadyPublic": true,
+    "samePublicBytes": true,
+    "sha256": "f461b47d02ecf942a3c6983b54a2bce38dc2bff1f52dbd4432c83ddc7bb0b7d2"
+  },
+  {
+    "endingId": "ending_fire",
+    "path": "assets/illustrations/events/queens_letter.webp",
+    "width": 640,
+    "height": 564,
+    "bytes": 21672,
+    "format": "WEBP",
+    "alreadyPublic": true,
+    "samePublicBytes": true,
+    "sha256": "ff2f261b67cfc5bdea758419947f083cd923b92a56c3f9d7d8e80f6e3b36a59b"
+  },
+  {
+    "endingId": "ending_throne",
+    "path": "assets/illustrations/backgrounds/throne_room.webp",
+    "width": 640,
+    "height": 409,
+    "bytes": 18508,
+    "format": "WEBP",
+    "alreadyPublic": true,
+    "samePublicBytes": true,
+    "sha256": "f3f06c44c9899eb7f8c213b599201f9cfde9b4378daadce37d5f155e5140a720"
+  },
+  {
+    "endingId": "ending_ledger",
+    "path": "assets/illustrations/events/queens_letter.webp",
+    "width": 640,
+    "height": 564,
+    "bytes": 21672,
+    "format": "WEBP",
+    "alreadyPublic": true,
+    "samePublicBytes": true,
+    "sha256": "ff2f261b67cfc5bdea758419947f083cd923b92a56c3f9d7d8e80f6e3b36a59b"
+  },
+  {
+    "endingId": "ending_love_scandal",
+    "path": "assets/illustrations/events/mina_romance.webp",
+    "width": 640,
+    "height": 564,
+    "bytes": 24350,
+    "format": "WEBP",
+    "alreadyPublic": true,
+    "samePublicBytes": true,
+    "sha256": "b173fac3b23a1c78108ff1c1ab0260875beb0e51154d5ae11e779ab8df33d0d8"
+  },
+  {
+    "endingId": "ending_mina_renounced",
+    "path": "assets/illustrations/ending_v4_3/rain_shelter.webp",
+    "width": 640,
+    "height": 360,
+    "bytes": 26712,
+    "format": "WEBP",
+    "alreadyPublic": false,
+    "samePublicBytes": false,
+    "sha256": "ef748e69e04582eaeb29d47cba733d76ec6504271681defbed08b9b989a3f036"
+  },
+  {
+    "endingId": "ending_mina_wedding",
+    "path": "assets/illustrations/ending_v4_3/wedding_lanterns.webp",
+    "width": 640,
+    "height": 360,
+    "bytes": 22246,
+    "format": "WEBP",
+    "alreadyPublic": false,
+    "samePublicBytes": false,
+    "sha256": "cb43abf854f2c9db92e241212a5ce3a3fbdbe09f5774b181c6c525559299d492"
+  },
+  {
+    "endingId": "ending_confession_unanswered",
+    "path": "assets/illustrations/ending_v4_3/river_bench.webp",
+    "width": 640,
+    "height": 360,
+    "bytes": 19924,
+    "format": "WEBP",
+    "alreadyPublic": false,
+    "samePublicBytes": false,
+    "sha256": "8a31b827ff569eeadff4a04a10fca9d4782eb4ad8e94db7592e63dda03990549"
+  },
+  {
+    "endingId": "ending_common_enemy",
+    "path": "assets/illustrations/ending_v4_3/truth_hearing.webp",
+    "width": 640,
+    "height": 360,
+    "bytes": 20912,
+    "format": "WEBP",
+    "alreadyPublic": false,
+    "samePublicBytes": false,
+    "sha256": "1a1ffc120bcaae79b630d420eb958020255f02753e6fc1fd8c225709113f6f25"
+  },
+  {
+    "endingId": "ending_double_license",
+    "path": "assets/illustrations/ending_v4_3/double_certificate.webp",
+    "width": 640,
+    "height": 360,
+    "bytes": 14188,
+    "format": "WEBP",
+    "alreadyPublic": false,
+    "samePublicBytes": false,
+    "sha256": "7422326851d59ea5d0e74c482ff97264fb6422febd540676330d97808a7fd5bd"
+  },
+  {
+    "endingId": "ending_retirement_47",
+    "path": "assets/illustrations/ending_v4_3/retirement_coins.webp",
+    "width": 640,
+    "height": 360,
+    "bytes": 15390,
+    "format": "WEBP",
+    "alreadyPublic": false,
+    "samePublicBytes": false,
+    "sha256": "58ebad7ea6552567d65601a6c2de6dccb471167e2533393b9ed270a171949981"
+  },
+  {
+    "endingId": "ending_paid_defeat",
+    "path": "assets/illustrations/ending_v4_3/festival_defeat.webp",
+    "width": 640,
+    "height": 360,
+    "bytes": 23676,
+    "format": "WEBP",
+    "alreadyPublic": false,
+    "samePublicBytes": false,
+    "sha256": "432827376a3eefd20afd88555e86fc94478bce8f99b35a80259ec4eb9755e4c6"
+  },
+  {
+    "endingId": "ending_taxpayer",
+    "path": "assets/illustrations/ending_v4_3/tax_celebration.webp",
+    "width": 640,
+    "height": 360,
+    "bytes": 17750,
+    "format": "WEBP",
+    "alreadyPublic": false,
+    "samePublicBytes": false,
+    "sha256": "0965952da0cfd9a14f34720aef160ba2fb2945bea228d5ee26fa89ff918fac8a"
+  },
+  {
+    "endingId": "ending_king",
+    "path": "assets/illustrations/ending_v4_3/crown_self.webp",
+    "width": 640,
+    "height": 360,
+    "bytes": 23150,
+    "format": "WEBP",
+    "alreadyPublic": false,
+    "samePublicBytes": false,
+    "sha256": "225e84891b74e34a05b4a671a5919cdbea1aba72b98906781fbf6c7b96329d6b"
+  },
+  {
+    "endingId": "ending_bankrupt",
+    "path": "assets/illustrations/ending_v4_3/empty_treasury.webp",
+    "width": 640,
+    "height": 360,
+    "bytes": 18126,
+    "format": "WEBP",
+    "alreadyPublic": false,
+    "samePublicBytes": false,
+    "sha256": "aaa3fed93a841037046cd105da301045608d2e5341bb5c7412620b05b86cbec1"
+  },
+  {
+    "endingId": "ending_true_demon",
+    "path": "assets/illustrations/ending_v4_3/sealed_demon.webp",
+    "width": 640,
+    "height": 360,
+    "bytes": 20500,
+    "format": "WEBP",
+    "alreadyPublic": false,
+    "samePublicBytes": false,
+    "sha256": "7a5ca6424807b2035ec71cec42b2aa7330e64e311165abaedece415e72fbd9da"
+  },
+  {
+    "endingId": "ending_mother_petition",
+    "path": "assets/illustrations/ending_v4_3/mother_letter.webp",
+    "width": 640,
+    "height": 360,
+    "bytes": 15080,
+    "format": "WEBP",
+    "alreadyPublic": false,
+    "samePublicBytes": false,
+    "sha256": "174069c5eb04c65ec10f577b2b4bb84c2427cebcd14fdb0478b77f3cbd866cce"
+  }
+]

@@ -1,7 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import manifest from '../../spec/content-v3.6-story-engine-art/assets/assets.json';
-import { illustrationAsset, sceneIllustrations, endingIllustrations } from '../../src/ui/illustrations';
+import { illustrationAsset, sceneIllustrations } from '../../src/ui/illustrations';
+import { endingArtworkPath } from '../../src/content/ending-gallery';
 
 describe('본문 일러스트의 콘텐츠 보호와 실제 에셋', () => {
   it('기존45개와 신규1개 WebP를 원본 그대로 배포하며 크기·경로가 일치한다', () => {
@@ -33,16 +34,14 @@ describe('본문 일러스트의 콘텐츠 보호와 실제 에셋', () => {
     const current = 'public/stories/demon-king-compact'; const old = 'spec/content-v2.6-compact-timeline';
     expect(read(current, 'story.json').initialState).toEqual(read(old, 'story.json').initialState);
     const cinemas = read(current, 'ending_cinematics.json').endings;
-    for (const [id, value] of Object.entries(read(old, 'ending_cinematics.json').endings)) expect(cinemas[id]).toEqual(value);
+    for (const [id, value] of Object.entries(read(old, 'ending_cinematics.json').endings)) expect(cinemas[id]).toEqual({ ...value as object, illustration: endingArtworkPath(id) });
   });
   it('실제 사건만 연결하고 등록되지 않은 사건·별칭·잘못된 키에는 그림을 배정하지 않는다', () => {
     const nodes = JSON.parse(readFileSync('public/stories/demon-king-compact/chapters/01_complete.json', 'utf8')).nodes;
-    const endings = JSON.parse(readFileSync('public/stories/demon-king-compact/endings.json', 'utf8')).endings;
     for (const id of Object.keys(sceneIllustrations)) expect(nodes.some((n: { id: string }) => n.id === id)).toBe(true);
-    for (const id of Object.keys(endingIllustrations)) expect(endings.some((e: { id: string }) => e.id === id)).toBe(true);
     for (const id of ['audit', 'settlement', 'exam_confession', 'constructor', '__proto__']) expect(illustrationAsset(id)).toBeUndefined();
     expect(illustrationAsset('exam')?.id).toBe('mina');
     expect(illustrationAsset('hearing')?.id).toBe('mina');
-    expect(illustrationAsset('ending_throne', 'ending')?.id).toBe('king');
+    expect(illustrationAsset('ending_throne', 'ending')?.path).toBe(endingArtworkPath('ending_throne'));
   });
 });

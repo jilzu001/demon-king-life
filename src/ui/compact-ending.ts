@@ -3,6 +3,8 @@ import type { PresentedStory } from '../content/presentation';
 import { element, button } from './dom';
 import type { CompactProgress } from './compact-progress';
 import { renderIllustration } from './illustrations';
+import { renderEndingArtwork } from './ending-gallery';
+import { endingGalleryEntries } from '../content/ending-gallery';
 
 const drawings: Record<string, string> = {
   silhouette: 'M95 145Q100 105 130 104Q160 105 165 145 M114 80a16 16 0 1 0 32 0a16 16 0 1 0-32 0',
@@ -37,6 +39,8 @@ export function renderCompactEnding(layout: HTMLElement, story: PresentedStory, 
 }): () => void {
   const ending = story.endings[state.endingId!]!;
   const cinematic = story.cinematics!.endings[ending.id]!;
+  const artworkEntry = endingGalleryEntries(story).find(entry => entry.id === ending.id)
+    ?? { id: ending.id, title: ending.title, kind: 'legacy' as const };
   const memories = memoryEvents(story, state);
   const index = Math.min(progress.memoryIndex, Math.max(0, memories.length - 1));
   const phase = progress.phase;
@@ -49,7 +53,7 @@ export function renderCompactEnding(layout: HTMLElement, story: PresentedStory, 
   const content = element('div', undefined, 'cinematic-content');
   if (phase === 0) {
     content.append(element('p', cinematic.finalScene, 'cinematic-text'));
-    const illustration = renderIllustration(ending.id, 'ending');
+    const illustration = renderEndingArtwork(artworkEntry);
     if (illustration) content.append(illustration);
   }
   if (phase === 1 && memories[index]) {
@@ -63,7 +67,9 @@ export function renderCompactEnding(layout: HTMLElement, story: PresentedStory, 
   }
   if (phase === 2) content.append(element('p', cinematic.reflection, 'cinematic-text cinematic-reflection'));
   if (phase === 3) {
-    content.append(compactArt(cinematic.illustration), element('h1', ending.title), element('p', '이 삶의 결말이 기록되었습니다.', 'cinematic-text'));
+    const illustration = renderEndingArtwork(artworkEntry);
+    if (illustration) content.append(illustration);
+    content.append(element('h1', ending.title), element('p', '이 삶의 결말이 기록되었습니다.', 'cinematic-text'));
   }
   scene.append(content); layout.append(scene);
   const controls = element('div', undefined, 'cinematic-actions');

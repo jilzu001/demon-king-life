@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schemaVersion", "artByEndingId", "disallowLegacyVectorFallback", "maxNaturalWidthPx", "useObjectFit"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "artByEndingId": {
+      "type": "object", "minProperties": 20, "maxProperties": 20,
+      "propertyNames": { "pattern": "^ending_[a-z0-9_]+$" },
+      "additionalProperties": { "type": "string", "pattern": "^assets/illustrations/[a-z0-9_/]+\\.webp$" }
+    },
+    "disallowLegacyVectorFallback": { "const": true },
+    "maxNaturalWidthPx": { "const": 640 },
+    "useObjectFit": { "const": "contain" },
+    "gamePublicBase": { "type": "string" }
+  },
+  "additionalProperties": false
+}

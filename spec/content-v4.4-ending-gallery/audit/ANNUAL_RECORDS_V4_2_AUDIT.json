@@ -1,0 +1,16 @@
+{
+  "version": "4.2",
+  "baseArchive": "demon_king_v4_1_annual_life_cumulative_codex.zip",
+  "years": 65,
+  "alternativesPerYear": 5,
+  "totalUniqueRecords": 325,
+  "minAge": 1,
+  "maxAge": 65,
+  "allChoicesEmpty": true,
+  "allEffectsEmpty": true,
+  "duplicateStrings": 0,
+  "runtimeTested": false,
+  "v4_1Archived": true,
+  "corePreserved": true,
+  "illustrationPreserved": true
+}

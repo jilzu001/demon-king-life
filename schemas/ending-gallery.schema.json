@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schemaVersion", "lockedByDefault", "endings"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "lockedByDefault": { "const": true },
+    "endings": {
+      "type": "array", "minItems": 20, "maxItems": 20,
+      "items": {
+        "type": "object", "required": ["id", "title", "description", "fullText", "artPath", "kind"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^ending_[a-z0-9_]+$" },
+          "title": { "type": "string", "minLength": 1 },
+          "description": { "type": "string", "minLength": 1 },
+          "fullText": { "type": "string", "minLength": 1 },
+          "artPath": { "type": "string", "pattern": "^assets/illustrations/[a-z0-9_/]+\\.webp$" },
+          "kind": { "enum": ["legacy", "new"] }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

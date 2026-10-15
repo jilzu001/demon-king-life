@@ -1,0 +1,406 @@
+{
+  "version": "3.7",
+  "source_archive": "demon_king_v3_6_1_confession_choice_audit_codex.zip",
+  "total_webp": 56,
+  "all_images_opened": true,
+  "issues": [
+    "Different image sheets were used for portraits, event art, and flashbacks. Visual identity is NOT guaranteed.",
+    "Some flashback crops are only ~250-300 pixels wide; do not upscale.",
+    "Expression images are generic and must never be substituted for named character portraits.",
+    "A generated style guide poster is reference only, NOT approved as game asset."
+  ],
+  "assets": [
+    {
+      "path": "assets/illustrations/characters/mina.webp",
+      "width": 320,
+      "height": 505,
+      "bytes": 15720,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/characters/rina.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 16856,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/characters/kyle.webp",
+      "width": 320,
+      "height": 505,
+      "bytes": 16436,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/characters/jero.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 15992,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/characters/protagonist.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 15712,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/characters/seria.webp",
+      "width": 320,
+      "height": 505,
+      "bytes": 17374,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/characters/king.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 18632,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/characters/rao.webp",
+      "width": 320,
+      "height": 505,
+      "bytes": 14356,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/characters/dark_nun.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 12428,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/characters/yuri.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 16908,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/characters/elysia.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 17074,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/events/mina_romance.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 24350,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/events/second_demon.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 17556,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/events/royal_trial.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 22290,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/events/queens_letter.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 21672,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/events/royal_banquet.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 24834,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/events/demon_protest.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 27460,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/events/mina_retirement.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 20206,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/events/final_sunset.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 16234,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/ui/affection.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 1034,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/ui/return_title.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 1008,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/ui/money.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 938,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/ui/settings.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 868,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/ui/unlock.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 1390,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/ui/achievements.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 1028,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/ui/save.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 952,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/ui/reputation.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 1706,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/backgrounds/forest.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 23992,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/backgrounds/tavern.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 19964,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/backgrounds/palace.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 19426,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/backgrounds/market.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 23142,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/backgrounds/harbor.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 20730,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/backgrounds/throne_room.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 18508,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/backgrounds/prison.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 14144,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/backgrounds/village.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 24694,
+      "review": "verify-canonical"
+    },
+    {
+      "path": "assets/illustrations/expressions/confused.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3862,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/expressions/happy.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3938,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/expressions/thinking.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3764,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/expressions/embarrassed.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3900,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/expressions/surprised.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3560,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/expressions/tired.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3642,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/expressions/angry.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3798,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/expressions/neutral.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3502,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/expressions/sad.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3454,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/expressions/smug.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3826,
+      "review": "required"
+    },
+    {
+      "path": "assets/illustrations/event_cg/mina_wooden_sword.webp",
+      "width": 770,
+      "height": 575,
+      "bytes": 63302,
+      "review": "required"
+    },
+    {
+      "path": "assets/flashback/fb_01_childhood_sword.webp",
+      "width": 294,
+      "height": 197,
+      "bytes": 15696,
+      "review": "required"
+    },
+    {
+      "path": "assets/flashback/fb_02_training.webp",
+      "width": 283,
+      "height": 197,
+      "bytes": 13920,
+      "review": "required"
+    },
+    {
+      "path": "assets/flashback/fb_03_farewell.webp",
+      "width": 280,
+      "height": 197,
+      "bytes": 14712,
+      "review": "required"
+    },
+    {
+      "path": "assets/flashback/fb_04_royal_invitation.webp",
+      "width": 285,
+      "height": 197,
+      "bytes": 14240,
+      "review": "required"
+    },
+    {
+      "path": "assets/flashback/fb_05_danger.webp",
+      "width": 286,
+      "height": 197,
+      "bytes": 9890,
+      "review": "required"
+    },
+    {
+      "path": "assets/flashback/fb_06_friends.webp",
+      "width": 246,
+      "height": 194,
+      "bytes": 15876,
+      "review": "required"
+    },
+    {
+      "path": "assets/flashback/fb_07_decision.webp",
+      "width": 252,
+      "height": 194,
+      "bytes": 9620,
+      "review": "required"
+    },
+    {
+      "path": "assets/flashback/fb_08_loss.webp",
+      "width": 252,
+      "height": 194,
+      "bytes": 10492,
+      "review": "required"
+    },
+    {
+      "path": "assets/flashback/fb_09_last_memory.webp",
+      "width": 254,
+      "height": 194,
+      "bytes": 7822,
+      "review": "required"
+    },
+    {
+      "path": "assets/flashback/fb_10_royal_hall_wide.webp",
+      "width": 775,
+      "height": 343,
+      "bytes": 39424,
+      "review": "required"
+    }
+  ]
+}

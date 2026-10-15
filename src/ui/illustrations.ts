@@ -2,6 +2,8 @@ import manifest from '../../spec/content-v3.6-story-engine-art/assets/assets.jso
 import policy from '../../spec/content-v3.6-story-engine-art/assets/main_screen_illustration_policy.json';
 import overrides from '../../spec/content-v3.6-story-engine-art/assets/scene_illustration_overrides_v3_6.json';
 import { element } from './dom';
+import { endingArtworkPath, endingGalleryEntries } from '../content/ending-gallery';
+import { renderEndingArtwork } from './ending-gallery';
 
 // 이미지 연결은 화면 전용이다. 스토리 ID/본문/선택/저장에는 기록하지 않는다.
 export const sceneIllustrations: Record<string, { asset: string; after?: string; age?: number }> = {
@@ -16,14 +18,10 @@ export const sceneIllustrations: Record<string, { asset: string; after?: string;
   confession_afterm: { asset: 'mina' },
   confession_chaos: { asset: 'mina', after: '미나가 검을 내려놓았다.' },
 };
-export const endingIllustrations: Record<string, { asset: string }> = {
-  ending_peace: { asset: 'protagonist' },
-  ending_throne: { asset: 'king' },
-};
-
 type SceneContext = { body: string; age: number };
 export function illustrationAsset(id: string, kind: 'scene' | 'ending' = 'scene', context?: SceneContext) {
-  const mapping = kind === 'scene' ? sceneIllustrations : endingIllustrations;
+  if (kind === 'ending') return manifest.assets.find(asset => asset.path === endingArtworkPath(id));
+  const mapping = sceneIllustrations;
   if (!policy.enabled) return undefined;
   if (kind === 'scene') {
     const scene = Object.hasOwn(sceneIllustrations, id) ? sceneIllustrations[id]! : undefined;
@@ -41,6 +39,10 @@ export function illustrationAsset(id: string, kind: 'scene' | 'ending' = 'scene'
 }
 
 export function renderIllustration(id: string, kind: 'scene' | 'ending' = 'scene', eager = false, context?: SceneContext): HTMLElement | undefined {
+  if (kind === 'ending') {
+    const entry = endingGalleryEntries().find(entry => entry.id === id);
+    return entry ? renderEndingArtwork(entry) : undefined;
+  }
   const asset = illustrationAsset(id, kind, context);
   if (!asset || !/^assets\/illustrations\/(characters|backgrounds|events|event_cg)\/[a-z_]+\.webp$/.test(asset.path)) return undefined;
   const figure = element('figure', undefined, 'story-illustration');

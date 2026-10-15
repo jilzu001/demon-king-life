@@ -1,0 +1,158 @@
+{
+  "prison_cellmate": {
+    "removed_chars": 92,
+    "removed_start": "옆방 죄수는 자신이 왕국의 몰락을 예언했다고 했다."
+  },
+  "prison_meal": {
+    "removed_chars": 101,
+    "removed_start": "교도소에서 마왕 특별식이 나왔다."
+  },
+  "apprentice": {
+    "removed_chars": 83,
+    "removed_start": "소년이 찾아와 마왕의 제자가 되겠다고 했다."
+  },
+  "royal_garden": {
+    "removed_chars": 96,
+    "removed_start": "왕실 정원에 ‘마왕 출입 금지’ 표지판이 새로 생겼다."
+  },
+  "king_tea": {
+    "removed_chars": 88,
+    "removed_start": "국왕이 당신을 불러 차를 내놓았다."
+  },
+  "queen_heir": {
+    "removed_chars": 104,
+    "removed_start": "왕비는 당신을 왕실 예절 수업에 초대했다."
+  },
+  "noble_vote": {
+    "removed_chars": 100,
+    "removed_start": "왕위 계승 투표에 당신의 이름이 올라갔다."
+  },
+  "wedding_contract": {
+    "removed_chars": 96,
+    "removed_start": "에리시아가 결혼 계약서를 펼쳤다."
+  },
+  "court_jester": {
+    "removed_chars": 101,
+    "removed_start": "궁정 광대가 당신에게 자리를 넘겨주겠다고 했다."
+  },
+  "palace_fire": {
+    "removed_chars": 107,
+    "removed_start": "왕궁 서고에 불이 났다."
+  },
+  "tax_rebellion": {
+    "removed_chars": 99,
+    "removed_start": "마을 사람들은 세금 징수소 앞에 모였다."
+  },
+  "ledger_copy": {
+    "removed_chars": 101,
+    "removed_start": "마왕 관리 장부에는 같은 날 두 가지 필체가 있었다."
+  },
+  "audit_witness": {
+    "removed_chars": 90,
+    "removed_start": "당신을 돕던 감사관이 출근하지 않았다."
+  },
+  "army_budget": {
+    "removed_chars": 113,
+    "removed_start": "병사들이 구멍 난 장화를 신고 행군했다."
+  },
+  "king_speech": {
+    "removed_chars": 87,
+    "removed_start": "국왕은 마왕 위협을 이유로 특별세를 발표했다."
+  },
+  "queen_audit": {
+    "removed_chars": 102,
+    "removed_start": "왕비는 퇴직한 회계사를 소개했다."
+  },
+  "hero_union": {
+    "removed_chars": 100,
+    "removed_start": "미나가 용사들의 비밀 회합에 당신을 데려갔다."
+  },
+  "ministry_shred": {
+    "removed_chars": 91,
+    "removed_start": "국방부 건물에서 밤새 종이를 파쇄하는 소리가 났다."
+  },
+  "court_lawyer": {
+    "removed_chars": 93,
+    "removed_start": "국선 변호인이 소송 첫날 사직서를 냈다."
+  },
+  "royal_press": {
+    "removed_chars": 100,
+    "removed_start": "기자들이 당신의 입 앞에 펜을 들이밀었다."
+  },
+  "old_friend": {
+    "removed_chars": 103,
+    "removed_start": "미나는 용사직을 내려놓겠다고 말했다."
+  },
+  "public_memorial": {
+    "removed_chars": 112,
+    "removed_start": "마을에 국가 지정 피해자 추모비가 세워졌다."
+  },
+  "village_election": {
+    "removed_chars": 106,
+    "removed_start": "주민들이 당신에게 촌장 선거에 나서 달라고 했다."
+  },
+  "bread_union": {
+    "removed_chars": 89,
+    "removed_start": "당신의 빵집 직원들이 휴일을 요구했다."
+  },
+  "old_mina": {
+    "removed_chars": 99,
+    "removed_start": "미나가 검을 당신에게 맡겼다."
+  },
+  "ledger_trial": {
+    "removed_chars": 115,
+    "removed_start": "재판정에서 마침내 회계 장부의 실명이 공개됐다."
+  },
+  "guard_daughter": {
+    "removed_chars": 93,
+    "removed_start": "로엔의 딸이 당신에게 편지를 보냈다."
+  },
+  "royal_archive_open": {
+    "removed_chars": 100,
+    "removed_start": "왕비가 봉인했던 기록관 문이 처음 열렸다."
+  },
+  "marta_funeral": {
+    "removed_chars": 104,
+    "removed_start": "마르타의 장례식에서 당신은 낡은 숙박 장부를 물려받았다."
+  },
+  "veteran_pension": {
+    "removed_chars": 105,
+    "removed_start": "국방부가 당신에게 참전용사 연금을 지급하겠다고 했다."
+  },
+  "child_history": {
+    "removed_chars": 91,
+    "removed_start": "새 교과서에는 당신의 사진이 실렸다."
+  },
+  "mina_reunion": {
+    "removed_chars": 107,
+    "removed_start": "동창회에는 당신과 미나의 이름이 나란히 적혀 있었다."
+  },
+  "king_apology": {
+    "removed_chars": 108,
+    "removed_start": "늙은 왕이 사과문을 들고 찾아왔다."
+  },
+  "last_audit": {
+    "removed_chars": 110,
+    "removed_start": "마지막 감사 보고서가 도착했다."
+  },
+  "hospital_name": {
+    "removed_chars": 94,
+    "removed_start": "병원 접수창구에서 직업을 묻자 당신은 잠깐 멈췄다."
+  },
+  "secret_child": {
+    "removed_chars": 105,
+    "removed_start": "왕비가 왕실 족보에서 지워진 아이의 이름을 보여 줬다."
+  },
+  "false_prophecy": {
+    "removed_chars": 106,
+    "removed_start": "시장에서 당신의 사망 날짜를 적은 예언서가 팔리고 있었다."
+  },
+  "enemy_diplomat": {
+    "removed_chars": 105,
+    "removed_start": "외교관이 찾아와 당신에게 국경 분쟁을 해결해 달라고 했다."
+  },
+  "court_ghost": {
+    "removed_chars": 92,
+    "removed_start": "밤마다 서류실에서 누군가 페이지를 넘겼다."
+  }
+}

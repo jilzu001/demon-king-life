@@ -1,0 +1,3471 @@
+{
+  "schemaVersion": 1,
+  "format": "annual-life-fallback-v4.1",
+  "ageBounds": [
+    1,
+    65
+  ],
+  "runtimeIntegrationRequired": true,
+  "policy": {
+    "priority": "core > queued followup > conditional/unlock > annual fallback",
+    "noSkip": "visit every chronological age before next future core age",
+    "onDeath": "do not generate after ending/death",
+    "yearlyOptional": "only show annual filler if no other authored event for that age",
+    "recordOnlyPlayed": "history, flashback, gallery and flags only from chosen visited events"
+  },
+  "events": [
+    {
+      "id": "annual_01",
+      "layer": "annual",
+      "age": 1,
+      "ageRange": [
+        1,
+        1
+      ],
+      "title": "첫돌의 마왕 면허",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "첫돌잔치 상에는 떡 대신 국방부에서 보낸 작은 인장이 놓였다. 당신이 그걸 집어 들자 친척들이 박수쳤다. 웃을 수 없는 사람은 어머니뿐이었다.\n\n“첫돌인데 벌써 공문을 잡네.” 아버지가 농담하자 어머니는 인장을 뒤집어 글자가 보이지 않게 했다.",
+      "bodyParagraphs": [
+        "첫돌잔치 상에는 떡 대신 국방부에서 보낸 작은 인장이 놓였다. 당신이 그걸 집어 들자 친척들이 박수쳤다. 웃을 수 없는 사람은 어머니뿐이었다.",
+        "“첫돌인데 벌써 공문을 잡네.” 아버지가 농담하자 어머니는 인장을 뒤집어 글자가 보이지 않게 했다."
+      ],
+      "chronicleSummary": "1세, 첫돌의 마왕 면허의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_01_a",
+          "text": "인장을 장난감 상자에 넣는다.",
+          "result": "어머니는 인장을 작은 천으로 감싸 보관했다. 장난감 가운데 섞인 그 물건은 오랫동안 아무 소리도 내지 않았다. 하지만 집안의 어른들은 그걸 볼 때마다 잠깐 말을 멈췄다.",
+          "resultParagraphs": [
+            "어머니는 인장을 작은 천으로 감싸 보관했다. 장난감 가운데 섞인 그 물건은 오랫동안 아무 소리도 내지 않았다. 하지만 집안의 어른들은 그걸 볼 때마다 잠깐 말을 멈췄다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_01_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_01_b",
+          "text": "인장 대신 숟가락을 쥐게 한다.",
+          "result": "아버지는 숟가락을 높이 들어 올렸다. “이 아이는 밥 먹고 사는 사람이 되겠네요.” 친척들이 웃었다. 그날 어머니는 처음으로 등록증 대신 첫돌 초상화를 액자에 넣었다.",
+          "resultParagraphs": [
+            "아버지는 숟가락을 높이 들어 올렸다. “이 아이는 밥 먹고 사는 사람이 되겠네요.” 친척들이 웃었다. 그날 어머니는 처음으로 등록증 대신 첫돌 초상화를 액자에 넣었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_01_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_02",
+      "layer": "annual",
+      "age": 2,
+      "ageRange": [
+        2,
+        2
+      ],
+      "title": "서류를 먹는 아이",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "두 살의 당신은 우편함에서 나온 봉투마다 모서리를 물어뜯었다. 그중 유독 두꺼운 국방부 봉투만은 잘 찢어지지 않았다. 아버지는 아이의 치아보다 행정 서류가 튼튼하다는 사실에 한숨을 쉬었다.",
+      "bodyParagraphs": [
+        "두 살의 당신은 우편함에서 나온 봉투마다 모서리를 물어뜯었다. 그중 유독 두꺼운 국방부 봉투만은 잘 찢어지지 않았다. 아버지는 아이의 치아보다 행정 서류가 튼튼하다는 사실에 한숨을 쉬었다."
+      ],
+      "chronicleSummary": "2세, 서류를 먹는 아이의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_02_a",
+          "text": "부모가 봉투를 높은 선반에 올린다.",
+          "result": "높은 선반에는 해마다 같은 모양의 봉투가 쌓였다. 어머니는 당신이 잠든 뒤 한 장씩 날짜를 적었다. 아무도 안 읽는 기록도 누군가는 보관해야 했다.",
+          "resultParagraphs": [
+            "높은 선반에는 해마다 같은 모양의 봉투가 쌓였다. 어머니는 당신이 잠든 뒤 한 장씩 날짜를 적었다. 아무도 안 읽는 기록도 누군가는 보관해야 했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_02_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_02_b",
+          "text": "부모가 빈 종이를 마음껏 찢게 한다.",
+          "result": "당신은 흰 종이를 찢으며 웃었다. 아버지는 그 조각을 빗자루로 쓸어 담다가 말했다. “네가 찢을 수 있는 종이가 하나쯤은 있어서 다행이다.”",
+          "resultParagraphs": [
+            "당신은 흰 종이를 찢으며 웃었다. 아버지는 그 조각을 빗자루로 쓸어 담다가 말했다. “네가 찢을 수 있는 종이가 하나쯤은 있어서 다행이다.”"
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_02_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_03",
+      "layer": "annual",
+      "age": 3,
+      "ageRange": [
+        3,
+        3
+      ],
+      "title": "진흙 성과 검문소",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "골목 아이들이 진흙으로 성을 쌓았다. 당신이 작은 문을 만들자 지나가던 순찰병이 ‘마왕의 요새 건립 신고’가 필요하다고 했다. 아이들은 요새보다 그 말에 더 크게 웃었다.",
+      "bodyParagraphs": [
+        "골목 아이들이 진흙으로 성을 쌓았다. 당신이 작은 문을 만들자 지나가던 순찰병이 ‘마왕의 요새 건립 신고’가 필요하다고 했다. 아이들은 요새보다 그 말에 더 크게 웃었다."
+      ],
+      "chronicleSummary": "3세, 진흙 성과 검문소의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_03_a",
+          "text": "진흙 성에 사람 하나 지나갈 문을 더 낸다.",
+          "result": "성벽은 낮아졌지만 다들 드나들 수 있었다. 순찰병은 신고서에 ‘방어력 없음’이라고 적고 떠났다. 당신은 그 평가가 나쁘지 않았다.",
+          "resultParagraphs": [
+            "성벽은 낮아졌지만 다들 드나들 수 있었다. 순찰병은 신고서에 ‘방어력 없음’이라고 적고 떠났다. 당신은 그 평가가 나쁘지 않았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_03_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_03_b",
+          "text": "순찰병에게 모래 통행료를 받는다.",
+          "result": "순찰병은 진지하게 주머니를 뒤졌고, 아이들은 바닥을 구르며 웃었다. 당신은 모래 세 움큼을 받았다. 처음 번 돈이 아니라 처음 벌린 문제였다.",
+          "resultParagraphs": [
+            "순찰병은 진지하게 주머니를 뒤졌고, 아이들은 바닥을 구르며 웃었다. 당신은 모래 세 움큼을 받았다. 처음 번 돈이 아니라 처음 벌린 문제였다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_03_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_04",
+      "layer": "annual",
+      "age": 4,
+      "ageRange": [
+        4,
+        4
+      ],
+      "title": "위험한 유치원 소풍",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "유치원 선생님은 모두에게 도시락을 가져오라고 했다. 당신의 도시락 뚜껑에는 빨간 ‘위험 인물’ 표지가 붙어 있었다. 도시락은 평범한 감자였다.\n\n미나가 지나가며 말했다. “난 네 감자가 안 무서워.”",
+      "bodyParagraphs": [
+        "유치원 선생님은 모두에게 도시락을 가져오라고 했다. 당신의 도시락 뚜껑에는 빨간 ‘위험 인물’ 표지가 붙어 있었다. 도시락은 평범한 감자였다.",
+        "미나가 지나가며 말했다. “난 네 감자가 안 무서워.”"
+      ],
+      "chronicleSummary": "4세, 위험한 유치원 소풍의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_04_a",
+          "text": "미나에게 감자를 반으로 나눠 준다.",
+          "result": "미나는 감자를 먹더니 소금이 모자라다고 말했다. 그날의 대화는 전혀 영웅답지 않았고, 그래서 오래 기억에 남았다. 위험 표지는 나중에 선생님이 떼어 주었다.",
+          "resultParagraphs": [
+            "미나는 감자를 먹더니 소금이 모자라다고 말했다. 그날의 대화는 전혀 영웅답지 않았고, 그래서 오래 기억에 남았다. 위험 표지는 나중에 선생님이 떼어 주었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_04_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_04_b",
+          "text": "위험 표지를 자기 명찰에 붙인다.",
+          "result": "교사는 명찰을 떼어 주려다가 잠깐 망설였다. 당신은 감자보다 종이 한 장이 어른들을 더 겁먹게 한다는 걸 배웠다. 미나는 명찰 옆에 작은 웃는 얼굴을 그렸다.",
+          "resultParagraphs": [
+            "교사는 명찰을 떼어 주려다가 잠깐 망설였다. 당신은 감자보다 종이 한 장이 어른들을 더 겁먹게 한다는 걸 배웠다. 미나는 명찰 옆에 작은 웃는 얼굴을 그렸다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_04_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_05",
+      "layer": "annual",
+      "age": 5,
+      "ageRange": [
+        5,
+        5
+      ],
+      "title": "양말 한 짝의 행방",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "겨울 아침, 당신의 양말 한 짝이 사라졌다. 어머니는 세탁줄을 뒤졌고 아버지는 ‘마왕 물품 분실’ 신고서가 필요한지 농담했다. 웃긴데 발은 여전히 시렸다.",
+      "bodyParagraphs": [
+        "겨울 아침, 당신의 양말 한 짝이 사라졌다. 어머니는 세탁줄을 뒤졌고 아버지는 ‘마왕 물품 분실’ 신고서가 필요한지 농담했다. 웃긴데 발은 여전히 시렸다."
+      ],
+      "chronicleSummary": "5세, 양말 한 짝의 행방의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_05_a",
+          "text": "짝이 다른 양말을 신고 나간다.",
+          "result": "아이들은 양말 색을 보고 놀렸지만 점심이 되자 잊었다. 당신만은 따뜻한 발의 가치가 타인의 눈길보다 높다는 걸 알게 됐다.",
+          "resultParagraphs": [
+            "아이들은 양말 색을 보고 놀렸지만 점심이 되자 잊었다. 당신만은 따뜻한 발의 가치가 타인의 눈길보다 높다는 걸 알게 됐다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_05_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_05_b",
+          "text": "양말의 행방을 끝까지 추적한다.",
+          "result": "양말은 침대 밑 낡은 등록 서류 옆에 있었다. 어머니는 먼지를 털며 말없이 양말을 건넸다. 당신은 양말보다 그 서류가 왜 거기 있는지 더 궁금해졌다.",
+          "resultParagraphs": [
+            "양말은 침대 밑 낡은 등록 서류 옆에 있었다. 어머니는 먼지를 털며 말없이 양말을 건넸다. 당신은 양말보다 그 서류가 왜 거기 있는지 더 궁금해졌다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_05_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_06",
+      "layer": "annual",
+      "age": 6,
+      "ageRange": [
+        6,
+        6
+      ],
+      "title": "삐걱대는 집의 지붕",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "비가 온 다음 날 지붕에서 물이 떨어졌다. 아버지는 대야를 세 개 놓고 ‘마왕성 방어 시설’이라 불렀다. 대야 세 개로는 이층집을 구하지 못했다.",
+      "bodyParagraphs": [
+        "비가 온 다음 날 지붕에서 물이 떨어졌다. 아버지는 대야를 세 개 놓고 ‘마왕성 방어 시설’이라 불렀다. 대야 세 개로는 이층집을 구하지 못했다."
+      ],
+      "chronicleSummary": "6세, 삐걱대는 집의 지붕의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_06_a",
+          "text": "동네 목수에게 손을 보태겠다고 한다.",
+          "result": "목수는 망치 대신 빗자루를 쥐여 줬다. 당신은 떨어진 못을 주웠고, 목수는 공짜로 기와 한 장을 얹어 줬다. 남의 도움에도 대가가 있을 줄만 알았는데 아니었다.",
+          "resultParagraphs": [
+            "목수는 망치 대신 빗자루를 쥐여 줬다. 당신은 떨어진 못을 주웠고, 목수는 공짜로 기와 한 장을 얹어 줬다. 남의 도움에도 대가가 있을 줄만 알았는데 아니었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_06_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_06_b",
+          "text": "물 떨어지는 곳을 지도에 표시한다.",
+          "result": "비가 새는 점을 잇자 별자리처럼 보였다. 아버지는 그 종이를 버리지 않았다. 가난의 위치를 정확하게 알아야 고칠 수 있는 것도 있었다.",
+          "resultParagraphs": [
+            "비가 새는 점을 잇자 별자리처럼 보였다. 아버지는 그 종이를 버리지 않았다. 가난의 위치를 정확하게 알아야 고칠 수 있는 것도 있었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_06_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_07",
+      "layer": "annual",
+      "age": 7,
+      "ageRange": [
+        7,
+        7
+      ],
+      "title": "친구가 만든 훈련소",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "미나는 나뭇가지를 쥐고 당신을 마당에 불러냈다.\n\n“내가 용사가 되면 너부터 지켜 줄게.”\n\n“용사는 마왕을 잡는 거 아니야?”\n\n미나는 잠깐 생각한 뒤 나뭇가지 끝을 낮췄다. “그건 어른들이 정했잖아.”",
+      "bodyParagraphs": [
+        "미나는 나뭇가지를 쥐고 당신을 마당에 불러냈다.",
+        "“내가 용사가 되면 너부터 지켜 줄게.”",
+        "“용사는 마왕을 잡는 거 아니야?”",
+        "미나는 잠깐 생각한 뒤 나뭇가지 끝을 낮췄다. “그건 어른들이 정했잖아.”"
+      ],
+      "chronicleSummary": "7세, 친구가 만든 훈련소의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_07_a",
+          "text": "미나에게 방패 대신 냄비 뚜껑을 든다.",
+          "result": "첫 대련은 냄비 뚜껑이 날아가며 끝났다. 미나는 미안하다고 하면서도 웃음을 참지 못했다. 당신은 승리가 아니라 상대가 힘을 조절하는 법을 배워야 한다는 사실을 기억했다.",
+          "resultParagraphs": [
+            "첫 대련은 냄비 뚜껑이 날아가며 끝났다. 미나는 미안하다고 하면서도 웃음을 참지 못했다. 당신은 승리가 아니라 상대가 힘을 조절하는 법을 배워야 한다는 사실을 기억했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_07_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_07_b",
+          "text": "누가 누구를 지킬지 계약서를 쓴다.",
+          "result": "당신은 종이에 ‘서로 다치게 하지 않는다’라고 적었다. 미나는 자기 이름을 삐뚤게 썼다. 그 서명은 나뭇가지보다 약했지만 훨씬 오래 남을 물건이었다.",
+          "resultParagraphs": [
+            "당신은 종이에 ‘서로 다치게 하지 않는다’라고 적었다. 미나는 자기 이름을 삐뚤게 썼다. 그 서명은 나뭇가지보다 약했지만 훨씬 오래 남을 물건이었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_07_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_08",
+      "layer": "annual",
+      "age": 8,
+      "ageRange": [
+        8,
+        8
+      ],
+      "title": "학급의 빈 의자",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "교실 뒤쪽에는 아무도 앉지 않는 의자가 있었다. 담임은 당신의 이름을 그 자리에 적었다. 이유는 ‘다른 학생의 심리적 안정’이었다. 당신이 자리에 앉자 책상이 기울었다.",
+      "bodyParagraphs": [
+        "교실 뒤쪽에는 아무도 앉지 않는 의자가 있었다. 담임은 당신의 이름을 그 자리에 적었다. 이유는 ‘다른 학생의 심리적 안정’이었다. 당신이 자리에 앉자 책상이 기울었다."
+      ],
+      "chronicleSummary": "8세, 학급의 빈 의자의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_08_a",
+          "text": "기울어진 책상 다리를 종이로 받친다.",
+          "result": "종이는 네 겹이 필요했다. 선생님은 덕분에 책상이 흔들리지 않는다고 칭찬했다. 칭찬받은 건 앉을 자리를 바꾼 사람이 아니라 자리를 수리한 아이였다.",
+          "resultParagraphs": [
+            "종이는 네 겹이 필요했다. 선생님은 덕분에 책상이 흔들리지 않는다고 칭찬했다. 칭찬받은 건 앉을 자리를 바꾼 사람이 아니라 자리를 수리한 아이였다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_08_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_08_b",
+          "text": "옆자리 친구에게 오늘 숙제를 물어본다.",
+          "result": "친구는 망설이다가 공책을 돌려 줬다. 공책 모서리에 작은 글씨로 ‘나도 이 문제 모르겠어’라고 적혀 있었다. 세상에는 다 같이 모르는 것이 많았다.",
+          "resultParagraphs": [
+            "친구는 망설이다가 공책을 돌려 줬다. 공책 모서리에 작은 글씨로 ‘나도 이 문제 모르겠어’라고 적혀 있었다. 세상에는 다 같이 모르는 것이 많았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_08_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_09",
+      "layer": "annual",
+      "age": 9,
+      "ageRange": [
+        9,
+        9
+      ],
+      "title": "마왕의 숙제 검사",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "학교에서 직업 조사 숙제를 냈다. 아버지는 ‘우리 집 아이는 마왕이라 직장 방문이 불가하다’고 적었고 선생님은 보호자 확인란에 다시 도장을 요구했다.",
+      "bodyParagraphs": [
+        "학교에서 직업 조사 숙제를 냈다. 아버지는 ‘우리 집 아이는 마왕이라 직장 방문이 불가하다’고 적었고 선생님은 보호자 확인란에 다시 도장을 요구했다."
+      ],
+      "chronicleSummary": "9세, 마왕의 숙제 검사의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_09_a",
+          "text": "부모의 실제 일을 조사해 발표한다.",
+          "result": "당신은 부모가 새벽부터 밤까지 얼마나 많은 일을 하는지 적었다. ‘마왕의 집’이라는 말보다 ‘가족의 집’이라는 말이 교실에 더 오래 남았다.",
+          "resultParagraphs": [
+            "당신은 부모가 새벽부터 밤까지 얼마나 많은 일을 하는지 적었다. ‘마왕의 집’이라는 말보다 ‘가족의 집’이라는 말이 교실에 더 오래 남았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_09_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_09_b",
+          "text": "국방부에 직업 인터뷰를 신청한다.",
+          "result": "답장은 반년 뒤 도착했다. ‘마왕의 업무는 국가 보안 사항’이라는 한 줄이었다. 당신은 세상에 없는 직업에도 보안이 있다는 사실을 알게 됐다.",
+          "resultParagraphs": [
+            "답장은 반년 뒤 도착했다. ‘마왕의 업무는 국가 보안 사항’이라는 한 줄이었다. 당신은 세상에 없는 직업에도 보안이 있다는 사실을 알게 됐다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_09_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_10",
+      "layer": "annual",
+      "age": 10,
+      "ageRange": [
+        10,
+        10
+      ],
+      "title": "여름 장터의 교환",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "여름 장터에서 낡은 책 한 권과 새 빗 하나가 같은 값으로 놓였다. 당신에게 있는 동전은 딱 한 개였다. 세상에서 가장 어려운 계산은 살 수 있는 게 두 가지일 때 시작됐다.",
+      "bodyParagraphs": [
+        "여름 장터에서 낡은 책 한 권과 새 빗 하나가 같은 값으로 놓였다. 당신에게 있는 동전은 딱 한 개였다. 세상에서 가장 어려운 계산은 살 수 있는 게 두 가지일 때 시작됐다."
+      ],
+      "chronicleSummary": "10세, 여름 장터의 교환의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_10_a",
+          "text": "책을 산다.",
+          "result": "책에는 앞 주인이 남긴 작은 메모가 있었다. ‘끝까지 읽으면 내일이 조금 달라진다.’ 실제로 달라진 건 당신의 잠드는 시간뿐이었지만, 그것도 분명한 변화였다.",
+          "resultParagraphs": [
+            "책에는 앞 주인이 남긴 작은 메모가 있었다. ‘끝까지 읽으면 내일이 조금 달라진다.’ 실제로 달라진 건 당신의 잠드는 시간뿐이었지만, 그것도 분명한 변화였다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_10_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_10_b",
+          "text": "빗을 사서 어머니에게 준다.",
+          "result": "어머니는 머리를 빗다 말고 빗살 하나가 빠졌다는 사실을 발견했다. 그래도 빗을 버리지 않았다. 누군가가 자신을 떠올린 시간은 새 물건보다 쉽게 닳지 않았다.",
+          "resultParagraphs": [
+            "어머니는 머리를 빗다 말고 빗살 하나가 빠졌다는 사실을 발견했다. 그래도 빗을 버리지 않았다. 누군가가 자신을 떠올린 시간은 새 물건보다 쉽게 닳지 않았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_10_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_11",
+      "layer": "annual",
+      "age": 11,
+      "ageRange": [
+        11,
+        11
+      ],
+      "title": "마왕의 체력 측정",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "학교 체력 검사에서 당신의 기록은 거의 전부 꼴찌였다. 교사는 점수를 확인하고 다시 측정했다. 결과는 같았다. 소문난 마왕의 전투력은 2였고, 줄넘기는 숫자를 동정하지 않았다.",
+      "bodyParagraphs": [
+        "학교 체력 검사에서 당신의 기록은 거의 전부 꼴찌였다. 교사는 점수를 확인하고 다시 측정했다. 결과는 같았다. 소문난 마왕의 전투력은 2였고, 줄넘기는 숫자를 동정하지 않았다."
+      ],
+      "chronicleSummary": "11세, 마왕의 체력 측정의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_11_a",
+          "text": "줄넘기를 하루 열 번씩 연습한다.",
+          "result": "일주일 뒤에도 기록은 형편없었다. 그러나 줄이 발목에 걸리는 횟수는 줄었다. 당신은 재능이 없는 사람도 어제보다 덜 넘어질 수 있다는 사실을 배웠다.",
+          "resultParagraphs": [
+            "일주일 뒤에도 기록은 형편없었다. 그러나 줄이 발목에 걸리는 횟수는 줄었다. 당신은 재능이 없는 사람도 어제보다 덜 넘어질 수 있다는 사실을 배웠다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_11_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_11_b",
+          "text": "측정표의 오류를 찾아 정정해 달라고 한다.",
+          "result": "교사는 ‘2’ 뒤에 빠진 숫자가 없는지 확인했다. 정말 없었다. 당신은 종이를 반듯하게 접었다. 정확한 실패는 적어도 남의 기대 때문에 왜곡되지는 않았다.",
+          "resultParagraphs": [
+            "교사는 ‘2’ 뒤에 빠진 숫자가 없는지 확인했다. 정말 없었다. 당신은 종이를 반듯하게 접었다. 정확한 실패는 적어도 남의 기대 때문에 왜곡되지는 않았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_11_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_12",
+      "layer": "annual",
+      "age": 12,
+      "ageRange": [
+        12,
+        12
+      ],
+      "title": "낡은 훈련장 뒤편",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "훈련장 울타리에는 오래된 나무칼 자국이 남아 있었다. 당신은 손가락으로 홈을 훑었다. 언젠가 여기서 누군가 대단한 영웅이 되겠지만 지금은 풀만 무성했다.",
+      "bodyParagraphs": [
+        "훈련장 울타리에는 오래된 나무칼 자국이 남아 있었다. 당신은 손가락으로 홈을 훑었다. 언젠가 여기서 누군가 대단한 영웅이 되겠지만 지금은 풀만 무성했다."
+      ],
+      "chronicleSummary": "12세, 낡은 훈련장 뒤편의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_12_a",
+          "text": "울타리의 못을 망치로 박는다.",
+          "result": "못을 박는 동안 손끝이 따끔했다. 고친 건 작은 울타리였지만, 당신은 힘이 약해도 무언가를 제자리로 돌려놓을 수 있음을 알았다.",
+          "resultParagraphs": [
+            "못을 박는 동안 손끝이 따끔했다. 고친 건 작은 울타리였지만, 당신은 힘이 약해도 무언가를 제자리로 돌려놓을 수 있음을 알았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_12_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_12_b",
+          "text": "낡은 나무칼 자국을 종이에 옮긴다.",
+          "result": "먹지를 대자 삐뚤어진 흔적이 남았다. 훗날 누군가 그 자국을 전설이라 부른다면, 당신은 그냥 아이가 서툴게 휘두른 검이었다고 말할 생각이었다.",
+          "resultParagraphs": [
+            "먹지를 대자 삐뚤어진 흔적이 남았다. 훗날 누군가 그 자국을 전설이라 부른다면, 당신은 그냥 아이가 서툴게 휘두른 검이었다고 말할 생각이었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_12_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_13",
+      "layer": "annual",
+      "age": 13,
+      "ageRange": [
+        13,
+        13
+      ],
+      "title": "진로 상담의 비밀",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "교사가 장래 희망을 물었다. 당신이 ‘사람답게 사는 사람’이라고 답하자 교사는 직업란에 쓸 수 없다고 했다. 마왕도 직업인데 사람이 되는 건 직업이 아니었다.",
+      "bodyParagraphs": [
+        "교사가 장래 희망을 물었다. 당신이 ‘사람답게 사는 사람’이라고 답하자 교사는 직업란에 쓸 수 없다고 했다. 마왕도 직업인데 사람이 되는 건 직업이 아니었다."
+      ],
+      "chronicleSummary": "13세, 진로 상담의 비밀의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_13_a",
+          "text": "제빵사라고 적는다.",
+          "result": "교사는 처음으로 아무 질문도 하지 않았다. 당신은 밀가루 냄새가 나는 미래를 상상했다. 왕국이 허락하는 직업 가운데 가장 먹을 만한 것이었다.",
+          "resultParagraphs": [
+            "교사는 처음으로 아무 질문도 하지 않았다. 당신은 밀가루 냄새가 나는 미래를 상상했다. 왕국이 허락하는 직업 가운데 가장 먹을 만한 것이었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_13_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_13_b",
+          "text": "직업란을 비워 두고 설명문을 붙인다.",
+          "result": "설명문은 숙제보다 길어졌다. 교사는 점수 대신 ‘상담 필요’라고 적었다. 당신은 빈칸도 때로는 의견이라는 사실을 배웠다.",
+          "resultParagraphs": [
+            "설명문은 숙제보다 길어졌다. 교사는 점수 대신 ‘상담 필요’라고 적었다. 당신은 빈칸도 때로는 의견이라는 사실을 배웠다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_13_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_14",
+      "layer": "annual",
+      "age": 14,
+      "ageRange": [
+        14,
+        14
+      ],
+      "title": "골목의 길 잃은 고양이",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "집 앞에 낯선 고양이가 들어왔다. 누구의 것인지 몰라 동네 게시판에 그림을 그려 붙였다. 친구들은 네 고양이 그림이 토끼 같다고 했다.",
+      "bodyParagraphs": [
+        "집 앞에 낯선 고양이가 들어왔다. 누구의 것인지 몰라 동네 게시판에 그림을 그려 붙였다. 친구들은 네 고양이 그림이 토끼 같다고 했다."
+      ],
+      "chronicleSummary": "14세, 골목의 길 잃은 고양이의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_14_a",
+          "text": "고양이 주인을 찾을 때까지 돌본다.",
+          "result": "고양이는 한동안 당신의 신발 위에서 잤다. 주인이 찾아온 날, 당신은 빈 신발을 오래 바라봤다. 잠깐 맡은 것도 정이 들 수 있었다.",
+          "resultParagraphs": [
+            "고양이는 한동안 당신의 신발 위에서 잤다. 주인이 찾아온 날, 당신은 빈 신발을 오래 바라봤다. 잠깐 맡은 것도 정이 들 수 있었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_14_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_14_b",
+          "text": "고양이에게 주인을 찾는 표식을 단다.",
+          "result": "표식에는 ‘이 집을 방문한 적 있음’이라고 썼다. 고양이는 다음 날 다시 나타났다. 당신은 어떤 관계는 소유가 아니라 왕래라는 걸 알았다.",
+          "resultParagraphs": [
+            "표식에는 ‘이 집을 방문한 적 있음’이라고 썼다. 고양이는 다음 날 다시 나타났다. 당신은 어떤 관계는 소유가 아니라 왕래라는 걸 알았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_14_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_15",
+      "layer": "annual",
+      "age": 15,
+      "ageRange": [
+        15,
+        15
+      ],
+      "title": "생일 초를 세는 법",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "열다섯 생일, 케이크 대신 작은 빵에 초 하나를 꽂았다. 아버지는 열다섯 개를 꽂으면 빵이 무너진다고 말했다. 당신은 초를 불기 전에 소원을 생각했다.",
+      "bodyParagraphs": [
+        "열다섯 생일, 케이크 대신 작은 빵에 초 하나를 꽂았다. 아버지는 열다섯 개를 꽂으면 빵이 무너진다고 말했다. 당신은 초를 불기 전에 소원을 생각했다."
+      ],
+      "chronicleSummary": "15세, 생일 초를 세는 법의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_15_a",
+          "text": "올해도 가족이 무사하길 빈다.",
+          "result": "바람에 촛불이 먼저 꺼졌다. 소원이 전달됐는지는 알 수 없었다. 다만 그날 저녁 모두가 같은 식탁에 앉아 있었으므로, 일단 하루치 소원은 이루어졌다.",
+          "resultParagraphs": [
+            "바람에 촛불이 먼저 꺼졌다. 소원이 전달됐는지는 알 수 없었다. 다만 그날 저녁 모두가 같은 식탁에 앉아 있었으므로, 일단 하루치 소원은 이루어졌다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_15_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_15_b",
+          "text": "내년엔 빵을 직접 굽겠다고 말한다.",
+          "result": "어머니는 밀가루를 조금씩 모아 두겠다고 했다. 당신은 미래의 생일을 처음으로 소비가 아니라 준비해야 할 날로 생각했다.",
+          "resultParagraphs": [
+            "어머니는 밀가루를 조금씩 모아 두겠다고 했다. 당신은 미래의 생일을 처음으로 소비가 아니라 준비해야 할 날로 생각했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_15_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_16",
+      "layer": "annual",
+      "age": 16,
+      "ageRange": [
+        16,
+        16
+      ],
+      "title": "왕국 군사학교 모집",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "군사학교 모집원이 광장에서 무료 체력 검사를 해 준다고 외쳤다. 당신이 줄에 서자 모집원은 옆에 있던 ‘마왕 전용’ 표지판을 슬쩍 펼쳤다.\n\n“전투력 2… 이건 검사비를 돌려드려야겠는데요.”",
+      "bodyParagraphs": [
+        "군사학교 모집원이 광장에서 무료 체력 검사를 해 준다고 외쳤다. 당신이 줄에 서자 모집원은 옆에 있던 ‘마왕 전용’ 표지판을 슬쩍 펼쳤다.",
+        "“전투력 2… 이건 검사비를 돌려드려야겠는데요.”"
+      ],
+      "chronicleSummary": "16세, 왕국 군사학교 모집의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_16_a",
+          "text": "검사 결과표를 달라고 한다.",
+          "result": "모집원은 종이를 주면서 이런 기록을 왜 간직하느냐고 물었다. 당신은 정확한 수치가 남아야 거짓 기대에도 거짓 공포에도 맞설 수 있다고 했다.",
+          "resultParagraphs": [
+            "모집원은 종이를 주면서 이런 기록을 왜 간직하느냐고 물었다. 당신은 정확한 수치가 남아야 거짓 기대에도 거짓 공포에도 맞설 수 있다고 했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_16_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_16_b",
+          "text": "검사비 대신 급식 쿠폰을 요구한다.",
+          "result": "모집원은 한참 웃다 남는 쿠폰 한 장을 건넸다. 당신은 따뜻한 수프를 먹었다. 국가가 당신에게 제공한 군사적 지원 가운데 가장 실용적인 것이었다.",
+          "resultParagraphs": [
+            "모집원은 한참 웃다 남는 쿠폰 한 장을 건넸다. 당신은 따뜻한 수프를 먹었다. 국가가 당신에게 제공한 군사적 지원 가운데 가장 실용적인 것이었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_16_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_17",
+      "layer": "annual",
+      "age": 17,
+      "ageRange": [
+        17,
+        17
+      ],
+      "title": "겨울의 부서진 창문",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "눈이 많이 온 밤, 이웃집 창문이 깨졌다. 사람들은 얼핏 당신을 의심했다. 마왕은 춥지도 않느냐는 사람도 있었다. 당신은 손이 얼어붙을 만큼 추웠다.",
+      "bodyParagraphs": [
+        "눈이 많이 온 밤, 이웃집 창문이 깨졌다. 사람들은 얼핏 당신을 의심했다. 마왕은 춥지도 않느냐는 사람도 있었다. 당신은 손이 얼어붙을 만큼 추웠다."
+      ],
+      "chronicleSummary": "17세, 겨울의 부서진 창문의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_17_a",
+          "text": "이웃과 함께 나무판자를 대 준다.",
+          "result": "이웃은 고맙다는 말을 하기까지 오래 걸렸다. 당신도 기다렸다. 나무판자는 다음 봄에 떼어 냈지만 그 집에서는 더 이상 당신을 피해 돌아가지 않았다.",
+          "resultParagraphs": [
+            "이웃은 고맙다는 말을 하기까지 오래 걸렸다. 당신도 기다렸다. 나무판자는 다음 봄에 떼어 냈지만 그 집에서는 더 이상 당신을 피해 돌아가지 않았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_17_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_17_b",
+          "text": "누가 깼는지 묻기 전에 사실부터 기록한다.",
+          "result": "발자국은 창문 안쪽에 있었고 원인은 굴러 떨어진 화분이었다. 당신은 사과를 듣지 못했다. 대신 다음에 의심받을 때 꺼낼 기억 하나를 얻었다.",
+          "resultParagraphs": [
+            "발자국은 창문 안쪽에 있었고 원인은 굴러 떨어진 화분이었다. 당신은 사과를 듣지 못했다. 대신 다음에 의심받을 때 꺼낼 기억 하나를 얻었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_17_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_18",
+      "layer": "annual",
+      "age": 18,
+      "ageRange": [
+        18,
+        18
+      ],
+      "title": "마왕의 첫 아르바이트",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "시장 상인이 당신을 하루 고용했다. 감자를 나르라는 일이었다. 오후가 되자 상인은 손님들이 겁먹는다며 당신을 뒷문으로 보내려 했다.",
+      "bodyParagraphs": [
+        "시장 상인이 당신을 하루 고용했다. 감자를 나르라는 일이었다. 오후가 되자 상인은 손님들이 겁먹는다며 당신을 뒷문으로 보내려 했다."
+      ],
+      "chronicleSummary": "18세, 마왕의 첫 아르바이트의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_18_a",
+          "text": "일한 시간만큼 임금을 요구한다.",
+          "result": "상인은 일당을 반으로 깎으려다 주변 눈치를 보고 전액을 줬다. 당신은 동전을 세 번 확인했다. 동전은 따뜻하지 않았지만 자기 노동이 남의 겁보다 작지 않다는 증거였다.",
+          "resultParagraphs": [
+            "상인은 일당을 반으로 깎으려다 주변 눈치를 보고 전액을 줬다. 당신은 동전을 세 번 확인했다. 동전은 따뜻하지 않았지만 자기 노동이 남의 겁보다 작지 않다는 증거였다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_18_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_18_b",
+          "text": "뒷문에서도 감자를 끝까지 나른다.",
+          "result": "누구에게도 보이지 않는 곳에서 감자는 더 무거웠다. 퇴근 무렵 상인은 미안하다며 썩은 감자 두 알을 덤으로 줬다. 당신은 그것을 받지 않았다.",
+          "resultParagraphs": [
+            "누구에게도 보이지 않는 곳에서 감자는 더 무거웠다. 퇴근 무렵 상인은 미안하다며 썩은 감자 두 알을 덤으로 줬다. 당신은 그것을 받지 않았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_18_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_19",
+      "layer": "annual",
+      "age": 19,
+      "ageRange": [
+        19,
+        19
+      ],
+      "title": "용사 선발 공고",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "광장 게시판에 용사 선발 공고가 붙었다. 국가가 인정한 용사는 마왕을 상대하는 실기 시험을 본다고 적혀 있었다. 당신은 마지막 줄을 여러 번 읽었다. ‘시험 대상자는 별도 통지.’",
+      "bodyParagraphs": [
+        "광장 게시판에 용사 선발 공고가 붙었다. 국가가 인정한 용사는 마왕을 상대하는 실기 시험을 본다고 적혀 있었다. 당신은 마지막 줄을 여러 번 읽었다. ‘시험 대상자는 별도 통지.’"
+      ],
+      "chronicleSummary": "19세, 용사 선발 공고의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_19_a",
+          "text": "게시판의 문구를 베껴 둔다.",
+          "result": "베껴 적은 문구는 집 책상 위에서 오래 말랐다. 내년이 오면 누군가 그 종이를 찢고 싶어질 것이다. 당신은 그때 읽을 수 있도록 접어 두었다.",
+          "resultParagraphs": [
+            "베껴 적은 문구는 집 책상 위에서 오래 말랐다. 내년이 오면 누군가 그 종이를 찢고 싶어질 것이다. 당신은 그때 읽을 수 있도록 접어 두었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_19_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_19_b",
+          "text": "시험 대상자의 동의가 필요한지 문의한다.",
+          "result": "담당자는 답을 모른다며 다른 창구로 보냈다. 당신은 창구를 세 개 거쳤다. 질문에 답하는 사람이 아무도 없다는 사실도 중요한 정보였다.",
+          "resultParagraphs": [
+            "담당자는 답을 모른다며 다른 창구로 보냈다. 당신은 창구를 세 개 거쳤다. 질문에 답하는 사람이 아무도 없다는 사실도 중요한 정보였다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_19_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_20",
+      "layer": "annual",
+      "age": 20,
+      "ageRange": [
+        20,
+        20
+      ],
+      "title": "스무 살의 첫 세금",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "스무 살이 되자 국세청에서 ‘마왕 위협 유지 기여금’ 고지서가 왔다. 돈을 버는 사람만 내는 세금이라더니, 당신은 위협으로만 존재해도 납세자가 됐다.",
+      "bodyParagraphs": [
+        "스무 살이 되자 국세청에서 ‘마왕 위협 유지 기여금’ 고지서가 왔다. 돈을 버는 사람만 내는 세금이라더니, 당신은 위협으로만 존재해도 납세자가 됐다."
+      ],
+      "chronicleSummary": "20세, 스무 살의 첫 세금의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_20_a",
+          "text": "고지서의 산출 근거를 요구한다.",
+          "result": "세무관은 장부를 뒤지다 ‘위협 유지’ 항목의 담당 부서가 없다는 걸 발견했다. 환급은 안 됐지만 고지서의 빈칸 하나가 공문으로 남았다.",
+          "resultParagraphs": [
+            "세무관은 장부를 뒤지다 ‘위협 유지’ 항목의 담당 부서가 없다는 걸 발견했다. 환급은 안 됐지만 고지서의 빈칸 하나가 공문으로 남았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_20_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_20_b",
+          "text": "동전 대신 사과 한 알을 들고 간다.",
+          "result": "세무관은 현물 납부가 불가능하다고 했다. 당신은 사과를 깎아 먹으며 기다렸다. 고지서에는 아직 납기일이 남아 있었다.",
+          "resultParagraphs": [
+            "세무관은 현물 납부가 불가능하다고 했다. 당신은 사과를 깎아 먹으며 기다렸다. 고지서에는 아직 납기일이 남아 있었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_20_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_21",
+      "layer": "annual",
+      "age": 21,
+      "ageRange": [
+        21,
+        21
+      ],
+      "title": "한밤중의 발소리",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "당신은 잠들기 전 집 앞을 오가는 발소리를 들었다. 수상한 감시인지 밤늦은 배달부인지 알 수 없었다. 마왕으로 산다는 건 모르는 발소리에도 뜻을 붙이고 싶어지는 일이었다.",
+      "bodyParagraphs": [
+        "당신은 잠들기 전 집 앞을 오가는 발소리를 들었다. 수상한 감시인지 밤늦은 배달부인지 알 수 없었다. 마왕으로 산다는 건 모르는 발소리에도 뜻을 붙이고 싶어지는 일이었다."
+      ],
+      "chronicleSummary": "21세, 한밤중의 발소리의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_21_a",
+          "text": "불을 켜고 조용히 문밖을 확인한다.",
+          "result": "길을 헤매던 우편배달부였다. 그는 주소가 지워진 편지 한 장을 들고 있었다. 당신은 길을 알려 주었다. 두려움이 사라지니 다리가 아파 왔다.",
+          "resultParagraphs": [
+            "길을 헤매던 우편배달부였다. 그는 주소가 지워진 편지 한 장을 들고 있었다. 당신은 길을 알려 주었다. 두려움이 사라지니 다리가 아파 왔다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_21_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_21_b",
+          "text": "문을 잠그고 내일 아침 확인한다.",
+          "result": "다음 날 문 앞에는 비에 젖은 전단지가 있었다. ‘야간 제과점 개업.’ 어제의 공포가 오늘의 광고였다는 사실이 조금 우스웠다.",
+          "resultParagraphs": [
+            "다음 날 문 앞에는 비에 젖은 전단지가 있었다. ‘야간 제과점 개업.’ 어제의 공포가 오늘의 광고였다는 사실이 조금 우스웠다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_21_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_22",
+      "layer": "annual",
+      "age": 22,
+      "ageRange": [
+        22,
+        22
+      ],
+      "title": "월세를 내는 마왕",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "집주인은 올해도 월세를 올렸다. 이유는 ‘마왕이 산다는 소문으로 건물 값이 내려갔기 때문’이었다. 내려간 건 건물 값이라는데 올라간 건 월세였다.",
+      "bodyParagraphs": [
+        "집주인은 올해도 월세를 올렸다. 이유는 ‘마왕이 산다는 소문으로 건물 값이 내려갔기 때문’이었다. 내려간 건 건물 값이라는데 올라간 건 월세였다."
+      ],
+      "chronicleSummary": "22세, 월세를 내는 마왕의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_22_a",
+          "text": "계약서의 기준 조항을 읽어 달라고 한다.",
+          "result": "집주인은 서랍에서 묵은 계약서를 꺼냈다. 거기에는 마왕에 관한 조항이 없었다. 월세가 내려가진 않았지만 다음 달에는 근거 없는 인상은 하지 않겠다고 했다.",
+          "resultParagraphs": [
+            "집주인은 서랍에서 묵은 계약서를 꺼냈다. 거기에는 마왕에 관한 조항이 없었다. 월세가 내려가진 않았지만 다음 달에는 근거 없는 인상은 하지 않겠다고 했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_22_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_22_b",
+          "text": "옥상에서 무료 집수리 봉사를 제안한다.",
+          "result": "옥상 누수를 막아 주자 집주인은 한 달만 인상을 미뤘다. 당신은 망치를 닦으며 계산했다. 노동이 임대료의 언어로 번역될 때 얼마나 많이 사라지는지.",
+          "resultParagraphs": [
+            "옥상 누수를 막아 주자 집주인은 한 달만 인상을 미뤘다. 당신은 망치를 닦으며 계산했다. 노동이 임대료의 언어로 번역될 때 얼마나 많이 사라지는지."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_22_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_23",
+      "layer": "annual",
+      "age": 23,
+      "ageRange": [
+        23,
+        23
+      ],
+      "title": "장터의 가짜 마왕 인형",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "장터에서 당신을 닮았다며 만든 인형을 팔았다. 뿔은 실제보다 컸다. 아니, 당신에게는 원래 뿔이 없었다. 상인은 그런 사소한 사실을 신경 쓰지 않았다.",
+      "bodyParagraphs": [
+        "장터에서 당신을 닮았다며 만든 인형을 팔았다. 뿔은 실제보다 컸다. 아니, 당신에게는 원래 뿔이 없었다. 상인은 그런 사소한 사실을 신경 쓰지 않았다."
+      ],
+      "chronicleSummary": "23세, 장터의 가짜 마왕 인형의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_23_a",
+          "text": "인형에 인간이라고 적어 달라고 한다.",
+          "result": "상인은 마지못해 작은 표를 달았다. ‘실제 인물은 인간.’ 판매량은 더 늘었다. 당신은 정정이 언제나 사실을 이기지는 못한다는 걸 배웠다.",
+          "resultParagraphs": [
+            "상인은 마지못해 작은 표를 달았다. ‘실제 인물은 인간.’ 판매량은 더 늘었다. 당신은 정정이 언제나 사실을 이기지는 못한다는 걸 배웠다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_23_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_23_b",
+          "text": "인형 한 개를 사서 집에 둔다.",
+          "result": "인형은 웃는 얼굴이었다. 당신은 그걸 창가에 올려두었다. 사람들이 두려워하는 얼굴로 누군가는 밤에 잠들고 있을지도 몰랐다.",
+          "resultParagraphs": [
+            "인형은 웃는 얼굴이었다. 당신은 그걸 창가에 올려두었다. 사람들이 두려워하는 얼굴로 누군가는 밤에 잠들고 있을지도 몰랐다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_23_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_24",
+      "layer": "annual",
+      "age": 24,
+      "ageRange": [
+        24,
+        24
+      ],
+      "title": "이름을 빌려주는 날",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "동네 아이가 당신 이름을 빌려도 되느냐고 물었다. 학교 연극에서 ‘무서운 마왕’ 역할을 맡았다는 것이다. 아이는 대사를 외우다 떨리는 목소리로 웃었다.",
+      "bodyParagraphs": [
+        "동네 아이가 당신 이름을 빌려도 되느냐고 물었다. 학교 연극에서 ‘무서운 마왕’ 역할을 맡았다는 것이다. 아이는 대사를 외우다 떨리는 목소리로 웃었다."
+      ],
+      "chronicleSummary": "24세, 이름을 빌려주는 날의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_24_a",
+          "text": "아이에게 악역의 대사 대신 자기 말을 쓰게 한다.",
+          "result": "공연 날 무대의 마왕은 세금을 왜 이렇게 걷느냐고 물었다. 관객은 뜻밖에 크게 웃었다. 아이는 커튼콜에서 당신을 손가락으로 가리켰다.",
+          "resultParagraphs": [
+            "공연 날 무대의 마왕은 세금을 왜 이렇게 걷느냐고 물었다. 관객은 뜻밖에 크게 웃었다. 아이는 커튼콜에서 당신을 손가락으로 가리켰다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_24_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_24_b",
+          "text": "대본 끝에 마왕의 변호인 역을 추가한다.",
+          "result": "교사는 시간이 부족하다며 난색을 표했다. 그래도 아이들이 한 장면을 더 만들었다. 마왕이 잘못한 일이 무엇인지 재판장이 묻자 극장은 잠깐 조용해졌다.",
+          "resultParagraphs": [
+            "교사는 시간이 부족하다며 난색을 표했다. 그래도 아이들이 한 장면을 더 만들었다. 마왕이 잘못한 일이 무엇인지 재판장이 묻자 극장은 잠깐 조용해졌다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_24_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_25",
+      "layer": "annual",
+      "age": 25,
+      "ageRange": [
+        25,
+        25
+      ],
+      "title": "가게 앞의 작은 화분",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "이웃 가게 주인이 화분을 맡겼다. 사흘만 물을 주면 된다고 했다. 열흘이 지나도록 돌아오지 않았다. 당신은 꽃이 아니라 약속의 기한을 매일 확인했다.",
+      "bodyParagraphs": [
+        "이웃 가게 주인이 화분을 맡겼다. 사흘만 물을 주면 된다고 했다. 열흘이 지나도록 돌아오지 않았다. 당신은 꽃이 아니라 약속의 기한을 매일 확인했다."
+      ],
+      "chronicleSummary": "25세, 가게 앞의 작은 화분의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_25_a",
+          "text": "물을 계속 주며 기다린다.",
+          "result": "주인은 보름 뒤 돌아와 고맙다고 했다. 화분은 새 잎이 났고 당신에게는 아무것도 남지 않았다. 아니, 약속이 연장될 수도 있다는 경험이 남았다.",
+          "resultParagraphs": [
+            "주인은 보름 뒤 돌아와 고맙다고 했다. 화분은 새 잎이 났고 당신에게는 아무것도 남지 않았다. 아니, 약속이 연장될 수도 있다는 경험이 남았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_25_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_25_b",
+          "text": "주인에게 맡긴 날짜를 적은 쪽지를 남긴다.",
+          "result": "주인은 미안하다는 말과 함께 빵을 하나 건넸다. 날짜를 쓰지 않았다면 받지 못했을 빵이었다. 당신은 계산이 때로는 관계를 덜 서운하게 한다는 걸 알았다.",
+          "resultParagraphs": [
+            "주인은 미안하다는 말과 함께 빵을 하나 건넸다. 날짜를 쓰지 않았다면 받지 못했을 빵이었다. 당신은 계산이 때로는 관계를 덜 서운하게 한다는 걸 알았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_25_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_26",
+      "layer": "annual",
+      "age": 26,
+      "ageRange": [
+        26,
+        26
+      ],
+      "title": "아무도 부르지 않은 잔치",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "동네에서 작은 잔치가 열렸다. 당신은 초대받지 못했지만 음식을 나르는 사람은 부족했다. 초대장 없는 사람이 가장 많이 일하는 잔치였다.",
+      "bodyParagraphs": [
+        "동네에서 작은 잔치가 열렸다. 당신은 초대받지 못했지만 음식을 나르는 사람은 부족했다. 초대장 없는 사람이 가장 많이 일하는 잔치였다."
+      ],
+      "chronicleSummary": "26세, 아무도 부르지 않은 잔치의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_26_a",
+          "text": "일을 도와주되 자리에 앉아 먹겠다고 한다.",
+          "result": "사람들은 잠깐 당황하다 자리를 내줬다. 국물은 식었지만 맛있었다. 당신은 누군가에게 허락받지 않고도 의자 하나를 차지할 수 있음을 알았다.",
+          "resultParagraphs": [
+            "사람들은 잠깐 당황하다 자리를 내줬다. 국물은 식었지만 맛있었다. 당신은 누군가에게 허락받지 않고도 의자 하나를 차지할 수 있음을 알았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_26_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_26_b",
+          "text": "음식만 나른 뒤 조용히 돌아온다.",
+          "result": "집에 돌아오니 손에는 기름 냄새가 남았다. 다음 날 잔치집 아이가 고맙다는 메모를 가져왔다. 대접받지 못한 자리에도 기억하는 사람은 있었다.",
+          "resultParagraphs": [
+            "집에 돌아오니 손에는 기름 냄새가 남았다. 다음 날 잔치집 아이가 고맙다는 메모를 가져왔다. 대접받지 못한 자리에도 기억하는 사람은 있었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_26_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_27",
+      "layer": "annual",
+      "age": 27,
+      "ageRange": [
+        27,
+        27
+      ],
+      "title": "방치된 어린이 놀이터",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "옛 놀이터의 그네가 끊어졌다. 동네 회의에서는 수리비가 없다는 말만 반복됐다. 마왕을 막는 예산은 매년 늘었는데 그네줄 하나를 살 돈은 없었다.",
+      "bodyParagraphs": [
+        "옛 놀이터의 그네가 끊어졌다. 동네 회의에서는 수리비가 없다는 말만 반복됐다. 마왕을 막는 예산은 매년 늘었는데 그네줄 하나를 살 돈은 없었다."
+      ],
+      "chronicleSummary": "27세, 방치된 어린이 놀이터의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_27_a",
+          "text": "그네줄을 직접 묶어 수리한다.",
+          "result": "당신은 묶은 매듭을 두 번 더 확인했다. 아이들이 그네를 타는 모습을 지켜보다가, 누군가 앉는 곳을 안전하게 만드는 일도 방어라는 생각을 했다.",
+          "resultParagraphs": [
+            "당신은 묶은 매듭을 두 번 더 확인했다. 아이들이 그네를 타는 모습을 지켜보다가, 누군가 앉는 곳을 안전하게 만드는 일도 방어라는 생각을 했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_27_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_27_b",
+          "text": "회의에서 예산 내역 공개를 요구한다.",
+          "result": "회계 담당자는 서류가 복잡하다며 손사래를 쳤다. 당신은 복잡해도 괜찮다고 했다. 다음 달 게시판에 수리비 항목 한 줄이 새로 생겼다.",
+          "resultParagraphs": [
+            "회계 담당자는 서류가 복잡하다며 손사래를 쳤다. 당신은 복잡해도 괜찮다고 했다. 다음 달 게시판에 수리비 항목 한 줄이 새로 생겼다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_27_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_28",
+      "layer": "annual",
+      "age": 28,
+      "ageRange": [
+        28,
+        28
+      ],
+      "title": "느린 우편의 답장",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "한참 전 보낸 편지가 답장 없이 돌아왔다. 봉투에는 수취인 불명 도장이 찍혀 있었다. 당신은 주소를 다시 확인했다. 집도 사람도 분명히 거기 있었다.",
+      "bodyParagraphs": [
+        "한참 전 보낸 편지가 답장 없이 돌아왔다. 봉투에는 수취인 불명 도장이 찍혀 있었다. 당신은 주소를 다시 확인했다. 집도 사람도 분명히 거기 있었다."
+      ],
+      "chronicleSummary": "28세, 느린 우편의 답장의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_28_a",
+          "text": "주소를 한 번 더 확인하고 다시 보낸다.",
+          "result": "두 번째 편지는 결국 도착했다. 답은 겨우 ‘알겠습니다’였지만 그 한 단어를 받기까지 계절이 바뀌었다. 당신은 포기하지 않는 일의 시간을 알게 됐다.",
+          "resultParagraphs": [
+            "두 번째 편지는 결국 도착했다. 답은 겨우 ‘알겠습니다’였지만 그 한 단어를 받기까지 계절이 바뀌었다. 당신은 포기하지 않는 일의 시간을 알게 됐다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_28_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_28_b",
+          "text": "봉투를 접어 보관한다.",
+          "result": "편지의 접힌 자국은 나중에 펴도 지워지지 않았다. 당신은 받지 못한 답변도 자기 삶의 일부라는 걸 인정했다.",
+          "resultParagraphs": [
+            "편지의 접힌 자국은 나중에 펴도 지워지지 않았다. 당신은 받지 못한 답변도 자기 삶의 일부라는 걸 인정했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_28_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_29",
+      "layer": "annual",
+      "age": 29,
+      "ageRange": [
+        29,
+        29
+      ],
+      "title": "왕궁 담장 밖 점심",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "왕궁 담장 옆 벤치에서 빵을 먹는데 새 한 마리가 다가왔다. 담장 너머로는 연회 음악이 새어 나왔다. 같은 도시의 점심이 이렇게 다를 수 있었다.",
+      "bodyParagraphs": [
+        "왕궁 담장 옆 벤치에서 빵을 먹는데 새 한 마리가 다가왔다. 담장 너머로는 연회 음악이 새어 나왔다. 같은 도시의 점심이 이렇게 다를 수 있었다."
+      ],
+      "chronicleSummary": "29세, 왕궁 담장 밖 점심의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_29_a",
+          "text": "빵 부스러기를 새에게 나눠 준다.",
+          "result": "새는 더 큰 부스러기를 기대하며 따라왔다. 당신은 웃다가 마지막 한 조각을 먹었다. 나눠 주는 일에도 자기 몫을 남겨야 한다는 걸 알았다.",
+          "resultParagraphs": [
+            "새는 더 큰 부스러기를 기대하며 따라왔다. 당신은 웃다가 마지막 한 조각을 먹었다. 나눠 주는 일에도 자기 몫을 남겨야 한다는 걸 알았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_29_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_29_b",
+          "text": "연회 음악을 악보처럼 적어 본다.",
+          "result": "음정을 정확히 모르니 점과 선뿐이었다. 그래도 저녁에 그 종이를 보면 담장 밖의 공기가 되살아났다.",
+          "resultParagraphs": [
+            "음정을 정확히 모르니 점과 선뿐이었다. 그래도 저녁에 그 종이를 보면 담장 밖의 공기가 되살아났다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_29_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_30",
+      "layer": "annual",
+      "age": 30,
+      "ageRange": [
+        30,
+        30
+      ],
+      "title": "서른 번째 생일의 초대장",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "서른 살 생일, 우편함에는 세금 고지서 두 장과 생일 축하 편지 한 장이 있었다. 축하 편지는 광고였다. ‘마왕도 가입 가능한 노후 보장.’",
+      "bodyParagraphs": [
+        "서른 살 생일, 우편함에는 세금 고지서 두 장과 생일 축하 편지 한 장이 있었다. 축하 편지는 광고였다. ‘마왕도 가입 가능한 노후 보장.’"
+      ],
+      "chronicleSummary": "30세, 서른 번째 생일의 초대장의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_30_a",
+          "text": "아는 사람에게 직접 밥을 먹자고 연락한다.",
+          "result": "답장은 늦게 왔지만 한 사람은 나왔다. 둘은 거창한 이야기 대신 음식이 너무 짜다는 말을 주고받았다. 서른 살의 위로는 의외로 작고 정확했다.",
+          "resultParagraphs": [
+            "답장은 늦게 왔지만 한 사람은 나왔다. 둘은 거창한 이야기 대신 음식이 너무 짜다는 말을 주고받았다. 서른 살의 위로는 의외로 작고 정확했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_30_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_30_b",
+          "text": "광고 편지를 펼쳐 혜택을 꼼꼼히 본다.",
+          "result": "약관 마지막 줄에는 마왕 관련 위험은 보장하지 않는다고 적혀 있었다. 당신은 그 문장을 동그라미 쳤다. 보험료를 받겠다는 약속과 위험을 보장한다는 약속은 달랐다.",
+          "resultParagraphs": [
+            "약관 마지막 줄에는 마왕 관련 위험은 보장하지 않는다고 적혀 있었다. 당신은 그 문장을 동그라미 쳤다. 보험료를 받겠다는 약속과 위험을 보장한다는 약속은 달랐다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_30_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_31",
+      "layer": "annual",
+      "age": 31,
+      "ageRange": [
+        31,
+        31
+      ],
+      "title": "구두 밑창과 왕국의 지도",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "오래 신은 구두의 밑창이 닳았다. 구둣방 노인은 지도 위에 구두를 올려놓고 어느 거리를 많이 걸었느냐고 물었다. 구두는 말하지 않아도 동선을 기억했다.",
+      "bodyParagraphs": [
+        "오래 신은 구두의 밑창이 닳았다. 구둣방 노인은 지도 위에 구두를 올려놓고 어느 거리를 많이 걸었느냐고 물었다. 구두는 말하지 않아도 동선을 기억했다."
+      ],
+      "chronicleSummary": "31세, 구두 밑창과 왕국의 지도의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_31_a",
+          "text": "가장 오래 걸었던 길을 이야기한다.",
+          "result": "노인은 그 길엔 경사가 심하다며 뒤꿈치를 두껍게 덧댔다. 당신은 같은 거리를 다시 걸을 때 덜 아팠다. 과거가 몸에 남기는 흔적은 고칠 수도 있었다.",
+          "resultParagraphs": [
+            "노인은 그 길엔 경사가 심하다며 뒤꿈치를 두껍게 덧댔다. 당신은 같은 거리를 다시 걸을 때 덜 아팠다. 과거가 몸에 남기는 흔적은 고칠 수도 있었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_31_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_31_b",
+          "text": "새 구두 대신 수선을 맡긴다.",
+          "result": "노인은 해어진 실을 뜯고 새 실을 넣었다. 모양은 그대로였지만 걸음은 달라졌다. 당신은 나쁜 제도도 이렇게 고칠 수 있으면 좋겠다고 생각했다.",
+          "resultParagraphs": [
+            "노인은 해어진 실을 뜯고 새 실을 넣었다. 모양은 그대로였지만 걸음은 달라졌다. 당신은 나쁜 제도도 이렇게 고칠 수 있으면 좋겠다고 생각했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_31_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_32",
+      "layer": "annual",
+      "age": 32,
+      "ageRange": [
+        32,
+        32
+      ],
+      "title": "마을 도서관의 연체료",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "오래전에 빌린 책을 반납하러 갔다. 사서가 연체료를 계산하다 당신의 등록 직업을 보고 주판을 멈췄다. ‘마왕 연체료 가산’ 항목이 있는지 찾아보는 표정이었다.",
+      "bodyParagraphs": [
+        "오래전에 빌린 책을 반납하러 갔다. 사서가 연체료를 계산하다 당신의 등록 직업을 보고 주판을 멈췄다. ‘마왕 연체료 가산’ 항목이 있는지 찾아보는 표정이었다."
+      ],
+      "chronicleSummary": "32세, 마을 도서관의 연체료의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_32_a",
+          "text": "일반 독자와 똑같이 계산해 달라고 한다.",
+          "result": "사서는 잠시 뒤 평범한 연체료를 적었다. 당신은 웃음을 참고 돈을 냈다. 차별 없는 벌금이 이렇게 반가울 수도 있었다.",
+          "resultParagraphs": [
+            "사서는 잠시 뒤 평범한 연체료를 적었다. 당신은 웃음을 참고 돈을 냈다. 차별 없는 벌금이 이렇게 반가울 수도 있었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_32_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_32_b",
+          "text": "책에 들어 있던 메모를 원래 자리에 돌려놓는다.",
+          "result": "종잇조각에는 ‘사라지지 않는 글은 사람을 기다린다’고 적혀 있었다. 사서는 그 글이 누구 것인지 모른다고 했다. 당신은 기다리는 사람이 꼭 살아 있어야 하는 건 아니라고 생각했다.",
+          "resultParagraphs": [
+            "종잇조각에는 ‘사라지지 않는 글은 사람을 기다린다’고 적혀 있었다. 사서는 그 글이 누구 것인지 모른다고 했다. 당신은 기다리는 사람이 꼭 살아 있어야 하는 건 아니라고 생각했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_32_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_33",
+      "layer": "annual",
+      "age": 33,
+      "ageRange": [
+        33,
+        33
+      ],
+      "title": "빵 굽는 냄새의 거리",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "새벽 거리에서 빵 냄새가 났다. 창문을 열자 식지 않은 공기가 들어왔다. 간판에는 ‘오늘도 문을 엽니다’라고 적혀 있었다. 어떤 사람에겐 그 문장이 기적처럼 보였다.",
+      "bodyParagraphs": [
+        "새벽 거리에서 빵 냄새가 났다. 창문을 열자 식지 않은 공기가 들어왔다. 간판에는 ‘오늘도 문을 엽니다’라고 적혀 있었다. 어떤 사람에겐 그 문장이 기적처럼 보였다."
+      ],
+      "chronicleSummary": "33세, 빵 굽는 냄새의 거리의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_33_a",
+          "text": "빵 하나를 사서 길에서 먹는다.",
+          "result": "따뜻한 빵은 손바닥을 데웠다. 당신은 빵집 주인에게 오늘도 연다는 게 쉬운 일이냐고 물었다. 주인은 피곤하게 웃으며 고개를 저었다.",
+          "resultParagraphs": [
+            "따뜻한 빵은 손바닥을 데웠다. 당신은 빵집 주인에게 오늘도 연다는 게 쉬운 일이냐고 물었다. 주인은 피곤하게 웃으며 고개를 저었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_33_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_33_b",
+          "text": "가게 뒤편에 쌓인 밀가루 포대를 옮겨 준다.",
+          "result": "주인은 작은 빵 하나를 덤으로 주었다. 아무 이름도 적히지 않은 빵이었다. 당신은 그날만큼은 마왕이라는 표지 없이 손님이 되었다.",
+          "resultParagraphs": [
+            "주인은 작은 빵 하나를 덤으로 주었다. 아무 이름도 적히지 않은 빵이었다. 당신은 그날만큼은 마왕이라는 표지 없이 손님이 되었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_33_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_34",
+      "layer": "annual",
+      "age": 34,
+      "ageRange": [
+        34,
+        34
+      ],
+      "title": "명단에서 지워진 이름",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "지역 행사 자원봉사자 명단에 당신 이름이 보이지 않았다. 분명 신청했는데 옆에는 ‘심사 중’이라는 표시만 있었다. 담당자는 실수라며 고개를 숙였다.",
+      "bodyParagraphs": [
+        "지역 행사 자원봉사자 명단에 당신 이름이 보이지 않았다. 분명 신청했는데 옆에는 ‘심사 중’이라는 표시만 있었다. 담당자는 실수라며 고개를 숙였다."
+      ],
+      "chronicleSummary": "34세, 명단에서 지워진 이름의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_34_a",
+          "text": "왜 심사 중인지 공식 답변을 요구한다.",
+          "result": "담당자는 서류를 넘기다 ‘위협 대상’이라는 항목을 발견했다. 당신은 그 종이의 사본을 받아 들었다. 자기 이름이 빠진 이유를 알았지만 마음은 가벼워지지 않았다.",
+          "resultParagraphs": [
+            "담당자는 서류를 넘기다 ‘위협 대상’이라는 항목을 발견했다. 당신은 그 종이의 사본을 받아 들었다. 자기 이름이 빠진 이유를 알았지만 마음은 가벼워지지 않았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_34_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_34_b",
+          "text": "명단 밖에서 할 수 있는 일을 찾아본다.",
+          "result": "행사가 끝난 뒤 당신은 남은 의자를 정리했다. 명단에는 끝내 이름이 없었지만 아이 한 명이 고맙다고 말했다. 그날의 기록은 서로 다른 곳에 남았다.",
+          "resultParagraphs": [
+            "행사가 끝난 뒤 당신은 남은 의자를 정리했다. 명단에는 끝내 이름이 없었지만 아이 한 명이 고맙다고 말했다. 그날의 기록은 서로 다른 곳에 남았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_34_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_35",
+      "layer": "annual",
+      "age": 35,
+      "ageRange": [
+        35,
+        35
+      ],
+      "title": "잊은 줄 알았던 노래",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "술집 앞을 지나는데 어린 시절 듣던 노래가 들렸다. 가사는 거의 잊었지만 후렴은 따라 부를 수 있었다. 사람을 가장 쉽게 과거로 돌려놓는 건 종종 음악이었다.",
+      "bodyParagraphs": [
+        "술집 앞을 지나는데 어린 시절 듣던 노래가 들렸다. 가사는 거의 잊었지만 후렴은 따라 부를 수 있었다. 사람을 가장 쉽게 과거로 돌려놓는 건 종종 음악이었다."
+      ],
+      "chronicleSummary": "35세, 잊은 줄 알았던 노래의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_35_a",
+          "text": "노래가 끝날 때까지 서서 듣는다.",
+          "result": "마지막 음이 길 위에 남았다. 당신은 한동안 서 있다가 집으로 갔다. 아무것도 해결되지 않았는데 어깨가 조금 내려갔다.",
+          "resultParagraphs": [
+            "마지막 음이 길 위에 남았다. 당신은 한동안 서 있다가 집으로 갔다. 아무것도 해결되지 않았는데 어깨가 조금 내려갔다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_35_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_35_b",
+          "text": "노래를 아는 사람에게 가사를 묻는다.",
+          "result": "낯선 이는 가사를 한 줄 틀리게 알려 줬다. 당신은 정정하지 않았다. 기억은 사람마다 다른 음정으로 남기도 했다.",
+          "resultParagraphs": [
+            "낯선 이는 가사를 한 줄 틀리게 알려 줬다. 당신은 정정하지 않았다. 기억은 사람마다 다른 음정으로 남기도 했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_35_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_36",
+      "layer": "annual",
+      "age": 36,
+      "ageRange": [
+        36,
+        36
+      ],
+      "title": "우산의 주인을 찾습니다",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "장마가 시작된 날, 상점 앞에 낡은 우산 하나가 놓여 있었다. 손잡이에는 이름 대신 작은 별표가 새겨져 있었다. 당신은 그것을 두고 온 사람이 비를 맞았을까 생각했다.",
+      "bodyParagraphs": [
+        "장마가 시작된 날, 상점 앞에 낡은 우산 하나가 놓여 있었다. 손잡이에는 이름 대신 작은 별표가 새겨져 있었다. 당신은 그것을 두고 온 사람이 비를 맞았을까 생각했다."
+      ],
+      "chronicleSummary": "36세, 우산의 주인을 찾습니다의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_36_a",
+          "text": "상점 주인에게 분실물을 맡긴다.",
+          "result": "주인은 손잡이에 종이표를 달았다. 다음 주 낯선 사람이 우산을 찾아갔다. 당신은 사람을 만나지 못했지만 돌아갈 물건을 하나 제자리로 보냈다.",
+          "resultParagraphs": [
+            "주인은 손잡이에 종이표를 달았다. 다음 주 낯선 사람이 우산을 찾아갔다. 당신은 사람을 만나지 못했지만 돌아갈 물건을 하나 제자리로 보냈다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_36_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_36_b",
+          "text": "우산을 고쳐 가게 입구에 세워 둔다.",
+          "result": "찢어진 부분을 꿰매 놓자 누군가 비 오는 날 우산을 빌려 갔다. 돌아오지 않았다. 당신은 잠깐 서운했지만, 그 우산이 아직 누군가를 가리고 있을지 모른다고 생각했다.",
+          "resultParagraphs": [
+            "찢어진 부분을 꿰매 놓자 누군가 비 오는 날 우산을 빌려 갔다. 돌아오지 않았다. 당신은 잠깐 서운했지만, 그 우산이 아직 누군가를 가리고 있을지 모른다고 생각했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_36_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_37",
+      "layer": "annual",
+      "age": 37,
+      "ageRange": [
+        37,
+        37
+      ],
+      "title": "고물상에 쌓인 훈장",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "고물상 구석에서 낡은 훈장 상자를 발견했다. 한때 영웅이었던 사람들의 이름이 먼지와 함께 쌓여 있었다. ‘왕국을 지켰다’는 문장은 포장지 안에서 구겨져 있었다.",
+      "bodyParagraphs": [
+        "고물상 구석에서 낡은 훈장 상자를 발견했다. 한때 영웅이었던 사람들의 이름이 먼지와 함께 쌓여 있었다. ‘왕국을 지켰다’는 문장은 포장지 안에서 구겨져 있었다."
+      ],
+      "chronicleSummary": "37세, 고물상에 쌓인 훈장의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_37_a",
+          "text": "훈장 주인의 기록을 확인한다.",
+          "result": "고물상은 기록이 사라졌다며 어깨를 으쓱했다. 당신은 이름 몇 개를 적어 두었다. 인정은 사라져도 누군가의 삶은 그 이름보다 길었다.",
+          "resultParagraphs": [
+            "고물상은 기록이 사라졌다며 어깨를 으쓱했다. 당신은 이름 몇 개를 적어 두었다. 인정은 사라져도 누군가의 삶은 그 이름보다 길었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_37_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_37_b",
+          "text": "훈장 대신 누군가의 낡은 손편지를 산다.",
+          "result": "손편지에는 전쟁 이야기가 없었다. ‘내일 비가 온대. 빨래를 걷어 줘.’ 당신은 가장 작은 부탁이 가장 오래 남는다는 사실을 알았다.",
+          "resultParagraphs": [
+            "손편지에는 전쟁 이야기가 없었다. ‘내일 비가 온대. 빨래를 걷어 줘.’ 당신은 가장 작은 부탁이 가장 오래 남는다는 사실을 알았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_37_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_38",
+      "layer": "annual",
+      "age": 38,
+      "ageRange": [
+        38,
+        38
+      ],
+      "title": "두 사람이 앉는 긴 의자",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "공원 의자에 앉으려는데 옆자리 사람이 조금 비켜 앉았다. 당신을 알아본 것 같기도, 그저 자리를 만든 것 같기도 했다. 당신은 묻지 않았다.",
+      "bodyParagraphs": [
+        "공원 의자에 앉으려는데 옆자리 사람이 조금 비켜 앉았다. 당신을 알아본 것 같기도, 그저 자리를 만든 것 같기도 했다. 당신은 묻지 않았다."
+      ],
+      "chronicleSummary": "38세, 두 사람이 앉는 긴 의자의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_38_a",
+          "text": "고맙다고 말하고 앉는다.",
+          "result": "둘은 날씨 이야기를 했다. 대화가 끝나도 서로 이름을 묻지 않았다. 당신은 이름이 중요하지 않은 만남을 오랜만에 가졌다.",
+          "resultParagraphs": [
+            "둘은 날씨 이야기를 했다. 대화가 끝나도 서로 이름을 묻지 않았다. 당신은 이름이 중요하지 않은 만남을 오랜만에 가졌다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_38_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_38_b",
+          "text": "상대가 편하게 앉도록 다른 의자로 간다.",
+          "result": "조용한 의자를 골라 앉자 먼 데서 종소리가 들렸다. 당신은 혼자 앉는 것이 항상 쓸쓸한 일은 아니라는 걸 알았다.",
+          "resultParagraphs": [
+            "조용한 의자를 골라 앉자 먼 데서 종소리가 들렸다. 당신은 혼자 앉는 것이 항상 쓸쓸한 일은 아니라는 걸 알았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_38_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_39",
+      "layer": "annual",
+      "age": 39,
+      "ageRange": [
+        39,
+        39
+      ],
+      "title": "잡초가 자라는 담장",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "오래된 담장 틈에서 작은 꽃이 피었다. 건물 주인은 보기 지저분하다며 뽑으라고 했다. 담장이 무너지지 않을 정도의 아주 작은 꽃이었다.",
+      "bodyParagraphs": [
+        "오래된 담장 틈에서 작은 꽃이 피었다. 건물 주인은 보기 지저분하다며 뽑으라고 했다. 담장이 무너지지 않을 정도의 아주 작은 꽃이었다."
+      ],
+      "chronicleSummary": "39세, 잡초가 자라는 담장의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_39_a",
+          "text": "뿌리는 두고 주변만 정리한다.",
+          "result": "건물 주인은 못마땅해했지만 더 말하지 않았다. 꽃은 오래 피지 못했다. 그래도 꽃이 있었던 자리에 흙은 조금 더 남았다.",
+          "resultParagraphs": [
+            "건물 주인은 못마땅해했지만 더 말하지 않았다. 꽃은 오래 피지 못했다. 그래도 꽃이 있었던 자리에 흙은 조금 더 남았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_39_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_39_b",
+          "text": "꽃을 옮겨 심을 화분을 구한다.",
+          "result": "뿌리를 옮기는 동안 꽃잎 하나가 떨어졌다. 당신은 조심히 물을 줬다. 살아남는 일은 때로 세상을 바꾸는 것보다 세심했다.",
+          "resultParagraphs": [
+            "뿌리를 옮기는 동안 꽃잎 하나가 떨어졌다. 당신은 조심히 물을 줬다. 살아남는 일은 때로 세상을 바꾸는 것보다 세심했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_39_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_40",
+      "layer": "annual",
+      "age": 40,
+      "ageRange": [
+        40,
+        40
+      ],
+      "title": "마흔 살의 건강검진",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "왕국 검진소에서는 전투력을 측정했다. 당신의 결과는 여전히 2였다. 의사는 눈썹을 올리더니 별말 없이 ‘충분한 휴식’에 표시했다.\n\n“마왕에게 필요한 건 휴식입니까?”\n\n“누구에게나 필요합니다.”",
+      "bodyParagraphs": [
+        "왕국 검진소에서는 전투력을 측정했다. 당신의 결과는 여전히 2였다. 의사는 눈썹을 올리더니 별말 없이 ‘충분한 휴식’에 표시했다.",
+        "“마왕에게 필요한 건 휴식입니까?”",
+        "“누구에게나 필요합니다.”"
+      ],
+      "chronicleSummary": "40세, 마흔 살의 건강검진의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_40_a",
+          "text": "검진 결과를 가족과 공유한다.",
+          "result": "당신은 수치를 숨기지 않았다. 걱정하던 사람은 한숨을 쉬면서도 마지막 장의 ‘특이 소견 없음’을 보고 웃었다. 사람의 상태는 한 숫자로 끝나지 않았다.",
+          "resultParagraphs": [
+            "당신은 수치를 숨기지 않았다. 걱정하던 사람은 한숨을 쉬면서도 마지막 장의 ‘특이 소견 없음’을 보고 웃었다. 사람의 상태는 한 숫자로 끝나지 않았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_40_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_40_b",
+          "text": "운동보다 잠부터 챙기기로 한다.",
+          "result": "당신은 그날 일찍 누웠다. 다음 날에도 세상이 바뀌진 않았다. 그러나 조금 덜 아픈 몸으로 문을 열었다. 사소한 변화가 하루를 버티게 했다.",
+          "resultParagraphs": [
+            "당신은 그날 일찍 누웠다. 다음 날에도 세상이 바뀌진 않았다. 그러나 조금 덜 아픈 몸으로 문을 열었다. 사소한 변화가 하루를 버티게 했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_40_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_41",
+      "layer": "annual",
+      "age": 41,
+      "ageRange": [
+        41,
+        41
+      ],
+      "title": "사본을 묶는 실",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "책상에 흩어진 종이를 실로 묶었다. 정부 문서, 영수증, 평범한 약속 메모가 모두 같은 두께의 종이였다. 무게가 다른 건 그 안에 적힌 말이었다.",
+      "bodyParagraphs": [
+        "책상에 흩어진 종이를 실로 묶었다. 정부 문서, 영수증, 평범한 약속 메모가 모두 같은 두께의 종이였다. 무게가 다른 건 그 안에 적힌 말이었다."
+      ],
+      "chronicleSummary": "41세, 사본을 묶는 실의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_41_a",
+          "text": "날짜 순서로 분류한다.",
+          "result": "흩어져 있던 사건들이 차례를 얻었다. 아직 진실은 없었지만 순서가 생기면 거짓말을 확인하기 쉬워졌다.",
+          "resultParagraphs": [
+            "흩어져 있던 사건들이 차례를 얻었다. 아직 진실은 없었지만 순서가 생기면 거짓말을 확인하기 쉬워졌다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_41_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_41_b",
+          "text": "누가 보낸 것인지 사람별로 분류한다.",
+          "result": "이름이 반복되는 서류가 눈에 띄었다. 당신은 사본을 따로 빼놓았다. 종이는 말하지 않지만 함께 놓으면 질문을 만든다.",
+          "resultParagraphs": [
+            "이름이 반복되는 서류가 눈에 띄었다. 당신은 사본을 따로 빼놓았다. 종이는 말하지 않지만 함께 놓으면 질문을 만든다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_41_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_42",
+      "layer": "annual",
+      "age": 42,
+      "ageRange": [
+        42,
+        42
+      ],
+      "title": "식어 버린 차 한 잔",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "누군가 만나자고 해놓고 약속 장소에 오지 않았다. 차는 두 잔 주문했고 두 번째 잔은 끝내 식었다. 기다린 시간이 꼭 낭비인 것만은 아니었다.",
+      "bodyParagraphs": [
+        "누군가 만나자고 해놓고 약속 장소에 오지 않았다. 차는 두 잔 주문했고 두 번째 잔은 끝내 식었다. 기다린 시간이 꼭 낭비인 것만은 아니었다."
+      ],
+      "chronicleSummary": "42세, 식어 버린 차 한 잔의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_42_a",
+          "text": "찻값을 내고 다음 만남을 제안한다.",
+          "result": "답장은 늦게 왔다. 사정이 있었다고 했다. 당신은 그 사정을 전부 알 수 없다는 걸 받아들였다. 대신 다음 약속 시간을 한 줄 더 정확히 적었다.",
+          "resultParagraphs": [
+            "답장은 늦게 왔다. 사정이 있었다고 했다. 당신은 그 사정을 전부 알 수 없다는 걸 받아들였다. 대신 다음 약속 시간을 한 줄 더 정확히 적었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_42_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_42_b",
+          "text": "빈 의자에 앉은 채 하고 싶은 말을 적는다.",
+          "result": "종이에는 상대에게 보여 줄 필요 없는 문장들이 쌓였다. 당신은 마지막 줄을 지웠다. 말하지 않는 것이 도망일 수도, 배려일 수도 있었다.",
+          "resultParagraphs": [
+            "종이에는 상대에게 보여 줄 필요 없는 문장들이 쌓였다. 당신은 마지막 줄을 지웠다. 말하지 않는 것이 도망일 수도, 배려일 수도 있었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_42_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_43",
+      "layer": "annual",
+      "age": 43,
+      "ageRange": [
+        43,
+        43
+      ],
+      "title": "동네 의원의 접수번호",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "감기 기운에 동네 의원을 찾았다. 접수대 직원은 등록 직업을 보고 순간 손을 멈췄다. 그러나 의사는 청진기를 대고 숨을 크게 쉬라고만 했다.",
+      "bodyParagraphs": [
+        "감기 기운에 동네 의원을 찾았다. 접수대 직원은 등록 직업을 보고 순간 손을 멈췄다. 그러나 의사는 청진기를 대고 숨을 크게 쉬라고만 했다."
+      ],
+      "chronicleSummary": "43세, 동네 의원의 접수번호의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_43_a",
+          "text": "의사에게 오래된 피로를 함께 이야기한다.",
+          "result": "의사는 종이에 수면 시간을 적게 했다. “나라와 다투기 전에 몸부터 버티셔야죠.” 그 말은 처방전보다 현실적이었다.",
+          "resultParagraphs": [
+            "의사는 종이에 수면 시간을 적게 했다. “나라와 다투기 전에 몸부터 버티셔야죠.” 그 말은 처방전보다 현실적이었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_43_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_43_b",
+          "text": "진료가 끝나자마자 대기실의 노인을 돕는다.",
+          "result": "노인은 밖으로 나가는 문턱에서 고맙다고 했다. 당신은 몸이 아픈 날에도 누군가를 도울 수 있다는 게 기뻤지만, 집에 와서 충분히 쉬었다.",
+          "resultParagraphs": [
+            "노인은 밖으로 나가는 문턱에서 고맙다고 했다. 당신은 몸이 아픈 날에도 누군가를 도울 수 있다는 게 기뻤지만, 집에 와서 충분히 쉬었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_43_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_44",
+      "layer": "annual",
+      "age": 44,
+      "ageRange": [
+        44,
+        44
+      ],
+      "title": "거리에 붙은 새 포스터",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "왕국은 이번에도 마왕 예방 행사를 열었다. 포스터에는 당신과 전혀 닮지 않은 검은 그림자가 있었다. 그림자 옆에는 ‘당신의 안전을 위해’라는 문구가 적혀 있었다.",
+      "bodyParagraphs": [
+        "왕국은 이번에도 마왕 예방 행사를 열었다. 포스터에는 당신과 전혀 닮지 않은 검은 그림자가 있었다. 그림자 옆에는 ‘당신의 안전을 위해’라는 문구가 적혀 있었다."
+      ],
+      "chronicleSummary": "44세, 거리에 붙은 새 포스터의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_44_a",
+          "text": "포스터 옆에 실제 얼굴을 그려 붙인다.",
+          "result": "아이들이 두 그림을 번갈아 보며 웃었다. 관리인은 그림을 떼라고 했지만 이미 몇 사람은 진짜 얼굴을 기억했다.",
+          "resultParagraphs": [
+            "아이들이 두 그림을 번갈아 보며 웃었다. 관리인은 그림을 떼라고 했지만 이미 몇 사람은 진짜 얼굴을 기억했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_44_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_44_b",
+          "text": "행사 담당자에게 근거 자료를 요청한다.",
+          "result": "답장은 ‘국민 정서상 필요’라는 내용이었다. 당신은 그 문장을 편지 보관함에 넣었다. 정서는 숫자로 못 세도 비용은 셀 수 있었다.",
+          "resultParagraphs": [
+            "답장은 ‘국민 정서상 필요’라는 내용이었다. 당신은 그 문장을 편지 보관함에 넣었다. 정서는 숫자로 못 세도 비용은 셀 수 있었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_44_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_45",
+      "layer": "annual",
+      "age": 45,
+      "ageRange": [
+        45,
+        45
+      ],
+      "title": "책장에 꽂힌 오래된 공책",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "청소하다 어린 날의 공책을 찾았다. 글씨는 엉망이었고 질문은 이상하게 정확했다. ‘내가 마왕이면 누가 내 일을 시켰지?’라는 문장이 한가운데 있었다.",
+      "bodyParagraphs": [
+        "청소하다 어린 날의 공책을 찾았다. 글씨는 엉망이었고 질문은 이상하게 정확했다. ‘내가 마왕이면 누가 내 일을 시켰지?’라는 문장이 한가운데 있었다."
+      ],
+      "chronicleSummary": "45세, 책장에 꽂힌 오래된 공책의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_45_a",
+          "text": "공책의 질문 아래 지금의 답을 적는다.",
+          "result": "당신은 여전히 완전한 답을 몰랐다. 그래서 ‘조사 중’이라고 썼다. 어릴 때와 달라진 건 모른다는 말을 부끄러워하지 않는 태도였다.",
+          "resultParagraphs": [
+            "당신은 여전히 완전한 답을 몰랐다. 그래서 ‘조사 중’이라고 썼다. 어릴 때와 달라진 건 모른다는 말을 부끄러워하지 않는 태도였다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_45_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_45_b",
+          "text": "공책을 다음 세대에게 보여 줄 준비를 한다.",
+          "result": "표지를 새 종이로 감쌌다. 아이가 언젠가 읽는다면 질문을 더 잘하게 되길 바랐다. 한 사람의 어린 질문이 다른 사람의 용기가 될 수 있었다.",
+          "resultParagraphs": [
+            "표지를 새 종이로 감쌌다. 아이가 언젠가 읽는다면 질문을 더 잘하게 되길 바랐다. 한 사람의 어린 질문이 다른 사람의 용기가 될 수 있었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_45_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_46",
+      "layer": "annual",
+      "age": 46,
+      "ageRange": [
+        46,
+        46
+      ],
+      "title": "증언 연습",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "누군가 사실을 간단히 말해 보라고 했다. 당신은 연습 삼아 가장 중요한 문장을 소리 내 읽었다. “나는 인간으로 태어났고, 국가가 마왕으로 등록했다.” 말은 짧았지만 숨이 모자랐다.",
+      "bodyParagraphs": [
+        "누군가 사실을 간단히 말해 보라고 했다. 당신은 연습 삼아 가장 중요한 문장을 소리 내 읽었다. “나는 인간으로 태어났고, 국가가 마왕으로 등록했다.” 말은 짧았지만 숨이 모자랐다."
+      ],
+      "chronicleSummary": "46세, 증언 연습의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_46_a",
+          "text": "감정을 덜고 날짜와 숫자부터 정리한다.",
+          "result": "날짜를 적자 목소리가 조금 안정됐다. 억울함은 여전했지만 남에게 설명할 길이 생겼다. 당신은 목소리보다 문서가 더 오래 남을 때도 있다는 걸 배웠다.",
+          "resultParagraphs": [
+            "날짜를 적자 목소리가 조금 안정됐다. 억울함은 여전했지만 남에게 설명할 길이 생겼다. 당신은 목소리보다 문서가 더 오래 남을 때도 있다는 걸 배웠다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_46_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_46_b",
+          "text": "사실 뒤에 그동안 잃은 시간을 덧붙인다.",
+          "result": "“그 사이에 나는 여러 번 평범하게 살고 싶었습니다.” 문장을 끝내고 당신은 잠깐 말이 없었다. 누군가의 시간은 금액으로만 바꿀 수 없었다.",
+          "resultParagraphs": [
+            "“그 사이에 나는 여러 번 평범하게 살고 싶었습니다.” 문장을 끝내고 당신은 잠깐 말이 없었다. 누군가의 시간은 금액으로만 바꿀 수 없었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_46_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_47",
+      "layer": "annual",
+      "age": 47,
+      "ageRange": [
+        47,
+        47
+      ],
+      "title": "비 오는 관청 앞 계단",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "오래된 관청 앞 계단이 빗물에 젖었다. 당신은 젖은 구두를 털었다. 누가 이기든 이 계단은 내일도 사람들이 오르내릴 것이다. 그것이 조금 억울했다.",
+      "bodyParagraphs": [
+        "오래된 관청 앞 계단이 빗물에 젖었다. 당신은 젖은 구두를 털었다. 누가 이기든 이 계단은 내일도 사람들이 오르내릴 것이다. 그것이 조금 억울했다."
+      ],
+      "chronicleSummary": "47세, 비 오는 관청 앞 계단의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_47_a",
+          "text": "계단에서 미끄러질 사람을 위해 안내판을 옮긴다.",
+          "result": "당신은 먼저 온 노인에게 손을 내밀었다. 노인은 신분을 묻지 않고 손을 잡았다. 어떤 도움이든 적절한 때에 도착해야 한다는 걸 알았다.",
+          "resultParagraphs": [
+            "당신은 먼저 온 노인에게 손을 내밀었다. 노인은 신분을 묻지 않고 손을 잡았다. 어떤 도움이든 적절한 때에 도착해야 한다는 걸 알았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_47_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_47_b",
+          "text": "계단의 물자국을 잠시 바라본다.",
+          "result": "비가 그친 뒤에도 바닥에는 흔적이 남아 있었다. 당신은 그것이 사라지는 걸 끝까지 보지 않았다. 사람은 매번 끝까지 지켜볼 힘을 갖고 있지 않다.",
+          "resultParagraphs": [
+            "비가 그친 뒤에도 바닥에는 흔적이 남아 있었다. 당신은 그것이 사라지는 걸 끝까지 보지 않았다. 사람은 매번 끝까지 지켜볼 힘을 갖고 있지 않다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_47_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_48",
+      "layer": "annual",
+      "age": 48,
+      "ageRange": [
+        48,
+        48
+      ],
+      "title": "처음으로 늦잠 잔 날",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "평생 어디선가 호출될 것 같던 아침이었다. 그런데 우편함은 비었고 누구도 문을 두드리지 않았다. 당신은 해가 중천에 뜰 때까지 잠을 잤다. 별일 없는 하루가 낯설었다.",
+      "bodyParagraphs": [
+        "평생 어디선가 호출될 것 같던 아침이었다. 그런데 우편함은 비었고 누구도 문을 두드리지 않았다. 당신은 해가 중천에 뜰 때까지 잠을 잤다. 별일 없는 하루가 낯설었다."
+      ],
+      "chronicleSummary": "48세, 처음으로 늦잠 잔 날의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_48_a",
+          "text": "일어나서 천천히 아침을 만든다.",
+          "result": "빵을 태웠지만 누구도 벌금을 물리지 않았다. 당신은 탄 부분을 긁어 먹고 창밖을 바라봤다. 불행하지 않은 날을 어떻게 써야 할지 조금씩 배우는 중이었다.",
+          "resultParagraphs": [
+            "빵을 태웠지만 누구도 벌금을 물리지 않았다. 당신은 탄 부분을 긁어 먹고 창밖을 바라봤다. 불행하지 않은 날을 어떻게 써야 할지 조금씩 배우는 중이었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_48_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_48_b",
+          "text": "오늘 아무것도 생산하지 않겠다고 선언한다.",
+          "result": "선언을 듣는 사람은 없었다. 당신은 이불을 개고 먼지만 털었다. 하루 동안 아무 일도 이루지 못해도 다음 날이 왔다.",
+          "resultParagraphs": [
+            "선언을 듣는 사람은 없었다. 당신은 이불을 개고 먼지만 털었다. 하루 동안 아무 일도 이루지 못해도 다음 날이 왔다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_48_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_49",
+      "layer": "annual",
+      "age": 49,
+      "ageRange": [
+        49,
+        49
+      ],
+      "title": "누군가의 묵은 청구서",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "동네 가게 앞에서 노인이 오래된 청구서를 들고 서 있었다. 담당자는 이미 부서가 없어졌다고 했다. 청구서는 낡았지만 글자는 선명했다.",
+      "bodyParagraphs": [
+        "동네 가게 앞에서 노인이 오래된 청구서를 들고 서 있었다. 담당자는 이미 부서가 없어졌다고 했다. 청구서는 낡았지만 글자는 선명했다."
+      ],
+      "chronicleSummary": "49세, 누군가의 묵은 청구서의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_49_a",
+          "text": "노인의 말을 끝까지 듣는다.",
+          "result": "노인은 돈을 받아 달라는 말보다 누군가 읽어 줬다는 사실에 오래 고마워했다. 당신은 마지막 문장을 잊지 않으려 공책에 옮겨 적었다.",
+          "resultParagraphs": [
+            "노인은 돈을 받아 달라는 말보다 누군가 읽어 줬다는 사실에 오래 고마워했다. 당신은 마지막 문장을 잊지 않으려 공책에 옮겨 적었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_49_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_49_b",
+          "text": "담당 부서의 새 이름을 찾아 준다.",
+          "result": "세 번의 문의 끝에 새 주소를 찾았다. 해결을 장담하지는 않았다. 다만 종이 한 장이 더 이상 빈 건물로 향하지 않도록 도왔다.",
+          "resultParagraphs": [
+            "세 번의 문의 끝에 새 주소를 찾았다. 해결을 장담하지는 않았다. 다만 종이 한 장이 더 이상 빈 건물로 향하지 않도록 도왔다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_49_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_50",
+      "layer": "annual",
+      "age": 50,
+      "ageRange": [
+        50,
+        50
+      ],
+      "title": "반세기 기념사진",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "쉰 살이 되었다. 누군가는 큰 잔치를 열고 누군가는 그대로 일했다. 당신은 초상화 가게 앞에서 발을 멈췄다. 이 나이의 얼굴을 그림으로 남기고 싶은지 생각했다.",
+      "bodyParagraphs": [
+        "쉰 살이 되었다. 누군가는 큰 잔치를 열고 누군가는 그대로 일했다. 당신은 초상화 가게 앞에서 발을 멈췄다. 이 나이의 얼굴을 그림으로 남기고 싶은지 생각했다."
+      ],
+      "chronicleSummary": "50세, 반세기 기념사진의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_50_a",
+          "text": "초상화를 한 장 부탁한다.",
+          "result": "화가는 웃으라고 말하지 않았다. 당신은 웃지 않은 채 그려졌다. 그 표정도 살아온 얼굴이므로 괜찮았다.",
+          "resultParagraphs": [
+            "화가는 웃으라고 말하지 않았다. 당신은 웃지 않은 채 그려졌다. 그 표정도 살아온 얼굴이므로 괜찮았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_50_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_50_b",
+          "text": "초상화 대신 올해의 자신에게 편지를 쓴다.",
+          "result": "“여기까지 와서 다행이다.” 생각보다 적을 말이 많았다. 봉투를 닫자 누군가에게 보낼 필요 없는 편지도 편지라는 걸 알았다.",
+          "resultParagraphs": [
+            "“여기까지 와서 다행이다.” 생각보다 적을 말이 많았다. 봉투를 닫자 누군가에게 보낼 필요 없는 편지도 편지라는 걸 알았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_50_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_51",
+      "layer": "annual",
+      "age": 51,
+      "ageRange": [
+        51,
+        51
+      ],
+      "title": "이웃의 새 간판",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "옆집 간판이 바뀌었다. 주인은 똑같은 가게인데 이름을 바꾸면 손님이 늘까 고민 중이었다. 당신은 간판보다 안에 있는 사람이 더 익숙했다.",
+      "bodyParagraphs": [
+        "옆집 간판이 바뀌었다. 주인은 똑같은 가게인데 이름을 바꾸면 손님이 늘까 고민 중이었다. 당신은 간판보다 안에 있는 사람이 더 익숙했다."
+      ],
+      "chronicleSummary": "51세, 이웃의 새 간판의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_51_a",
+          "text": "새 간판을 함께 달아 준다.",
+          "result": "간판은 첫날부터 조금 기울었다. 주인은 웃으며 다시 수평을 맞췄다. 이름을 새로 붙이는 일도 결국 손으로 해야 했다.",
+          "resultParagraphs": [
+            "간판은 첫날부터 조금 기울었다. 주인은 웃으며 다시 수평을 맞췄다. 이름을 새로 붙이는 일도 결국 손으로 해야 했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_51_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_51_b",
+          "text": "새 이름이 무엇을 뜻하는지 물어본다.",
+          "result": "주인은 돌아가신 어머니가 부르던 별명이라고 했다. 당신은 그제야 간판을 오래 바라봤다. 어떤 이름은 돈을 벌기보다 사람을 기억하려고 남긴다.",
+          "resultParagraphs": [
+            "주인은 돌아가신 어머니가 부르던 별명이라고 했다. 당신은 그제야 간판을 오래 바라봤다. 어떤 이름은 돈을 벌기보다 사람을 기억하려고 남긴다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_51_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_52",
+      "layer": "annual",
+      "age": 52,
+      "ageRange": [
+        52,
+        52
+      ],
+      "title": "낡은 지도에서 빠진 거리",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "도시 지도가 새로 나왔다. 개발로 사라진 골목이 공백으로 남았다. 당신은 거기서 몇 해를 살았다는 사실을 누구에게 설명해야 할지 몰랐다.",
+      "bodyParagraphs": [
+        "도시 지도가 새로 나왔다. 개발로 사라진 골목이 공백으로 남았다. 당신은 거기서 몇 해를 살았다는 사실을 누구에게 설명해야 할지 몰랐다."
+      ],
+      "chronicleSummary": "52세, 낡은 지도에서 빠진 거리의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_52_a",
+          "text": "사라진 골목의 이름을 지도 여백에 적는다.",
+          "result": "글씨가 조금 삐뚤었지만 도로 이름은 다시 생겼다. 종이 위에서만이라도 누군가의 집이 통째로 없어지지는 않았다.",
+          "resultParagraphs": [
+            "글씨가 조금 삐뚤었지만 도로 이름은 다시 생겼다. 종이 위에서만이라도 누군가의 집이 통째로 없어지지는 않았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_52_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_52_b",
+          "text": "옛 골목을 함께 기억하는 사람을 찾아간다.",
+          "result": "오랜 이웃은 구멍가게 위치부터 이야기했다. 둘의 기억은 조금씩 달랐다. 당신은 완벽한 지도보다 두 사람의 말이 더 오래 갈 수도 있다고 생각했다.",
+          "resultParagraphs": [
+            "오랜 이웃은 구멍가게 위치부터 이야기했다. 둘의 기억은 조금씩 달랐다. 당신은 완벽한 지도보다 두 사람의 말이 더 오래 갈 수도 있다고 생각했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_52_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_53",
+      "layer": "annual",
+      "age": 53,
+      "ageRange": [
+        53,
+        53
+      ],
+      "title": "세상의 끝까지 이어지는 줄",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "왕궁 앞에서 길게 줄을 섰다. 대단한 행사가 있는 줄 알았는데 무료 수프 배급 줄이었다. 전쟁 대비 행사라며 예산은 크게 적혀 있었다. 수프는 묽었다.",
+      "bodyParagraphs": [
+        "왕궁 앞에서 길게 줄을 섰다. 대단한 행사가 있는 줄 알았는데 무료 수프 배급 줄이었다. 전쟁 대비 행사라며 예산은 크게 적혀 있었다. 수프는 묽었다."
+      ],
+      "chronicleSummary": "53세, 세상의 끝까지 이어지는 줄의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_53_a",
+          "text": "줄 끝의 사람에게 먼저 수프를 건넨다.",
+          "result": "마지막 사람은 그릇을 받아 들고 천천히 고개를 숙였다. 당신은 거창한 표어가 아니라 한 그릇의 온도가 행사를 평가한다고 생각했다.",
+          "resultParagraphs": [
+            "마지막 사람은 그릇을 받아 들고 천천히 고개를 숙였다. 당신은 거창한 표어가 아니라 한 그릇의 온도가 행사를 평가한다고 생각했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_53_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_53_b",
+          "text": "한 그릇당 사용 예산을 계산한다.",
+          "result": "당신의 계산을 본 담당자가 종이를 가져가겠다고 했다. 당신은 사본을 먼저 만들었다. 숫자를 확인하는 일에도 뜨거운 수프가 필요했다.",
+          "resultParagraphs": [
+            "당신의 계산을 본 담당자가 종이를 가져가겠다고 했다. 당신은 사본을 먼저 만들었다. 숫자를 확인하는 일에도 뜨거운 수프가 필요했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_53_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_54",
+      "layer": "annual",
+      "age": 54,
+      "ageRange": [
+        54,
+        54
+      ],
+      "title": "구겨진 편지의 모서리",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "오래된 편지를 펼치다 모서리가 찢어졌다. 새로 쓸 수 없는 글이라 손이 떨렸다. 당신이 보관하는 것들 가운데 제일 소중한 것은 값비싼 물건이 아니었다.",
+      "bodyParagraphs": [
+        "오래된 편지를 펼치다 모서리가 찢어졌다. 새로 쓸 수 없는 글이라 손이 떨렸다. 당신이 보관하는 것들 가운데 제일 소중한 것은 값비싼 물건이 아니었다."
+      ],
+      "chronicleSummary": "54세, 구겨진 편지의 모서리의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_54_a",
+          "text": "종이를 덧대어 천천히 복원한다.",
+          "result": "찢어진 자국은 남았지만 글자를 읽을 수 있었다. 당신은 깨끗해지는 것과 살아남는 것이 다른 일이라고 생각했다.",
+          "resultParagraphs": [
+            "찢어진 자국은 남았지만 글자를 읽을 수 있었다. 당신은 깨끗해지는 것과 살아남는 것이 다른 일이라고 생각했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_54_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_54_b",
+          "text": "편지를 외울 만큼 여러 번 읽는다.",
+          "result": "처음에는 문장을 외웠고 나중에는 글씨가 휘어진 부분까지 기억났다. 사람을 잃을까 두려울 때 기억부터 붙잡는 버릇이 생겼다.",
+          "resultParagraphs": [
+            "처음에는 문장을 외웠고 나중에는 글씨가 휘어진 부분까지 기억났다. 사람을 잃을까 두려울 때 기억부터 붙잡는 버릇이 생겼다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_54_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_55",
+      "layer": "annual",
+      "age": 55,
+      "ageRange": [
+        55,
+        55
+      ],
+      "title": "문득 찾아온 낯선 아이",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "길을 걷던 아이가 당신을 보고 물었다. “마왕은 왜 뿔이 없어요?” 당신은 대답하기 전에 아이 뒤의 어른 얼굴을 봤다. 어른은 말리지 않았다.",
+      "bodyParagraphs": [
+        "길을 걷던 아이가 당신을 보고 물었다. “마왕은 왜 뿔이 없어요?” 당신은 대답하기 전에 아이 뒤의 어른 얼굴을 봤다. 어른은 말리지 않았다."
+      ],
+      "chronicleSummary": "55세, 문득 찾아온 낯선 아이의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_55_a",
+          "text": "마왕은 직업이 아니라 서류라고 설명한다.",
+          "result": "아이는 한참 고민하더니 “그럼 저도 서류로 용이 될 수 있어요?”라고 물었다. 당신은 가능하면 말리고 싶었다. 어린 질문은 때때로 법률의 민낯을 드러냈다.",
+          "resultParagraphs": [
+            "아이는 한참 고민하더니 “그럼 저도 서류로 용이 될 수 있어요?”라고 물었다. 당신은 가능하면 말리고 싶었다. 어린 질문은 때때로 법률의 민낯을 드러냈다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_55_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_55_b",
+          "text": "뿔이 없으니 그냥 동네 사람이라고 말한다.",
+          "result": "아이는 실망한 얼굴로 고개를 끄덕였다. 그러더니 길을 물었다. 당신은 방향을 알려 줬다. 어떤 오해는 풀리고 나서야 평범한 대화가 시작된다.",
+          "resultParagraphs": [
+            "아이는 실망한 얼굴로 고개를 끄덕였다. 그러더니 길을 물었다. 당신은 방향을 알려 줬다. 어떤 오해는 풀리고 나서야 평범한 대화가 시작된다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_55_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_56",
+      "layer": "annual",
+      "age": 56,
+      "ageRange": [
+        56,
+        56
+      ],
+      "title": "새벽의 장작더미",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "추위가 일찍 왔다. 당신은 장작을 쌓다가 오래된 도끼날이 무뎌진 걸 발견했다. 세상은 대개 갑자기 무너지지 않고 조금씩 일을 어렵게 만들었다.",
+      "bodyParagraphs": [
+        "추위가 일찍 왔다. 당신은 장작을 쌓다가 오래된 도끼날이 무뎌진 걸 발견했다. 세상은 대개 갑자기 무너지지 않고 조금씩 일을 어렵게 만들었다."
+      ],
+      "chronicleSummary": "56세, 새벽의 장작더미의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_56_a",
+          "text": "도끼날을 갈아 다시 사용한다.",
+          "result": "한동안 쇳소리만 들렸다. 날이 돌아오자 손에 힘이 덜 들어갔다. 당신은 늦게 배운 기술도 삶을 가볍게 할 수 있다고 생각했다.",
+          "resultParagraphs": [
+            "한동안 쇳소리만 들렸다. 날이 돌아오자 손에 힘이 덜 들어갔다. 당신은 늦게 배운 기술도 삶을 가볍게 할 수 있다고 생각했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_56_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_56_b",
+          "text": "이웃과 장작을 나눠 쓰기로 한다.",
+          "result": "이웃은 대신 겨울 국을 한 냄비 가져왔다. 장작 양은 줄었지만 집은 이상하게 더 따뜻했다. 숫자로 적기 어려운 거래였다.",
+          "resultParagraphs": [
+            "이웃은 대신 겨울 국을 한 냄비 가져왔다. 장작 양은 줄었지만 집은 이상하게 더 따뜻했다. 숫자로 적기 어려운 거래였다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_56_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_57",
+      "layer": "annual",
+      "age": 57,
+      "ageRange": [
+        57,
+        57
+      ],
+      "title": "마지막까지 남은 질문",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "광장에서 자란 아이가 당신을 알아보고 물었다. “왜 어른들은 오래된 문제를 그냥 두나요?” 당신은 말하려다 멈췄다. 오랜 시간 답하지 못한 질문이기도 했다.",
+      "bodyParagraphs": [
+        "광장에서 자란 아이가 당신을 알아보고 물었다. “왜 어른들은 오래된 문제를 그냥 두나요?” 당신은 말하려다 멈췄다. 오랜 시간 답하지 못한 질문이기도 했다."
+      ],
+      "chronicleSummary": "57세, 마지막까지 남은 질문의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_57_a",
+          "text": "자기가 모르는 부분부터 솔직히 이야기한다.",
+          "result": "아이는 실망하는 대신 질문을 더 했다. 당신은 모르는 것을 인정하는 어른이 생각보다 드물다는 걸 깨달았다.",
+          "resultParagraphs": [
+            "아이는 실망하는 대신 질문을 더 했다. 당신은 모르는 것을 인정하는 어른이 생각보다 드물다는 걸 깨달았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_57_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_57_b",
+          "text": "아이가 직접 알아볼 수 있는 기록을 보여 준다.",
+          "result": "아이는 종이를 찬찬히 읽었다. 처음에는 글자가 낯설어도 끝에 가서는 질문 하나를 더 찾았다. 당신은 답보다 질문을 건네는 일이 오래간다고 생각했다.",
+          "resultParagraphs": [
+            "아이는 종이를 찬찬히 읽었다. 처음에는 글자가 낯설어도 끝에 가서는 질문 하나를 더 찾았다. 당신은 답보다 질문을 건네는 일이 오래간다고 생각했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_57_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_58",
+      "layer": "annual",
+      "age": 58,
+      "ageRange": [
+        58,
+        58
+      ],
+      "title": "흰 머리 한 올",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "거울에서 흰 머리카락을 발견했다. 마왕에게 노화가 오는 것이 이상하다는 사람도 있었겠지만, 당신의 몸은 누구의 설정도 읽지 않았다.",
+      "bodyParagraphs": [
+        "거울에서 흰 머리카락을 발견했다. 마왕에게 노화가 오는 것이 이상하다는 사람도 있었겠지만, 당신의 몸은 누구의 설정도 읽지 않았다."
+      ],
+      "chronicleSummary": "58세, 흰 머리 한 올의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_58_a",
+          "text": "그대로 두고 하루를 시작한다.",
+          "result": "머리카락은 햇빛을 받을 때 잠깐 반짝였다. 당신은 늙는 것이 패배가 아니라 살아 있다는 표시라고 생각했다.",
+          "resultParagraphs": [
+            "머리카락은 햇빛을 받을 때 잠깐 반짝였다. 당신은 늙는 것이 패배가 아니라 살아 있다는 표시라고 생각했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_58_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_58_b",
+          "text": "흰 머리카락을 뽑아 일기장에 붙인다.",
+          "result": "다음 날 또 한 올이 보였다. 당신은 웃으며 일기장을 덮었다. 세월을 한 장의 종이에 가두기엔 종이가 너무 얇았다.",
+          "resultParagraphs": [
+            "다음 날 또 한 올이 보였다. 당신은 웃으며 일기장을 덮었다. 세월을 한 장의 종이에 가두기엔 종이가 너무 얇았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_58_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_59",
+      "layer": "annual",
+      "age": 59,
+      "ageRange": [
+        59,
+        59
+      ],
+      "title": "왕국의 새 동상",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "광장에 새 영웅 동상이 세워졌다. 사람들이 영웅의 이름을 두고 서로 다투었다. 당신은 동상 아래 걸터앉아 그늘을 쐬었다. 받침대에는 기부자 명단이 더 길게 적혀 있었다.",
+      "bodyParagraphs": [
+        "광장에 새 영웅 동상이 세워졌다. 사람들이 영웅의 이름을 두고 서로 다투었다. 당신은 동상 아래 걸터앉아 그늘을 쐬었다. 받침대에는 기부자 명단이 더 길게 적혀 있었다."
+      ],
+      "chronicleSummary": "59세, 왕국의 새 동상의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_59_a",
+          "text": "동상보다 동상을 청소하는 사람에게 인사한다.",
+          "result": "청소하는 사람은 걸레를 짜며 고개를 들었다. “영웅은 높이 올라가고 저는 매일 올라갔다 내려오죠.” 당신은 그 말이 멋진 비문이라고 생각했다.",
+          "resultParagraphs": [
+            "청소하는 사람은 걸레를 짜며 고개를 들었다. “영웅은 높이 올라가고 저는 매일 올라갔다 내려오죠.” 당신은 그 말이 멋진 비문이라고 생각했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_59_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_59_b",
+          "text": "받침대의 역사 설명이 맞는지 확인한다.",
+          "result": "설명에는 지워진 이름이 있었다. 당신은 틀린 부분을 적어 보냈다. 다음 달 수정된 것은 글자 하나뿐이었다. 그래도 없는 것보다 나았다.",
+          "resultParagraphs": [
+            "설명에는 지워진 이름이 있었다. 당신은 틀린 부분을 적어 보냈다. 다음 달 수정된 것은 글자 하나뿐이었다. 그래도 없는 것보다 나았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_59_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_60",
+      "layer": "annual",
+      "age": 60,
+      "ageRange": [
+        60,
+        60
+      ],
+      "title": "예순 살의 낡은 시계",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "오래 쓰던 벽시계가 멈췄다. 정확히 몇 시였는지는 알 수 없었다. 당신은 시계가 멈춰도 바깥에서 시장이 열리고 마차가 지나간다는 사실을 확인했다.",
+      "bodyParagraphs": [
+        "오래 쓰던 벽시계가 멈췄다. 정확히 몇 시였는지는 알 수 없었다. 당신은 시계가 멈춰도 바깥에서 시장이 열리고 마차가 지나간다는 사실을 확인했다."
+      ],
+      "chronicleSummary": "60세, 예순 살의 낡은 시계의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_60_a",
+          "text": "시계를 수리한다.",
+          "result": "시계공은 고장 난 톱니를 작은 봉투에 담아 줬다. 당신은 다시 움직이는 바늘을 보며 시간이 돌아온 게 아니라 앞으로 가고 있음을 생각했다.",
+          "resultParagraphs": [
+            "시계공은 고장 난 톱니를 작은 봉투에 담아 줬다. 당신은 다시 움직이는 바늘을 보며 시간이 돌아온 게 아니라 앞으로 가고 있음을 생각했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_60_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_60_b",
+          "text": "멈춘 시간을 그대로 두고 작은 메모를 남긴다.",
+          "result": "‘이 시계는 멈췄지만 나는 계속 살았다.’ 당신은 메모를 시계 뒤에 붙였다. 시계가 다시 울리지 않아도 집은 조용히 하루를 맞았다.",
+          "resultParagraphs": [
+            "‘이 시계는 멈췄지만 나는 계속 살았다.’ 당신은 메모를 시계 뒤에 붙였다. 시계가 다시 울리지 않아도 집은 조용히 하루를 맞았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_60_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_61",
+      "layer": "annual",
+      "age": 61,
+      "ageRange": [
+        61,
+        61
+      ],
+      "title": "할아버지가 된 적 없는 사람",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "꼬마가 당신을 보고 할아버지라 불렀다. 당신은 혈연상 할아버지가 아닐 수도 있었지만, 아이는 졸린 얼굴로 사과를 하나 내밀었다. 관계는 호칭보다 가벼울 때가 있었다.",
+      "bodyParagraphs": [
+        "꼬마가 당신을 보고 할아버지라 불렀다. 당신은 혈연상 할아버지가 아닐 수도 있었지만, 아이는 졸린 얼굴로 사과를 하나 내밀었다. 관계는 호칭보다 가벼울 때가 있었다."
+      ],
+      "chronicleSummary": "61세, 할아버지가 된 적 없는 사람의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_61_a",
+          "text": "사과를 반으로 나눠 먹는다.",
+          "result": "아이는 반쪽을 손에 쥐고 달려갔다. 당신은 사과 씨를 손바닥에 남겼다. 이름도 모르는 사람과 나눌 수 있는 하루가 아직 남아 있었다.",
+          "resultParagraphs": [
+            "아이는 반쪽을 손에 쥐고 달려갔다. 당신은 사과 씨를 손바닥에 남겼다. 이름도 모르는 사람과 나눌 수 있는 하루가 아직 남아 있었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_61_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_61_b",
+          "text": "아이가 어디서 왔는지 먼저 묻는다.",
+          "result": "아이는 모퉁이 가게를 가리켰다. 당신은 길 건너는 것을 도와주었다. 거창한 보호보다 손을 한 번 잡아 주는 일이 쉬웠다.",
+          "resultParagraphs": [
+            "아이는 모퉁이 가게를 가리켰다. 당신은 길 건너는 것을 도와주었다. 거창한 보호보다 손을 한 번 잡아 주는 일이 쉬웠다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_61_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_62",
+      "layer": "annual",
+      "age": 62,
+      "ageRange": [
+        62,
+        62
+      ],
+      "title": "폐업 신고서와 새 종이",
+      "category": "generic",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "거리를 지나던 당신은 가게 문에 붙은 폐업 안내를 읽었다. 문장은 간단했고, 그 안에서 사라질 일상은 많았다. 종이는 누구의 시간이 끝났는지 설명하지 않았다.",
+      "bodyParagraphs": [
+        "거리를 지나던 당신은 가게 문에 붙은 폐업 안내를 읽었다. 문장은 간단했고, 그 안에서 사라질 일상은 많았다. 종이는 누구의 시간이 끝났는지 설명하지 않았다."
+      ],
+      "chronicleSummary": "62세, 폐업 신고서와 새 종이의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_62_a",
+          "text": "가게 주인에게 마지막 인사를 건넨다.",
+          "result": "가게 주인은 남은 단추 몇 개를 정리하다 손을 멈췄다. “오래 와 줘서 고마웠어요.” 당신은 그 말을 손에 쥐고 집에 돌아왔다.",
+          "resultParagraphs": [
+            "가게 주인은 남은 단추 몇 개를 정리하다 손을 멈췄다. “오래 와 줘서 고마웠어요.” 당신은 그 말을 손에 쥐고 집에 돌아왔다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_62_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_62_b",
+          "text": "붙어 있던 안내문의 날짜를 그림 대신 기록한다.",
+          "result": "당신은 작은 수첩에 날짜를 적었다. 세상은 가게 하나가 사라진 일을 기억하지 않을 것이다. 그러나 누군가에게는 그날부터 길이 달라졌다.",
+          "resultParagraphs": [
+            "당신은 작은 수첩에 날짜를 적었다. 세상은 가게 하나가 사라진 일을 기억하지 않을 것이다. 그러나 누군가에게는 그날부터 길이 달라졌다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_62_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_63",
+      "layer": "annual",
+      "age": 63,
+      "ageRange": [
+        63,
+        63
+      ],
+      "title": "눈 내린 아침의 발자국",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "밤새 눈이 왔다. 누군가 먼저 지나간 길에는 발자국이 남아 있었다. 당신은 길을 고르며 생각했다. 평생 누구의 발자국을 따라왔고, 누구에게 길을 남겼을까.",
+      "bodyParagraphs": [
+        "밤새 눈이 왔다. 누군가 먼저 지나간 길에는 발자국이 남아 있었다. 당신은 길을 고르며 생각했다. 평생 누구의 발자국을 따라왔고, 누구에게 길을 남겼을까."
+      ],
+      "chronicleSummary": "63세, 눈 내린 아침의 발자국의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_63_a",
+          "text": "사람들이 다니는 길의 눈을 치운다.",
+          "result": "빗자루는 눈을 밀어 내며 작은 소리를 냈다. 누군가 지나가며 고맙다고 했다. 당신은 그 말이 겨울 아침을 충분히 따뜻하게 한다고 생각했다.",
+          "resultParagraphs": [
+            "빗자루는 눈을 밀어 내며 작은 소리를 냈다. 누군가 지나가며 고맙다고 했다. 당신은 그 말이 겨울 아침을 충분히 따뜻하게 한다고 생각했다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_63_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_63_b",
+          "text": "눈 위에 자기 발자국을 또렷이 남긴다.",
+          "result": "뒤돌아보니 발자국은 생각보다 구불구불했다. 바람이 불자 흔적은 조금씩 흐려졌다. 남지 않는다고 해서 걸어온 길이 없어지는 건 아니었다.",
+          "resultParagraphs": [
+            "뒤돌아보니 발자국은 생각보다 구불구불했다. 바람이 불자 흔적은 조금씩 흐려졌다. 남지 않는다고 해서 걸어온 길이 없어지는 건 아니었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_63_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_64",
+      "layer": "annual",
+      "age": 64,
+      "ageRange": [
+        64,
+        64
+      ],
+      "title": "서랍 속의 여분 열쇠",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "서랍 안에서 오래전에 만든 여분 열쇠가 나왔다. 어느 문을 여는지 가물가물했다. 열쇠에는 작게 ‘잊지 말 것’이라는 글씨가 있었다. 그 말부터 잊었다.",
+      "bodyParagraphs": [
+        "서랍 안에서 오래전에 만든 여분 열쇠가 나왔다. 어느 문을 여는지 가물가물했다. 열쇠에는 작게 ‘잊지 말 것’이라는 글씨가 있었다. 그 말부터 잊었다."
+      ],
+      "chronicleSummary": "64세, 서랍 속의 여분 열쇠의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_64_a",
+          "text": "열쇠가 맞는 문을 직접 찾아본다.",
+          "result": "몇 번의 헛걸음 끝에 오래된 창고 문이 열렸다. 안에는 먼지 쌓인 의자 두 개가 있었다. 당신은 열쇠보다 의자를 누구와 썼는지 기억하려 애썼다.",
+          "resultParagraphs": [
+            "몇 번의 헛걸음 끝에 오래된 창고 문이 열렸다. 안에는 먼지 쌓인 의자 두 개가 있었다. 당신은 열쇠보다 의자를 누구와 썼는지 기억하려 애썼다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_64_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_64_b",
+          "text": "열쇠를 버리지 않고 용도를 적어 둔다.",
+          "result": "확실하지 않은 부분에는 물음표를 남겼다. 당신은 젊었을 때보다 이제 모른다는 표시를 더 잘했다. 그것도 늙으며 얻은 기술이었다.",
+          "resultParagraphs": [
+            "확실하지 않은 부분에는 물음표를 남겼다. 당신은 젊었을 때보다 이제 모른다는 표시를 더 잘했다. 그것도 늙으며 얻은 기술이었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_64_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    },
+    {
+      "id": "annual_65",
+      "layer": "annual",
+      "age": 65,
+      "ageRange": [
+        65,
+        65
+      ],
+      "title": "오늘의 마지막 영수증",
+      "category": "dedicated",
+      "priority": -1000,
+      "oncePerRun": true,
+      "conditions": {
+        "all": []
+      },
+      "characters": [],
+      "body": "예순다섯의 저녁, 주머니에서 오늘 받은 영수증이 나왔다. 거기에는 빵 한 덩이와 우유 한 병이 적혀 있었다. 어느 왕실 기록에도 오르지 않을 평범한 하루였다.",
+      "bodyParagraphs": [
+        "예순다섯의 저녁, 주머니에서 오늘 받은 영수증이 나왔다. 거기에는 빵 한 덩이와 우유 한 병이 적혀 있었다. 어느 왕실 기록에도 오르지 않을 평범한 하루였다."
+      ],
+      "chronicleSummary": "65세, 오늘의 마지막 영수증의 하루를 보냈다.",
+      "choices": [
+        {
+          "id": "annual_65_a",
+          "text": "영수증 뒷면에 오늘 좋았던 일을 적는다.",
+          "result": "당신은 ‘따뜻했다’라고 썼다. 무엇이 따뜻했는지까지 적으려다 그만뒀다. 마지막까지 남길 말이 반드시 거창할 필요는 없었다.",
+          "resultParagraphs": [
+            "당신은 ‘따뜻했다’라고 썼다. 무엇이 따뜻했는지까지 적으려다 그만뒀다. 마지막까지 남길 말이 반드시 거창할 필요는 없었다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_65_a"
+            }
+          ]
+        },
+        {
+          "id": "annual_65_b",
+          "text": "영수증을 버리고 창밖을 바라본다.",
+          "result": "길에 불이 하나둘 켜졌다. 당신은 아무 증명서도 없이 저녁을 보냈다. 오랫동안 바라던 삶이 이렇게 조용할 수 있다는 걸 이제 알았다.",
+          "resultParagraphs": [
+            "길에 불이 하나둘 켜졌다. 당신은 아무 증명서도 없이 저녁을 보냈다. 오랫동안 바라던 삶이 이렇게 조용할 수 있다는 걸 이제 알았다."
+          ],
+          "effects": [
+            {
+              "type": "setFlag",
+              "value": "annual_65_b"
+            }
+          ]
+        }
+      ],
+      "selectionPolicy": "fallback_only_when_age_has_no_higher_priority_story"
+    }
+  ]
+}

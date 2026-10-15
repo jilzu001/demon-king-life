@@ -1,0 +1,25 @@
+[WebServer] (node:60752) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:66164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:45328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:61356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:63604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [PC] › tests\e2e\compact.spec.ts:45:1 › v4.4 도감20개는 잠김 내용을 숨기고 획득 상세/동일 WebP/닫기/저장 기록을 보호한다 (6.1s)
+  ok 2 [PC] › tests\e2e\compact.spec.ts:87:1 › v4.4 엔딩 그림404는 글만 표시하고 SVG로 대체하지 않으며 획득 기록을 유지한다 (1.3s)
+(node:67988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:68048) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:68120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 3 [모바일-320] › tests\e2e\compact.spec.ts:45:1 › v4.4 도감20개는 잠김 내용을 숨기고 획득 상세/동일 WebP/닫기/저장 기록을 보호한다 (6.1s)
+  ok 4 [모바일-320] › tests\e2e\compact.spec.ts:87:1 › v4.4 엔딩 그림404는 글만 표시하고 SVG로 대체하지 않으며 획득 기록을 유지한다 (1.4s)
+
+  4 passed (28.0s)

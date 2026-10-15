@@ -19,6 +19,8 @@ import '../styles/main.css';
 import { isCompact, compactSlot } from '../content/compact-contract';
 import { loadCompactProgress, compactProgressKey, type CompactProgress } from '../ui/compact-progress';
 import { renderCompactEnding } from '../ui/compact-ending';
+import { endingGalleryEntries, galleryEndingIds } from '../content/ending-gallery';
+import { renderEndingGallery, renderEndingDetail } from '../ui/ending-gallery';
 import { resumeAtVisitedNode, backupBeforeReselect, loadReselectBackup, RESELECT_BACKUP_KEY } from '../persistence/reselect';
 
 const root = document.querySelector<HTMLDivElement>('#app')!;
@@ -71,6 +73,8 @@ let busy = false;
 let errorText = '';
 let compatibilityNotice = '';
 let openMenu: 'history' | 'settings' | 'people' | null = null;
+let endingDetailId: string | null = null;
+let galleryReturnFocus: string | null = null;
 let historyExpanded = new Set<string>();
 let historyFocusNode: string | null = null;
 const reading = new ReadingSequence();
@@ -117,7 +121,7 @@ function exportRun() {
   } catch (error) { notify(error); }
 }
 function makeStore(context: PresentedStory) {
-  const known = new Set([...Object.keys(activeStory?.endings ?? context.endings), ...Object.keys(legacyStory?.endings ?? {})]);
+  const known = new Set([...Object.keys(activeStory?.endings ?? context.endings), ...Object.keys(legacyStory?.endings ?? {}), ...(isCompact(context.manifest) ? galleryEndingIds : [])]);
   return new SaveStore(context, () => window.localStorage, known, isCompact(context.manifest) ? compactSlot : context.manifest.id);
 }
 function commit(next: GameState, nextReceipt: TransitionReceipt | null = null, context = story) {
@@ -183,6 +187,7 @@ function newRun() {
 }
 
 function render() {
+  if (openMenu !== 'settings') endingDetailId = null;
   reading.detach();
   pages.detach();
   disposeLayout(); disposeLayout = () => {};
@@ -539,6 +544,14 @@ function renderSettings(save: HTMLElement) {
   save.append(element('p', `${pending ? '자동 저장 미완료' : state ? '자동 저장 완료' : '저장 확인 필요'} · 현재 브라우저에 보관됩니다. JSON으로 기기 간 이동할 수 있습니다.`, 'subtle'));
   const discovered = new Set(meta.discoveredEndings[story.manifest.id] ?? []);
   const allEndings = { ...legacyStory?.endings, ...activeStory?.endings };
+  if (compactMode && isCompact(story.manifest)) {
+    save.append(renderEndingGallery(endingGalleryEntries(activeStory ?? story), discovered, id => {
+      if (!discovered.has(id)) return;
+      endingDetailId = id; render();
+    }, Object.keys((activeStory ?? story).endings).filter(id => galleryEndingIds.includes(id)).length));
+    for (const id of discovered) if (!galleryEndingIds.includes(id) && allEndings[id]) save.append(element('p', `이전 예제에서 발견 · ${allEndings[id]!.title}`));
+    return;
+  }
   const collection = element('ul');
   for (const ending of Object.values(activeStory?.endings ?? story.endings)) collection.append(element('li', discovered.has(ending.id) ? `발견 · ${ending.title}` : '미발견 엔딩'));
   for (const id of discovered) if (!activeStory?.endings[id] && allEndings[id]) collection.append(element('li', `이전 예제에서 발견 · ${allEndings[id]!.title}`));
@@ -624,12 +637,19 @@ function renderTimeline(layout: HTMLElement, content: PresentedStory, current: G
 function renderMenu(layout: HTMLElement) {
   const dialog = element('dialog', undefined, 'menu-dialog');
   const menuKind = openMenu;
-  const title = element('h2', menuKind === 'history' ? '전체 인생 기록' : menuKind === 'people' ? '인물 관계 · 재산 · 법적 기록' : '저장 관리 · 엔딩 도감'); title.id = 'menu-title';
+  const detail = menuKind === 'settings' && compactMode && activeStory && endingDetailId
+    && (meta.discoveredEndings[activeStory.manifest.id] ?? []).includes(endingDetailId)
+    ? endingGalleryEntries(activeStory).find(entry => entry.id === endingDetailId) : undefined;
+  const title = element('h2', detail ? '엔딩 도감 상세' : menuKind === 'history' ? '전체 인생 기록' : menuKind === 'people' ? '인물 관계 · 재산 · 법적 기록' : '저장 관리 · 엔딩 도감'); title.id = 'menu-title';
   dialog.setAttribute('aria-labelledby', title.id);
-  const close = () => { openMenu = null; dialog.close(); render(); document.querySelector<HTMLButtonElement>(`[data-menu-kind="${menuKind}"]`)?.focus(); };
+  const close = () => {
+    if (detail) { galleryReturnFocus = detail.id; endingDetailId = null; render(); return; }
+    openMenu = null; dialog.close(); render(); document.querySelector<HTMLButtonElement>(`[data-menu-kind="${menuKind}"]`)?.focus();
+  };
   const top = element('div', undefined, 'panel-heading'); top.append(title, button('닫기', close)); dialog.append(top);
   dialog.addEventListener('cancel', event => { event.preventDefault(); close(); });
-  if (menuKind === 'settings') renderSettings(dialog);
+  if (detail) dialog.append(renderEndingDetail(detail));
+  else if (menuKind === 'settings') renderSettings(dialog);
   else if (menuKind === 'people' && story && state) renderPeople(dialog, story, state);
   else if (story && state) {
     if (compactMode) {
@@ -656,6 +676,10 @@ function renderMenu(layout: HTMLElement) {
     }
   }
   layout.append(dialog); dialog.showModal();
+  if (menuKind === 'settings' && galleryReturnFocus && !detail) {
+    const target = [...dialog.querySelectorAll<HTMLButtonElement>('[data-ending-detail]')].find(b => b.dataset.endingDetail === galleryReturnFocus);
+    target?.focus({ preventScroll: true }); target?.scrollIntoView({ block: 'nearest', behavior: 'instant' }); galleryReturnFocus = null;
+  }
   if (menuKind === 'history' && historyFocusNode) {
     const target = [...dialog.querySelectorAll<HTMLButtonElement>('[data-resume-node]')].find(b => b.dataset.resumeNode === historyFocusNode);
     target?.scrollIntoView({ block: 'center', behavior: 'instant' }); target?.focus({ preventScroll: true }); historyFocusNode = null;
