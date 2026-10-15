@@ -1,0 +1,29 @@
+{
+  "endingId": "ending_fire",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "refuse",
+    "burn_office"
+  ],
+  "age": 21,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "petition"
+  ],
+  "image": "/demon-king-life/assets/illustrations/events/queens_letter.webp",
+  "statuses": [
+    200,
+    200
+  ],
+  "bounds": {
+    "width": 408.5,
+    "height": 360,
+    "naturalWidth": 640,
+    "naturalHeight": 564
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}
