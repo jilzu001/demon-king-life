@@ -12,13 +12,16 @@ export function renderEndingArtwork(entry: Pick<EndingGalleryEntry, 'id' | 'titl
     figure.replaceWith(element('p', '일러스트를 불러올 수 없어 글로 표시합니다.', 'subtle ending-art-fallback'));
   }, { once: true });
   image.src = source;
-  figure.append(image, element('figcaption', entry.kind === 'new' ? '기준 초상화로 구성한 회상 이미지 · 임시 아트' : '기존 장면을 재사용한 임시 일러스트', 'subtle'));
+  figure.append(image, element('figcaption', source.includes('/ending_v4_6/') ? '승인 그림체로 제작한 전용 엔딩 일러스트' : entry.kind === 'new' ? '기준 초상화로 구성한 회상 이미지 · 임시 아트' : '기존 장면을 재사용한 임시 일러스트', 'subtle'));
   return figure;
 }
 
-export function renderEndingGallery(entries: EndingGalleryEntry[], discovered: ReadonlySet<string>, onSelect: (id: string) => void, playableCount = entries.length): HTMLElement {
+export function renderEndingGallery(entries: EndingGalleryEntry[], discovered: ReadonlySet<string>, onSelect: (id: string) => void, playableCount = entries.length, onTree?: (opener: HTMLButtonElement) => void): HTMLElement {
   const section = element('section', undefined, 'ending-gallery'); section.setAttribute('aria-label', '엔딩 도감');
   section.append(element('h3', '엔딩 도감'), element('p', `발견한 엔딩 ${entries.filter(e => discovered.has(e.id)).length} / ${entries.length}`));
+  if (onTree) {
+    const open = button('분기 트리 보기', () => onTree(open)); open.dataset.endingTreeOpen = 'true'; section.append(open);
+  }
   if (playableCount < entries.length) section.append(element('p', `현재 플레이 연결 ${playableCount}개 · 추가 ${entries.length - playableCount}개는 진입 연결 준비 중입니다.`, 'subtle'));
   const list = element('ul', undefined, 'ending-gallery-list');
   for (const [index, entry] of entries.entries()) {

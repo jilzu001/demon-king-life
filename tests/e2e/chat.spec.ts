@@ -26,7 +26,7 @@ test('정사각 초상화·4칸 상태·연대기 배경/NPC 전환과 작은 �
   await expect(page.locator('.stats > div')).toHaveCount(4);
   expect(await page.locator('.stats small').allTextContents()).toEqual(['나이', '전투력', '마력', '금화']);
   expect(await page.locator('.stats strong').allTextContents()).toEqual(['20세', '2', '0', '0']);
-  await expect(page.locator('.player-portrait img')).toHaveJSProperty('naturalWidth', 128);
+  await expect(page.locator('.player-portrait img')).toHaveJSProperty('naturalWidth', 256);
   await expect(page.locator('#npc-image')).toHaveAttribute('src', /background-v1\.webp/);
   for (const selector of ['.player-portrait', '.npc-portrait']) {
     const box = (await page.locator(selector).boundingBox())!; expect(Math.abs(box.width - box.height)).toBeLessThan(1);
@@ -37,7 +37,11 @@ test('정사각 초상화·4칸 상태·연대기 배경/NPC 전환과 작은 �
   await expect(page.locator('.portrait figcaption')).toHaveCount(0);
   const report = JSON.parse(readFileSync('docs/portrait-assets-v2.json', 'utf8'));
   const bytes = report.assets.reduce((sum: number, asset: { file: string }) => sum + statSync(asset.file).size, statSync('public/art/background-v1.webp').size);
-  expect(bytes).toBeLessThan(400000);
+  // 회화풍 WebP120개 + 배경: 기존 벡터128px 규격 대신 실제 압축 예산을 검사한다.
+  expect(report.assets).toHaveLength(120);
+  for (const asset of report.assets as { file: string }[]) expect(statSync(asset.file).size).toBeLessThan(30_000);
+  expect(statSync('public/art/background-v1.webp').size).toBeLessThan(200_000);
+  expect(bytes).toBeLessThan(2_000_000);
 });
 
 test('선택 팝업 위에 최근 기록이 보이며 잠시 내리고 다시 열어도 원장이 바뀌지 않는다', async ({ page }) => {

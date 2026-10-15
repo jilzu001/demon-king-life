@@ -1,9 +1,13 @@
 import manifest from '../../spec/content-v3.7-visual-audit/assets/assets.json';
 import speakers from './compact-speakers.json';
+import { playerAgeArtwork } from '../content/art-v46';
 
 // 현재 공개 판의 인물과 실제 대조한 기준 초상화만 연결한다.
 const verified: Record<string, string> = { player: 'protagonist', mina: 'mina', erisia: 'elysia', king: 'king' };
-export function canonicalPortrait(base: string, actor: string): string | undefined {
+export function canonicalPortrait(base: string, actor: string, age?: number): string | undefined {
+  if (actor === 'player' && age !== undefined) {
+    const aged = playerAgeArtwork(age); if (aged) return `${base}${aged.path}`;
+  }
   const id = Object.hasOwn(verified, actor) ? verified[actor] : undefined;
   const asset = manifest.assets.find(a => a.id === id);
   return asset ? `${base}${asset.path}` : undefined;

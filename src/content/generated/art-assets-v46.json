@@ -1,0 +1,1313 @@
+{
+  "assets": [
+    {
+      "id": "canonical-mina",
+      "path": "assets/illustrations/characters/mina.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 47736
+    },
+    {
+      "id": "canonical-protagonist",
+      "path": "assets/illustrations/characters/protagonist.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 35910
+    },
+    {
+      "id": "canonical-elysia",
+      "path": "assets/illustrations/characters/elysia.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 55568
+    },
+    {
+      "id": "canonical-king",
+      "path": "assets/illustrations/characters/king.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 52660
+    },
+    {
+      "id": "canonical-seria",
+      "path": "assets/illustrations/characters/seria.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 47120
+    },
+    {
+      "id": "approved-birth",
+      "path": "assets/illustrations/event_cg_v4_5/cg_birth_registry.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 79570
+    },
+    {
+      "id": "canonical-rina",
+      "path": "assets/illustrations/characters/rina.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 52022
+    },
+    {
+      "id": "canonical-kyle",
+      "path": "assets/illustrations/characters/kyle.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 41828
+    },
+    {
+      "id": "canonical-jero",
+      "path": "assets/illustrations/characters/jero.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 43078
+    },
+    {
+      "id": "canonical-yuri",
+      "path": "assets/illustrations/characters/yuri.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 44312
+    },
+    {
+      "id": "canonical-rao",
+      "path": "assets/illustrations/characters/rao.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 34156
+    },
+    {
+      "id": "canonical-dark_nun",
+      "path": "assets/illustrations/characters/dark_nun.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 40638
+    },
+    {
+      "id": "canonical-mother",
+      "path": "assets/illustrations/characters/mother.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 36140
+    },
+    {
+      "id": "canonical-father",
+      "path": "assets/illustrations/characters/father.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 32196
+    },
+    {
+      "id": "canonical-registrar",
+      "path": "assets/illustrations/characters/registrar.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 39738
+    },
+    {
+      "id": "canonical-auditor",
+      "path": "assets/illustrations/characters/auditor.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 33730
+    },
+    {
+      "id": "player-baby",
+      "path": "assets/illustrations/characters/protagonist_baby.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 38362
+    },
+    {
+      "id": "player-child",
+      "path": "assets/illustrations/characters/protagonist_child.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 33698
+    },
+    {
+      "id": "player-middle",
+      "path": "assets/illustrations/characters/protagonist_middle.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 38006
+    },
+    {
+      "id": "player-mature",
+      "path": "assets/illustrations/characters/protagonist_mature.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 38942
+    },
+    {
+      "id": "player-old",
+      "path": "assets/illustrations/characters/protagonist_old.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 43776
+    },
+    {
+      "id": "ending_peace",
+      "path": "assets/illustrations/ending_v4_6/ending_peace.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 84564
+    },
+    {
+      "id": "player-toddler",
+      "path": "assets/illustrations/characters/protagonist_toddler.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 33174
+    },
+    {
+      "id": "player-school",
+      "path": "assets/illustrations/characters/protagonist_school.webp",
+      "width": 512,
+      "height": 640,
+      "bytes": 34904
+    },
+    {
+      "id": "ending_reform",
+      "path": "assets/illustrations/ending_v4_6/ending_reform.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 85096
+    },
+    {
+      "id": "ending_office",
+      "path": "assets/illustrations/ending_v4_6/ending_office.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 77460
+    },
+    {
+      "id": "ending_escape",
+      "path": "assets/illustrations/ending_v4_6/ending_escape.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 51638
+    },
+    {
+      "id": "ending_fire",
+      "path": "assets/illustrations/ending_v4_6/ending_fire.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 102554
+    },
+    {
+      "id": "ending_throne",
+      "path": "assets/illustrations/ending_v4_6/ending_throne.webp",
+      "width": 960,
+      "height": 721,
+      "bytes": 86274
+    },
+    {
+      "id": "ending_ledger",
+      "path": "assets/illustrations/ending_v4_6/ending_ledger.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 67792
+    },
+    {
+      "id": "ending_love_scandal",
+      "path": "assets/illustrations/ending_v4_6/ending_love_scandal.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 71540
+    },
+    {
+      "id": "ending_double_license",
+      "path": "assets/illustrations/ending_v4_6/ending_double_license.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 82252
+    },
+    {
+      "id": "ending_retirement_47",
+      "path": "assets/illustrations/ending_v4_6/ending_retirement_47.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 71658
+    },
+    {
+      "id": "ending_paid_defeat",
+      "path": "assets/illustrations/ending_v4_6/ending_paid_defeat.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 76596
+    },
+    {
+      "id": "ending_taxpayer",
+      "path": "assets/illustrations/ending_v4_6/ending_taxpayer.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 86584
+    },
+    {
+      "id": "ending_king",
+      "path": "assets/illustrations/ending_v4_6/ending_king.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 86798
+    },
+    {
+      "id": "ending_bankrupt",
+      "path": "assets/illustrations/ending_v4_6/ending_bankrupt.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 81634
+    },
+    {
+      "id": "ending_true_demon",
+      "path": "assets/illustrations/ending_v4_6/ending_true_demon.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 55082
+    },
+    {
+      "id": "ending_mother_petition",
+      "path": "assets/illustrations/ending_v4_6/ending_mother_petition.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 80546
+    },
+    {
+      "id": "event-exam",
+      "path": "assets/illustrations/event_cg_v4_6/exam.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 97768
+    },
+    {
+      "id": "event-exam_attack",
+      "path": "assets/illustrations/event_cg_v4_6/exam_attack.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 102466
+    },
+    {
+      "id": "event-petition",
+      "path": "assets/illustrations/event_cg_v4_6/petition.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 80886
+    },
+    {
+      "id": "event-prison",
+      "path": "assets/illustrations/event_cg_v4_6/prison.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 67654
+    },
+    {
+      "id": "event-invoice",
+      "path": "assets/illustrations/event_cg_v4_6/invoice.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 82996
+    },
+    {
+      "id": "event-mina_royal_hall",
+      "path": "assets/illustrations/event_cg_v4_5/cg_mina_royal_hall.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 99700
+    },
+    {
+      "id": "event-princess",
+      "path": "assets/illustrations/event_cg_v4_6/princess.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 87526
+    },
+    {
+      "id": "ending_mina_renounced",
+      "path": "assets/illustrations/ending_v4_6/ending_mina_renounced.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 85582
+    },
+    {
+      "id": "ending_mina_wedding",
+      "path": "assets/illustrations/ending_v4_6/ending_mina_wedding.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 101702
+    },
+    {
+      "id": "ending_common_enemy",
+      "path": "assets/illustrations/ending_v4_6/ending_common_enemy.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 84180
+    },
+    {
+      "id": "ending_confession_unanswered",
+      "path": "assets/illustrations/ending_v4_6/ending_confession_unanswered.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 87668
+    },
+    {
+      "id": "mina-old-neutral",
+      "path": "art/portraits/mina-old-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 14136
+    },
+    {
+      "id": "event-child",
+      "path": "assets/illustrations/event_cg_v4_6/child.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 118368
+    },
+    {
+      "id": "event-exam_confession",
+      "path": "assets/illustrations/event_cg_v4_6/exam_confession.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 87820
+    },
+    {
+      "id": "event-audit",
+      "path": "assets/illustrations/event_cg_v4_6/audit.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 83032
+    },
+    {
+      "id": "event-hearing",
+      "path": "assets/illustrations/event_cg_v4_5/cg_public_hearing.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 66738
+    },
+    {
+      "id": "event-settlement",
+      "path": "assets/illustrations/event_cg_v4_6/settlement.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 85140
+    },
+    {
+      "id": "player-early-joy",
+      "path": "art/portraits/player-early-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12358
+    },
+    {
+      "id": "player-early-sad",
+      "path": "art/portraits/player-early-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12182
+    },
+    {
+      "id": "player-early-angry",
+      "path": "art/portraits/player-early-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12642
+    },
+    {
+      "id": "player-early-tired",
+      "path": "art/portraits/player-early-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 11888
+    },
+    {
+      "id": "player-early-confused",
+      "path": "art/portraits/player-early-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12372
+    },
+    {
+      "id": "player-early-neutral",
+      "path": "art/portraits/player-early-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12764
+    },
+    {
+      "id": "player-middle-neutral",
+      "path": "art/portraits/player-middle-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12744
+    },
+    {
+      "id": "mina-middle-neutral",
+      "path": "art/portraits/mina-middle-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15548
+    },
+    {
+      "id": "background-forest",
+      "path": "assets/illustrations/backgrounds/forest.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 168302
+    },
+    {
+      "id": "background-harbor",
+      "path": "assets/illustrations/backgrounds/harbor.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 124534
+    },
+    {
+      "id": "background-market",
+      "path": "assets/illustrations/backgrounds/market.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 130174
+    },
+    {
+      "id": "background-palace",
+      "path": "assets/illustrations/backgrounds/palace.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 108070
+    },
+    {
+      "id": "background-prison",
+      "path": "assets/illustrations/backgrounds/prison.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 86378
+    },
+    {
+      "id": "background-tavern",
+      "path": "assets/illustrations/backgrounds/tavern.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 106962
+    },
+    {
+      "id": "background-throne_room",
+      "path": "assets/illustrations/backgrounds/throne_room.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 106950
+    },
+    {
+      "id": "background-village",
+      "path": "assets/illustrations/backgrounds/village.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 140298
+    },
+    {
+      "id": "background-main",
+      "path": "art/background-v1.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 193116
+    },
+    {
+      "id": "player-mature-neutral",
+      "path": "art/portraits/player-mature-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12192
+    },
+    {
+      "id": "player-old-neutral",
+      "path": "art/portraits/player-old-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 13136
+    },
+    {
+      "id": "mina-early-neutral",
+      "path": "art/portraits/mina-early-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15840
+    },
+    {
+      "id": "mina-mature-neutral",
+      "path": "art/portraits/mina-mature-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15664
+    },
+    {
+      "id": "erisia-early-neutral",
+      "path": "art/portraits/erisia-early-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16652
+    },
+    {
+      "id": "erisia-middle-neutral",
+      "path": "art/portraits/erisia-middle-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 17334
+    },
+    {
+      "id": "erisia-mature-neutral",
+      "path": "art/portraits/erisia-mature-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 17196
+    },
+    {
+      "id": "erisia-old-neutral",
+      "path": "art/portraits/erisia-old-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 17080
+    },
+    {
+      "id": "king-early-neutral",
+      "path": "art/portraits/king-early-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15524
+    },
+    {
+      "id": "king-middle-neutral",
+      "path": "art/portraits/king-middle-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 14624
+    },
+    {
+      "id": "king-mature-neutral",
+      "path": "art/portraits/king-mature-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15446
+    },
+    {
+      "id": "king-old-neutral",
+      "path": "art/portraits/king-old-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16444
+    },
+    {
+      "id": "auditor-early-neutral",
+      "path": "art/portraits/auditor-early-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12650
+    },
+    {
+      "id": "auditor-middle-neutral",
+      "path": "art/portraits/auditor-middle-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 11172
+    },
+    {
+      "id": "auditor-mature-neutral",
+      "path": "art/portraits/auditor-mature-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12326
+    },
+    {
+      "id": "auditor-old-neutral",
+      "path": "art/portraits/auditor-old-neutral-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 10436
+    },
+    {
+      "id": "player-middle-joy",
+      "path": "art/portraits/player-middle-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 11812
+    },
+    {
+      "id": "player-middle-sad",
+      "path": "art/portraits/player-middle-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 11884
+    },
+    {
+      "id": "player-middle-angry",
+      "path": "art/portraits/player-middle-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 11760
+    },
+    {
+      "id": "player-middle-tired",
+      "path": "art/portraits/player-middle-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12516
+    },
+    {
+      "id": "player-middle-confused",
+      "path": "art/portraits/player-middle-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12138
+    },
+    {
+      "id": "player-mature-joy",
+      "path": "art/portraits/player-mature-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12490
+    },
+    {
+      "id": "player-mature-sad",
+      "path": "art/portraits/player-mature-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 11926
+    },
+    {
+      "id": "player-mature-angry",
+      "path": "art/portraits/player-mature-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 13004
+    },
+    {
+      "id": "player-mature-tired",
+      "path": "art/portraits/player-mature-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12382
+    },
+    {
+      "id": "player-mature-confused",
+      "path": "art/portraits/player-mature-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 11940
+    },
+    {
+      "id": "player-old-joy",
+      "path": "art/portraits/player-old-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 13308
+    },
+    {
+      "id": "player-old-sad",
+      "path": "art/portraits/player-old-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12668
+    },
+    {
+      "id": "player-old-angry",
+      "path": "art/portraits/player-old-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 13326
+    },
+    {
+      "id": "player-old-tired",
+      "path": "art/portraits/player-old-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12354
+    },
+    {
+      "id": "player-old-confused",
+      "path": "art/portraits/player-old-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 13456
+    },
+    {
+      "id": "mina-early-joy",
+      "path": "art/portraits/mina-early-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16134
+    },
+    {
+      "id": "mina-early-sad",
+      "path": "art/portraits/mina-early-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15238
+    },
+    {
+      "id": "mina-early-angry",
+      "path": "art/portraits/mina-early-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16244
+    },
+    {
+      "id": "mina-early-tired",
+      "path": "art/portraits/mina-early-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16298
+    },
+    {
+      "id": "mina-early-confused",
+      "path": "art/portraits/mina-early-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15228
+    },
+    {
+      "id": "mina-middle-joy",
+      "path": "art/portraits/mina-middle-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16008
+    },
+    {
+      "id": "mina-middle-sad",
+      "path": "art/portraits/mina-middle-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15140
+    },
+    {
+      "id": "mina-middle-angry",
+      "path": "art/portraits/mina-middle-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15832
+    },
+    {
+      "id": "mina-middle-tired",
+      "path": "art/portraits/mina-middle-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16142
+    },
+    {
+      "id": "mina-middle-confused",
+      "path": "art/portraits/mina-middle-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15860
+    },
+    {
+      "id": "mina-mature-joy",
+      "path": "art/portraits/mina-mature-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16098
+    },
+    {
+      "id": "mina-mature-sad",
+      "path": "art/portraits/mina-mature-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15220
+    },
+    {
+      "id": "mina-mature-angry",
+      "path": "art/portraits/mina-mature-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16828
+    },
+    {
+      "id": "mina-mature-tired",
+      "path": "art/portraits/mina-mature-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15854
+    },
+    {
+      "id": "mina-mature-confused",
+      "path": "art/portraits/mina-mature-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15484
+    },
+    {
+      "id": "mina-old-joy",
+      "path": "art/portraits/mina-old-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 14834
+    },
+    {
+      "id": "mina-old-sad",
+      "path": "art/portraits/mina-old-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15026
+    },
+    {
+      "id": "mina-old-angry",
+      "path": "art/portraits/mina-old-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 14274
+    },
+    {
+      "id": "mina-old-tired",
+      "path": "art/portraits/mina-old-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15192
+    },
+    {
+      "id": "mina-old-confused",
+      "path": "art/portraits/mina-old-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 14312
+    },
+    {
+      "id": "erisia-early-joy",
+      "path": "art/portraits/erisia-early-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16590
+    },
+    {
+      "id": "erisia-early-sad",
+      "path": "art/portraits/erisia-early-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16354
+    },
+    {
+      "id": "erisia-early-angry",
+      "path": "art/portraits/erisia-early-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16438
+    },
+    {
+      "id": "erisia-early-tired",
+      "path": "art/portraits/erisia-early-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 14876
+    },
+    {
+      "id": "erisia-early-confused",
+      "path": "art/portraits/erisia-early-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16836
+    },
+    {
+      "id": "erisia-middle-joy",
+      "path": "art/portraits/erisia-middle-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 17626
+    },
+    {
+      "id": "erisia-middle-sad",
+      "path": "art/portraits/erisia-middle-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 17614
+    },
+    {
+      "id": "erisia-middle-angry",
+      "path": "art/portraits/erisia-middle-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 17338
+    },
+    {
+      "id": "erisia-middle-tired",
+      "path": "art/portraits/erisia-middle-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16970
+    },
+    {
+      "id": "erisia-middle-confused",
+      "path": "art/portraits/erisia-middle-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 17184
+    },
+    {
+      "id": "erisia-mature-joy",
+      "path": "art/portraits/erisia-mature-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 17474
+    },
+    {
+      "id": "erisia-mature-sad",
+      "path": "art/portraits/erisia-mature-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16490
+    },
+    {
+      "id": "erisia-mature-angry",
+      "path": "art/portraits/erisia-mature-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16770
+    },
+    {
+      "id": "erisia-mature-tired",
+      "path": "art/portraits/erisia-mature-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 17302
+    },
+    {
+      "id": "erisia-mature-confused",
+      "path": "art/portraits/erisia-mature-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16564
+    },
+    {
+      "id": "erisia-old-joy",
+      "path": "art/portraits/erisia-old-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 17132
+    },
+    {
+      "id": "erisia-old-sad",
+      "path": "art/portraits/erisia-old-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15714
+    },
+    {
+      "id": "erisia-old-angry",
+      "path": "art/portraits/erisia-old-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 17606
+    },
+    {
+      "id": "erisia-old-tired",
+      "path": "art/portraits/erisia-old-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16116
+    },
+    {
+      "id": "erisia-old-confused",
+      "path": "art/portraits/erisia-old-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 16872
+    },
+    {
+      "id": "king-early-joy",
+      "path": "art/portraits/king-early-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15396
+    },
+    {
+      "id": "king-early-sad",
+      "path": "art/portraits/king-early-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15150
+    },
+    {
+      "id": "king-early-angry",
+      "path": "art/portraits/king-early-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15236
+    },
+    {
+      "id": "king-early-tired",
+      "path": "art/portraits/king-early-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15604
+    },
+    {
+      "id": "king-early-confused",
+      "path": "art/portraits/king-early-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15104
+    },
+    {
+      "id": "king-middle-joy",
+      "path": "art/portraits/king-middle-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 14408
+    },
+    {
+      "id": "king-middle-sad",
+      "path": "art/portraits/king-middle-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 14962
+    },
+    {
+      "id": "king-middle-angry",
+      "path": "art/portraits/king-middle-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 14538
+    },
+    {
+      "id": "king-middle-tired",
+      "path": "art/portraits/king-middle-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 14408
+    },
+    {
+      "id": "king-middle-confused",
+      "path": "art/portraits/king-middle-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 13806
+    },
+    {
+      "id": "king-mature-joy",
+      "path": "art/portraits/king-mature-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15268
+    },
+    {
+      "id": "king-mature-sad",
+      "path": "art/portraits/king-mature-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15326
+    },
+    {
+      "id": "king-mature-angry",
+      "path": "art/portraits/king-mature-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15600
+    },
+    {
+      "id": "king-mature-tired",
+      "path": "art/portraits/king-mature-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 14944
+    },
+    {
+      "id": "king-mature-confused",
+      "path": "art/portraits/king-mature-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 14592
+    },
+    {
+      "id": "king-old-joy",
+      "path": "art/portraits/king-old-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15286
+    },
+    {
+      "id": "king-old-sad",
+      "path": "art/portraits/king-old-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15748
+    },
+    {
+      "id": "king-old-angry",
+      "path": "art/portraits/king-old-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15570
+    },
+    {
+      "id": "king-old-tired",
+      "path": "art/portraits/king-old-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 17242
+    },
+    {
+      "id": "king-old-confused",
+      "path": "art/portraits/king-old-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 15784
+    },
+    {
+      "id": "auditor-early-joy",
+      "path": "art/portraits/auditor-early-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 13568
+    },
+    {
+      "id": "auditor-early-sad",
+      "path": "art/portraits/auditor-early-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12524
+    },
+    {
+      "id": "auditor-early-angry",
+      "path": "art/portraits/auditor-early-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12208
+    },
+    {
+      "id": "auditor-early-tired",
+      "path": "art/portraits/auditor-early-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12680
+    },
+    {
+      "id": "auditor-early-confused",
+      "path": "art/portraits/auditor-early-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12972
+    },
+    {
+      "id": "auditor-middle-joy",
+      "path": "art/portraits/auditor-middle-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12184
+    },
+    {
+      "id": "auditor-middle-sad",
+      "path": "art/portraits/auditor-middle-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12026
+    },
+    {
+      "id": "auditor-middle-angry",
+      "path": "art/portraits/auditor-middle-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12034
+    },
+    {
+      "id": "auditor-middle-tired",
+      "path": "art/portraits/auditor-middle-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 11506
+    },
+    {
+      "id": "auditor-middle-confused",
+      "path": "art/portraits/auditor-middle-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 11902
+    },
+    {
+      "id": "auditor-mature-joy",
+      "path": "art/portraits/auditor-mature-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12910
+    },
+    {
+      "id": "auditor-mature-sad",
+      "path": "art/portraits/auditor-mature-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 11674
+    },
+    {
+      "id": "auditor-mature-angry",
+      "path": "art/portraits/auditor-mature-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12808
+    },
+    {
+      "id": "auditor-mature-tired",
+      "path": "art/portraits/auditor-mature-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 13860
+    },
+    {
+      "id": "auditor-mature-confused",
+      "path": "art/portraits/auditor-mature-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12302
+    },
+    {
+      "id": "auditor-old-joy",
+      "path": "art/portraits/auditor-old-joy-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12168
+    },
+    {
+      "id": "auditor-old-sad",
+      "path": "art/portraits/auditor-old-sad-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 11520
+    },
+    {
+      "id": "auditor-old-angry",
+      "path": "art/portraits/auditor-old-angry-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 11384
+    },
+    {
+      "id": "auditor-old-tired",
+      "path": "art/portraits/auditor-old-tired-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 12186
+    },
+    {
+      "id": "auditor-old-confused",
+      "path": "art/portraits/auditor-old-confused-v2.webp",
+      "width": 256,
+      "height": 320,
+      "bytes": 11338
+    },
+    {
+      "id": "event-confession",
+      "path": "assets/illustrations/event_cg_v4_6/confession.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 102786
+    },
+    {
+      "id": "event-farewell",
+      "path": "assets/illustrations/event_cg_v4_6/farewell.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 103460
+    },
+    {
+      "id": "event-confession_chaos",
+      "path": "assets/illustrations/event_cg_v4_6/confession_chaos.webp",
+      "width": 960,
+      "height": 720,
+      "bytes": 86786
+    }
+  ]
+}

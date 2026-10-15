@@ -47,7 +47,7 @@ test('v4.5 연간 기록은1~11세 한줄씩 자동/클릭 표시하고 선택/�
   await page.clock.runFor(Math.max(2500, Array.from(first!).length * 170));
   await expect(age).toHaveText('2세');
   for (let year = 3; year <= 12; year++) { await page.locator('.chat-feed').click(); await expect(age).toHaveText(`${year}세`); }
-  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('src', /characters\/mina\.webp$/);
+  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('src', /event_cg_v4_6\/child\.webp$/);
   expect(await page.evaluate(key => localStorage.getItem(key), key)).toBe(saved);
   await ready(page); await pick(page, 'trust_mina'); await ready(page);
   await expect(page.locator('[data-choice]')).toHaveCount(4); await expect(page.locator('[data-choice="confess"]')).toContainText('미나에게 사랑한다고 고백한다.');
@@ -66,8 +66,8 @@ test('v4.5 검수CG는출생·공개재판에맞게연결되고회상문장은�
   const echo = page.locator('.story-paragraph').filter({ hasText: '재판정 문 앞에서 어머니가 첫해에 냈던 이의신청서를 펼쳤다.' }); await expect(echo).toHaveCount(1);
   await expect(page.locator('.story-paragraph').filter({ hasText: '공개 감사를 요구할 때 당신이 가장 먼저 쓴 단어는' })).toHaveCount(0);
   const image = page.locator('#current-event .story-illustration img');
-  await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth === 700 && img.naturalHeight === 930)).toBe(true);
-  expect(await image.evaluate((img: HTMLImageElement) => { const b = img.getBoundingClientRect(); return b.width <= img.naturalWidth && b.height <= img.naturalHeight && Math.abs(b.width / b.height - 700 / 930) < .01; })).toBe(true);
+  await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth === 960 && img.naturalHeight === 720)).toBe(true);
+  expect(await image.evaluate((img: HTMLImageElement) => { const b = img.getBoundingClientRect(); return b.width <= img.naturalWidth && b.height <= img.naturalHeight && Math.abs(b.width / b.height - 960 / 720) < .01; })).toBe(true);
 });
 for (const choice of ['bring_mina', 'accept_invite']) test(`v4.5 왕궁CG/${choice}: 실제동행결과에만한번표시`, async ({ page }) => {
   await start(page); for (const id of ['family_accept', 'trust_mina', 'invoice']) await pick(page, id);
@@ -75,7 +75,7 @@ for (const choice of ['bring_mina', 'accept_invite']) test(`v4.5 왕궁CG/${choi
   await expect(image).toHaveCount(choice === 'bring_mina' ? 1 : 0);
   if (choice === 'bring_mina') {
     await expect(image).toHaveAttribute('src', /cg_mina_royal_hall\.webp$/);
-    await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth === 700 && img.naturalHeight === 525)).toBe(true);
+    await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth === 960 && img.naturalHeight === 720)).toBe(true);
     await page.reload(); await expect(page.locator('#choice-aftermath .story-illustration img')).toHaveCount(1);
   }
   await page.clock.runFor(400); await page.locator('#reading-skip').click(); await ready(page);

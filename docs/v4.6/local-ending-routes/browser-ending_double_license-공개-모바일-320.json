@@ -1,0 +1,35 @@
+{
+  "endingId": "ending_double_license",
+  "choices": [
+    "family_accept",
+    "mina_rival",
+    "refuse",
+    "keep_records",
+    "explore_route_double_license",
+    "commit_route_double_license",
+    "route_double_license_claim"
+  ],
+  "age": 36,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "petition",
+    "princess",
+    "setup_route_double_license",
+    "bridge_route_double_license"
+  ],
+  "image": "/demon-king-life/assets/illustrations/ending_v4_6/ending_double_license.webp",
+  "statuses": [
+    200,
+    304
+  ],
+  "bounds": {
+    "width": 244,
+    "height": 183,
+    "naturalWidth": 960,
+    "naturalHeight": 720
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

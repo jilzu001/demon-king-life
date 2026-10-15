@@ -1,0 +1,69 @@
+{
+  "approved-birth": {
+    "status": "재제작·시각 검수·적용 완료",
+    "reason": "부모·신생아·서기관4명, 미나/성인 주인공을 부모로 사용하지 않음"
+  },
+  "event-child": {
+    "attempt1": "보류",
+    "reason": "12세 미나가 성인 체형/갑옷으로 표현됨. 아동 일상복으로 재제작",
+    "status": "재제작·시각 검수·적용 완료"
+  },
+  "event-exam_confession": {
+    "attempt1": "보류",
+    "reason": "손을 잡는 상호 연애 표현은 실제 고백 시도의 결과를 앞질러 보임. 거리·불확실한 반응으로 재제작",
+    "status": "재제작·시각 검수·적용 완료"
+  },
+  "event-audit": {
+    "attempt1": "보류",
+    "reason": "감사관이 다른 외형의 남성으로 생성됨. 실제 여성 감사관 기준 초상화 참조로 재제작",
+    "status": "재제작·시각 검수·적용 완료"
+  },
+  "event-hearing": {
+    "attempt1": "보류",
+    "reason": "47세 주인공이 너무 젊음. 검수한 중년 초상화 참조로 재제작",
+    "status": "재제작·시각 검수·적용 완료",
+    "additionalReview": "실제 재판에 국왕이 등장하지 않아 왕관·왕좌·국왕 제거 후 재검수"
+  },
+  "event-settlement": {
+    "attempt1": "보류",
+    "reason": "47세 주인공이 너무 젊음. 중년 외형 및 제안 수락 전 상황으로 재제작",
+    "status": "재제작·시각 검수·적용 완료"
+  },
+  "event-truth_evidence": {
+    "status": "미연결",
+    "reason": "현재44개 실행 사건에 해당 ID 없음. 원화의 나이 표현도 미검수이며 새 사건을 임의 생성하지 않음"
+  },
+  "event-farewell": {
+    "status": "21세 confession_afterm 전용 원화 재제작·연결 완료",
+    "reason": "20세 계획 그림은 사용하지 않고 실제 사건의21세/사과 후 상황을 확인해 새로 제작"
+  },
+  "ending_mina_renounced": {
+    "attempt1": "보류",
+    "reason": "후반 미나의 노화 표현 부족. 검수한 은발·푸른눈 노년 미나를 참조해 재제작",
+    "status": "재제작·시각 검수·적용 완료",
+    "additionalReview": "실제55세 결말에 맞춰 나이 재교정 후 재검수"
+  },
+  "ending_mina_wedding": {
+    "attempt1": "보류",
+    "reason": "후반 미나의 노화 표현 부족. 검수한 은발·푸른눈 노년 미나를 참조해 재제작",
+    "status": "재제작·시각 검수·적용 완료"
+  },
+  "ending_common_enemy": {
+    "attempt1": "보류",
+    "reason": "후반 미나의 노화 표현 부족. 검수한 은발·푸른눈 노년 미나를 참조해 재제작",
+    "status": "재제작·시각 검수·적용 완료"
+  },
+  "ending_confession_unanswered": {
+    "attempt1": "보류",
+    "reason": "후반 미나의 노화 표현 부족. 검수한 은발·푸른눈 노년 미나를 참조해 재제작",
+    "status": "재제작·시각 검수·적용 완료"
+  },
+  "event-confession_chaos": {
+    "status": "재제작·검수·적용 완료",
+    "reason": "시험관을 다른 고백 장면과 같은 중년 갈색머리·갈색 수염·안경 없는 인물로 수정. 고백의 성공을 확정하는 상호 연애 표현 없음"
+  },
+  "age-portraits": {
+    "status": "120개 검수·적용 완료",
+    "reason": "초기 중년6개가 지나치게 어려 보여 사용 중단. 단계별 중립 원화를 다시 만든 뒤 각 나이의 참조로 감정별 개별 생성"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "endingId": "ending_true_demon",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "attack",
+    "forgive",
+    "ally",
+    "public_audit",
+    "explore_route_true_demon",
+    "commit_route_true_demon",
+    "route_true_demon_evacuate"
+  ],
+  "age": 53,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "prison",
+    "princess",
+    "audit",
+    "hearing",
+    "bridge_route_true_demon"
+  ],
+  "image": "/phase1-test/assets/illustrations/ending_v4_6/ending_true_demon.webp",
+  "statuses": [
+    200,
+    304
+  ],
+  "bounds": {
+    "width": 244,
+    "height": 183,
+    "naturalWidth": 960,
+    "naturalHeight": 720
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

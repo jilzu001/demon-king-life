@@ -1,0 +1,409 @@
+[
+  {
+    "id": "canonical-mina",
+    "source": "C:/Users/jilzu/.codex/generated_images/01a13743-657c-7b91-bc52-88a9d9f5d7f2/exec-53bc29ec-7b0e-44be-9ad8-c22fd9d14a7d.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-protagonist",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-4cb3c90c-c8de-4799-898b-ecb5ddc74fd7.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-elysia",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-0efd5f4c-4da0-43e3-8b5d-941820c53894.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-king",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-688de6a7-1d7b-44cc-bd22-2e29723acbec.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-seria",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-6865c49d-aa91-48cb-b95d-b7821a3306fc.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-rina",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-3a40897f-c51a-45cf-8fb1-3b9d5df6f2b3.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-kyle",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-0ed9e3f9-c44a-45a4-bd01-eb9d6023024a.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-jero",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-24e142fc-1abb-4bf3-baa5-463e426f3732.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-yuri",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-7a72d7f8-e154-4103-9601-def89483dfcf.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-rao",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-40cb34dc-bb21-428a-8253-c4093f78d70c.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-dark_nun",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-a2491105-d7d6-4318-b47f-16395922ed0a.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-mother",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-20afdb69-6de2-4670-b3cf-e145c25db9ad.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-father",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-87901061-8ad0-43a8-8ff7-5dc17751ec9f.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-registrar",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-992d5005-f589-4ed7-8b0c-09a86bb6cc85.png",
+    "status": "generated"
+  },
+  {
+    "id": "canonical-auditor",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-3e07cfc5-602a-4f27-8df0-a5de41bf4fa3.png",
+    "status": "generated"
+  },
+  {
+    "id": "player-baby",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-fe5da38a-2c60-404d-9764-b5146c3a524a.png",
+    "status": "generated"
+  },
+  {
+    "id": "player-child",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-d460dcf0-3997-48e2-ac98-b36d84366dfe.png",
+    "status": "review-rejected",
+    "reason": "나이 차이가 불명확하여 더 명시적인 연령 지시로 재제작"
+  },
+  {
+    "id": "player-middle",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-0e50abb1-8cc5-4b9a-9824-945cadf21760.png",
+    "status": "review-rejected",
+    "reason": "나이 차이가 불명확하여 더 명시적인 연령 지시로 재제작"
+  },
+  {
+    "id": "player-mature",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-01efb8f6-8965-4730-93ea-e1c1b3794644.png",
+    "status": "review-rejected",
+    "reason": "나이 차이가 불명확하여 더 명시적인 연령 지시로 재제작"
+  },
+  {
+    "id": "player-old",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-4652eab8-ea72-411a-a088-127a5bfec1ff.png",
+    "status": "review-rejected",
+    "reason": "나이 차이가 불명확하여 더 명시적인 연령 지시로 재제작"
+  },
+  {
+    "id": "player-child",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-eee110d2-0f9e-4f75-9b2c-e3047125425d.png",
+    "status": "review-rejected",
+    "attempt": 2,
+    "reason": "복수 인물/복수 컷 또는 나이 표현 미흡. 다른 나이를 함께 언급한 지시 제거 후 단일 인물 편집으로 전환."
+  },
+  {
+    "id": "player-middle",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-aca3b1d8-d823-4d0c-b3b0-e65143853d85.png",
+    "status": "review-rejected",
+    "attempt": 2,
+    "reason": "복수 인물/복수 컷 또는 나이 표현 미흡. 다른 나이를 함께 언급한 지시 제거 후 단일 인물 편집으로 전환."
+  },
+  {
+    "id": "player-mature",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-411b8c5d-ccfc-48ff-ae7b-c5ebd9e06bfe.png",
+    "status": "generated",
+    "attempt": 2
+  },
+  {
+    "id": "player-old",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-6cbfe8be-3809-4f9c-b799-c8b295efbe7d.png",
+    "status": "review-rejected",
+    "attempt": 2,
+    "reason": "복수 인물/복수 컷 또는 나이 표현 미흡. 다른 나이를 함께 언급한 지시 제거 후 단일 인물 편집으로 전환."
+  },
+  {
+    "id": "player-child",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-cbdec2cd-5f61-4be0-b219-61857f969126.png",
+    "status": "generated",
+    "attempt": 3
+  },
+  {
+    "id": "player-middle",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-af0e4cfb-7287-440a-a1e2-0da8eb14b708.png",
+    "status": "generated",
+    "attempt": 3
+  },
+  {
+    "id": "player-old",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-57443b49-98fe-473c-8380-1593c1a8ef10.png",
+    "status": "generated",
+    "attempt": 3
+  },
+  {
+    "id": "ending_peace",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-51893ba5-8499-4829-a353-fce37eb84a74.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_reform",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-d5fd743a-41e4-4b59-9323-9e062895bb7f.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_office",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-46281c04-7512-4614-a350-75e8df1e547a.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_escape",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-6397d4ed-c0b0-4a97-bf3d-f077499b88ba.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_fire",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-11c4343f-81aa-4b47-b527-bc74fadd9a2d.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_throne",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-428e0d62-2ce6-43d7-8b13-a4b56ceeb859.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_ledger",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-8775ee54-2373-4faa-bc23-526a7770f950.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_love_scandal",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-b75ae5aa-7779-4d74-8299-5d2fac769190.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_mina_renounced",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-284022f1-5424-4a2c-b9ca-712d0f57440d.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_mina_wedding",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-37b7d6d1-cfdc-45ab-9e0f-6827229e4e25.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_confession_unanswered",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-03016d2e-8692-47ac-bf1b-3d7e10ab40bd.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_common_enemy",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-f56a7c2f-c0bc-4b13-80e7-7ad86df62c8d.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_double_license",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-353dd3ef-86f0-449b-a8a7-8703fb6d7acd.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_retirement_47",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-a8afff91-f2bc-4a60-9410-c98e3e3c8891.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_paid_defeat",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-1c998545-ad8b-4295-9c9a-bf3be26fc64f.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_taxpayer",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-f9750b18-55b3-4962-a8aa-ab96f3252330.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_king",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-79190e5b-7a5e-4ca5-a07f-3942b4d4c726.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_bankrupt",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-e85a0f6b-dd25-4bf3-a611-a7a192ac3028.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_true_demon",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-025cab09-95af-4ef9-be39-120b3dc16250.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "ending_mother_petition",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-c24a527b-5ffc-4863-b272-27fe9993b750.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-child",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-3eadaccb-51cd-413b-8be8-f627e579da79.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-exam",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-95d9e662-b87d-44b3-8d95-58ae5b721c09.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-exam_confession",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-88da8274-4d7f-4c6f-9d34-27eac33dfdc8.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-exam_attack",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-ea3b7426-8389-495c-9640-b092e79961f1.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-petition",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-50437c6b-cc1a-4807-8838-21db4e21b45a.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-prison",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-8fc291a9-5902-41c6-afbc-ec13b470f6d6.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-invoice",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-a972fbc3-5a58-461a-9b94-840129c3e5aa.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-mina_royal_hall",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-29602f9f-3a2b-4190-ad63-3126ffb25faf.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-princess",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-d0a305d3-722d-4e85-b223-3ef3efa33af1.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-audit",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-84e28beb-ad1c-4b71-9828-1d5e3b1cdf0f.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-hearing",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-0736c7a7-3851-4b27-b681-9a9218a8df06.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-settlement",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-6b5ff7fe-7036-4da7-87e9-84d491421713.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-truth_evidence",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-bd707c4c-1c8d-43c6-8e1a-d7aa2ba4c06d.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "event-farewell",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-87172c4f-9cbc-4c1e-a531-073d01bbc30f.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "background-harbor",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-9e545fd3-f998-4bcd-a5d9-39706408ccdd.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "background-forest",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-5f3c3212-9436-4dde-a8a6-b26f5063616e.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "background-market",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-1c32208a-7c2d-4951-a40d-30f1d7fa03d1.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "background-palace",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-21c9f60f-4234-439a-b76a-3f9ecf76b062.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "background-prison",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-6d05e47e-6aca-403b-9138-7d5e434cfff4.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "background-tavern",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-296ecde5-4783-4ac2-9a68-810088a58f06.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "background-throne_room",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-3ad21e14-eec7-4834-8dda-366e424866b0.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "background-village",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-93341001-ddff-4842-9eaf-fa1d9f2dcb70.png",
+    "status": "generated",
+    "attempt": 1
+  },
+  {
+    "id": "background-main",
+    "source": "C:\\Users\\jilzu\\.codex\\generated_images\\01a13743-657c-7b91-bc52-88a9d9f5d7f2\\exec-6b1e9f0e-22d0-49ea-8abe-84e6bd96b915.png",
+    "status": "generated",
+    "attempt": 1
+  }
+]

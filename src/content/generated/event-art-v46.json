@@ -1,0 +1,125 @@
+{
+  "rules": [
+    {
+      "id": "event-exam",
+      "path": "assets/illustrations/event_cg_v4_6/exam.webp",
+      "width": 960,
+      "height": 720,
+      "nodeId": "exam",
+      "age": 20,
+      "label": "용사 시험장에서 마주한 미나와 주인공"
+    },
+    {
+      "id": "event-exam_attack",
+      "path": "assets/illustrations/event_cg_v4_6/exam_attack.webp",
+      "width": 960,
+      "height": 720,
+      "nodeId": "exam",
+      "age": 20,
+      "label": "미나에게 막힌 공격 시도",
+      "choiceId": "attack",
+      "outcomeId": "out_attack"
+    },
+    {
+      "id": "event-petition",
+      "path": "assets/illustrations/event_cg_v4_6/petition.webp",
+      "width": 960,
+      "height": 720,
+      "nodeId": "petition",
+      "age": 21,
+      "label": "탄원서를 검토하는 주인공과 담당자"
+    },
+    {
+      "id": "event-prison",
+      "path": "assets/illustrations/event_cg_v4_6/prison.webp",
+      "width": 960,
+      "height": 720,
+      "nodeId": "prison",
+      "age": 21,
+      "label": "수감 중인 주인공"
+    },
+    {
+      "id": "event-invoice",
+      "path": "assets/illustrations/event_cg_v4_6/invoice.webp",
+      "width": 960,
+      "height": 720,
+      "nodeId": "invoice",
+      "age": 21,
+      "label": "청구 서류를 내미는 주인공"
+    },
+    {
+      "id": "event-princess",
+      "path": "assets/illustrations/event_cg_v4_6/princess.webp",
+      "width": 960,
+      "height": 720,
+      "nodeId": "princess",
+      "age": 29,
+      "label": "주인공과 협상하는 에리시아 왕녀"
+    },
+    {
+      "id": "event-child",
+      "path": "assets/illustrations/event_cg_v4_6/child.webp",
+      "width": 960,
+      "height": 720,
+      "nodeId": "child",
+      "age": 12,
+      "label": "열두 살 미나와 주인공이 나무칼로 연습하는 장면"
+    },
+    {
+      "id": "event-exam_confession",
+      "path": "assets/illustrations/event_cg_v4_6/exam_confession.webp",
+      "width": 960,
+      "height": 720,
+      "nodeId": "exam",
+      "age": 20,
+      "label": "고백을 꺼낸 주인공과 답을 망설이는 미나",
+      "choiceId": "confess",
+      "outcomeId": "out_confess"
+    },
+    {
+      "id": "event-audit",
+      "path": "assets/illustrations/event_cg_v4_6/audit.webp",
+      "width": 960,
+      "height": 720,
+      "nodeId": "audit",
+      "age": 41,
+      "label": "장부를 함께 검토하는 주인공과 세렌 감사관"
+    },
+    {
+      "id": "event-settlement",
+      "path": "assets/illustrations/event_cg_v4_6/settlement.webp",
+      "width": 960,
+      "height": 720,
+      "nodeId": "settlement",
+      "age": 47,
+      "label": "아직 수락하지 않은 합의 제안"
+    },
+    {
+      "id": "event-confession",
+      "path": "assets/illustrations/event_cg_v4_6/confession.webp",
+      "width": 960,
+      "height": 720,
+      "nodeId": "confession",
+      "age": 20,
+      "label": "고백을 꺼내는 주인공과 답을 망설이는 미나"
+    },
+    {
+      "id": "event-farewell",
+      "path": "assets/illustrations/event_cg_v4_6/farewell.webp",
+      "width": 960,
+      "height": 720,
+      "nodeId": "confession_afterm",
+      "age": 21,
+      "label": "사과 뒤 각자의 길로 걷는 주인공과 미나"
+    },
+    {
+      "id": "event-confession_chaos",
+      "path": "assets/illustrations/event_cg_v4_6/confession_chaos.webp",
+      "width": 960,
+      "height": 720,
+      "nodeId": "confession_chaos",
+      "age": 20,
+      "label": "황당한 고백에 당황한 미나와 중년 시험관"
+    }
+  ]
+}

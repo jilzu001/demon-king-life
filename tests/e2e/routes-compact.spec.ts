@@ -5,7 +5,8 @@ const paths = JSON.parse(readFileSync('docs/v4.4/routes/actual-paths.json', 'utf
   endingId: string; title: string; choices: string[]; age: number; artwork: string; body: string;
 }[];
 const currentEndings = JSON.parse(readFileSync('public/stories/demon-king-compact/endings.json', 'utf8')).endings as { id: string; body: string }[];
-for (const path of paths) path.body = currentEndings.find(ending => ending.id === path.endingId)!.body;
+const currentArt = JSON.parse(readFileSync('public/assets/ending_art_manifest_v4_4.json', 'utf8')).artByEndingId;
+for (const path of paths) { path.body = currentEndings.find(ending => ending.id === path.endingId)!.body; path.artwork = currentArt[path.endingId]; }
 const runKey = 'existence-sim:v1:run:demon-king:compact';
 const metaKey = 'existence-sim:v1:meta:demon-king:compact';
 async function select(page: Page, id: string) {

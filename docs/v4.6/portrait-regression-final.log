@@ -1,0 +1,15 @@
+[WebServer] (node:137488) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:130588) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:139016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [보관된-원작-PC] › tests\e2e\chat.spec.ts:24:1 › 정사각 초상화·4칸 상태·연대기 배경/NPC 전환과 작은 이미지 용량 (2.7s)
+(node:131564) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 [보관된-원작-모바일] › tests\e2e\chat.spec.ts:24:1 › 정사각 초상화·4칸 상태·연대기 배경/NPC 전환과 작은 이미지 용량 (1.8s)
+
+  2 passed (15.6s)

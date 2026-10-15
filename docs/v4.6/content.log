@@ -1,0 +1,14 @@
+
+> demon-king-phase1@0.1.0 validate:content
+> tsx scripts/validate-content.ts && tsx scripts/validate-compact.ts && npm run validate:tree
+
+구조 검증 통과: 장면 98, 선택 340, 엔딩 34
+표시 검증 통과: 요약 98, 대화 장면 29, 대사 116, 설명 340
+최소 선택지 검사 통과: 공개 일반 사건 44개, 준비본 65개(정적 검사), 엔딩 20개는 별도 유형
+축소판 구조/표시 검증 통과: 44사건, 119선택, 20엔딩, 후속 서술/문단/독립 연대기/결말 연출
+
+> demon-king-phase1@0.1.0 validate:tree
+> node scripts/validate-tree.mjs src/content/generated/ending-tree.json && tsx scripts/verify-ending-tree.ts
+
+OK: 20 verified route exemplars; 101 graph nodes
+엔딩 트리20경로/101노드: 실제 조건·판정·중간 저장·20엔딩 재현 통과

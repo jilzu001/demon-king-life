@@ -9,9 +9,9 @@ describe('인물 연령·감정 자산 계약', () => {
     for (const person of portraitCharacters) for (const stage of portraitStages) for (const emotion of portraitEmotions) {
       const buffer = readFileSync(`public/art/portraits/${person}-${stage}-${emotion}-v2.webp`);
       expect(buffer.toString('ascii', 0, 4)).toBe('RIFF'); expect(buffer.toString('ascii', 8, 12)).toBe('WEBP');
-      expect(buffer.length).toBeLessThan(3000); bytes += buffer.length; hashes.add(createHash('sha256').update(buffer).digest('hex'));
+      expect(buffer.length).toBeLessThan(30000); bytes += buffer.length; hashes.add(createHash('sha256').update(buffer).digest('hex'));
     }
-    expect(hashes.size).toBe(120); expect(bytes).toBeLessThan(250000);
+    expect(hashes.size).toBe(120); expect(bytes).toBeLessThan(3_600_000);
     expect(readdirSync('public/art/portraits').filter(f => f.endsWith('.webp'))).toHaveLength(120);
   });
   it('미제공 대사와 이전 콘텐츠에는 새로운 감정을 만들지 않는다', () => {

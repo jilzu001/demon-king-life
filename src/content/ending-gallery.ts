@@ -1,5 +1,5 @@
 import catalog from '../../spec/content-v4.5-story-art/content/ending_gallery_v4_4.json';
-import artwork from '../../spec/content-v4.4-ending-gallery/assets/ending_art_manifest_v4_4.json';
+import artwork from './generated/ending-art-v46.json';
 import { validateSchema } from './schema';
 import { ensure, type Story } from '../engine/types';
 
@@ -10,7 +10,7 @@ ensure(new Set(catalog.endings.map(entry => entry.id)).size === 20, '엔딩 도�
 ensure(Object.keys(artwork.artByEndingId).sort().join('|') === catalog.endings.map(entry => entry.id).sort().join('|'), '엔딩 도감/이미지 ID 불일치');
 for (const entry of catalog.endings) {
   ensure(entry.title.trim() && entry.description.trim() && entry.fullText.trim(), `${entry.id}: 빈 도감 문구`);
-  ensure(entry.artPath === artwork.artByEndingId[entry.id as keyof typeof artwork.artByEndingId], `${entry.id}: 도감 이미지 매핑 불일치`);
+  ensure(artwork.artByEndingId[entry.id as keyof typeof artwork.artByEndingId], `${entry.id}: 도감 이미지 매핑 누락`);
 }
 
 export const galleryEndingIds = catalog.endings.map(entry => entry.id);

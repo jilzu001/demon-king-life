@@ -4,7 +4,9 @@ import overrides from '../../spec/content-v3.6-story-engine-art/assets/scene_ill
 import { element } from './dom';
 import { endingArtworkPath, endingGalleryEntries } from '../content/ending-gallery';
 import { renderEndingArtwork } from './ending-gallery';
-import sceneArt from '../../spec/content-v4.5-story-art/assets/scene_art_manifest_v4_5.json';
+import sceneArt from '../content/generated/scene-art-v45-current.json';
+import { installedArtwork } from '../content/art-v46';
+import eventArt from '../content/generated/event-art-v46.json';
 import type { GameState, HistoryEntry } from '../engine/types';
 import { validateSchema } from '../content/schema';
 validateSchema('sceneArt', sceneArt);
@@ -27,7 +29,13 @@ export type StoryArtwork = { id: string; path: string; width: number; height: nu
 function mappedArtwork(rule: typeof sceneArt.rules[number]): StoryArtwork {
   return { id: rule.id, path: rule.artPath, width: rule.width, height: rule.height, label: rule.alt };
 }
+type EventArt = StoryArtwork & { nodeId: string; age: number; choiceId?: string; outcomeId?: string };
+const eventRules: EventArt[] = eventArt.rules;
 export function outcomeArtwork(state: GameState, entry: HistoryEntry): StoryArtwork | undefined {
+  const actual = state.history.some(record => record.nodeId === entry.nodeId && record.choiceId === entry.choiceId && record.outcomeId === entry.outcomeId && record.age === entry.age);
+  if (!actual) return undefined;
+  const event = eventRules.find(rule => rule.nodeId === entry.nodeId && rule.age === entry.age && rule.choiceId === entry.choiceId && rule.outcomeId === entry.outcomeId);
+  if (event) return event;
   const rule = sceneArt.rules.find(rule => rule.when.nodeId === entry.nodeId && rule.when.outcomeId === entry.outcomeId);
   if (!rule || !rule.when.outcomeId || entry.choiceId !== 'bring_mina' || entry.age !== 21
     || !state.history.some(record => record.nodeId === entry.nodeId && record.choiceId === entry.choiceId && record.outcomeId === entry.outcomeId)
@@ -36,10 +44,17 @@ export function outcomeArtwork(state: GameState, entry: HistoryEntry): StoryArtw
   return mappedArtwork(rule);
 }
 export function illustrationAsset(id: string, kind: 'scene' | 'ending' = 'scene', context?: SceneContext) {
-  if (kind === 'ending') return manifest.assets.find(asset => asset.path === endingArtworkPath(id));
+  if (kind === 'ending') {
+    const path = endingArtworkPath(id);
+    const art = path && installedArtwork(path);
+    return art ? { ...art, label: endingGalleryEntries().find(entry => entry.id === id)?.title ?? id }
+      : manifest.assets.find(asset => asset.path === path);
+  }
   if (context?.state?.enteredNodeIds.includes(id)) {
     const rule = sceneArt.rules.find(rule => rule.when.nodeId === id && rule.when.age === context.age && rule.usage.includes('main-scene'));
     if (rule && (id !== 'hearing' || (context.state.flags.includes('public_audit') && context.state.history.some(entry => entry.nodeId === 'audit' && entry.choiceId === 'public_audit')))) return mappedArtwork(rule);
+    const event = eventRules.find(rule => rule.nodeId === id && rule.age === context.age && !rule.choiceId);
+    if (event) return event;
   }
   const mapping = sceneIllustrations;
   if (!policy.enabled) return undefined;
@@ -67,7 +82,8 @@ export function renderIllustration(id: string, kind: 'scene' | 'ending' = 'scene
   return asset ? renderStoryArtwork(asset, eager) : undefined;
 }
 export function renderStoryArtwork(asset: StoryArtwork, eager = false): HTMLElement | undefined {
-  if (!/^assets\/illustrations\/(characters|backgrounds|events|event_cg|event_cg_v4_5)\/[a-z0-9_]+\.webp$/.test(asset.path)) return undefined;
+  if (!/^assets\/illustrations\/(characters|backgrounds|events|event_cg|event_cg_v4_5|event_cg_v4_6)\/[a-z0-9_]+\.webp$/.test(asset.path)) return undefined;
+  const actual = installedArtwork(asset.path); if (actual) asset = { ...asset, width: actual.width, height: actual.height };
   const figure = element('figure', undefined, 'story-illustration');
   figure.dataset.assetId = asset.id;
   figure.style.setProperty('--illustration-ratio', String(asset.width / asset.height));
@@ -85,10 +101,11 @@ export function renderStoryArtwork(asset: StoryArtwork, eager = false): HTMLElem
 export function illustrateNarrative(prose: HTMLElement, nodeId: string, eager = false, context?: SceneContext) {
   const figure = renderIllustration(nodeId, 'scene', eager, context);
   if (!figure) return;
-  const paragraphs = [...prose.querySelectorAll<HTMLElement>(':scope > .story-paragraph')];
+  // 연간 한 문장에 같은 단어가 있어도, 사건의 그림을 그 해 기록에 붙이지 않는다.
+  const paragraphs = [...prose.querySelectorAll<HTMLElement>(':scope > .story-paragraph')].filter(paragraph => !paragraph.dataset.readAge);
   const anchor = sceneIllustrations[nodeId]?.after;
   const firstBody = context?.body.split(/\r?\n\s*\r?\n/)[0];
-  const opening = figure.dataset.assetId && sceneArt.rules.some(rule => rule.id === figure.dataset.assetId)
+  const opening = figure.dataset.assetId && (sceneArt.rules.some(rule => rule.id === figure.dataset.assetId) || eventRules.some(rule => rule.id === figure.dataset.assetId))
     ? paragraphs.find(p => p.textContent === firstBody)
     : anchor ? paragraphs.find(p => p.textContent?.includes(anchor)) : paragraphs.find(p => !/^\d+세 ·/.test(p.textContent ?? ''));
   // 앵커가 없는 다른 버전의 문안에는 임의로 삽입하지 않는다.

@@ -1,0 +1,12 @@
+
+> demon-king-phase1@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.4 C:/Users/jilzu/OneDrive/Codex/make_game_test/demon-king
+
+
+ Test Files  17 passed (17)
+      Tests  263 passed (263)
+   Start at  00:44:47
+   Duration  16.46s (tests 73%, import 22%, transform 4%)

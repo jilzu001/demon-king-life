@@ -1,0 +1,30 @@
+
+> demon-king-phase1@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.4 C:/Users/jilzu/OneDrive/Codex/make_game_test/demon-king
+
+ ❯ tests/story/portraits.test.ts (2 tests | 1 failed) 14ms
+   ❯ 인물 연령·감정 자산 계약 (2)
+     × 5인 × 4연령 × 5감정 100종과 기본 표정 20종이 별도 파일이며 내용도 다르다 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/story/portraits.test.ts > 인물 연령·감정 자산 계약 > 5인 × 4연령 × 5감정 100종과 기본 표정 20종이 별도 파일이며 내용도 다르다
+AssertionError: expected 37986 to be less than 3000
+ ❯ tests/story/portraits.test.ts:12:29
+     10|       const buffer = readFileSync(`public/art/portraits/${person}-${st…
+     11|       expect(buffer.toString('ascii', 0, 4)).toBe('RIFF'); expect(buff…
+     12|       expect(buffer.length).toBeLessThan(3000); bytes += buffer.length…
+       |                             ^
+     13|     }
+     14|     expect(hashes.size).toBe(120); expect(bytes).toBeLessThan(250000);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 16 passed (17)
+      Tests  1 failed | 262 passed (263)
+   Start at  00:43:54
+   Duration  17.16s (tests 74%, import 21%, transform 5%)

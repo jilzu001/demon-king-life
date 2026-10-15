@@ -1,0 +1,4 @@
+tests/e2e/routes-compact.spec.ts:8: trailing whitespace.
++const currentArt = JSON.parse(readFileSync('public/assets/ending_art_manifest_v4_4.json', 'utf8')).artByEndingId;
+tests/e2e/routes-compact.spec.ts:9: trailing whitespace.
++for (const path of paths) { path.body = currentEndings.find(ending => ending.id === path.endingId)!.body; path.artwork = currentArt[path.endingId]; }

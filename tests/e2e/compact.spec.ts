@@ -6,7 +6,7 @@ import { narrativeLines } from '../../src/ui/narrative';
 const galleryCatalog = JSON.parse(readFileSync('spec/content-v4.4-ending-gallery/content/ending_gallery_v4_4.json', 'utf8')) as {
   endings: { id: string; title: string; description: string; fullText: string; kind: string }[];
 };
-const galleryArt = JSON.parse(readFileSync('spec/content-v4.4-ending-gallery/assets/ending_art_manifest_v4_4.json', 'utf8')).artByEndingId as Record<string, string>;
+const galleryArt = JSON.parse(readFileSync('public/assets/ending_art_manifest_v4_4.json', 'utf8')).artByEndingId as Record<string, string>;
 const galleryEndingIds = galleryCatalog.endings.map(entry => entry.id);
 const endingGalleryEntries = () => galleryCatalog.endings;
 const endingArtworkPath = (id: string) => galleryArt[id];
@@ -88,7 +88,7 @@ test('v4.4 엔딩 그림404는 글만 표시하고 SVG로 대체하지 않으며
   await start(page); const saved = await raw(page);
   const meta = JSON.stringify({ saveSchemaVersion: 1, discoveredEndings: { 'demon-king': ['ending_peace'] } });
   await page.evaluate(({ key, meta }) => localStorage.setItem(key, meta), { key: metaKey, meta });
-  await page.route('**/assets/illustrations/events/final_sunset.webp', route => route.fulfill({ status: 404, body: '' }));
+  await page.route('**/assets/illustrations/ending_v4_6/ending_peace.webp', route => route.fulfill({ status: 404, body: '' }));
   await page.reload(); await expect(page.locator('#current-event')).toBeAttached();
   await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click(); await page.locator('[data-ending-detail="ending_peace"]').click();
   await expect(page.locator('.ending-art-fallback')).toBeVisible(); await expect(page.locator('.ending-detail img, .ending-detail svg')).toHaveCount(0);
@@ -241,14 +241,14 @@ test('150% 글자에서 능력치 한 칸은 한 줄이고 최근 연대기는 �
   await page.screenshot({ path: `docs/compact-controls/header-${test.info().project.name}.png`, animations: 'disabled' });
 });
 
-test('상단 NPC 없이 고백 네 번째 선택과 본문의 미나 기본 초상화를 유지한다', async ({ page }) => {
+test('상단 NPC 없이 고백 네 번째 선택과 검수된 시험 장면을 표시한다', async ({ page }) => {
   await start(page); for (const id of ['family_accept', 'trust_mina']) await select(page, id);
   await expect(page.locator('#npc-image')).toHaveCount(0);
   const lines = chapter.nodes.find((n: { id: string }) => n.id === 'exam').body.split('\n\n');
   for (let index = 1; index <= 9; index++) {
     await page.locator('#current-event .story-paragraph:visible').last().click();
     if (index === 8) {
-      await expect(page.locator('.story-illustration')).toHaveAttribute('data-asset-id', 'mina');
+      await expect(page.locator('.story-illustration')).toHaveAttribute('data-asset-id', 'event-exam');
       await page.screenshot({ path: `docs/compact-controls/exam-${test.info().project.name}.png`, animations: 'disabled' });
     }
     expect(lines[index]).toBeDefined();
@@ -260,7 +260,7 @@ test('상단 NPC 없이 고백 네 번째 선택과 본문의 미나 기본 초�
   await page.locator('#current-event .story-paragraph:visible').last().click();
   await expect(page.locator('#npc-image')).toHaveCount(0);
   await page.locator('#current-event .story-paragraph:visible').last().click();
-  await expect(page.locator('.story-illustration')).toHaveAttribute('data-asset-id', 'mina');
+  await expect(page.locator('.story-illustration')).toHaveAttribute('data-asset-id', 'event-confession');
   await select(page, 'confess_sincere');
   expect(JSON.parse((await raw(page))!).currentNodeId).toBe('confession_afterm');
   await select(page, 'support_mina');
@@ -335,43 +335,45 @@ test('그림 없는 사건은 텍스트로 진행하고 재판·엔딩 그림과
   await start(page);
   for (const id of ['family_accept', 'trust_mina']) await select(page, id);
   await scene(page);
-  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '미나');
+  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '용사 시험장에서 마주한 미나와 주인공');
   await select(page, 'attack'); await scene(page);
-  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '감옥');
+  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '수감 중인 주인공');
   await select(page, 'forgive'); await scene(page);
-  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '에리시아');
-  await select(page, 'ally'); await expect(page.locator('#current-event .story-illustration')).toHaveCount(0);
+  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '주인공과 협상하는 에리시아 왕녀');
+  await select(page, 'ally'); await scene(page); await expect(page.locator('#current-event .story-illustration')).toHaveAttribute('data-asset-id', 'event-audit');
   await select(page, 'public_audit'); await scene(page);
   await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('src', /cg_public_hearing\.webp$/);
   const saved = await raw(page); await page.reload(); await scene(page); expect(await raw(page)).toBe(saved);
   await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
   await expect(page.locator('.choice-launch')).toBeVisible(); await page.locator('.choice-launch').click();
   await select(page, 'walk_away'); await select(page, 'end_peace');
-  await expect(page.locator('[data-ending-phase="0"] .ending-art img')).toHaveAttribute('src', /assets\/illustrations\/events\/final_sunset\.webp$/);
+  await expect(page.locator('[data-ending-phase="0"] .ending-art img')).toHaveAttribute('src', /assets\/illustrations\/ending_v4_6\/ending_peace\.webp$/);
   await expect(page.locator('[data-ending-phase="0"] svg')).toHaveCount(0);
   const ended = await raw(page); await page.reload(); expect(await raw(page)).toBe(ended);
 });
 
-test('나무칼 장면은 미나 기준 초상화로 대체하고 문단·원본 크기·선택·저장을 보호한다', async ({ page }) => {
+test('나무칼 장면은 열두 살 두 아이의 독립 그림으로 표시하고 문단·비율·선택·저장을 보호한다', async ({ page }) => {
   await start(page); await select(page, 'family_accept'); const saved = await raw(page);
   const figure = page.locator('#current-event .story-illustration');
-  await expect(figure).toHaveAttribute('data-asset-id', 'mina'); await expect(figure).toBeHidden();
+  await expect(figure).toHaveAttribute('data-asset-id', 'event-child'); await expect(figure).toBeHidden();
   const node = chapter.nodes.find((n: { id: string }) => n.id === 'child');
   const index = 11 + node.body.split(/\n[ \t]*\n+/).findIndex((p: string) => p.includes('나무칼'));
-  for (let i = 0; i < index; i++) await page.locator('#current-event .story-paragraph:visible').last().click();
+  for (let i = 0; i < index; i++) {
+    await expect(figure).toBeHidden(); await page.locator('#current-event .story-paragraph:visible').last().click();
+  }
   await expect(figure).toBeVisible();
   const image = figure.locator('img');
-  await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth === 320 && img.naturalHeight === 505)).toBe(true);
+  await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth === 960 && img.naturalHeight === 720)).toBe(true);
   expect(await image.evaluate((img: HTMLImageElement) => { const r = img.getBoundingClientRect(); return r.width <= img.naturalWidth && r.height <= img.naturalHeight; })).toBe(true);
   expect(await figure.evaluate(el => el.previousElementSibling!.textContent)).toContain('나무칼');
   await expect(page.locator('#choice-dialog')).not.toBeVisible(); expect(await raw(page)).toBe(saved);
   await select(page, 'trust_mina'); await scene(page);
-  await expect(page.locator('#current-event .story-illustration')).toHaveAttribute('data-asset-id', 'mina');
+  await expect(page.locator('#current-event .story-illustration')).toHaveAttribute('data-asset-id', 'event-exam');
   expect(JSON.parse((await raw(page))!).history).toHaveLength(2);
 });
 
-test('미나 기본 초상화가 없으면 빈 프레임 없이 친구 선택과 다음 사건으로 진행한다', async ({ page }) => {
-  await page.route('**/assets/illustrations/characters/mina.webp', route => route.abort());
+test('나무칼 독립 그림이 없으면 빈 프레임 없이 친구 선택과 다음 사건으로 진행한다', async ({ page }) => {
+  await page.route('**/assets/illustrations/event_cg_v4_6/child.webp', route => route.abort());
   await start(page); await select(page, 'family_accept'); const saved = await raw(page);
   await scene(page); await expect(page.locator('#current-event .story-illustration')).toHaveCount(0);
   expect(await raw(page)).toBe(saved); await select(page, 'trust_mina');
@@ -467,7 +469,7 @@ test('8개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건�
     while (await page.locator('[data-ending-phase="1"]').count()) {
       const nodeId = await page.locator('[data-memory-node]').getAttribute('data-memory-node'); memories.push(nodeId!);
       if (endingId === 'ending_peace' && nodeId === 'child') {
-        await expect(page.locator('[data-memory-node] .story-illustration')).toHaveAttribute('data-asset-id', 'mina');
+        await expect(page.locator('[data-memory-node] .story-illustration')).toHaveAttribute('data-asset-id', `event-${nodeId}`);
         await page.screenshot({ path: `docs/v4.4/memory-mina-${test.info().project.name}.png`, animations: 'disabled' });
       }
       expect(state.history.map((h: { nodeId: string }) => h.nodeId)).toContain(nodeId);

@@ -108,7 +108,10 @@ it('CG는실제장면·나이·동행결과에만연결하고미나는은발기�
   const broken = structuredClone(state); broken.npcs.mina!.relationship = 'estranged'; expect(outcomeArtwork(broken, entry)).toBeUndefined();
   const birth = createRun(story, 17, 'cg'); expect(illustrationAsset('birth', 'scene', { body: story.nodes.birth!.body, age: 0, state: birth })?.path).toContain('cg_birth_registry');
   expect(canonicalPortrait('/', 'mina')).toBe('/assets/illustrations/characters/mina.webp'); expect(canonicalPortrait('/', 'leon')).toBeUndefined();
-  for (const rule of read(`${source}/assets/scene_art_manifest_v4_5.json`).rules) expect(readFileSync(`public/${rule.artPath}`).equals(readFileSync(`${source}/${rule.artPath}`))).toBe(true);
+  for (const rule of read('public/assets/scene_art_manifest_v4_5.json').rules) {
+    const bytes = readFileSync(`public/${rule.artPath}`); expect(bytes.length).toBe(rule.bytes);
+    expect(bytes.subarray(0, 4).toString()).toBe('RIFF'); expect(bytes.subarray(8, 12).toString()).toBe('WEBP');
+  }
 });
 it('연간5종은5회차동안중복없이순환하고회차별표시원장을복원하며게임상태는바꾸지않는다', () => {
   const years = read(`${source}/content/annual_life_records_v4_2.json`).years.slice(0, 2);

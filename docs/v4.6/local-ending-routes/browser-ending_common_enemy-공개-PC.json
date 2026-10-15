@@ -1,0 +1,37 @@
+{
+  "endingId": "ending_common_enemy",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "refuse",
+    "keep_records",
+    "tell_mina",
+    "explore_route_common_enemy",
+    "commit_route_common_enemy",
+    "route_common_enemy_publish"
+  ],
+  "age": 60,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "petition",
+    "princess",
+    "audit",
+    "setup_route_common_enemy",
+    "bridge_route_common_enemy"
+  ],
+  "image": "/demon-king-life/assets/illustrations/ending_v4_6/ending_common_enemy.webp",
+  "statuses": [
+    200,
+    304
+  ],
+  "bounds": {
+    "width": 480,
+    "height": 360,
+    "naturalWidth": 960,
+    "naturalHeight": 720
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

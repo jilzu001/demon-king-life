@@ -1,0 +1,2321 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": [
+    "docs/v4.5/actual-ending-paths.json",
+    "public/stories/demon-king-compact/story.json"
+  ],
+  "usage": "verified-one-sample-per-ending; not-complete-branch-graph",
+  "storyVersion": "2.3.0-compact",
+  "endingCount": 20,
+  "nodes": [
+    {
+      "id": "origin",
+      "type": "origin",
+      "label": "0세 · 출생신고",
+      "depth": 0,
+      "parentId": null,
+      "routeIds": [
+        "ending_escape",
+        "ending_fire",
+        "ending_throne",
+        "ending_ledger",
+        "ending_peace",
+        "ending_reform",
+        "ending_office",
+        "ending_love_scandal",
+        "ending_mina_renounced",
+        "ending_mina_wedding",
+        "ending_confession_unanswered",
+        "ending_common_enemy",
+        "ending_double_license",
+        "ending_retirement_47",
+        "ending_paid_defeat",
+        "ending_taxpayer",
+        "ending_king",
+        "ending_bankrupt",
+        "ending_true_demon",
+        "ending_mother_petition"
+      ]
+    },
+    {
+      "id": "step-956fb23edc4698",
+      "type": "step",
+      "parentId": "origin",
+      "depth": 1,
+      "nodeId": "birth",
+      "age": 0,
+      "sceneTitle": "왕국력 800년, 잘못 태어난 것은 아니다",
+      "choiceId": "family_accept",
+      "choiceText": "부모는 생계 때문에 마왕 등록을 받아들인다.",
+      "outcomeId": "out_family_accept",
+      "toKind": "node",
+      "toId": "child",
+      "routeIds": [
+        "ending_escape",
+        "ending_fire",
+        "ending_throne",
+        "ending_ledger",
+        "ending_peace",
+        "ending_reform",
+        "ending_office",
+        "ending_love_scandal",
+        "ending_mina_renounced",
+        "ending_mina_wedding",
+        "ending_confession_unanswered",
+        "ending_common_enemy",
+        "ending_double_license",
+        "ending_paid_defeat",
+        "ending_taxpayer",
+        "ending_king",
+        "ending_bankrupt",
+        "ending_true_demon"
+      ]
+    },
+    {
+      "id": "step-e0373494c8d649",
+      "type": "step",
+      "parentId": "step-956fb23edc4698",
+      "depth": 2,
+      "nodeId": "child",
+      "age": 12,
+      "sceneTitle": "용사가 되고 싶은 아이",
+      "choiceId": "trust_mina",
+      "choiceText": "미나를 믿고 함께 자란다.",
+      "outcomeId": "out_trust_mina",
+      "toKind": "node",
+      "toId": "exam",
+      "routeIds": [
+        "ending_escape",
+        "ending_fire",
+        "ending_throne",
+        "ending_ledger",
+        "ending_peace",
+        "ending_reform",
+        "ending_office",
+        "ending_love_scandal",
+        "ending_mina_renounced",
+        "ending_mina_wedding",
+        "ending_confession_unanswered",
+        "ending_common_enemy",
+        "ending_paid_defeat",
+        "ending_taxpayer",
+        "ending_king",
+        "ending_bankrupt",
+        "ending_true_demon"
+      ]
+    },
+    {
+      "id": "step-f496d6d6158c03",
+      "type": "step",
+      "parentId": "step-e0373494c8d649",
+      "depth": 3,
+      "nodeId": "exam",
+      "age": 20,
+      "sceneTitle": "용사 시험의 실기 과목",
+      "choiceId": "attack",
+      "choiceText": "먼저 미나를 공격해 운명을 바꿔 본다.",
+      "outcomeId": "out_attack",
+      "toKind": "node",
+      "toId": "prison",
+      "routeIds": [
+        "ending_escape",
+        "ending_ledger",
+        "ending_peace",
+        "ending_reform",
+        "ending_office",
+        "ending_king",
+        "ending_bankrupt",
+        "ending_true_demon"
+      ]
+    },
+    {
+      "id": "step-d8d70f7274d238",
+      "type": "step",
+      "parentId": "step-f496d6d6158c03",
+      "depth": 4,
+      "nodeId": "prison",
+      "age": 21,
+      "sceneTitle": "감옥에선 누구나 평등하지 않다",
+      "choiceId": "escape_prison",
+      "choiceText": "전투력 2로 교도소 정문을 돌파한다.",
+      "outcomeId": "out_escape_prison",
+      "toKind": "ending",
+      "toId": "ending_escape",
+      "routeIds": [
+        "ending_escape"
+      ]
+    },
+    {
+      "id": "ending:ending_escape",
+      "type": "ending",
+      "parentId": "step-d8d70f7274d238",
+      "depth": 5,
+      "endingId": "ending_escape",
+      "age": 21,
+      "routeIds": [
+        "ending_escape"
+      ]
+    },
+    {
+      "id": "step-04936c108f132d",
+      "type": "step",
+      "parentId": "step-e0373494c8d649",
+      "depth": 3,
+      "nodeId": "exam",
+      "age": 20,
+      "sceneTitle": "용사 시험의 실기 과목",
+      "choiceId": "refuse",
+      "choiceText": "시험 자체를 거부하고 항의한다.",
+      "outcomeId": "out_refuse",
+      "toKind": "node",
+      "toId": "petition",
+      "routeIds": [
+        "ending_fire",
+        "ending_common_enemy"
+      ]
+    },
+    {
+      "id": "step-740ee6a5d42d8d",
+      "type": "step",
+      "parentId": "step-04936c108f132d",
+      "depth": 4,
+      "nodeId": "petition",
+      "age": 21,
+      "sceneTitle": "불법 시험 문제의 진정서",
+      "choiceId": "burn_office",
+      "choiceText": "출생신고소 서류를 전부 불태워 제도를 없앤다.",
+      "outcomeId": "out_burn_office",
+      "toKind": "ending",
+      "toId": "ending_fire",
+      "routeIds": [
+        "ending_fire"
+      ]
+    },
+    {
+      "id": "ending:ending_fire",
+      "type": "ending",
+      "parentId": "step-740ee6a5d42d8d",
+      "depth": 5,
+      "endingId": "ending_fire",
+      "age": 21,
+      "routeIds": [
+        "ending_fire"
+      ]
+    },
+    {
+      "id": "step-f994380bf7f9f9",
+      "type": "step",
+      "parentId": "step-e0373494c8d649",
+      "depth": 3,
+      "nodeId": "exam",
+      "age": 20,
+      "sceneTitle": "용사 시험의 실기 과목",
+      "choiceId": "invoice",
+      "choiceText": "시험 출연료를 요구한다.",
+      "outcomeId": "out_invoice",
+      "toKind": "node",
+      "toId": "invoice",
+      "routeIds": [
+        "ending_throne",
+        "ending_paid_defeat",
+        "ending_taxpayer"
+      ]
+    },
+    {
+      "id": "step-e61a07a52c61ff",
+      "type": "step",
+      "parentId": "step-f994380bf7f9f9",
+      "depth": 4,
+      "nodeId": "invoice",
+      "age": 21,
+      "sceneTitle": "마왕 출연료 청구서",
+      "choiceId": "threaten_king",
+      "choiceText": "왕에게 직접 찾아가 200만 골드를 당장 내놓으라 협박한다.",
+      "outcomeId": "out_threaten_king",
+      "toKind": "ending",
+      "toId": "ending_throne",
+      "routeIds": [
+        "ending_throne"
+      ]
+    },
+    {
+      "id": "ending:ending_throne",
+      "type": "ending",
+      "parentId": "step-e61a07a52c61ff",
+      "depth": 5,
+      "endingId": "ending_throne",
+      "age": 21,
+      "routeIds": [
+        "ending_throne"
+      ]
+    },
+    {
+      "id": "step-30e636287ae333",
+      "type": "step",
+      "parentId": "step-f496d6d6158c03",
+      "depth": 4,
+      "nodeId": "prison",
+      "age": 21,
+      "sceneTitle": "감옥에선 누구나 평등하지 않다",
+      "choiceId": "forgive",
+      "choiceText": "미나에게 편지를 쓰고 다시 시작한다.",
+      "outcomeId": "out_forgive",
+      "toKind": "node",
+      "toId": "princess",
+      "routeIds": [
+        "ending_ledger",
+        "ending_peace",
+        "ending_reform",
+        "ending_office",
+        "ending_king",
+        "ending_bankrupt",
+        "ending_true_demon"
+      ]
+    },
+    {
+      "id": "step-83f15305b57c03",
+      "type": "step",
+      "parentId": "step-30e636287ae333",
+      "depth": 5,
+      "nodeId": "princess",
+      "age": 29,
+      "sceneTitle": "공주의 청혼 아닌 제안",
+      "choiceId": "ally",
+      "choiceText": "에리시아와 손잡고 장부를 추적한다.",
+      "outcomeId": "out_ally",
+      "toKind": "node",
+      "toId": "audit",
+      "routeIds": [
+        "ending_ledger",
+        "ending_peace",
+        "ending_reform",
+        "ending_office",
+        "ending_king",
+        "ending_bankrupt",
+        "ending_true_demon"
+      ]
+    },
+    {
+      "id": "step-9da4cca496e478",
+      "type": "step",
+      "parentId": "step-83f15305b57c03",
+      "depth": 6,
+      "nodeId": "audit",
+      "age": 41,
+      "sceneTitle": "사라진 199만 7천 골드",
+      "choiceId": "steal_ledger",
+      "choiceText": "감사실 원본 장부를 훔쳐 혼자 달아난다.",
+      "outcomeId": "out_steal_ledger",
+      "toKind": "ending",
+      "toId": "ending_ledger",
+      "routeIds": [
+        "ending_ledger"
+      ]
+    },
+    {
+      "id": "ending:ending_ledger",
+      "type": "ending",
+      "parentId": "step-9da4cca496e478",
+      "depth": 7,
+      "endingId": "ending_ledger",
+      "age": 41,
+      "routeIds": [
+        "ending_ledger"
+      ]
+    },
+    {
+      "id": "step-8c1ac8ac9f5013",
+      "type": "step",
+      "parentId": "step-83f15305b57c03",
+      "depth": 6,
+      "nodeId": "audit",
+      "age": 41,
+      "sceneTitle": "사라진 199만 7천 골드",
+      "choiceId": "public_audit",
+      "choiceText": "공개 감사와 재판을 요구한다.",
+      "outcomeId": "out_public_audit",
+      "toKind": "node",
+      "toId": "hearing",
+      "routeIds": [
+        "ending_peace",
+        "ending_reform",
+        "ending_office",
+        "ending_king",
+        "ending_bankrupt",
+        "ending_true_demon"
+      ]
+    },
+    {
+      "id": "step-f393bbfce71895",
+      "type": "step",
+      "parentId": "step-8c1ac8ac9f5013",
+      "depth": 7,
+      "nodeId": "hearing",
+      "age": 47,
+      "sceneTitle": "국가가 만든 마왕",
+      "choiceId": "walk_away",
+      "choiceText": "마왕 등록을 취소받고 평범한 삶으로 돌아간다.",
+      "outcomeId": "out_walk_away",
+      "toKind": "node",
+      "toId": "quiet",
+      "routeIds": [
+        "ending_peace"
+      ]
+    },
+    {
+      "id": "step-b0b1c51e224b3d",
+      "type": "step",
+      "parentId": "step-f393bbfce71895",
+      "depth": 8,
+      "nodeId": "quiet",
+      "age": 65,
+      "sceneTitle": "평범한 사람이 되는 데 걸린 시간",
+      "choiceId": "end_peace",
+      "choiceText": "가게 문을 닫고 저녁 노을을 바라본다.",
+      "outcomeId": "out_end_peace",
+      "toKind": "ending",
+      "toId": "ending_peace",
+      "routeIds": [
+        "ending_peace"
+      ]
+    },
+    {
+      "id": "ending:ending_peace",
+      "type": "ending",
+      "parentId": "step-b0b1c51e224b3d",
+      "depth": 9,
+      "endingId": "ending_peace",
+      "age": 65,
+      "routeIds": [
+        "ending_peace"
+      ]
+    },
+    {
+      "id": "step-031a7d25dbb281",
+      "type": "step",
+      "parentId": "step-8c1ac8ac9f5013",
+      "depth": 7,
+      "nodeId": "hearing",
+      "age": 47,
+      "sceneTitle": "국가가 만든 마왕",
+      "choiceId": "fight_case",
+      "choiceText": "끝까지 국가 책임을 묻는다.",
+      "outcomeId": "out_fight_case",
+      "toKind": "node",
+      "toId": "settlement",
+      "routeIds": [
+        "ending_reform",
+        "ending_office"
+      ]
+    },
+    {
+      "id": "step-2c36b1e95a4a91",
+      "type": "step",
+      "parentId": "step-031a7d25dbb281",
+      "depth": 8,
+      "nodeId": "settlement",
+      "age": 47,
+      "sceneTitle": "오만 골드짜리 인생",
+      "choiceId": "reject_money",
+      "choiceText": "합의를 거부하고 끝까지 공개 재판을 이어간다.",
+      "outcomeId": "out_reject_money",
+      "toKind": "node",
+      "toId": "final_trial",
+      "routeIds": [
+        "ending_reform"
+      ]
+    },
+    {
+      "id": "step-ed4f3e43500778",
+      "type": "step",
+      "parentId": "step-2c36b1e95a4a91",
+      "depth": 9,
+      "nodeId": "final_trial",
+      "age": 60,
+      "sceneTitle": "법이 바뀐 날",
+      "choiceId": "end_reform",
+      "choiceText": "판결문을 다음 세대에게 남긴다.",
+      "outcomeId": "out_end_reform",
+      "toKind": "ending",
+      "toId": "ending_reform",
+      "routeIds": [
+        "ending_reform"
+      ]
+    },
+    {
+      "id": "ending:ending_reform",
+      "type": "ending",
+      "parentId": "step-ed4f3e43500778",
+      "depth": 10,
+      "endingId": "ending_reform",
+      "age": 60,
+      "routeIds": [
+        "ending_reform"
+      ]
+    },
+    {
+      "id": "step-f0db605f8593b0",
+      "type": "step",
+      "parentId": "step-031a7d25dbb281",
+      "depth": 8,
+      "nodeId": "settlement",
+      "age": 47,
+      "sceneTitle": "오만 골드짜리 인생",
+      "choiceId": "buy_office",
+      "choiceText": "합의금 대신 마왕 관리청 건물과 장부를 요구한다.",
+      "outcomeId": "out_buy_office",
+      "toKind": "node",
+      "toId": "office",
+      "routeIds": [
+        "ending_office"
+      ]
+    },
+    {
+      "id": "step-10f7c2cb3e7fac",
+      "type": "step",
+      "parentId": "step-f0db605f8593b0",
+      "depth": 9,
+      "nodeId": "office",
+      "age": 62,
+      "sceneTitle": "마왕 관리청의 마지막 직원",
+      "choiceId": "end_office",
+      "choiceText": "새로운 상담 신청서를 펼친다.",
+      "outcomeId": "out_end_office",
+      "toKind": "ending",
+      "toId": "ending_office",
+      "routeIds": [
+        "ending_office"
+      ]
+    },
+    {
+      "id": "ending:ending_office",
+      "type": "ending",
+      "parentId": "step-10f7c2cb3e7fac",
+      "depth": 10,
+      "endingId": "ending_office",
+      "age": 62,
+      "routeIds": [
+        "ending_office"
+      ]
+    },
+    {
+      "id": "step-e5da47db8fdd69",
+      "type": "step",
+      "parentId": "step-e0373494c8d649",
+      "depth": 3,
+      "nodeId": "exam",
+      "age": 20,
+      "sceneTitle": "용사 시험의 실기 과목",
+      "choiceId": "confess",
+      "choiceText": "미나에게 사랑한다고 고백한다.",
+      "outcomeId": "out_confess",
+      "toKind": "node",
+      "toId": "confession",
+      "routeIds": [
+        "ending_love_scandal",
+        "ending_mina_renounced",
+        "ending_mina_wedding",
+        "ending_confession_unanswered"
+      ]
+    },
+    {
+      "id": "step-7d2bdef82beedf",
+      "type": "step",
+      "parentId": "step-e5da47db8fdd69",
+      "depth": 4,
+      "nodeId": "confession",
+      "age": 20,
+      "sceneTitle": "고백은 실기 점수에 포함되지 않는다",
+      "choiceId": "confess_absurd",
+      "choiceText": "시험관에게도 사랑한다고 말해 판정을 혼란시킨다.",
+      "outcomeId": "out_confess_absurd",
+      "toKind": "node",
+      "toId": "confession_chaos",
+      "routeIds": [
+        "ending_love_scandal"
+      ]
+    },
+    {
+      "id": "step-7716660079b934",
+      "type": "step",
+      "parentId": "step-7d2bdef82beedf",
+      "depth": 5,
+      "nodeId": "confession_chaos",
+      "age": 20,
+      "sceneTitle": "시험관에게 고백한 마왕",
+      "choiceId": "embrace_fame",
+      "choiceText": "삼각관계 소문을 이용해 연애 상담소를 연다.",
+      "outcomeId": "out_embrace_fame",
+      "toKind": "ending",
+      "toId": "ending_love_scandal",
+      "routeIds": [
+        "ending_love_scandal"
+      ]
+    },
+    {
+      "id": "ending:ending_love_scandal",
+      "type": "ending",
+      "parentId": "step-7716660079b934",
+      "depth": 6,
+      "endingId": "ending_love_scandal",
+      "age": 20,
+      "routeIds": [
+        "ending_love_scandal"
+      ]
+    },
+    {
+      "id": "step-709247e60339f3",
+      "type": "step",
+      "parentId": "step-e5da47db8fdd69",
+      "depth": 4,
+      "nodeId": "confession",
+      "age": 20,
+      "sceneTitle": "고백은 실기 점수에 포함되지 않는다",
+      "choiceId": "confess_sincere",
+      "choiceText": "미나가 시험을 포기하지 않아도 진심이라고 말한다.",
+      "outcomeId": "out_confess_sincere",
+      "toKind": "node",
+      "toId": "confession_afterm",
+      "routeIds": [
+        "ending_mina_renounced",
+        "ending_mina_wedding",
+        "ending_confession_unanswered"
+      ]
+    },
+    {
+      "id": "step-4d6d5d2cba895f",
+      "type": "step",
+      "parentId": "step-709247e60339f3",
+      "depth": 5,
+      "nodeId": "confession_afterm",
+      "age": 21,
+      "sceneTitle": "검을 내린 사람",
+      "choiceId": "support_mina",
+      "choiceText": "미나의 재시험을 도우며 함께 진실을 조사한다.",
+      "outcomeId": "out_support_mina",
+      "toKind": "node",
+      "toId": "princess",
+      "routeIds": [
+        "ending_mina_renounced",
+        "ending_mina_wedding"
+      ]
+    },
+    {
+      "id": "step-9b4491fcb4286b",
+      "type": "step",
+      "parentId": "step-4d6d5d2cba895f",
+      "depth": 6,
+      "nodeId": "princess",
+      "age": 29,
+      "sceneTitle": "공주의 청혼 아닌 제안",
+      "choiceId": "explore_route_mina_renounced",
+      "choiceText": "합격증 대신 지킬 곳 — 사정을 자세히 알아본다.",
+      "outcomeId": "enter_route_mina_renounced",
+      "toKind": "node",
+      "toId": "setup_route_mina_renounced",
+      "routeIds": [
+        "ending_mina_renounced"
+      ]
+    },
+    {
+      "id": "step-249433b66a4d04",
+      "type": "step",
+      "parentId": "step-9b4491fcb4286b",
+      "depth": 7,
+      "nodeId": "setup_route_mina_renounced",
+      "age": 29,
+      "sceneTitle": "합격증 대신 지킬 곳",
+      "choiceId": "commit_route_mina_renounced",
+      "choiceText": "미나가 독립적으로 선택한 구호소를 도우며 정부의 부당한 방해에 맞선다.",
+      "outcomeId": "out_commit_route_mina_renounced",
+      "toKind": "node",
+      "toId": "bridge_route_mina_renounced",
+      "routeIds": [
+        "ending_mina_renounced"
+      ]
+    },
+    {
+      "id": "step-7c840228a664c6",
+      "type": "step",
+      "parentId": "step-249433b66a4d04",
+      "depth": 8,
+      "nodeId": "bridge_route_mina_renounced",
+      "age": 55,
+      "sceneTitle": "55세, 왕국 외곽의 작은 구호소",
+      "choiceId": "route_mina_renounced_stay",
+      "choiceText": "미나가 지켜 온 구호소를 함께 지킨다.",
+      "outcomeId": "out_route_mina_renounced_stay",
+      "toKind": "ending",
+      "toId": "ending_mina_renounced",
+      "routeIds": [
+        "ending_mina_renounced"
+      ]
+    },
+    {
+      "id": "ending:ending_mina_renounced",
+      "type": "ending",
+      "parentId": "step-7c840228a664c6",
+      "depth": 9,
+      "endingId": "ending_mina_renounced",
+      "age": 55,
+      "routeIds": [
+        "ending_mina_renounced"
+      ]
+    },
+    {
+      "id": "step-a66cb07bc551f0",
+      "type": "step",
+      "parentId": "step-4d6d5d2cba895f",
+      "depth": 6,
+      "nodeId": "princess",
+      "age": 29,
+      "sceneTitle": "공주의 청혼 아닌 제안",
+      "choiceId": "explore_route_mina_wedding",
+      "choiceText": "고백의 대답은 계약이 아니다 — 사정을 자세히 알아본다.",
+      "outcomeId": "enter_route_mina_wedding",
+      "toKind": "node",
+      "toId": "setup_route_mina_wedding",
+      "routeIds": [
+        "ending_mina_wedding"
+      ]
+    },
+    {
+      "id": "step-6a1861f618786c",
+      "type": "step",
+      "parentId": "step-a66cb07bc551f0",
+      "depth": 7,
+      "nodeId": "setup_route_mina_wedding",
+      "age": 47,
+      "sceneTitle": "고백의 대답은 계약이 아니다",
+      "choiceId": "commit_route_mina_wedding",
+      "choiceText": "서로 동등하게 관계를 선택하고 오랫동안 함께 살아갈지 확인한다.",
+      "outcomeId": "out_commit_route_mina_wedding",
+      "toKind": "node",
+      "toId": "bridge_route_mina_wedding",
+      "routeIds": [
+        "ending_mina_wedding"
+      ]
+    },
+    {
+      "id": "step-911e3955317c16",
+      "type": "step",
+      "parentId": "step-6a1861f618786c",
+      "depth": 8,
+      "nodeId": "bridge_route_mina_wedding",
+      "age": 65,
+      "sceneTitle": "65세, 작은 마을 예식장",
+      "choiceId": "route_mina_wedding_challenge",
+      "choiceText": "국가 등록과 관계없이 서로의 이름으로 서약한다.",
+      "outcomeId": "out_route_mina_wedding_challenge",
+      "toKind": "ending",
+      "toId": "ending_mina_wedding",
+      "routeIds": [
+        "ending_mina_wedding"
+      ]
+    },
+    {
+      "id": "ending:ending_mina_wedding",
+      "type": "ending",
+      "parentId": "step-911e3955317c16",
+      "depth": 9,
+      "endingId": "ending_mina_wedding",
+      "age": 65,
+      "routeIds": [
+        "ending_mina_wedding"
+      ]
+    },
+    {
+      "id": "step-42a0de9a58e56a",
+      "type": "step",
+      "parentId": "step-709247e60339f3",
+      "depth": 5,
+      "nodeId": "confession_afterm",
+      "age": 21,
+      "sceneTitle": "검을 내린 사람",
+      "choiceId": "leave_mina",
+      "choiceText": "미나와 거리를 두고 국가에 직접 항의한다.",
+      "outcomeId": "out_leave_mina",
+      "toKind": "node",
+      "toId": "petition",
+      "routeIds": [
+        "ending_confession_unanswered"
+      ]
+    },
+    {
+      "id": "step-8caa0ab15da5a1",
+      "type": "step",
+      "parentId": "step-42a0de9a58e56a",
+      "depth": 6,
+      "nodeId": "petition",
+      "age": 21,
+      "sceneTitle": "불법 시험 문제의 진정서",
+      "choiceId": "keep_records",
+      "choiceText": "서기관의 말을 기록해 증거를 모은다.",
+      "outcomeId": "out_keep_records",
+      "toKind": "node",
+      "toId": "princess",
+      "routeIds": [
+        "ending_confession_unanswered"
+      ]
+    },
+    {
+      "id": "step-b915e28eefba43",
+      "type": "step",
+      "parentId": "step-8caa0ab15da5a1",
+      "depth": 7,
+      "nodeId": "princess",
+      "age": 29,
+      "sceneTitle": "공주의 청혼 아닌 제안",
+      "choiceId": "explore_route_confession_unanswered",
+      "choiceText": "답장을 재촉하지 않기 — 사정을 자세히 알아본다.",
+      "outcomeId": "enter_route_confession_unanswered",
+      "toKind": "node",
+      "toId": "setup_route_confession_unanswered",
+      "routeIds": [
+        "ending_confession_unanswered"
+      ]
+    },
+    {
+      "id": "step-c28ed3bbfaff87",
+      "type": "step",
+      "parentId": "step-b915e28eefba43",
+      "depth": 8,
+      "nodeId": "setup_route_confession_unanswered",
+      "age": 29,
+      "sceneTitle": "답장을 재촉하지 않기",
+      "choiceId": "commit_route_confession_unanswered",
+      "choiceText": "미나에게 대답을 요구하지 않고 오래된 기사 정정을 요청한다.",
+      "outcomeId": "out_commit_route_confession_unanswered",
+      "toKind": "node",
+      "toId": "bridge_route_confession_unanswered",
+      "routeIds": [
+        "ending_confession_unanswered"
+      ]
+    },
+    {
+      "id": "step-8ee658ac96882e",
+      "type": "step",
+      "parentId": "step-c28ed3bbfaff87",
+      "depth": 9,
+      "nodeId": "bridge_route_confession_unanswered",
+      "age": 65,
+      "sceneTitle": "65세, 강둑의 오래된 벤치",
+      "choiceId": "route_confession_unanswered_listen",
+      "choiceText": "대답보다 그동안의 이야기를 듣는다.",
+      "outcomeId": "out_route_confession_unanswered_listen",
+      "toKind": "ending",
+      "toId": "ending_confession_unanswered",
+      "routeIds": [
+        "ending_confession_unanswered"
+      ]
+    },
+    {
+      "id": "ending:ending_confession_unanswered",
+      "type": "ending",
+      "parentId": "step-8ee658ac96882e",
+      "depth": 10,
+      "endingId": "ending_confession_unanswered",
+      "age": 65,
+      "routeIds": [
+        "ending_confession_unanswered"
+      ]
+    },
+    {
+      "id": "step-7afe5f4315df45",
+      "type": "step",
+      "parentId": "step-04936c108f132d",
+      "depth": 4,
+      "nodeId": "petition",
+      "age": 21,
+      "sceneTitle": "불법 시험 문제의 진정서",
+      "choiceId": "keep_records",
+      "choiceText": "서기관의 말을 기록해 증거를 모은다.",
+      "outcomeId": "out_keep_records",
+      "toKind": "node",
+      "toId": "princess",
+      "routeIds": [
+        "ending_common_enemy"
+      ]
+    },
+    {
+      "id": "step-e01ed300987af7",
+      "type": "step",
+      "parentId": "step-7afe5f4315df45",
+      "depth": 5,
+      "nodeId": "princess",
+      "age": 29,
+      "sceneTitle": "공주의 청혼 아닌 제안",
+      "choiceId": "tell_mina",
+      "choiceText": "장부를 미나에게 보여 주고 공개 조사를 요구한다.",
+      "outcomeId": "out_tell_mina",
+      "toKind": "node",
+      "toId": "audit",
+      "routeIds": [
+        "ending_common_enemy"
+      ]
+    },
+    {
+      "id": "step-df9b0f7aad4baf",
+      "type": "step",
+      "parentId": "step-e01ed300987af7",
+      "depth": 6,
+      "nodeId": "audit",
+      "age": 41,
+      "sceneTitle": "사라진 199만 7천 골드",
+      "choiceId": "explore_route_common_enemy",
+      "choiceText": "서로 다른 증언 — 사정을 자세히 알아본다.",
+      "outcomeId": "enter_route_common_enemy",
+      "toKind": "node",
+      "toId": "setup_route_common_enemy",
+      "routeIds": [
+        "ending_common_enemy"
+      ]
+    },
+    {
+      "id": "step-0e7e4c4b90f15c",
+      "type": "step",
+      "parentId": "step-df9b0f7aad4baf",
+      "depth": 7,
+      "nodeId": "setup_route_common_enemy",
+      "age": 41,
+      "sceneTitle": "서로 다른 증언",
+      "choiceId": "commit_route_common_enemy",
+      "choiceText": "증언을 비교하고 함께 동의서 부재를 밝혀 공개한다.",
+      "outcomeId": "out_commit_route_common_enemy",
+      "toKind": "node",
+      "toId": "bridge_route_common_enemy",
+      "routeIds": [
+        "ending_common_enemy"
+      ]
+    },
+    {
+      "id": "step-764eda8216ff6b",
+      "type": "step",
+      "parentId": "step-0e7e4c4b90f15c",
+      "depth": 8,
+      "nodeId": "bridge_route_common_enemy",
+      "age": 60,
+      "sceneTitle": "60세, 왕국 공개 청문회",
+      "choiceId": "route_common_enemy_publish",
+      "choiceText": "국민 누구나 볼 수 있도록 원자료를 공개한다.",
+      "outcomeId": "out_route_common_enemy_publish",
+      "toKind": "ending",
+      "toId": "ending_common_enemy",
+      "routeIds": [
+        "ending_common_enemy"
+      ]
+    },
+    {
+      "id": "ending:ending_common_enemy",
+      "type": "ending",
+      "parentId": "step-764eda8216ff6b",
+      "depth": 9,
+      "endingId": "ending_common_enemy",
+      "age": 60,
+      "routeIds": [
+        "ending_common_enemy"
+      ]
+    },
+    {
+      "id": "step-7362f2222bcb86",
+      "type": "step",
+      "parentId": "step-956fb23edc4698",
+      "depth": 2,
+      "nodeId": "child",
+      "age": 12,
+      "sceneTitle": "용사가 되고 싶은 아이",
+      "choiceId": "mina_rival",
+      "choiceText": "미나에게 내가 먼저 용사가 되겠다고 선언한다.",
+      "outcomeId": "out_mina_rival",
+      "toKind": "node",
+      "toId": "exam",
+      "routeIds": [
+        "ending_double_license"
+      ]
+    },
+    {
+      "id": "step-8a680dddd3c529",
+      "type": "step",
+      "parentId": "step-7362f2222bcb86",
+      "depth": 3,
+      "nodeId": "exam",
+      "age": 20,
+      "sceneTitle": "용사 시험의 실기 과목",
+      "choiceId": "refuse",
+      "choiceText": "시험 자체를 거부하고 항의한다.",
+      "outcomeId": "out_refuse",
+      "toKind": "node",
+      "toId": "petition",
+      "routeIds": [
+        "ending_double_license"
+      ]
+    },
+    {
+      "id": "step-6f221eda1d8850",
+      "type": "step",
+      "parentId": "step-8a680dddd3c529",
+      "depth": 4,
+      "nodeId": "petition",
+      "age": 21,
+      "sceneTitle": "불법 시험 문제의 진정서",
+      "choiceId": "keep_records",
+      "choiceText": "서기관의 말을 기록해 증거를 모은다.",
+      "outcomeId": "out_keep_records",
+      "toKind": "node",
+      "toId": "princess",
+      "routeIds": [
+        "ending_double_license"
+      ]
+    },
+    {
+      "id": "step-de581ebdf70a52",
+      "type": "step",
+      "parentId": "step-6f221eda1d8850",
+      "depth": 5,
+      "nodeId": "princess",
+      "age": 29,
+      "sceneTitle": "공주의 청혼 아닌 제안",
+      "choiceId": "explore_route_double_license",
+      "choiceText": "전투력보다 큰 응시 요건 — 사정을 자세히 알아본다.",
+      "outcomeId": "enter_route_double_license",
+      "toKind": "node",
+      "toId": "setup_route_double_license",
+      "routeIds": [
+        "ending_double_license"
+      ]
+    },
+    {
+      "id": "step-af842cabba1383",
+      "type": "step",
+      "parentId": "step-de581ebdf70a52",
+      "depth": 6,
+      "nodeId": "setup_route_double_license",
+      "age": 29,
+      "sceneTitle": "전투력보다 큰 응시 요건",
+      "choiceId": "commit_route_double_license",
+      "choiceText": "합법적 대체 실기를 준비해 용사 자격에 도전한다.",
+      "outcomeId": "out_commit_route_double_license",
+      "toKind": "node",
+      "toId": "bridge_route_double_license",
+      "routeIds": [
+        "ending_double_license"
+      ]
+    },
+    {
+      "id": "step-f7d5032bed5c6d",
+      "type": "step",
+      "parentId": "step-af842cabba1383",
+      "depth": 7,
+      "nodeId": "bridge_route_double_license",
+      "age": 36,
+      "sceneTitle": "36세, 왕국 자격증 발급 창구",
+      "choiceId": "route_double_license_claim",
+      "choiceText": "마왕 토벌 포상금을 본인에게 청구한다.",
+      "outcomeId": "out_route_double_license_claim",
+      "toKind": "ending",
+      "toId": "ending_double_license",
+      "routeIds": [
+        "ending_double_license"
+      ]
+    },
+    {
+      "id": "ending:ending_double_license",
+      "type": "ending",
+      "parentId": "step-f7d5032bed5c6d",
+      "depth": 8,
+      "endingId": "ending_double_license",
+      "age": 36,
+      "routeIds": [
+        "ending_double_license"
+      ]
+    },
+    {
+      "id": "step-301d2ae7c24ec1",
+      "type": "step",
+      "parentId": "origin",
+      "depth": 1,
+      "nodeId": "birth",
+      "age": 0,
+      "sceneTitle": "왕국력 800년, 잘못 태어난 것은 아니다",
+      "choiceId": "family_invoice",
+      "choiceText": "부모는 마왕 업무의 급여부터 요구한다.",
+      "outcomeId": "out_family_invoice",
+      "toKind": "node",
+      "toId": "child",
+      "routeIds": [
+        "ending_retirement_47"
+      ]
+    },
+    {
+      "id": "step-6e1ef810a8b255",
+      "type": "step",
+      "parentId": "step-301d2ae7c24ec1",
+      "depth": 2,
+      "nodeId": "child",
+      "age": 12,
+      "sceneTitle": "용사가 되고 싶은 아이",
+      "choiceId": "trust_mina",
+      "choiceText": "미나를 믿고 함께 자란다.",
+      "outcomeId": "out_trust_mina",
+      "toKind": "node",
+      "toId": "exam",
+      "routeIds": [
+        "ending_retirement_47"
+      ]
+    },
+    {
+      "id": "step-8907d37c3ed6db",
+      "type": "step",
+      "parentId": "step-6e1ef810a8b255",
+      "depth": 3,
+      "nodeId": "exam",
+      "age": 20,
+      "sceneTitle": "용사 시험의 실기 과목",
+      "choiceId": "attack",
+      "choiceText": "먼저 미나를 공격해 운명을 바꿔 본다.",
+      "outcomeId": "out_attack",
+      "toKind": "node",
+      "toId": "prison",
+      "routeIds": [
+        "ending_retirement_47"
+      ]
+    },
+    {
+      "id": "step-57ddd65ee50c17",
+      "type": "step",
+      "parentId": "step-8907d37c3ed6db",
+      "depth": 4,
+      "nodeId": "prison",
+      "age": 21,
+      "sceneTitle": "감옥에선 누구나 평등하지 않다",
+      "choiceId": "forgive",
+      "choiceText": "미나에게 편지를 쓰고 다시 시작한다.",
+      "outcomeId": "out_forgive",
+      "toKind": "node",
+      "toId": "princess",
+      "routeIds": [
+        "ending_retirement_47"
+      ]
+    },
+    {
+      "id": "step-430506ab65462f",
+      "type": "step",
+      "parentId": "step-57ddd65ee50c17",
+      "depth": 5,
+      "nodeId": "princess",
+      "age": 29,
+      "sceneTitle": "공주의 청혼 아닌 제안",
+      "choiceId": "ally",
+      "choiceText": "에리시아와 손잡고 장부를 추적한다.",
+      "outcomeId": "out_ally",
+      "toKind": "node",
+      "toId": "audit",
+      "routeIds": [
+        "ending_retirement_47"
+      ]
+    },
+    {
+      "id": "step-2234dda5621374",
+      "type": "step",
+      "parentId": "step-430506ab65462f",
+      "depth": 6,
+      "nodeId": "audit",
+      "age": 41,
+      "sceneTitle": "사라진 199만 7천 골드",
+      "choiceId": "public_audit",
+      "choiceText": "공개 감사와 재판을 요구한다.",
+      "outcomeId": "out_public_audit",
+      "toKind": "node",
+      "toId": "hearing",
+      "routeIds": [
+        "ending_retirement_47"
+      ]
+    },
+    {
+      "id": "step-8e6ebbc2596f64",
+      "type": "step",
+      "parentId": "step-2234dda5621374",
+      "depth": 7,
+      "nodeId": "hearing",
+      "age": 47,
+      "sceneTitle": "국가가 만든 마왕",
+      "choiceId": "explore_route_retirement_47",
+      "choiceText": "마왕도 근속연수를 셉니다 — 사정을 자세히 알아본다.",
+      "outcomeId": "enter_route_retirement_47",
+      "toKind": "node",
+      "toId": "setup_route_retirement_47",
+      "routeIds": [
+        "ending_retirement_47"
+      ]
+    },
+    {
+      "id": "step-5be0f2f0b2ccd5",
+      "type": "step",
+      "parentId": "step-8e6ebbc2596f64",
+      "depth": 8,
+      "nodeId": "setup_route_retirement_47",
+      "age": 47,
+      "sceneTitle": "마왕도 근속연수를 셉니다",
+      "choiceId": "commit_route_retirement_47",
+      "choiceText": "오만 골드 합의를 거절하고 47년 근속 기록의 인정부터 요구한다.",
+      "outcomeId": "out_commit_route_retirement_47",
+      "toKind": "node",
+      "toId": "bridge_route_retirement_47",
+      "routeIds": [
+        "ending_retirement_47"
+      ]
+    },
+    {
+      "id": "step-ffaa0fdbac18e7",
+      "type": "step",
+      "parentId": "step-5be0f2f0b2ccd5",
+      "depth": 9,
+      "nodeId": "bridge_route_retirement_47",
+      "age": 47,
+      "sceneTitle": "47세, 왕국 노동위원회",
+      "choiceId": "route_retirement_47_collect",
+      "choiceText": "47골드를 받고 영수증에 이의를 적는다.",
+      "outcomeId": "out_route_retirement_47_collect",
+      "toKind": "ending",
+      "toId": "ending_retirement_47",
+      "routeIds": [
+        "ending_retirement_47"
+      ]
+    },
+    {
+      "id": "ending:ending_retirement_47",
+      "type": "ending",
+      "parentId": "step-ffaa0fdbac18e7",
+      "depth": 10,
+      "endingId": "ending_retirement_47",
+      "age": 47,
+      "routeIds": [
+        "ending_retirement_47"
+      ]
+    },
+    {
+      "id": "step-884bee6f8314bb",
+      "type": "step",
+      "parentId": "step-f994380bf7f9f9",
+      "depth": 4,
+      "nodeId": "invoice",
+      "age": 21,
+      "sceneTitle": "마왕 출연료 청구서",
+      "choiceId": "accept_invite",
+      "choiceText": "왕실 초대에 응한다.",
+      "outcomeId": "out_accept_invite",
+      "toKind": "node",
+      "toId": "princess",
+      "routeIds": [
+        "ending_paid_defeat",
+        "ending_taxpayer"
+      ]
+    },
+    {
+      "id": "step-87908f1774d132",
+      "type": "step",
+      "parentId": "step-884bee6f8314bb",
+      "depth": 5,
+      "nodeId": "princess",
+      "age": 29,
+      "sceneTitle": "공주의 청혼 아닌 제안",
+      "choiceId": "explore_route_paid_defeat",
+      "choiceText": "유료 패배의 사업자등록 — 사정을 자세히 알아본다.",
+      "outcomeId": "enter_route_paid_defeat",
+      "toKind": "node",
+      "toId": "setup_route_paid_defeat",
+      "routeIds": [
+        "ending_paid_defeat"
+      ]
+    },
+    {
+      "id": "step-4c1d9d2ed23920",
+      "type": "step",
+      "parentId": "step-87908f1774d132",
+      "depth": 6,
+      "nodeId": "setup_route_paid_defeat",
+      "age": 29,
+      "sceneTitle": "유료 패배의 사업자등록",
+      "choiceId": "commit_route_paid_defeat",
+      "choiceText": "강요 없는 토벌 체험장을 정식 등록하고 안전 수칙을 만든다.",
+      "outcomeId": "out_commit_route_paid_defeat",
+      "toKind": "node",
+      "toId": "bridge_route_paid_defeat",
+      "routeIds": [
+        "ending_paid_defeat"
+      ]
+    },
+    {
+      "id": "step-76918b7b0da173",
+      "type": "step",
+      "parentId": "step-4c1d9d2ed23920",
+      "depth": 7,
+      "nodeId": "bridge_route_paid_defeat",
+      "age": 54,
+      "sceneTitle": "54세, 주말 마왕 토벌 체험장",
+      "choiceId": "route_paid_defeat_coach",
+      "choiceText": "아이들에게 안전하게 지는 법을 가르친다.",
+      "outcomeId": "out_route_paid_defeat_coach",
+      "toKind": "ending",
+      "toId": "ending_paid_defeat",
+      "routeIds": [
+        "ending_paid_defeat"
+      ]
+    },
+    {
+      "id": "ending:ending_paid_defeat",
+      "type": "ending",
+      "parentId": "step-76918b7b0da173",
+      "depth": 8,
+      "endingId": "ending_paid_defeat",
+      "age": 54,
+      "routeIds": [
+        "ending_paid_defeat"
+      ]
+    },
+    {
+      "id": "step-e7bf6ca3922ebf",
+      "type": "step",
+      "parentId": "step-884bee6f8314bb",
+      "depth": 5,
+      "nodeId": "princess",
+      "age": 29,
+      "sceneTitle": "공주의 청혼 아닌 제안",
+      "choiceId": "ally",
+      "choiceText": "에리시아와 손잡고 장부를 추적한다.",
+      "outcomeId": "out_ally",
+      "toKind": "node",
+      "toId": "audit",
+      "routeIds": [
+        "ending_taxpayer"
+      ]
+    },
+    {
+      "id": "step-37c69599cf218f",
+      "type": "step",
+      "parentId": "step-e7bf6ca3922ebf",
+      "depth": 6,
+      "nodeId": "audit",
+      "age": 41,
+      "sceneTitle": "사라진 199만 7천 골드",
+      "choiceId": "explore_route_taxpayer",
+      "choiceText": "유일하게 정확한 장부 — 사정을 자세히 알아본다.",
+      "outcomeId": "enter_route_taxpayer",
+      "toKind": "node",
+      "toId": "setup_route_taxpayer",
+      "routeIds": [
+        "ending_taxpayer"
+      ]
+    },
+    {
+      "id": "step-97a268e88ebb50",
+      "type": "step",
+      "parentId": "step-37c69599cf218f",
+      "depth": 7,
+      "nodeId": "setup_route_taxpayer",
+      "age": 41,
+      "sceneTitle": "유일하게 정확한 장부",
+      "choiceId": "commit_route_taxpayer",
+      "choiceText": "영수증과 사업 장부를 공개하고 납세 기록을 꾸준히 남긴다.",
+      "outcomeId": "out_commit_route_taxpayer",
+      "toKind": "node",
+      "toId": "bridge_route_taxpayer",
+      "routeIds": [
+        "ending_taxpayer"
+      ]
+    },
+    {
+      "id": "step-d5744bbd87004a",
+      "type": "step",
+      "parentId": "step-97a268e88ebb50",
+      "depth": 8,
+      "nodeId": "bridge_route_taxpayer",
+      "age": 65,
+      "sceneTitle": "65세, 국왕의 납세자 표창식",
+      "choiceId": "route_taxpayer_receipt",
+      "choiceText": "표창장 대신 사용 내역 공개를 요구한다.",
+      "outcomeId": "out_route_taxpayer_receipt",
+      "toKind": "ending",
+      "toId": "ending_taxpayer",
+      "routeIds": [
+        "ending_taxpayer"
+      ]
+    },
+    {
+      "id": "ending:ending_taxpayer",
+      "type": "ending",
+      "parentId": "step-d5744bbd87004a",
+      "depth": 9,
+      "endingId": "ending_taxpayer",
+      "age": 65,
+      "routeIds": [
+        "ending_taxpayer"
+      ]
+    },
+    {
+      "id": "step-da1259256449f8",
+      "type": "step",
+      "parentId": "step-8c1ac8ac9f5013",
+      "depth": 7,
+      "nodeId": "hearing",
+      "age": 47,
+      "sceneTitle": "국가가 만든 마왕",
+      "choiceId": "explore_route_king",
+      "choiceText": "왕국을 대표할 사람이 없다 — 사정을 자세히 알아본다.",
+      "outcomeId": "enter_route_king",
+      "toKind": "node",
+      "toId": "setup_route_king",
+      "routeIds": [
+        "ending_king"
+      ]
+    },
+    {
+      "id": "step-6d3b3c0339d04d",
+      "type": "step",
+      "parentId": "step-da1259256449f8",
+      "depth": 8,
+      "nodeId": "setup_route_king",
+      "age": 47,
+      "sceneTitle": "왕국을 대표할 사람이 없다",
+      "choiceId": "commit_route_king",
+      "choiceText": "시민의회 승인과 권한 제한을 조건으로 임시 책임을 맡는다.",
+      "outcomeId": "out_commit_route_king",
+      "toKind": "node",
+      "toId": "bridge_route_king",
+      "routeIds": [
+        "ending_king"
+      ]
+    },
+    {
+      "id": "step-037452680d5ef4",
+      "type": "step",
+      "parentId": "step-6d3b3c0339d04d",
+      "depth": 9,
+      "nodeId": "bridge_route_king",
+      "age": 60,
+      "sceneTitle": "60세, 왕국 임시 추대식",
+      "choiceId": "route_king_abolish",
+      "choiceText": "첫 칙령으로 사람을 마왕으로 지정하는 제도를 폐지한다.",
+      "outcomeId": "out_route_king_abolish",
+      "toKind": "ending",
+      "toId": "ending_king",
+      "routeIds": [
+        "ending_king"
+      ]
+    },
+    {
+      "id": "ending:ending_king",
+      "type": "ending",
+      "parentId": "step-037452680d5ef4",
+      "depth": 10,
+      "endingId": "ending_king",
+      "age": 60,
+      "routeIds": [
+        "ending_king"
+      ]
+    },
+    {
+      "id": "step-f47e41389d8ff1",
+      "type": "step",
+      "parentId": "step-8c1ac8ac9f5013",
+      "depth": 7,
+      "nodeId": "hearing",
+      "age": 47,
+      "sceneTitle": "국가가 만든 마왕",
+      "choiceId": "explore_route_bankrupt",
+      "choiceText": "한 사람의 사건이 아니었다 — 사정을 자세히 알아본다.",
+      "outcomeId": "enter_route_bankrupt",
+      "toKind": "node",
+      "toId": "setup_route_bankrupt",
+      "routeIds": [
+        "ending_bankrupt"
+      ]
+    },
+    {
+      "id": "step-ab846632d50a94",
+      "type": "step",
+      "parentId": "step-f47e41389d8ff1",
+      "depth": 8,
+      "nodeId": "setup_route_bankrupt",
+      "age": 47,
+      "sceneTitle": "한 사람의 사건이 아니었다",
+      "choiceId": "commit_route_bankrupt",
+      "choiceText": "피해자들의 동의를 얻어 공동 소송을 제기하고 증거를 보존한다.",
+      "outcomeId": "out_commit_route_bankrupt",
+      "toKind": "node",
+      "toId": "bridge_route_bankrupt",
+      "routeIds": [
+        "ending_bankrupt"
+      ]
+    },
+    {
+      "id": "step-bc030b3de3cc3c",
+      "type": "step",
+      "parentId": "step-ab846632d50a94",
+      "depth": 9,
+      "nodeId": "bridge_route_bankrupt",
+      "age": 60,
+      "sceneTitle": "60세, 왕국 재무부 긴급회의",
+      "choiceId": "route_bankrupt_protect",
+      "choiceText": "국민 생계 예산부터 보호하는 지급 계획을 제안한다.",
+      "outcomeId": "out_route_bankrupt_protect",
+      "toKind": "ending",
+      "toId": "ending_bankrupt",
+      "routeIds": [
+        "ending_bankrupt"
+      ]
+    },
+    {
+      "id": "ending:ending_bankrupt",
+      "type": "ending",
+      "parentId": "step-bc030b3de3cc3c",
+      "depth": 10,
+      "endingId": "ending_bankrupt",
+      "age": 60,
+      "routeIds": [
+        "ending_bankrupt"
+      ]
+    },
+    {
+      "id": "step-0188a5e6d01850",
+      "type": "step",
+      "parentId": "step-8c1ac8ac9f5013",
+      "depth": 7,
+      "nodeId": "hearing",
+      "age": 47,
+      "sceneTitle": "국가가 만든 마왕",
+      "choiceId": "explore_route_true_demon",
+      "choiceText": "봉인 시설의 사용 내역 — 사정을 자세히 알아본다.",
+      "outcomeId": "enter_route_true_demon",
+      "toKind": "node",
+      "toId": "setup_route_true_demon",
+      "routeIds": [
+        "ending_true_demon"
+      ]
+    },
+    {
+      "id": "step-da61f41bc84617",
+      "type": "step",
+      "parentId": "step-0188a5e6d01850",
+      "depth": 8,
+      "nodeId": "setup_route_true_demon",
+      "age": 47,
+      "sceneTitle": "봉인 시설의 사용 내역",
+      "choiceId": "commit_route_true_demon",
+      "choiceText": "증거를 보존하며 봉인 시설의 실체를 조사한다.",
+      "outcomeId": "out_commit_route_true_demon",
+      "toKind": "node",
+      "toId": "bridge_route_true_demon",
+      "routeIds": [
+        "ending_true_demon"
+      ]
+    },
+    {
+      "id": "step-b6971499806ecc",
+      "type": "step",
+      "parentId": "step-da61f41bc84617",
+      "depth": 9,
+      "nodeId": "bridge_route_true_demon",
+      "age": 53,
+      "sceneTitle": "53세, 왕궁 지하의 봉인된 연구실",
+      "choiceId": "route_true_demon_evacuate",
+      "choiceText": "봉인을 깨지 않고 주민을 대피시킬 증거를 공개한다.",
+      "outcomeId": "out_route_true_demon_evacuate",
+      "toKind": "ending",
+      "toId": "ending_true_demon",
+      "routeIds": [
+        "ending_true_demon"
+      ]
+    },
+    {
+      "id": "ending:ending_true_demon",
+      "type": "ending",
+      "parentId": "step-b6971499806ecc",
+      "depth": 10,
+      "endingId": "ending_true_demon",
+      "age": 53,
+      "routeIds": [
+        "ending_true_demon"
+      ]
+    },
+    {
+      "id": "step-92aa39f7319569",
+      "type": "step",
+      "parentId": "origin",
+      "depth": 1,
+      "nodeId": "birth",
+      "age": 0,
+      "sceneTitle": "왕국력 800년, 잘못 태어난 것은 아니다",
+      "choiceId": "family_appeal",
+      "choiceText": "부모는 마왕 등록에 이의를 신청한다.",
+      "outcomeId": "out_family_appeal",
+      "toKind": "node",
+      "toId": "child",
+      "routeIds": [
+        "ending_mother_petition"
+      ]
+    },
+    {
+      "id": "step-e95e5e81f4c4a8",
+      "type": "step",
+      "parentId": "step-92aa39f7319569",
+      "depth": 2,
+      "nodeId": "child",
+      "age": 12,
+      "sceneTitle": "용사가 되고 싶은 아이",
+      "choiceId": "trust_mina",
+      "choiceText": "미나를 믿고 함께 자란다.",
+      "outcomeId": "out_trust_mina",
+      "toKind": "node",
+      "toId": "exam",
+      "routeIds": [
+        "ending_mother_petition"
+      ]
+    },
+    {
+      "id": "step-837c62649e25a2",
+      "type": "step",
+      "parentId": "step-e95e5e81f4c4a8",
+      "depth": 3,
+      "nodeId": "exam",
+      "age": 20,
+      "sceneTitle": "용사 시험의 실기 과목",
+      "choiceId": "attack",
+      "choiceText": "먼저 미나를 공격해 운명을 바꿔 본다.",
+      "outcomeId": "out_attack",
+      "toKind": "node",
+      "toId": "prison",
+      "routeIds": [
+        "ending_mother_petition"
+      ]
+    },
+    {
+      "id": "step-cf5327e58c5307",
+      "type": "step",
+      "parentId": "step-837c62649e25a2",
+      "depth": 4,
+      "nodeId": "prison",
+      "age": 21,
+      "sceneTitle": "감옥에선 누구나 평등하지 않다",
+      "choiceId": "forgive",
+      "choiceText": "미나에게 편지를 쓰고 다시 시작한다.",
+      "outcomeId": "out_forgive",
+      "toKind": "node",
+      "toId": "princess",
+      "routeIds": [
+        "ending_mother_petition"
+      ]
+    },
+    {
+      "id": "step-d8e90fb859aa6c",
+      "type": "step",
+      "parentId": "step-cf5327e58c5307",
+      "depth": 5,
+      "nodeId": "princess",
+      "age": 29,
+      "sceneTitle": "공주의 청혼 아닌 제안",
+      "choiceId": "ally",
+      "choiceText": "에리시아와 손잡고 장부를 추적한다.",
+      "outcomeId": "out_ally",
+      "toKind": "node",
+      "toId": "audit",
+      "routeIds": [
+        "ending_mother_petition"
+      ]
+    },
+    {
+      "id": "step-fe8844bd14912c",
+      "type": "step",
+      "parentId": "step-d8e90fb859aa6c",
+      "depth": 6,
+      "nodeId": "audit",
+      "age": 41,
+      "sceneTitle": "사라진 199만 7천 골드",
+      "choiceId": "explore_route_mother_petition",
+      "choiceText": "어머니가 보낸 등기 — 사정을 자세히 알아본다.",
+      "outcomeId": "enter_route_mother_petition",
+      "toKind": "node",
+      "toId": "setup_route_mother_petition",
+      "routeIds": [
+        "ending_mother_petition"
+      ]
+    },
+    {
+      "id": "step-95db7e9be64089",
+      "type": "step",
+      "parentId": "step-fe8844bd14912c",
+      "depth": 7,
+      "nodeId": "setup_route_mother_petition",
+      "age": 41,
+      "sceneTitle": "어머니가 보낸 등기",
+      "choiceId": "commit_route_mother_petition",
+      "choiceText": "어머니가 남긴 진정서와 접수번호를 끝까지 보존한다.",
+      "outcomeId": "out_commit_route_mother_petition",
+      "toKind": "node",
+      "toId": "bridge_route_mother_petition",
+      "routeIds": [
+        "ending_mother_petition"
+      ]
+    },
+    {
+      "id": "step-b4b919d795ebf7",
+      "type": "step",
+      "parentId": "step-95db7e9be64089",
+      "depth": 8,
+      "nodeId": "bridge_route_mother_petition",
+      "age": 65,
+      "sceneTitle": "65세, 오래된 출생신고소",
+      "choiceId": "route_mother_petition_read",
+      "choiceText": "어머니의 글씨를 처음부터 끝까지 읽는다.",
+      "outcomeId": "out_route_mother_petition_read",
+      "toKind": "ending",
+      "toId": "ending_mother_petition",
+      "routeIds": [
+        "ending_mother_petition"
+      ]
+    },
+    {
+      "id": "ending:ending_mother_petition",
+      "type": "ending",
+      "parentId": "step-b4b919d795ebf7",
+      "depth": 9,
+      "endingId": "ending_mother_petition",
+      "age": 65,
+      "routeIds": [
+        "ending_mother_petition"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "origin",
+      "to": "step-956fb23edc4698"
+    },
+    {
+      "from": "step-956fb23edc4698",
+      "to": "step-e0373494c8d649"
+    },
+    {
+      "from": "step-e0373494c8d649",
+      "to": "step-f496d6d6158c03"
+    },
+    {
+      "from": "step-f496d6d6158c03",
+      "to": "step-d8d70f7274d238"
+    },
+    {
+      "from": "step-d8d70f7274d238",
+      "to": "ending:ending_escape"
+    },
+    {
+      "from": "step-e0373494c8d649",
+      "to": "step-04936c108f132d"
+    },
+    {
+      "from": "step-04936c108f132d",
+      "to": "step-740ee6a5d42d8d"
+    },
+    {
+      "from": "step-740ee6a5d42d8d",
+      "to": "ending:ending_fire"
+    },
+    {
+      "from": "step-e0373494c8d649",
+      "to": "step-f994380bf7f9f9"
+    },
+    {
+      "from": "step-f994380bf7f9f9",
+      "to": "step-e61a07a52c61ff"
+    },
+    {
+      "from": "step-e61a07a52c61ff",
+      "to": "ending:ending_throne"
+    },
+    {
+      "from": "step-f496d6d6158c03",
+      "to": "step-30e636287ae333"
+    },
+    {
+      "from": "step-30e636287ae333",
+      "to": "step-83f15305b57c03"
+    },
+    {
+      "from": "step-83f15305b57c03",
+      "to": "step-9da4cca496e478"
+    },
+    {
+      "from": "step-9da4cca496e478",
+      "to": "ending:ending_ledger"
+    },
+    {
+      "from": "step-83f15305b57c03",
+      "to": "step-8c1ac8ac9f5013"
+    },
+    {
+      "from": "step-8c1ac8ac9f5013",
+      "to": "step-f393bbfce71895"
+    },
+    {
+      "from": "step-f393bbfce71895",
+      "to": "step-b0b1c51e224b3d"
+    },
+    {
+      "from": "step-b0b1c51e224b3d",
+      "to": "ending:ending_peace"
+    },
+    {
+      "from": "step-8c1ac8ac9f5013",
+      "to": "step-031a7d25dbb281"
+    },
+    {
+      "from": "step-031a7d25dbb281",
+      "to": "step-2c36b1e95a4a91"
+    },
+    {
+      "from": "step-2c36b1e95a4a91",
+      "to": "step-ed4f3e43500778"
+    },
+    {
+      "from": "step-ed4f3e43500778",
+      "to": "ending:ending_reform"
+    },
+    {
+      "from": "step-031a7d25dbb281",
+      "to": "step-f0db605f8593b0"
+    },
+    {
+      "from": "step-f0db605f8593b0",
+      "to": "step-10f7c2cb3e7fac"
+    },
+    {
+      "from": "step-10f7c2cb3e7fac",
+      "to": "ending:ending_office"
+    },
+    {
+      "from": "step-e0373494c8d649",
+      "to": "step-e5da47db8fdd69"
+    },
+    {
+      "from": "step-e5da47db8fdd69",
+      "to": "step-7d2bdef82beedf"
+    },
+    {
+      "from": "step-7d2bdef82beedf",
+      "to": "step-7716660079b934"
+    },
+    {
+      "from": "step-7716660079b934",
+      "to": "ending:ending_love_scandal"
+    },
+    {
+      "from": "step-e5da47db8fdd69",
+      "to": "step-709247e60339f3"
+    },
+    {
+      "from": "step-709247e60339f3",
+      "to": "step-4d6d5d2cba895f"
+    },
+    {
+      "from": "step-4d6d5d2cba895f",
+      "to": "step-9b4491fcb4286b"
+    },
+    {
+      "from": "step-9b4491fcb4286b",
+      "to": "step-249433b66a4d04"
+    },
+    {
+      "from": "step-249433b66a4d04",
+      "to": "step-7c840228a664c6"
+    },
+    {
+      "from": "step-7c840228a664c6",
+      "to": "ending:ending_mina_renounced"
+    },
+    {
+      "from": "step-4d6d5d2cba895f",
+      "to": "step-a66cb07bc551f0"
+    },
+    {
+      "from": "step-a66cb07bc551f0",
+      "to": "step-6a1861f618786c"
+    },
+    {
+      "from": "step-6a1861f618786c",
+      "to": "step-911e3955317c16"
+    },
+    {
+      "from": "step-911e3955317c16",
+      "to": "ending:ending_mina_wedding"
+    },
+    {
+      "from": "step-709247e60339f3",
+      "to": "step-42a0de9a58e56a"
+    },
+    {
+      "from": "step-42a0de9a58e56a",
+      "to": "step-8caa0ab15da5a1"
+    },
+    {
+      "from": "step-8caa0ab15da5a1",
+      "to": "step-b915e28eefba43"
+    },
+    {
+      "from": "step-b915e28eefba43",
+      "to": "step-c28ed3bbfaff87"
+    },
+    {
+      "from": "step-c28ed3bbfaff87",
+      "to": "step-8ee658ac96882e"
+    },
+    {
+      "from": "step-8ee658ac96882e",
+      "to": "ending:ending_confession_unanswered"
+    },
+    {
+      "from": "step-04936c108f132d",
+      "to": "step-7afe5f4315df45"
+    },
+    {
+      "from": "step-7afe5f4315df45",
+      "to": "step-e01ed300987af7"
+    },
+    {
+      "from": "step-e01ed300987af7",
+      "to": "step-df9b0f7aad4baf"
+    },
+    {
+      "from": "step-df9b0f7aad4baf",
+      "to": "step-0e7e4c4b90f15c"
+    },
+    {
+      "from": "step-0e7e4c4b90f15c",
+      "to": "step-764eda8216ff6b"
+    },
+    {
+      "from": "step-764eda8216ff6b",
+      "to": "ending:ending_common_enemy"
+    },
+    {
+      "from": "step-956fb23edc4698",
+      "to": "step-7362f2222bcb86"
+    },
+    {
+      "from": "step-7362f2222bcb86",
+      "to": "step-8a680dddd3c529"
+    },
+    {
+      "from": "step-8a680dddd3c529",
+      "to": "step-6f221eda1d8850"
+    },
+    {
+      "from": "step-6f221eda1d8850",
+      "to": "step-de581ebdf70a52"
+    },
+    {
+      "from": "step-de581ebdf70a52",
+      "to": "step-af842cabba1383"
+    },
+    {
+      "from": "step-af842cabba1383",
+      "to": "step-f7d5032bed5c6d"
+    },
+    {
+      "from": "step-f7d5032bed5c6d",
+      "to": "ending:ending_double_license"
+    },
+    {
+      "from": "origin",
+      "to": "step-301d2ae7c24ec1"
+    },
+    {
+      "from": "step-301d2ae7c24ec1",
+      "to": "step-6e1ef810a8b255"
+    },
+    {
+      "from": "step-6e1ef810a8b255",
+      "to": "step-8907d37c3ed6db"
+    },
+    {
+      "from": "step-8907d37c3ed6db",
+      "to": "step-57ddd65ee50c17"
+    },
+    {
+      "from": "step-57ddd65ee50c17",
+      "to": "step-430506ab65462f"
+    },
+    {
+      "from": "step-430506ab65462f",
+      "to": "step-2234dda5621374"
+    },
+    {
+      "from": "step-2234dda5621374",
+      "to": "step-8e6ebbc2596f64"
+    },
+    {
+      "from": "step-8e6ebbc2596f64",
+      "to": "step-5be0f2f0b2ccd5"
+    },
+    {
+      "from": "step-5be0f2f0b2ccd5",
+      "to": "step-ffaa0fdbac18e7"
+    },
+    {
+      "from": "step-ffaa0fdbac18e7",
+      "to": "ending:ending_retirement_47"
+    },
+    {
+      "from": "step-f994380bf7f9f9",
+      "to": "step-884bee6f8314bb"
+    },
+    {
+      "from": "step-884bee6f8314bb",
+      "to": "step-87908f1774d132"
+    },
+    {
+      "from": "step-87908f1774d132",
+      "to": "step-4c1d9d2ed23920"
+    },
+    {
+      "from": "step-4c1d9d2ed23920",
+      "to": "step-76918b7b0da173"
+    },
+    {
+      "from": "step-76918b7b0da173",
+      "to": "ending:ending_paid_defeat"
+    },
+    {
+      "from": "step-884bee6f8314bb",
+      "to": "step-e7bf6ca3922ebf"
+    },
+    {
+      "from": "step-e7bf6ca3922ebf",
+      "to": "step-37c69599cf218f"
+    },
+    {
+      "from": "step-37c69599cf218f",
+      "to": "step-97a268e88ebb50"
+    },
+    {
+      "from": "step-97a268e88ebb50",
+      "to": "step-d5744bbd87004a"
+    },
+    {
+      "from": "step-d5744bbd87004a",
+      "to": "ending:ending_taxpayer"
+    },
+    {
+      "from": "step-8c1ac8ac9f5013",
+      "to": "step-da1259256449f8"
+    },
+    {
+      "from": "step-da1259256449f8",
+      "to": "step-6d3b3c0339d04d"
+    },
+    {
+      "from": "step-6d3b3c0339d04d",
+      "to": "step-037452680d5ef4"
+    },
+    {
+      "from": "step-037452680d5ef4",
+      "to": "ending:ending_king"
+    },
+    {
+      "from": "step-8c1ac8ac9f5013",
+      "to": "step-f47e41389d8ff1"
+    },
+    {
+      "from": "step-f47e41389d8ff1",
+      "to": "step-ab846632d50a94"
+    },
+    {
+      "from": "step-ab846632d50a94",
+      "to": "step-bc030b3de3cc3c"
+    },
+    {
+      "from": "step-bc030b3de3cc3c",
+      "to": "ending:ending_bankrupt"
+    },
+    {
+      "from": "step-8c1ac8ac9f5013",
+      "to": "step-0188a5e6d01850"
+    },
+    {
+      "from": "step-0188a5e6d01850",
+      "to": "step-da61f41bc84617"
+    },
+    {
+      "from": "step-da61f41bc84617",
+      "to": "step-b6971499806ecc"
+    },
+    {
+      "from": "step-b6971499806ecc",
+      "to": "ending:ending_true_demon"
+    },
+    {
+      "from": "origin",
+      "to": "step-92aa39f7319569"
+    },
+    {
+      "from": "step-92aa39f7319569",
+      "to": "step-e95e5e81f4c4a8"
+    },
+    {
+      "from": "step-e95e5e81f4c4a8",
+      "to": "step-837c62649e25a2"
+    },
+    {
+      "from": "step-837c62649e25a2",
+      "to": "step-cf5327e58c5307"
+    },
+    {
+      "from": "step-cf5327e58c5307",
+      "to": "step-d8e90fb859aa6c"
+    },
+    {
+      "from": "step-d8e90fb859aa6c",
+      "to": "step-fe8844bd14912c"
+    },
+    {
+      "from": "step-fe8844bd14912c",
+      "to": "step-95db7e9be64089"
+    },
+    {
+      "from": "step-95db7e9be64089",
+      "to": "step-b4b919d795ebf7"
+    },
+    {
+      "from": "step-b4b919d795ebf7",
+      "to": "ending:ending_mother_petition"
+    }
+  ],
+  "routes": {
+    "ending_escape": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-f496d6d6158c03",
+      "step-d8d70f7274d238",
+      "ending:ending_escape"
+    ],
+    "ending_fire": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-04936c108f132d",
+      "step-740ee6a5d42d8d",
+      "ending:ending_fire"
+    ],
+    "ending_throne": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-f994380bf7f9f9",
+      "step-e61a07a52c61ff",
+      "ending:ending_throne"
+    ],
+    "ending_ledger": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-f496d6d6158c03",
+      "step-30e636287ae333",
+      "step-83f15305b57c03",
+      "step-9da4cca496e478",
+      "ending:ending_ledger"
+    ],
+    "ending_peace": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-f496d6d6158c03",
+      "step-30e636287ae333",
+      "step-83f15305b57c03",
+      "step-8c1ac8ac9f5013",
+      "step-f393bbfce71895",
+      "step-b0b1c51e224b3d",
+      "ending:ending_peace"
+    ],
+    "ending_reform": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-f496d6d6158c03",
+      "step-30e636287ae333",
+      "step-83f15305b57c03",
+      "step-8c1ac8ac9f5013",
+      "step-031a7d25dbb281",
+      "step-2c36b1e95a4a91",
+      "step-ed4f3e43500778",
+      "ending:ending_reform"
+    ],
+    "ending_office": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-f496d6d6158c03",
+      "step-30e636287ae333",
+      "step-83f15305b57c03",
+      "step-8c1ac8ac9f5013",
+      "step-031a7d25dbb281",
+      "step-f0db605f8593b0",
+      "step-10f7c2cb3e7fac",
+      "ending:ending_office"
+    ],
+    "ending_love_scandal": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-e5da47db8fdd69",
+      "step-7d2bdef82beedf",
+      "step-7716660079b934",
+      "ending:ending_love_scandal"
+    ],
+    "ending_mina_renounced": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-e5da47db8fdd69",
+      "step-709247e60339f3",
+      "step-4d6d5d2cba895f",
+      "step-9b4491fcb4286b",
+      "step-249433b66a4d04",
+      "step-7c840228a664c6",
+      "ending:ending_mina_renounced"
+    ],
+    "ending_mina_wedding": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-e5da47db8fdd69",
+      "step-709247e60339f3",
+      "step-4d6d5d2cba895f",
+      "step-a66cb07bc551f0",
+      "step-6a1861f618786c",
+      "step-911e3955317c16",
+      "ending:ending_mina_wedding"
+    ],
+    "ending_confession_unanswered": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-e5da47db8fdd69",
+      "step-709247e60339f3",
+      "step-42a0de9a58e56a",
+      "step-8caa0ab15da5a1",
+      "step-b915e28eefba43",
+      "step-c28ed3bbfaff87",
+      "step-8ee658ac96882e",
+      "ending:ending_confession_unanswered"
+    ],
+    "ending_common_enemy": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-04936c108f132d",
+      "step-7afe5f4315df45",
+      "step-e01ed300987af7",
+      "step-df9b0f7aad4baf",
+      "step-0e7e4c4b90f15c",
+      "step-764eda8216ff6b",
+      "ending:ending_common_enemy"
+    ],
+    "ending_double_license": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-7362f2222bcb86",
+      "step-8a680dddd3c529",
+      "step-6f221eda1d8850",
+      "step-de581ebdf70a52",
+      "step-af842cabba1383",
+      "step-f7d5032bed5c6d",
+      "ending:ending_double_license"
+    ],
+    "ending_retirement_47": [
+      "origin",
+      "step-301d2ae7c24ec1",
+      "step-6e1ef810a8b255",
+      "step-8907d37c3ed6db",
+      "step-57ddd65ee50c17",
+      "step-430506ab65462f",
+      "step-2234dda5621374",
+      "step-8e6ebbc2596f64",
+      "step-5be0f2f0b2ccd5",
+      "step-ffaa0fdbac18e7",
+      "ending:ending_retirement_47"
+    ],
+    "ending_paid_defeat": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-f994380bf7f9f9",
+      "step-884bee6f8314bb",
+      "step-87908f1774d132",
+      "step-4c1d9d2ed23920",
+      "step-76918b7b0da173",
+      "ending:ending_paid_defeat"
+    ],
+    "ending_taxpayer": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-f994380bf7f9f9",
+      "step-884bee6f8314bb",
+      "step-e7bf6ca3922ebf",
+      "step-37c69599cf218f",
+      "step-97a268e88ebb50",
+      "step-d5744bbd87004a",
+      "ending:ending_taxpayer"
+    ],
+    "ending_king": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-f496d6d6158c03",
+      "step-30e636287ae333",
+      "step-83f15305b57c03",
+      "step-8c1ac8ac9f5013",
+      "step-da1259256449f8",
+      "step-6d3b3c0339d04d",
+      "step-037452680d5ef4",
+      "ending:ending_king"
+    ],
+    "ending_bankrupt": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-f496d6d6158c03",
+      "step-30e636287ae333",
+      "step-83f15305b57c03",
+      "step-8c1ac8ac9f5013",
+      "step-f47e41389d8ff1",
+      "step-ab846632d50a94",
+      "step-bc030b3de3cc3c",
+      "ending:ending_bankrupt"
+    ],
+    "ending_true_demon": [
+      "origin",
+      "step-956fb23edc4698",
+      "step-e0373494c8d649",
+      "step-f496d6d6158c03",
+      "step-30e636287ae333",
+      "step-83f15305b57c03",
+      "step-8c1ac8ac9f5013",
+      "step-0188a5e6d01850",
+      "step-da61f41bc84617",
+      "step-b6971499806ecc",
+      "ending:ending_true_demon"
+    ],
+    "ending_mother_petition": [
+      "origin",
+      "step-92aa39f7319569",
+      "step-e95e5e81f4c4a8",
+      "step-837c62649e25a2",
+      "step-cf5327e58c5307",
+      "step-d8e90fb859aa6c",
+      "step-fe8844bd14912c",
+      "step-95db7e9be64089",
+      "step-b4b919d795ebf7",
+      "ending:ending_mother_petition"
+    ]
+  }
+}

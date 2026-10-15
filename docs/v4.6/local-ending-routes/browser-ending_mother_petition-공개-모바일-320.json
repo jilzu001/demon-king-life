@@ -1,0 +1,37 @@
+{
+  "endingId": "ending_mother_petition",
+  "choices": [
+    "family_appeal",
+    "trust_mina",
+    "attack",
+    "forgive",
+    "ally",
+    "explore_route_mother_petition",
+    "commit_route_mother_petition",
+    "route_mother_petition_read"
+  ],
+  "age": 65,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "prison",
+    "princess",
+    "audit",
+    "setup_route_mother_petition",
+    "bridge_route_mother_petition"
+  ],
+  "image": "/demon-king-life/assets/illustrations/ending_v4_6/ending_mother_petition.webp",
+  "statuses": [
+    200,
+    304
+  ],
+  "bounds": {
+    "width": 244,
+    "height": 183,
+    "naturalWidth": 960,
+    "naturalHeight": 720
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

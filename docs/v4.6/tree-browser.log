@@ -1,0 +1,24 @@
+[WebServer] (node:105040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:105396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 10 tests using 1 worker
+
+(node:99308) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [PC] › tests\e2e\tree-compact.spec.ts:13:1 › 트리 기본 잠금/카메라 드래그·휠·미니맵/노드 고정/원장 불변/닫기 포커스 (3.7s)
+  ok  2 [PC] › tests\e2e\tree-compact.spec.ts:31:1 › 힌트는 명시적으로 켜야 보이며 잠긴 엔딩 그림/결말은 계속 숨기고 재열기/ESC/뒤로가기를 지원한다 (1.4s)
+  ok  3 [PC] › tests\e2e\tree-compact.spec.ts:42:1 › 실제 방문 분기 재선택은 확인 전 저장을 바꾸지 않고 확인 후 기존 백업으로 복원된다 (2.4s)
+  -   4 [PC] › tests\e2e\tree-compact.spec.ts:59:1 › 모바일 실제 두 손가락 핀치는 카메라만 확대하고 노드/게임 원장을 유지한다
+  ok  5 [PC] › tests\e2e\tree-compact.spec.ts:70:1 › 320/360/390/430/1280px·150% 글자에서 트리 컨트롤과 미니맵·전체 보기·노드 탭을 유지한다 (2.9s)
+(node:104748) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  6 [모바일-320] › tests\e2e\tree-compact.spec.ts:13:1 › 트리 기본 잠금/카메라 드래그·휠·미니맵/노드 고정/원장 불변/닫기 포커스 (2.6s)
+  ok  7 [모바일-320] › tests\e2e\tree-compact.spec.ts:31:1 › 힌트는 명시적으로 켜야 보이며 잠긴 엔딩 그림/결말은 계속 숨기고 재열기/ESC/뒤로가기를 지원한다 (1.5s)
+  ok  8 [모바일-320] › tests\e2e\tree-compact.spec.ts:42:1 › 실제 방문 분기 재선택은 확인 전 저장을 바꾸지 않고 확인 후 기존 백업으로 복원된다 (2.4s)
+  ok  9 [모바일-320] › tests\e2e\tree-compact.spec.ts:59:1 › 모바일 실제 두 손가락 핀치는 카메라만 확대하고 노드/게임 원장을 유지한다 (1.2s)
+  ok 10 [모바일-320] › tests\e2e\tree-compact.spec.ts:70:1 › 320/360/390/430/1280px·150% 글자에서 트리 컨트롤과 미니맵·전체 보기·노드 탭을 유지한다 (2.7s)
+
+  1 skipped
+  9 passed (31.7s)

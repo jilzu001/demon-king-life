@@ -1,0 +1,114 @@
+import { test, expect, type Page } from '@playwright/test';
+import { readFileSync, mkdirSync } from 'node:fs';
+const endings = JSON.parse(readFileSync('public/stories/demon-king-compact/endings.json', 'utf8')).endings as { id: string; title: string; body: string }[];
+const runKey = 'existence-sim:v1:run:demon-king:compact', metaKey = 'existence-sim:v1:meta:demon-king:compact';
+async function open(page: Page, start = false) {
+  const now = new Date('2026-10-15T00:00:00Z'); await page.clock.install({ time: now }); await page.clock.pauseAt(now);
+  await page.goto('./'); if (start) await page.locator('[data-enter]').click();
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
+  await page.locator('[data-ending-tree-open]').click(); await expect(page.locator('.ending-tree-dialog')).toBeVisible();
+}
+async function snapshot(page: Page) { return page.evaluate(([run, meta]) => [localStorage.getItem(run!), localStorage.getItem(meta!)], [runKey, metaKey]); }
+const fixed = (page: Page) => page.locator('.tree-node').evaluateAll(nodes => nodes.map(node => [node.getAttribute('data-tree-node'), (node as HTMLElement).style.left, (node as HTMLElement).style.top]));
+test('트리 기본 잠금/카메라 드래그·휠·미니맵/노드 고정/원장 불변/닫기 포커스', async ({ page }) => {
+  await open(page, true); const state = await snapshot(page), positions = await fixed(page);
+  const tree = page.locator('.ending-tree-dialog'), view = page.locator('.tree-viewport');
+  await expect(tree.locator('[data-tree-type="ending"]')).toHaveCount(20); await expect(tree.locator('img')).toHaveCount(0);
+  for (const ending of endings) expect(await tree.innerText()).not.toContain(ending.title);
+  const box = (await view.boundingBox())!, point = { x: box.x + 30, y: box.y + 25 };
+  const initial = await view.getAttribute('data-camera-x');
+  await page.mouse.move(point.x, point.y); await page.mouse.down(); await page.mouse.move(point.x + 70, point.y + 40, { steps: 8 }); await page.mouse.up();
+  expect(await view.getAttribute('data-camera-x')).not.toBe(initial); await page.clock.runFor(300);
+  const scale = await view.getAttribute('data-camera-scale'); await page.mouse.move(point.x + 20, point.y + 20); await page.mouse.wheel(0, -200);
+  await expect.poll(() => view.getAttribute('data-camera-scale')).not.toBe(scale);
+  const mini = (await page.locator('.tree-minimap').boundingBox())!, beforeMap = await view.getAttribute('data-camera-scale');
+  await page.mouse.move(mini.x + mini.width * .2, mini.y + mini.height * .3); await page.mouse.down(); await page.mouse.move(mini.x + mini.width * .7, mini.y + mini.height * .7, { steps: 5 }); await page.mouse.up();
+  expect(await view.getAttribute('data-camera-scale')).toBe(beforeMap); expect(await fixed(page)).toEqual(positions); expect(await snapshot(page)).toEqual(state);
+  await tree.getByRole('button', { name: '전체 보기', exact: true }).click();
+  const rect = await page.locator('.mini-viewport').evaluate(node => Object.fromEntries(['x','y','width','height'].map(key => [key, Number(node.getAttribute(key))])));
+  expect(rect.x!).toBeGreaterThanOrEqual(0); expect(rect.y!).toBeGreaterThanOrEqual(0);
+  expect(rect.x! + rect.width!).toBeLessThanOrEqual(180); expect(rect.y! + rect.height!).toBeLessThanOrEqual(110);
+  expect(rect.width!).toBeGreaterThan(0); expect(rect.height!).toBeGreaterThan(0);
+  await tree.getByRole('button', { name: '닫기', exact: true }).click(); await expect(tree).toHaveCount(0);
+  await expect(page.locator('[data-ending-tree-open]')).toBeFocused(); expect(await snapshot(page)).toEqual(state);
+});
+test('힌트는 명시적으로 켜야 보이며 잠긴 엔딩 그림/결말은 계속 숨기고 재열기/ESC/뒤로가기를 지원한다', async ({ page }) => {
+  await open(page); const tree = page.locator('.ending-tree-dialog');
+  await page.getByLabel('목표 엔딩', { exact: true }).selectOption('ending_mina_wedding');
+  await tree.getByRole('button', { name: '목표 엔딩 찾기', exact: true }).click();
+  await expect(tree.locator('img')).toHaveCount(0); await expect(tree.getByRole('list', { name: '검증된 수집 경로' })).toHaveCount(0);
+  await expect(tree.locator('.tree-node.is-target')).toHaveCount(1);
+  await page.locator('[data-tree-spoilers]').check(); await expect(tree.getByRole('list', { name: '검증된 수집 경로' })).toBeVisible();
+  expect(await tree.locator('.tree-node.is-target').count()).toBeGreaterThan(1);
+  await expect(tree.locator('img')).toHaveCount(0); expect(await tree.innerText()).not.toContain(endings.find(ending => ending.id === 'ending_mina_wedding')!.body);
+  await page.keyboard.press('Escape'); await expect(tree).toHaveCount(0); await expect(page.locator('[data-ending-tree-open]')).toBeFocused();
+  await page.locator('[data-ending-tree-open]').click(); await expect(page.locator('[data-tree-spoilers]')).not.toBeChecked();
+  await page.goBack(); await expect(tree).toHaveCount(0); await expect(page.locator('[data-ending-tree-open]')).toBeFocused();
+});
+test('실제 방문 분기 재선택은 확인 전 저장을 바꾸지 않고 확인 후 기존 백업으로 복원된다', async ({ page }) => {
+  await open(page, true); await page.keyboard.press('Escape'); await page.locator('.menu-dialog').getByRole('button', { name: '닫기', exact: true }).click();
+  for (const id of ['family_accept', 'trust_mina']) {
+    await page.locator('#reading-skip').click(); await page.clock.runFor(400); await page.locator(`[data-choice="${id}"]`).click();
+    await page.clock.runFor(400); await page.locator('#reading-skip').click();
+  }
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click(); await page.locator('[data-ending-tree-open]').click();
+  const before = await snapshot(page), tree = page.locator('.ending-tree-dialog'); await page.locator('[data-tree-spoilers]').check();
+  await page.getByLabel('목표 엔딩', { exact: true }).selectOption('ending_fire'); await tree.getByRole('button', { name: '목표 엔딩 찾기', exact: true }).click();
+  await tree.getByRole('button', { name: '방문 분기 보기', exact: true }).click();
+  await tree.getByRole('button', { name: '이 사건부터 재선택', exact: true }).click(); expect(await snapshot(page)).toEqual(before);
+  await tree.getByRole('button', { name: '취소', exact: true }).click(); expect(await snapshot(page)).toEqual(before);
+  await tree.getByRole('button', { name: '이 사건부터 재선택', exact: true }).click(); await tree.getByRole('button', { name: '확인 · 여기부터 재선택', exact: true }).click();
+  await expect(tree).toHaveCount(0);
+  const after = await snapshot(page), state = JSON.parse(after[0]!); expect(state.currentNodeId).toBe('exam'); expect(state.history).toHaveLength(2); expect(after[1]).toBe(before[1]);
+  expect(await page.evaluate(() => localStorage.getItem('existence-sim:v1:backup:before-reselect:demon-king:compact'))).toBe(before[0]);
+});
+test('모바일 실제 두 손가락 핀치는 카메라만 확대하고 노드/게임 원장을 유지한다', async ({ page, context }) => {
+  test.skip(!test.info().project.use.isMobile, '실제 터치는 모바일 프로젝트에서 검사'); await open(page, true);
+  const state = await snapshot(page), positions = await fixed(page), view = page.locator('.tree-viewport'), box = (await view.boundingBox())!;
+  const before = Number(await view.getAttribute('data-camera-scale')), x = box.x + box.width / 2, y = box.y + box.height / 3;
+  const cdp = await context.newCDPSession(page);
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x: x - 25, y, id: 1 }, { x: x + 25, y, id: 2 }] });
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: x - 65, y, id: 1 }, { x: x + 65, y, id: 2 }] });
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  await expect.poll(async () => Number(await view.getAttribute('data-camera-scale'))).toBeGreaterThan(before * 1.5);
+  expect(await fixed(page)).toEqual(positions); expect(await snapshot(page)).toEqual(state); await cdp.detach();
+});
+test('320/360/390/430/1280px·150% 글자에서 트리 컨트롤과 미니맵·전체 보기·노드 탭을 유지한다', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('demon-king:ui:text-percent', '150')); await open(page);
+  for (const width of [320, 360, 390, 430, 1280]) {
+    await page.setViewportSize({ width, height: width === 320 ? 568 : 900 });
+    const tree = page.locator('.ending-tree-dialog'); await tree.getByRole('button', { name: '전체 보기', exact: true }).click();
+    expect((await page.locator('.tree-viewport').boundingBox())!.height).toBeGreaterThanOrEqual(160);
+    if (width === 320) {
+      await tree.locator('.tree-help summary').click(); await tree.getByRole('button', { name: '전체 보기', exact: true }).click();
+      expect((await page.locator('.tree-viewport').boundingBox())!.height).toBeGreaterThanOrEqual(120);
+      await tree.locator('.tree-help summary').click();
+    }
+    for (const locator of [tree.getByRole('button', { name: '닫기', exact: true }), tree.getByRole('button', { name: '전체 보기', exact: true }), page.locator('.tree-minimap')]) {
+      const b = (await locator.boundingBox())!; expect(b.x).toBeGreaterThanOrEqual(0); expect(b.x + b.width).toBeLessThanOrEqual(width + 1); expect(b.y + b.height).toBeLessThanOrEqual((await page.viewportSize())!.height + 1);
+    }
+    await page.getByLabel('목표 엔딩', { exact: true }).selectOption('ending_peace'); await tree.getByRole('button', { name: '목표 엔딩 찾기', exact: true }).click();
+    await expect(page.locator('.tree-detail')).toBeVisible(); await tree.getByRole('button', { name: '상세 접기', exact: true }).click();
+    expect(await tree.locator('.tree-node').evaluateAll(nodes => nodes.every(node => [...node.children].every(line => line.getBoundingClientRect().bottom <= node.getBoundingClientRect().bottom - 1)))).toBe(true);
+    if (width === 320 || width === 1280) { mkdirSync('docs/v4.6/tree-screenshots', { recursive: true }); await page.screenshot({ path: `docs/v4.6/tree-screenshots/${test.info().project.name}-${width}.png` }); }
+  }
+});
+
+
+test('실제 획득 엔딩은 트리에서도 동일 WebP·전체 결말을 표시하며 나머지19개는 잠근다', async ({ page }) => {
+  await open(page, true); await page.keyboard.press('Escape'); await page.locator('.menu-dialog').getByRole('button', { name: '닫기', exact: true }).click();
+  for (const id of ['family_accept', 'trust_mina', 'refuse', 'burn_office']) {
+    await page.locator('#reading-skip').click(); await page.clock.runFor(400); await page.locator(`[data-choice="${id}"]`).click();
+    await page.clock.runFor(400); await page.locator('#reading-skip').click();
+  }
+  const source = await page.locator('[data-ending-phase="0"] .ending-art img').getAttribute('src');
+  for (let guard = 0; guard < 15 && !await page.locator('[data-ending-phase="3"]').count(); guard++) await page.getByRole('button', { name: '이어서', exact: true }).click();
+  await expect(page.locator('[data-ending-phase="3"]')).toBeVisible(); await page.getByRole('button', { name: '도감 보기', exact: true }).click();
+  await expect(page.locator('.ending-gallery-locked')).toHaveCount(19); const before = await snapshot(page);
+  await page.locator('[data-ending-tree-open]').click(); await page.getByLabel('목표 엔딩', { exact: true }).selectOption('ending_fire');
+  await page.locator('.ending-tree-dialog').getByRole('button', { name: '목표 엔딩 찾기', exact: true }).click();
+  await expect(page.locator('.tree-detail .ending-art img')).toHaveAttribute('src', source!);
+  const ending = endings.find(e => e.id === 'ending_fire')!; await expect(page.locator('.tree-detail .ending-detail h3')).toHaveText(ending.title);
+  expect(await page.locator('.tree-detail .ending-full-text').textContent()).toBe(ending.body.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean).join(''));
+  await expect(page.locator('.ending-tree-dialog img')).toHaveCount(1); expect(await snapshot(page)).toEqual(before);
+});

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "artByEndingId": {
+    "ending_peace": "assets/illustrations/ending_v4_6/ending_peace.webp",
+    "ending_reform": "assets/illustrations/ending_v4_6/ending_reform.webp",
+    "ending_office": "assets/illustrations/ending_v4_6/ending_office.webp",
+    "ending_escape": "assets/illustrations/ending_v4_6/ending_escape.webp",
+    "ending_fire": "assets/illustrations/ending_v4_6/ending_fire.webp",
+    "ending_throne": "assets/illustrations/ending_v4_6/ending_throne.webp",
+    "ending_ledger": "assets/illustrations/ending_v4_6/ending_ledger.webp",
+    "ending_love_scandal": "assets/illustrations/ending_v4_6/ending_love_scandal.webp",
+    "ending_mina_renounced": "assets/illustrations/ending_v4_6/ending_mina_renounced.webp",
+    "ending_mina_wedding": "assets/illustrations/ending_v4_6/ending_mina_wedding.webp",
+    "ending_confession_unanswered": "assets/illustrations/ending_v4_6/ending_confession_unanswered.webp",
+    "ending_common_enemy": "assets/illustrations/ending_v4_6/ending_common_enemy.webp",
+    "ending_double_license": "assets/illustrations/ending_v4_6/ending_double_license.webp",
+    "ending_retirement_47": "assets/illustrations/ending_v4_6/ending_retirement_47.webp",
+    "ending_paid_defeat": "assets/illustrations/ending_v4_6/ending_paid_defeat.webp",
+    "ending_taxpayer": "assets/illustrations/ending_v4_6/ending_taxpayer.webp",
+    "ending_king": "assets/illustrations/ending_v4_6/ending_king.webp",
+    "ending_bankrupt": "assets/illustrations/ending_v4_6/ending_bankrupt.webp",
+    "ending_true_demon": "assets/illustrations/ending_v4_6/ending_true_demon.webp",
+    "ending_mother_petition": "assets/illustrations/ending_v4_6/ending_mother_petition.webp"
+  },
+  "disallowLegacyVectorFallback": true,
+  "maxNaturalWidthPx": 640,
+  "useObjectFit": "contain",
+  "gamePublicBase": "pass from game deployment config, never hardcode /"
+}

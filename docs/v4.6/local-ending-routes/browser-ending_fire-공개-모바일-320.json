@@ -1,0 +1,29 @@
+{
+  "endingId": "ending_fire",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "refuse",
+    "burn_office"
+  ],
+  "age": 21,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "petition"
+  ],
+  "image": "/demon-king-life/assets/illustrations/ending_v4_6/ending_fire.webp",
+  "statuses": [
+    200,
+    304
+  ],
+  "bounds": {
+    "width": 244,
+    "height": 183,
+    "naturalWidth": 960,
+    "naturalHeight": 720
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

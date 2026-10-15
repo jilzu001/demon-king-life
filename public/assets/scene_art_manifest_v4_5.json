@@ -23,9 +23,9 @@
         "main-scene",
         "flashback-only-if-visited"
       ],
-      "width": 700,
-      "height": 525,
-      "bytes": 44978
+      "width": 960,
+      "height": 720,
+      "bytes": 79570
     },
     {
       "id": "invoice_bring_mina",
@@ -44,9 +44,9 @@
         "choice-result",
         "flashback-only-if-outcome-visited"
       ],
-      "width": 700,
-      "height": 525,
-      "bytes": 39450
+      "width": 960,
+      "height": 720,
+      "bytes": 99700
     },
     {
       "id": "public_hearing",
@@ -64,9 +64,9 @@
         "main-scene",
         "flashback-only-if-visited"
       ],
-      "width": 700,
-      "height": 930,
-      "bytes": 36662
+      "width": 960,
+      "height": 720,
+      "bytes": 66738
     }
   ],
   "assetNotes": {

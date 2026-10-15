@@ -1,8 +1,25 @@
+# v4.6 종료 기록 — 2026-10-16
+
+- 도감 트리 구성은 사용자 명시 승인. 본문 UI 배치는 유지한다. 트리101노드/20대표 경로·고정 노드/팬·핀치·미니맵·잠금/힌트·방문 재선택을 구현했다.
+- 실제 검수187WebP/6,836,526바이트 설치, 전체 공개226개/7,358,254바이트·최대193,116바이트. 원본 PNG는 art-source-v46에 비공개 보관. 현재 ID가 없는 truth_evidence는 미검수/미연결로 보류했다.
+- 로컬263단위/233브라우저+구 기대값 수정 후2개/120레이아웃·20경로·91,664종단 경로·최종 빌드 통과. 최초 전체 check의2실패는 구128px 기대값이며 해당2개 재검증 통과, 서버 전체 check/Pages·공개 검증 진행 중. 최종 상태는 docs/V4_6_APPLY.md를 따른다.
+- 보호 파일35개 바이트 동일, 집필23/65 유지. 현재4177 미리보기는 최종 dist 복사 후 갱신한다.
+
 # Phase 1 작업 인수인계
 
 현재 상태는 [DEV_PROGRESS.md](DEV_PROGRESS.md), 집필 현황은 [WRITING_PROGRESS.md](WRITING_PROGRESS.md), 작업 시작/종료 규칙은 [AGENTS.md](AGENTS.md)를 먼저 읽는다. 아래 내용은 이전 결정·검증 이력으로 보존하며 과거 판의 상태를 현재 구현으로 간주하지 않는다.
 
-## 최신 요청 — 2026-10-15 v4.5 원고·연간 기록·CG
+## 최신 요청 — 2026-10-15 v4.6 트리·원화
+
+- feature/v4.6-tree-art, 시작 f76c1e7(배포4658981). spec/content-v4.6-tree-art/의16파일을 읽었다. UI 구성은 async 질문에 사용자가 “이 구성으로 진행”으로 승인했다. 도감 버튼→전체 화면 트리/미니맵/상세/찾기/닫기 복귀를 구현했다. 메인 본문 리디자인 취소.
+- src/content/generated/ending-tree.json은 현재 v4.5 실제20경로의101노드/100연결. 제공 generate/validate 및 카메라 테스트4개, scripts/verify-ending-tree.ts의 실제 판정/중간 저장20경로 재현과 초기 타입 검사 통과. 트리 UI 단위3개/PC·모바일9개 통과(PC 터치 전용1개 제외). 최종 전체 검사는 미실시. 320px/150%에서 지도 공간이 좁아 안내를 접고 확대축소/찾기 컨트롤을 간결하게 보완한 재검사53210 진행 중이다.
+- imagegen 스킬 읽고 내장 image_gen 사용. 결과 실제 파일은 docs/v4.6/art-generation-results.json에 기록한다. 외부 API/CLI로 전환하지 않는다. scripts/plan-v46-art.py는 초기182개 재고/183개 개별 작업을 만든 뒤 재실행 시 원본 재고 보존하고 종료한다. 프롬프트의 후속 수정은 docs/v4.6/art-jobs.json이 현재 기준이다.
+- scripts/install-v46-art.py로 **시각 검수된 ID만** WebP/원자적 교체. 실제 적용 수/바이트는 docs/v4.6/art-installed.json을 확인한다(계속 추가 중). PNG는 ignored art-source-v46/로 별도 보관. public/assets/assets.json 메타도 갱신한다. 기본 생성 이미지를 임의 시트로 잘라 쓰지 않는다.
+- player-child/middle/mature/old 첫 출력은 나이 차이 부족. 재시도 때 여러 연령을 함께 언급한 추가 지시가 child/middle을 복수 컷으로 만들었다. 해당 출력은 review-rejected로 기록했고 다른 연령 언급을 제거한 단일 인물 편집 방식으로 변경. 두 번째 mature(55세)와 세 번째 child/middle/old는 시각 검수 통과하여 적용했다. 같은 실패를 반복하지 않는다.
+- 현재 gallery/runtime는 여전히 구 spec 매핑 import이므로 새20엔딩/CG 제작 뒤 실제 파일의 metadata/공식 매핑 동기화 필요. 0세 승인그림은 교체됐으나 플레이어 헤더는 아직 기존 성인 그림 경로; 검수된 baby/child/연령 그림을 이용한 src 선택 보완 필요. 기존119선택/20엔딩/저장/도감 스키마는 변경하지 않는다.
+- 상세 파일/로그/제작 경로는 docs/V4_6_APPLY.md. v4.5의481개/공개74개는 이번 검사로 쓰지 않는다.
+
+## 이전 요청 — 2026-10-15 v4.5 원고·연간 기록·CG
 
 - 작업 브랜치 feature/v4.5-story-art→main, 시작 기준7002519(당시 공개 게임1469825). ZIP 읽기/차이 검토/백업 후 코어4본문·4결과·3결말·연간50문장·CG3개를 병합했다. 사용자 후속 승인으로 확장4사건도 실제 연결: birth6→child12, princess29→mina_bridge35→audit41, settlement47→orphan_registry50→quiet65, hearing47→old_mina57→final_trial60.
 - 기존103선택 계약/20엔딩·저장/도감·공식 엔딩 WebP 유지, 현재44/119/20·91,664경로/경고0. 단위257개/레이아웃120조합과 관련34브라우저와 전체481개/빌드 통과; 4658981/Actions38720689996에서481개/빌드·배포 성공. 공개 그림/175파일·iframe 통과, 공개 실제 플레이74개(20엔딩40회+확장 등34개)도 통과했다. 집필은 old_mina만 새 완료 근거로23/65·보완42다.

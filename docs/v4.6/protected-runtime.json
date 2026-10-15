@@ -1,0 +1,180 @@
+{
+  "baseline": "f76c1e7",
+  "files": [
+    {
+      "path": "content/events_v2_9.json",
+      "sha256": "58098c5af63d1674f8be153682bf16b96bbaf868208adfb454534e018a39bfd6",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-compact/chapters/01_complete.json",
+      "sha256": "492d654c2b222bd8ee2a176140bd769debdbb0e3b38e8e961300424b50c666e9",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-compact/chapters/02_ending_routes.json",
+      "sha256": "061b7ced3cff6a4784c76ed10dd73cbf403feb502ccc8ebd2549c525443a9031",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-compact/chapters/03_v45_expansion.json",
+      "sha256": "24cd45936d951165284750dcb5d8436c67996de124a8b34d664b547396e57339",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-compact/characters.json",
+      "sha256": "dfbcc0fdc19b0b2df0ba2b0b851dd77d36fb9483f2d30bbe92c554420f2a3786",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-compact/ending_cinematics.json",
+      "sha256": "0d47b036f8f3258b6fb0040207954d837199693b306ee24266616786ac133c46",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-compact/endings.json",
+      "sha256": "333c4f1a6046e0396fbd75eaaa706a1ada89245b493b785a5b97a4c0d0bb8615",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-compact/story.json",
+      "sha256": "480aec822a2b4f87576d362c91505f1cd9f6653947236ae94441157d44239296",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-legacy-phase1/VERIFICATION_REPORT.txt",
+      "sha256": "ba014430e17c2f023ac027abb4a6969004fad0cbcb65414f4a8000a6851d3926",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-legacy-phase1/chapters/01-example.json",
+      "sha256": "553b28f9c31b4f79d90f6c0ea2f63ae49d177502bb3db18b1575d3dcd7478ad9",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-legacy-phase1/characters.json",
+      "sha256": "1899830411025f47769ed82dd1c923acf98138b7ca4e35e99a73e9baaff934a7",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-legacy-phase1/endings.json",
+      "sha256": "8f7fc17a35925c68a5094ebf8bde5abd4488b6b34adac8614aabcf05f7448f89",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-legacy-phase1/story.json",
+      "sha256": "b1ad1d94c881f76f678fce2d5177ed362b85b71c2527c8e3c9bbe29519f54b14",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king/VERIFICATION_REPORT.txt",
+      "sha256": "ba014430e17c2f023ac027abb4a6969004fad0cbcb65414f4a8000a6851d3926",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king/chapters/01-example.json",
+      "sha256": "553b28f9c31b4f79d90f6c0ea2f63ae49d177502bb3db18b1575d3dcd7478ad9",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king/chapters/01_youth.json",
+      "sha256": "7a582c521309868cacb2259f92f770215b0b8dc6c90c4c7a27d1095142100ebb",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king/chapters/02_twists.json",
+      "sha256": "450c85c230600fa6d66bd6e35c70e256e33f2437563d2d63b7da43b8ad07ba48",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king/chapters/03_accounts.json",
+      "sha256": "b52f9d9f51f56f7f27a588ac395cfb7a30003a2024c35df9425106e698e4eccd",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king/chapters/04_afterlife.json",
+      "sha256": "b3a9d5815c730bc93fa917c5627d8322831e8670eb47f56907f7e7c630c4f4c1",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king/characters.json",
+      "sha256": "dfbcc0fdc19b0b2df0ba2b0b851dd77d36fb9483f2d30bbe92c554420f2a3786",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king/endings.json",
+      "sha256": "43083800c9a3b174f293609f129ae2b211d5783fd455634e4f47d5ebec02ec7a",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king/presentation.json",
+      "sha256": "7bc146a763fa32ff8daa9a87942d25f6409daf0d9e2b4ffeac8f5534f4929606",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king/story.json",
+      "sha256": "ef50c639d6b71d0c5dd1ca71c2472e59bb795b3478ca5949957e9b4e50e94d0d",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/conditions.ts",
+      "sha256": "544ee0ac5cd1f6c842c38e64e4c221da0ffb2187b648903f9b1ed80b93d81e8f",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/effects.ts",
+      "sha256": "a7e61666a2b53a7fc30ff6676c5e6481e2e8899d9054eb7f7b407e38ed4a17ff",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/invariants.ts",
+      "sha256": "af13192956f33f9914d84f284b343bcd99a2449e2308badaa4567af429345361",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/paths.ts",
+      "sha256": "909136db1cc0e0489175896d4f9237de4cafcbb0a5ae9ed1e7c266057a71b28e",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/random.ts",
+      "sha256": "26fbfecfd3ffe48fcbddb4556595af35749f20d323ee70580b9a99621c196779",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/transition.ts",
+      "sha256": "2a3cdb2ec490d5734d6f08427c59e523fcb53f8e1d69b2066f52da0ba58c067e",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/types.ts",
+      "sha256": "78f67d27d39236581005910c40ddc007c18afbc70614cef6cfcfc0da71f04d29",
+      "unchanged": true
+    },
+    {
+      "path": "src/persistence/compact-compatible.ts",
+      "sha256": "97e08346dbc96072a2301fafc275d92dd52ce4a0415a5d43de4c162364bece4a",
+      "unchanged": true
+    },
+    {
+      "path": "src/persistence/compatibility.ts",
+      "sha256": "cc99556a246118527257f186272fb8b605c5dc59411432811cd299e151396cb1",
+      "unchanged": true
+    },
+    {
+      "path": "src/persistence/migrate.ts",
+      "sha256": "8c3a899bf65867bd52f3851a8b676572f9170ee264916ef7d34b2aa3a23de8b6",
+      "unchanged": true
+    },
+    {
+      "path": "src/persistence/reselect.ts",
+      "sha256": "af59d1521a624f585e8047c946cb55ec853d2d6b5fa1c20aef28ffe1e2893c00",
+      "unchanged": true
+    },
+    {
+      "path": "src/persistence/save.ts",
+      "sha256": "6bdad3687de80f5c99ea65b8c2541e4dcb0f3fbfc0adcb81f1afc6653d48a37d",
+      "unchanged": true
+    }
+  ]
+}

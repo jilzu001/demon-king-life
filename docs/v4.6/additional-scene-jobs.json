@@ -1,0 +1,26 @@
+[
+  {
+    "id": "event-confession",
+    "group": "event",
+    "nodeId": "confession",
+    "age": 20,
+    "target": "assets/illustrations/event_cg_v4_6/confession.webp",
+    "prompt": "One complete coherent independently painted 4:3 scene, warm natural light, soft painterly fantasy anime exactly matching reference 1. Ordinary dark-haired brown-eyed human protagonist in dark robe, no magic; Mina has LONG SILVER hair and BLUE eyes, practical blue/silver knight armor. Identity references 2 and 3, preserve exact identities. No collage, no pasted portraits, no panels, no legible text, no crowns, no kings, no thrones. Both leads are age TWENTY. In a stone hero-examination hall with wooden rails, the young man in loose regulatory chains speaks nervously to Mina. She has NOT answered his confession. She holds her sword across her own body at chest height, thoughtful and guarded, no attack or victory. A plain middle-aged male examination supervisor behind a desk turns a small hourglass. No reciprocal romance, no kissing, no handholding."
+  },
+  {
+    "id": "event-farewell",
+    "group": "event",
+    "nodeId": "confession_afterm",
+    "age": 21,
+    "target": "assets/illustrations/event_cg_v4_6/farewell.webp",
+    "prompt": "One complete coherent independently painted 4:3 scene, warm natural light, soft painterly fantasy anime exactly matching reference 1. Ordinary dark-haired brown-eyed human protagonist in dark robe, no magic; Mina has LONG SILVER hair and BLUE eyes, practical blue/silver knight armor. Identity references 2 and 3, preserve exact identities. No collage, no pasted portraits, no panels, no legible text, no crowns, no kings, no thrones. Both leads are age TWENTY-ONE. Outside the hero-exam hall, Mina and the ordinary young man walk apart with respectful personal space. Mina has given up this attempt at the exam rather than hurt him, but has NOT accepted his love. She looks conflicted, he looks apologetic. Her sword is lowered. No holding hands, no kissing, no wedding, no happy couple pose. A quiet courtyard with an open gate, one natural continuous setting."
+  },
+  {
+    "id": "event-confession_chaos",
+    "group": "event",
+    "nodeId": "confession_chaos",
+    "age": 20,
+    "target": "assets/illustrations/event_cg_v4_6/confession_chaos.webp",
+    "prompt": "One complete coherent independently painted 4:3 scene, warm natural light, soft painterly fantasy anime exactly matching reference 1. Ordinary dark-haired brown-eyed human protagonist in dark robe, no magic; Mina has LONG SILVER hair and BLUE eyes, practical blue/silver knight armor. Identity references 2 and 3, preserve exact identities. No collage, no pasted portraits, no panels, no legible text, no crowns, no kings, no thrones. Both leads are age TWENTY. One humorous hero-examination hall scene with exactly THREE adults: ordinary young man, Mina, and an unnamed middle-aged male supervisor in a simple navy examiner's robe with NO crown. The young man blurts an absurd declaration to both of them; supervisor drops his quill in surprise, Mina lowers her sword and looks incredulous. Nobody reciprocates his declaration. Loose regulatory chains at the young man's wrist, no violence. A small official desk and hourglass, wooden rails and stone walls."
+  }
+]

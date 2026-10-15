@@ -1,0 +1,35 @@
+{
+  "endingId": "ending_paid_defeat",
+  "choices": [
+    "family_accept",
+    "trust_mina",
+    "invoice",
+    "accept_invite",
+    "explore_route_paid_defeat",
+    "commit_route_paid_defeat",
+    "route_paid_defeat_coach"
+  ],
+  "age": 54,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "invoice",
+    "princess",
+    "setup_route_paid_defeat",
+    "bridge_route_paid_defeat"
+  ],
+  "image": "/phase1-test/assets/illustrations/ending_v4_6/ending_paid_defeat.webp",
+  "statuses": [
+    200,
+    304
+  ],
+  "bounds": {
+    "width": 244,
+    "height": 183,
+    "naturalWidth": 960,
+    "naturalHeight": 720
+  },
+  "saveRestored": true,
+  "unlockAfterLastCard": true
+}

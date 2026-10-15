@@ -22,6 +22,7 @@ import { renderCompactEnding } from '../ui/compact-ending';
 import { endingGalleryEntries, galleryEndingIds } from '../content/ending-gallery';
 import { routeBody, routeYears } from '../content/route-years';
 import { renderEndingGallery, renderEndingDetail } from '../ui/ending-gallery';
+import { openEndingTree } from '../ui/ending-tree';
 import { resumeAtVisitedNode, backupBeforeReselect, loadReselectBackup, RESELECT_BACKUP_KEY } from '../persistence/reselect';
 
 const root = document.querySelector<HTMLDivElement>('#app')!;
@@ -86,6 +87,7 @@ let viewKey = '';
 let dismissedChoices = '';
 let olderCount = 0;
 let disposeLayout = () => {};
+let disposeTree = () => {};
 function sceneKey() { return state && story ? `${story.manifest.version}:${state.runId}:${state.history.length}:${state.currentNodeId ?? state.endingId}` : ''; }
 function enterGame() {
   titleVisible = false;
@@ -188,6 +190,7 @@ function newRun() {
 }
 
 function render() {
+  disposeTree(); disposeTree = () => {};
   if (openMenu !== 'settings') endingDetailId = null;
   reading.detach();
   pages.detach();
@@ -305,6 +308,7 @@ function bindPages(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEleme
 function showReadingAge(layout: HTMLElement, current: GameState, paragraph?: HTMLElement) {
   // 판정/세이브 나이는 보존하고, 읽는 중인 해만 화면에 한 살씩 표시한다.
   const age = Number(paragraph?.dataset.readAge ?? current.age);
+  const portrait = layout.querySelector<HTMLImageElement>('#player-image'); if (portrait) portrait.src = canonicalPortrait(import.meta.env.BASE_URL, 'player', age)!;
   const label = layout.querySelector('.stats > div:first-child strong'); if (label) label.textContent = `${age}세`;
   const heading = layout.querySelector<HTMLElement>('#current-event .scene-heading');
   const annual = Boolean(paragraph?.dataset.readAge);
@@ -328,6 +332,7 @@ function showReadingAge(layout: HTMLElement, current: GameState, paragraph?: HTM
 function renderAftermath(layout: HTMLElement, content: PresentedStory, current: GameState) {
   const last = current.history.at(-1)!;
   const age = layout.querySelector('.stats > div:first-child strong'); if (age) age.textContent = `${last.age}세`;
+  const portrait = layout.querySelector<HTMLImageElement>('#player-image'); if (portrait) portrait.src = canonicalPortrait(import.meta.env.BASE_URL, 'player', last.age)!;
   const confirmed = confirmedChoice(content, last);
   const frame = element('section', undefined, 'life-frame aftermath-frame'); frame.id = 'choice-aftermath';
   const heading = element('div', undefined, 'aftermath-heading');
@@ -369,7 +374,7 @@ function renderTitle(layout: HTMLElement) {
 function renderStatus(layout: HTMLElement, current: GameState) {
   const header = element('header', undefined, 'game-header');
   const player = element('figure', undefined, 'portrait player-portrait');
-  const portrait = element('img'); portrait.id = 'player-image'; portrait.src = compactMode ? canonicalPortrait(import.meta.env.BASE_URL, 'player')! : portraitUrl(import.meta.env.BASE_URL, 'player', current.age); portrait.alt = '주인공 초상화'; player.append(portrait); header.append(player);
+  const portrait = element('img'); portrait.id = 'player-image'; portrait.src = compactMode ? canonicalPortrait(import.meta.env.BASE_URL, 'player', current.age)! : portraitUrl(import.meta.env.BASE_URL, 'player', current.age); portrait.alt = '주인공 초상화'; player.append(portrait); header.append(player);
   const stats = element('section', undefined, 'stats'); stats.setAttribute('aria-label', '현재 능력치');
   for (const [label, value] of [['나이', `${current.age}세`], ['전투력', current.player.combat.toLocaleString('ko-KR')], ['마력', current.player.magic.toLocaleString('ko-KR')], ['금화', current.player.gold.toLocaleString('ko-KR')]]) {
     const stat = element('div'); stat.append(element('small', label), element('strong', value)); stats.append(stat);
@@ -477,7 +482,7 @@ function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEle
       columns.querySelector<HTMLElement>('#current-event .scene-heading')!.hidden = stage === 'chronicle';
       const player = layout.querySelector<HTMLImageElement>('#player-image')!;
       if (compactMode) {
-        player.src = canonicalPortrait(import.meta.env.BASE_URL, 'player')!;
+        player.src = canonicalPortrait(import.meta.env.BASE_URL, 'player', current.age)!;
         showReadingAge(layout, current, step?.element);
         return;
       }
@@ -583,7 +588,10 @@ function renderSettings(save: HTMLElement) {
     save.append(renderEndingGallery(endingGalleryEntries(activeStory ?? story), discovered, id => {
       if (!discovered.has(id)) return;
       endingDetailId = id; render();
-    }, Object.keys((activeStory ?? story).endings).filter(id => galleryEndingIds.includes(id)).length));
+    }, Object.keys((activeStory ?? story).endings).filter(id => galleryEndingIds.includes(id)).length, opener => {
+      disposeTree = openEndingTree({ story: activeStory ?? story!, entries: endingGalleryEntries(activeStory ?? story!), discovered, state,
+        opener, onResume: nodeId => resumeFromEvent(nodeId), onClose: () => { disposeTree = () => {}; } });
+    }));
     for (const id of discovered) if (!galleryEndingIds.includes(id) && allEndings[id]) save.append(element('p', `이전 예제에서 발견 · ${allEndings[id]!.title}`));
     return;
   }

@@ -1,0 +1,42 @@
+[WebServer] (node:104896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:99456) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:81128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [PC] › tests\e2e\tree-compact.spec.ts:86:1 › 실제 획득 엔딩은 트리에서도 동일 WebP·전체 결말을 표시하며 나머지19개는 잠근다 (30.3s)
+
+
+  1) [PC] › tests\e2e\tree-compact.spec.ts:86:1 › 실제 획득 엔딩은 트리에서도 동일 WebP·전체 결말을 표시하며 나머지19개는 잠근다 ──
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('[data-choice="arson"]')
+
+
+      87 |   await open(page, true); await page.keyboard.press('Escape'); await page.locator('.menu-dialog').getByRole('button', { name: '닫기', exact: true }).click();
+      88 |   for (const id of ['family_accept', 'trust_mina', 'refuse', 'burn_office']) {
+    > 89 |     await page.locator('#reading-skip').click(); await page.clock.runFor(400); await page.locator(`[data-choice="${id}"]`).click();
+         |                                                                                                                            ^
+      90 |     await page.clock.runFor(400); await page.locator('#reading-skip').click();
+      91 |   }
+      92 |   const source = await page.locator('[data-ending-phase="0"] .ending-art img').getAttribute('src');
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\tree-compact.spec.ts:89:124
+
+    Error Context: test-results\tree-compact-실제-획득-엔딩은-트리에서도-동일-WebP·전체-결말을-표시하며-나머지19개는-잠근다-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tree-compact-실제-획득-엔딩은-트리에서도-동일-WebP·전체-결말을-표시하며-나머지19개는-잠근다-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tree-compact-실제-획득-엔딩은-트리에서도-동일-WebP·전체-결말을-표시하며-나머지19개는-잠근다-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [PC] › tests\e2e\tree-compact.spec.ts:86:1 › 실제 획득 엔딩은 트리에서도 동일 WebP·전체 결말을 표시하며 나머지19개는 잠근다 ───

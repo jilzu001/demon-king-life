@@ -3,22 +3,25 @@ import { readExampleStory } from './read-story';
 import { createRun, choose } from '../src/engine/transition';
 import { compactProgressKey } from '../src/ui/compact-progress';
 import { endingArtworkPath } from '../src/content/ending-gallery';
+import { mkdirSync } from 'node:fs';
 
 const url = process.argv[2] ?? 'http://127.0.0.1:4175/';
 const screenshots = process.argv.includes('--screenshots');
+const evidenceDir = process.env.ILLUSTRATION_EVIDENCE_DIR || 'docs/compact-controls';
+if (screenshots) mkdirSync(evidenceDir, { recursive: true });
 const deviceScaleFactor = process.argv.includes('--high-dpi') ? 2 : 1;
 const story = await readExampleStory('demon-king-compact');
 const shared = ['family_accept', 'trust_mina'];
 const cases = [
   { id: 'birth', path: [], asset: 'birth' },
-  { id: 'child', path: ['family_accept'], asset: 'mina' },
-  { id: 'exam', path: shared, asset: 'mina' },
-  { id: 'prison', path: [...shared, 'attack'], asset: 'prison' },
+  { id: 'child', path: ['family_accept'], asset: 'event-child' },
+  { id: 'exam', path: shared, asset: 'event-exam' },
+  { id: 'prison', path: [...shared, 'attack'], asset: 'event-prison' },
   { id: 'hearing', path: [...shared, 'attack', 'forgive', 'ally', 'public_audit'], asset: 'public_hearing' },
-  { id: 'audit', path: [...shared, 'attack', 'forgive', 'ally'], asset: null },
-  { id: 'confession', path: [...shared, 'confess'], asset: 'mina' },
-  { id: 'confession_afterm', path: [...shared, 'confess', 'confess_sincere'], asset: 'mina' },
-  { id: 'confession_chaos', path: [...shared, 'confess', 'confess_absurd'], asset: 'mina' },
+  { id: 'audit', path: [...shared, 'attack', 'forgive', 'ally'], asset: 'event-audit' },
+  { id: 'confession', path: [...shared, 'confess'], asset: 'event-confession' },
+  { id: 'confession_afterm', path: [...shared, 'confess', 'confess_sincere'], asset: 'event-farewell' },
+  { id: 'confession_chaos', path: [...shared, 'confess', 'confess_absurd'], asset: 'event-confession_chaos' },
   { id: 'ending_peace', path: [...shared, 'attack', 'forgive', 'ally', 'public_audit', 'walk_away', 'end_peace'], asset: 'protagonist' },
   { id: 'ending_throne', path: [...shared, 'invoice', 'threaten_king'], asset: 'king' },
   { id: 'ending_love_scandal', path: [...shared, 'confess', 'confess_absurd', 'embrace_fame'], asset: null },
@@ -83,7 +86,7 @@ try {
       if (!state.ended) {
         await expect(page.locator('#current-event')).toBeAttached();
         if (mode === 'page') await checkPageText(page, `${width}×${height} ${item.id}`,
-          screenshots && ['child', 'exam', 'confession'].includes(item.id) && [1280, 390, 320].includes(width!) ? `docs/compact-controls/page-${item.id}-${width}-dpr${deviceScaleFactor}.png` : undefined);
+          screenshots && ['child', 'exam', 'confession'].includes(item.id) && [1280, 390, 320].includes(width!) ? `${evidenceDir}/page-${item.id}-${width}-dpr${deviceScaleFactor}.png` : undefined);
         await page.locator('#reading-skip').click(); await expect(page.locator('#choice-dialog')).toBeVisible();
         await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
         await expect(page.locator('#npc-image, .life-panel h2, .life-panel button')).toHaveCount(0);
@@ -121,7 +124,7 @@ try {
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && document.documentElement.scrollHeight <= innerHeight + 1)).toBe(true);
       expect(await page.evaluate(() => localStorage.getItem('existence-sim:v1:run:demon-king:compact'))).toBe(saved);
       if (screenshots && mode === 'scroll' && ['child', 'exam', 'confession'].includes(item.id) && [1280, 390, 320].includes(width!)) {
-        await page.screenshot({ path: `docs/compact-controls/${mode}-${item.id}-${width}-dpr${deviceScaleFactor}.png`, animations: 'disabled' });
+        await page.screenshot({ path: `${evidenceDir}/${mode}-${item.id}-${width}-dpr${deviceScaleFactor}.png`, animations: 'disabled' });
       }
       expect(errors).toEqual([]); await page.close();
     }
