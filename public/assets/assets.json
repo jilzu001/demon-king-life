@@ -418,6 +418,33 @@
       "width": 770,
       "height": 575,
       "bytes": 63302
+    },
+    {
+      "id": "birth_v45",
+      "category": "event_cg_v4_5",
+      "label": "신생아가 마왕으로 등록된 출생신고소에서 부모가 항의하는 장면",
+      "path": "assets/illustrations/event_cg_v4_5/cg_birth_registry.webp",
+      "width": 700,
+      "height": 525,
+      "bytes": 44978
+    },
+    {
+      "id": "invoice_bring_mina_v45",
+      "category": "event_cg_v4_5",
+      "label": "미나와 주인공이 함께 왕궁으로 들어가는 장면",
+      "path": "assets/illustrations/event_cg_v4_5/cg_mina_royal_hall.webp",
+      "width": 700,
+      "height": 525,
+      "bytes": 39450
+    },
+    {
+      "id": "public_hearing_v45",
+      "category": "event_cg_v4_5",
+      "label": "공개 재판에서 주인공이 증언대 앞에 선 장면",
+      "path": "assets/illustrations/event_cg_v4_5/cg_public_hearing.webp",
+      "width": 700,
+      "height": 930,
+      "bytes": 36662
     }
   ],
   "suggestedMapping": {

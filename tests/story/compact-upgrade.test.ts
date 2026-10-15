@@ -1,5 +1,6 @@
 import { it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
+import { loadStory } from '../../src/content/load';
 import { readExampleStory } from '../../scripts/read-story';
 import { choose, createRun } from '../../src/engine/transition';
 import { previousCompactStory, decodeCompatibleCompact, backupBeforeCompactUpgrade, COMPACT_V37_BACKUP_KEY } from '../../src/persistence/compact-compatible';
@@ -8,17 +9,18 @@ import { compactSlot } from '../../src/content/compact-contract';
 import { runKey } from '../../src/persistence/save';
 import type { GameState } from '../../src/engine/types';
 const story = await readExampleStory('demon-king-compact');
+const audited = await loadStory(async path => JSON.parse(readFileSync(`backups/before-v4.4/${path}`, 'utf8')));
 it('기존13사건28선택/7엔딩을 보호하며 고백과 v3.8 신규 선택만 덧붙인다', () => {
   for (const [id, old] of Object.entries(previousCompactStory.nodes)) {
-    const current = story.nodes[id]!;
+    const current = audited.nodes[id]!;
     expect({ ...current, choices: old.choices }).toEqual(old);
     expect(current.choices.slice(0, old.choices.length)).toEqual(old.choices);
   }
-  for (const [id, old] of Object.entries(previousCompactStory.endings)) expect(story.endings[id]).toEqual(old);
+  for (const [id, old] of Object.entries(previousCompactStory.endings)) expect(audited.endings[id]).toEqual(old);
   const source = JSON.parse(readFileSync('spec/content-v3.6.1-confession-audit/chapters/01_complete.json', 'utf8'));
-  for (const id of ['confession', 'confession_afterm', 'confession_chaos']) expect(story.nodes[id]).toEqual(source.nodes.find((n: { id: string }) => n.id === id));
-  expect(story.nodes.exam!.choices.map(c => c.id)).toEqual(['attack', 'refuse', 'invoice', 'confess']);
-  expect(story.nodes.exam!.choices[3]!.text).toBe('미나에게 사랑한다고 고백한다.');
+  for (const id of ['confession', 'confession_afterm', 'confession_chaos']) expect(audited.nodes[id]).toEqual(source.nodes.find((n: { id: string }) => n.id === id));
+  expect(audited.nodes.exam!.choices.map(c => c.id)).toEqual(['attack', 'refuse', 'invoice', 'confess']);
+  expect(audited.nodes.exam!.choices[3]!.text).toBe('미나에게 사랑한다고 고백한다.');
 });
 it('기존147종단 경로의 모든 중간 저장과100시드를 원장/상태/RNG 변경 없이 검증한다', () => {
   let terminals = 0;

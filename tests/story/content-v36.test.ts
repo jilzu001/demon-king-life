@@ -4,7 +4,8 @@ import { readFileSync } from 'node:fs';
 type Event = { id: string; body: string; bodyParagraphs: string[]; choices: Record<string, unknown>[]; [key: string]: unknown };
 const read = (file: string) => JSON.parse(readFileSync(file, 'utf8')) as { events: Event[] };
 const old = read('spec/content-v3.4-illustrated/content/events_v2_9.json');
-const next = read('content/events_v2_9.json');
+// v3.6의 역사적 변경 범위는 v4.5 적용 전 스냅샷으로 검증한다.
+const next = read('backups/before-v4.5/prepared/events_v2_9.json');
 const six = ['birth_tax', 'village_well', 'school_map', 'first_wage', 'guard_toll', 'mina_festival'];
 const ten: string[] = JSON.parse(readFileSync('spec/content-v3.6-story-engine-art/AUTHORING_REPORT_V3_5.json', 'utf8')).eventIds;
 function logic(event: Event) {

@@ -9,6 +9,7 @@ import presentationSchema from '../../schemas/presentation.schema.json';
 import compactCinematicsSchema from '../../schemas/compact-cinematics.schema.json';
 import endingGallerySchema from '../../schemas/ending-gallery.schema.json';
 import endingArtSchema from '../../schemas/ending-art.schema.json';
+import sceneArtSchema from '../../schemas/scene-art.schema.json';
 import { ensure } from '../engine/types';
 
 const ajv = new Ajv2020({ allErrors: true, strict: true, allowUnionTypes: true });
@@ -19,6 +20,7 @@ const validators = {
   presentation: ajv.compile(presentationSchema),
   compactCinematics: ajv.compile(compactCinematicsSchema),
   endingGallery: ajv.compile(endingGallerySchema), endingArt: ajv.compile(endingArtSchema),
+  sceneArt: ajv.compile(sceneArtSchema),
 };
 export function validateSchema(kind: keyof typeof validators, data: unknown): void {
   const validator = validators[kind];

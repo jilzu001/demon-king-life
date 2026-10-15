@@ -2,22 +2,10 @@ import type { GameState } from '../engine/types';
 import type { PresentedStory } from '../content/presentation';
 import { element, button } from './dom';
 import type { CompactProgress } from './compact-progress';
-import { renderIllustration } from './illustrations';
+import { illustrationAsset, outcomeArtwork, renderStoryArtwork } from './illustrations';
 import { renderEndingArtwork } from './ending-gallery';
 import { endingGalleryEntries } from '../content/ending-gallery';
 
-const drawings: Record<string, string> = {
-  silhouette: 'M95 145Q100 105 130 104Q160 105 165 145 M114 80a16 16 0 1 0 32 0a16 16 0 1 0-32 0',
-  sunset: 'M30 125H230 M70 124a60 60 0 0 1 120 0 M130 28V44 M52 52L64 64 M208 52L196 64',
-  scroll: 'M75 30H195Q215 30 215 48H95Q75 48 75 30V132Q75 150 55 150H170Q190 150 190 132V48 M105 76H164 M105 98H164 M105 120H146',
-  office: 'M42 100L130 45L218 100 M70 96V150H190V96 M115 112H145V150 M90 106H99 M160 106H169',
-  stairs: 'M35 150H70V130H100V110H130V90H160V70H190V50H220 M80 38L95 53 M92 25L110 42',
-  fire: 'M130 25Q165 67 148 89Q190 66 180 115Q176 154 130 154Q83 154 81 117Q76 79 108 67Q99 108 121 111Q145 97 130 25Z',
-  crown: 'M62 126L45 65L95 92L130 45L165 92L215 65L198 126Z M62 146H198',
-  book: 'M130 55Q95 35 52 45V140Q97 129 130 150Q163 129 208 140V45Q165 35 130 55V150',
-  bars: 'M60 38H200V150H60Z M88 38V150 M116 38V150 M144 38V150 M172 38V150',
-  sword: 'M70 145L176 39L199 35L195 58L89 164 M66 112L116 162',
-};
 export function memoryArtKey(nodeId: string): string {
   const keys: Record<string, string> = { birth: 'silhouette', child: 'sword', exam: 'sword', prison: 'bars', petition: 'scroll', invoice: 'book', princess: 'crown', audit: 'book', hearing: 'scroll', settlement: 'office', quiet: 'sunset', final_trial: 'scroll', office: 'office' };
   return Object.hasOwn(keys, nodeId) ? keys[nodeId]! : 'silhouette';
@@ -27,12 +15,6 @@ export function memoryEvents(story: PresentedStory, state: GameState) {
   const priority = (index: number, id: string) => index === 0 || index === records.length - 1 ? 3 : ['exam', 'audit', 'hearing', 'settlement'].includes(id) ? 2 : 1;
   return records.sort((a, b) => priority(b.index, b.node.id) - priority(a.index, a.node.id) || a.index - b.index)
     .slice(0, story.cinematics?.replayRules.maxEvents ?? 8).sort((a, b) => a.index - b.index);
-}
-export function compactArt(key: string): SVGSVGElement {
-  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  svg.setAttribute('viewBox', '0 0 260 180'); svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', '삶을 떠올리는 그림'); svg.classList.add('compact-art');
-  const path = document.createElementNS(svg.namespaceURI, 'path');
-  path.setAttribute('d', Object.hasOwn(drawings, key) ? drawings[key]! : drawings.silhouette!); path.setAttribute('fill', 'none'); path.setAttribute('stroke', 'currentColor'); path.setAttribute('stroke-width', '3'); path.setAttribute('stroke-linecap', 'round'); path.setAttribute('stroke-linejoin', 'round'); svg.append(path); return svg;
 }
 export function renderCompactEnding(layout: HTMLElement, story: PresentedStory, state: GameState, progress: CompactProgress, options: {
   paused: boolean; onProgress: (patch: Partial<CompactProgress>) => void; onRestart: () => void; onSettings: () => void;
@@ -60,10 +42,17 @@ export function renderCompactEnding(layout: HTMLElement, story: PresentedStory, 
     const { entry, node } = memories[index]!;
     const choice = node.choices.find(c => c.id === entry.choiceId)!;
     content.dataset.memoryNode = node.id;
-    // 실제 방문한 인물의 기준 초상화만 사용한다. 미승인 회상 CG는 연결하지 않는다.
-    const portrait = ['child', 'exam', 'confession', 'confession_afterm', 'confession_chaos'].includes(node.id)
-      ? renderIllustration('exam', 'scene', true) : undefined;
-    content.append(portrait ?? compactArt(memoryArtKey(node.id)), element('p', `${entry.age}세 · ${node.title}`, 'cinematic-memory-title'), element('p', choice.text, 'cinematic-text'));
+    const used = new Set<string>();
+    let selected: ReturnType<typeof illustrationAsset>;
+    for (let i = 0; i <= index; i++) {
+      const memory = memories[i]!;
+      const art = outcomeArtwork(state, memory.entry) ?? illustrationAsset(memory.node.id, 'scene', { body: memory.node.body, age: memory.entry.age, state });
+      selected = art && !used.has(art.path) ? art : undefined;
+      if (art) used.add(art.path);
+    }
+    const image = selected ? renderStoryArtwork(selected, true) : undefined;
+    if (image) content.append(image);
+    content.append(element('p', `${entry.age}세 · ${node.title}`, 'cinematic-memory-title'), element('p', choice.text, 'cinematic-text'));
   }
   if (phase === 2) content.append(element('p', cinematic.reflection, 'cinematic-text cinematic-reflection'));
   if (phase === 3) {

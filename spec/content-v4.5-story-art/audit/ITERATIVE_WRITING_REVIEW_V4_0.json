@@ -1,0 +1,240 @@
+{
+  "version": "4.0.0",
+  "base_version": "3.9",
+  "base_archive_sha256": "ed5c4d45c8ac905a0e00f7148d413673925eeea1c980a5694dc48986400acdcd",
+  "total_core_events": 16,
+  "total_extension_events": 65,
+  "total_endings": 8,
+  "core_events_changed_ids": [
+    "hearing",
+    "settlement",
+    "quiet",
+    "final_trial",
+    "confession_afterm"
+  ],
+  "extension_events_changed_ids": [
+    "conditional_mina_apology",
+    "unlock_roen_guard",
+    "herald",
+    "prison_library",
+    "prison_cellmate",
+    "prison_meal",
+    "apprentice",
+    "royal_garden",
+    "king_tea",
+    "queen_heir",
+    "noble_vote",
+    "wedding_contract",
+    "court_jester",
+    "palace_fire",
+    "tax_rebellion",
+    "ledger_copy",
+    "audit_witness",
+    "army_budget",
+    "king_speech",
+    "queen_audit",
+    "hero_union",
+    "ministry_shred",
+    "court_lawyer",
+    "royal_press",
+    "old_friend",
+    "public_memorial",
+    "village_election",
+    "bread_union",
+    "old_mina",
+    "ledger_trial",
+    "guard_daughter",
+    "royal_archive_open",
+    "marta_funeral",
+    "veteran_pension",
+    "child_history",
+    "mina_reunion",
+    "king_apology",
+    "last_audit",
+    "hospital_name",
+    "secret_child",
+    "false_prophecy",
+    "enemy_diplomat",
+    "court_ghost"
+  ],
+  "extension_bodies_revised_ids": [
+    "conditional_mina_apology",
+    "herald",
+    "prison_cellmate",
+    "prison_meal",
+    "apprentice",
+    "royal_garden",
+    "king_tea",
+    "queen_heir",
+    "noble_vote",
+    "wedding_contract",
+    "court_jester",
+    "palace_fire",
+    "tax_rebellion",
+    "ledger_copy",
+    "audit_witness",
+    "army_budget",
+    "king_speech",
+    "queen_audit",
+    "hero_union",
+    "ministry_shred",
+    "court_lawyer",
+    "royal_press",
+    "old_friend",
+    "public_memorial",
+    "village_election",
+    "bread_union",
+    "old_mina",
+    "ledger_trial",
+    "guard_daughter",
+    "royal_archive_open",
+    "marta_funeral",
+    "veteran_pension",
+    "child_history",
+    "mina_reunion",
+    "king_apology",
+    "last_audit",
+    "hospital_name",
+    "secret_child",
+    "false_prophecy",
+    "enemy_diplomat",
+    "court_ghost"
+  ],
+  "extension_bodies_revised_count": 41,
+  "extension_choice_results_revised_count": 26,
+  "extension_choice_results_revised_keys": [
+    {
+      "eventId": "prison_cellmate",
+      "choiceId": "prison_cellmate_1"
+    },
+    {
+      "eventId": "prison_meal",
+      "choiceId": "prison_meal_1"
+    },
+    {
+      "eventId": "apprentice",
+      "choiceId": "apprentice_2"
+    },
+    {
+      "eventId": "royal_garden",
+      "choiceId": "royal_garden_1"
+    },
+    {
+      "eventId": "king_tea",
+      "choiceId": "king_tea_1"
+    },
+    {
+      "eventId": "queen_heir",
+      "choiceId": "queen_heir_1"
+    },
+    {
+      "eventId": "noble_vote",
+      "choiceId": "noble_vote_2"
+    },
+    {
+      "eventId": "wedding_contract",
+      "choiceId": "wedding_contract_2"
+    },
+    {
+      "eventId": "court_jester",
+      "choiceId": "court_jester_1"
+    },
+    {
+      "eventId": "palace_fire",
+      "choiceId": "palace_fire_1"
+    },
+    {
+      "eventId": "tax_rebellion",
+      "choiceId": "tax_rebellion_2"
+    },
+    {
+      "eventId": "audit_witness",
+      "choiceId": "audit_witness_2"
+    },
+    {
+      "eventId": "army_budget",
+      "choiceId": "army_budget_1"
+    },
+    {
+      "eventId": "king_speech",
+      "choiceId": "king_speech_2"
+    },
+    {
+      "eventId": "ministry_shred",
+      "choiceId": "ministry_shred_1"
+    },
+    {
+      "eventId": "court_lawyer",
+      "choiceId": "court_lawyer_2"
+    },
+    {
+      "eventId": "royal_press",
+      "choiceId": "royal_press_1"
+    },
+    {
+      "eventId": "public_memorial",
+      "choiceId": "public_memorial_1"
+    },
+    {
+      "eventId": "bread_union",
+      "choiceId": "bread_union_1"
+    },
+    {
+      "eventId": "old_mina",
+      "choiceId": "old_mina_2"
+    },
+    {
+      "eventId": "child_history",
+      "choiceId": "child_history_1"
+    },
+    {
+      "eventId": "mina_reunion",
+      "choiceId": "mina_reunion_2"
+    },
+    {
+      "eventId": "last_audit",
+      "choiceId": "last_audit_1"
+    },
+    {
+      "eventId": "hospital_name",
+      "choiceId": "hospital_name_2"
+    },
+    {
+      "eventId": "false_prophecy",
+      "choiceId": "false_prophecy_3"
+    },
+    {
+      "eventId": "court_ghost",
+      "choiceId": "court_ghost_1"
+    }
+  ],
+  "endings_rewritten_ids": [
+    "ending_peace",
+    "ending_reform",
+    "ending_office",
+    "ending_escape",
+    "ending_fire",
+    "ending_throne",
+    "ending_ledger",
+    "ending_love_scandal"
+  ],
+  "delayed_callback_count_before": 24,
+  "delayed_callback_count_after": 58,
+  "new_delayed_callbacks": 34,
+  "unchanged_webp_asset_count": 56,
+  "quality_checks": {
+    "min_core_choices": 2,
+    "min_extension_choices": 3,
+    "min_extension_body_characters": 410,
+    "min_ending_body_characters": 408,
+    "all_ending_cinematics_present": true,
+    "runtime_test_performed": false
+  },
+  "remaining_known_limits": [
+    "story.json initialState.age=20 while birth node is age=0: engine start-age precedence must be confirmed before changing",
+    "Extension events across core age jumps (e.g. 47->65) need runtime scheduler validation",
+    "58 callbacks are authored handoff data, not implemented runtime features",
+    "Choice branching and flag combinations need actual playthroughs in target repo",
+    "Character/illustration visual consistency not revised by this writing-only pass"
+  ]
+}

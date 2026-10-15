@@ -6,7 +6,8 @@
   "entryNodeId": "birth",
   "chapters": [
     "chapters/01_complete.json",
-    "chapters/02_ending_routes.json"
+    "chapters/02_ending_routes.json",
+    "chapters/03_v45_expansion.json"
   ],
   "charactersFile": "characters.json",
   "endingsFile": "endings.json",

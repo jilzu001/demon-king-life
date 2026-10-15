@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "status": "integration-required",
+  "priority": "new exact ending art when available; legacy existing art otherwise; generic background only when no approved art",
+  "newEndings": {
+    "ending_mina_renounced": {
+      "image": "assets/illustrations/ending_v4_3/rain_shelter.webp",
+      "illustrationKey": "rain_shelter",
+      "characterIdentityLocked": true,
+      "requiresAgeCheck": true
+    },
+    "ending_mina_wedding": {
+      "image": "assets/illustrations/ending_v4_3/wedding_lanterns.webp",
+      "illustrationKey": "wedding_lanterns",
+      "characterIdentityLocked": true,
+      "requiresAgeCheck": true
+    },
+    "ending_confession_unanswered": {
+      "image": "assets/illustrations/ending_v4_3/river_bench.webp",
+      "illustrationKey": "river_bench",
+      "characterIdentityLocked": true,
+      "requiresAgeCheck": true
+    },
+    "ending_common_enemy": {
+      "image": "assets/illustrations/ending_v4_3/truth_hearing.webp",
+      "illustrationKey": "truth_hearing",
+      "characterIdentityLocked": true,
+      "requiresAgeCheck": true
+    },
+    "ending_double_license": {
+      "image": "assets/illustrations/ending_v4_3/double_certificate.webp",
+      "illustrationKey": "double_certificate",
+      "characterIdentityLocked": true,
+      "requiresAgeCheck": false
+    },
+    "ending_retirement_47": {
+      "image": "assets/illustrations/ending_v4_3/retirement_coins.webp",
+      "illustrationKey": "retirement_coins",
+      "characterIdentityLocked": true,
+      "requiresAgeCheck": false
+    },
+    "ending_paid_defeat": {
+      "image": "assets/illustrations/ending_v4_3/festival_defeat.webp",
+      "illustrationKey": "festival_defeat",
+      "characterIdentityLocked": true,
+      "requiresAgeCheck": true
+    },
+    "ending_taxpayer": {
+      "image": "assets/illustrations/ending_v4_3/tax_celebration.webp",
+      "illustrationKey": "tax_celebration",
+      "characterIdentityLocked": true,
+      "requiresAgeCheck": true
+    },
+    "ending_king": {
+      "image": "assets/illustrations/ending_v4_3/crown_self.webp",
+      "illustrationKey": "crown_self",
+      "characterIdentityLocked": true,
+      "requiresAgeCheck": true
+    },
+    "ending_bankrupt": {
+      "image": "assets/illustrations/ending_v4_3/empty_treasury.webp",
+      "illustrationKey": "empty_treasury",
+      "characterIdentityLocked": true,
+      "requiresAgeCheck": true
+    },
+    "ending_true_demon": {
+      "image": "assets/illustrations/ending_v4_3/sealed_demon.webp",
+      "illustrationKey": "sealed_demon",
+      "characterIdentityLocked": true,
+      "requiresAgeCheck": true
+    },
+    "ending_mother_petition": {
+      "image": "assets/illustrations/ending_v4_3/mother_letter.webp",
+      "illustrationKey": "mother_letter",
+      "characterIdentityLocked": true,
+      "requiresAgeCheck": true
+    }
+  },
+  "originalEndingsPreserved": [
+    "ending_escape",
+    "ending_fire",
+    "ending_ledger",
+    "ending_love_scandal",
+    "ending_office",
+    "ending_peace",
+    "ending_reform",
+    "ending_throne"
+  ],
+  "maxScreenWidth": 640,
+  "maxScreenHeight": 360,
+  "fit": "contain",
+  "allowUpscale": false,
+  "webpOnly": true,
+  "missing": "do-not-show"
+}

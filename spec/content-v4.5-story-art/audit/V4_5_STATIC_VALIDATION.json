@@ -1,0 +1,10 @@
+{
+  "16_core_nodes_choice_ids_destinations_effects_preserved": true,
+  "65_expansion_events_min_two_choices_and_bodyparagraphs": true,
+  "20_ending_gallery_bodies_synced": true,
+  "325_unique_annual_one_liners_no_choices": true,
+  "removed_deprecated_annual_datasets": true,
+  "new_image_paths_and_dimensions": true,
+  "20_ending_arts_preserved": true,
+  "scene_arts_in_asset_index": true
+}

@@ -4,11 +4,15 @@ import overrides from '../../spec/content-v3.6-story-engine-art/assets/scene_ill
 import { element } from './dom';
 import { endingArtworkPath, endingGalleryEntries } from '../content/ending-gallery';
 import { renderEndingArtwork } from './ending-gallery';
+import sceneArt from '../../spec/content-v4.5-story-art/assets/scene_art_manifest_v4_5.json';
+import type { GameState, HistoryEntry } from '../engine/types';
+import { validateSchema } from '../content/schema';
+validateSchema('sceneArt', sceneArt);
 
 // 이미지 연결은 화면 전용이다. 스토리 ID/본문/선택/저장에는 기록하지 않는다.
 export const sceneIllustrations: Record<string, { asset: string; after?: string; age?: number }> = {
   birth: { asset: 'village' },
-  child: { asset: 'mina', after: '미나는 당신에게 나무칼을 쥐여 줬다.', age: 12 },
+  child: { asset: 'mina', after: '나무칼', age: 12 },
   exam: { asset: 'mina' },
   prison: { asset: 'prison', after: '감옥에서' },
   princess: { asset: 'elysia' },
@@ -18,9 +22,25 @@ export const sceneIllustrations: Record<string, { asset: string; after?: string;
   confession_afterm: { asset: 'mina' },
   confession_chaos: { asset: 'mina', after: '미나가 검을 내려놓았다.' },
 };
-type SceneContext = { body: string; age: number };
+type SceneContext = { body: string; age: number; state?: GameState };
+export type StoryArtwork = { id: string; path: string; width: number; height: number; label: string };
+function mappedArtwork(rule: typeof sceneArt.rules[number]): StoryArtwork {
+  return { id: rule.id, path: rule.artPath, width: rule.width, height: rule.height, label: rule.alt };
+}
+export function outcomeArtwork(state: GameState, entry: HistoryEntry): StoryArtwork | undefined {
+  const rule = sceneArt.rules.find(rule => rule.when.nodeId === entry.nodeId && rule.when.outcomeId === entry.outcomeId);
+  if (!rule || !rule.when.outcomeId || entry.choiceId !== 'bring_mina' || entry.age !== 21
+    || !state.history.some(record => record.nodeId === entry.nodeId && record.choiceId === entry.choiceId && record.outcomeId === entry.outcomeId)
+    || !state.flags.includes(rule.when.requiredFlag!) || !state.npcs.mina?.alive || state.npcs.mina.trust < 0
+    || ['estranged', 'enemy', 'ex_spouse'].includes(state.npcs.mina.relationship)) return undefined;
+  return mappedArtwork(rule);
+}
 export function illustrationAsset(id: string, kind: 'scene' | 'ending' = 'scene', context?: SceneContext) {
   if (kind === 'ending') return manifest.assets.find(asset => asset.path === endingArtworkPath(id));
+  if (context?.state?.enteredNodeIds.includes(id)) {
+    const rule = sceneArt.rules.find(rule => rule.when.nodeId === id && rule.when.age === context.age && rule.usage.includes('main-scene'));
+    if (rule && (id !== 'hearing' || (context.state.flags.includes('public_audit') && context.state.history.some(entry => entry.nodeId === 'audit' && entry.choiceId === 'public_audit')))) return mappedArtwork(rule);
+  }
   const mapping = sceneIllustrations;
   if (!policy.enabled) return undefined;
   if (kind === 'scene') {
@@ -44,7 +64,10 @@ export function renderIllustration(id: string, kind: 'scene' | 'ending' = 'scene
     return entry ? renderEndingArtwork(entry) : undefined;
   }
   const asset = illustrationAsset(id, kind, context);
-  if (!asset || !/^assets\/illustrations\/(characters|backgrounds|events|event_cg)\/[a-z_]+\.webp$/.test(asset.path)) return undefined;
+  return asset ? renderStoryArtwork(asset, eager) : undefined;
+}
+export function renderStoryArtwork(asset: StoryArtwork, eager = false): HTMLElement | undefined {
+  if (!/^assets\/illustrations\/(characters|backgrounds|events|event_cg|event_cg_v4_5)\/[a-z0-9_]+\.webp$/.test(asset.path)) return undefined;
   const figure = element('figure', undefined, 'story-illustration');
   figure.dataset.assetId = asset.id;
   figure.style.setProperty('--illustration-ratio', String(asset.width / asset.height));
@@ -64,7 +87,10 @@ export function illustrateNarrative(prose: HTMLElement, nodeId: string, eager = 
   if (!figure) return;
   const paragraphs = [...prose.querySelectorAll<HTMLElement>(':scope > .story-paragraph')];
   const anchor = sceneIllustrations[nodeId]?.after;
-  const opening = anchor ? paragraphs.find(p => p.textContent?.includes(anchor)) : paragraphs[0];
+  const firstBody = context?.body.split(/\r?\n\s*\r?\n/)[0];
+  const opening = figure.dataset.assetId && sceneArt.rules.some(rule => rule.id === figure.dataset.assetId)
+    ? paragraphs.find(p => p.textContent === firstBody)
+    : anchor ? paragraphs.find(p => p.textContent?.includes(anchor)) : paragraphs.find(p => !/^\d+세 ·/.test(p.textContent ?? ''));
   // 앵커가 없는 다른 버전의 문안에는 임의로 삽입하지 않는다.
   opening?.after(figure);
 }

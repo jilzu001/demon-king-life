@@ -13,12 +13,12 @@ const story = await readExampleStory('demon-king-compact');
 const old = await loadStory(async path => read(`backups/before-v4.4/${path}`));
 const paths = read('docs/v4.4/routes/actual-paths.json') as { endingId: string; choices: string[] }[];
 
-it('기존43개 선택·16개 사건 본문·8개 결말·초기상태를 보존한다', () => {
+it('v4.5 허용 문안 외 기존43개 선택 계약·16사건 구조·8결말·초기상태를 보존한다', () => {
   let count = 0;
   for (const node of Object.values(old.nodes)) {
     const current = story.nodes[node.id]!;
-    expect({ ...current, choices: node.choices }).toEqual(node);
-    expect(current.choices.slice(0, node.choices.length)).toEqual(node.choices); count += node.choices.length;
+    expect({ ...current, body: node.body, chronicleSummary: node.chronicleSummary, choices: node.choices }).toEqual(node);
+    expect(current.choices.slice(0, node.choices.length).map(c => ({ ...c, outcomes: c.outcomes.map(({ narrative: _text, ...o }) => o) }))).toEqual(node.choices.map(c => ({ ...c, outcomes: c.outcomes.map(({ narrative: _text, ...o }) => o) }))); count += node.choices.length;
   }
   expect(count).toBe(43);
   for (const e of Object.values(old.endings)) expect(story.endings[e.id]).toEqual(e);

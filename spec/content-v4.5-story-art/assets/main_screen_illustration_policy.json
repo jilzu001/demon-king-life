@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "feature": "story-main-screen-inline-illustrations",
+  "enabled": true,
+  "placement": {
+    "mode": "inline-between-paragraphs",
+    "primary": "after-opening-paragraph-before-choices",
+    "never": [
+      "inside-dialogue",
+      "inside-choice-buttons",
+      "inside-one-line-chronicle"
+    ],
+    "priority": [
+      "event-specific",
+      "character",
+      "location"
+    ],
+    "maxImagesPerScene": 1,
+    "showOnlyRelevant": true,
+    "selectionRule": "Scene-specific explicit illustration only; never force image for each event. When speaking/acting character is narrative focus, choose matching character or action CG over generic location background. If no confidently matching image, omit."
+  },
+  "responsive": {
+    "mobile": {
+      "maxWidthPx": 480,
+      "maxHeightPx": 240,
+      "width": "100%"
+    },
+    "desktop": {
+      "maxWidthPx": 680,
+      "maxHeightPx": 360,
+      "width": "min(100%, 680px)"
+    },
+    "objectFit": "contain",
+    "avoidForcedCrop": true,
+    "naturalSizeCap": true,
+    "upscale": "never; rendered dimensions must not exceed intrinsic pixel dimensions"
+  },
+  "performance": {
+    "loading": "lazy",
+    "decoding": "async",
+    "preloadOnlyFirstVisibleScene": true,
+    "reserveAspectRatio": true,
+    "useManifestPaths": true
+  },
+  "accessibility": {
+    "altTextFromAssetLabels": true,
+    "decorativeImagesMayUseEmptyAlt": true
+  },
+  "compatibility": {
+    "preserveExistingStoryAndSaveSchema": true,
+    "doNotAddCharactersFromAssetAliases": true,
+    "fallbackWhenAssetMissing": "text-only"
+  },
+  "qualityGuidelines": {
+    "artDirection": "simple or diffuse lighting; simplified uncluttered backgrounds; clean cel shading; readable silhouettes",
+    "noArtificialUpscale": true,
+    "highResolutionAssets": "replace small source with truly higher-resolution artwork when needed, do not interpolate to fake detail",
+    "compression": "WebP quality 75-85; verify by eye; record real byte size",
+    "avoidMandatoryIllustration": true
+  }
+}

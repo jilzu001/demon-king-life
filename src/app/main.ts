@@ -12,7 +12,7 @@ import { renderNarrative } from '../ui/narrative';
 import { element, button, icon } from '../ui/dom';
 import { ReadingSequence, type ReadingStep } from '../ui/reading';
 import { PageReader } from '../ui/pages';
-import { illustrateNarrative, readingCompanions } from '../ui/illustrations';
+import { illustrateNarrative, readingCompanions, outcomeArtwork, renderStoryArtwork } from '../ui/illustrations';
 import { portraitUrl, portraitCharacters, dialogueEmotion, type PortraitCharacter, type PortraitEmotion } from '../ui/portraits';
 import { canonicalPortrait } from '../ui/visual-identity';
 import '../styles/main.css';
@@ -20,7 +20,7 @@ import { isCompact, compactSlot } from '../content/compact-contract';
 import { loadCompactProgress, compactProgressKey, type CompactProgress } from '../ui/compact-progress';
 import { renderCompactEnding } from '../ui/compact-ending';
 import { endingGalleryEntries, galleryEndingIds } from '../content/ending-gallery';
-import { routeBody } from '../content/route-years';
+import { routeBody, routeYears } from '../content/route-years';
 import { renderEndingGallery, renderEndingDetail } from '../ui/ending-gallery';
 import { resumeAtVisitedNode, backupBeforeReselect, loadReselectBackup, RESELECT_BACKUP_KEY } from '../persistence/reselect';
 
@@ -294,21 +294,54 @@ function bindPages(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEleme
     toolbar, paused: Boolean(openMenu), canChoose: () => !busy && !pending,
     gates: [...layout.querySelectorAll<HTMLElement>('.choices'), ...(current.ended ? [] : [launch])],
     choiceButtons: [...layout.querySelectorAll<HTMLButtonElement>('[data-choice]')], finishLabel: current.ended ? '읽기 완료' : '선택지', onComplete: ready,
+    onPage: () => {
+      if (!compactMode || current.ended) return;
+      const viewport = columns.querySelector<HTMLElement>('.page-window')!; const box = viewport.getBoundingClientRect();
+      const visible = [...viewport.querySelectorAll<HTMLElement>('.story-paragraph')].filter(paragraph => [...paragraph.getClientRects()].some(r => r.left < box.right - 1 && r.right > box.left + 1 && r.top < box.bottom && r.bottom > box.top));
+      showReadingAge(layout, current, visible.at(-1));
+    },
   });
+}
+function showReadingAge(layout: HTMLElement, current: GameState, paragraph?: HTMLElement) {
+  // 판정/세이브 나이는 보존하고, 읽는 중인 해만 화면에 한 살씩 표시한다.
+  const age = Number(paragraph?.dataset.readAge ?? current.age);
+  const label = layout.querySelector('.stats > div:first-child strong'); if (label) label.textContent = `${age}세`;
+  const heading = layout.querySelector<HTMLElement>('#current-event .scene-heading');
+  const annual = Boolean(paragraph?.dataset.readAge);
+  if (heading) {
+    // 페이지 조판 중 제목 높이가 바뀌면 글자가 다른 페이지로 밀리므로 공간은 유지한다.
+    if (readMode === 'page') { heading.hidden = false; heading.style.visibility = annual ? 'hidden' : ''; }
+    else heading.hidden = annual;
+  }
+  const item = layout.querySelector<HTMLElement>('.timeline-item');
+  if (item) {
+    for (const [selector, text] of [['.timeline-age', `${age}세`], ['.timeline-text', paragraph?.textContent?.replace(/^\d+세 · /, '') ?? '']]) {
+      const target = item.querySelector<HTMLElement>(selector!);
+      if (target) { target.dataset.actualText ??= target.textContent ?? ''; target.textContent = annual ? text! : target.dataset.actualText; }
+    }
+    item.dataset.actualLabel ??= item.getAttribute('aria-label') ?? '';
+    item.dataset.annualShowing = String(annual); item.tabIndex = annual ? -1 : 0;
+    if (annual) { item.removeAttribute('role'); item.removeAttribute('aria-label'); }
+    else { item.setAttribute('role', 'button'); item.setAttribute('aria-label', item.dataset.actualLabel); }
+  }
 }
 function renderAftermath(layout: HTMLElement, content: PresentedStory, current: GameState) {
   const last = current.history.at(-1)!;
+  const age = layout.querySelector('.stats > div:first-child strong'); if (age) age.textContent = `${last.age}세`;
   const confirmed = confirmedChoice(content, last);
   const frame = element('section', undefined, 'life-frame aftermath-frame'); frame.id = 'choice-aftermath';
   const heading = element('div', undefined, 'aftermath-heading');
   heading.append(element('p', `${last.age}세 · ${content.nodes[last.nodeId]!.title}`, 'eyebrow'), element('p', confirmed.choice.text, 'receipt-text'));
   frame.append(heading);
   const prose = renderNarrative(confirmed.outcome.narrative!, undefined, true); prose.classList.add('aftermath-prose');
+  const outcomeArt = isCompact(content.manifest) ? outcomeArtwork(current, last) : undefined;
+  const outcomeFigure = outcomeArt ? renderStoryArtwork(outcomeArt, true) : undefined;
+  if (outcomeFigure) prose.querySelector('.story-paragraph')?.after(outcomeFigure);
   const paged = readMode === 'page' ? pageWindow(frame, prose) : null;
   if (!paged) frame.append(prose);
   layout.append(frame);
   const toolbar = renderToolbar(layout);
-  const steps: ReadingStep[] = [...prose.querySelectorAll<HTMLElement>('.story-paragraph')].map(element => ({ element, stage: 'scene' }));
+  const steps: ReadingStep[] = [...prose.querySelectorAll<HTMLElement>('.story-paragraph')].map(element => ({ element, stage: 'scene', companions: readingCompanions(element) }));
   const runId = current.runId; const count = current.history.length;
   const complete = () => { if (state?.runId !== runId || state.history.length !== count) return; updateCompactView({ handledHistory: count }); render(); };
   if (paged) {
@@ -445,6 +478,7 @@ function bindReading(layout: HTMLElement, columns: HTMLElement, toolbar: HTMLEle
       const player = layout.querySelector<HTMLImageElement>('#player-image')!;
       if (compactMode) {
         player.src = canonicalPortrait(import.meta.env.BASE_URL, 'player')!;
+        showReadingAge(layout, current, step?.element);
         return;
       }
       if (stage === 'chronicle') { showNpc(); player.src = portraitUrl(import.meta.env.BASE_URL, 'player', current.age); }
@@ -571,7 +605,13 @@ function renderScene(layout: HTMLElement, content: PresentedStory, current: Game
   const title = element('h2', node.title); title.id = 'scene-title'; title.tabIndex = -1;
   heading.append(title);
   const narrative = renderNarrative(routeBody(content, current, node.id), presentation, isCompact(content.manifest));
-  if (isCompact(content.manifest)) illustrateNarrative(narrative, node.id, !current.history.length, { age: current.age, body: node.body });
+  if (isCompact(content.manifest)) {
+    routeYears(content, current, node.id).forEach((year, index) => {
+      const paragraph = narrative.querySelectorAll<HTMLElement>('.story-paragraph')[index];
+      if (paragraph) paragraph.dataset.readAge = String(year.age);
+    });
+    illustrateNarrative(narrative, node.id, !current.history.length, { age: current.age, body: node.body, state: current });
+  }
   panel.append(heading, narrative);
   const dialog = element('dialog', undefined, 'choice-dialog'); dialog.id = 'choice-dialog';
   const top = element('div', undefined, 'choice-dialog-heading');
@@ -628,7 +668,7 @@ function renderTimeline(layout: HTMLElement, content: PresentedStory, current: G
     if (event.result) text.append(element('span', resultLabels[event.result], 'timeline-result'));
     item.append(text); list.append(item);
     if (compactMode && event.nodeId) {
-      const openEvent = () => { if (busy || pending) return; historyFocusNode = event.nodeId!; historyExpanded.add(event.id); openMenu = 'history'; render(); };
+      const openEvent = () => { if (busy || pending || item.dataset.annualShowing === 'true') return; historyFocusNode = event.nodeId!; historyExpanded.add(event.id); openMenu = 'history'; render(); };
       item.tabIndex = 0; item.setAttribute('role', 'button'); item.setAttribute('aria-label', `${event.age}세 · ${event.title} · 분기 다시 선택`);
       item.addEventListener('click', openEvent);
       item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openEvent(); } });

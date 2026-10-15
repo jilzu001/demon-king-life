@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "version": "4.5",
+  "status": "integration-required",
+  "priority": "explicit verified event/outcome illustration > actual speaker portrait > applicable setting background > no image",
+  "fallback": "text-only; never old SVG/vector placeholder; do not show unrelated character",
+  "rules": [
+    {
+      "id": "birth",
+      "when": {
+        "nodeId": "birth",
+        "age": 0
+      },
+      "artPath": "assets/illustrations/event_cg_v4_5/cg_birth_registry.webp",
+      "cast": [
+        "newborn protagonist",
+        "mother with brown hair",
+        "father with brown-black hair",
+        "registrar"
+      ],
+      "alt": "신생아가 마왕으로 등록된 출생신고소에서 부모가 항의하는 장면",
+      "usage": [
+        "main-scene",
+        "flashback-only-if-visited"
+      ],
+      "width": 700,
+      "height": 525,
+      "bytes": 44978
+    },
+    {
+      "id": "invoice_bring_mina",
+      "when": {
+        "nodeId": "invoice",
+        "outcomeId": "out_bring_mina",
+        "requiredFlag": "mina_witness"
+      },
+      "artPath": "assets/illustrations/event_cg_v4_5/cg_mina_royal_hall.webp",
+      "cast": [
+        "adult protagonist black hair",
+        "Mina silver hair blue eyes"
+      ],
+      "alt": "미나와 주인공이 함께 왕궁으로 들어가는 장면",
+      "usage": [
+        "choice-result",
+        "flashback-only-if-outcome-visited"
+      ],
+      "width": 700,
+      "height": 525,
+      "bytes": 39450
+    },
+    {
+      "id": "public_hearing",
+      "when": {
+        "nodeId": "hearing",
+        "age": 47
+      },
+      "artPath": "assets/illustrations/event_cg_v4_5/cg_public_hearing.webp",
+      "cast": [
+        "adult protagonist black hair",
+        "court audience"
+      ],
+      "alt": "공개 재판에서 주인공이 증언대 앞에 선 장면",
+      "usage": [
+        "main-scene",
+        "flashback-only-if-visited"
+      ],
+      "width": 700,
+      "height": 930,
+      "bytes": 36662
+    }
+  ],
+  "assetNotes": {
+    "cg_birth_registry": "Mother is an adult brunette and newborn is the protagonist. Mina must NOT be shown as the mother.",
+    "cg_mina_royal_hall": "Mina is silver-haired with blue eyes; never replace with red-haired knight Leon. Show only if bring_mina was selected.",
+    "cg_public_hearing": "Portrait-leaning crop excludes the dialogue balloon baked into the original; game dialogue renders separately.",
+    "all": "Static illustrated CG, WebP, aspect-ratio:contain, no upscaling, no compulsory image for annual one-line records."
+  }
+}

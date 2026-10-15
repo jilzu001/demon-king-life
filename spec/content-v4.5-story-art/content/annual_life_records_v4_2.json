@@ -1,0 +1,2817 @@
+{
+  "schemaVersion": 2,
+  "format": "annual-single-sentence-rotating-v4.5",
+  "ageBounds": [
+    1,
+    65
+  ],
+  "engineIntegrationRequired": true,
+  "policy": {
+    "yearlyFallbackOnly": "Show one text at age N only if no substantive authored story event was actually visited at that age.",
+    "noChoices": "Annual record variants are automatic, not clickable choices. Do not render an empty button row.",
+    "recencyRotation": "Persistent history selects one of five candidates not previously seen for this age until all five have been used; shuffle each five-run cycle with a per-user/run seed.",
+    "runtimeIntegration": "Choose once on entering age, store chosen variant id in save. Never reroll on re-render, refresh, or resume.",
+    "legacyFlags": "Existing saved annual choice flags from v4.1 may remain. Passive v4.2 records never set these flags or silently trigger corresponding old choice callbacks.",
+    "ageInvariants": "Only for age reached and living character; no fabricated after-death records. Do not skip intermediate ages.",
+    "characterCanon": "All five variants are safe across normal paths without assuming marriage, a particular job, or whether Mina passed her exam.",
+    "persistedNonrepeat": "To avoid repeating an age variant across new games, store a versioned local history outside the individual play save where storage is permitted; otherwise degrade to per-run seeded diversity."
+  },
+  "years": [
+    {
+      "age": 1,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_01_v1",
+          "text": "첫돌상에서 국방부의 마왕 등록 인장을 집어 들자 어른들은 박수쳤고 어머니만 웃지 않았다.",
+          "chronicleSummary": "첫돌상에서 국방부의 마왕 등록 인장을 집어 들자 어른들은 박수쳤고 어머니만 웃지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_01_v2",
+          "text": "첫 생일 선물로 장난감보다 먼저 공식 등록증이 도착했다.",
+          "chronicleSummary": "첫 생일 선물로 장난감보다 먼저 공식 등록증이 도착했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_01_v3",
+          "text": "아버지는 돌잡이 결과를 '미래의 평범한 시민'이라고 적었다가 등록 서류를 다시 썼다.",
+          "chronicleSummary": "아버지는 돌잡이 결과를 '미래의 평범한 시민'이라고 적었다가 등록 서류를 다시 썼다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_01_v4",
+          "text": "어머니는 아이의 작은 손도 감당하기 버거운 마왕 인장을 서랍 깊숙이 넣었다.",
+          "chronicleSummary": "어머니는 아이의 작은 손도 감당하기 버거운 마왕 인장을 서랍 깊숙이 넣었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_01_v5",
+          "text": "첫돌 사진에는 아무 뿔도 없는 아기와 유난히 커다란 국가 인장만 남았다.",
+          "chronicleSummary": "첫돌 사진에는 아무 뿔도 없는 아기와 유난히 커다란 국가 인장만 남았다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 2,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_02_v1",
+          "text": "국방부 우편봉투를 물어뜯었다가 종이보다 단단한 봉투 모서리에 입술만 아팠다.",
+          "chronicleSummary": "국방부 우편봉투를 물어뜯었다가 종이보다 단단한 봉투 모서리에 입술만 아팠다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_02_v2",
+          "text": "처음 배운 낱말이 '엄마'였는데 마을 사람들은 '마왕'을 먼저 가르치려 했다.",
+          "chronicleSummary": "처음 배운 낱말이 '엄마'였는데 마을 사람들은 '마왕'을 먼저 가르치려 했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_02_v3",
+          "text": "장난감 상자에 서류 한 장이 섞여 들어왔지만 글자를 읽을 수 있는 사람은 걱정이 많았다.",
+          "chronicleSummary": "장난감 상자에 서류 한 장이 섞여 들어왔지만 글자를 읽을 수 있는 사람은 걱정이 많았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_02_v4",
+          "text": "넘어진 당신을 일으켜 준 이웃은 손을 닦고 나서야 미안해했다.",
+          "chronicleSummary": "넘어진 당신을 일으켜 준 이웃은 손을 닦고 나서야 미안해했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_02_v5",
+          "text": "아버지는 낡은 신발을 고쳐 신기며 나라가 아이 발 크기까지 알 필요는 없다고 말했다.",
+          "chronicleSummary": "아버지는 낡은 신발을 고쳐 신기며 나라가 아이 발 크기까지 알 필요는 없다고 말했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 3,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_03_v1",
+          "text": "진흙으로 작은 성을 쌓았다가 순찰병에게 요새 건립 신고가 필요하다는 말을 들었다.",
+          "chronicleSummary": "진흙으로 작은 성을 쌓았다가 순찰병에게 요새 건립 신고가 필요하다는 말을 들었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_03_v2",
+          "text": "비 온 뒤 웅덩이를 건너뛰다 넘어졌지만 마을에는 마왕의 침공이라는 소문이 돌지 않았다.",
+          "chronicleSummary": "비 온 뒤 웅덩이를 건너뛰다 넘어졌지만 마을에는 마왕의 침공이라는 소문이 돌지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_03_v3",
+          "text": "낮잠 시간에 코를 골았더니 선생님이 마왕의 포효라며 농담했다.",
+          "chronicleSummary": "낮잠 시간에 코를 골았더니 선생님이 마왕의 포효라며 농담했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_03_v4",
+          "text": "처음 그린 자화상에 뿔을 그리지 않았다고 어른들이 이상하게 여겼다.",
+          "chronicleSummary": "처음 그린 자화상에 뿔을 그리지 않았다고 어른들이 이상하게 여겼다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_03_v5",
+          "text": "동네 아이들과 숨바꼭질을 했고 당신은 끝까지 아무도 찾지 않는 술래가 되었다.",
+          "chronicleSummary": "동네 아이들과 숨바꼭질을 했고 당신은 끝까지 아무도 찾지 않는 술래가 되었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 4,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_04_v1",
+          "text": "소풍날 도시락에 붙은 마왕 위험 표시를 떼었더니 선생님이 다시 붙였다.",
+          "chronicleSummary": "소풍날 도시락에 붙은 마왕 위험 표시를 떼었더니 선생님이 다시 붙였다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_04_v2",
+          "text": "유치원에서 왕관을 만들었는데 친구들은 마왕보다 왕이 더 멋있다고 했다.",
+          "chronicleSummary": "유치원에서 왕관을 만들었는데 친구들은 마왕보다 왕이 더 멋있다고 했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_04_v3",
+          "text": "비 오는 날 미나와 같은 우산을 쓰고 귀가했다가 둘 다 어깨가 젖었다.",
+          "chronicleSummary": "비 오는 날 미나와 같은 우산을 쓰고 귀가했다가 둘 다 어깨가 젖었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_04_v4",
+          "text": "모래성을 쌓아 두자 순찰병이 농담으로 성벽 높이를 재 보았다.",
+          "chronicleSummary": "모래성을 쌓아 두자 순찰병이 농담으로 성벽 높이를 재 보았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_04_v5",
+          "text": "동네 고양이가 당신의 무릎에서 잠들자 어머니가 마왕의 첫 신하라며 웃었다.",
+          "chronicleSummary": "동네 고양이가 당신의 무릎에서 잠들자 어머니가 마왕의 첫 신하라며 웃었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 5,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_05_v1",
+          "text": "양말 한 짝을 잃어버리자 아버지가 마왕 물품 분실 신고서를 써야 하느냐며 웃었다.",
+          "chronicleSummary": "양말 한 짝을 잃어버리자 아버지가 마왕 물품 분실 신고서를 써야 하느냐며 웃었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_05_v2",
+          "text": "처음 혼자 묶은 신발끈이 열 걸음 만에 풀렸지만 걸음을 멈추지 않았다.",
+          "chronicleSummary": "처음 혼자 묶은 신발끈이 열 걸음 만에 풀렸지만 걸음을 멈추지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_05_v3",
+          "text": "동네 빵집에서 빵 끝부분을 덤으로 받았고 그날은 마왕이라는 말이 나오지 않았다.",
+          "chronicleSummary": "동네 빵집에서 빵 끝부분을 덤으로 받았고 그날은 마왕이라는 말이 나오지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_05_v4",
+          "text": "눈 오는 날 작은 장갑을 끼고 눈사람을 만들자 누군가 그 얼굴에 뿔을 꽂았다.",
+          "chronicleSummary": "눈 오는 날 작은 장갑을 끼고 눈사람을 만들자 누군가 그 얼굴에 뿔을 꽂았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_05_v5",
+          "text": "친구에게 장난감을 빌려주고 돌려받지 못했지만 처음으로 기다리는 법을 배웠다.",
+          "chronicleSummary": "친구에게 장난감을 빌려주고 돌려받지 못했지만 처음으로 기다리는 법을 배웠다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 6,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_06_v1",
+          "text": "비가 새는 지붕 아래 대야 세 개를 놓자 아버지는 이를 마왕성 방어 시설이라고 불렀다.",
+          "chronicleSummary": "비가 새는 지붕 아래 대야 세 개를 놓자 아버지는 이를 마왕성 방어 시설이라고 불렀다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_06_v2",
+          "text": "일기장에 비가 많이 왔다고 썼더니 다음 날도 비가 와서 글을 지웠다.",
+          "chronicleSummary": "일기장에 비가 많이 왔다고 썼더니 다음 날도 비가 와서 글을 지웠다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_06_v3",
+          "text": "시장 바닥에서 떨어진 동전을 주워 주자 주인이 마왕도 착한 일을 하느냐고 물었다.",
+          "chronicleSummary": "시장 바닥에서 떨어진 동전을 주워 주자 주인이 마왕도 착한 일을 하느냐고 물었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_06_v4",
+          "text": "낡은 우산이 뒤집힌 날 어머니와 함께 처마 밑에서 비가 그치기를 기다렸다.",
+          "chronicleSummary": "낡은 우산이 뒤집힌 날 어머니와 함께 처마 밑에서 비가 그치기를 기다렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_06_v5",
+          "text": "학급 사진을 찍을 때 맨 끝에 섰지만 사진 속 얼굴만큼은 다른 아이들과 비슷했다.",
+          "chronicleSummary": "학급 사진을 찍을 때 맨 끝에 섰지만 사진 속 얼굴만큼은 다른 아이들과 비슷했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 7,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_07_v1",
+          "text": "미나와 나무칼로 놀다가 냄비 뚜껑을 찌그러뜨려 함께 꾸중을 들었다.",
+          "chronicleSummary": "미나와 나무칼로 놀다가 냄비 뚜껑을 찌그러뜨려 함께 꾸중을 들었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_07_v2",
+          "text": "우물가에서 미나와 누가 더 멀리 돌을 던지는지 겨뤘다가 당신의 돌만 발 앞에 떨어졌다.",
+          "chronicleSummary": "우물가에서 미나와 누가 더 멀리 돌을 던지는지 겨뤘다가 당신의 돌만 발 앞에 떨어졌다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_07_v3",
+          "text": "미나가 손에 붕대를 감아 주자 다른 아이들이 그게 마왕의 봉인인지 물었다.",
+          "chronicleSummary": "미나가 손에 붕대를 감아 주자 다른 아이들이 그게 마왕의 봉인인지 물었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_07_v4",
+          "text": "한겨울 미나와 눈사람을 만들었는데 마을 순찰병이 뿔부터 치우라고 했다.",
+          "chronicleSummary": "한겨울 미나와 눈사람을 만들었는데 마을 순찰병이 뿔부터 치우라고 했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_07_v5",
+          "text": "미나가 빌려준 나무칼을 잃어버려 온 마을을 뒤졌지만 결국 자기 방에서 찾았다.",
+          "chronicleSummary": "미나가 빌려준 나무칼을 잃어버려 온 마을을 뒤졌지만 결국 자기 방에서 찾았다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 8,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_08_v1",
+          "text": "학교에서 당신의 책상이 맨 뒤로 밀려났지만 숙제 양은 다른 아이들과 같았다.",
+          "chronicleSummary": "학교에서 당신의 책상이 맨 뒤로 밀려났지만 숙제 양은 다른 아이들과 같았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_08_v2",
+          "text": "친구의 공책을 빌려 숙제를 베끼려다 틀린 답까지 똑같이 적었다.",
+          "chronicleSummary": "친구의 공책을 빌려 숙제를 베끼려다 틀린 답까지 똑같이 적었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_08_v3",
+          "text": "급식에 좋아하는 반찬이 나와 두 번 받으려 했지만 마왕에게도 한 번만 허용됐다.",
+          "chronicleSummary": "급식에 좋아하는 반찬이 나와 두 번 받으려 했지만 마왕에게도 한 번만 허용됐다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_08_v4",
+          "text": "담임이 가정통신문의 직업란을 고치려다 그냥 줄 하나를 그었다.",
+          "chronicleSummary": "담임이 가정통신문의 직업란을 고치려다 그냥 줄 하나를 그었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_08_v5",
+          "text": "칠판을 지우는 당번이 되었고 분필가루는 누구에게나 공평하게 날렸다.",
+          "chronicleSummary": "칠판을 지우는 당번이 되었고 분필가루는 누구에게나 공평하게 날렸다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 9,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_09_v1",
+          "text": "학교에서 장래 희망을 마왕으로 적었다가 나중에 문제가 생길 수 있다는 말을 들었다.",
+          "chronicleSummary": "학교에서 장래 희망을 마왕으로 적었다가 나중에 문제가 생길 수 있다는 말을 들었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_09_v2",
+          "text": "직업 조사 숙제에서 '마왕'의 실제 근무지를 쓰지 못해 빈칸을 남겼다.",
+          "chronicleSummary": "직업 조사 숙제에서 '마왕'의 실제 근무지를 쓰지 못해 빈칸을 남겼다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_09_v3",
+          "text": "선생님에게 평범한 사람이 되고 싶다고 말했더니 직업 이름을 적으라는 답을 들었다.",
+          "chronicleSummary": "선생님에게 평범한 사람이 되고 싶다고 말했더니 직업 이름을 적으라는 답을 들었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_09_v4",
+          "text": "미래의 자신에게 편지를 썼다가 주소란에 어느 성을 적어야 할지 고민했다.",
+          "chronicleSummary": "미래의 자신에게 편지를 썼다가 주소란에 어느 성을 적어야 할지 고민했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_09_v5",
+          "text": "직업 체험 행사에서 마왕 담당 부스만 설치되지 않아 하루 종일 구경만 했다.",
+          "chronicleSummary": "직업 체험 행사에서 마왕 담당 부스만 설치되지 않아 하루 종일 구경만 했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 10,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_10_v1",
+          "text": "여름 장터에서 빗 하나를 샀다가 집에 돌아와 빗살이 하나 빠진 것을 발견했다.",
+          "chronicleSummary": "여름 장터에서 빗 하나를 샀다가 집에 돌아와 빗살이 하나 빠진 것을 발견했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_10_v2",
+          "text": "처음 모은 동전으로 책을 샀지만 표지보다 책 속 빈 여백이 더 마음에 들었다.",
+          "chronicleSummary": "처음 모은 동전으로 책을 샀지만 표지보다 책 속 빈 여백이 더 마음에 들었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_10_v3",
+          "text": "동네 아이들과 돌을 튕기는 놀이를 하다 전투력 2라는 숫자를 잊었다.",
+          "chronicleSummary": "동네 아이들과 돌을 튕기는 놀이를 하다 전투력 2라는 숫자를 잊었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_10_v4",
+          "text": "생일 선물로 받은 공책 첫 장에 이름을 적는데 마왕이라는 글자는 빼 버렸다.",
+          "chronicleSummary": "생일 선물로 받은 공책 첫 장에 이름을 적는데 마왕이라는 글자는 빼 버렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_10_v5",
+          "text": "심부름으로 산 소금을 흘려서 집에 오는 길이 유난히 길게 느껴졌다.",
+          "chronicleSummary": "심부름으로 산 소금을 흘려서 집에 오는 길이 유난히 길게 느껴졌다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 11,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_11_v1",
+          "text": "학교 체력 검사에서 꼴찌를 했는데 선생님은 공식 전투력 2와 일치한다며 안도했다.",
+          "chronicleSummary": "학교 체력 검사에서 꼴찌를 했는데 선생님은 공식 전투력 2와 일치한다며 안도했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_11_v2",
+          "text": "미나가 달리기에서 우승하는 동안 당신은 급수대 자리를 지켰다.",
+          "chronicleSummary": "미나가 달리기에서 우승하는 동안 당신은 급수대 자리를 지켰다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_11_v3",
+          "text": "교실에서 마왕의 약점을 묻는 문제가 나오자 당신은 시험지를 뒤집었다.",
+          "chronicleSummary": "교실에서 마왕의 약점을 묻는 문제가 나오자 당신은 시험지를 뒤집었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_11_v4",
+          "text": "동네 운동회에서 꼴찌로 들어왔는데도 결승선을 지나자 몇 사람이 박수를 쳤다.",
+          "chronicleSummary": "동네 운동회에서 꼴찌로 들어왔는데도 결승선을 지나자 몇 사람이 박수를 쳤다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_11_v5",
+          "text": "책가방을 메고 언덕을 오르다 미나가 대신 들어 주겠다는 제안을 끝내 거절했다.",
+          "chronicleSummary": "책가방을 메고 언덕을 오르다 미나가 대신 들어 주겠다는 제안을 끝내 거절했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 12,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_12_v1",
+          "text": "미나와 놀던 훈련장 울타리를 지나며 나무칼이 남긴 홈을 손끝으로 만졌다.",
+          "chronicleSummary": "미나와 놀던 훈련장 울타리를 지나며 나무칼이 남긴 홈을 손끝으로 만졌다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_12_v2",
+          "text": "낡은 훈련장에서 풀을 뽑다가 검술보다 잡초가 빨리 자란다는 사실을 알았다.",
+          "chronicleSummary": "낡은 훈련장에서 풀을 뽑다가 검술보다 잡초가 빨리 자란다는 사실을 알았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_12_v3",
+          "text": "옛 장난감 칼을 찾았지만 손에 쥐니 지나치게 짧았다.",
+          "chronicleSummary": "옛 장난감 칼을 찾았지만 손에 쥐니 지나치게 짧았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_12_v4",
+          "text": "훈련장 문에 붙은 출입 금지 표지를 보고 어린 시절이 끝나는 기분이 들었다.",
+          "chronicleSummary": "훈련장 문에 붙은 출입 금지 표지를 보고 어린 시절이 끝나는 기분이 들었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_12_v5",
+          "text": "미나와 키를 재 보려다 더 큰 쪽이 누구인지보다 서로 얼마나 달라졌는지가 눈에 띄었다.",
+          "chronicleSummary": "미나와 키를 재 보려다 더 큰 쪽이 누구인지보다 서로 얼마나 달라졌는지가 눈에 띄었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 13,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_13_v1",
+          "text": "장래 희망을 사람답게 사는 사람이라고 적었다가 직업명을 다시 쓰라는 말을 들었다.",
+          "chronicleSummary": "장래 희망을 사람답게 사는 사람이라고 적었다가 직업명을 다시 쓰라는 말을 들었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_13_v2",
+          "text": "학교 상담실에서 마왕 외의 진로를 물었더니 담당자가 빈 서식을 내밀었다.",
+          "chronicleSummary": "학교 상담실에서 마왕 외의 진로를 물었더니 담당자가 빈 서식을 내밀었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_13_v3",
+          "text": "수업 시간에 왕국의 위대한 영웅들을 배웠지만 마왕의 일상은 교과서 어디에도 없었다.",
+          "chronicleSummary": "수업 시간에 왕국의 위대한 영웅들을 배웠지만 마왕의 일상은 교과서 어디에도 없었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_13_v4",
+          "text": "친구가 졸업 후 무엇을 할 거냐고 물었고 당신은 일단 내일 숙제를 걱정했다.",
+          "chronicleSummary": "친구가 졸업 후 무엇을 할 거냐고 물었고 당신은 일단 내일 숙제를 걱정했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_13_v5",
+          "text": "직업 적성 검사 결과가 '분류 불가'로 나와 처음으로 시험지를 접지 않고 챙겼다.",
+          "chronicleSummary": "직업 적성 검사 결과가 '분류 불가'로 나와 처음으로 시험지를 접지 않고 챙겼다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 14,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_14_v1",
+          "text": "길 잃은 고양이를 찾는 그림을 붙였더니 고양이보다 당신의 그림 솜씨가 화제가 됐다.",
+          "chronicleSummary": "길 잃은 고양이를 찾는 그림을 붙였더니 고양이보다 당신의 그림 솜씨가 화제가 됐다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_14_v2",
+          "text": "시장에 심부름을 다녀오는 사이 누군가 골목 담벼락에 마왕 퇴치 부적을 붙였다.",
+          "chronicleSummary": "시장에 심부름을 다녀오는 사이 누군가 골목 담벼락에 마왕 퇴치 부적을 붙였다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_14_v3",
+          "text": "처음 혼자 먼 길을 걸었다가 돌아오는 길에 집의 불빛이 유난히 반가웠다.",
+          "chronicleSummary": "처음 혼자 먼 길을 걸었다가 돌아오는 길에 집의 불빛이 유난히 반가웠다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_14_v4",
+          "text": "교실 창가에서 하루 종일 비를 구경했는데 누구도 그날을 역사에 적지 않았다.",
+          "chronicleSummary": "교실 창가에서 하루 종일 비를 구경했는데 누구도 그날을 역사에 적지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_14_v5",
+          "text": "동네 고양이가 무릎 위에서 잠들자 공식적인 위험 등급이 무색해졌다.",
+          "chronicleSummary": "동네 고양이가 무릎 위에서 잠들자 공식적인 위험 등급이 무색해졌다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 15,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_15_v1",
+          "text": "생일 케이크 대신 작은 빵에 초 하나를 꽂고 열다섯 번의 소원을 한꺼번에 빌었다.",
+          "chronicleSummary": "생일 케이크 대신 작은 빵에 초 하나를 꽂고 열다섯 번의 소원을 한꺼번에 빌었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_15_v2",
+          "text": "학교 졸업 사진을 찍다가 이름표의 직업란을 접어 숨겼다.",
+          "chronicleSummary": "학교 졸업 사진을 찍다가 이름표의 직업란을 접어 숨겼다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_15_v3",
+          "text": "친구들과 마지막으로 운동장을 뛰었고 집에 돌아와 이유 없이 조용해졌다.",
+          "chronicleSummary": "친구들과 마지막으로 운동장을 뛰었고 집에 돌아와 이유 없이 조용해졌다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_15_v4",
+          "text": "처음 면도 이야기를 듣고 거울을 들여다봤지만 수염보다 눈 밑의 피곤함이 먼저 보였다.",
+          "chronicleSummary": "처음 면도 이야기를 듣고 거울을 들여다봤지만 수염보다 눈 밑의 피곤함이 먼저 보였다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_15_v5",
+          "text": "생일을 축하하러 온 사람이 적었어도 식탁의 빵은 모두 나눠 먹었다.",
+          "chronicleSummary": "생일을 축하하러 온 사람이 적었어도 식탁의 빵은 모두 나눠 먹었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 16,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_16_v1",
+          "text": "군사학교 모집원이 전투력 2를 확인하고 검사비를 돌려줘야겠다고 중얼거렸다.",
+          "chronicleSummary": "군사학교 모집원이 전투력 2를 확인하고 검사비를 돌려줘야겠다고 중얼거렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_16_v2",
+          "text": "군사학교 포스터의 입학 요건을 읽다가 자신의 이름이 금지 목록에 있다는 걸 발견했다.",
+          "chronicleSummary": "군사학교 포스터의 입학 요건을 읽다가 자신의 이름이 금지 목록에 있다는 걸 발견했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_16_v3",
+          "text": "광장 모병 행사에서 가장 오래 줄을 섰지만 검사는 가장 빨리 끝났다.",
+          "chronicleSummary": "광장 모병 행사에서 가장 오래 줄을 섰지만 검사는 가장 빨리 끝났다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_16_v4",
+          "text": "처음 받은 신분 확인 문서에 마왕이라는 직함이 적혀 있어 몇 번이나 접었다 폈다.",
+          "chronicleSummary": "처음 받은 신분 확인 문서에 마왕이라는 직함이 적혀 있어 몇 번이나 접었다 폈다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_16_v5",
+          "text": "또래들이 장래를 얘기하는 동안 당신은 당장 필요한 신분증 발급 창구를 찾았다.",
+          "chronicleSummary": "또래들이 장래를 얘기하는 동안 당신은 당장 필요한 신분증 발급 창구를 찾았다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 17,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_17_v1",
+          "text": "이웃집 창문이 깨지자 사람들은 당신을 먼저 의심했고 당신은 추운 손을 호호 불었다.",
+          "chronicleSummary": "이웃집 창문이 깨지자 사람들은 당신을 먼저 의심했고 당신은 추운 손을 호호 불었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_17_v2",
+          "text": "겨울밤 난로가 꺼져 옷을 겹쳐 입으며 마왕도 추위를 탄다는 걸 다시 확인했다.",
+          "chronicleSummary": "겨울밤 난로가 꺼져 옷을 겹쳐 입으며 마왕도 추위를 탄다는 걸 다시 확인했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_17_v3",
+          "text": "길모퉁이에서 눈을 치워 줬지만 감사 인사는 다음 집에 사는 사람에게 돌아갔다.",
+          "chronicleSummary": "길모퉁이에서 눈을 치워 줬지만 감사 인사는 다음 집에 사는 사람에게 돌아갔다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_17_v4",
+          "text": "오래된 친구에게 안부 편지를 쓰다 첫 문장에서 펜을 멈췄다.",
+          "chronicleSummary": "오래된 친구에게 안부 편지를 쓰다 첫 문장에서 펜을 멈췄다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_17_v5",
+          "text": "동네 축제의 경비 인원이 평소보다 많아지자 당신은 입구 대신 뒷길로 돌아갔다.",
+          "chronicleSummary": "동네 축제의 경비 인원이 평소보다 많아지자 당신은 입구 대신 뒷길로 돌아갔다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 18,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_18_v1",
+          "text": "시장 상인의 감자 자루를 나르며 첫 일당이 노동보다 늦게 온다는 사실을 배웠다.",
+          "chronicleSummary": "시장 상인의 감자 자루를 나르며 첫 일당이 노동보다 늦게 온다는 사실을 배웠다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_18_v2",
+          "text": "처음 구직서를 냈다가 경력란의 마왕 직함 때문에 면접 전에 반려됐다.",
+          "chronicleSummary": "처음 구직서를 냈다가 경력란의 마왕 직함 때문에 면접 전에 반려됐다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_18_v3",
+          "text": "낡은 신발로 하루 종일 일하고 번 돈을 세니 신발을 바꾸기에도 빠듯했다.",
+          "chronicleSummary": "낡은 신발로 하루 종일 일하고 번 돈을 세니 신발을 바꾸기에도 빠듯했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_18_v4",
+          "text": "시장 사람들이 바쁘게 일하는 사이 당신에게만 경비병의 시선이 오래 머물렀다.",
+          "chronicleSummary": "시장 사람들이 바쁘게 일하는 사이 당신에게만 경비병의 시선이 오래 머물렀다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_18_v5",
+          "text": "일을 마치고 먹은 차가운 수프가 처음으로 자기 돈으로 산 저녁이었다.",
+          "chronicleSummary": "일을 마치고 먹은 차가운 수프가 처음으로 자기 돈으로 산 저녁이었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 19,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_19_v1",
+          "text": "용사 시험 공고에서 ‘시험 대상자 별도 통지’라는 글씨를 발견하고 그날 밤 잠을 설쳤다.",
+          "chronicleSummary": "용사 시험 공고에서 ‘시험 대상자 별도 통지’라는 글씨를 발견하고 그날 밤 잠을 설쳤다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_19_v2",
+          "text": "미나의 이름이 합격 예상자 명단에 오르자 당신은 축하 편지를 쓰다 봉투를 덮었다.",
+          "chronicleSummary": "미나의 이름이 합격 예상자 명단에 오르자 당신은 축하 편지를 쓰다 봉투를 덮었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_19_v3",
+          "text": "광장에 걸린 마왕 그림이 자신과 전혀 닮지 않아 잠시 구경하는 사람들과 함께 웃었다.",
+          "chronicleSummary": "광장에 걸린 마왕 그림이 자신과 전혀 닮지 않아 잠시 구경하는 사람들과 함께 웃었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_19_v4",
+          "text": "왕국의 시험 준비 예산은 또 늘었지만 당신에게는 안전장비 하나 지급되지 않았다.",
+          "chronicleSummary": "왕국의 시험 준비 예산은 또 늘었지만 당신에게는 안전장비 하나 지급되지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_19_v5",
+          "text": "용사 학교 설명회에서 실기 대상자의 권리 안내문을 찾았지만 관련 항목이 없었다.",
+          "chronicleSummary": "용사 학교 설명회에서 실기 대상자의 권리 안내문을 찾았지만 관련 항목이 없었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 20,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_20_v1",
+          "text": "스무 살에 처음 받은 세금 고지서에는 '마왕 위협 유지 기여금'이라는 항목이 있었다.",
+          "chronicleSummary": "스무 살에 처음 받은 세금 고지서에는 '마왕 위협 유지 기여금'이라는 항목이 있었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_20_v2",
+          "text": "성인이 되자 마왕 등록증 갱신 안내가 왔지만 선택할 수 있는 직업은 하나뿐이었다.",
+          "chronicleSummary": "성인이 되자 마왕 등록증 갱신 안내가 왔지만 선택할 수 있는 직업은 하나뿐이었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_20_v3",
+          "text": "스무 살을 기념해 평범한 저녁을 먹었는데 축하보다 내일의 걱정이 오래 남았다.",
+          "chronicleSummary": "스무 살을 기념해 평범한 저녁을 먹었는데 축하보다 내일의 걱정이 오래 남았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_20_v4",
+          "text": "성인용 신분증을 발급받으러 갔다가 직업란에 이미 적힌 이름을 다시 확인했다.",
+          "chronicleSummary": "성인용 신분증을 발급받으러 갔다가 직업란에 이미 적힌 이름을 다시 확인했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_20_v5",
+          "text": "독립을 준비하며 방을 알아봤지만 문의 전화는 '마왕'이라는 말에서 자주 끊겼다.",
+          "chronicleSummary": "독립을 준비하며 방을 알아봤지만 문의 전화는 '마왕'이라는 말에서 자주 끊겼다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 21,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_21_v1",
+          "text": "자취방 문에 수상한 발자국이 남아 있었지만 감시병인지 이웃인지 끝내 확인하지 못했다.",
+          "chronicleSummary": "자취방 문에 수상한 발자국이 남아 있었지만 감시병인지 이웃인지 끝내 확인하지 못했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_21_v2",
+          "text": "시장에서 먹은 따뜻한 수프 한 그릇이 예상보다 오래 기억에 남았다.",
+          "chronicleSummary": "시장에서 먹은 따뜻한 수프 한 그릇이 예상보다 오래 기억에 남았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_21_v3",
+          "text": "지난해의 일을 적던 공책이 절반도 차지 않아 오히려 적지 못한 말이 많다고 느꼈다.",
+          "chronicleSummary": "지난해의 일을 적던 공책이 절반도 차지 않아 오히려 적지 못한 말이 많다고 느꼈다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_21_v4",
+          "text": "골목 빵집의 마지막 손님이 되어 남은 빵을 싸게 샀다.",
+          "chronicleSummary": "골목 빵집의 마지막 손님이 되어 남은 빵을 싸게 샀다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_21_v5",
+          "text": "서류를 정리하다 자기 이름보다 사건번호가 더 많이 적힌 종이를 발견했다.",
+          "chronicleSummary": "서류를 정리하다 자기 이름보다 사건번호가 더 많이 적힌 종이를 발견했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 22,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_22_v1",
+          "text": "집주인은 마왕 소문 때문에 집값이 내려갔다며 월세를 올렸다.",
+          "chronicleSummary": "집주인은 마왕 소문 때문에 집값이 내려갔다며 월세를 올렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_22_v2",
+          "text": "집을 알아보는 동안 계약서에 적힌 특약이 다른 세입자보다 두 줄 길었다.",
+          "chronicleSummary": "집을 알아보는 동안 계약서에 적힌 특약이 다른 세입자보다 두 줄 길었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_22_v3",
+          "text": "보증금 영수증을 잃어버릴까 봐 몇 번이고 접어 서랍에 넣었다.",
+          "chronicleSummary": "보증금 영수증을 잃어버릴까 봐 몇 번이고 접어 서랍에 넣었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_22_v4",
+          "text": "이삿짐을 옮기는 날 가장 무거운 것은 책이 아니라 낡은 서류 상자였다.",
+          "chronicleSummary": "이삿짐을 옮기는 날 가장 무거운 것은 책이 아니라 낡은 서류 상자였다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_22_v5",
+          "text": "월세를 내고 남은 동전으로 빵을 사며 계산을 다시 해 봤다.",
+          "chronicleSummary": "월세를 내고 남은 동전으로 빵을 사며 계산을 다시 해 봤다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 23,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_23_v1",
+          "text": "장터에서 자신을 닮았다는 마왕 인형을 봤는데 실제로 없는 뿔이 세 개나 달려 있었다.",
+          "chronicleSummary": "장터에서 자신을 닮았다는 마왕 인형을 봤는데 실제로 없는 뿔이 세 개나 달려 있었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_23_v2",
+          "text": "동네 축제에서 마왕 가면이 가장 잘 팔렸다는 소식을 듣고 잠깐 웃었다.",
+          "chronicleSummary": "동네 축제에서 마왕 가면이 가장 잘 팔렸다는 소식을 듣고 잠깐 웃었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_23_v3",
+          "text": "자신을 그린 전단지를 발견했지만 이름 철자가 틀려 항의할 곳을 찾지 못했다.",
+          "chronicleSummary": "자신을 그린 전단지를 발견했지만 이름 철자가 틀려 항의할 곳을 찾지 못했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_23_v4",
+          "text": "오래된 장터 골목에서 길을 잃었다가 가게 주인의 친절로 돌아왔다.",
+          "chronicleSummary": "오래된 장터 골목에서 길을 잃었다가 가게 주인의 친절로 돌아왔다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_23_v5",
+          "text": "시장 상인이 위험 수당을 붙인 물건값을 불렀지만 옆 가게는 평범한 값에 팔았다.",
+          "chronicleSummary": "시장 상인이 위험 수당을 붙인 물건값을 불렀지만 옆 가게는 평범한 값에 팔았다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 24,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_24_v1",
+          "text": "아이들이 연극 속 마왕 역할에 당신 이름을 쓰겠다며 허락을 구했다.",
+          "chronicleSummary": "아이들이 연극 속 마왕 역할에 당신 이름을 쓰겠다며 허락을 구했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_24_v2",
+          "text": "마을 연극을 구경하다 악역이 퇴장할 때 받은 박수가 유난히 커서 놀랐다.",
+          "chronicleSummary": "마을 연극을 구경하다 악역이 퇴장할 때 받은 박수가 유난히 커서 놀랐다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_24_v3",
+          "text": "학교 앞을 지나는데 아이들이 마왕을 그린 그림을 들고 뛰어다녔다.",
+          "chronicleSummary": "학교 앞을 지나는데 아이들이 마왕을 그린 그림을 들고 뛰어다녔다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_24_v4",
+          "text": "동네 아이에게 진짜 마왕은 무엇을 먹느냐는 질문을 받고 점심 메뉴를 알려 줬다.",
+          "chronicleSummary": "동네 아이에게 진짜 마왕은 무엇을 먹느냐는 질문을 받고 점심 메뉴를 알려 줬다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_24_v5",
+          "text": "오래전 쓰던 나무칼과 닮은 장난감을 보고 값을 물었다가 그냥 내려놓았다.",
+          "chronicleSummary": "오래전 쓰던 나무칼과 닮은 장난감을 보고 값을 물었다가 그냥 내려놓았다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 25,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_25_v1",
+          "text": "사흘만 맡기로 한 화분이 열흘째 자라자 누구의 약속인지 헷갈리기 시작했다.",
+          "chronicleSummary": "사흘만 맡기로 한 화분이 열흘째 자라자 누구의 약속인지 헷갈리기 시작했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_25_v2",
+          "text": "이웃 가게의 화분에 물을 주다가 잎 하나가 새로 난 걸 발견했다.",
+          "chronicleSummary": "이웃 가게의 화분에 물을 주다가 잎 하나가 새로 난 걸 발견했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_25_v3",
+          "text": "잃어버린 열쇠를 찾다가 오래된 영수증만 잔뜩 꺼냈다.",
+          "chronicleSummary": "잃어버린 열쇠를 찾다가 오래된 영수증만 잔뜩 꺼냈다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_25_v4",
+          "text": "익명의 누군가가 집 앞에 따뜻한 수프를 놓고 갔고 그릇에는 이름이 없었다.",
+          "chronicleSummary": "익명의 누군가가 집 앞에 따뜻한 수프를 놓고 갔고 그릇에는 이름이 없었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_25_v5",
+          "text": "어느 저녁에도 특별한 일이 없자 처음으로 그 평온함이 아깝지 않았다.",
+          "chronicleSummary": "어느 저녁에도 특별한 일이 없자 처음으로 그 평온함이 아깝지 않았다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 26,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_26_v1",
+          "text": "초대받지 못한 동네 잔치에서 음식을 나르는 일을 가장 많이 했다.",
+          "chronicleSummary": "초대받지 못한 동네 잔치에서 음식을 나르는 일을 가장 많이 했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_26_v2",
+          "text": "마을 잔치에서 먼 자리의 노인이 접시 하나를 건네 줘 함께 식사했다.",
+          "chronicleSummary": "마을 잔치에서 먼 자리의 노인이 접시 하나를 건네 줘 함께 식사했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_26_v3",
+          "text": "오래된 옷을 기워 입고 잔치에 갔는데 누구도 그 자국을 눈치채지 못했다.",
+          "chronicleSummary": "오래된 옷을 기워 입고 잔치에 갔는데 누구도 그 자국을 눈치채지 못했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_26_v4",
+          "text": "축제 음악이 골목 끝까지 들려와 창문을 열어 둔 채 저녁을 먹었다.",
+          "chronicleSummary": "축제 음악이 골목 끝까지 들려와 창문을 열어 둔 채 저녁을 먹었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_26_v5",
+          "text": "장터에서 팔리지 않은 떡을 나눠 받아 돌아오니 집 안이 오래도록 따뜻했다.",
+          "chronicleSummary": "장터에서 팔리지 않은 떡을 나눠 받아 돌아오니 집 안이 오래도록 따뜻했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 27,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_27_v1",
+          "text": "마왕 토벌 예산이 늘어난 해에도 동네 놀이터의 끊어진 그네는 수리되지 않았다.",
+          "chronicleSummary": "마왕 토벌 예산이 늘어난 해에도 동네 놀이터의 끊어진 그네는 수리되지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_27_v2",
+          "text": "아이들이 줄 없는 그네를 밀며 노는 모습을 보고 수리비를 적어 봤다.",
+          "chronicleSummary": "아이들이 줄 없는 그네를 밀며 노는 모습을 보고 수리비를 적어 봤다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_27_v3",
+          "text": "마을 회의에서 가장 작은 안건이 가장 오래 미뤄지는 것을 보았다.",
+          "chronicleSummary": "마을 회의에서 가장 작은 안건이 가장 오래 미뤄지는 것을 보았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_27_v4",
+          "text": "낡은 미끄럼틀을 닦아 주자 아이들이 그곳을 처음 세운 사람처럼 고마워했다.",
+          "chronicleSummary": "낡은 미끄럼틀을 닦아 주자 아이들이 그곳을 처음 세운 사람처럼 고마워했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_27_v5",
+          "text": "공원 벤치에 앉아 있자 아이 하나가 마왕에게도 놀이터가 필요한지 물었다.",
+          "chronicleSummary": "공원 벤치에 앉아 있자 아이 하나가 마왕에게도 놀이터가 필요한지 물었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 28,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_28_v1",
+          "text": "보냈던 편지가 수취인 불명으로 돌아왔지만 주소는 분명 맞았다.",
+          "chronicleSummary": "보냈던 편지가 수취인 불명으로 돌아왔지만 주소는 분명 맞았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_28_v2",
+          "text": "오랜 친구의 안부를 물을 곳이 마땅치 않아 편지지를 다시 접었다.",
+          "chronicleSummary": "오랜 친구의 안부를 물을 곳이 마땅치 않아 편지지를 다시 접었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_28_v3",
+          "text": "반년 전에 신청한 확인서가 도착했는데 그사이 담당 부서 이름이 바뀌어 있었다.",
+          "chronicleSummary": "반년 전에 신청한 확인서가 도착했는데 그사이 담당 부서 이름이 바뀌어 있었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_28_v4",
+          "text": "마을 우체국에서 줄을 서다가 낯선 사람과 비슷한 우편 사고 이야기를 나눴다.",
+          "chronicleSummary": "마을 우체국에서 줄을 서다가 낯선 사람과 비슷한 우편 사고 이야기를 나눴다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_28_v5",
+          "text": "편지봉투에 이름을 적는 일이 해마다 조금씩 조심스러워졌다.",
+          "chronicleSummary": "편지봉투에 이름을 적는 일이 해마다 조금씩 조심스러워졌다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 29,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_29_v1",
+          "text": "왕궁 소식지에는 공주의 이름이 크게 인쇄됐고 당신의 이름은 작게라도 실리지 않았다.",
+          "chronicleSummary": "왕궁 소식지에는 공주의 이름이 크게 인쇄됐고 당신의 이름은 작게라도 실리지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_29_v2",
+          "text": "저녁 식탁에서 차가 식는 동안 장부 숫자보다 사람 얼굴을 더 오래 떠올렸다.",
+          "chronicleSummary": "저녁 식탁에서 차가 식는 동안 장부 숫자보다 사람 얼굴을 더 오래 떠올렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_29_v3",
+          "text": "가게마다 신분증을 요구하는 방식이 달라 당신은 하루에 같은 설명을 세 번 했다.",
+          "chronicleSummary": "가게마다 신분증을 요구하는 방식이 달라 당신은 하루에 같은 설명을 세 번 했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_29_v4",
+          "text": "마왕이라는 말 없이 물건을 산 하루를 기념하려다 그냥 일찍 잠들었다.",
+          "chronicleSummary": "마왕이라는 말 없이 물건을 산 하루를 기념하려다 그냥 일찍 잠들었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_29_v5",
+          "text": "친구에게 안부 편지를 쓰고는 마지막 문장에서 상대의 직함을 모두 지웠다.",
+          "chronicleSummary": "친구에게 안부 편지를 쓰고는 마지막 문장에서 상대의 직함을 모두 지웠다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 30,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_30_v1",
+          "text": "서른 살 생일에 받은 축하 편지는 마왕도 가입할 수 있다는 보험 광고였다.",
+          "chronicleSummary": "서른 살 생일에 받은 축하 편지는 마왕도 가입할 수 있다는 보험 광고였다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_30_v2",
+          "text": "서른 번째 생일 아침에 특별한 변화가 없어 달력 날짜만 한 번 더 확인했다.",
+          "chronicleSummary": "서른 번째 생일 아침에 특별한 변화가 없어 달력 날짜만 한 번 더 확인했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_30_v3",
+          "text": "생일 선물로 새 공책을 샀지만 첫 장에 무엇을 적을지 오래 망설였다.",
+          "chronicleSummary": "생일 선물로 새 공책을 샀지만 첫 장에 무엇을 적을지 오래 망설였다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_30_v4",
+          "text": "친구들의 소식이 드문드문 들려와 같은 나이라는 말이 낯설어졌다.",
+          "chronicleSummary": "친구들의 소식이 드문드문 들려와 같은 나이라는 말이 낯설어졌다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_30_v5",
+          "text": "흐린 날 오래된 사진을 정리하다 스무 살의 표정이 지금보다 훨씬 어려 보였다.",
+          "chronicleSummary": "흐린 날 오래된 사진을 정리하다 스무 살의 표정이 지금보다 훨씬 어려 보였다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 31,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_31_v1",
+          "text": "닳은 구두 밑창을 고치자 구둣방 노인이 어디를 그렇게 많이 걸었느냐고 물었다.",
+          "chronicleSummary": "닳은 구두 밑창을 고치자 구둣방 노인이 어디를 그렇게 많이 걸었느냐고 물었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_31_v2",
+          "text": "비 오는 골목을 걷다 신발에 물이 스며들어 수선 날짜를 달력에 적었다.",
+          "chronicleSummary": "비 오는 골목을 걷다 신발에 물이 스며들어 수선 날짜를 달력에 적었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_31_v3",
+          "text": "구두 밑창에 박힌 작은 돌을 빼며 지난 몇 달의 걸음을 떠올렸다.",
+          "chronicleSummary": "구두 밑창에 박힌 작은 돌을 빼며 지난 몇 달의 걸음을 떠올렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_31_v4",
+          "text": "시장 구둣방에서 거절당한 구두를 다음 집 노인은 말없이 수선해 줬다.",
+          "chronicleSummary": "시장 구둣방에서 거절당한 구두를 다음 집 노인은 말없이 수선해 줬다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_31_v5",
+          "text": "낡은 신발을 버리기 전에 끈을 풀어 두었다가 이유 없이 다시 묶었다.",
+          "chronicleSummary": "낡은 신발을 버리기 전에 끈을 풀어 두었다가 이유 없이 다시 묶었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 32,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_32_v1",
+          "text": "도서관 사서는 반납이 늦은 책의 연체료에 마왕 가산세가 있는지 확인했다.",
+          "chronicleSummary": "도서관 사서는 반납이 늦은 책의 연체료에 마왕 가산세가 있는지 확인했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_32_v2",
+          "text": "도서관에서 오래된 법전을 읽다가 내 직업을 설명하는 조항이 없다는 걸 알았다.",
+          "chronicleSummary": "도서관에서 오래된 법전을 읽다가 내 직업을 설명하는 조항이 없다는 걸 알았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_32_v3",
+          "text": "비를 피해 들어간 서점에서 아무도 사지 않는 시집 한 권을 끝까지 읽었다.",
+          "chronicleSummary": "비를 피해 들어간 서점에서 아무도 사지 않는 시집 한 권을 끝까지 읽었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_32_v4",
+          "text": "책갈피로 쓰던 영수증에 오래전 장바구니 목록이 남아 있었다.",
+          "chronicleSummary": "책갈피로 쓰던 영수증에 오래전 장바구니 목록이 남아 있었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_32_v5",
+          "text": "도서관 창가 자리에서 오후를 보내며 처음으로 시간이 빨리 지나가는 걸 아쉬워했다.",
+          "chronicleSummary": "도서관 창가 자리에서 오후를 보내며 처음으로 시간이 빨리 지나가는 걸 아쉬워했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 33,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_33_v1",
+          "text": "새벽 골목에서 빵 냄새를 맡으며 누군가 매일 문을 연다는 사실이 부러웠다.",
+          "chronicleSummary": "새벽 골목에서 빵 냄새를 맡으며 누군가 매일 문을 연다는 사실이 부러웠다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_33_v2",
+          "text": "빵집 앞에 줄을 섰다가 마지막 빵을 바로 앞사람에게 양보했다.",
+          "chronicleSummary": "빵집 앞에 줄을 섰다가 마지막 빵을 바로 앞사람에게 양보했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_33_v3",
+          "text": "이른 아침 문을 연 가게들의 불빛이 왕궁의 횃불보다 친근하게 느껴졌다.",
+          "chronicleSummary": "이른 아침 문을 연 가게들의 불빛이 왕궁의 횃불보다 친근하게 느껴졌다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_33_v4",
+          "text": "주인이 바뀐 빵집에서도 오래된 반죽 냄새는 비슷하게 남아 있었다.",
+          "chronicleSummary": "주인이 바뀐 빵집에서도 오래된 반죽 냄새는 비슷하게 남아 있었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_33_v5",
+          "text": "빵을 사러 나갔다가 빈손으로 돌아오면서도 갓 구운 냄새를 오래 기억했다.",
+          "chronicleSummary": "빵을 사러 나갔다가 빈손으로 돌아오면서도 갓 구운 냄새를 오래 기억했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 34,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_34_v1",
+          "text": "자원봉사자 명단에서 자신의 이름이 빠진 걸 발견했지만 담당자는 실수라고만 했다.",
+          "chronicleSummary": "자원봉사자 명단에서 자신의 이름이 빠진 걸 발견했지만 담당자는 실수라고만 했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_34_v2",
+          "text": "마을 청소 봉사에 늦게 도착했는데 누군가 당신 몫의 빗자루를 남겨 두었다.",
+          "chronicleSummary": "마을 청소 봉사에 늦게 도착했는데 누군가 당신 몫의 빗자루를 남겨 두었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_34_v3",
+          "text": "동네 행사 신청서의 직업란을 비웠더니 접수가 반려됐다.",
+          "chronicleSummary": "동네 행사 신청서의 직업란을 비웠더니 접수가 반려됐다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_34_v4",
+          "text": "거리의 쓰레기를 줍다가 사람들이 버린 영웅 홍보 전단지만 한 움큼 모았다.",
+          "chronicleSummary": "거리의 쓰레기를 줍다가 사람들이 버린 영웅 홍보 전단지만 한 움큼 모았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_34_v5",
+          "text": "행사 후 남은 의자를 접으며 이름보다 일이 먼저 끝났다는 사실에 안도했다.",
+          "chronicleSummary": "행사 후 남은 의자를 접으며 이름보다 일이 먼저 끝났다는 사실에 안도했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 35,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_35_v1",
+          "text": "길에서 어린 시절 듣던 노래를 들었고 잊었던 후렴을 저절로 따라 불렀다.",
+          "chronicleSummary": "길에서 어린 시절 듣던 노래를 들었고 잊었던 후렴을 저절로 따라 불렀다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_35_v2",
+          "text": "오래된 장난감 상자를 열었다가 너무 작은 나무칼을 찾아냈다.",
+          "chronicleSummary": "오래된 장난감 상자를 열었다가 너무 작은 나무칼을 찾아냈다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_35_v3",
+          "text": "지나가던 아이의 웃음소리가 갑자기 옛 친구의 목소리처럼 들렸다.",
+          "chronicleSummary": "지나가던 아이의 웃음소리가 갑자기 옛 친구의 목소리처럼 들렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_35_v4",
+          "text": "달력을 넘기다가 기억나지 않는 생일에 작은 표시가 남아 있는 걸 발견했다.",
+          "chronicleSummary": "달력을 넘기다가 기억나지 않는 생일에 작은 표시가 남아 있는 걸 발견했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_35_v5",
+          "text": "비슷한 이름의 사람을 뒤따라 불렀다가 돌아선 얼굴을 보고 조용히 사과했다.",
+          "chronicleSummary": "비슷한 이름의 사람을 뒤따라 불렀다가 돌아선 얼굴을 보고 조용히 사과했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 36,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_36_v1",
+          "text": "가게 앞에 놓인 별표 손잡이 우산을 보며 주인이 비를 맞고 있지 않을까 걱정했다.",
+          "chronicleSummary": "가게 앞에 놓인 별표 손잡이 우산을 보며 주인이 비를 맞고 있지 않을까 걱정했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_36_v2",
+          "text": "장마철에 빌린 우산을 돌려주려다 가게 문이 닫힌 걸 발견했다.",
+          "chronicleSummary": "장마철에 빌린 우산을 돌려주려다 가게 문이 닫힌 걸 발견했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_36_v3",
+          "text": "비가 그친 골목에서 종이 포스터들이 벽에 들러붙어 있었다.",
+          "chronicleSummary": "비가 그친 골목에서 종이 포스터들이 벽에 들러붙어 있었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_36_v4",
+          "text": "갑자기 쏟아진 소나기에 낯선 사람과 처마를 나눠 썼다.",
+          "chronicleSummary": "갑자기 쏟아진 소나기에 낯선 사람과 처마를 나눠 썼다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_36_v5",
+          "text": "젖은 양말을 난로 옆에 걸어 두며 어린 날 비 새던 지붕을 떠올렸다.",
+          "chronicleSummary": "젖은 양말을 난로 옆에 걸어 두며 어린 날 비 새던 지붕을 떠올렸다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 37,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_37_v1",
+          "text": "고물상에 쌓인 낡은 훈장을 보고 영웅의 이름도 먼지가 될 수 있음을 알았다.",
+          "chronicleSummary": "고물상에 쌓인 낡은 훈장을 보고 영웅의 이름도 먼지가 될 수 있음을 알았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_37_v2",
+          "text": "왕국 기념품 가게에서 오래전 영웅의 초상이 할인 판매되는 걸 보았다.",
+          "chronicleSummary": "왕국 기념품 가게에서 오래전 영웅의 초상이 할인 판매되는 걸 보았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_37_v3",
+          "text": "역사책에 나온 인물의 무덤을 지나쳤지만 꽃을 놓은 사람은 없었다.",
+          "chronicleSummary": "역사책에 나온 인물의 무덤을 지나쳤지만 꽃을 놓은 사람은 없었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_37_v4",
+          "text": "낡은 메달을 고쳐 달라는 손님의 말을 들으며 영광에도 수선비가 든다고 생각했다.",
+          "chronicleSummary": "낡은 메달을 고쳐 달라는 손님의 말을 들으며 영광에도 수선비가 든다고 생각했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_37_v5",
+          "text": "오래된 군복이 걸린 고물상을 지나며 전투보다 세탁이 더 오래 남는다는 농담을 했다.",
+          "chronicleSummary": "오래된 군복이 걸린 고물상을 지나며 전투보다 세탁이 더 오래 남는다는 농담을 했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 38,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_38_v1",
+          "text": "공원 의자에 앉자 옆사람이 조금 비켜 주었고 당신은 고맙다고 말했다.",
+          "chronicleSummary": "공원 의자에 앉자 옆사람이 조금 비켜 주었고 당신은 고맙다고 말했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_38_v2",
+          "text": "늘 지나치던 노점상이 처음으로 이름을 묻지 않고 물건값만 알려 줬다.",
+          "chronicleSummary": "늘 지나치던 노점상이 처음으로 이름을 묻지 않고 물건값만 알려 줬다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_38_v3",
+          "text": "공원에서 책을 읽다 모르는 아이가 옆에 앉아 그림을 그렸다.",
+          "chronicleSummary": "공원에서 책을 읽다 모르는 아이가 옆에 앉아 그림을 그렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_38_v4",
+          "text": "낯선 사람과 잠깐 햇볕을 나누어 쬐는 일이 생각보다 편했다.",
+          "chronicleSummary": "낯선 사람과 잠깐 햇볕을 나누어 쬐는 일이 생각보다 편했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_38_v5",
+          "text": "한낮 벤치에서 눈을 감았다가 새소리 때문에 다시 떴다.",
+          "chronicleSummary": "한낮 벤치에서 눈을 감았다가 새소리 때문에 다시 떴다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 39,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_39_v1",
+          "text": "담장 틈의 작은 꽃을 뽑으라는 말을 들었지만 그 꽃은 벽을 무너뜨리지 않았다.",
+          "chronicleSummary": "담장 틈의 작은 꽃을 뽑으라는 말을 들었지만 그 꽃은 벽을 무너뜨리지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_39_v2",
+          "text": "오래된 골목에 새 간판이 걸렸지만 벽의 금은 그대로 남았다.",
+          "chronicleSummary": "오래된 골목에 새 간판이 걸렸지만 벽의 금은 그대로 남았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_39_v3",
+          "text": "집 앞 잡초를 뽑다가 뿌리보다 땅속의 작은 벌레를 먼저 발견했다.",
+          "chronicleSummary": "집 앞 잡초를 뽑다가 뿌리보다 땅속의 작은 벌레를 먼저 발견했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_39_v4",
+          "text": "폐허가 된 공터에 누군가 화분을 놓아두고 물을 주고 갔다.",
+          "chronicleSummary": "폐허가 된 공터에 누군가 화분을 놓아두고 물을 주고 갔다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_39_v5",
+          "text": "길가의 나무가 제법 굵어져 손바닥으로 줄기를 한 번 쓸어 봤다.",
+          "chronicleSummary": "길가의 나무가 제법 굵어져 손바닥으로 줄기를 한 번 쓸어 봤다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 40,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_40_v1",
+          "text": "마흔 살 건강검진에서 전투력 2를 확인한 의사가 충분히 쉬라는 처방을 내렸다.",
+          "chronicleSummary": "마흔 살 건강검진에서 전투력 2를 확인한 의사가 충분히 쉬라는 처방을 내렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_40_v2",
+          "text": "검진표에 '특이 사항 없음'이라는 말을 발견하고 오래도록 종이를 들여다봤다.",
+          "chronicleSummary": "검진표에 '특이 사항 없음'이라는 말을 발견하고 오래도록 종이를 들여다봤다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_40_v3",
+          "text": "계단을 오르다 잠깐 숨을 고르며 몸에도 해마다 새로운 서류가 쌓인다고 생각했다.",
+          "chronicleSummary": "계단을 오르다 잠깐 숨을 고르며 몸에도 해마다 새로운 서류가 쌓인다고 생각했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_40_v4",
+          "text": "생일을 맞아 손톱을 깎다가 어느새 손등의 주름이 눈에 들어왔다.",
+          "chronicleSummary": "생일을 맞아 손톱을 깎다가 어느새 손등의 주름이 눈에 들어왔다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_40_v5",
+          "text": "동네 의원의 대기실에서 누가 더 오래 아팠는지 이야기하는 사람들을 들었다.",
+          "chronicleSummary": "동네 의원의 대기실에서 누가 더 오래 아팠는지 이야기하는 사람들을 들었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 41,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_41_v1",
+          "text": "국방 예산 기사를 읽다가 낡은 신발을 신고 서 있는 병사의 사진에서 눈을 떼지 못했다.",
+          "chronicleSummary": "국방 예산 기사를 읽다가 낡은 신발을 신고 서 있는 병사의 사진에서 눈을 떼지 못했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_41_v2",
+          "text": "계산이 맞지 않는 장부를 붙들고 밤을 새웠지만 다음 날 해야 할 일은 여전히 빨래였다.",
+          "chronicleSummary": "계산이 맞지 않는 장부를 붙들고 밤을 새웠지만 다음 날 해야 할 일은 여전히 빨래였다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_41_v3",
+          "text": "국가 공문에 적힌 자신의 이름을 세어 보다가 그 안에 사과는 한 번도 없음을 깨달았다.",
+          "chronicleSummary": "국가 공문에 적힌 자신의 이름을 세어 보다가 그 안에 사과는 한 번도 없음을 깨달았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_41_v4",
+          "text": "시장 가격이 올라 저녁 빵을 반으로 나눠 먹으며 예산의 뜻을 다시 생각했다.",
+          "chronicleSummary": "시장 가격이 올라 저녁 빵을 반으로 나눠 먹으며 예산의 뜻을 다시 생각했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_41_v5",
+          "text": "아버지가 남긴 오래된 접수증에서 낯익은 날짜를 발견해 서랍 맨 위에 두었다.",
+          "chronicleSummary": "아버지가 남긴 오래된 접수증에서 낯익은 날짜를 발견해 서랍 맨 위에 두었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 42,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_42_v1",
+          "text": "기다리던 사람이 오지 않아 주문한 차 두 잔 중 한 잔이 끝내 식었다.",
+          "chronicleSummary": "기다리던 사람이 오지 않아 주문한 차 두 잔 중 한 잔이 끝내 식었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_42_v2",
+          "text": "오래된 찻집에서 혼자 앉아 있다가 종업원에게 빈 의자를 치워 달라고 했다.",
+          "chronicleSummary": "오래된 찻집에서 혼자 앉아 있다가 종업원에게 빈 의자를 치워 달라고 했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_42_v3",
+          "text": "약속 장소에 일찍 도착해 사람들의 발걸음을 세며 시간을 보냈다.",
+          "chronicleSummary": "약속 장소에 일찍 도착해 사람들의 발걸음을 세며 시간을 보냈다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_42_v4",
+          "text": "따뜻한 차를 마시다가 문득 누군가의 목소리가 기억나지 않아 놀랐다.",
+          "chronicleSummary": "따뜻한 차를 마시다가 문득 누군가의 목소리가 기억나지 않아 놀랐다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_42_v5",
+          "text": "언제나 붐비던 찻집이 한산한 오후를 만나 창가에 오래 머물렀다.",
+          "chronicleSummary": "언제나 붐비던 찻집이 한산한 오후를 만나 창가에 오래 머물렀다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 43,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_43_v1",
+          "text": "동네 의원에서 직업란을 보고 잠시 멈춘 직원과 달리 의사는 평범하게 숨을 쉬어 보라고 했다.",
+          "chronicleSummary": "동네 의원에서 직업란을 보고 잠시 멈춘 직원과 달리 의사는 평범하게 숨을 쉬어 보라고 했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_43_v2",
+          "text": "감기약을 사러 갔다가 약사가 마왕에게도 같은 복용법이 적용된다고 말했다.",
+          "chronicleSummary": "감기약을 사러 갔다가 약사가 마왕에게도 같은 복용법이 적용된다고 말했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_43_v3",
+          "text": "아침에 목이 아파 하루를 쉬었는데 왕국에는 아무 비상령도 내려지지 않았다.",
+          "chronicleSummary": "아침에 목이 아파 하루를 쉬었는데 왕국에는 아무 비상령도 내려지지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_43_v4",
+          "text": "의원 대기실에서 아이에게 자리를 양보하자 보호자가 작게 고맙다고 했다.",
+          "chronicleSummary": "의원 대기실에서 아이에게 자리를 양보하자 보호자가 작게 고맙다고 했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_43_v5",
+          "text": "검진표의 작은 글씨를 읽으려고 종이를 멀리 들고 잠시 웃었다.",
+          "chronicleSummary": "검진표의 작은 글씨를 읽으려고 종이를 멀리 들고 잠시 웃었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 44,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_44_v1",
+          "text": "왕국이 새로 붙인 마왕 예방 포스터의 그림자는 여전히 자신과 닮지 않았다.",
+          "chronicleSummary": "왕국이 새로 붙인 마왕 예방 포스터의 그림자는 여전히 자신과 닮지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_44_v2",
+          "text": "광장에 걸린 마왕 홍보 현수막에서 자신의 이름만 글씨가 유난히 컸다.",
+          "chronicleSummary": "광장에 걸린 마왕 홍보 현수막에서 자신의 이름만 글씨가 유난히 컸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_44_v3",
+          "text": "정부 캠페인 행사가 끝난 뒤 거리에 남은 깃발을 누군가 조용히 걷어 갔다.",
+          "chronicleSummary": "정부 캠페인 행사가 끝난 뒤 거리에 남은 깃발을 누군가 조용히 걷어 갔다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_44_v4",
+          "text": "새 포스터에 그려진 마왕은 날개가 있었지만 당신은 한 번도 날아본 적이 없었다.",
+          "chronicleSummary": "새 포스터에 그려진 마왕은 날개가 있었지만 당신은 한 번도 날아본 적이 없었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_44_v5",
+          "text": "왕국의 안보 기념일에 가게들은 할인 행사를 했고 당신은 평소 가격으로 빵을 샀다.",
+          "chronicleSummary": "왕국의 안보 기념일에 가게들은 할인 행사를 했고 당신은 평소 가격으로 빵을 샀다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 45,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_45_v1",
+          "text": "어린 날 공책에서 '내가 마왕이면 누가 내 일을 시켰지'라는 문장을 발견했다.",
+          "chronicleSummary": "어린 날 공책에서 '내가 마왕이면 누가 내 일을 시켰지'라는 문장을 발견했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_45_v2",
+          "text": "오래된 공책을 펼쳤더니 글씨보다 당시 쓰던 연필 자국이 선명했다.",
+          "chronicleSummary": "오래된 공책을 펼쳤더니 글씨보다 당시 쓰던 연필 자국이 선명했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_45_v3",
+          "text": "어릴 적 적은 소원을 읽다가 그것이 아직 이루어지지 않았다는 걸 알았다.",
+          "chronicleSummary": "어릴 적 적은 소원을 읽다가 그것이 아직 이루어지지 않았다는 걸 알았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_45_v4",
+          "text": "서랍에서 발견한 사진 속 얼굴들을 하나씩 떠올리며 저녁을 보냈다.",
+          "chronicleSummary": "서랍에서 발견한 사진 속 얼굴들을 하나씩 떠올리며 저녁을 보냈다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_45_v5",
+          "text": "학생 시절의 성적표를 찾았는데 전투력과 관계없는 과목에서도 늘 긴장했던 기억이 났다.",
+          "chronicleSummary": "학생 시절의 성적표를 찾았는데 전투력과 관계없는 과목에서도 늘 긴장했던 기억이 났다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 46,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_46_v1",
+          "text": "증언을 연습하며 '나는 인간으로 태어났고 국가가 마왕으로 등록했다'는 문장을 여러 번 읽었다.",
+          "chronicleSummary": "증언을 연습하며 '나는 인간으로 태어났고 국가가 마왕으로 등록했다'는 문장을 여러 번 읽었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_46_v2",
+          "text": "오래 모아 둔 기록을 다시 세어 보니 빠진 날짜보다 잊지 않은 날짜가 더 많았다.",
+          "chronicleSummary": "오래 모아 둔 기록을 다시 세어 보니 빠진 날짜보다 잊지 않은 날짜가 더 많았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_46_v3",
+          "text": "말을 또렷하게 해 보려다 목이 쉬어 물 한 컵을 마셨다.",
+          "chronicleSummary": "말을 또렷하게 해 보려다 목이 쉬어 물 한 컵을 마셨다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_46_v4",
+          "text": "책상 위 서류에 순서를 매기면서 가장 먼저 말할 사실이 무엇인지 고민했다.",
+          "chronicleSummary": "책상 위 서류에 순서를 매기면서 가장 먼저 말할 사실이 무엇인지 고민했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_46_v5",
+          "text": "오래전 받았던 편지들을 펼쳐 보다가 단 한 줄의 증언이 사람을 지킬 수 있을지 생각했다.",
+          "chronicleSummary": "오래전 받았던 편지들을 펼쳐 보다가 단 한 줄의 증언이 사람을 지킬 수 있을지 생각했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 47,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_47_v1",
+          "text": "왕실에서 보내온 합의서의 봉투를 버리지 못해 한동안 책상 위에 올려 두었다.",
+          "chronicleSummary": "왕실에서 보내온 합의서의 봉투를 버리지 못해 한동안 책상 위에 올려 두었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_47_v2",
+          "text": "오래된 신분증의 직업란을 손가락으로 가리다가 이름란을 먼저 읽었다.",
+          "chronicleSummary": "오래된 신분증의 직업란을 손가락으로 가리다가 이름란을 먼저 읽었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_47_v3",
+          "text": "거리에서 누군가 마왕이라고 불렀지만 그 말에 돌아보는 사람이 당신뿐만은 아니었다.",
+          "chronicleSummary": "거리에서 누군가 마왕이라고 불렀지만 그 말에 돌아보는 사람이 당신뿐만은 아니었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_47_v4",
+          "text": "새벽에 잠을 깼다가 오늘은 누구에게도 자신을 증명하지 않아도 된다는 사실을 떠올렸다.",
+          "chronicleSummary": "새벽에 잠을 깼다가 오늘은 누구에게도 자신을 증명하지 않아도 된다는 사실을 떠올렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_47_v5",
+          "text": "시장 골목에서 한 아이가 진짜 직업을 묻자 당신은 처음으로 모르겠다고 답했다.",
+          "chronicleSummary": "시장 골목에서 한 아이가 진짜 직업을 묻자 당신은 처음으로 모르겠다고 답했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 48,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_48_v1",
+          "text": "아무 호출도 없는 아침을 맞아 해가 높이 뜰 때까지 잠을 잤다.",
+          "chronicleSummary": "아무 호출도 없는 아침을 맞아 해가 높이 뜰 때까지 잠을 잤다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_48_v2",
+          "text": "오래된 우체통을 열었는데 아무 편지도 없어 잠깐 서 있었다.",
+          "chronicleSummary": "오래된 우체통을 열었는데 아무 편지도 없어 잠깐 서 있었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_48_v3",
+          "text": "아침 식사를 천천히 마쳤더니 하루가 예상보다 길게 느껴졌다.",
+          "chronicleSummary": "아침 식사를 천천히 마쳤더니 하루가 예상보다 길게 느껴졌다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_48_v4",
+          "text": "늘 무언가를 기다리던 손으로 처음으로 작은 화분의 흙을 갈아 줬다.",
+          "chronicleSummary": "늘 무언가를 기다리던 손으로 처음으로 작은 화분의 흙을 갈아 줬다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_48_v5",
+          "text": "집 앞을 쓸다가 이웃과 날씨 이야기만 나누고 돌아왔다.",
+          "chronicleSummary": "집 앞을 쓸다가 이웃과 날씨 이야기만 나누고 돌아왔다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 49,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_49_v1",
+          "text": "오래된 청구서를 든 노인이 담당 부서가 사라졌다는 말을 듣는 모습을 보았다.",
+          "chronicleSummary": "오래된 청구서를 든 노인이 담당 부서가 사라졌다는 말을 듣는 모습을 보았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_49_v2",
+          "text": "동네 가게의 빚 장부에 적힌 이름이 지워져 있지 않은 걸 발견했다.",
+          "chronicleSummary": "동네 가게의 빚 장부에 적힌 이름이 지워져 있지 않은 걸 발견했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_49_v3",
+          "text": "옛 동네를 찾아갔다가 기억하던 가게가 이미 문을 닫은 걸 알았다.",
+          "chronicleSummary": "옛 동네를 찾아갔다가 기억하던 가게가 이미 문을 닫은 걸 알았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_49_v4",
+          "text": "길에서 낯선 노인에게 길을 알려 주었더니 자신도 같은 방향으로 걸었다.",
+          "chronicleSummary": "길에서 낯선 노인에게 길을 알려 주었더니 자신도 같은 방향으로 걸었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_49_v5",
+          "text": "고장 난 저울을 고치는 장인을 보며 무게를 정확히 재는 일이 얼마나 어려운지 생각했다.",
+          "chronicleSummary": "고장 난 저울을 고치는 장인을 보며 무게를 정확히 재는 일이 얼마나 어려운지 생각했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 50,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_50_v1",
+          "text": "쉰 살 생일에 자신의 얼굴을 초상화로 남길까 고민하다 그냥 거울을 오래 보았다.",
+          "chronicleSummary": "쉰 살 생일에 자신의 얼굴을 초상화로 남길까 고민하다 그냥 거울을 오래 보았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_50_v2",
+          "text": "반세기를 살았다는 말을 듣고도 아침 식사 메뉴를 먼저 골랐다.",
+          "chronicleSummary": "반세기를 살았다는 말을 듣고도 아침 식사 메뉴를 먼저 골랐다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_50_v3",
+          "text": "생일날 주머니에서 낡은 동전 하나를 발견해 버리지 않고 보관했다.",
+          "chronicleSummary": "생일날 주머니에서 낡은 동전 하나를 발견해 버리지 않고 보관했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_50_v4",
+          "text": "옛 사진 속 사람들의 얼굴이 조금씩 낯설어져 이름을 뒷면에 적었다.",
+          "chronicleSummary": "옛 사진 속 사람들의 얼굴이 조금씩 낯설어져 이름을 뒷면에 적었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_50_v5",
+          "text": "쉰 번째 생일에도 특별한 의식은 없었지만 누군가 건넨 빵이 따뜻했다.",
+          "chronicleSummary": "쉰 번째 생일에도 특별한 의식은 없었지만 누군가 건넨 빵이 따뜻했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 51,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_51_v1",
+          "text": "옆집 간판이 바뀌었지만 안에서 일하는 사람은 여전히 같은 인사를 건넸다.",
+          "chronicleSummary": "옆집 간판이 바뀌었지만 안에서 일하는 사람은 여전히 같은 인사를 건넸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_51_v2",
+          "text": "오래 알던 가게가 상호를 바꾸어 잠깐 길을 잘못 들어섰다.",
+          "chronicleSummary": "오래 알던 가게가 상호를 바꾸어 잠깐 길을 잘못 들어섰다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_51_v3",
+          "text": "새 간판을 달던 청년이 사다리를 잡아 달라고 해서 한동안 거리 위를 올려다봤다.",
+          "chronicleSummary": "새 간판을 달던 청년이 사다리를 잡아 달라고 해서 한동안 거리 위를 올려다봤다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_51_v4",
+          "text": "손때 묻은 컵을 새것으로 바꾸려다 아직 멀쩡해 다시 선반에 놓았다.",
+          "chronicleSummary": "손때 묻은 컵을 새것으로 바꾸려다 아직 멀쩡해 다시 선반에 놓았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_51_v5",
+          "text": "이웃의 작은 가게가 문을 닫는 시간에 맞춰 함께 골목을 걸었다.",
+          "chronicleSummary": "이웃의 작은 가게가 문을 닫는 시간에 맞춰 함께 골목을 걸었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 52,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_52_v1",
+          "text": "새 도시 지도에서 오래 살던 골목이 사라져 누구에게 기억을 증명해야 할지 막막했다.",
+          "chronicleSummary": "새 도시 지도에서 오래 살던 골목이 사라져 누구에게 기억을 증명해야 할지 막막했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_52_v2",
+          "text": "익숙한 거리가 재개발되자 옛길을 걷는 데에도 지도가 필요해졌다.",
+          "chronicleSummary": "익숙한 거리가 재개발되자 옛길을 걷는 데에도 지도가 필요해졌다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_52_v3",
+          "text": "사라진 가게 자리에 세워진 벽을 보고 잠시 어디로 돌아가야 할지 몰랐다.",
+          "chronicleSummary": "사라진 가게 자리에 세워진 벽을 보고 잠시 어디로 돌아가야 할지 몰랐다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_52_v4",
+          "text": "도시 안내판에 새 이름이 붙었지만 당신은 옛 지명을 속으로 불러 보았다.",
+          "chronicleSummary": "도시 안내판에 새 이름이 붙었지만 당신은 옛 지명을 속으로 불러 보았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_52_v5",
+          "text": "해 질 무렵 낡은 골목을 지나며 더는 남아 있지 않은 창문 하나를 떠올렸다.",
+          "chronicleSummary": "해 질 무렵 낡은 골목을 지나며 더는 남아 있지 않은 창문 하나를 떠올렸다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 53,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_53_v1",
+          "text": "왕궁 앞 무료 수프 줄은 길었고 전쟁 대비 행사라는 이름과 달리 수프는 묽었다.",
+          "chronicleSummary": "왕궁 앞 무료 수프 줄은 길었고 전쟁 대비 행사라는 이름과 달리 수프는 묽었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_53_v2",
+          "text": "구호 물품 배급 줄에 섰다가 자신보다 급한 사람에게 순서를 양보했다.",
+          "chronicleSummary": "구호 물품 배급 줄에 섰다가 자신보다 급한 사람에게 순서를 양보했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_53_v3",
+          "text": "축제 예산이 적힌 현수막 아래에서 누군가 찢어진 장갑을 꿰맸다.",
+          "chronicleSummary": "축제 예산이 적힌 현수막 아래에서 누군가 찢어진 장갑을 꿰맸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_53_v4",
+          "text": "시장 어귀에서 무료 빵을 나눠 주는 사람을 보며 가격표 없는 친절을 떠올렸다.",
+          "chronicleSummary": "시장 어귀에서 무료 빵을 나눠 주는 사람을 보며 가격표 없는 친절을 떠올렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_53_v5",
+          "text": "왕국의 지원 안내서를 읽다가 작은 글씨로 적힌 예외 조항을 발견했다.",
+          "chronicleSummary": "왕국의 지원 안내서를 읽다가 작은 글씨로 적힌 예외 조항을 발견했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 54,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_54_v1",
+          "text": "오래된 편지의 모서리가 찢어져 다시 쓸 수 없는 글이라는 사실이 무서워졌다.",
+          "chronicleSummary": "오래된 편지의 모서리가 찢어져 다시 쓸 수 없는 글이라는 사실이 무서워졌다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_54_v2",
+          "text": "서랍 깊숙한 곳에서 낡은 영수증을 찾았는데 무엇을 샀는지는 기억나지 않았다.",
+          "chronicleSummary": "서랍 깊숙한 곳에서 낡은 영수증을 찾았는데 무엇을 샀는지는 기억나지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_54_v3",
+          "text": "종이에서 사라지는 잉크를 보며 기억도 언젠가 이처럼 흐려질지 궁금했다.",
+          "chronicleSummary": "종이에서 사라지는 잉크를 보며 기억도 언젠가 이처럼 흐려질지 궁금했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_54_v4",
+          "text": "오래된 편지 한 통을 새 봉투에 옮겨 담으며 손을 조심히 움직였다.",
+          "chronicleSummary": "오래된 편지 한 통을 새 봉투에 옮겨 담으며 손을 조심히 움직였다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_54_v5",
+          "text": "집 안 물건을 정리하다 값싼 것일수록 버리기 어려운 이유를 깨달았다.",
+          "chronicleSummary": "집 안 물건을 정리하다 값싼 것일수록 버리기 어려운 이유를 깨달았다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 55,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_55_v1",
+          "text": "따뜻한 빵을 반으로 나누다 누군가와 식탁을 함께 쓴 지 오래됐다는 사실을 알았다.",
+          "chronicleSummary": "따뜻한 빵을 반으로 나누다 누군가와 식탁을 함께 쓴 지 오래됐다는 사실을 알았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_55_v2",
+          "text": "왕국의 새 안내판을 보며 적어도 몇 문장은 자신이 젊을 때보다 나아졌다고 생각했다.",
+          "chronicleSummary": "왕국의 새 안내판을 보며 적어도 몇 문장은 자신이 젊을 때보다 나아졌다고 생각했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_55_v3",
+          "text": "낡은 나무칼 손잡이를 닦았더니 지워진 글씨 아래에 오래된 흠집만 남았다.",
+          "chronicleSummary": "낡은 나무칼 손잡이를 닦았더니 지워진 글씨 아래에 오래된 흠집만 남았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_55_v4",
+          "text": "기록관 앞을 지나며 반송 도장이 찍힌 옛 편지를 떠올렸다.",
+          "chronicleSummary": "기록관 앞을 지나며 반송 도장이 찍힌 옛 편지를 떠올렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_55_v5",
+          "text": "저녁 강바람이 차가워져 외투를 여미다가 젊은 날 다리 위의 대화를 생각했다.",
+          "chronicleSummary": "저녁 강바람이 차가워져 외투를 여미다가 젊은 날 다리 위의 대화를 생각했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 56,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_56_v1",
+          "text": "일찍 찾아온 추위에 장작을 쌓다가 무뎌진 도끼날을 발견했다.",
+          "chronicleSummary": "일찍 찾아온 추위에 장작을 쌓다가 무뎌진 도끼날을 발견했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_56_v2",
+          "text": "새벽 난로에 불을 붙이려다 손이 예전만큼 빠르지 않다는 걸 알았다.",
+          "chronicleSummary": "새벽 난로에 불을 붙이려다 손이 예전만큼 빠르지 않다는 걸 알았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_56_v3",
+          "text": "낡은 외투의 안감을 다시 꿰매며 겨울이 몇 번째인지 세지 않기로 했다.",
+          "chronicleSummary": "낡은 외투의 안감을 다시 꿰매며 겨울이 몇 번째인지 세지 않기로 했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_56_v4",
+          "text": "장작을 옮기다 잠깐 쉬어도 누구도 재촉하지 않는 오후를 보냈다.",
+          "chronicleSummary": "장작을 옮기다 잠깐 쉬어도 누구도 재촉하지 않는 오후를 보냈다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_56_v5",
+          "text": "마당 구석의 눈을 치우며 오래전 비 새던 집 지붕을 떠올렸다.",
+          "chronicleSummary": "마당 구석의 눈을 치우며 오래전 비 새던 집 지붕을 떠올렸다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 57,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_57_v1",
+          "text": "오래된 문제를 왜 그냥 두느냐는 아이의 질문에 쉽게 대답하지 못했다.",
+          "chronicleSummary": "오래된 문제를 왜 그냥 두느냐는 아이의 질문에 쉽게 대답하지 못했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_57_v2",
+          "text": "광장에서 젊은이가 낡은 제도에 관해 묻자 당신은 먼저 그의 말을 끝까지 들었다.",
+          "chronicleSummary": "광장에서 젊은이가 낡은 제도에 관해 묻자 당신은 먼저 그의 말을 끝까지 들었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_57_v3",
+          "text": "동네 학교에 들렀다가 학생들이 배운 왕국 역사가 자신이 기억하는 것과 달라 놀랐다.",
+          "chronicleSummary": "동네 학교에 들렀다가 학생들이 배운 왕국 역사가 자신이 기억하는 것과 달라 놀랐다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_57_v4",
+          "text": "새로운 세대가 같은 질문을 한다는 사실이 반갑기도 두렵기도 했다.",
+          "chronicleSummary": "새로운 세대가 같은 질문을 한다는 사실이 반갑기도 두렵기도 했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_57_v5",
+          "text": "젊은 사람의 항의를 듣다가 문득 오래전 자신의 목소리를 떠올렸다.",
+          "chronicleSummary": "젊은 사람의 항의를 듣다가 문득 오래전 자신의 목소리를 떠올렸다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 58,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_58_v1",
+          "text": "거울에서 흰 머리카락을 발견하며 마왕에게도 나이가 든다는 사실을 확인했다.",
+          "chronicleSummary": "거울에서 흰 머리카락을 발견하며 마왕에게도 나이가 든다는 사실을 확인했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_58_v2",
+          "text": "계단을 내려가다 난간을 잡으며 예전에는 왜 이것이 필요했는지 몰랐다고 생각했다.",
+          "chronicleSummary": "계단을 내려가다 난간을 잡으며 예전에는 왜 이것이 필요했는지 몰랐다고 생각했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_58_v3",
+          "text": "가게 앞에서 잠시 다리를 쉬자 누군가 의자를 가져다주었다.",
+          "chronicleSummary": "가게 앞에서 잠시 다리를 쉬자 누군가 의자를 가져다주었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_58_v4",
+          "text": "낡은 안경을 닦다가 글자가 작아진 게 아니라 눈이 달라졌다는 걸 알았다.",
+          "chronicleSummary": "낡은 안경을 닦다가 글자가 작아진 게 아니라 눈이 달라졌다는 걸 알았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_58_v5",
+          "text": "아침에 일어났을 때 관절이 먼저 날씨를 알려 주었다.",
+          "chronicleSummary": "아침에 일어났을 때 관절이 먼저 날씨를 알려 주었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 59,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_59_v1",
+          "text": "광장에 세운 새 영웅 동상의 받침대에는 영웅보다 후원자들의 이름이 더 길게 적혀 있었다.",
+          "chronicleSummary": "광장에 세운 새 영웅 동상의 받침대에는 영웅보다 후원자들의 이름이 더 길게 적혀 있었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_59_v2",
+          "text": "새 영웅 동상을 구경하다 아무도 조각가의 이름을 읽지 않는 걸 보았다.",
+          "chronicleSummary": "새 영웅 동상을 구경하다 아무도 조각가의 이름을 읽지 않는 걸 보았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_59_v3",
+          "text": "광장의 동상 아래에서 아이들이 숨바꼭질을 하는 모습을 오래 지켜봤다.",
+          "chronicleSummary": "광장의 동상 아래에서 아이들이 숨바꼭질을 하는 모습을 오래 지켜봤다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_59_v4",
+          "text": "영웅 기념식이 끝난 뒤 청소부가 동상 앞에 떨어진 꽃잎을 쓸어 담았다.",
+          "chronicleSummary": "영웅 기념식이 끝난 뒤 청소부가 동상 앞에 떨어진 꽃잎을 쓸어 담았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_59_v5",
+          "text": "왕국 역사가 적힌 안내판에서 작은 오탈자를 발견했지만 고치는 사람은 없었다.",
+          "chronicleSummary": "왕국 역사가 적힌 안내판에서 작은 오탈자를 발견했지만 고치는 사람은 없었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 60,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_60_v1",
+          "text": "예순 살에 오래된 벽시계가 멈췄지만 창밖 시장은 평소처럼 열렸다.",
+          "chronicleSummary": "예순 살에 오래된 벽시계가 멈췄지만 창밖 시장은 평소처럼 열렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_60_v2",
+          "text": "아침마다 들리던 종소리가 사라져서야 가까운 종탑의 철거를 알았다.",
+          "chronicleSummary": "아침마다 들리던 종소리가 사라져서야 가까운 종탑의 철거를 알았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_60_v3",
+          "text": "예순 번째 생일에 받은 인사가 축하보다 건강을 묻는 말에 가까웠다.",
+          "chronicleSummary": "예순 번째 생일에 받은 인사가 축하보다 건강을 묻는 말에 가까웠다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_60_v4",
+          "text": "낡은 의자에 앉아 해가 지는 모습을 보며 별일 없던 날들을 셈했다.",
+          "chronicleSummary": "낡은 의자에 앉아 해가 지는 모습을 보며 별일 없던 날들을 셈했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_60_v5",
+          "text": "벽에 걸린 달력을 바꾸다 앞으로 넘길 종이가 예전보다 귀하게 느껴졌다.",
+          "chronicleSummary": "벽에 걸린 달력을 바꾸다 앞으로 넘길 종이가 예전보다 귀하게 느껴졌다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 61,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_61_v1",
+          "text": "꼬마가 당신을 할아버지라 부르며 사과 하나를 건넸다.",
+          "chronicleSummary": "꼬마가 당신을 할아버지라 부르며 사과 하나를 건넸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_61_v2",
+          "text": "동네 아이가 느린 걸음에 맞춰 함께 걷다가 갑자기 달려갔다.",
+          "chronicleSummary": "동네 아이가 느린 걸음에 맞춰 함께 걷다가 갑자기 달려갔다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_61_v3",
+          "text": "처음 보는 아이가 이름을 묻고도 마왕이라는 대답을 듣고 고개만 끄덕였다.",
+          "chronicleSummary": "처음 보는 아이가 이름을 묻고도 마왕이라는 대답을 듣고 고개만 끄덕였다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_61_v4",
+          "text": "젊은 상인이 무거운 물건을 들어 주겠다고 하자 이번에는 거절하지 않았다.",
+          "chronicleSummary": "젊은 상인이 무거운 물건을 들어 주겠다고 하자 이번에는 거절하지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_61_v5",
+          "text": "공원에서 쉬고 있는데 꼬마 둘이 옆에 앉아 과자를 나눠 먹었다.",
+          "chronicleSummary": "공원에서 쉬고 있는데 꼬마 둘이 옆에 앉아 과자를 나눠 먹었다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 62,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "generic",
+      "variants": [
+        {
+          "id": "annual_record_62_v1",
+          "text": "폐업 안내가 붙은 가게 앞에서 짧은 문장 뒤에 사라질 수많은 하루를 떠올렸다.",
+          "chronicleSummary": "폐업 안내가 붙은 가게 앞에서 짧은 문장 뒤에 사라질 수많은 하루를 떠올렸다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_62_v2",
+          "text": "오래된 가게가 문을 닫자 단골들은 물건보다 주인의 안부를 먼저 물었다.",
+          "chronicleSummary": "오래된 가게가 문을 닫자 단골들은 물건보다 주인의 안부를 먼저 물었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_62_v3",
+          "text": "거리에서 낯익은 간판을 찾지 못해 몇 번이나 같은 골목을 걸었다.",
+          "chronicleSummary": "거리에서 낯익은 간판을 찾지 못해 몇 번이나 같은 골목을 걸었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_62_v4",
+          "text": "가게 유리창에 붙은 '감사했습니다'라는 글씨를 읽고 한동안 서 있었다.",
+          "chronicleSummary": "가게 유리창에 붙은 '감사했습니다'라는 글씨를 읽고 한동안 서 있었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_62_v5",
+          "text": "폐업 정리 상자에 담긴 낡은 컵을 보며 누군가의 아침이 끝났음을 알았다.",
+          "chronicleSummary": "폐업 정리 상자에 담긴 낡은 컵을 보며 누군가의 아침이 끝났음을 알았다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 63,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_63_v1",
+          "text": "눈 쌓인 길에서 먼저 지나간 발자국을 보며 누구의 길을 따라 걸었는지 생각했다.",
+          "chronicleSummary": "눈 쌓인 길에서 먼저 지나간 발자국을 보며 누구의 길을 따라 걸었는지 생각했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_63_v2",
+          "text": "눈 내린 아침 골목을 쓸다가 새로운 발자국이 생기는 모습을 지켜봤다.",
+          "chronicleSummary": "눈 내린 아침 골목을 쓸다가 새로운 발자국이 생기는 모습을 지켜봤다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_63_v3",
+          "text": "옛 친구들과 걷던 길을 혼자 지나며 눈 위에 남는 발자국은 짧다는 걸 알았다.",
+          "chronicleSummary": "옛 친구들과 걷던 길을 혼자 지나며 눈 위에 남는 발자국은 짧다는 걸 알았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_63_v4",
+          "text": "낯선 아이가 눈을 밟으며 만든 길로 천천히 걸어 집에 돌아왔다.",
+          "chronicleSummary": "낯선 아이가 눈을 밟으며 만든 길로 천천히 걸어 집에 돌아왔다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_63_v5",
+          "text": "밤새 눈이 내린 마당에서 오래된 돌계단의 위치를 발끝으로 찾아냈다.",
+          "chronicleSummary": "밤새 눈이 내린 마당에서 오래된 돌계단의 위치를 발끝으로 찾아냈다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 64,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_64_v1",
+          "text": "서랍에서 어느 문을 여는지 잊어버린 열쇠와 '잊지 말 것'이라는 쪽지를 발견했다.",
+          "chronicleSummary": "서랍에서 어느 문을 여는지 잊어버린 열쇠와 '잊지 말 것'이라는 쪽지를 발견했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_64_v2",
+          "text": "오래된 물건을 정리하다 용도를 모르는 작은 열쇠 하나를 남겨 두었다.",
+          "chronicleSummary": "오래된 물건을 정리하다 용도를 모르는 작은 열쇠 하나를 남겨 두었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_64_v3",
+          "text": "집 열쇠를 찾다가 늘 넣어 두는 주머니가 바뀌었다는 사실을 깨달았다.",
+          "chronicleSummary": "집 열쇠를 찾다가 늘 넣어 두는 주머니가 바뀌었다는 사실을 깨달았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_64_v4",
+          "text": "오래전 쓰던 서랍이 열리지 않아 한참 만에 손잡이부터 고쳤다.",
+          "chronicleSummary": "오래전 쓰던 서랍이 열리지 않아 한참 만에 손잡이부터 고쳤다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_64_v5",
+          "text": "열쇠꾸러미를 정리하며 이제 열리지 않는 문들의 이름을 속으로 불렀다.",
+          "chronicleSummary": "열쇠꾸러미를 정리하며 이제 열리지 않는 문들의 이름을 속으로 불렀다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    },
+    {
+      "age": 65,
+      "layer": "annual_record",
+      "fallbackOnly": true,
+      "category": "dedicated",
+      "variants": [
+        {
+          "id": "annual_record_65_v1",
+          "text": "빵집 유리창에 비친 얼굴을 보고 예전보다 더 평범한 노인이 되었다며 웃었다.",
+          "chronicleSummary": "빵집 유리창에 비친 얼굴을 보고 예전보다 더 평범한 노인이 되었다며 웃었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_65_v2",
+          "text": "손님이 자신의 이름을 두 번 불러 주는 동안 마왕이라는 말은 한 번도 나오지 않았다.",
+          "chronicleSummary": "손님이 자신의 이름을 두 번 불러 주는 동안 마왕이라는 말은 한 번도 나오지 않았다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_65_v3",
+          "text": "서랍에서 낡은 접수증을 발견했지만 오늘은 꺼내 읽지 않고 다시 넣었다.",
+          "chronicleSummary": "서랍에서 낡은 접수증을 발견했지만 오늘은 꺼내 읽지 않고 다시 넣었다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_65_v4",
+          "text": "오래전에 배운 빵 반죽을 천천히 치대다 남은 시간을 서두르지 않기로 했다.",
+          "chronicleSummary": "오래전에 배운 빵 반죽을 천천히 치대다 남은 시간을 서두르지 않기로 했다.",
+          "choices": [],
+          "effects": []
+        },
+        {
+          "id": "annual_record_65_v5",
+          "text": "동네 아이가 장래 희망을 물어오자 당신은 정해 줄 수 없는 게 어른의 예의라고 답했다.",
+          "chronicleSummary": "동네 아이가 장래 희망을 물어오자 당신은 정해 줄 수 없는 게 어른의 예의라고 답했다.",
+          "choices": [],
+          "effects": []
+        }
+      ]
+    }
+  ],
+  "revision": "v4.5: 50 reviewed variants; 1 of 5 per year only when no authored event played"
+}

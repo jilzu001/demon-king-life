@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "format": "webp",
+  "total": 12,
+  "identityPolicy": "only canonical source portrait crops; character appearance unaltered",
+  "backgroundPolicy": "reused background assets with stylized overlays; no unverified AI face",
+  "images": [
+    {
+      "endingId": "ending_mina_renounced",
+      "title": "용사를 포기한 용사",
+      "file": "assets/illustrations/ending_v4_3/rain_shelter.webp",
+      "characters": [
+        "mina",
+        "protagonist"
+      ],
+      "mood": "rainy",
+      "concept": "미나가 검을 내려놓은 선택의 책임 / 55세, 왕국 외곽의 작은 구호소",
+      "assetType": "canonical-portrait-memory-collage",
+      "approvedAgeVariant": false,
+      "avoidMisleadingElderlyFace": true,
+      "delivery": "provisional; final visual review required"
+    },
+    {
+      "endingId": "ending_mina_wedding",
+      "title": "마왕의 결혼식",
+      "file": "assets/illustrations/ending_v4_3/wedding_lanterns.webp",
+      "characters": [
+        "mina",
+        "protagonist"
+      ],
+      "mood": "warm",
+      "concept": "관계의 상호 동의와 오랜 신뢰 / 65세, 작은 마을 예식장",
+      "assetType": "canonical-portrait-memory-collage",
+      "approvedAgeVariant": false,
+      "avoidMisleadingElderlyFace": true,
+      "delivery": "provisional; final visual review required"
+    },
+    {
+      "endingId": "ending_confession_unanswered",
+      "title": "평생 답을 듣지 못한 고백",
+      "file": "assets/illustrations/ending_v4_3/river_bench.webp",
+      "characters": [
+        "mina",
+        "protagonist"
+      ],
+      "mood": "twilight",
+      "concept": "이루어지지 않은 고백의 독립적 가치 / 65세, 강둑의 오래된 벤치",
+      "assetType": "canonical-portrait-memory-collage",
+      "approvedAgeVariant": false,
+      "avoidMisleadingElderlyFace": true,
+      "delivery": "provisional; final visual review required"
+    },
+    {
+      "endingId": "ending_common_enemy",
+      "title": "우리의 적은 서로가 아니었다",
+      "file": "assets/illustrations/ending_v4_3/truth_hearing.webp",
+      "characters": [
+        "mina",
+        "protagonist"
+      ],
+      "mood": "heroic",
+      "concept": "미나와 제도 폭로의 동맹 / 60세, 왕국 공개 청문회",
+      "assetType": "canonical-portrait-memory-collage",
+      "approvedAgeVariant": false,
+      "avoidMisleadingElderlyFace": true,
+      "delivery": "provisional; final visual review required"
+    },
+    {
+      "endingId": "ending_double_license",
+      "title": "국가 공인 용사이자 마왕",
+      "file": "assets/illustrations/ending_v4_3/double_certificate.webp",
+      "characters": [
+        "protagonist"
+      ],
+      "mood": "comedy",
+      "concept": "직업 등록 제도의 자기모순 / 36세, 왕국 자격증 발급 창구",
+      "assetType": "canonical-portrait-memory-collage",
+      "approvedAgeVariant": false,
+      "avoidMisleadingElderlyFace": true,
+      "delivery": "provisional; final visual review required"
+    },
+    {
+      "endingId": "ending_retirement_47",
+      "title": "마왕 퇴직금 47골드",
+      "file": "assets/illustrations/ending_v4_3/retirement_coins.webp",
+      "characters": [
+        "protagonist"
+      ],
+      "mood": "comedy",
+      "concept": "행정상의 인정과 터무니없는 보상 / 47세, 왕국 노동위원회",
+      "assetType": "canonical-portrait-memory-collage",
+      "approvedAgeVariant": false,
+      "avoidMisleadingElderlyFace": true,
+      "delivery": "provisional; final visual review required"
+    },
+    {
+      "endingId": "ending_paid_defeat",
+      "title": "토벌당하는 게 직업입니다",
+      "file": "assets/illustrations/ending_v4_3/festival_defeat.webp",
+      "characters": [
+        "protagonist",
+        "mina"
+      ],
+      "mood": "comedy",
+      "concept": "약함을 직업으로 바꾼 생활 / 54세, 주말 마왕 토벌 체험장",
+      "assetType": "canonical-portrait-memory-collage",
+      "approvedAgeVariant": false,
+      "avoidMisleadingElderlyFace": true,
+      "delivery": "provisional; final visual review required"
+    },
+    {
+      "endingId": "ending_taxpayer",
+      "title": "왕국 최고의 납세자",
+      "file": "assets/illustrations/ending_v4_3/tax_celebration.webp",
+      "characters": [
+        "protagonist",
+        "king"
+      ],
+      "mood": "comedy",
+      "concept": "국가의 적과 국가 표창의 부조리 / 65세, 국왕의 납세자 표창식",
+      "assetType": "canonical-portrait-memory-collage",
+      "approvedAgeVariant": false,
+      "avoidMisleadingElderlyFace": true,
+      "delivery": "provisional; final visual review required"
+    },
+    {
+      "endingId": "ending_king",
+      "title": "마왕, 국왕이 되다",
+      "file": "assets/illustrations/ending_v4_3/crown_self.webp",
+      "characters": [
+        "protagonist",
+        "elysia"
+      ],
+      "mood": "political",
+      "concept": "권력 획득 뒤에도 끝나지 않은 제도 / 60세, 왕국 임시 추대식",
+      "assetType": "canonical-portrait-memory-collage",
+      "approvedAgeVariant": false,
+      "avoidMisleadingElderlyFace": true,
+      "delivery": "provisional; final visual review required"
+    },
+    {
+      "endingId": "ending_bankrupt",
+      "title": "왕국을 파산시킨 마왕",
+      "file": "assets/illustrations/ending_v4_3/empty_treasury.webp",
+      "characters": [
+        "protagonist",
+        "elysia"
+      ],
+      "mood": "political",
+      "concept": "국가의 책임이 개인을 넘어 확산된 결말 / 60세, 왕국 재무부 긴급회의",
+      "assetType": "canonical-portrait-memory-collage",
+      "approvedAgeVariant": false,
+      "avoidMisleadingElderlyFace": true,
+      "delivery": "provisional; final visual review required"
+    },
+    {
+      "endingId": "ending_true_demon",
+      "title": "진짜 마왕을 발견했다",
+      "file": "assets/illustrations/ending_v4_3/sealed_demon.webp",
+      "characters": [
+        "protagonist",
+        "mina"
+      ],
+      "mood": "mystery",
+      "concept": "가짜 위협을 내세우다 진짜 위협을 키운 국가의 아이러니 / 53세, 왕궁 지하의 봉인된 연구실",
+      "assetType": "canonical-portrait-memory-collage",
+      "approvedAgeVariant": false,
+      "avoidMisleadingElderlyFace": true,
+      "delivery": "provisional; final visual review required"
+    },
+    {
+      "endingId": "ending_mother_petition",
+      "title": "내 아들은 마왕이 아닙니다",
+      "file": "assets/illustrations/ending_v4_3/mother_letter.webp",
+      "characters": [
+        "protagonist"
+      ],
+      "mood": "emotional",
+      "concept": "0세 부모의 이의신청이 노년에 도착 / 65세, 오래된 출생신고소",
+      "assetType": "canonical-portrait-memory-collage",
+      "approvedAgeVariant": false,
+      "avoidMisleadingElderlyFace": true,
+      "delivery": "provisional; final visual review required"
+    }
+  ]
+}

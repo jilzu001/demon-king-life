@@ -1,0 +1,32 @@
+{
+  "base": "http://127.0.0.1:4177/demon-king-life/",
+  "rows": [
+    {
+      "id": "birth",
+      "path": "assets/illustrations/event_cg_v4_5/cg_birth_registry.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 44978,
+      "width": 700,
+      "height": 525
+    },
+    {
+      "id": "invoice_bring_mina",
+      "path": "assets/illustrations/event_cg_v4_5/cg_mina_royal_hall.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 39450,
+      "width": 700,
+      "height": 525
+    },
+    {
+      "id": "public_hearing",
+      "path": "assets/illustrations/event_cg_v4_5/cg_public_hearing.webp",
+      "status": 200,
+      "type": "image/webp",
+      "bytes": 36662,
+      "width": 700,
+      "height": 930
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "required": ["schemaVersion", "version", "rules"],
+  "properties": {
+    "schemaVersion": { "const": 1 }, "version": { "const": "4.5" },
+    "rules": { "type": "array", "minItems": 3, "maxItems": 3, "items": {
+      "type": "object", "required": ["id", "when", "artPath", "alt", "width", "height", "bytes", "usage"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]+$" },
+        "when": { "type": "object", "required": ["nodeId"], "properties": {
+          "nodeId": { "type": "string", "enum": ["birth", "invoice", "hearing"] },
+          "age": { "type": "integer", "minimum": 0, "maximum": 65 },
+          "outcomeId": { "type": "string", "const": "out_bring_mina" },
+          "requiredFlag": { "const": "mina_witness" }
+        }, "additionalProperties": false },
+        "artPath": { "type": "string", "pattern": "^assets/illustrations/event_cg_v4_5/[a-z0-9_]+\\.webp$" },
+        "alt": { "type": "string", "minLength": 1 },
+        "width": { "type": "integer", "minimum": 1, "maximum": 700 },
+        "height": { "type": "integer", "minimum": 1, "maximum": 1000 },
+        "bytes": { "type": "integer", "minimum": 1 },
+        "usage": { "type": "array", "minItems": 1, "items": { "enum": ["main-scene", "choice-result", "flashback-only-if-visited", "flashback-only-if-outcome-visited"] } }
+      }, "additionalProperties": true
+    } }
+  }, "additionalProperties": true
+}

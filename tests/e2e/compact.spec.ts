@@ -231,7 +231,7 @@ test('150% 글자에서 능력치 한 칸은 한 줄이고 최근 연대기는 �
   await select(page, 'family_accept'); await select(page, 'trust_mina'); await checkHeader();
   const widerFont = await page.addStyleTag({ content: '.stats { font-family: Verdana, sans-serif; }' });
   await checkHeader(); await widerFont.evaluate(element => { element.parentNode?.removeChild(element); });
-  await page.locator('.header-history').click(); await expect(page.locator('.history-entry')).toHaveCount(3);
+  await page.locator('.header-history').click(); await expect(page.locator('.history-entry:has([data-resume-node])')).toHaveCount(3);
   await page.getByRole('button', { name: '닫기', exact: true }).click();
   await page.evaluate(({ key, state }) => {
     localStorage.setItem(key, JSON.stringify(state));
@@ -319,7 +319,7 @@ test('본문 그림은 관련 문단과 함께 나타나고 클릭당 한 문단
   await start(page); const saved = await raw(page);
   await expect(page.locator('#current-event .story-illustration')).toBeVisible();
   await expect(page.locator('#current-event .story-paragraph:visible')).toHaveCount(1);
-  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '마을');
+  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '신생아가 마왕으로 등록된 출생신고소에서 부모가 항의하는 장면');
   await page.locator('.chat-feed').click();
   await expect(page.locator('#current-event .story-paragraph:visible')).toHaveCount(2);
   await page.locator('.chat-feed').click();
@@ -342,7 +342,7 @@ test('그림 없는 사건은 텍스트로 진행하고 재판·엔딩 그림과
   await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '에리시아');
   await select(page, 'ally'); await expect(page.locator('#current-event .story-illustration')).toHaveCount(0);
   await select(page, 'public_audit'); await scene(page);
-  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('alt', '미나');
+  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('src', /cg_public_hearing\.webp$/);
   const saved = await raw(page); await page.reload(); await scene(page); expect(await raw(page)).toBe(saved);
   await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
   await expect(page.locator('.choice-launch')).toBeVisible(); await page.locator('.choice-launch').click();
@@ -357,13 +357,13 @@ test('나무칼 장면은 미나 기준 초상화로 대체하고 문단·원본
   const figure = page.locator('#current-event .story-illustration');
   await expect(figure).toHaveAttribute('data-asset-id', 'mina'); await expect(figure).toBeHidden();
   const node = chapter.nodes.find((n: { id: string }) => n.id === 'child');
-  const index = node.body.split(/\n[ \t]*\n+/).findIndex((p: string) => p.includes('미나는 당신에게 나무칼을 쥐여 줬다.'));
+  const index = 11 + node.body.split(/\n[ \t]*\n+/).findIndex((p: string) => p.includes('나무칼'));
   for (let i = 0; i < index; i++) await page.locator('#current-event .story-paragraph:visible').last().click();
   await expect(figure).toBeVisible();
   const image = figure.locator('img');
   await expect.poll(() => image.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth === 320 && img.naturalHeight === 505)).toBe(true);
   expect(await image.evaluate((img: HTMLImageElement) => { const r = img.getBoundingClientRect(); return r.width <= img.naturalWidth && r.height <= img.naturalHeight; })).toBe(true);
-  expect(await figure.evaluate(el => el.previousElementSibling!.textContent)).toContain('미나는 당신에게 나무칼을 쥐여 줬다.');
+  expect(await figure.evaluate(el => el.previousElementSibling!.textContent)).toContain('나무칼');
   await expect(page.locator('#choice-dialog')).not.toBeVisible(); expect(await raw(page)).toBe(saved);
   await select(page, 'trust_mina'); await scene(page);
   await expect(page.locator('#current-event .story-illustration')).toHaveAttribute('data-asset-id', 'mina');
@@ -379,7 +379,7 @@ test('미나 기본 초상화가 없으면 빈 프레임 없이 친구 선택과
 });
 
 test('그림 로딩 실패 시 빈 프레임 없이 본문과 페이지·스크롤 선택을 계속한다', async ({ page }) => {
-  await page.route('**/assets/illustrations/backgrounds/village.webp', route => route.abort());
+  await page.route('**/assets/illustrations/event_cg_v4_5/cg_birth_registry.webp', route => route.abort());
   await start(page); const saved = await raw(page);
   await scene(page); await expect(page.locator('#current-event .story-illustration')).toHaveCount(0);
   await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
@@ -429,7 +429,7 @@ test('연대기는 방문한 사건의 독립 요약만 한 줄로 표시하고 
   expect(await page.locator('.timeline').evaluate(el => el.clientHeight)).toBeLessThanOrEqual(130);
   await page.getByRole('button', { name: '잠시 내리기', exact: true }).click();
   await page.getByRole('button', { name: '전체 기록', exact: true }).click();
-  await expect(page.locator('.history-entry')).toHaveCount(3);
+  await expect(page.locator('.history-entry:has([data-resume-node])')).toHaveCount(3);
   await expect(page.locator('.history-entry .body, .history-entry .dialogue-line')).toHaveCount(0);
   await page.getByRole('button', { name: '닫기', exact: true }).click();
   await page.getByRole('button', { name: '선택지 보기', exact: true }).click(); await expect(page.locator('#choice-dialog')).toBeVisible();
@@ -530,7 +530,7 @@ test('본문 HTML은 문자로 표시하고 reduced-motion에서도 결말을 �
   await page.route('**/stories/demon-king-compact/chapters/01_complete.json', route => route.fulfill({ json: malicious }));
   await page.emulateMedia({ reducedMotion: 'reduce' }); await start(page); await scene(page);
   await expect(page.locator('#current-event .story-paragraph img')).toHaveCount(0);
-  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('src', /assets\/illustrations\/backgrounds\/village\.webp$/);
+  await expect(page.locator('#current-event .story-illustration img')).toHaveAttribute('src', /assets\/illustrations\/event_cg_v4_5\/cg_birth_registry\.webp$/);
   expect(await page.evaluate(() => (window as Window & { __unsafe?: number }).__unsafe)).toBeUndefined();
   expect(await page.locator('#current-event .story-paragraph').first().textContent()).toContain('<img');
   for (const id of ['family_accept', 'trust_mina', 'attack', 'escape_prison']) await select(page, id);

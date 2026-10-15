@@ -1,0 +1,353 @@
+{
+  "schema": "codex-integration-required",
+  "hooks": [
+    {
+      "targetLayer": "core",
+      "targetId": "exam",
+      "flag": "mina_trusted",
+      "text": "미나가 시험장에 들어올 때 잠깐 망설였다. 열두 살부터 당신이 자신을 믿었다는 사실을 그녀는 알고 있었다. 그 믿음은 검보다 무거워 보였다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "exam",
+      "flag": "mina_safety_pact",
+      "text": "미나는 갑옷 안쪽에서 낡은 종이를 꺼냈다. 어린 시절 함께 서명한 안전협약이었다. 시험관은 규정에 없는 종이라며 돌려주려 했지만, 미나는 끝까지 쥐고 있었다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "exam",
+      "flag": "mina_rival_promise",
+      "text": "미나가 검을 들어 올리며 작게 말했다. “네가 먼저 용사가 된다더니.” 당신은 웃지 못했다. 농담으로 시작한 경쟁의 결승선이 이토록 잔인할 줄은 몰랐다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "princess",
+      "flag": "birth_wage_claim",
+      "text": "에리시아는 오래된 체불임금 신청서 사본을 꺼냈다. “부친께서 이미 왕국을 상대로 소송을 준비하셨군요.” 당신은 처음으로 아버지가 왜 그날 급여를 물었는지 이해했다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "audit",
+      "flag": "has_birth_clue",
+      "text": "당신은 출생신고소에서 받아 온 진정서 접수번호를 감사관에게 보여 줬다. 감사관은 지급일보다 먼저 찍힌 승인 도장을 발견하고 색연필로 동그라미를 그렸다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "audit",
+      "flag": "invoice_royal",
+      "text": "당신의 출연료 청구서는 감사 장부에 ‘미처리 건’으로 남아 있었다. 감사관은 웃지 않았다. “200골드조차 못 준 부서가 200만 골드를 사용했다고요?”"
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "hearing",
+      "flag": "mina_witness",
+      "text": "미나는 용사 시험 당시 왕실이 보낸 비공개 초대장을 증언대에 놓았다. 당신은 그날 혼자 왕궁에 가지 않은 선택이 뒤늦게 누군가의 이름을 보호하고 있음을 알았다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "hearing",
+      "flag": "public_scandal",
+      "text": "재판장은 옛날 신문 기사를 증거로 채택했다. 그해 세상은 당신의 말을 웃어넘겼지만, 웃음이 실린 날짜 덕분에 국가의 답변 시점이 확인됐다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "settlement",
+      "flag": "private_deal",
+      "text": "법무관은 당신이 먼저 비공개 협상을 요청했다는 기록을 가리켰다. “어차피 돈을 원하셨잖습니까.” 당신은 자신이 선택한 협상이 어떻게 올가미가 될 수 있는지 깨달았다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "settlement",
+      "flag": "sold_secret",
+      "text": "에리시아는 연금 계약서 초안을 가져오지 않았다. “비밀을 팔겠다고 했던 날 기억하죠?” 당신은 자신이 정한 가격표를 나라가 들이밀 때 얼마나 얄미운지 처음 알았다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "quiet",
+      "flag": "confessed_at_exam",
+      "text": "미나가 빵을 사러 온 날 당신은 계산대 옆에 오래된 시험표를 놓아 두었다. 그날의 고백은 아직도 대답이 하나로 정해지지 않은 질문처럼 남아 있었다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "quiet",
+      "flag": "mina_distance",
+      "text": "미나는 빵을 계산하고 잠시 머뭇거렸지만, 예전처럼 안쪽 의자에 앉지 않았다. 당신은 그 자리를 치우지 않았다. 용서하지 못한 세월에도 공간은 필요했다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "quiet",
+      "flag": "mina_mutual_respect",
+      "text": "미나는 폐점 시간까지 빵 굽는 일을 도왔다. 서로의 꿈을 다 알지 못해도, 그날 그 빵을 누가 구웠는지는 두 사람이 함께 알았다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "final_trial",
+      "flag": "rejected_settlement",
+      "text": "당신은 오래전 서명하지 않은 합의서의 마지막 장을 다시 꺼냈다. 낡은 종이는 가벼웠다. 그러나 그날 받지 않은 5만 골드의 무게는 여전히 선명했다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "mina_bridge",
+      "flag": "confessed_at_exam",
+      "text": "미나는 말없이 당신을 바라보다가 물었다. “스무 살에 했던 그 말, 지금도 같은 뜻이야?” 당신은 오래된 고백이 아직도 현재형일 수 있다는 사실에 놀랐다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "mina_bridge",
+      "flag": "mina_distance",
+      "text": "미나는 당신과 한 걸음 떨어져 섰다. 그 거리는 오래전 당신이 정한 것이었다. 그녀는 그 선택을 탓하지 않았지만 잊지도 않았다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "statue",
+      "flag": "royal_portrait_acted",
+      "text": "조각가는 십수 년 전 당신이 그려 달라 했던 실제 얼굴의 스케치를 갖고 있었다. “심사에서 떨어졌습니다.” 그는 종이를 건넸다. 당신은 동상보다 그 작은 스케치를 오래 바라봤다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "child_history",
+      "flag": "school_map_acted",
+      "text": "당신은 학생들에게 예전 교실 지도 이야기를 들려줬다. 한 아이가 교실 벽의 새 지도를 가리켰다. “이번 지도에는 우리 집도 있어요.” 당신은 그게 얼마나 큰 일인지 알고 있었다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "marta_funeral",
+      "flag": "marta_testimony",
+      "text": "마르타는 생전에 법정에 직접 나와 숙박 장부를 확인해 줬다. 당신은 장례식에서 그날 그녀의 떨리던 목소리를 떠올렸다. 늦게 온 증언도 누군가의 삶을 바꿀 수 있었다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "marta_funeral",
+      "flag": "marta_hidden",
+      "text": "여관 뒤 술통에 감춰 둔 장부는 아직 남아 있었다. 당신은 그 종이를 기록관에 넘길 때, 마르타를 보호하겠다고 했던 자신의 약속도 함께 적어 냈다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "orphan_registry",
+      "flag": "subsidy_family",
+      "text": "당신은 아버지가 받아 들었던 지원금을 떠올렸다. 그 돈으로 우유를 샀다고 해서 부모가 국가의 거짓말을 좋아한 건 아니었다. 눈앞의 아이도 그 어려운 선택 앞에 있었다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "new_demon",
+      "flag": "birth_appealed",
+      "text": "당신은 어머니가 남긴 첫 행정심판 신청서를 소년에게 보여 줬다. “우리도 처음에는 실패했어.” 소년이 묻자 당신은 덧붙였다. “그래도 기록은 남았지.”"
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "old_friend",
+      "flag": "mina_reconciled",
+      "text": "미나는 당신의 얼굴을 보고 먼저 말했다. “이번엔 사과하지 않고 은퇴할 거야.” 당신은 웃었다. 두 사람은 오래전 밀린 사과를 언젠가 조금씩 갚은 사이였다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "royal_press",
+      "flag": "public_audit",
+      "text": "기자 중 한 명이 이미 공개 감사 신청서를 읽어 왔다. 질문은 처음부터 달랐다. “누가 돈을 가져갔나요?”가 아니라 “지급 증거가 왜 없나요?”였다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "exam",
+      "flag": "birth_appealed",
+      "text": "어머니가 열두 번 돌려받은 출생 이의신청서가 당신의 주머니에 있었다. 미나가 검을 겨눌 때 그 종이 모서리가 손등을 긁었다. 나라가 그 종이를 받아 주지 않은 시간이 여기까지 따라왔다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "exam",
+      "flag": "birth_wage_claim",
+      "text": "아버지는 그날도 관객석 뒤편에 서 있었다. “시험 대상으로 일하는 거면 수당은 줍니까?” 그는 농담처럼 물었지만 담당자는 웃지 않았다. 스무 해 전에도 듣지 못한 답이었다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "princess",
+      "flag": "mina_safety_pact",
+      "text": "에리시아는 어린 시절의 안전협약을 한 번 읽고 미나에게 물었다. “국가 시험 규정과 충돌하면 어느 쪽이 우선하나요?” 미나가 대답했다. “사람이요.”"
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "princess",
+      "flag": "confessed_at_exam",
+      "text": "에리시아는 시험장 신문 스크랩을 펼쳤다. “당신은 목숨을 구하려고 사랑을 말했다는군요.” 당신은 고개를 들었다. “저도 그 말이 어디까지 진심이었는지 아직 배우는 중입니다.”"
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "audit",
+      "flag": "mina_mutual_respect",
+      "text": "미나는 감사관에게 자신이 포기한 시험의 날짜를 적어 줬다. 급여와 명예를 잃은 사람의 손글씨가 이제 왕국 예산의 날짜를 추적하고 있었다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "hearing",
+      "flag": "confessed_at_exam",
+      "text": "증언대에서 미나는 시험 기록 마지막 장을 넘겼다. 기록에는 정서적 돌발 발언이라고만 적혀 있었다. “저 말은 시험 점수가 아니었어요. 제 친구가 살아남으려고 고른 말이었어요.”"
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "settlement",
+      "flag": "birth_appealed",
+      "text": "법무관은 어머니의 이의신청 접수증도 청구 포기 대상에 포함된다고 말했다. 당신은 태어나기 전부터 가족이 쓴 종이를 자신이 돈과 바꿀 권리가 있는지 잠시 생각했다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "final_trial",
+      "flag": "mina_mutual_respect",
+      "text": "미나는 판결문을 읽다가 “시험을 다시 볼 수 있겠네” 하고 웃었다. 당신은 말했다. “그걸 꼭 봐야 해?” 미나는 오랫동안 생각한 끝에 “이젠 아니”라고 답했다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "hero_union",
+      "flag": "mina_safety_pact",
+      "text": "회의장 벽에 붙은 용사 안전수칙에는 미나가 열두 살에 썼던 한 문장이 있었다. ‘혼자 도망치지 말 것.’ 당신은 누가 그 문구를 가져왔는지 묻지 않았다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "old_mina",
+      "flag": "mina_safety_pact",
+      "text": "미나가 검집에서 낡은 계약서를 꺼냈다. 두 사람은 열두 살에 약속했던 대로 위험한 일이 생기면 먼저 피했는지 따져 봤다. 둘 다 여러 번 실패했다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "royal_press",
+      "flag": "marta_invoice",
+      "text": "마르타가 청구한 숙박비 영수증은 기자들의 웃음거리가 되었다. 그러나 국방부가 거짓으로 꾸며 낸 회의 날짜를 밝혀내자 그 웃음은 조용해졌다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "child_history",
+      "flag": "confessed_at_exam",
+      "text": "학생 하나가 물었다. “마왕은 용사한테 사랑한다고 말해도 돼요?” 당신은 대답했다. “말할 수는 있지. 다만 대답을 강요할 수는 없어.”"
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "bread_union",
+      "flag": "subsidy_family",
+      "text": "당신은 가게 임금 장부와 아버지가 받아 온 첫 지원금 영수증을 나란히 펼쳤다. 생활비가 필요하다는 말로 선택을 빼앗기지 않게 하겠다고 다짐했다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "hospital_name",
+      "flag": "confessed_at_exam",
+      "text": "접수대 뒤에 붙은 용사 시험 안전 홍보 포스터에서 미나의 얼굴이 보였다. 당신은 그날의 고백을 잠깐 떠올렸지만, 오늘은 검사 결과를 기다리는 평범한 환자였다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "marta_funeral",
+      "flag": "marta_invoice",
+      "text": "마르타의 손녀는 숙박비 청구서 원본을 꺼냈다. “할머니는 돈보다 사과 한 장을 기다렸대요.” 국방부가 보낸 답장은 여전히 ‘검토 중’이었다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "princess",
+      "flag": "first_wage_acted",
+      "text": "에리시아가 오래된 첫 월급 영수증을 보여 줬다. “적국 노동자로 일했다는 분류가 왜 붙었는지 아세요?” 당신은 대답했다. “노동자였던 건 맞아요. 적국은 나라가 정했죠.”"
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "audit",
+      "flag": "prison_meal_acted",
+      "text": "교도소 감자 납품 번호는 특별관리 계정의 거래처 번호와 이어졌다. 그것이 횡령의 증거는 아니었다. 하지만 감사관은 처음으로 감자와 국방 예산을 같은 표에 적었다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "audit",
+      "flag": "ledger_copy_acted",
+      "text": "필적 감정 의뢰서가 감사관 손에 들어왔다. 숫자의 차액만큼이나 누가 어머니 이름을 흉내 냈는지가 중요해졌다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "hearing",
+      "flag": "court_jester_acted",
+      "text": "왕궁의 해고된 광대는 국방부 담당자의 출입 시간을 기록한 종이를 증거로 냈다. 그는 증인석에서 한 번도 농담하지 않았다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "hearing",
+      "flag": "army_budget_acted",
+      "text": "국경 병사들의 공동 청원이 법정에 들어왔다. 국방 예산이 어디에 쓰였는지 모른다는 말은 이제 마왕 한 사람의 주장이 아니었다."
+    },
+    {
+      "targetLayer": "core",
+      "targetId": "settlement",
+      "flag": "royal_press_acted",
+      "text": "법무관은 당신이 기자회견에서 했던 말을 그대로 읽었다. “돈이 어디로 갔는지 모릅니다.” 당신은 고개를 끄덕였다. 모른다는 말이야말로 사실이었기에 협박으로 바꿀 수 없었다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "hero_union",
+      "flag": "mina_medal_acted",
+      "text": "미나는 자신이 받은 훈장을 회의장에 올렸다. 시험 점수만으로 얻은 명예가 아님을 인정하는 데 그가 가진 가장 무거운 물건이었다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "king_speech",
+      "flag": "court_jester_acted",
+      "text": "해고된 광대가 연설대 뒤편의 발판을 가리켰다. “제가 왕을 웃기던 자리예요. 거기에 서면 적어도 진실을 말하는 얼굴은 보입니다.”"
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "tax_rebellion",
+      "flag": "birth_tax_acted",
+      "text": "여섯 살에 발급받은 납세 고지서 사본을 주민들에게 보여 줬다. 당신을 위협이라고 불러 거둔 돈이 이제 주민들의 겨울 식비까지 빼앗고 있었다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "village_election",
+      "flag": "tax_rebellion_acted",
+      "text": "예전에 세금 폭동에서 만났던 빵집 주인이 선거 운동원으로 찾아왔다. “그때 싸웠으니 이번엔 세금이 어디 쓰이는지 보여 주세요.” 당신은 이름표를 새로 쓸 필요가 없었다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "village_election",
+      "flag": "tax_rebellion_declined",
+      "text": "폭동을 진정시켰던 주민이 찾아와 물었다. “그때도 우리를 말렸잖아요. 이번엔 우리 목소리를 누가 들어줘요?” 당신은 이번 선거가 예전 선택의 시험이라는 걸 알았다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "child_history",
+      "flag": "apprentice_acted",
+      "text": "당신에게 살아남는 법을 배우던 소년이 이제 교사였다. 그는 학생들에게 말하기 전에 당신에게 고개를 숙였다. “선생님이 먼저 도망칠 때 어디로 가는지 알려 주셨잖아요.”"
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "child_history",
+      "flag": "apprentice_declined",
+      "text": "교실 구석에서 당신에게 제자가 되겠다고 했던 소년이 자란 모습을 보았다. 그는 교사가 아니라 학생의 아버지였다. 당신은 그때 돌려보낸 것이 이 사람의 꿈 전체가 아니길 바랐다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "old_mina",
+      "flag": "mina_medal_absurd",
+      "text": "미나가 훈장 상자 속 오래된 사용료 청구서를 꺼냈다. “그때는 화났는데 이젠 이 종이가 네 글씨라서 좋아.” 당신은 청구액을 세다가 대답을 놓쳤다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "hospital_name",
+      "flag": "child_history_acted",
+      "text": "진료실 벽에는 새 역사 교과서의 그림이 걸려 있었다. 뿔이 없는 당신의 옆모습이었다. 당신은 웃지 않았다. 그림이 실제와 닮은 것만으로도 아이들은 덜 겁먹을 수 있을 테니까."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "last_audit",
+      "flag": "royal_press_acted",
+      "text": "마지막 보고서에는 그해 기자회견 날짜가 증빙으로 남았다. 당신이 직접 읽은 두 숫자를 사람들이 기억하고 있다는 것이 이 감사의 마지막 안전장치였다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "grandchild_question",
+      "flag": "school_map_acted",
+      "text": "아이의 지도에는 마을과 당신의 집이 정확히 표시되어 있었다. 과거 선생님께 부탁한 작은 정정이 아주 늦게 돌아왔다. 당신은 지도의 집에 손가락을 얹었다."
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "grandchild_question",
+      "flag": "new_demon_acted",
+      "text": "아이는 국립기록관의 두 번째 마왕에게서 온 답장을 보여 줬다. “이제 그 사람은 무슨 일을 해요?” 당신은 말했다. “스스로 고르고 있겠지.”"
+    },
+    {
+      "targetLayer": "extension",
+      "targetId": "statue",
+      "flag": "royal_portrait_absurd",
+      "text": "젊은 조각가는 예전에 당신이 뿔을 더 그려 달라고 했던 초상화를 참고했다. 당신은 자기 농담에 돌로 된 무게가 생기는 걸 보며 웃지도 못했다."
+    }
+  ]
+}

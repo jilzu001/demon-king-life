@@ -1,0 +1,65 @@
+{
+  "source": "demon_king_v4_4_ending_gallery_art_cumulative_codex.zip",
+  "revision": "v4.5",
+  "stats": {
+    "core_scene_body_revised": [
+      "child",
+      "petition",
+      "invoice",
+      "office"
+    ],
+    "core_outcomes_revised": [
+      "invoice/bring_mina",
+      "exam/confess",
+      "confession/confess_sincere",
+      "settlement/reject_money"
+    ],
+    "expansion_bodies_revised": [
+      "birth_tax",
+      "mina_bridge",
+      "orphan_registry",
+      "old_mina"
+    ],
+    "expansion_outcomes_revised": [
+      "birth_tax/birth_tax_1",
+      "birth_tax/birth_tax_2",
+      "birth_tax/birth_tax_3",
+      "mina_bridge/mina_bridge_1",
+      "mina_bridge/mina_bridge_2",
+      "mina_bridge/mina_bridge_3",
+      "orphan_registry/orphan_registry_1",
+      "orphan_registry/orphan_registry_2",
+      "orphan_registry/orphan_registry_3",
+      "old_mina/old_mina_1",
+      "old_mina/old_mina_2",
+      "old_mina/old_mina_3"
+    ],
+    "annual_ages_revised": [
+      4,
+      7,
+      11,
+      19,
+      21,
+      29,
+      41,
+      47,
+      55,
+      65
+    ],
+    "endings_revised": [
+      "ending_mina_wedding",
+      "ending_retirement_47",
+      "ending_mother_petition"
+    ],
+    "removed_deprecated": [
+      "content/annual_life_events_v4_1.json",
+      "content/annual_generic_pool_v4_1.json",
+      "content/annual_memory_callbacks_v4_1.json"
+    ]
+  },
+  "notes": [
+    "All story IDs and choice destinations are preserved.",
+    "New art conditional integration is not yet implemented in the actual browser game.",
+    "No claim of all 20 endings reachable until Codex tests actual engine."
+  ]
+}

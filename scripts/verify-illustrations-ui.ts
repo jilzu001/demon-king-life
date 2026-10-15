@@ -10,11 +10,11 @@ const deviceScaleFactor = process.argv.includes('--high-dpi') ? 2 : 1;
 const story = await readExampleStory('demon-king-compact');
 const shared = ['family_accept', 'trust_mina'];
 const cases = [
-  { id: 'birth', path: [], asset: 'village' },
+  { id: 'birth', path: [], asset: 'birth' },
   { id: 'child', path: ['family_accept'], asset: 'mina' },
   { id: 'exam', path: shared, asset: 'mina' },
   { id: 'prison', path: [...shared, 'attack'], asset: 'prison' },
-  { id: 'hearing', path: [...shared, 'attack', 'forgive', 'ally', 'public_audit'], asset: 'mina' },
+  { id: 'hearing', path: [...shared, 'attack', 'forgive', 'ally', 'public_audit'], asset: 'public_hearing' },
   { id: 'audit', path: [...shared, 'attack', 'forgive', 'ally'], asset: null },
   { id: 'confession', path: [...shared, 'confess'], asset: 'mina' },
   { id: 'confession_afterm', path: [...shared, 'confess', 'confess_sincere'], asset: 'mina' },

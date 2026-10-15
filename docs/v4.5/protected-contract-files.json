@@ -1,0 +1,120 @@
+{
+  "baseline": "7002519",
+  "files": [
+    {
+      "path": "public/assets/ending_art_manifest_v4_4.json",
+      "gitBlob": "c6d36eb3488053956391ec40205374bb6eee7335",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-compact/characters.json",
+      "gitBlob": "50a7ace43eb262d1961f109fbae73fe61c4b4560",
+      "unchanged": true
+    },
+    {
+      "path": "public/stories/demon-king-compact/ending_cinematics.json",
+      "gitBlob": "f75fda18065d56412bb944c4ae8af45c69553794",
+      "unchanged": true
+    },
+    {
+      "path": "schemas/chapter.schema.json",
+      "gitBlob": "583121b1616b3a1d78b7d559ae58ccdf632e54a8",
+      "unchanged": true
+    },
+    {
+      "path": "schemas/characters.schema.json",
+      "gitBlob": "6756d7dc9fcd870038eca028f8b5bc722baeefaa",
+      "unchanged": true
+    },
+    {
+      "path": "schemas/compact-cinematics.schema.json",
+      "gitBlob": "cfa575578594148647435266b540cb1799566ba8",
+      "unchanged": true
+    },
+    {
+      "path": "schemas/ending-art.schema.json",
+      "gitBlob": "2b916c9900b6e5a6762ac9dc23a6bbffb4d133d0",
+      "unchanged": true
+    },
+    {
+      "path": "schemas/ending-gallery.schema.json",
+      "gitBlob": "4be487c9d57bc9cfa5abad47b35fd3c8ae850b27",
+      "unchanged": true
+    },
+    {
+      "path": "schemas/endings.schema.json",
+      "gitBlob": "fa4d810cdbf52c57b4de553604a0cca8a9a96b01",
+      "unchanged": true
+    },
+    {
+      "path": "schemas/meta.schema.json",
+      "gitBlob": "982f81433e32e350d23fe7020eb5143a1dd997e0",
+      "unchanged": true
+    },
+    {
+      "path": "schemas/presentation.schema.json",
+      "gitBlob": "dacbb64564c078ebb5f60da3046721ae995b87be",
+      "unchanged": true
+    },
+    {
+      "path": "schemas/save.schema.json",
+      "gitBlob": "c2c27f1f5ab4591aecf38ba0538756bc1ddce9d6",
+      "unchanged": true
+    },
+    {
+      "path": "schemas/story.schema.json",
+      "gitBlob": "d4e01e8a0c76afd3cdd8f05989fec8b0af8ae3b5",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/conditions.ts",
+      "gitBlob": "2f8db5b759d0e59bae34d465784eb3f96aeb8464",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/effects.ts",
+      "gitBlob": "99debf677effc74099e728f934167ee30a94009c",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/invariants.ts",
+      "gitBlob": "6806189a3f6a62dea271f45a352cc271bd13a535",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/paths.ts",
+      "gitBlob": "1c7c5ce7b0748984a8a8f63d5922a4e2cfe34a83",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/random.ts",
+      "gitBlob": "8e3a27d06892c3c3c8f8027b4738f920d517fa97",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/transition.ts",
+      "gitBlob": "c75c69a53fcd593e9303d641aabb5c37538c5512",
+      "unchanged": true
+    },
+    {
+      "path": "src/engine/types.ts",
+      "gitBlob": "9b6491990b6ce50f8f830f8df6aaff03c60825d8",
+      "unchanged": true
+    },
+    {
+      "path": "src/persistence/save.ts",
+      "gitBlob": "9eafdca754381d1c19844ca0104f050202bf05fe",
+      "unchanged": true
+    },
+    {
+      "path": "src/ui/ending-gallery.ts",
+      "gitBlob": "cd3552ae77cd790474ed7ce32ae097b3a3baa040",
+      "unchanged": true
+    },
+    {
+      "path": "src/ui/visual-identity.ts",
+      "gitBlob": "a2c7981f992c49a47cef97fafb3652c0d3d2c620",
+      "unchanged": true
+    }
+  ]
+}

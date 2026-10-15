@@ -1,0 +1,226 @@
+
+ RUN  v5.0.4 C:/Users/jilzu/OneDrive/Codex/make_game_test/demon-king
+
+ ❯ tests/story/content-v36.test.ts (2 tests | 2 failed) 103ms
+   × 65개 사건과195개 선택의 ID·나이·조건·효과를 유지하고 문안만 갱신한다 94ms
+   × v3.6은6개 사건 결과만 강화하며 v3.5의10개 재집필 범위와 구분한다 6ms
+ ❯ tests/story/visual-identity.test.ts (2 tests | 1 failed) 19ms
+   × 확정 대사만 실제 본문/등장 인물과 일치하며 내레이션/미등록 인물은 추정하지 않는다 16ms
+ ❯ tests/story/compact-upgrade.test.ts (4 tests | 1 failed) 2465ms
+   × 기존13사건28선택/7엔딩을 보호하며 고백과 v3.8 신규 선택만 덧붙인다 18ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/story/compact-upgrade.test.ts > 기존13사건28선택/7엔딩을 보호하며 고백과 v3.8 신규 선택만 덧붙인다
+AssertionError: expected { id: 'child', kind: 'scene', …(5) } to deeply equal { id: 'child', kind: 'scene', …(5) }
+
+- Expected
++ Received
+
+@@ -1,46 +1,40 @@
+  {
+    "age": 12,
+-   "body": "열두 살이 되던 해, 미나가 나무칼을 들고 찾아왔다. 미나는 마을에서 가장 강한 아이였고, 당신은 마을에서 가장 유명한 약자였다.
++   "body": "열두 살 봄, 미나가 나무칼 두 자루를 들고 찾아왔다. 어릴 때부터 동네에서 제일 빨리 달리던 아이였다. 당신은 제일 빨리 지쳐서 그 아이가 돌아오기를 기다리던 쪽이었다.
+
+  “나 용사 될 거야.”
+
+- “축하해. 나중에 마왕 잡으러 오면 예약하고 와.”
++ “그럼 나는?”
+
+  “넌 마왕이잖아.”
+
+- “그건 서류상이고.”
++ “그건 내가 태어날 때 직원이 쓴 거야.”
+
+- “서류상 마왕도 마왕이야. 용사 시험 설명서에 그렇게 써 있어.”
++ 미나는 처음으로 나무칼을 내려다봤다. 칼 손잡이에는 예전에 당신이 새긴 글자가 남아 있었다. 손때에 닳아 거의 알아볼 수 없었다.
+
+- 미나는 당신에게 나무칼을 쥐여 줬다. 당신이 한 번 휘두르자 칼이 손에서 미끄러져 우물에 빠졌다.
++ “시험 규정에는 마왕을 제압해야 한다고 써 있어.”
+
+- “전투력 2.”
++ “그럼 네 꿈에는 나를 쓰러뜨리는 장면도 있어?”
+
+- “그걸 어떻게 알아?”
++ “그런 꿈은 아니었어.”
+
+- “측정했어. 내 건 8,402.”
++ 미나가 팔을 뻗어 당신의 자세를 바로잡았다. 그녀의 전투력은 8,402. 당신의 전투력은 2. 당신이 나무칼을 휘두르자 무기가 먼저 손을 떠났다. 미나는 공중에서 칼을 잡았다.
+
+- 당신은 우물을 내려다봤다.
++ “다시.”
+
+- “칼이 날 배신한 거야.”
++ “칼이 나를 싫어하는 것 같아.”
+
+- “네가 칼을 놓친 거지.”
++ “칼도 네가 싫어서 그런 건 아닐걸.”
+
+- 미나는 웃다가, 당신이 진짜로 풀이 죽은 걸 보고 우물에서 칼을 건져 왔다. 전투력 8,402의 아이는 열두 살에 이미 사람을 구할 줄 알았다.
++ 당신은 웃었지만, 미나가 ‘싫어서 그런 건 아니다’라고 말하는 데 오래 걸렸다는 사실을 기억했다. 해가 기울자 미나는 나무칼을 당신에게 돌려주었다.
+
+- “내가 용사가 되면,”
++ “내가 용사가 되면 널 다치게 하지 않을 방법을 찾을게.”
+
+- 미나가 말했다.
++ “방법을 못 찾으면?”
+
+- “널 안 죽이는 방법을 찾아볼게.”
+-
+- “애초에 죽일 생각을 안 하면 되잖아.”
+-
+- “시험에 나와.”
+-
+- 당신은 그날 처음으로 시험 제도가 무서워졌다.",
++ 미나는 대답하지 않았다. 당신도 더 묻지 않았다. 그날 두 사람은 싸우는 법보다, 상대가 대답할 준비가 될 때까지 기다리는 법을 먼저 배웠다.",
+    "choices": [
+      {
+        "description": "적어도 나를 죽일 사람의 이름은 알아 두자.",
+        "id": "trust_mina",
+        "outcomes": [
+@@ -63,10 +57,10 @@
+          },
+        ],
+        "text": "미나를 믿고 함께 자란다.",
+      },
+    ],
+-   "chronicleSummary": "12세에 미나와 친구가 되었고, 그녀가 용사가 되겠다는 꿈을 들었다.",
++   "chronicleSummary": "열두 살, 미나가 용사가 되겠다는 꿈을 털어놓았고 나도 그 꿈의 대가를 처음 생각했다.",
+    "id": "child",
+    "kind": "scene",
+    "title": "용사가 되고 싶은 아이",
+  }
+
+ ❯ tests/story/compact-upgrade.test.ts:14:50
+     12|   for (const [id, old] of Object.entries(previousCompactStory.nodes)) {
+     13|     const current = story.nodes[id]!;
+     14|     expect({ ...current, choices: old.choices }).toEqual(old);
+       |                                                  ^
+     15|     expect(current.choices.slice(0, old.choices.length)).toEqual(old.c…
+     16|   }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/story/content-v36.test.ts > 65개 사건과195개 선택의 ID·나이·조건·효과를 유지하고 문안만 갱신한다
+AssertionError: expected [ { …(10) }, { …(10) }, …(63) ] to deeply equal [ { …(10) }, { …(10) }, …(63) ]
+
+- Expected
++ Received
+
+@@ -169,14 +169,14 @@
+      "priority": 55,
+      "title": "처형 명령서의 빈칸",
+    },
+    {
+      "ageRange": [
+-       4,
+-       9,
++       6,
++       6,
+      ],
+-     "authoredRevision": "3.1",
++     "authoredRevision": "v4.5-purposeful-rewrite",
+      "characters": [
+        "clerk",
+      ],
+      "choices": [
+        {
+@@ -1249,10 +1249,11 @@
+    {
+      "ageRange": [
+        33,
+        38,
+      ],
++     "authoredRevision": "v4.5-purposeful-rewrite",
+      "authoringStatus": "expanded_v3_2",
+      "characters": [
+        "mina",
+      ],
+      "choices": [
+@@ -2069,10 +2070,11 @@
+    {
+      "ageRange": [
+        48,
+        53,
+      ],
++     "authoredRevision": "v4.5-purposeful-rewrite",
+      "authoringStatus": "expanded_v3_2",
+      "characters": [
+        "child",
+      ],
+      "choices": [
+@@ -2430,10 +2432,11 @@
+    {
+      "ageRange": [
+        55,
+        60,
+      ],
++     "authoredRevision": "v4.5-purposeful-rewrite",
+      "authoringStatus": "expanded_v3_2",
+      "characters": [
+        "mina",
+      ],
+      "choices": [
+
+ ❯ tests/story/content-v36.test.ts:21:34
+     19|   expect(next.events).toHaveLength(65);
+     20|   expect(new Set(next.events.map(e => e.id)).size).toBe(65);
+     21|   expect(next.events.map(logic)).toEqual(old.events.map(logic));
+       |                                  ^
+     22|   expect(next.events.reduce((n, e) => n + e.choices.length, 0)).toBe(1…
+     23|   for (const event of next.events) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/story/content-v36.test.ts > v3.6은6개 사건 결과만 강화하며 v3.5의10개 재집필 범위와 구분한다
+AssertionError: expected [ 'birth_archive', 'birth_tax', …(15) ] to deeply equal [ 'birth_archive', 'birth_tax', …(14) ]
+
+- Expected
++ Received
+
+@@ -6,10 +6,11 @@
+    "grandchild_question",
+    "guard_toll",
+    "mina_bridge",
+    "mina_festival",
+    "mina_medal",
++   "old_mina",
+    "orphan_registry",
+    "peace_treaty",
+    "princess_coronation",
+    "retired_king",
+    "school_map",
+
+ ❯ tests/story/content-v36.test.ts:35:26
+     33| it('v3.6은6개 사건 결과만 강화하며 v3.5의10개 재집필 범위와 구분한다', () => {
+     34|   const changed = next.events.filter((e, i) => JSON.stringify(e) !== J…
+     35|   expect(changed.sort()).toEqual([...six, ...ten].sort());
+       |                          ^
+     36|   for (const id of six) {
+     37|     const before = old.events.find(e => e.id === id)!; const after = n…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/story/visual-identity.test.ts > 확정 대사만 실제 본문/등장 인물과 일치하며 내레이션/미등록 인물은 추정하지 않는다
+AssertionError: expected '미나는 처음으로 나무칼을 내려다봤다. 칼 손잡이에는 예전에 당신이 …' to be '“서류상 마왕도 마왕이야. 용사 시험 설명서에 그렇게 써 있어.”' // Object.is equality
+
+Expected: "“서류상 마왕도 마왕이야. 용사 시험 설명서에 그렇게 써 있어.”"
+Received: "미나는 처음으로 나무칼을 내려다봤다. 칼 손잡이에는 예전에 당신이 새긴 글자가 남아 있었다. 손때에 닳아 거의 알아볼 수 없었다."
+
+ ❯ tests/story/visual-identity.test.ts:8:60
+      6| it('확정 대사만 실제 본문/등장 인물과 일치하며 내레이션/미등록 인물은 추정하지 않는다', () => {
+      7|   for (const [id, rows] of Object.entries(speakers)) for (const row of…
+      8|     expect(story.nodes[id]!.body.split('\n\n')[row.index]).toBe(row.te…
+       |                                                            ^
+      9|     expect(story.characters[row.speaker]).toBeDefined();
+     10|     expect(compactSpeaker(id, row.text)).toBe(row.speaker);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  3 failed | 11 passed (14)
+      Tests  4 failed | 246 passed (250)
+   Start at  18:51:49
+   Duration  17.55s (tests 75%, import 19%, transform 6%)
+

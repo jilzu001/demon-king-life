@@ -1,4 +1,4 @@
-import catalog from '../../spec/content-v4.4-ending-gallery/content/ending_gallery_v4_4.json';
+import catalog from '../../spec/content-v4.5-story-art/content/ending_gallery_v4_4.json';
 import artwork from '../../spec/content-v4.4-ending-gallery/assets/ending_art_manifest_v4_4.json';
 import { validateSchema } from './schema';
 import { ensure, type Story } from '../engine/types';

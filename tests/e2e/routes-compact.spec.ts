@@ -1,9 +1,11 @@
 import { test, expect, type Page } from '@playwright/test';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
 const paths = JSON.parse(readFileSync('docs/v4.4/routes/actual-paths.json', 'utf8')) as {
   endingId: string; title: string; choices: string[]; age: number; artwork: string; body: string;
 }[];
+const currentEndings = JSON.parse(readFileSync('public/stories/demon-king-compact/endings.json', 'utf8')).endings as { id: string; body: string }[];
+for (const path of paths) path.body = currentEndings.find(ending => ending.id === path.endingId)!.body;
 const runKey = 'existence-sim:v1:run:demon-king:compact';
 const metaKey = 'existence-sim:v1:meta:demon-king:compact';
 async function select(page: Page, id: string) {
@@ -69,6 +71,8 @@ for (const path of paths) test(`실제20엔딩/${path.endingId}: 새 게임부�
   expect(bounds.width / bounds.height).toBeCloseTo(bounds.naturalWidth / bounds.naturalHeight, 2);
   expect(statuses).toContain(200);
   expect(await page.locator('.menu-dialog').evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
-  writeFileSync(`docs/v4.4/routes/browser-${path.endingId}-${test.info().project.name}.json`, JSON.stringify({ endingId: path.endingId, choices: path.choices, age: saved.age, memories, image: source, statuses, bounds, saveRestored: true, unlockAfterLastCard: true }, null, 2) + '\n');
+  const evidenceDir = process.env.ROUTE_EVIDENCE_DIR || 'docs/v4.5/ending-routes';
+  mkdirSync(evidenceDir, { recursive: true });
+  writeFileSync(`${evidenceDir}/browser-${path.endingId}-${test.info().project.name}.json`, JSON.stringify({ endingId: path.endingId, choices: path.choices, age: saved.age, memories, image: source, statuses, bounds, saveRestored: true, unlockAfterLastCard: true }, null, 2) + '\n');
   await page.getByRole('button', { name: '닫기', exact: true }).click(); await expect(page.locator('.ending-gallery-list li')).toHaveCount(20);
 });

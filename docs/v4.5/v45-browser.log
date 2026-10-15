@@ -1,0 +1,47 @@
+[WebServer] (node:88056) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:86380) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 34 tests using 1 worker
+
+(node:84348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_1: 전용나이·결과·저장·후속사건 (2.6s)
+  ok  2 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_2: 전용나이·결과·저장·후속사건 (2.1s)
+  ok  3 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_3: 전용나이·결과·저장·후속사건 (2.7s)
+  ok  4 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_1: 전용나이·결과·저장·후속사건 (3.9s)
+  ok  5 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_2: 전용나이·결과·저장·후속사건 (3.4s)
+  ok  6 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_3: 전용나이·결과·저장·후속사건 (3.3s)
+  ok  7 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_1: 전용나이·결과·저장·후속사건 (4.2s)
+  ok  8 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_2: 전용나이·결과·저장·후속사건 (3.4s)
+  ok  9 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_3: 전용나이·결과·저장·후속사건 (3.2s)
+  ok 10 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_1: 전용나이·결과·저장·후속사건 (3.1s)
+  ok 11 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_2: 전용나이·결과·저장·후속사건 (3.1s)
+  ok 12 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_3: 전용나이·결과·저장·후속사건 (3.0s)
+  ok 13 [PC] › tests\e2e\v45-compact.spec.ts:42:1 › v4.5 연간 기록은1~11세 한줄씩 자동/클릭 표시하고 선택/효과 없이12세 실제사건으로 이어진다 (2.2s)
+  ok 14 [PC] › tests\e2e\v45-compact.spec.ts:56:1 › v4.5 검수CG는출생·공개재판에맞게연결되고회상문장은실제선택한하나만표시한다 (2.4s)
+  ok 15 [PC] › tests\e2e\v45-compact.spec.ts:69:55 › v4.5 왕궁CG/bring_mina: 실제동행결과에만한번표시 (2.2s)
+  ok 16 [PC] › tests\e2e\v45-compact.spec.ts:69:55 › v4.5 왕궁CG/accept_invite: 실제동행결과에만한번표시 (1.8s)
+  ok 17 [PC] › tests\e2e\v45-compact.spec.ts:81:1 › v4.5 주마등은실제방문·선택·고유그림만사용하고SVG는렌더링하지않는다 (3.6s)
+(node:89244) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 18 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_1: 전용나이·결과·저장·후속사건 (2.7s)
+  ok 19 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_2: 전용나이·결과·저장·후속사건 (2.0s)
+  ok 20 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_3: 전용나이·결과·저장·후속사건 (1.6s)
+  ok 21 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_1: 전용나이·결과·저장·후속사건 (2.6s)
+  ok 22 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_2: 전용나이·결과·저장·후속사건 (2.5s)
+  ok 23 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_3: 전용나이·결과·저장·후속사건 (2.4s)
+  ok 24 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_1: 전용나이·결과·저장·후속사건 (3.0s)
+  ok 25 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_2: 전용나이·결과·저장·후속사건 (2.9s)
+  ok 26 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_3: 전용나이·결과·저장·후속사건 (2.9s)
+  ok 27 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_1: 전용나이·결과·저장·후속사건 (3.0s)
+  ok 28 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_2: 전용나이·결과·저장·후속사건 (2.9s)
+  ok 29 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_3: 전용나이·결과·저장·후속사건 (3.6s)
+  ok 30 [모바일-320] › tests\e2e\v45-compact.spec.ts:42:1 › v4.5 연간 기록은1~11세 한줄씩 자동/클릭 표시하고 선택/효과 없이12세 실제사건으로 이어진다 (2.1s)
+  ok 31 [모바일-320] › tests\e2e\v45-compact.spec.ts:56:1 › v4.5 검수CG는출생·공개재판에맞게연결되고회상문장은실제선택한하나만표시한다 (2.3s)
+  ok 32 [모바일-320] › tests\e2e\v45-compact.spec.ts:69:55 › v4.5 왕궁CG/bring_mina: 실제동행결과에만한번표시 (2.4s)
+  ok 33 [모바일-320] › tests\e2e\v45-compact.spec.ts:69:55 › v4.5 왕궁CG/accept_invite: 실제동행결과에만한번표시 (1.7s)
+  ok 34 [모바일-320] › tests\e2e\v45-compact.spec.ts:81:1 › v4.5 주마등은실제방문·선택·고유그림만사용하고SVG는렌더링하지않는다 (3.1s)
+
+  34 passed (1.7m)

@@ -1,0 +1,26 @@
+[
+  {
+    "path": "public/assets/illustrations/event_cg_v4_5/cg_birth_registry.webp",
+    "bytes": 44978,
+    "sha256": "79c4f249cc16649786e034ce25520481f70d4ae8cdee3092cd2089cd3ad920f8",
+    "format": "WEBP",
+    "width": 700,
+    "height": 525
+  },
+  {
+    "path": "public/assets/illustrations/event_cg_v4_5/cg_mina_royal_hall.webp",
+    "bytes": 39450,
+    "sha256": "c3209a90d85c4884308f6932e7bb414426b4b93c1c67420c015738e22388fea3",
+    "format": "WEBP",
+    "width": 700,
+    "height": 525
+  },
+  {
+    "path": "public/assets/illustrations/event_cg_v4_5/cg_public_hearing.webp",
+    "bytes": 36662,
+    "sha256": "b484da1f45d44ed36d07abb6f118d751c889d9856e110a15392747e2a4d8b377",
+    "format": "WEBP",
+    "width": 700,
+    "height": 930
+  }
+]

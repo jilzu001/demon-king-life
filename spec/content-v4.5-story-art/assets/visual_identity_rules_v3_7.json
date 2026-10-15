@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "version": "v3.7",
+  "fallback": "hide-image",
+  "canonicalPortraits": {
+    "protagonist": "assets/illustrations/characters/protagonist.webp",
+    "mina": "assets/illustrations/characters/mina.webp",
+    "elysia": "assets/illustrations/characters/elysia.webp",
+    "king": "assets/illustrations/characters/king.webp",
+    "seria": "assets/illustrations/characters/seria.webp",
+    "rina": "assets/illustrations/characters/rina.webp",
+    "kyle": "assets/illustrations/characters/kyle.webp",
+    "jero": "assets/illustrations/characters/jero.webp",
+    "yuri": "assets/illustrations/characters/yuri.webp",
+    "rao": "assets/illustrations/characters/rao.webp",
+    "dark_nun": "assets/illustrations/characters/dark_nun.webp"
+  },
+  "aliases": {
+    "미나": "mina",
+    "Mina": "mina",
+    "주인공": "protagonist",
+    "에리시아": "elysia",
+    "국왕": "king"
+  },
+  "portraitPolicy": {
+    "useCharacterIdentityOnly": true,
+    "doNotUseGenericExpressionsAsPortraits": true,
+    "doNotInferIdentityFromFilenameOnly": true,
+    "characterMissing": "no-portrait",
+    "ageVariant": "must-be-explicitly-approved",
+    "emotionVariant": "only-when-same-character-confirmed"
+  },
+  "scenePolicy": {
+    "priority": [
+      "verified-exact-scene-CG",
+      "verified-character-portrait",
+      "verified-location-background"
+    ],
+    "noRelevantAsset": "omit",
+    "maxPerScene": 1,
+    "neverMandatory": true
+  },
+  "flashbackPolicy": {
+    "onlyVisitedEvents": true,
+    "onlyMatchingCharactersAndOutcome": true,
+    "doNotInventAgesOrOutcomes": true,
+    "mismatchedAsset": "text-only-memory"
+  },
+  "display": {
+    "maxScale": 1,
+    "objectFit": "contain",
+    "preserveAspectRatio": true,
+    "noBlurUpscale": true
+  },
+  "approvalStatus": "review-required; no automatic artistic identity approval"
+}

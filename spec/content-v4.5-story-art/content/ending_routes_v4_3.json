@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "status": "integration-required-no-engine-auto-merge",
+  "routePriority": "evaluate after normal core effects, before any generic terminal dispatch",
+  "routes": [
+    {
+      "routeId": "route_mina_renounced",
+      "endingId": "ending_mina_renounced",
+      "targetAge": 55,
+      "sceneId": "bridge_route_mina_renounced",
+      "prerequisiteFlags": [
+        "confessed_at_exam",
+        "confession_sincere",
+        "mina_mutual_respect"
+      ],
+      "earnedFlags": [
+        "supported_mina_after_exam",
+        "defended_mina_independence"
+      ],
+      "allFlagsNeeded": [
+        "confessed_at_exam",
+        "confession_sincere",
+        "mina_mutual_respect",
+        "supported_mina_after_exam",
+        "defended_mina_independence"
+      ],
+      "exclusiveWithExistingEndingSelection": true,
+      "priority": "before generic old-age closure when conditions satisfied",
+      "requiresEngineMerge": true,
+      "gateChoiceMustBeExplicit": true,
+      "earliestSuitableAnchor": "post-audit/late-story conditional gateway",
+      "noAutoEnding": true
+    },
+    {
+      "routeId": "route_mina_wedding",
+      "endingId": "ending_mina_wedding",
+      "targetAge": 65,
+      "sceneId": "bridge_route_mina_wedding",
+      "prerequisiteFlags": [
+        "confessed_at_exam",
+        "confession_sincere",
+        "mina_mutual_respect"
+      ],
+      "earnedFlags": [
+        "mina_explicit_reciprocity",
+        "years_of_mutual_trust"
+      ],
+      "allFlagsNeeded": [
+        "confessed_at_exam",
+        "confession_sincere",
+        "mina_mutual_respect",
+        "mina_explicit_reciprocity",
+        "years_of_mutual_trust"
+      ],
+      "exclusiveWithExistingEndingSelection": true,
+      "priority": "before generic old-age closure when conditions satisfied",
+      "requiresEngineMerge": true,
+      "gateChoiceMustBeExplicit": true,
+      "earliestSuitableAnchor": "post-audit/late-story conditional gateway",
+      "noAutoEnding": true
+    },
+    {
+      "routeId": "route_confession_unanswered",
+      "endingId": "ending_confession_unanswered",
+      "targetAge": 65,
+      "sceneId": "bridge_route_confession_unanswered",
+      "prerequisiteFlags": [
+        "confessed_at_exam",
+        "mina_distance"
+      ],
+      "earnedFlags": [
+        "respected_mina_boundary"
+      ],
+      "allFlagsNeeded": [
+        "confessed_at_exam",
+        "mina_distance",
+        "respected_mina_boundary"
+      ],
+      "exclusiveWithExistingEndingSelection": true,
+      "priority": "before generic old-age closure when conditions satisfied",
+      "requiresEngineMerge": true,
+      "gateChoiceMustBeExplicit": true,
+      "earliestSuitableAnchor": "post-audit/late-story conditional gateway",
+      "noAutoEnding": true
+    },
+    {
+      "routeId": "route_common_enemy",
+      "endingId": "ending_common_enemy",
+      "targetAge": 60,
+      "sceneId": "bridge_route_common_enemy",
+      "prerequisiteFlags": [
+        "refused_exam"
+      ],
+      "earnedFlags": [
+        "mina_testified_truthfully",
+        "joint_public_evidence"
+      ],
+      "allFlagsNeeded": [
+        "refused_exam",
+        "mina_testified_truthfully",
+        "joint_public_evidence"
+      ],
+      "exclusiveWithExistingEndingSelection": true,
+      "priority": "before generic old-age closure when conditions satisfied",
+      "requiresEngineMerge": true,
+      "gateChoiceMustBeExplicit": true,
+      "earliestSuitableAnchor": "post-audit/late-story conditional gateway",
+      "noAutoEnding": true
+    },
+    {
+      "routeId": "route_double_license",
+      "endingId": "ending_double_license",
+      "targetAge": 36,
+      "sceneId": "bridge_route_double_license",
+      "prerequisiteFlags": [
+        "mina_rival_promise",
+        "refused_exam"
+      ],
+      "earnedFlags": [
+        "hero_license_earned_legally"
+      ],
+      "allFlagsNeeded": [
+        "mina_rival_promise",
+        "refused_exam",
+        "hero_license_earned_legally"
+      ],
+      "exclusiveWithExistingEndingSelection": true,
+      "priority": "before generic old-age closure when conditions satisfied",
+      "requiresEngineMerge": true,
+      "gateChoiceMustBeExplicit": true,
+      "earliestSuitableAnchor": "post-audit/late-story conditional gateway",
+      "noAutoEnding": true
+    },
+    {
+      "routeId": "route_retirement_47",
+      "endingId": "ending_retirement_47",
+      "targetAge": 47,
+      "sceneId": "bridge_route_retirement_47",
+      "prerequisiteFlags": [
+        "birth_wage_claim"
+      ],
+      "earnedFlags": [
+        "claimed_service_years",
+        "rejected_50000_settlement"
+      ],
+      "allFlagsNeeded": [
+        "birth_wage_claim",
+        "claimed_service_years",
+        "rejected_50000_settlement"
+      ],
+      "exclusiveWithExistingEndingSelection": true,
+      "priority": "before generic old-age closure when conditions satisfied",
+      "requiresEngineMerge": true,
+      "gateChoiceMustBeExplicit": true,
+      "earliestSuitableAnchor": "post-audit/late-story conditional gateway",
+      "noAutoEnding": true
+    },
+    {
+      "routeId": "route_paid_defeat",
+      "endingId": "ending_paid_defeat",
+      "targetAge": 54,
+      "sceneId": "bridge_route_paid_defeat",
+      "prerequisiteFlags": [
+        "asked_fee"
+      ],
+      "earnedFlags": [
+        "licensed_defeat_show",
+        "no_real_injury_policy"
+      ],
+      "allFlagsNeeded": [
+        "asked_fee",
+        "licensed_defeat_show",
+        "no_real_injury_policy"
+      ],
+      "exclusiveWithExistingEndingSelection": true,
+      "priority": "before generic old-age closure when conditions satisfied",
+      "requiresEngineMerge": true,
+      "gateChoiceMustBeExplicit": true,
+      "earliestSuitableAnchor": "post-audit/late-story conditional gateway",
+      "noAutoEnding": true
+    },
+    {
+      "routeId": "route_taxpayer",
+      "endingId": "ending_taxpayer",
+      "targetAge": 65,
+      "sceneId": "bridge_route_taxpayer",
+      "prerequisiteFlags": [
+        "asked_fee"
+      ],
+      "earnedFlags": [
+        "honest_business_books",
+        "paid_taxes_years"
+      ],
+      "allFlagsNeeded": [
+        "asked_fee",
+        "honest_business_books",
+        "paid_taxes_years"
+      ],
+      "exclusiveWithExistingEndingSelection": true,
+      "priority": "before generic old-age closure when conditions satisfied",
+      "requiresEngineMerge": true,
+      "gateChoiceMustBeExplicit": true,
+      "earliestSuitableAnchor": "post-audit/late-story conditional gateway",
+      "noAutoEnding": true
+    },
+    {
+      "routeId": "route_king",
+      "endingId": "ending_king",
+      "targetAge": 60,
+      "sceneId": "bridge_route_king",
+      "prerequisiteFlags": [
+        "princess_ally"
+      ],
+      "earnedFlags": [
+        "constitutional_succession",
+        "public_consent",
+        "elysia_equal_partner"
+      ],
+      "allFlagsNeeded": [
+        "princess_ally",
+        "constitutional_succession",
+        "public_consent",
+        "elysia_equal_partner"
+      ],
+      "exclusiveWithExistingEndingSelection": true,
+      "priority": "before generic old-age closure when conditions satisfied",
+      "requiresEngineMerge": true,
+      "gateChoiceMustBeExplicit": true,
+      "earliestSuitableAnchor": "post-audit/late-story conditional gateway",
+      "noAutoEnding": true
+    },
+    {
+      "routeId": "route_bankrupt",
+      "endingId": "ending_bankrupt",
+      "targetAge": 60,
+      "sceneId": "bridge_route_bankrupt",
+      "prerequisiteFlags": [
+        "public_audit"
+      ],
+      "earnedFlags": [
+        "class_action_win",
+        "evidence_preserved",
+        "rejected_private_buyout"
+      ],
+      "allFlagsNeeded": [
+        "public_audit",
+        "class_action_win",
+        "evidence_preserved",
+        "rejected_private_buyout"
+      ],
+      "exclusiveWithExistingEndingSelection": true,
+      "priority": "before generic old-age closure when conditions satisfied",
+      "requiresEngineMerge": true,
+      "gateChoiceMustBeExplicit": true,
+      "earliestSuitableAnchor": "post-audit/late-story conditional gateway",
+      "noAutoEnding": true
+    },
+    {
+      "routeId": "route_true_demon",
+      "endingId": "ending_true_demon",
+      "targetAge": 53,
+      "sceneId": "bridge_route_true_demon",
+      "prerequisiteFlags": [
+        "princess_ally",
+        "public_audit"
+      ],
+      "earnedFlags": [
+        "verified_experiment_receipts",
+        "sealed_gate_discovered"
+      ],
+      "allFlagsNeeded": [
+        "princess_ally",
+        "public_audit",
+        "verified_experiment_receipts",
+        "sealed_gate_discovered"
+      ],
+      "exclusiveWithExistingEndingSelection": true,
+      "priority": "before generic old-age closure when conditions satisfied",
+      "requiresEngineMerge": true,
+      "gateChoiceMustBeExplicit": true,
+      "earliestSuitableAnchor": "post-audit/late-story conditional gateway",
+      "noAutoEnding": true
+    },
+    {
+      "routeId": "route_mother_petition",
+      "endingId": "ending_mother_petition",
+      "targetAge": 65,
+      "sceneId": "bridge_route_mother_petition",
+      "prerequisiteFlags": [
+        "birth_appealed"
+      ],
+      "earnedFlags": [
+        "kept_family_petition",
+        "pursued_name_restoration"
+      ],
+      "allFlagsNeeded": [
+        "birth_appealed",
+        "kept_family_petition",
+        "pursued_name_restoration"
+      ],
+      "exclusiveWithExistingEndingSelection": true,
+      "priority": "before generic old-age closure when conditions satisfied",
+      "requiresEngineMerge": true,
+      "gateChoiceMustBeExplicit": true,
+      "earliestSuitableAnchor": "post-audit/late-story conditional gateway",
+      "noAutoEnding": true
+    }
+  ]
+}

@@ -1,0 +1,937 @@
+[WebServer] (node:78956) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30476) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 34 tests using 1 worker
+
+(node:80028) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   1 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_1: 전용나이·결과·저장·후속사건 (2.7s)
+(node:88604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   2 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_2: 전용나이·결과·저장·후속사건 (2.4s)
+(node:84068) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   3 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_3: 전용나이·결과·저장·후속사건 (2.9s)
+(node:81504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   4 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_1: 전용나이·결과·저장·후속사건 (3.6s)
+(node:89164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   5 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_2: 전용나이·결과·저장·후속사건 (3.0s)
+(node:62840) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   6 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_3: 전용나이·결과·저장·후속사건 (3.4s)
+(node:89732) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   7 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_1: 전용나이·결과·저장·후속사건 (4.5s)
+(node:87352) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   8 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_2: 전용나이·결과·저장·후속사건 (4.3s)
+(node:89268) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x   9 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_3: 전용나이·결과·저장·후속사건 (3.7s)
+(node:89624) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  10 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_1: 전용나이·결과·저장·후속사건 (3.2s)
+(node:88100) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  11 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_2: 전용나이·결과·저장·후속사건 (3.3s)
+(node:68644) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  12 [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_3: 전용나이·결과·저장·후속사건 (3.3s)
+(node:87804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 13 [PC] › tests\e2e\v45-compact.spec.ts:42:1 › v4.5 연간 기록은1~11세 한줄씩 자동/클릭 표시하고 선택/효과 없이12세 실제사건으로 이어진다 (2.8s)
+  ok 14 [PC] › tests\e2e\v45-compact.spec.ts:56:1 › v4.5 검수CG는출생·공개재판에맞게연결되고회상문장은실제선택한하나만표시한다 (2.5s)
+  ok 15 [PC] › tests\e2e\v45-compact.spec.ts:69:55 › v4.5 왕궁CG/bring_mina: 실제동행결과에만한번표시 (2.1s)
+  ok 16 [PC] › tests\e2e\v45-compact.spec.ts:69:55 › v4.5 왕궁CG/accept_invite: 실제동행결과에만한번표시 (1.8s)
+  ok 17 [PC] › tests\e2e\v45-compact.spec.ts:81:1 › v4.5 주마등은실제방문·선택·고유그림만사용하고SVG는렌더링하지않는다 (3.1s)
+(node:85644) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  18 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_1: 전용나이·결과·저장·후속사건 (1.9s)
+(node:89800) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  19 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_2: 전용나이·결과·저장·후속사건 (1.8s)
+(node:85596) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  20 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_3: 전용나이·결과·저장·후속사건 (2.0s)
+(node:90060) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  21 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_1: 전용나이·결과·저장·후속사건 (2.7s)
+(node:87096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  22 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_2: 전용나이·결과·저장·후속사건 (2.7s)
+(node:89948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  23 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_3: 전용나이·결과·저장·후속사건 (3.9s)
+(node:89640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  24 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_1: 전용나이·결과·저장·후속사건 (3.9s)
+(node:88464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  25 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_2: 전용나이·결과·저장·후속사건 (4.5s)
+(node:89760) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  26 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_3: 전용나이·결과·저장·후속사건 (3.7s)
+(node:88084) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  27 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_1: 전용나이·결과·저장·후속사건 (3.9s)
+(node:84112) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  28 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_2: 전용나이·결과·저장·후속사건 (3.6s)
+(node:86976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  29 [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_3: 전용나이·결과·저장·후속사건 (4.4s)
+(node:88736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 30 [모바일-320] › tests\e2e\v45-compact.spec.ts:42:1 › v4.5 연간 기록은1~11세 한줄씩 자동/클릭 표시하고 선택/효과 없이12세 실제사건으로 이어진다 (3.0s)
+  ok 31 [모바일-320] › tests\e2e\v45-compact.spec.ts:56:1 › v4.5 검수CG는출생·공개재판에맞게연결되고회상문장은실제선택한하나만표시한다 (2.4s)
+  ok 32 [모바일-320] › tests\e2e\v45-compact.spec.ts:69:55 › v4.5 왕궁CG/bring_mina: 실제동행결과에만한번표시 (2.2s)
+  ok 33 [모바일-320] › tests\e2e\v45-compact.spec.ts:69:55 › v4.5 왕궁CG/accept_invite: 실제동행결과에만한번표시 (1.9s)
+  ok 34 [모바일-320] › tests\e2e\v45-compact.spec.ts:81:1 › v4.5 주마등은실제방문·선택·고유그림만사용하고SVG는렌더링하지않는다 (3.3s)
+
+
+  1) [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_1: 전용나이·결과·저장·후속사건 ──
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "여섯 살의 납세 고지서"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">여섯 살의 납세 고지서</h2> aka getByRole('heading', { name: '여섯 살의 납세 고지서' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#current-event h2')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-1-전용나이·결과·저장·후속사건-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-1-전용나이·결과·저장·후속사건-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-1-전용나이·결과·저장·후속사건-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_2: 전용나이·결과·저장·후속사건 ──
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "여섯 살의 납세 고지서"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">여섯 살의 납세 고지서</h2> aka getByRole('heading', { name: '여섯 살의 납세 고지서' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#current-event h2')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-2-전용나이·결과·저장·후속사건-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-2-전용나이·결과·저장·후속사건-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-2-전용나이·결과·저장·후속사건-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_3: 전용나이·결과·저장·후속사건 ──
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "여섯 살의 납세 고지서"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">여섯 살의 납세 고지서</h2> aka getByRole('heading', { name: '여섯 살의 납세 고지서' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#current-event h2')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-3-전용나이·결과·저장·후속사건-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-3-전용나이·결과·저장·후속사건-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-3-전용나이·결과·저장·후속사건-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_1: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "다리 위의 오래된 친구"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">다리 위의 오래된 친구</h2> aka getByRole('heading', { name: '다리 위의 오래된 친구' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#current-event h2')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-mina-ae5e2-na-bridge-1-전용나이·결과·저장·후속사건-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-mina-ae5e2-na-bridge-1-전용나이·결과·저장·후속사건-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-mina-ae5e2-na-bridge-1-전용나이·결과·저장·후속사건-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_2: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "다리 위의 오래된 친구"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">다리 위의 오래된 친구</h2> aka getByRole('heading', { name: '다리 위의 오래된 친구' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#current-event h2')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-mina-b77a1-na-bridge-2-전용나이·결과·저장·후속사건-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-mina-b77a1-na-bridge-2-전용나이·결과·저장·후속사건-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-mina-b77a1-na-bridge-2-전용나이·결과·저장·후속사건-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_3: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "다리 위의 오래된 친구"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">다리 위의 오래된 친구</h2> aka getByRole('heading', { name: '다리 위의 오래된 친구' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#current-event h2')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-mina-a0108-na-bridge-3-전용나이·결과·저장·후속사건-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-mina-a0108-na-bridge-3-전용나이·결과·저장·후속사건-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-mina-a0108-na-bridge-3-전용나이·결과·저장·후속사건-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_1: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "또 다른 마왕 아이"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">또 다른 마왕 아이</h2> aka getByRole('heading', { name: '또 다른 마왕 아이' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#current-event h2')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-orph-f3ac2--registry-1-전용나이·결과·저장·후속사건-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-orph-f3ac2--registry-1-전용나이·결과·저장·후속사건-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-orph-f3ac2--registry-1-전용나이·결과·저장·후속사건-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_2: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "또 다른 마왕 아이"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">또 다른 마왕 아이</h2> aka getByRole('heading', { name: '또 다른 마왕 아이' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#current-event h2')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-orph-0da79--registry-2-전용나이·결과·저장·후속사건-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-orph-0da79--registry-2-전용나이·결과·저장·후속사건-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-orph-0da79--registry-2-전용나이·결과·저장·후속사건-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_3: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "또 다른 마왕 아이"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">또 다른 마왕 아이</h2> aka getByRole('heading', { name: '또 다른 마왕 아이' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-orph-072cc--registry-3-전용나이·결과·저장·후속사건-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-orph-072cc--registry-3-전용나이·결과·저장·후속사건-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-orph-072cc--registry-3-전용나이·결과·저장·후속사건-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_1: 전용나이·결과·저장·후속사건 ───
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "미나의 낡은 검"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">미나의 낡은 검</h2> aka getByRole('heading', { name: '미나의 낡은 검' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-1-전용나이·결과·저장·후속사건-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-1-전용나이·결과·저장·후속사건-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-1-전용나이·결과·저장·후속사건-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_2: 전용나이·결과·저장·후속사건 ───
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "미나의 낡은 검"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">미나의 낡은 검</h2> aka getByRole('heading', { name: '미나의 낡은 검' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-2-전용나이·결과·저장·후속사건-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-2-전용나이·결과·저장·후속사건-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-2-전용나이·결과·저장·후속사건-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_3: 전용나이·결과·저장·후속사건 ───
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "미나의 낡은 검"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">미나의 낡은 검</h2> aka getByRole('heading', { name: '미나의 낡은 검' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-3-전용나이·결과·저장·후속사건-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-3-전용나이·결과·저장·후속사건-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-3-전용나이·결과·저장·후속사건-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_1: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "여섯 살의 납세 고지서"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">여섯 살의 납세 고지서</h2> aka getByRole('heading', { name: '여섯 살의 납세 고지서' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-1-전용나이·결과·저장·후속사건-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-1-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-1-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_2: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "여섯 살의 납세 고지서"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">여섯 살의 납세 고지서</h2> aka getByRole('heading', { name: '여섯 살의 납세 고지서' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-2-전용나이·결과·저장·후속사건-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-2-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-2-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_3: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "여섯 살의 납세 고지서"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">여섯 살의 납세 고지서</h2> aka getByRole('heading', { name: '여섯 살의 납세 고지서' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-3-전용나이·결과·저장·후속사건-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-3-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-birth-tax-birth-tax-3-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  16) [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_1: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "다리 위의 오래된 친구"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">다리 위의 오래된 친구</h2> aka getByRole('heading', { name: '다리 위의 오래된 친구' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-mina-ae5e2-na-bridge-1-전용나이·결과·저장·후속사건-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-mina-ae5e2-na-bridge-1-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-mina-ae5e2-na-bridge-1-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  17) [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_2: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "다리 위의 오래된 친구"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">다리 위의 오래된 친구</h2> aka getByRole('heading', { name: '다리 위의 오래된 친구' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-mina-b77a1-na-bridge-2-전용나이·결과·저장·후속사건-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-mina-b77a1-na-bridge-2-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-mina-b77a1-na-bridge-2-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  18) [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_3: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "다리 위의 오래된 친구"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">다리 위의 오래된 친구</h2> aka getByRole('heading', { name: '다리 위의 오래된 친구' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-mina-a0108-na-bridge-3-전용나이·결과·저장·후속사건-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-mina-a0108-na-bridge-3-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-mina-a0108-na-bridge-3-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  19) [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_1: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "또 다른 마왕 아이"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">또 다른 마왕 아이</h2> aka getByRole('heading', { name: '또 다른 마왕 아이' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-orph-f3ac2--registry-1-전용나이·결과·저장·후속사건-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-orph-f3ac2--registry-1-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-orph-f3ac2--registry-1-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20) [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_2: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "또 다른 마왕 아이"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">또 다른 마왕 아이</h2> aka getByRole('heading', { name: '또 다른 마왕 아이' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-orph-0da79--registry-2-전용나이·결과·저장·후속사건-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-orph-0da79--registry-2-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-orph-0da79--registry-2-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  21) [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_3: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "또 다른 마왕 아이"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">또 다른 마왕 아이</h2> aka getByRole('heading', { name: '또 다른 마왕 아이' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-orph-072cc--registry-3-전용나이·결과·저장·후속사건-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-orph-072cc--registry-3-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-orph-072cc--registry-3-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  22) [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_1: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "미나의 낡은 검"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">미나의 낡은 검</h2> aka getByRole('heading', { name: '미나의 낡은 검' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-1-전용나이·결과·저장·후속사건-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-1-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-1-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  23) [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_2: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "미나의 낡은 검"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">미나의 낡은 검</h2> aka getByRole('heading', { name: '미나의 낡은 검' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-2-전용나이·결과·저장·후속사건-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-2-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-2-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  24) [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_3: 전용나이·결과·저장·후속사건 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: locator('#current-event h2')
+    Expected: "미나의 낡은 검"
+    Error: strict mode violation: locator('#current-event h2') resolved to 2 elements:
+        1) <h2 tabindex="-1" id="scene-title">미나의 낡은 검</h2> aka getByRole('heading', { name: '미나의 낡은 검' })
+        2) <h2 id="choice-title" class="choice-prompt">어떻게 행동할까?</h2> aka getByRole('heading', { name: '어떻게 행동할까?' })
+
+    Call log:
+      - Expect "toHaveText" locator('#current-event h2') with timeout 5000ms
+      - waiting for locator('#current-event h2')
+
+
+      29 |     const state = await page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
+      30 |     expect(state.currentNodeId).toBe(item.id); expect(state.age).toBe(item.age);
+    > 31 |     await expect(page.locator('#scene-title')).toHaveText(chapter.nodes.find((node: { id: string }) => node.id === item.id).title);
+         |                                                     ^
+      32 |     await expect(page.locator('[data-choice]')).toHaveCount(3);
+      33 |     await pick(page, selected.id, false);
+      34 |     await expect(page.locator('.aftermath-prose .story-paragraph')).toHaveText(selected.outcomes[0].narrative.split(/\n\s*\n/));
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\v45-compact.spec.ts:31:53
+
+    Error Context: test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-3-전용나이·결과·저장·후속사건-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-3-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\v45-compact-v4-5-실제확장-old-mina-old-mina-3-전용나이·결과·저장·후속사건-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  24 failed
+    [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_1: 전용나이·결과·저장·후속사건 ───
+    [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_2: 전용나이·결과·저장·후속사건 ───
+    [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_3: 전용나이·결과·저장·후속사건 ───
+    [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_1: 전용나이·결과·저장·후속사건 
+    [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_2: 전용나이·결과·저장·후속사건 
+    [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_3: 전용나이·결과·저장·후속사건 
+    [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_1: 전용나이·결과·저장·후속사건 
+    [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_2: 전용나이·결과·저장·후속사건 
+    [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_3: 전용나이·결과·저장·후속사건 
+    [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_1: 전용나이·결과·저장·후속사건 ─────
+    [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_2: 전용나이·결과·저장·후속사건 ─────
+    [PC] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_3: 전용나이·결과·저장·후속사건 ─────
+    [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_1: 전용나이·결과·저장·후속사건 
+    [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_2: 전용나이·결과·저장·후속사건 
+    [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_3: 전용나이·결과·저장·후속사건 
+    [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_1: 전용나이·결과·저장·후속사건 
+    [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_2: 전용나이·결과·저장·후속사건 
+    [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_3: 전용나이·결과·저장·후속사건 
+    [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_1: 전용나이·결과·저장·후속사건 
+    [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_2: 전용나이·결과·저장·후속사건 
+    [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_3: 전용나이·결과·저장·후속사건 
+    [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_1: 전용나이·결과·저장·후속사건 
+    [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_2: 전용나이·결과·저장·후속사건 
+    [모바일-320] › tests\e2e\v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_3: 전용나이·결과·저장·후속사건 
+  10 passed (2.8m)

@@ -32,7 +32,7 @@ try {
     expect(new URL(result.source).pathname.startsWith(`${target.pathname}assets/`)).toBe(true);
     expect(result.width).toBeLessThanOrEqual(result.naturalWidth + 1); expect(result.fit).toBe('contain'); expect(responses.get(result.source)).toBe(200);
     await expect(frame.locator('.ending-detail svg')).toHaveCount(0);
-    await page.screenshot({ path: `docs/v4.4/embed-${name}.png`, animations: 'disabled' });
+    await page.screenshot({ path: `${process.env.EVIDENCE_DIR || 'docs/v4.4'}/embed-${name}.png`, animations: 'disabled' });
     console.log(`${name} ${width}×${height}: 다른 출처의 블로그형 iframe → 게임 자체 배포 경로에서 WebP HTTP200/원본 크기/contain 확인 (${result.source})`);
     await page.close();
   }

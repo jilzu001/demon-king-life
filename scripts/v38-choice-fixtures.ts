@@ -21,7 +21,7 @@ while (queue.length) {
 console.log(JSON.stringify(Object.values(audited.nodes).map(node => ({
   id: node.id, state: states[node.id], choices: node.choices.map(choice => {
     const next = choose(current, states[node.id]!, node.id, choice.id).nextState;
-    const outcome = choice.outcomes.find(o => o.id === next.history.at(-1)!.outcomeId)!;
+    const outcome = current.nodes[node.id]!.choices.find(c => c.id === choice.id)!.outcomes.find(o => o.id === next.history.at(-1)!.outcomeId)!;
     return { id: choice.id, text: choice.text, description: choice.description, next, narrative: outcome.narrative };
   }),
 }))));

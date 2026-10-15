@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "version": "4.5",
+  "status": "integration-required",
+  "rule": "Append each memory line only if the named core node was actually visited in the current run AND all required flags hold; do not turn echo into a separate choice/event; display after body before choices, at most one echo per event unless user chooses full narrative mode.",
+  "echoes": [
+    {
+      "id": "echo_birth_appealed_hearing",
+      "targetNodeId": "hearing",
+      "allFlags": [
+        "birth_appealed"
+      ],
+      "text": "재판정 문 앞에서 어머니가 첫해에 냈던 이의신청서를 펼쳤다. 그때 찍힌 반려 도장은 오늘까지도 유효한 증거였다.",
+      "oncePerRun": true,
+      "maxPerScene": 1
+    },
+    {
+      "id": "echo_wage_settlement",
+      "targetNodeId": "settlement",
+      "allFlags": [
+        "birth_wage_claim"
+      ],
+      "text": "아버지가 신생아의 임금을 청구했던 사건번호가 떠올랐다. 나라가 마왕의 업무를 부정하면서도 예산을 편성했다는 모순은 그때부터 시작됐다.",
+      "oncePerRun": true,
+      "maxPerScene": 1
+    },
+    {
+      "id": "echo_subsidy_settlement",
+      "targetNodeId": "settlement",
+      "allFlags": [
+        "subsidy_family"
+      ],
+      "text": "지붕 수리에 썼던 첫 보호금 영수증이 생각났다. 부모가 먹고살기 위해 받은 돈을 이유로 가족의 잘못을 대신 적게 두고 싶지 않았다.",
+      "oncePerRun": true,
+      "maxPerScene": 1
+    },
+    {
+      "id": "echo_mina_trusted_exam",
+      "targetNodeId": "exam",
+      "allFlags": [
+        "mina_trusted"
+      ],
+      "text": "미나가 매년 생일에 건네던 붕대의 감촉이 떠올랐다. 신뢰가 시험 규정까지 지켜 주지는 못한다는 사실이 아팠다.",
+      "oncePerRun": true,
+      "maxPerScene": 1
+    },
+    {
+      "id": "echo_mina_pact_exam",
+      "targetNodeId": "exam",
+      "allFlags": [
+        "mina_safety_pact"
+      ],
+      "text": "어린 시절 둘이 쓴 안전협약에는 ‘혼자 도망치지 않을 것’이라고 적혀 있었다. 이제 시험관이 아니라 서로에게 그 약속을 설명해야 했다.",
+      "oncePerRun": true,
+      "maxPerScene": 1
+    },
+    {
+      "id": "echo_mina_rival_exam",
+      "targetNodeId": "exam",
+      "allFlags": [
+        "mina_rival_promise"
+      ],
+      "text": "미나에게 용사 경쟁을 선언했던 날이 떠올랐다. 경쟁이라고 부르기에는 전투력이 8,400이나 차이 났지만, 서로를 얕보지 않겠다는 약속만은 진심이었다.",
+      "oncePerRun": true,
+      "maxPerScene": 1
+    },
+    {
+      "id": "echo_fee_audit",
+      "targetNodeId": "audit",
+      "allFlags": [
+        "asked_fee"
+      ],
+      "text": "스무 살의 출연료 청구서가 장부 사이에 끼워져 있었다. 당신이 요구한 200골드조차 국가의 큰 회계 항목에는 기록되지 않았다.",
+      "oncePerRun": true,
+      "maxPerScene": 1
+    },
+    {
+      "id": "echo_mina_distance_hearing",
+      "targetNodeId": "hearing",
+      "allFlags": [
+        "mina_distance"
+      ],
+      "text": "미나는 사적으로 멀어진 뒤에도 증언 요청에 응했다. 당신은 그 태도가 화해나 사랑의 약속이 아니라, 사실을 사실대로 말하려는 책임이라는 걸 알았다.",
+      "oncePerRun": true,
+      "maxPerScene": 1
+    },
+    {
+      "id": "echo_mina_confession_princess",
+      "targetNodeId": "princess",
+      "allFlags": [
+        "confessed_at_exam"
+      ],
+      "text": "고백이 시험을 중단시켰던 그날을 떠올렸다. 국가가 만든 문제 앞에서 한 인간의 마음까지 이용해선 안 된다는 생각이 들었다.",
+      "oncePerRun": true,
+      "maxPerScene": 1
+    },
+    {
+      "id": "echo_public_audit_hearing",
+      "targetNodeId": "hearing",
+      "allFlags": [
+        "public_audit"
+      ],
+      "text": "공개 감사를 요구할 때 당신이 가장 먼저 쓴 단어는 ‘확인’이었다. 차액이 크다고 횡령을 단정하지 않겠다는 원칙은 오늘도 변하지 않았다.",
+      "oncePerRun": true,
+      "maxPerScene": 1
+    },
+    {
+      "id": "echo_took_money_quiet",
+      "targetNodeId": "quiet",
+      "allFlags": [
+        "took_settlement"
+      ],
+      "text": "합의금이 없었다면 이 가게도 없었을 것이다. 당신은 그 사실과 합의한 대가로 포기한 권리가 있다는 사실을 동시에 인정했다.",
+      "oncePerRun": true,
+      "maxPerScene": 1
+    },
+    {
+      "id": "echo_office_birth",
+      "targetNodeId": "office",
+      "allFlags": [
+        "birth_appealed"
+      ],
+      "text": "상담소 서랍 맨 아래에는 어머니의 첫 이의신청서가 있었다. 그것은 이 건물에 도착한 가장 오래된 상담 신청이었다.",
+      "oncePerRun": true,
+      "maxPerScene": 1
+    }
+  ]
+}

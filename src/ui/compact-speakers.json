@@ -12,38 +12,28 @@
       "speaker": "mina"
     },
     {
-      "index": 5,
-      "text": "“서류상 마왕도 마왕이야. 용사 시험 설명서에 그렇게 써 있어.”",
+      "index": 6,
+      "text": "“시험 규정에는 마왕을 제압해야 한다고 써 있어.”",
       "speaker": "mina"
     },
     {
-      "index": 7,
-      "text": "“전투력 2.”",
+      "index": 8,
+      "text": "“그런 꿈은 아니었어.”",
       "speaker": "mina"
     },
     {
-      "index": 9,
-      "text": "“측정했어. 내 건 8,402.”",
+      "index": 10,
+      "text": "“다시.”",
       "speaker": "mina"
     },
     {
       "index": 12,
-      "text": "“네가 칼을 놓친 거지.”",
+      "text": "“칼도 네가 싫어서 그런 건 아닐걸.”",
       "speaker": "mina"
     },
     {
       "index": 14,
-      "text": "“내가 용사가 되면,”",
-      "speaker": "mina"
-    },
-    {
-      "index": 16,
-      "text": "“널 안 죽이는 방법을 찾아볼게.”",
-      "speaker": "mina"
-    },
-    {
-      "index": 18,
-      "text": "“시험에 나와.”",
+      "text": "“내가 용사가 되면 널 다치게 하지 않을 방법을 찾을게.”",
       "speaker": "mina"
     }
   ],
@@ -67,7 +57,18 @@
     }
   ],
   "petition": [],
-  "invoice": [],
+  "invoice": [
+    {
+      "index": 10,
+      "text": "“가지 마. 경호병 여덟 명이 배정됐어.”",
+      "speaker": "mina"
+    },
+    {
+      "index": 12,
+      "text": "“네가 도망 못 가게 하려는 거야.”",
+      "speaker": "mina"
+    }
+  ],
   "princess": [
     {
       "index": 1,

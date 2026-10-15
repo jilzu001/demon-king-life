@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "status": "integration-required",
+  "annualFrequencyRule": "at most 1 optional new ending-related decision event per age, zero if none eligible",
+  "scenes": [
+    {
+      "id": "setup_route_mina_renounced",
+      "kind": "conditional-optional-event",
+      "age": 29,
+      "title": "합격증 대신 지킬 곳",
+      "body": "미나는 합격장을 다시 받지 못했다. 대신 전쟁 피해자를 돌보는 구호소를 열겠다고 했다. 당신이 서류를 확인하자 자격 요건란에 다시 「마왕 관계자 출입 제한」이 적혀 있었다. 미나는 웃었다. “또 같이 싸울래?”",
+      "chronicleSummary": "합격증 대신 지킬 곳과 관련된 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "confessed_at_exam",
+          "confession_sincere",
+          "mina_mutual_respect"
+        ],
+        "unlessAlreadyEnded": true
+      },
+      "choices": [
+        {
+          "id": "commit_route_mina_renounced",
+          "text": "미나가 독립적으로 선택한 구호소를 도우며 정부의 부당한 방해에 맞선다.",
+          "narrative": "당신은 훗날 이 결정을 잊지 않으려고 한 줄로 기록해 뒀다. 처음에는 작아 보였지만, 세월이 그 뒤에 쌓일 터였다.",
+          "addFlags": [
+            "supported_mina_after_exam",
+            "defended_mina_independence"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        },
+        {
+          "id": "decline_route_mina_renounced",
+          "text": "미나가 요청한 만큼만 돕고 각자의 생활로 돌아간다.",
+          "narrative": "당신은 다른 길도 살아 볼 가치가 있다는 것을 알고 있었다. 이 선택을 실패라고 부를 필요는 없었다.",
+          "addFlags": [
+            "declined_route_mina_renounced"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        }
+      ],
+      "implementationStatus": "needs_codex_conditional_scheduler"
+    },
+    {
+      "id": "setup_route_mina_wedding",
+      "kind": "conditional-optional-event",
+      "age": 47,
+      "title": "고백의 대답은 계약이 아니다",
+      "body": "오랜 시간이 흘렀다. 미나는 먼저 당신을 찾아와 자신에게 중요한 사람이 되어 주었다고 말했다. 당신은 혹시 그 말에 의무가 섞여 있는지 물었다. “의무였으면 진작에 그만뒀지.” 미나가 답했다.",
+      "chronicleSummary": "고백의 대답은 계약이 아니다과 관련된 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "confessed_at_exam",
+          "confession_sincere",
+          "mina_mutual_respect"
+        ],
+        "unlessAlreadyEnded": true
+      },
+      "choices": [
+        {
+          "id": "commit_route_mina_wedding",
+          "text": "서로 동등하게 관계를 선택하고 오랫동안 함께 살아갈지 확인한다.",
+          "narrative": "당신은 훗날 이 결정을 잊지 않으려고 한 줄로 기록해 뒀다. 처음에는 작아 보였지만, 세월이 그 뒤에 쌓일 터였다.",
+          "addFlags": [
+            "mina_explicit_reciprocity",
+            "years_of_mutual_trust"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        },
+        {
+          "id": "decline_route_mina_wedding",
+          "text": "서로 소중하다는 마음만 확인하고 관계의 이름은 정하지 않는다.",
+          "narrative": "당신은 다른 길도 살아 볼 가치가 있다는 것을 알고 있었다. 이 선택을 실패라고 부를 필요는 없었다.",
+          "addFlags": [
+            "declined_route_mina_wedding"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        }
+      ],
+      "implementationStatus": "needs_codex_conditional_scheduler"
+    },
+    {
+      "id": "setup_route_confession_unanswered",
+      "kind": "conditional-optional-event",
+      "age": 29,
+      "title": "답장을 재촉하지 않기",
+      "body": "왕국의 신문은 아직도 시험장 고백을 흉내 냈다. 당신은 미나의 이름이 기사에 나올 때마다 불편했다. 그녀가 원한 것은 조용히 자기 인생을 살아갈 권리였다.",
+      "chronicleSummary": "답장을 재촉하지 않기과 관련된 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "confessed_at_exam",
+          "mina_distance"
+        ],
+        "unlessAlreadyEnded": true
+      },
+      "choices": [
+        {
+          "id": "commit_route_confession_unanswered",
+          "text": "미나에게 대답을 요구하지 않고 오래된 기사 정정을 요청한다.",
+          "narrative": "당신은 훗날 이 결정을 잊지 않으려고 한 줄로 기록해 뒀다. 처음에는 작아 보였지만, 세월이 그 뒤에 쌓일 터였다.",
+          "addFlags": [
+            "respected_mina_boundary"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        },
+        {
+          "id": "decline_route_confession_unanswered",
+          "text": "서로의 안부를 묻되 과거 이야기는 굳이 꺼내지 않는다.",
+          "narrative": "당신은 다른 길도 살아 볼 가치가 있다는 것을 알고 있었다. 이 선택을 실패라고 부를 필요는 없었다.",
+          "addFlags": [
+            "declined_route_confession_unanswered"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        }
+      ],
+      "implementationStatus": "needs_codex_conditional_scheduler"
+    },
+    {
+      "id": "setup_route_common_enemy",
+      "kind": "conditional-optional-event",
+      "age": 41,
+      "title": "서로 다른 증언",
+      "body": "감사관은 시험장의 녹취와 미나의 증언이 서로 다른 방향을 가리킨다고 했다. 당신은 속으로 오래된 원망이 고개를 드는 걸 느꼈다. 미나는 그날 자신이 두려웠다는 사실을 처음 인정했다.",
+      "chronicleSummary": "서로 다른 증언과 관련된 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "refused_exam"
+        ],
+        "unlessAlreadyEnded": true
+      },
+      "choices": [
+        {
+          "id": "commit_route_common_enemy",
+          "text": "증언을 비교하고 함께 동의서 부재를 밝혀 공개한다.",
+          "narrative": "당신은 훗날 이 결정을 잊지 않으려고 한 줄로 기록해 뒀다. 처음에는 작아 보였지만, 세월이 그 뒤에 쌓일 터였다.",
+          "addFlags": [
+            "mina_testified_truthfully",
+            "joint_public_evidence"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        },
+        {
+          "id": "decline_route_common_enemy",
+          "text": "각자의 증언을 남기되 공동 발표는 거절한다.",
+          "narrative": "당신은 다른 길도 살아 볼 가치가 있다는 것을 알고 있었다. 이 선택을 실패라고 부를 필요는 없었다.",
+          "addFlags": [
+            "declined_route_common_enemy"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        }
+      ],
+      "implementationStatus": "needs_codex_conditional_scheduler"
+    },
+    {
+      "id": "setup_route_double_license",
+      "kind": "conditional-optional-event",
+      "age": 29,
+      "title": "전투력보다 큰 응시 요건",
+      "body": "용사 자격시험 개정 공고에는 ‘전투력 부족자는 행정 구제 실기 대체 가능’이라는 조항이 새로 생겼다. 당신은 전투력 2가 줄곧 탈락 사유였다는 사실이 오히려 부당했다고 적었다.",
+      "chronicleSummary": "전투력보다 큰 응시 요건과 관련된 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "mina_rival_promise",
+          "refused_exam"
+        ],
+        "unlessAlreadyEnded": true
+      },
+      "choices": [
+        {
+          "id": "commit_route_double_license",
+          "text": "합법적 대체 실기를 준비해 용사 자격에 도전한다.",
+          "narrative": "당신은 훗날 이 결정을 잊지 않으려고 한 줄로 기록해 뒀다. 처음에는 작아 보였지만, 세월이 그 뒤에 쌓일 터였다.",
+          "addFlags": [
+            "hero_license_earned_legally"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        },
+        {
+          "id": "decline_route_double_license",
+          "text": "시험 제도의 모순만 기록하고 응시는 포기한다.",
+          "narrative": "당신은 다른 길도 살아 볼 가치가 있다는 것을 알고 있었다. 이 선택을 실패라고 부를 필요는 없었다.",
+          "addFlags": [
+            "declined_route_double_license"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        }
+      ],
+      "implementationStatus": "needs_codex_conditional_scheduler"
+    },
+    {
+      "id": "setup_route_retirement_47",
+      "kind": "conditional-optional-event",
+      "age": 47,
+      "title": "마왕도 근속연수를 셉니다",
+      "body": "국가가 마왕 등록을 정정하면서도 고용 사실은 부인했다. 당신은 출생 당일 아버지가 작성한 체불임금 신청서를 내밀었다. 위원회는 노동관계가 성립했는지 심리를 열겠다고 했다.",
+      "chronicleSummary": "마왕도 근속연수를 셉니다과 관련된 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "birth_wage_claim"
+        ],
+        "unlessAlreadyEnded": true
+      },
+      "choices": [
+        {
+          "id": "commit_route_retirement_47",
+          "text": "오만 골드 합의를 거절하고 47년 근속 기록의 인정부터 요구한다.",
+          "narrative": "당신은 훗날 이 결정을 잊지 않으려고 한 줄로 기록해 뒀다. 처음에는 작아 보였지만, 세월이 그 뒤에 쌓일 터였다.",
+          "addFlags": [
+            "claimed_service_years",
+            "rejected_50000_settlement"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        },
+        {
+          "id": "decline_route_retirement_47",
+          "text": "행정 소송을 보류하고 합의 가능성을 남긴다.",
+          "narrative": "당신은 다른 길도 살아 볼 가치가 있다는 것을 알고 있었다. 이 선택을 실패라고 부를 필요는 없었다.",
+          "addFlags": [
+            "declined_route_retirement_47"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        }
+      ],
+      "implementationStatus": "needs_codex_conditional_scheduler"
+    },
+    {
+      "id": "setup_route_paid_defeat",
+      "kind": "conditional-optional-event",
+      "age": 29,
+      "title": "유료 패배의 사업자등록",
+      "body": "사람을 시험 문제로 쓰는 국가고시가 사라지자 마을에서는 여전히 용사 놀이를 하고 싶어 했다. 당신은 스펀지 검과 안전 매트를 들고 사업자등록소를 찾아갔다.",
+      "chronicleSummary": "유료 패배의 사업자등록과 관련된 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "asked_fee"
+        ],
+        "unlessAlreadyEnded": true
+      },
+      "choices": [
+        {
+          "id": "commit_route_paid_defeat",
+          "text": "강요 없는 토벌 체험장을 정식 등록하고 안전 수칙을 만든다.",
+          "narrative": "당신은 훗날 이 결정을 잊지 않으려고 한 줄로 기록해 뒀다. 처음에는 작아 보였지만, 세월이 그 뒤에 쌓일 터였다.",
+          "addFlags": [
+            "licensed_defeat_show",
+            "no_real_injury_policy"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        },
+        {
+          "id": "decline_route_paid_defeat",
+          "text": "장터에서 일회성 공연만 하고 끝낸다.",
+          "narrative": "당신은 다른 길도 살아 볼 가치가 있다는 것을 알고 있었다. 이 선택을 실패라고 부를 필요는 없었다.",
+          "addFlags": [
+            "declined_route_paid_defeat"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        }
+      ],
+      "implementationStatus": "needs_codex_conditional_scheduler"
+    },
+    {
+      "id": "setup_route_taxpayer",
+      "kind": "conditional-optional-event",
+      "age": 41,
+      "title": "유일하게 정확한 장부",
+      "body": "감사관이 당신의 사업 장부를 훑었다. 국방부 장부보다 한참 작았지만 세금 영수증이 빠짐없이 있었다. “당신은 숫자를 안 숨기는군요.” 세렌이 말했다.",
+      "chronicleSummary": "유일하게 정확한 장부과 관련된 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "asked_fee"
+        ],
+        "unlessAlreadyEnded": true
+      },
+      "choices": [
+        {
+          "id": "commit_route_taxpayer",
+          "text": "영수증과 사업 장부를 공개하고 납세 기록을 꾸준히 남긴다.",
+          "narrative": "당신은 훗날 이 결정을 잊지 않으려고 한 줄로 기록해 뒀다. 처음에는 작아 보였지만, 세월이 그 뒤에 쌓일 터였다.",
+          "addFlags": [
+            "honest_business_books",
+            "paid_taxes_years"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        },
+        {
+          "id": "decline_route_taxpayer",
+          "text": "장부는 보존하되 공개 활동은 하지 않는다.",
+          "narrative": "당신은 다른 길도 살아 볼 가치가 있다는 것을 알고 있었다. 이 선택을 실패라고 부를 필요는 없었다.",
+          "addFlags": [
+            "declined_route_taxpayer"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        }
+      ],
+      "implementationStatus": "needs_codex_conditional_scheduler"
+    },
+    {
+      "id": "setup_route_king",
+      "kind": "conditional-optional-event",
+      "age": 47,
+      "title": "왕국을 대표할 사람이 없다",
+      "body": "왕실 개혁 협상에 참여한 당신에게 에리시아가 말했다. “이 나라는 왕관만 바꿔도 달라질까요?” 당신은 왕관을 오래 봤다. 자격 없는 사람에게 내일을 맡기는 것이 얼마나 무서운지 이미 알고 있었다.",
+      "chronicleSummary": "왕국을 대표할 사람이 없다과 관련된 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "princess_ally"
+        ],
+        "unlessAlreadyEnded": true
+      },
+      "choices": [
+        {
+          "id": "commit_route_king",
+          "text": "시민의회 승인과 권한 제한을 조건으로 임시 책임을 맡는다.",
+          "narrative": "당신은 훗날 이 결정을 잊지 않으려고 한 줄로 기록해 뒀다. 처음에는 작아 보였지만, 세월이 그 뒤에 쌓일 터였다.",
+          "addFlags": [
+            "constitutional_succession",
+            "public_consent",
+            "elysia_equal_partner"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        },
+        {
+          "id": "decline_route_king",
+          "text": "에리시아의 제안을 거절하고 감시자 자리에 남는다.",
+          "narrative": "당신은 다른 길도 살아 볼 가치가 있다는 것을 알고 있었다. 이 선택을 실패라고 부를 필요는 없었다.",
+          "addFlags": [
+            "declined_route_king"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        }
+      ],
+      "implementationStatus": "needs_codex_conditional_scheduler"
+    },
+    {
+      "id": "setup_route_bankrupt",
+      "kind": "conditional-optional-event",
+      "age": 47,
+      "title": "한 사람의 사건이 아니었다",
+      "body": "공개 감사로 피해자들이 하나둘 모였다. 당신보다 오래 등록된 사람도, 이름을 빼앗긴 아이도 있었다. 감사관은 개인 청구서 열 장을 하나로 합치려다 손을 멈췄다.",
+      "chronicleSummary": "한 사람의 사건이 아니었다과 관련된 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "public_audit"
+        ],
+        "unlessAlreadyEnded": true
+      },
+      "choices": [
+        {
+          "id": "commit_route_bankrupt",
+          "text": "피해자들의 동의를 얻어 공동 소송을 제기하고 증거를 보존한다.",
+          "narrative": "당신은 훗날 이 결정을 잊지 않으려고 한 줄로 기록해 뒀다. 처음에는 작아 보였지만, 세월이 그 뒤에 쌓일 터였다.",
+          "addFlags": [
+            "class_action_win",
+            "evidence_preserved",
+            "rejected_private_buyout"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        },
+        {
+          "id": "decline_route_bankrupt",
+          "text": "개별 구제에 집중하고 단체 소송은 추진하지 않는다.",
+          "narrative": "당신은 다른 길도 살아 볼 가치가 있다는 것을 알고 있었다. 이 선택을 실패라고 부를 필요는 없었다.",
+          "addFlags": [
+            "declined_route_bankrupt"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        }
+      ],
+      "implementationStatus": "needs_codex_conditional_scheduler"
+    },
+    {
+      "id": "setup_route_true_demon",
+      "kind": "conditional-optional-event",
+      "age": 47,
+      "title": "봉인 시설의 사용 내역",
+      "body": "특별관리 계정에서 나온 영수증 하나에 지하 시설의 이름이 찍혀 있었다. 세렌은 곧바로 횡령이라고 쓰지 못하게 했다. “아직 뭘 샀는지도 모르잖아요.” 당신은 미나와 함께 출입 기록부터 확인했다.",
+      "chronicleSummary": "봉인 시설의 사용 내역과 관련된 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "princess_ally",
+          "public_audit"
+        ],
+        "unlessAlreadyEnded": true
+      },
+      "choices": [
+        {
+          "id": "commit_route_true_demon",
+          "text": "증거를 보존하며 봉인 시설의 실체를 조사한다.",
+          "narrative": "당신은 훗날 이 결정을 잊지 않으려고 한 줄로 기록해 뒀다. 처음에는 작아 보였지만, 세월이 그 뒤에 쌓일 터였다.",
+          "addFlags": [
+            "verified_experiment_receipts",
+            "sealed_gate_discovered"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        },
+        {
+          "id": "decline_route_true_demon",
+          "text": "조사 기관에 알리고 위험 지역에는 접근하지 않는다.",
+          "narrative": "당신은 다른 길도 살아 볼 가치가 있다는 것을 알고 있었다. 이 선택을 실패라고 부를 필요는 없었다.",
+          "addFlags": [
+            "declined_route_true_demon"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        }
+      ],
+      "implementationStatus": "needs_codex_conditional_scheduler"
+    },
+    {
+      "id": "setup_route_mother_petition",
+      "kind": "conditional-optional-event",
+      "age": 41,
+      "title": "어머니가 보낸 등기",
+      "body": "기록 보관소에서 당신의 집으로 오래된 등기 사본이 왔다. 보낸 사람은 어머니였다. 서류는 반려됐지만 그날의 접수번호는 아직 살아 있었다.",
+      "chronicleSummary": "어머니가 보낸 등기과 관련된 선택을 했다.",
+      "conditions": {
+        "allFlags": [
+          "birth_appealed"
+        ],
+        "unlessAlreadyEnded": true
+      },
+      "choices": [
+        {
+          "id": "commit_route_mother_petition",
+          "text": "어머니가 남긴 진정서와 접수번호를 끝까지 보존한다.",
+          "narrative": "당신은 훗날 이 결정을 잊지 않으려고 한 줄로 기록해 뒀다. 처음에는 작아 보였지만, 세월이 그 뒤에 쌓일 터였다.",
+          "addFlags": [
+            "kept_family_petition",
+            "pursued_name_restoration"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        },
+        {
+          "id": "decline_route_mother_petition",
+          "text": "종이는 보관하되 정정 소송은 당분간 쉬기로 한다.",
+          "narrative": "당신은 다른 길도 살아 볼 가치가 있다는 것을 알고 있었다. 이 선택을 실패라고 부를 필요는 없었다.",
+          "addFlags": [
+            "declined_route_mother_petition"
+          ],
+          "continue": "resume-normal-yearly-flow"
+        }
+      ],
+      "implementationStatus": "needs_codex_conditional_scheduler"
+    }
+  ]
+}

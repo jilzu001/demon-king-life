@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 1,
+  "style": "fantasy-webtoon, simplified cel shading",
+  "format": "webp",
+  "source": "newly generated original illustration sheet; cropped optimized derivatives",
+  "usage": "illustrative assets; no changes to existing story IDs",
+  "assets": [
+    {
+      "id": "protagonist",
+      "category": "characters",
+      "label": "주인공",
+      "path": "assets/illustrations/characters/protagonist.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 15712
+    },
+    {
+      "id": "mina",
+      "category": "characters",
+      "label": "미나",
+      "path": "assets/illustrations/characters/mina.webp",
+      "width": 320,
+      "height": 505,
+      "bytes": 15720
+    },
+    {
+      "id": "elysia",
+      "category": "characters",
+      "label": "에리시아",
+      "path": "assets/illustrations/characters/elysia.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 17074
+    },
+    {
+      "id": "king",
+      "category": "characters",
+      "label": "국왕",
+      "path": "assets/illustrations/characters/king.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 18632
+    },
+    {
+      "id": "seria",
+      "category": "characters",
+      "label": "세리아",
+      "path": "assets/illustrations/characters/seria.webp",
+      "width": 320,
+      "height": 505,
+      "bytes": 17374
+    },
+    {
+      "id": "rina",
+      "category": "characters",
+      "label": "리나",
+      "path": "assets/illustrations/characters/rina.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 16856
+    },
+    {
+      "id": "kyle",
+      "category": "characters",
+      "label": "카일",
+      "path": "assets/illustrations/characters/kyle.webp",
+      "width": 320,
+      "height": 505,
+      "bytes": 16436
+    },
+    {
+      "id": "jero",
+      "category": "characters",
+      "label": "제로",
+      "path": "assets/illustrations/characters/jero.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 15992
+    },
+    {
+      "id": "yuri",
+      "category": "characters",
+      "label": "유리",
+      "path": "assets/illustrations/characters/yuri.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 16908
+    },
+    {
+      "id": "rao",
+      "category": "characters",
+      "label": "라오",
+      "path": "assets/illustrations/characters/rao.webp",
+      "width": 320,
+      "height": 505,
+      "bytes": 14356
+    },
+    {
+      "id": "dark_nun",
+      "category": "characters",
+      "label": "검은 수녀",
+      "path": "assets/illustrations/characters/dark_nun.webp",
+      "width": 320,
+      "height": 501,
+      "bytes": 12428
+    },
+    {
+      "id": "village",
+      "category": "backgrounds",
+      "label": "마을",
+      "path": "assets/illustrations/backgrounds/village.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 24694
+    },
+    {
+      "id": "palace",
+      "category": "backgrounds",
+      "label": "왕궁",
+      "path": "assets/illustrations/backgrounds/palace.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 19426
+    },
+    {
+      "id": "market",
+      "category": "backgrounds",
+      "label": "시장",
+      "path": "assets/illustrations/backgrounds/market.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 23142
+    },
+    {
+      "id": "tavern",
+      "category": "backgrounds",
+      "label": "술집",
+      "path": "assets/illustrations/backgrounds/tavern.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 19964
+    },
+    {
+      "id": "prison",
+      "category": "backgrounds",
+      "label": "감옥",
+      "path": "assets/illustrations/backgrounds/prison.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 14144
+    },
+    {
+      "id": "forest",
+      "category": "backgrounds",
+      "label": "숲길",
+      "path": "assets/illustrations/backgrounds/forest.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 23992
+    },
+    {
+      "id": "harbor",
+      "category": "backgrounds",
+      "label": "항구",
+      "path": "assets/illustrations/backgrounds/harbor.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 20730
+    },
+    {
+      "id": "throne_room",
+      "category": "backgrounds",
+      "label": "왕국 회의장",
+      "path": "assets/illustrations/backgrounds/throne_room.webp",
+      "width": 640,
+      "height": 409,
+      "bytes": 18508
+    },
+    {
+      "id": "mina_romance",
+      "category": "events",
+      "label": "미나와의 관계",
+      "path": "assets/illustrations/events/mina_romance.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 24350
+    },
+    {
+      "id": "royal_banquet",
+      "category": "events",
+      "label": "왕궁 만찬",
+      "path": "assets/illustrations/events/royal_banquet.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 24834
+    },
+    {
+      "id": "royal_trial",
+      "category": "events",
+      "label": "재판",
+      "path": "assets/illustrations/events/royal_trial.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 22290
+    },
+    {
+      "id": "demon_protest",
+      "category": "events",
+      "label": "마왕 반대 시위",
+      "path": "assets/illustrations/events/demon_protest.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 27460
+    },
+    {
+      "id": "mina_retirement",
+      "category": "events",
+      "label": "미나의 은퇴",
+      "path": "assets/illustrations/events/mina_retirement.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 20206
+    },
+    {
+      "id": "second_demon",
+      "category": "events",
+      "label": "두 번째 지정 마왕",
+      "path": "assets/illustrations/events/second_demon.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 17556
+    },
+    {
+      "id": "queens_letter",
+      "category": "events",
+      "label": "왕비의 편지",
+      "path": "assets/illustrations/events/queens_letter.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 21672
+    },
+    {
+      "id": "final_sunset",
+      "category": "events",
+      "label": "마지막 장면",
+      "path": "assets/illustrations/events/final_sunset.webp",
+      "width": 640,
+      "height": 564,
+      "bytes": 16234
+    },
+    {
+      "id": "neutral",
+      "category": "expressions",
+      "label": "주인공 neutral",
+      "path": "assets/illustrations/expressions/neutral.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3502
+    },
+    {
+      "id": "surprised",
+      "category": "expressions",
+      "label": "주인공 surprised",
+      "path": "assets/illustrations/expressions/surprised.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3560
+    },
+    {
+      "id": "happy",
+      "category": "expressions",
+      "label": "주인공 happy",
+      "path": "assets/illustrations/expressions/happy.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3938
+    },
+    {
+      "id": "embarrassed",
+      "category": "expressions",
+      "label": "주인공 embarrassed",
+      "path": "assets/illustrations/expressions/embarrassed.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3900
+    },
+    {
+      "id": "angry",
+      "category": "expressions",
+      "label": "주인공 angry",
+      "path": "assets/illustrations/expressions/angry.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3798
+    },
+    {
+      "id": "sad",
+      "category": "expressions",
+      "label": "주인공 sad",
+      "path": "assets/illustrations/expressions/sad.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3454
+    },
+    {
+      "id": "thinking",
+      "category": "expressions",
+      "label": "주인공 thinking",
+      "path": "assets/illustrations/expressions/thinking.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3764
+    },
+    {
+      "id": "confused",
+      "category": "expressions",
+      "label": "주인공 confused",
+      "path": "assets/illustrations/expressions/confused.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3862
+    },
+    {
+      "id": "smug",
+      "category": "expressions",
+      "label": "주인공 smug",
+      "path": "assets/illustrations/expressions/smug.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3826
+    },
+    {
+      "id": "tired",
+      "category": "expressions",
+      "label": "주인공 tired",
+      "path": "assets/illustrations/expressions/tired.webp",
+      "width": 192,
+      "height": 142,
+      "bytes": 3642
+    },
+    {
+      "id": "affection",
+      "category": "ui",
+      "label": "호감도",
+      "path": "assets/illustrations/ui/affection.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 1034
+    },
+    {
+      "id": "reputation",
+      "category": "ui",
+      "label": "왕국 평판",
+      "path": "assets/illustrations/ui/reputation.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 1706
+    },
+    {
+      "id": "money",
+      "category": "ui",
+      "label": "돈",
+      "path": "assets/illustrations/ui/money.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 938
+    },
+    {
+      "id": "unlock",
+      "category": "ui",
+      "label": "사건 해금",
+      "path": "assets/illustrations/ui/unlock.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 1390
+    },
+    {
+      "id": "save",
+      "category": "ui",
+      "label": "저장",
+      "path": "assets/illustrations/ui/save.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 952
+    },
+    {
+      "id": "settings",
+      "category": "ui",
+      "label": "설정",
+      "path": "assets/illustrations/ui/settings.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 868
+    },
+    {
+      "id": "achievements",
+      "category": "ui",
+      "label": "업적",
+      "path": "assets/illustrations/ui/achievements.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 1028
+    },
+    {
+      "id": "return_title",
+      "category": "ui",
+      "label": "타이틀로",
+      "path": "assets/illustrations/ui/return_title.webp",
+      "width": 128,
+      "height": 91,
+      "bytes": 1008
+    },
+    {
+      "id": "mina_wooden_sword",
+      "category": "event_cg",
+      "label": "어린 미나가 나무칼을 건네는 장면",
+      "path": "assets/illustrations/event_cg/mina_wooden_sword.webp",
+      "width": 770,
+      "height": 575,
+      "bytes": 63302
+    },
+    {
+      "id": "birth_v45",
+      "category": "event_cg_v4_5",
+      "label": "신생아가 마왕으로 등록된 출생신고소에서 부모가 항의하는 장면",
+      "path": "assets/illustrations/event_cg_v4_5/cg_birth_registry.webp",
+      "width": 700,
+      "height": 525,
+      "bytes": 44978
+    },
+    {
+      "id": "invoice_bring_mina_v45",
+      "category": "event_cg_v4_5",
+      "label": "미나와 주인공이 함께 왕궁으로 들어가는 장면",
+      "path": "assets/illustrations/event_cg_v4_5/cg_mina_royal_hall.webp",
+      "width": 700,
+      "height": 525,
+      "bytes": 39450
+    },
+    {
+      "id": "public_hearing_v45",
+      "category": "event_cg_v4_5",
+      "label": "공개 재판에서 주인공이 증언대 앞에 선 장면",
+      "path": "assets/illustrations/event_cg_v4_5/cg_public_hearing.webp",
+      "width": 700,
+      "height": 930,
+      "bytes": 36662
+    }
+  ],
+  "suggestedMapping": {
+    "characters": {
+      "protagonist": "protagonist",
+      "mina": "mina",
+      "elysia": "elysia",
+      "king": "king"
+    },
+    "scenes": {
+      "exam_confession": "mina_romance",
+      "trial": "royal_trial",
+      "queen_letter": "queens_letter",
+      "second_demon": "second_demon"
+    }
+  }
+}

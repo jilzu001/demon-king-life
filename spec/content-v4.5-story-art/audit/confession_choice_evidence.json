@@ -1,0 +1,26 @@
+{
+  "coreNode": "exam",
+  "coreAge": 20,
+  "coreTitle": "용사 시험의 실기 과목",
+  "coreChoices": [
+    {
+      "id": "confess",
+      "text": "미나에게 오래전부터 좋아했다고 고백한다."
+    },
+    {
+      "id": "stand_ground",
+      "text": "시험이 부당하다며 정면으로 거부한다."
+    },
+    {
+      "id": "absurd_invoice",
+      "text": "미나에게 제압당하는 출연료를 청구한다."
+    }
+  ],
+  "screenshotChoices": [
+    "먼저 미나를 공격해 운명을 바꿔 본다.",
+    "시험 자체를 거부하고 항의한다.",
+    "시험 출연료를 요구한다."
+  ],
+  "observation": "코어 챕터 exam에는 고백 선택지(confess)가 이미 존재하지만 스크린샷의 3개 선택지와 일치하지 않음. 따라서 화면은 다른 이벤트 소스/변환 데이터/엔진 필터링에서 나왔을 가능성이 있음. 원인 미확정.",
+  "requiredChoiceText": "미나에게 사랑한다고 고백한다."
+}
