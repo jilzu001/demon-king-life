@@ -1,6 +1,6 @@
 # 분기 트리 제스처 개선 — 2026-10-16
 
-기준 b97aa5a. 사용자가 제안한 조작 개선을 승인했다. 본문·트리 화면 배치는 유지하며 입력 판정만 수정했다. 스토리/선택/엔딩/저장/이미지 매핑 변경 없음.
+기준 b97aa5a → 게임4ddf1ec. 구현·배포·공개 검증 완료. 사용자가 제안한 조작 개선을 승인했다. 본문·트리 화면 배치는 유지하며 입력 판정만 수정했다. 스토리/선택/엔딩/저장/이미지 매핑 변경 없음.
 
 ## 재현과 원인
 
@@ -21,4 +21,6 @@
 - 로컬 타입 검사, 트리 단위3개, PC·모바일 전체 트리14개 통과/실제 터치 전용PC2개 제외. [단위](tree-gestures/unit.log), [브라우저](tree-gestures/regression.log).
 - npm run build: 타입/콘텐츠/트리 실제20경로/현재91,664종단 경로·경고0/빌드 통과. [빌드](tree-gestures/build-final.log).
 - 기존 public·엔진·저장·콘텐츠·이미지는 Git 차이 없음. 집필 변경 없음,23/65·보완42 유지.
-- 서버 npm run check/Pages·공개 후 제스처 검증은 진행 중이다. 실제 휴대기기·Safari는 이번 검사에 포함하지 않았고 Chromium 계열 모바일 터치 입력으로 검증했다.
+- 게임4ddf1ec / [Actions38827449351](https://github.com/jilzu001/demon-king-life/actions/runs/38827449351)에서 전체 npm run check501개(263단위+238브라우저) 통과/터치 전용PC2개 제외, 타입·콘텐츠·전체 분기·빌드·Pages 배포 성공. [서버 로그](tree-gestures/server-check.log).
+- [공개 게임](https://jilzu001.github.io/demon-king-life/)에서 트리14개 재검증 통과/터치 전용PC2개 제외. 노드 글자 위 휠·드래그, 실제 터치 다단계 이동·핀치·잔류 손가락·취소·즉시 다음 탭, 키보드·미니맵·재선택·잠금·획득 상세·저장/노드 위치 불변을 확인했다. [공개 결과](tree-gestures/public.log), [요약](tree-gestures/verification.json).
+- 기존4177 미리보기도 최종 빌드로 갱신했다. 실제 휴대기기·Safari는 이번 검사에 포함하지 않았고 Chromium 계열 모바일 터치 입력으로 검증했다.

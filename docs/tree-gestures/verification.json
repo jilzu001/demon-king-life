@@ -1,0 +1,25 @@
+{
+  "implementationCommit": "4ddf1eccaca8c9f5c9df0b53a6a1b65712e5b27c",
+  "baseline": "b97aa5a",
+  "actionsRun": 38827449351,
+  "deployment": "success",
+  "serverCheck": {
+    "unitPassed": 263,
+    "browserPassed": 238,
+    "browserSkipped": 2,
+    "totalPassed": 501
+  },
+  "localAndPublicTreeEach": {
+    "passed": 14,
+    "skipped": 2
+  },
+  "unchanged": [
+    "story",
+    "choice/outcome IDs and conditions",
+    "endings",
+    "save engine/schema",
+    "artwork and mappings"
+  ],
+  "physicalPhoneTested": false,
+  "playUrl": "https://jilzu001.github.io/demon-king-life/"
+}

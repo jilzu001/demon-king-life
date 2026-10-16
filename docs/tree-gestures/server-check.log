@@ -1,0 +1,1275 @@
+2026-10-16T00:05:28.7113009Z Current runner version: '2.337.0'
+2026-10-16T00:05:28.7138641Z ##[group]Runner Image Provisioner
+2026-10-16T00:05:28.7139516Z Hosted Compute Agent
+2026-10-16T00:05:28.7140194Z Version: 20261012.601
+2026-10-16T00:05:28.7140862Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+2026-10-16T00:05:28.7141611Z Build Date: 2026-10-12T17:48:21Z
+2026-10-16T00:05:28.7142406Z Worker ID: {a1cad4c9-871b-42fa-bae9-5705ab437cae}
+2026-10-16T00:05:28.7143109Z Region: westus2
+2026-10-16T00:05:28.7143920Z Cloud: Azure
+2026-10-16T00:05:28.7144499Z ##[endgroup]
+2026-10-16T00:05:28.7146161Z ##[group]Operating System
+2026-10-16T00:05:28.7146913Z Ubuntu
+2026-10-16T00:05:28.7147444Z 24.04.5
+2026-10-16T00:05:28.7147999Z LTS
+2026-10-16T00:05:28.7148540Z ##[endgroup]
+2026-10-16T00:05:28.7149125Z ##[group]Runner Image
+2026-10-16T00:05:28.7149856Z Image: ubuntu-24.04
+2026-10-16T00:05:28.7150430Z Version: 20261012.334.1
+2026-10-16T00:05:28.7151754Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-16T00:05:28.7153356Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+2026-10-16T00:05:28.7154858Z ##[endgroup]
+2026-10-16T00:05:28.7155964Z ##[group]GITHUB_TOKEN Permissions
+2026-10-16T00:05:28.7158174Z Contents: read
+2026-10-16T00:05:28.7158840Z Metadata: read
+2026-10-16T00:05:28.7159807Z ##[endgroup]
+2026-10-16T00:05:28.7161921Z Secret source: Actions
+2026-10-16T00:05:28.7162969Z Cache mode: write
+2026-10-16T00:05:28.7164219Z Prepare workflow directory
+2026-10-16T00:05:28.7576039Z Prepare all required actions
+2026-10-16T00:05:28.7625554Z Getting action download info
+2026-10-16T00:05:29.0982995Z Download action repository 'actions/checkout@v6' (SHA:d23441a48e516b6c34aea4fa41551a30e30af803)
+2026-10-16T00:05:29.2551884Z Download action repository 'actions/setup-node@v7' (SHA:949feb2413d6458794dcd2491c4babbbce0c15c1)
+2026-10-16T00:05:29.5374740Z Download action repository 'actions/upload-pages-artifact@v4' (SHA:7b1f4a764d45c48632c6b24a0339c27f5614fb0b)
+2026-10-16T00:05:29.8258605Z Getting action download info
+2026-10-16T00:05:29.9633062Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-16T00:05:30.1075004Z Complete job name: build
+2026-10-16T00:05:30.2012177Z ##[group]Run actions/checkout@v6
+2026-10-16T00:05:30.2013621Z with:
+2026-10-16T00:05:30.2014812Z   repository: jilzu001/demon-king-life
+2026-10-16T00:05:30.2024953Z   token: ***
+2026-10-16T00:05:30.2025873Z   ssh-strict: true
+2026-10-16T00:05:30.2026783Z   ssh-user: git
+2026-10-16T00:05:30.2027748Z   persist-credentials: true
+2026-10-16T00:05:30.2028773Z   clean: true
+2026-10-16T00:05:30.2029707Z   sparse-checkout-cone-mode: true
+2026-10-16T00:05:30.2030823Z   fetch-depth: 1
+2026-10-16T00:05:30.2031725Z   fetch-tags: false
+2026-10-16T00:05:30.2032662Z   show-progress: true
+2026-10-16T00:05:30.2033618Z   lfs: false
+2026-10-16T00:05:30.2034629Z   submodules: false
+2026-10-16T00:05:30.2035623Z   set-safe-directory: true
+2026-10-16T00:05:30.2036699Z   allow-unsafe-pr-checkout: false
+2026-10-16T00:05:30.2038060Z env:
+2026-10-16T00:05:30.2038941Z   PLAYWRIGHT_CHANNEL: chromium
+2026-10-16T00:05:30.2040066Z   VITE_BASE_PATH: /demon-king-life/
+2026-10-16T00:05:30.2041154Z ##[endgroup]
+2026-10-16T00:05:30.3065657Z Syncing repository: jilzu001/demon-king-life
+2026-10-16T00:05:30.3068612Z ##[group]Getting Git version info
+2026-10-16T00:05:30.3070479Z Working directory is '/home/runner/work/demon-king-life/demon-king-life'
+2026-10-16T00:05:30.3074152Z [command]/usr/bin/git version
+2026-10-16T00:05:30.3188075Z git version 2.55.0
+2026-10-16T00:05:30.3212587Z ##[endgroup]
+2026-10-16T00:05:30.3228637Z Temporarily overriding HOME='/home/runner/work/_temp/71fd91c9-bdc3-4707-a7d8-85190ddac1cf' before making global git config changes
+2026-10-16T00:05:30.3239058Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-16T00:05:30.3243262Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/demon-king-life/demon-king-life
+2026-10-16T00:05:30.3296793Z Deleting the contents of '/home/runner/work/demon-king-life/demon-king-life'
+2026-10-16T00:05:30.3304362Z ##[group]Determining repository object format
+2026-10-16T00:05:30.3307893Z ##[endgroup]
+2026-10-16T00:05:30.3310945Z ##[group]Initializing the repository
+2026-10-16T00:05:30.3313150Z [command]/usr/bin/git init /home/runner/work/demon-king-life/demon-king-life
+2026-10-16T00:05:30.3475648Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-16T00:05:30.3478181Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-16T00:05:30.3480193Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-16T00:05:30.3482666Z hint: call:
+2026-10-16T00:05:30.3484316Z hint:
+2026-10-16T00:05:30.3486173Z hint: 	git config --global init.defaultBranch <name>
+2026-10-16T00:05:30.3488434Z hint:
+2026-10-16T00:05:30.3490572Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-16T00:05:30.3494319Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-16T00:05:30.3496983Z hint:
+2026-10-16T00:05:30.3498508Z hint: 	git branch -m <name>
+2026-10-16T00:05:30.3500326Z hint:
+2026-10-16T00:05:30.3502686Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-16T00:05:30.3506827Z Initialized empty Git repository in /home/runner/work/demon-king-life/demon-king-life/.git/
+2026-10-16T00:05:30.3511874Z [command]/usr/bin/git remote add origin https://github.com/jilzu001/demon-king-life
+2026-10-16T00:05:30.3574039Z ##[endgroup]
+2026-10-16T00:05:30.3577364Z ##[group]Disabling automatic garbage collection
+2026-10-16T00:05:30.3580477Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-16T00:05:30.3615980Z ##[endgroup]
+2026-10-16T00:05:30.3618428Z ##[group]Setting up auth
+2026-10-16T00:05:30.3620247Z Removing SSH command configuration
+2026-10-16T00:05:30.3623206Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-16T00:05:30.3663499Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-16T00:05:30.4124125Z Removing HTTP extra header
+2026-10-16T00:05:30.4129734Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-16T00:05:30.4168611Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-16T00:05:30.4393151Z Removing includeIf entries pointing to credentials config files
+2026-10-16T00:05:30.4400261Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-16T00:05:30.4438018Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-16T00:05:30.4665209Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-16T00:05:30.4706823Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git.path /home/runner/work/_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config
+2026-10-16T00:05:30.4741611Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config
+2026-10-16T00:05:30.4782658Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config
+2026-10-16T00:05:30.4818940Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config
+2026-10-16T00:05:30.4851485Z ##[endgroup]
+2026-10-16T00:05:30.4853002Z ##[group]Fetching the repository
+2026-10-16T00:05:30.4859888Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +4ddf1eccaca8c9f5c9df0b53a6a1b65712e5b27c:refs/remotes/origin/main
+2026-10-16T00:05:31.8544207Z From https://github.com/jilzu001/demon-king-life
+2026-10-16T00:05:31.8545031Z  * [new ref]         4ddf1eccaca8c9f5c9df0b53a6a1b65712e5b27c -> origin/main
+2026-10-16T00:05:31.8555609Z [command]/usr/bin/git branch --list --remote origin/main
+2026-10-16T00:05:31.8584700Z   origin/main
+2026-10-16T00:05:31.8594294Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-10-16T00:05:31.8621629Z 4ddf1eccaca8c9f5c9df0b53a6a1b65712e5b27c
+2026-10-16T00:05:31.8626610Z ##[endgroup]
+2026-10-16T00:05:31.8627620Z ##[group]Determining the checkout info
+2026-10-16T00:05:31.8628708Z ##[endgroup]
+2026-10-16T00:05:31.8633014Z [command]/usr/bin/git sparse-checkout disable
+2026-10-16T00:05:31.8688286Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-16T00:05:31.8719547Z ##[group]Checking out the ref
+2026-10-16T00:05:31.8723943Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-16T00:05:32.2761420Z Switched to a new branch 'main'
+2026-10-16T00:05:32.2766855Z branch 'main' set up to track 'origin/main'.
+2026-10-16T00:05:32.2790407Z ##[endgroup]
+2026-10-16T00:05:32.2843908Z [command]/usr/bin/git log -1 --format=%H
+2026-10-16T00:05:32.2873966Z 4ddf1eccaca8c9f5c9df0b53a6a1b65712e5b27c
+2026-10-16T00:05:32.3170365Z ##[group]Run actions/setup-node@v7
+2026-10-16T00:05:32.3170733Z with:
+2026-10-16T00:05:32.3170982Z   node-version: 24
+2026-10-16T00:05:32.3171235Z   cache: npm
+2026-10-16T00:05:32.3171487Z   check-latest: false
+2026-10-16T00:05:32.3174337Z   token: ***
+2026-10-16T00:05:32.3174617Z   package-manager-cache: true
+2026-10-16T00:05:32.3174949Z env:
+2026-10-16T00:05:32.3175193Z   PLAYWRIGHT_CHANNEL: chromium
+2026-10-16T00:05:32.3175524Z   VITE_BASE_PATH: /demon-king-life/
+2026-10-16T00:05:32.3175849Z ##[endgroup]
+2026-10-16T00:05:32.4399702Z Found in cache @ /opt/hostedtoolcache/node/24.21.0/x64
+2026-10-16T00:05:33.3279703Z ##[group]Environment details
+2026-10-16T00:05:35.0399257Z node: v24.21.0
+2026-10-16T00:05:35.0399693Z npm: 11.19.0
+2026-10-16T00:05:35.0400015Z yarn: 1.22.22
+2026-10-16T00:05:35.0400593Z ##[endgroup]
+2026-10-16T00:05:35.0424772Z [command]/opt/hostedtoolcache/node/24.21.0/x64/bin/npm config get cache
+2026-10-16T00:05:35.3241480Z /home/runner/.npm
+2026-10-16T00:05:35.5735042Z Cache hit for: node-cache-Linux-x64-npm-f0c8774faea8f22a6cf4c63ad97faa8329727801d7cf559971def07cb32338d0
+2026-10-16T00:05:36.8636183Z Received 0 of 34014794 (0.0%), 0.0 MBs/sec
+2026-10-16T00:05:37.8645655Z Received 29820490 of 34014794 (87.7%), 14.2 MBs/sec
+2026-10-16T00:05:38.8652363Z Received 29820490 of 34014794 (87.7%), 9.5 MBs/sec
+2026-10-16T00:05:39.6705710Z Received 34014794 of 34014794 (100.0%), 8.5 MBs/sec
+2026-10-16T00:05:39.6706827Z Cache Size: ~32 MB (34014794 B)
+2026-10-16T00:05:39.6825739Z [command]/usr/bin/tar -xf /home/runner/work/_temp/d3ccb74c-a30d-4f20-8259-af30c66a59f4/cache.tzst -P -C /home/runner/work/demon-king-life/demon-king-life --use-compress-program unzstd
+2026-10-16T00:05:39.7402189Z Cache restored successfully
+2026-10-16T00:05:39.7426846Z Cache restored from key: node-cache-Linux-x64-npm-f0c8774faea8f22a6cf4c63ad97faa8329727801d7cf559971def07cb32338d0
+2026-10-16T00:05:39.7566687Z ##[group]Run npm ci
+2026-10-16T00:05:39.7566992Z npm ci
+2026-10-16T00:05:39.7916407Z shell: /usr/bin/bash -e {0}
+2026-10-16T00:05:39.7916740Z env:
+2026-10-16T00:05:39.7917021Z   PLAYWRIGHT_CHANNEL: chromium
+2026-10-16T00:05:39.7917342Z   VITE_BASE_PATH: /demon-king-life/
+2026-10-16T00:05:39.7917665Z ##[endgroup]
+2026-10-16T00:05:42.3828656Z
+2026-10-16T00:05:42.3835735Z added 51 packages, and audited 52 packages in 3s
+2026-10-16T00:05:42.3836395Z
+2026-10-16T00:05:42.3836619Z 14 packages are looking for funding
+2026-10-16T00:05:42.3836988Z   run `npm fund` for details
+2026-10-16T00:05:42.3842449Z
+2026-10-16T00:05:42.3842887Z found 0 vulnerabilities
+2026-10-16T00:05:42.3852951Z npm warn install-scripts 1 package has install scripts not yet covered by allowScripts:
+2026-10-16T00:05:42.3854261Z npm warn install-scripts   esbuild@0.28.2 (postinstall: node install.js)
+2026-10-16T00:05:42.3854726Z npm warn install-scripts
+2026-10-16T00:05:42.3855472Z npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+2026-10-16T00:05:42.4363487Z ##[group]Run npx playwright install --with-deps chromium
+2026-10-16T00:05:42.4364262Z npx playwright install --with-deps chromium
+2026-10-16T00:05:42.4428391Z shell: /usr/bin/bash -e {0}
+2026-10-16T00:05:42.4428656Z env:
+2026-10-16T00:05:42.4428860Z   PLAYWRIGHT_CHANNEL: chromium
+2026-10-16T00:05:42.4429134Z   VITE_BASE_PATH: /demon-king-life/
+2026-10-16T00:05:42.4429417Z ##[endgroup]
+2026-10-16T00:05:43.3248792Z Installing dependencies...
+2026-10-16T00:05:43.3334560Z Switching to root user to install dependencies...
+2026-10-16T00:05:43.4288669Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-16T00:05:43.4572539Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-16T00:05:43.4581366Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-16T00:05:43.4590410Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-16T00:05:43.4633263Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-16T00:05:43.4675159Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-16T00:05:43.5813644Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.4 kB]
+2026-10-16T00:05:43.5914869Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [523 kB]
+2026-10-16T00:05:43.5972880Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [581 kB]
+2026-10-16T00:05:43.6328475Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1397 kB]
+2026-10-16T00:05:43.6415044Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [308 kB]
+2026-10-16T00:05:43.6441319Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1704 kB]
+2026-10-16T00:05:43.6516048Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-16T00:05:43.6539576Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1805 kB]
+2026-10-16T00:05:43.6655363Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [411 kB]
+2026-10-16T00:05:43.7398260Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1144 kB]
+2026-10-16T00:05:43.7467023Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [231 kB]
+2026-10-16T00:05:43.7512359Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1222 kB]
+2026-10-16T00:05:43.7582703Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [246 kB]
+2026-10-16T00:05:43.8046195Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1713 kB]
+2026-10-16T00:05:43.8155517Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [392 kB]
+2026-10-16T00:05:46.7332732Z Fetched 12.4 MB in 1s (10.0 MB/s)
+2026-10-16T00:05:47.6053041Z Reading package lists...
+2026-10-16T00:05:47.6293043Z Reading package lists...
+2026-10-16T00:05:47.8124167Z Building dependency tree...
+2026-10-16T00:05:47.8131004Z Reading state information...
+2026-10-16T00:05:47.9517021Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+2026-10-16T00:05:47.9518132Z libasound2t64 set to manually installed.
+2026-10-16T00:05:47.9519315Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-16T00:05:47.9519896Z libatk-bridge2.0-0t64 set to manually installed.
+2026-10-16T00:05:47.9520456Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-16T00:05:47.9521230Z libatk1.0-0t64 set to manually installed.
+2026-10-16T00:05:47.9521864Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-16T00:05:47.9522387Z libatspi2.0-0t64 set to manually installed.
+2026-10-16T00:05:47.9522911Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-10-16T00:05:47.9523626Z libcairo2 set to manually installed.
+2026-10-16T00:05:47.9524503Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+2026-10-16T00:05:47.9525012Z libcups2t64 set to manually installed.
+2026-10-16T00:05:47.9525539Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-10-16T00:05:47.9526042Z libdbus-1-3 set to manually installed.
+2026-10-16T00:05:47.9526675Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+2026-10-16T00:05:47.9527209Z libdrm2 set to manually installed.
+2026-10-16T00:05:47.9527714Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+2026-10-16T00:05:47.9528197Z libgbm1 set to manually installed.
+2026-10-16T00:05:47.9528702Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.9).
+2026-10-16T00:05:47.9529215Z libglib2.0-0t64 set to manually installed.
+2026-10-16T00:05:47.9529686Z libnspr4 is already the newest version (2:4.35-1.1build1).
+2026-10-16T00:05:47.9530084Z libnspr4 set to manually installed.
+2026-10-16T00:05:47.9530495Z libnss3 is already the newest version (2:3.98-1ubuntu0.2).
+2026-10-16T00:05:47.9530881Z libnss3 set to manually installed.
+2026-10-16T00:05:47.9531293Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-10-16T00:05:47.9531826Z libpango-1.0-0 set to manually installed.
+2026-10-16T00:05:47.9532248Z libx11-6 is already the newest version (2:1.8.7-1ubuntu0.1).
+2026-10-16T00:05:47.9532642Z libx11-6 set to manually installed.
+2026-10-16T00:05:47.9533005Z libxcb1 is already the newest version (1.15-1ubuntu2).
+2026-10-16T00:05:47.9533371Z libxcb1 set to manually installed.
+2026-10-16T00:05:47.9533925Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-10-16T00:05:47.9534344Z libxcomposite1 set to manually installed.
+2026-10-16T00:05:47.9534761Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-10-16T00:05:47.9535149Z libxdamage1 set to manually installed.
+2026-10-16T00:05:47.9535539Z libxext6 is already the newest version (2:1.3.4-1build2).
+2026-10-16T00:05:47.9535913Z libxext6 set to manually installed.
+2026-10-16T00:05:47.9536305Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-10-16T00:05:47.9536810Z libxfixes3 set to manually installed.
+2026-10-16T00:05:47.9537206Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-10-16T00:05:47.9537600Z libxkbcommon0 set to manually installed.
+2026-10-16T00:05:47.9537998Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-10-16T00:05:47.9538372Z libxrandr2 set to manually installed.
+2026-10-16T00:05:47.9538763Z xvfb is already the newest version (2:21.1.12-1ubuntu1.8).
+2026-10-16T00:05:47.9539303Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-10-16T00:05:47.9539870Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+2026-10-16T00:05:47.9540296Z libfontconfig1 set to manually installed.
+2026-10-16T00:05:47.9540745Z libfreetype6 is already the newest version (2.13.2+dfsg-1ubuntu0.2).
+2026-10-16T00:05:47.9541170Z libfreetype6 set to manually installed.
+2026-10-16T00:05:47.9541593Z fonts-liberation is already the newest version (1:2.1.5-3).
+2026-10-16T00:05:47.9542005Z fonts-liberation set to manually installed.
+2026-10-16T00:05:47.9542405Z The following additional packages will be installed:
+2026-10-16T00:05:47.9542782Z   xfonts-encodings xfonts-utils
+2026-10-16T00:05:47.9543170Z Recommended packages:
+2026-10-16T00:05:47.9543866Z   fonts-ipafont-mincho fonts-tlwg-loma
+2026-10-16T00:05:47.9704990Z The following NEW packages will be installed:
+2026-10-16T00:05:47.9705803Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+2026-10-16T00:05:47.9710648Z   fonts-wqy-zenhei xfonts-cyrillic xfonts-encodings xfonts-scalable
+2026-10-16T00:05:47.9711376Z   xfonts-utils
+2026-10-16T00:05:47.9877733Z 0 upgraded, 9 newly installed, 0 to remove and 44 not upgraded.
+2026-10-16T00:05:47.9878508Z Need to get 21.1 MB of archives.
+2026-10-16T00:05:47.9879299Z After this operation, 79.5 MB of additional disk space will be used.
+2026-10-16T00:05:47.9880438Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-16T00:05:48.0708044Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+2026-10-16T00:05:48.2164154Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+2026-10-16T00:05:48.4129418Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+2026-10-16T00:05:48.4832989Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+2026-10-16T00:05:48.6170899Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+2026-10-16T00:05:48.8537489Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+2026-10-16T00:05:48.9341027Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+2026-10-16T00:05:49.0037076Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+2026-10-16T00:05:49.0799307Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+2026-10-16T00:05:49.3360236Z Fetched 21.1 MB in 1s (19.0 MB/s)
+2026-10-16T00:05:49.3605837Z Selecting previously unselected package fonts-ipafont-gothic.
+2026-10-16T00:05:49.3965334Z (Reading database ...
+2026-10-16T00:05:49.3965928Z (Reading database ... 5%
+2026-10-16T00:05:49.3966234Z (Reading database ... 10%
+2026-10-16T00:05:49.3966517Z (Reading database ... 15%
+2026-10-16T00:05:49.3967315Z (Reading database ... 20%
+2026-10-16T00:05:49.3967672Z (Reading database ... 25%
+2026-10-16T00:05:49.3967995Z (Reading database ... 30%
+2026-10-16T00:05:49.3968298Z (Reading database ... 35%
+2026-10-16T00:05:49.3968712Z (Reading database ... 40%
+2026-10-16T00:05:49.3969093Z (Reading database ... 45%
+2026-10-16T00:05:49.3969526Z (Reading database ... 50%
+2026-10-16T00:05:49.4015725Z (Reading database ... 55%
+2026-10-16T00:05:49.4884214Z (Reading database ... 60%
+2026-10-16T00:05:49.6474883Z (Reading database ... 65%
+2026-10-16T00:05:49.8416510Z (Reading database ... 70%
+2026-10-16T00:05:50.0415711Z (Reading database ... 75%
+2026-10-16T00:05:50.2398517Z (Reading database ... 80%
+2026-10-16T00:05:50.4302618Z (Reading database ... 85%
+2026-10-16T00:05:50.6135199Z (Reading database ... 90%
+2026-10-16T00:05:50.7916828Z (Reading database ... 95%
+2026-10-16T00:05:50.7917290Z (Reading database ... 100%
+2026-10-16T00:05:50.7917917Z (Reading database ... 203540 files and directories currently installed.)
+2026-10-16T00:05:50.7960710Z Preparing to unpack .../0-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+2026-10-16T00:05:50.8052932Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-16T00:05:51.0353097Z Selecting previously unselected package fonts-freefont-ttf.
+2026-10-16T00:05:51.0480340Z Preparing to unpack .../1-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+2026-10-16T00:05:51.0488132Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-16T00:05:51.1308344Z Selecting previously unselected package fonts-tlwg-loma-otf.
+2026-10-16T00:05:51.1433178Z Preparing to unpack .../2-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+2026-10-16T00:05:51.1440994Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-16T00:05:51.1646917Z Selecting previously unselected package fonts-unifont.
+2026-10-16T00:05:51.1771352Z Preparing to unpack .../3-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+2026-10-16T00:05:51.1779490Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+2026-10-16T00:05:51.2803116Z Selecting previously unselected package fonts-wqy-zenhei.
+2026-10-16T00:05:51.2927998Z Preparing to unpack .../4-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+2026-10-16T00:05:51.3030452Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-16T00:05:51.7672217Z Selecting previously unselected package xfonts-encodings.
+2026-10-16T00:05:51.7804840Z Preparing to unpack .../5-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+2026-10-16T00:05:51.7813527Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-16T00:05:51.8117552Z Selecting previously unselected package xfonts-utils.
+2026-10-16T00:05:51.8252515Z Preparing to unpack .../6-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+2026-10-16T00:05:51.8261605Z Unpacking xfonts-utils (1:7.7+6build3) ...
+2026-10-16T00:05:51.8658440Z Selecting previously unselected package xfonts-cyrillic.
+2026-10-16T00:05:51.8785477Z Preparing to unpack .../7-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+2026-10-16T00:05:51.8795229Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-16T00:05:51.9151795Z Selecting previously unselected package xfonts-scalable.
+2026-10-16T00:05:51.9282130Z Preparing to unpack .../8-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+2026-10-16T00:05:51.9290289Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-16T00:05:51.9715786Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-16T00:05:51.9838193Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-16T00:05:51.9859814Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-16T00:05:51.9880111Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-16T00:05:51.9900996Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-16T00:05:51.9971166Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+2026-10-16T00:05:51.9987696Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+2026-10-16T00:05:52.0007965Z Setting up xfonts-utils (1:7.7+6build3) ...
+2026-10-16T00:05:52.0049673Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-16T00:05:52.0352606Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-16T00:05:52.0641741Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-16T00:05:52.0665677Z Not building database; man-db/auto-update is not 'true'.
+2026-10-16T00:05:52.0682024Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-10-16T00:05:52.8261978Z
+2026-10-16T00:05:52.8262785Z Running kernel seems to be up-to-date.
+2026-10-16T00:05:52.8263156Z
+2026-10-16T00:05:52.8263379Z No services need to be restarted.
+2026-10-16T00:05:52.8263938Z
+2026-10-16T00:05:52.8264288Z No containers need to be restarted.
+2026-10-16T00:05:52.8264620Z
+2026-10-16T00:05:52.8264887Z No user sessions are running outdated binaries.
+2026-10-16T00:05:52.8265217Z
+2026-10-16T00:05:52.8265637Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-16T00:05:53.8545491Z Downloading Chrome for Testing 156.0.8078.4 (playwright chromium v1248) from https://cdn.playwright.dev/builds/cft/156.0.8078.4/linux64/chrome-linux64.zip
+2026-10-16T00:05:54.2802522Z |                                                                                |   0% of 191.1 MiB
+2026-10-16T00:05:54.5136346Z |■■■■■■■■                                                                        |  10% of 191.1 MiB
+2026-10-16T00:05:54.6087759Z |■■■■■■■■■■■■■■■■                                                                |  20% of 191.1 MiB
+2026-10-16T00:05:54.7049640Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 191.1 MiB
+2026-10-16T00:05:54.7876056Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 191.1 MiB
+2026-10-16T00:05:54.8763157Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 191.1 MiB
+2026-10-16T00:05:54.9753364Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 191.1 MiB
+2026-10-16T00:05:55.0470352Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 191.1 MiB
+2026-10-16T00:05:55.1420951Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 191.1 MiB
+2026-10-16T00:05:55.2377248Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 191.1 MiB
+2026-10-16T00:05:55.3124975Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 191.1 MiB
+2026-10-16T00:05:58.6115947Z Chrome for Testing 156.0.8078.4 (playwright chromium v1248) downloaded to /home/runner/.cache/ms-playwright/chromium-1248
+2026-10-16T00:05:58.6120133Z Downloading FFmpeg (playwright ffmpeg v1013) from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1013/ffmpeg-linux.zip
+2026-10-16T00:05:58.9738827Z |                                                                                |   0% of 2.2 MiB
+2026-10-16T00:05:58.9841994Z |■■■■■■■■                                                                        |  10% of 2.2 MiB
+2026-10-16T00:05:58.9904366Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.2 MiB
+2026-10-16T00:05:58.9946440Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.2 MiB
+2026-10-16T00:05:58.9978980Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.2 MiB
+2026-10-16T00:05:59.0008204Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.2 MiB
+2026-10-16T00:05:59.0036365Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.2 MiB
+2026-10-16T00:05:59.0046492Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.2 MiB
+2026-10-16T00:05:59.0067897Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.2 MiB
+2026-10-16T00:05:59.0089224Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.2 MiB
+2026-10-16T00:05:59.0101189Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.2 MiB
+2026-10-16T00:05:59.0739221Z FFmpeg (playwright ffmpeg v1013) downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1013
+2026-10-16T00:05:59.0742498Z Downloading Chrome Headless Shell 156.0.8078.4 (playwright chromium-headless-shell v1248) from https://cdn.playwright.dev/builds/cft/156.0.8078.4/linux64/chrome-headless-shell-linux64.zip
+2026-10-16T00:05:59.4640869Z |                                                                                |   0% of 120 MiB
+2026-10-16T00:05:59.6239972Z |■■■■■■■■                                                                        |  10% of 120 MiB
+2026-10-16T00:05:59.6972699Z |■■■■■■■■■■■■■■■■                                                                |  20% of 120 MiB
+2026-10-16T00:05:59.7559349Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 120 MiB
+2026-10-16T00:05:59.8308106Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 120 MiB
+2026-10-16T00:05:59.8752170Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 120 MiB
+2026-10-16T00:05:59.9201163Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 120 MiB
+2026-10-16T00:05:59.9857122Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 120 MiB
+2026-10-16T00:06:00.0257838Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 120 MiB
+2026-10-16T00:06:00.0690694Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 120 MiB
+2026-10-16T00:06:00.1239226Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 120 MiB
+2026-10-16T00:06:02.4577102Z Chrome Headless Shell 156.0.8078.4 (playwright chromium-headless-shell v1248) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1248
+2026-10-16T00:06:02.4926279Z ##[group]Run npm run check
+2026-10-16T00:06:02.4926585Z npm run check
+2026-10-16T00:06:02.4988512Z shell: /usr/bin/bash -e {0}
+2026-10-16T00:06:02.4988769Z env:
+2026-10-16T00:06:02.4988976Z   PLAYWRIGHT_CHANNEL: chromium
+2026-10-16T00:06:02.4989253Z   VITE_BASE_PATH: /demon-king-life/
+2026-10-16T00:06:02.4989533Z ##[endgroup]
+2026-10-16T00:06:02.6242728Z
+2026-10-16T00:06:02.6243405Z > demon-king-phase1@0.1.0 check
+2026-10-16T00:06:02.6244911Z > npm run typecheck && npm test && npm run validate:content && npm run simulate:all && npm run test:e2e && npm run build
+2026-10-16T00:06:02.6245577Z
+2026-10-16T00:06:02.7281036Z
+2026-10-16T00:06:02.7281661Z > demon-king-phase1@0.1.0 typecheck
+2026-10-16T00:06:02.7282181Z > tsc --noEmit
+2026-10-16T00:06:02.7282368Z
+2026-10-16T00:06:03.4066804Z
+2026-10-16T00:06:03.4067448Z > demon-king-phase1@0.1.0 test
+2026-10-16T00:06:03.4067941Z > vitest run
+2026-10-16T00:06:03.4068146Z
+2026-10-16T00:06:03.8574357Z
+2026-10-16T00:06:03.8579309Z  RUN  v5.0.4 /home/runner/work/demon-king-life/demon-king-life
+2026-10-16T00:06:03.8580136Z
+2026-10-16T00:06:04.6215815Z  ✓ tests/engine/engine.test.ts (37 tests) 79ms
+2026-10-16T00:06:04.9842985Z  ✓ tests/story/story-art-v45.test.ts (7 tests) 167ms
+2026-10-16T00:06:12.0845423Z  ✓ tests/story/choices-v38.test.ts (103 tests) 6971ms
+2026-10-16T00:06:12.0847634Z    ✓ v3.7의319종단 경로와 모든 중간 저장은 상태·원장·난수 변경 없이 이어진다 1696ms
+2026-10-16T00:06:13.0887483Z  ✓ tests/story/compact.test.ts (6 tests) 449ms
+2026-10-16T00:06:13.0889247Z    ✓ 축소 완결판 계약과 원작 보호 (6)
+2026-10-16T00:06:13.0890997Z      ✓ 44개 사건과20개 엔딩 및91664개 종단 경로가 모두 도달한다 419ms
+2026-10-16T00:06:14.3156104Z  ✓ tests/story/v11.test.ts (33 tests) 9565ms
+2026-10-16T00:06:14.3185163Z    ✓ 콘텐츠 v1.1 및 사이드카 계약 (27)
+2026-10-16T00:06:14.3191262Z      ✓ v1.1 전수 경로 검증이 상한 내 완료되고 모든 엔딩을 확인한다 9381ms
+2026-10-16T00:06:14.8315949Z  ✓ tests/story/ending-gallery.test.ts (4 tests) 24ms
+2026-10-16T00:06:15.2224336Z  ✓ tests/story/illustrations.test.ts (4 tests) 39ms
+2026-10-16T00:06:15.7914016Z  ✓ tests/story/compact-upgrade.test.ts (4 tests) 2190ms
+2026-10-16T00:06:15.7917578Z    ✓ 기존147종단 경로의 모든 중간 저장과100시드를 원장/상태/RNG 변경 없이 검증한다 2175ms
+2026-10-16T00:06:15.8725982Z  ✓ tests/story/ending-tree.test.ts (3 tests) 92ms
+2026-10-16T00:06:16.3999238Z  ✓ tests/story/art-v46.test.ts (3 tests) 77ms
+2026-10-16T00:06:16.4012585Z  ✓ tests/persistence/save.test.ts (13 tests) 40ms
+2026-10-16T00:06:16.8932631Z  ✓ tests/story/content.test.ts (13 tests) 32ms
+2026-10-16T00:06:16.9982149Z  ✓ tests/persistence/reselect.test.ts (4 tests) 28ms
+2026-10-16T00:06:17.1408734Z  ✓ tests/story/content-v36.test.ts (2 tests) 49ms
+2026-10-16T00:06:17.2196213Z  ✓ tests/story/portraits.test.ts (2 tests) 27ms
+2026-10-16T00:06:17.5195701Z  ✓ tests/story/visual-identity.test.ts (2 tests) 5ms
+2026-10-16T00:06:22.2621146Z  ✓ tests/story/ending-routes.test.ts (23 tests) 16719ms
+2026-10-16T00:06:22.2625558Z    ✓ 기존5328개 종단과 모든 중간 저장은 상태·원장·난수를 그대로 복원한다 16499ms
+2026-10-16T00:06:22.2666500Z
+2026-10-16T00:06:22.2672100Z  Test Files  17 passed (17)
+2026-10-16T00:06:22.2673612Z       Tests  263 passed (263)
+2026-10-16T00:06:22.2674563Z    Start at  00:06:03
+2026-10-16T00:06:22.2695368Z    Duration  18.40s (tests 85%, import 12%, transform 3%)
+2026-10-16T00:06:22.2695908Z
+2026-10-16T00:06:22.3963500Z
+2026-10-16T00:06:22.3964336Z > demon-king-phase1@0.1.0 validate:content
+2026-10-16T00:06:22.3965231Z > tsx scripts/validate-content.ts && tsx scripts/validate-compact.ts && npm run validate:tree
+2026-10-16T00:06:22.3965786Z
+2026-10-16T00:06:22.9064319Z 구조 검증 통과: 장면 98, 선택 340, 엔딩 34
+2026-10-16T00:06:22.9067085Z 표시 검증 통과: 요약 98, 대화 장면 29, 대사 116, 설명 340
+2026-10-16T00:06:23.3852429Z 최소 선택지 검사 통과: 공개 일반 사건 44개, 준비본 65개(정적 검사), 엔딩 20개는 별도 유형
+2026-10-16T00:06:23.3855779Z 축소판 구조/표시 검증 통과: 44사건, 119선택, 20엔딩, 후속 서술/문단/독립 연대기/결말 연출
+2026-10-16T00:06:23.5054889Z
+2026-10-16T00:06:23.5055559Z > demon-king-phase1@0.1.0 validate:tree
+2026-10-16T00:06:23.5056620Z > node scripts/validate-tree.mjs src/content/generated/ending-tree.json && tsx scripts/verify-ending-tree.ts
+2026-10-16T00:06:23.5057281Z
+2026-10-16T00:06:23.5395259Z OK: 20 verified route exemplars; 101 graph nodes
+2026-10-16T00:06:24.1778244Z 엔딩 트리20경로/101노드: 실제 조건·판정·중간 저장·20엔딩 재현 통과
+2026-10-16T00:06:24.3048352Z
+2026-10-16T00:06:24.3049007Z > demon-king-phase1@0.1.0 simulate:all
+2026-10-16T00:06:24.3049547Z > tsx scripts/simulate-all-routes.ts
+2026-10-16T00:06:24.3049815Z
+2026-10-16T00:06:30.3565718Z 전체 경로 검증 통과 (현재 콘텐츠 v1.1 전체, 실제 판정 상태를 보존하는 동등 상태 병합)
+2026-10-16T00:06:30.3566575Z {
+2026-10-16T00:06:30.3567119Z   "states": 8175,
+2026-10-16T00:06:30.3567660Z   "transitions": 30668,
+2026-10-16T00:06:30.3568349Z   "terminalPaths": 4935390988,
+2026-10-16T00:06:30.3569097Z   "maxDepth": 25,
+2026-10-16T00:06:30.3569725Z   "endings": {
+2026-10-16T00:06:30.3570342Z     "end_blade": 1,
+2026-10-16T00:06:30.3570976Z     "end_cells_bride": 1,
+2026-10-16T00:06:30.3571630Z     "end_contempt": 4,
+2026-10-16T00:06:30.3572040Z     "end_magic_tax": 1,
+2026-10-16T00:06:30.3572492Z     "end_bench_revolution": 3,
+2026-10-16T00:06:30.3572968Z     "end_spoon_escape": 8,
+2026-10-16T00:06:30.3573394Z     "end_archive_arson": 4,
+2026-10-16T00:06:30.3574240Z     "end_electoral_fraud": 33,
+2026-10-16T00:06:30.3574899Z     "end_foreign_customs": 37,
+2026-10-16T00:06:30.3575508Z     "end_insurance_cells": 5988,
+2026-10-16T00:06:30.3575945Z     "end_local_fraud": 381,
+2026-10-16T00:06:30.3576297Z     "end_fake_evidence": 381,
+2026-10-16T00:06:30.3576702Z     "end_banquet_spoons": 3927,
+2026-10-16T00:06:30.3577104Z     "end_procurement_trial": 5794,
+2026-10-16T00:06:30.3577596Z     "end_counterfeit_docs": 9821,
+2026-10-16T00:06:30.3578083Z     "end_vote_ledger": 57913,
+2026-10-16T00:06:30.3578655Z     "end_fake_pedigree": 4027,
+2026-10-16T00:06:30.3579313Z     "end_wall_vs_demon": 38883,
+2026-10-16T00:06:30.3579848Z     "end_false_scandal": 387844,
+2026-10-16T00:06:30.3580478Z     "end_mana_deepfake": 1188386,
+2026-10-16T00:06:30.3581090Z     "end_throne_chair": 462781,
+2026-10-16T00:06:30.3581818Z     "end_ruined_by_wealth": 9129123,
+2026-10-16T00:06:30.3582566Z     "end_archive_repeat": 4719025,
+2026-10-16T00:06:30.3583292Z     "end_conspiracy_channel": 20523015,
+2026-10-16T00:06:30.3584351Z     "end_archivist_legacy": 158182911,
+2026-10-16T00:06:30.3585163Z     "end_no_title": 1113181065,
+2026-10-16T00:06:30.3585822Z     "end_expensive_paper": 1113181065,
+2026-10-16T00:06:30.3586365Z     "end_pension_king": 1113181065,
+2026-10-16T00:06:30.3586906Z     "end_collective_reform": 40945509,
+2026-10-16T00:06:30.3587435Z     "end_slow_reform": 954998154,
+2026-10-16T00:06:30.3587940Z     "end_unforced_truce": 67115812,
+2026-10-16T00:06:30.3588426Z     "end_auction_lord": 277870734,
+2026-10-16T00:06:30.3589356Z     "end_winning_villain": 26188746,
+2026-10-16T00:06:30.3589894Z     "end_market_gardener": 34008546
+2026-10-16T00:06:30.3590341Z   },
+2026-10-16T00:06:30.3590669Z   "reachableNodes": 98,
+2026-10-16T00:06:30.3591079Z   "warnings": []
+2026-10-16T00:06:30.3591439Z }
+2026-10-16T00:06:30.5839526Z 축소 완결판 전체 경로 검증 통과
+2026-10-16T00:06:30.5840012Z {
+2026-10-16T00:06:30.5840341Z   "states": 417,
+2026-10-16T00:06:30.5840732Z   "transitions": 1084,
+2026-10-16T00:06:30.5841135Z   "terminalPaths": 91664,
+2026-10-16T00:06:30.5841519Z   "maxDepth": 15,
+2026-10-16T00:06:30.5841838Z   "endings": {
+2026-10-16T00:06:30.5842166Z     "ending_escape": 36,
+2026-10-16T00:06:30.5842531Z     "ending_fire": 54,
+2026-10-16T00:06:30.5843477Z     "ending_throne": 18,
+2026-10-16T00:06:30.5844275Z     "ending_love_scandal": 18,
+2026-10-16T00:06:30.5844687Z     "ending_ledger": 1506,
+2026-10-16T00:06:30.5845180Z     "ending_paid_defeat": 72,
+2026-10-16T00:06:30.5845683Z     "ending_double_license": 24,
+2026-10-16T00:06:30.5846152Z     "ending_peace": 50900,
+2026-10-16T00:06:30.5846608Z     "ending_reform": 21008,
+2026-10-16T00:06:30.5846999Z     "ending_office": 11972,
+2026-10-16T00:06:30.5847485Z     "ending_common_enemy": 456,
+2026-10-16T00:06:30.5847994Z     "ending_taxpayer": 504,
+2026-10-16T00:06:30.5848493Z     "ending_mina_renounced": 36,
+2026-10-16T00:06:30.5849036Z     "ending_mina_wedding": 36,
+2026-10-16T00:06:30.5849550Z     "ending_mother_petition": 502,
+2026-10-16T00:06:30.5850017Z     "ending_king": 468,
+2026-10-16T00:06:30.5850408Z     "ending_bankrupt": 3012,
+2026-10-16T00:06:30.5850848Z     "ending_true_demon": 468,
+2026-10-16T00:06:30.5851400Z     "ending_confession_unanswered": 72,
+2026-10-16T00:06:30.5851972Z     "ending_retirement_47": 502
+2026-10-16T00:06:30.5852385Z   },
+2026-10-16T00:06:30.5852799Z   "reachableNodes": 44,
+2026-10-16T00:06:30.5853168Z   "warnings": []
+2026-10-16T00:06:30.5853531Z }
+2026-10-16T00:06:30.7237384Z
+2026-10-16T00:06:30.7237984Z > demon-king-phase1@0.1.0 test:e2e
+2026-10-16T00:06:30.7238530Z > playwright test
+2026-10-16T00:06:30.7238745Z
+2026-10-16T00:06:34.0439586Z
+2026-10-16T00:06:34.0440357Z Running 240 tests using 1 worker
+2026-10-16T00:06:34.0440708Z
+2026-10-16T00:06:41.0383081Z   ✓    1 [PC] › tests/e2e/compact.spec.ts:45:1 › v4.4 도감20개는 잠김 내용을 숨기고 획득 상세/동일 WebP/닫기/저장 기록을 보호한다 (5.2s)
+2026-10-16T00:06:42.5226416Z   ✓    2 [PC] › tests/e2e/compact.spec.ts:87:1 › v4.4 엔딩 그림404는 글만 표시하고 SVG로 대체하지 않으며 획득 기록을 유지한다 (1.5s)
+2026-10-16T00:06:49.0566995Z   ✓    3 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 birth: 모든 선택의 표시·결과·저장·다음 진행 (6.5s)
+2026-10-16T00:06:55.9103972Z   ✓    4 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 child: 모든 선택의 표시·결과·저장·다음 진행 (6.8s)
+2026-10-16T00:06:59.5638485Z   ✓    5 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 exam: 모든 선택의 표시·결과·저장·다음 진행 (3.6s)
+2026-10-16T00:07:02.1597382Z   ✓    6 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 prison: 모든 선택의 표시·결과·저장·다음 진행 (2.6s)
+2026-10-16T00:07:04.8082116Z   ✓    7 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 petition: 모든 선택의 표시·결과·저장·다음 진행 (2.6s)
+2026-10-16T00:07:07.4225613Z   ✓    8 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 invoice: 모든 선택의 표시·결과·저장·다음 진행 (2.6s)
+2026-10-16T00:07:10.1117896Z   ✓    9 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 princess: 모든 선택의 표시·결과·저장·다음 진행 (2.7s)
+2026-10-16T00:07:12.7257922Z   ✓   10 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 audit: 모든 선택의 표시·결과·저장·다음 진행 (2.6s)
+2026-10-16T00:07:14.6960293Z   ✓   11 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 hearing: 모든 선택의 표시·결과·저장·다음 진행 (1.9s)
+2026-10-16T00:07:17.3094703Z   ✓   12 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 settlement: 모든 선택의 표시·결과·저장·다음 진행 (2.6s)
+2026-10-16T00:07:21.8298556Z   ✓   13 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 quiet: 모든 선택의 표시·결과·저장·다음 진행 (4.5s)
+2026-10-16T00:07:26.2957633Z   ✓   14 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 final_trial: 모든 선택의 표시·결과·저장·다음 진행 (4.4s)
+2026-10-16T00:07:30.7806876Z   ✓   15 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 office: 모든 선택의 표시·결과·저장·다음 진행 (4.5s)
+2026-10-16T00:07:33.4557668Z   ✓   16 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 confession: 모든 선택의 표시·결과·저장·다음 진행 (2.7s)
+2026-10-16T00:07:35.4398450Z   ✓   17 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 confession_afterm: 모든 선택의 표시·결과·저장·다음 진행 (2.0s)
+2026-10-16T00:07:37.3516163Z   ✓   18 [PC] › tests/e2e/compact.spec.ts:100:26 › v3.8 confession_chaos: 모든 선택의 표시·결과·저장·다음 진행 (1.9s)
+2026-10-16T00:07:39.4153594Z   ✓   19 [PC] › tests/e2e/compact.spec.ts:153:1 › 설정에서 타이틀로 돌아가도 회차를 유지하고 타이틀 새로하기만 새 회차를 만든다 (2.0s)
+2026-10-16T00:07:41.4747229Z   ✓   20 [PC] › tests/e2e/compact.spec.ts:173:1 › 글자 밝기는 모든 화면 글자에만 적용되고 회차·이미지·배경을 바꾸지 않으며 다시 불러와 유지된다 (2.0s)
+2026-10-16T00:07:43.7588230Z   ✓   21 [PC] › tests/e2e/compact.spec.ts:206:1 › 150% 글자에서 능력치 한 칸은 한 줄이고 최근 연대기는 딱 한 줄이며 전체 기록은 상단에 있다 (2.3s)
+2026-10-16T00:07:48.6556443Z   ✓   22 [PC] › tests/e2e/compact.spec.ts:244:1 › 상단 NPC 없이 고백 네 번째 선택과 검수된 시험 장면을 표시한다 (4.9s)
+2026-10-16T00:07:54.1577769Z   ✓   23 [PC] › tests/e2e/compact.spec.ts:270:1 › 구버전 저장은 원문 백업 후 이어지고 전체 기록과 페이지 진행을 보호한다 (5.5s)
+2026-10-16T00:08:07.9520699Z   ✓   24 [PC] › tests/e2e/compact.spec.ts:293:1 › 선택2·3·4·5개는 전부 표시되고 각 선택과 마지막 항목을 클릭할 수 있다 (13.8s)
+2026-10-16T00:08:08.9790599Z   ✓   25 [PC] › tests/e2e/compact.spec.ts:318:1 › 본문 그림은 관련 문단과 함께 나타나고 클릭당 한 문단·연대기·선택 팝업을 유지한다 (1.0s)
+2026-10-16T00:08:12.0403286Z   ✓   26 [PC] › tests/e2e/compact.spec.ts:334:1 › 그림 없는 사건은 텍스트로 진행하고 재판·엔딩 그림과 저장 후 복원을 보호한다 (3.0s)
+2026-10-16T00:08:16.1095959Z   ✓   27 [PC] › tests/e2e/compact.spec.ts:355:1 › 나무칼 장면은 열두 살 두 아이의 독립 그림으로 표시하고 문단·비율·선택·저장을 보호한다 (4.0s)
+2026-10-16T00:08:17.3685904Z   ✓   28 [PC] › tests/e2e/compact.spec.ts:375:1 › 나무칼 독립 그림이 없으면 빈 프레임 없이 친구 선택과 다음 사건으로 진행한다 (1.2s)
+2026-10-16T00:08:18.5340517Z   ✓   29 [PC] › tests/e2e/compact.spec.ts:383:1 › 그림 로딩 실패 시 빈 프레임 없이 본문과 페이지·스크롤 선택을 계속한다 (1.1s)
+2026-10-16T00:08:19.4601062Z   ✓   30 [PC] › tests/e2e/compact.spec.ts:397:1 › 빈 줄마다 문단과 간격이 있고 대사 카드 중복 없이 본문 끝에서만 선택할 수 있다 (901ms)
+2026-10-16T00:08:21.1158476Z   ✓   31 [PC] › tests/e2e/compact.spec.ts:412:1 › 선택 후 서술을 먼저 한 번 표시하며 새로고침 뒤 다음 장면과 원장을 보호한다 (1.6s)
+2026-10-16T00:08:22.6541906Z   ✓   32 [PC] › tests/e2e/compact.spec.ts:427:1 › 연대기는 방문한 사건의 독립 요약만 한 줄로 표시하고 전체 기록도 전문을 중복하지 않는다 (1.5s)
+2026-10-16T00:08:44.4132471Z   ✓   33 [PC] › tests/e2e/compact.spec.ts:440:1 › 8개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건만 회상하며 마지막에 중복 없이 해금된다 (21.7s)
+2026-10-16T00:08:46.4626151Z   ✓   34 [PC] › tests/e2e/compact.spec.ts:499:1 › 회상은 읽을 시간 후 한 개씩 자동 전환하고 새로고침에서 이어지며 설정 중 멈춘다 (2.0s)
+2026-10-16T00:08:48.0965243Z   ✓   35 [PC] › tests/e2e/compact.spec.ts:512:1 › 360~430px 화면과 최대 글자 크기에서 문단 간격·연대기 한 줄·선택 팝업 접근을 유지한다 (1.6s)
+2026-10-16T00:08:49.7346199Z   ✓   36 [PC] › tests/e2e/compact.spec.ts:530:1 › 본문 HTML은 문자로 표시하고 reduced-motion에서도 결말을 수동으로 완료할 수 있다 (1.6s)
+2026-10-16T00:08:51.5245291Z   ✓   37 [PC] › tests/e2e/compact.spec.ts:545:1 › 원작 플레이 없이 기본 주소에서 현재 판을 실행하며 과거 저장과 도감을 보호한다 (1.8s)
+2026-10-16T00:08:54.0226479Z   ✓   38 [PC] › tests/e2e/compact.spec.ts:568:1 › 방문한 사건의 선택 직전으로 돌아가 다른 분기를 선택하고 새로고침 및 이전 회차 복원을 지원한다 (2.5s)
+2026-10-16T00:08:56.3060242Z   ✓   39 [PC] › tests/e2e/compact.spec.ts:599:1 › 종료 후에도 지난 분기를 재선택하고 엔딩 도감을 유지하며 저장 실패 시 원래 회차를 지킨다 (2.3s)
+2026-10-16T00:08:57.5507544Z   ✓   40 [PC] › tests/e2e/compact.spec.ts:622:1 › 페이지 방식은 한 페이지를 즉시 표시하고 자동으로 넘기거나 스크롤하지 않으며 방식 설정을 유지한다 (1.2s)
+2026-10-16T00:08:58.8073348Z   ✓   41 [PC] › tests/e2e/compact.spec.ts:637:1 › 페이지를 모두 읽은 뒤에 선택지를 열고 선택 후 서술도 페이지로 읽으며 이전 페이지를 다시 볼 수 있다 (1.2s)
+2026-10-16T00:09:00.3986017Z   ✓   42 [PC] › tests/e2e/compact.spec.ts:655:1 › 긴 문단도 실제 화면과 150% 글자에 맞춰 나뉘고 모든 글자가 빠짐없이 한 페이지씩 보인다 (1.6s)
+2026-10-16T00:09:01.6778483Z   ✓   43 [PC] › tests/e2e/compact.spec.ts:691:1 › 페이지와 스크롤을 전환하거나 화면·글자 크기를 바꿔도 회차와 기존 읽기 기능을 보존한다 (1.3s)
+2026-10-16T00:09:04.0502058Z   ✓   44 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_escape: 새 게임부터 선택·회상·획득·도감·이미지·복원 (2.3s)
+2026-10-16T00:09:06.5148176Z   ✓   45 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_fire: 새 게임부터 선택·회상·획득·도감·이미지·복원 (2.4s)
+2026-10-16T00:09:08.8856503Z   ✓   46 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_throne: 새 게임부터 선택·회상·획득·도감·이미지·복원 (2.3s)
+2026-10-16T00:09:11.7679067Z   ✓   47 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_ledger: 새 게임부터 선택·회상·획득·도감·이미지·복원 (2.9s)
+2026-10-16T00:09:15.0810846Z   ✓   48 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_peace: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.3s)
+2026-10-16T00:09:18.5112663Z   ✓   49 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_reform: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.4s)
+2026-10-16T00:09:22.0131016Z   ✓   50 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_office: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.5s)
+2026-10-16T00:09:24.6476076Z   ✓   51 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_love_scandal: 새 게임부터 선택·회상·획득·도감·이미지·복원 (2.6s)
+2026-10-16T00:09:28.2275724Z   ✓   52 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_mina_renounced: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.6s)
+2026-10-16T00:09:31.7136888Z   ✓   53 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_mina_wedding: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.5s)
+2026-10-16T00:09:35.3433602Z   ✓   54 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_confession_unanswered: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.6s)
+2026-10-16T00:09:38.8632885Z   ✓   55 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_common_enemy: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.5s)
+2026-10-16T00:09:42.1785909Z   ✓   56 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_double_license: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.3s)
+2026-10-16T00:09:45.9028753Z   ✓   57 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_retirement_47: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.7s)
+2026-10-16T00:09:49.2325955Z   ✓   58 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_paid_defeat: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.3s)
+2026-10-16T00:09:52.7434530Z   ✓   59 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_taxpayer: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.5s)
+2026-10-16T00:09:56.4513935Z   ✓   60 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_king: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.7s)
+2026-10-16T00:10:00.1461270Z   ✓   61 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_bankrupt: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.7s)
+2026-10-16T00:10:03.8306877Z   ✓   62 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_true_demon: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.7s)
+2026-10-16T00:10:07.3469665Z   ✓   63 [PC] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_mother_petition: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.5s)
+2026-10-16T00:10:08.9155398Z   ✓   64 [PC] › tests/e2e/tree-compact.spec.ts:13:1 › 트리 기본 잠금/카메라 드래그·휠·미니맵/노드 고정/원장 불변/닫기 포커스 (1.5s)
+2026-10-16T00:10:10.0516295Z   ✓   65 [PC] › tests/e2e/tree-compact.spec.ts:35:1 › 힌트는 명시적으로 켜야 보이며 잠긴 엔딩 그림/결말은 계속 숨기고 재열기/ESC/뒤로가기를 지원한다 (1.1s)
+2026-10-16T00:10:11.8743958Z   ✓   66 [PC] › tests/e2e/tree-compact.spec.ts:48:1 › 실제 방문 분기 재선택은 확인 전 저장을 바꾸지 않고 확인 후 기존 백업으로 복원된다 (1.8s)
+2026-10-16T00:10:12.0300388Z   -   67 [PC] › tests/e2e/tree-compact.spec.ts:65:1 › 모바일 실제 두 손가락 핀치는 카메라만 확대하고 노드/게임 원장을 유지한다
+2026-10-16T00:10:14.2227655Z   ✓   68 [PC] › tests/e2e/tree-compact.spec.ts:76:1 › 320/360/390/430/1280px·150% 글자에서 트리 컨트롤과 미니맵·전체 보기·노드 탭을 유지한다 (2.2s)
+2026-10-16T00:10:16.2876192Z   ✓   69 [PC] › tests/e2e/tree-compact.spec.ts:98:1 › 실제 획득 엔딩은 트리에서도 동일 WebP·전체 결말을 표시하며 나머지19개는 잠근다 (2.0s)
+2026-10-16T00:10:17.7899640Z   ✓   70 [PC] › tests/e2e/tree-compact.spec.ts:127:1 › 노드 글자 위의 휠·드래그는 포커스로 카메라를 재설정하지 않고 떼기 전 상세를 열지 않는다 (1.5s)
+2026-10-16T00:10:17.9390740Z   -   71 [PC] › tests/e2e/tree-compact.spec.ts:150:1 › 노드에서 시작한 실제 터치 연속 드래그·핀치·한 손가락 잔류·취소 후 탭을 구분한다
+2026-10-16T00:10:19.4455257Z   ✓   72 [PC] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_1: 전용나이·결과·저장·후속사건 (1.5s)
+2026-10-16T00:10:20.9831425Z   ✓   73 [PC] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_2: 전용나이·결과·저장·후속사건 (1.5s)
+2026-10-16T00:10:22.5270703Z   ✓   74 [PC] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_3: 전용나이·결과·저장·후속사건 (1.5s)
+2026-10-16T00:10:24.7162894Z   ✓   75 [PC] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_1: 전용나이·결과·저장·후속사건 (2.2s)
+2026-10-16T00:10:26.8630475Z   ✓   76 [PC] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_2: 전용나이·결과·저장·후속사건 (2.1s)
+2026-10-16T00:10:28.9682351Z   ✓   77 [PC] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_3: 전용나이·결과·저장·후속사건 (2.1s)
+2026-10-16T00:10:31.5750535Z   ✓   78 [PC] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_1: 전용나이·결과·저장·후속사건 (2.6s)
+2026-10-16T00:10:34.2395952Z   ✓   79 [PC] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_2: 전용나이·결과·저장·후속사건 (2.6s)
+2026-10-16T00:10:36.8697605Z   ✓   80 [PC] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_3: 전용나이·결과·저장·후속사건 (2.6s)
+2026-10-16T00:10:39.3633012Z   ✓   81 [PC] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_1: 전용나이·결과·저장·후속사건 (2.5s)
+2026-10-16T00:10:41.8445935Z   ✓   82 [PC] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_2: 전용나이·결과·저장·후속사건 (2.5s)
+2026-10-16T00:10:44.3591967Z   ✓   83 [PC] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_3: 전용나이·결과·저장·후속사건 (2.5s)
+2026-10-16T00:10:46.2786693Z   ✓   84 [PC] › tests/e2e/v45-compact.spec.ts:42:1 › v4.5 연간 기록은1~11세 한줄씩 자동/클릭 표시하고 선택/효과 없이12세 실제사건으로 이어진다 (1.9s)
+2026-10-16T00:10:48.1902194Z   ✓   85 [PC] › tests/e2e/v45-compact.spec.ts:59:1 › v4.5 검수CG는출생·공개재판에맞게연결되고회상문장은실제선택한하나만표시한다 (1.9s)
+2026-10-16T00:10:50.0886213Z   ✓   86 [PC] › tests/e2e/v45-compact.spec.ts:72:55 › v4.5 왕궁CG/bring_mina: 실제동행결과에만한번표시 (1.9s)
+2026-10-16T00:10:51.6399189Z   ✓   87 [PC] › tests/e2e/v45-compact.spec.ts:72:55 › v4.5 왕궁CG/accept_invite: 실제동행결과에만한번표시 (1.5s)
+2026-10-16T00:10:54.1851508Z   ✓   88 [PC] › tests/e2e/v45-compact.spec.ts:84:1 › v4.5 주마등은실제방문·선택·고유그림만사용하고SVG는렌더링하지않는다 (2.5s)
+2026-10-16T00:11:00.5947895Z   ✓   89 [모바일-320] › tests/e2e/compact.spec.ts:45:1 › v4.4 도감20개는 잠김 내용을 숨기고 획득 상세/동일 WebP/닫기/저장 기록을 보호한다 (4.6s)
+2026-10-16T00:11:02.0621498Z   ✓   90 [모바일-320] › tests/e2e/compact.spec.ts:87:1 › v4.4 엔딩 그림404는 글만 표시하고 SVG로 대체하지 않으며 획득 기록을 유지한다 (1.4s)
+2026-10-16T00:11:07.5277649Z   ✓   91 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 birth: 모든 선택의 표시·결과·저장·다음 진행 (5.4s)
+2026-10-16T00:11:13.0868738Z   ✓   92 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 child: 모든 선택의 표시·결과·저장·다음 진행 (5.5s)
+2026-10-16T00:11:16.4657658Z   ✓   93 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 exam: 모든 선택의 표시·결과·저장·다음 진행 (3.4s)
+2026-10-16T00:11:18.9421811Z   ✓   94 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 prison: 모든 선택의 표시·결과·저장·다음 진행 (2.5s)
+2026-10-16T00:11:21.3918398Z   ✓   95 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 petition: 모든 선택의 표시·결과·저장·다음 진행 (2.4s)
+2026-10-16T00:11:23.8236115Z   ✓   96 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 invoice: 모든 선택의 표시·결과·저장·다음 진행 (2.4s)
+2026-10-16T00:11:26.3848452Z   ✓   97 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 princess: 모든 선택의 표시·결과·저장·다음 진행 (2.5s)
+2026-10-16T00:11:28.9296531Z   ✓   98 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 audit: 모든 선택의 표시·결과·저장·다음 진행 (2.5s)
+2026-10-16T00:11:30.9141027Z   ✓   99 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 hearing: 모든 선택의 표시·결과·저장·다음 진행 (2.0s)
+2026-10-16T00:11:33.4131546Z   ✓  100 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 settlement: 모든 선택의 표시·결과·저장·다음 진행 (2.5s)
+2026-10-16T00:11:37.8036322Z   ✓  101 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 quiet: 모든 선택의 표시·결과·저장·다음 진행 (4.4s)
+2026-10-16T00:11:42.2171296Z   ✓  102 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 final_trial: 모든 선택의 표시·결과·저장·다음 진행 (4.4s)
+2026-10-16T00:11:46.5764390Z   ✓  103 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 office: 모든 선택의 표시·결과·저장·다음 진행 (4.3s)
+2026-10-16T00:11:49.1944259Z   ✓  104 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 confession: 모든 선택의 표시·결과·저장·다음 진행 (2.6s)
+2026-10-16T00:11:51.1451753Z   ✓  105 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 confession_afterm: 모든 선택의 표시·결과·저장·다음 진행 (1.9s)
+2026-10-16T00:11:52.9726011Z   ✓  106 [모바일-320] › tests/e2e/compact.spec.ts:100:26 › v3.8 confession_chaos: 모든 선택의 표시·결과·저장·다음 진행 (1.8s)
+2026-10-16T00:11:54.9105758Z   ✓  107 [모바일-320] › tests/e2e/compact.spec.ts:153:1 › 설정에서 타이틀로 돌아가도 회차를 유지하고 타이틀 새로하기만 새 회차를 만든다 (1.9s)
+2026-10-16T00:11:56.8313403Z   ✓  108 [모바일-320] › tests/e2e/compact.spec.ts:173:1 › 글자 밝기는 모든 화면 글자에만 적용되고 회차·이미지·배경을 바꾸지 않으며 다시 불러와 유지된다 (1.9s)
+2026-10-16T00:11:58.6636891Z   ✓  109 [모바일-320] › tests/e2e/compact.spec.ts:206:1 › 150% 글자에서 능력치 한 칸은 한 줄이고 최근 연대기는 딱 한 줄이며 전체 기록은 상단에 있다 (1.8s)
+2026-10-16T00:12:03.3628479Z   ✓  110 [모바일-320] › tests/e2e/compact.spec.ts:244:1 › 상단 NPC 없이 고백 네 번째 선택과 검수된 시험 장면을 표시한다 (4.7s)
+2026-10-16T00:12:08.9743987Z   ✓  111 [모바일-320] › tests/e2e/compact.spec.ts:270:1 › 구버전 저장은 원문 백업 후 이어지고 전체 기록과 페이지 진행을 보호한다 (5.6s)
+2026-10-16T00:12:21.9462227Z   ✓  112 [모바일-320] › tests/e2e/compact.spec.ts:293:1 › 선택2·3·4·5개는 전부 표시되고 각 선택과 마지막 항목을 클릭할 수 있다 (13.0s)
+2026-10-16T00:12:22.9396266Z   ✓  113 [모바일-320] › tests/e2e/compact.spec.ts:318:1 › 본문 그림은 관련 문단과 함께 나타나고 클릭당 한 문단·연대기·선택 팝업을 유지한다 (974ms)
+2026-10-16T00:12:25.8847027Z   ✓  114 [모바일-320] › tests/e2e/compact.spec.ts:334:1 › 그림 없는 사건은 텍스트로 진행하고 재판·엔딩 그림과 저장 후 복원을 보호한다 (2.9s)
+2026-10-16T00:12:29.9015958Z   ✓  115 [모바일-320] › tests/e2e/compact.spec.ts:355:1 › 나무칼 장면은 열두 살 두 아이의 독립 그림으로 표시하고 문단·비율·선택·저장을 보호한다 (4.0s)
+2026-10-16T00:12:31.1109185Z   ✓  116 [모바일-320] › tests/e2e/compact.spec.ts:375:1 › 나무칼 독립 그림이 없으면 빈 프레임 없이 친구 선택과 다음 사건으로 진행한다 (1.2s)
+2026-10-16T00:12:32.2528497Z   ✓  117 [모바일-320] › tests/e2e/compact.spec.ts:383:1 › 그림 로딩 실패 시 빈 프레임 없이 본문과 페이지·스크롤 선택을 계속한다 (1.1s)
+2026-10-16T00:12:33.1647285Z   ✓  118 [모바일-320] › tests/e2e/compact.spec.ts:397:1 › 빈 줄마다 문단과 간격이 있고 대사 카드 중복 없이 본문 끝에서만 선택할 수 있다 (891ms)
+2026-10-16T00:12:34.7535714Z   ✓  119 [모바일-320] › tests/e2e/compact.spec.ts:412:1 › 선택 후 서술을 먼저 한 번 표시하며 새로고침 뒤 다음 장면과 원장을 보호한다 (1.6s)
+2026-10-16T00:12:36.1927133Z   ✓  120 [모바일-320] › tests/e2e/compact.spec.ts:427:1 › 연대기는 방문한 사건의 독립 요약만 한 줄로 표시하고 전체 기록도 전문을 중복하지 않는다 (1.4s)
+2026-10-16T00:12:57.2326217Z   ✓  121 [모바일-320] › tests/e2e/compact.spec.ts:440:1 › 8개 엔딩이 후속 서술과 독립 화면을 거치고 실제 사건만 회상하며 마지막에 중복 없이 해금된다 (21.0s)
+2026-10-16T00:12:59.1954898Z   ✓  122 [모바일-320] › tests/e2e/compact.spec.ts:499:1 › 회상은 읽을 시간 후 한 개씩 자동 전환하고 새로고침에서 이어지며 설정 중 멈춘다 (1.9s)
+2026-10-16T00:13:00.8616128Z   ✓  123 [모바일-320] › tests/e2e/compact.spec.ts:512:1 › 360~430px 화면과 최대 글자 크기에서 문단 간격·연대기 한 줄·선택 팝업 접근을 유지한다 (1.6s)
+2026-10-16T00:13:02.4778432Z   ✓  124 [모바일-320] › tests/e2e/compact.spec.ts:530:1 › 본문 HTML은 문자로 표시하고 reduced-motion에서도 결말을 수동으로 완료할 수 있다 (1.6s)
+2026-10-16T00:13:04.1611015Z   ✓  125 [모바일-320] › tests/e2e/compact.spec.ts:545:1 › 원작 플레이 없이 기본 주소에서 현재 판을 실행하며 과거 저장과 도감을 보호한다 (1.7s)
+2026-10-16T00:13:06.5095974Z   ✓  126 [모바일-320] › tests/e2e/compact.spec.ts:568:1 › 방문한 사건의 선택 직전으로 돌아가 다른 분기를 선택하고 새로고침 및 이전 회차 복원을 지원한다 (2.3s)
+2026-10-16T00:13:08.6226258Z   ✓  127 [모바일-320] › tests/e2e/compact.spec.ts:599:1 › 종료 후에도 지난 분기를 재선택하고 엔딩 도감을 유지하며 저장 실패 시 원래 회차를 지킨다 (2.1s)
+2026-10-16T00:13:09.8101880Z   ✓  128 [모바일-320] › tests/e2e/compact.spec.ts:622:1 › 페이지 방식은 한 페이지를 즉시 표시하고 자동으로 넘기거나 스크롤하지 않으며 방식 설정을 유지한다 (1.2s)
+2026-10-16T00:13:11.0455949Z   ✓  129 [모바일-320] › tests/e2e/compact.spec.ts:637:1 › 페이지를 모두 읽은 뒤에 선택지를 열고 선택 후 서술도 페이지로 읽으며 이전 페이지를 다시 볼 수 있다 (1.2s)
+2026-10-16T00:13:12.8106222Z   ✓  130 [모바일-320] › tests/e2e/compact.spec.ts:655:1 › 긴 문단도 실제 화면과 150% 글자에 맞춰 나뉘고 모든 글자가 빠짐없이 한 페이지씩 보인다 (1.7s)
+2026-10-16T00:13:14.0516507Z   ✓  131 [모바일-320] › tests/e2e/compact.spec.ts:691:1 › 페이지와 스크롤을 전환하거나 화면·글자 크기를 바꿔도 회차와 기존 읽기 기능을 보존한다 (1.2s)
+2026-10-16T00:13:16.4232999Z   ✓  132 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_escape: 새 게임부터 선택·회상·획득·도감·이미지·복원 (2.3s)
+2026-10-16T00:13:18.7481908Z   ✓  133 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_fire: 새 게임부터 선택·회상·획득·도감·이미지·복원 (2.3s)
+2026-10-16T00:13:21.1026838Z   ✓  134 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_throne: 새 게임부터 선택·회상·획득·도감·이미지·복원 (2.3s)
+2026-10-16T00:13:23.9004564Z   ✓  135 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_ledger: 새 게임부터 선택·회상·획득·도감·이미지·복원 (2.8s)
+2026-10-16T00:13:27.1507879Z   ✓  136 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_peace: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.2s)
+2026-10-16T00:13:30.5676065Z   ✓  137 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_reform: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.4s)
+2026-10-16T00:13:33.9979114Z   ✓  138 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_office: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.4s)
+2026-10-16T00:13:36.5446309Z   ✓  139 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_love_scandal: 새 게임부터 선택·회상·획득·도감·이미지·복원 (2.5s)
+2026-10-16T00:13:40.0352518Z   ✓  140 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_mina_renounced: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.5s)
+2026-10-16T00:13:43.4979351Z   ✓  141 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_mina_wedding: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.4s)
+2026-10-16T00:13:47.1328638Z   ✓  142 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_confession_unanswered: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.6s)
+2026-10-16T00:13:50.6174187Z   ✓  143 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_common_enemy: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.5s)
+2026-10-16T00:13:53.9019669Z   ✓  144 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_double_license: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.3s)
+2026-10-16T00:13:57.5651812Z   ✓  145 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_retirement_47: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.6s)
+2026-10-16T00:14:00.8352414Z   ✓  146 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_paid_defeat: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.3s)
+2026-10-16T00:14:04.3035615Z   ✓  147 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_taxpayer: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.4s)
+2026-10-16T00:14:07.9846298Z   ✓  148 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_king: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.7s)
+2026-10-16T00:14:11.5967966Z   ✓  149 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_bankrupt: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.6s)
+2026-10-16T00:14:15.2296793Z   ✓  150 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_true_demon: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.6s)
+2026-10-16T00:14:18.6489861Z   ✓  151 [모바일-320] › tests/e2e/routes-compact.spec.ts:21:27 › 실제20엔딩/ending_mother_petition: 새 게임부터 선택·회상·획득·도감·이미지·복원 (3.4s)
+2026-10-16T00:14:20.1886268Z   ✓  152 [모바일-320] › tests/e2e/tree-compact.spec.ts:13:1 › 트리 기본 잠금/카메라 드래그·휠·미니맵/노드 고정/원장 불변/닫기 포커스 (1.5s)
+2026-10-16T00:14:21.2933150Z   ✓  153 [모바일-320] › tests/e2e/tree-compact.spec.ts:35:1 › 힌트는 명시적으로 켜야 보이며 잠긴 엔딩 그림/결말은 계속 숨기고 재열기/ESC/뒤로가기를 지원한다 (1.1s)
+2026-10-16T00:14:23.0976065Z   ✓  154 [모바일-320] › tests/e2e/tree-compact.spec.ts:48:1 › 실제 방문 분기 재선택은 확인 전 저장을 바꾸지 않고 확인 후 기존 백업으로 복원된다 (1.8s)
+2026-10-16T00:14:24.0842082Z   ✓  155 [모바일-320] › tests/e2e/tree-compact.spec.ts:65:1 › 모바일 실제 두 손가락 핀치는 카메라만 확대하고 노드/게임 원장을 유지한다 (974ms)
+2026-10-16T00:14:26.2272681Z   ✓  156 [모바일-320] › tests/e2e/tree-compact.spec.ts:76:1 › 320/360/390/430/1280px·150% 글자에서 트리 컨트롤과 미니맵·전체 보기·노드 탭을 유지한다 (2.1s)
+2026-10-16T00:14:28.2306688Z   ✓  157 [모바일-320] › tests/e2e/tree-compact.spec.ts:98:1 › 실제 획득 엔딩은 트리에서도 동일 WebP·전체 결말을 표시하며 나머지19개는 잠근다 (2.0s)
+2026-10-16T00:14:29.7601561Z   ✓  158 [모바일-320] › tests/e2e/tree-compact.spec.ts:127:1 › 노드 글자 위의 휠·드래그는 포커스로 카메라를 재설정하지 않고 떼기 전 상세를 열지 않는다 (1.5s)
+2026-10-16T00:14:31.4927355Z   ✓  159 [모바일-320] › tests/e2e/tree-compact.spec.ts:150:1 › 노드에서 시작한 실제 터치 연속 드래그·핀치·한 손가락 잔류·취소 후 탭을 구분한다 (1.7s)
+2026-10-16T00:14:32.9768310Z   ✓  160 [모바일-320] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_1: 전용나이·결과·저장·후속사건 (1.5s)
+2026-10-16T00:14:34.4533441Z   ✓  161 [모바일-320] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_2: 전용나이·결과·저장·후속사건 (1.5s)
+2026-10-16T00:14:35.9783224Z   ✓  162 [모바일-320] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/birth_tax/birth_tax_3: 전용나이·결과·저장·후속사건 (1.5s)
+2026-10-16T00:14:38.0966500Z   ✓  163 [모바일-320] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_1: 전용나이·결과·저장·후속사건 (2.1s)
+2026-10-16T00:14:40.1599660Z   ✓  164 [모바일-320] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_2: 전용나이·결과·저장·후속사건 (2.0s)
+2026-10-16T00:14:42.2081643Z   ✓  165 [모바일-320] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/mina_bridge/mina_bridge_3: 전용나이·결과·저장·후속사건 (2.0s)
+2026-10-16T00:14:44.7122441Z   ✓  166 [모바일-320] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_1: 전용나이·결과·저장·후속사건 (2.5s)
+2026-10-16T00:14:47.2556341Z   ✓  167 [모바일-320] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_2: 전용나이·결과·저장·후속사건 (2.5s)
+2026-10-16T00:14:49.8423018Z   ✓  168 [모바일-320] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/orphan_registry/orphan_registry_3: 전용나이·결과·저장·후속사건 (2.6s)
+2026-10-16T00:14:52.2027358Z   ✓  169 [모바일-320] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_1: 전용나이·결과·저장·후속사건 (2.3s)
+2026-10-16T00:14:54.5830594Z   ✓  170 [모바일-320] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_2: 전용나이·결과·저장·후속사건 (2.4s)
+2026-10-16T00:14:57.0008222Z   ✓  171 [모바일-320] › tests/e2e/v45-compact.spec.ts:26:3 › v4.5 실제확장/old_mina/old_mina_3: 전용나이·결과·저장·후속사건 (2.4s)
+2026-10-16T00:14:58.8101214Z   ✓  172 [모바일-320] › tests/e2e/v45-compact.spec.ts:42:1 › v4.5 연간 기록은1~11세 한줄씩 자동/클릭 표시하고 선택/효과 없이12세 실제사건으로 이어진다 (1.8s)
+2026-10-16T00:15:00.6119425Z   ✓  173 [모바일-320] › tests/e2e/v45-compact.spec.ts:59:1 › v4.5 검수CG는출생·공개재판에맞게연결되고회상문장은실제선택한하나만표시한다 (1.8s)
+2026-10-16T00:15:02.3929106Z   ✓  174 [모바일-320] › tests/e2e/v45-compact.spec.ts:72:55 › v4.5 왕궁CG/bring_mina: 실제동행결과에만한번표시 (1.8s)
+2026-10-16T00:15:03.8616173Z   ✓  175 [모바일-320] › tests/e2e/v45-compact.spec.ts:72:55 › v4.5 왕궁CG/accept_invite: 실제동행결과에만한번표시 (1.4s)
+2026-10-16T00:15:06.3207792Z   ✓  176 [모바일-320] › tests/e2e/v45-compact.spec.ts:84:1 › v4.5 주마등은실제방문·선택·고유그림만사용하고SVG는렌더링하지않는다 (2.4s)
+2026-10-16T00:15:08.6951265Z   ✓  177 [보관된-원작-PC] › tests/e2e/chat.spec.ts:12:1 › 타이틀에서 시작한 뒤 이름을 제거하고 새로고침에서도 제목을 반복하지 않는다 (1.3s)
+2026-10-16T00:15:09.7535776Z   ✓  178 [보관된-원작-PC] › tests/e2e/chat.spec.ts:24:1 › 정사각 초상화·4칸 상태·연대기 배경/NPC 전환과 작은 이미지 용량 (1.0s)
+2026-10-16T00:15:10.8735995Z   ✓  179 [보관된-원작-PC] › tests/e2e/chat.spec.ts:47:1 › 선택 팝업 위에 최근 기록이 보이며 잠시 내리고 다시 열어도 원장이 바뀌지 않는다 (1.1s)
+2026-10-16T00:15:13.0325497Z   ✓  180 [보관된-원작-PC] › tests/e2e/chat.spec.ts:64:1 › 위로 스크롤하거나 이전 사건 버튼을 누르면 실제 방문 사건만 한 개씩 불러온다 (2.1s)
+2026-10-16T00:15:14.3070681Z   ✓  181 [보관된-원작-PC] › tests/e2e/chat.spec.ts:83:1 › 하단 일시정지·재생이 읽기만 제어하며 인물/설정 메뉴에서 저장을 보호한다 (1.3s)
+2026-10-16T00:15:15.2227968Z   ✓  182 [보관된-원작-PC] › tests/e2e/chat.spec.ts:102:1 › 짧은 모바일 화면에서도 상태판·조작부·최근 기록이 선택 팝업 밖에 남는다 (897ms)
+2026-10-16T00:15:16.3064294Z   ✓  183 [보관된-원작-PC] › tests/e2e/chat.spec.ts:114:1 › 실제 공격 실패 뒤 미나의 화남·황당 표정을 대사 순서에 맞춰 표시한다 (1.1s)
+2026-10-16T00:15:20.5890751Z   ✓  184 [보관된-원작-PC] › tests/e2e/game.spec.ts:27:1 › 공격·고백·재판·엔딩, 새로고침과 새 회차 도감 유지 (4.2s)
+2026-10-16T00:15:22.5251507Z   ✓  185 [보관된-원작-PC] › tests/e2e/game.spec.ts:45:1 › 생포 엔딩까지 진행하고 브라우저 뒤로가기로 원장이 되돌아가지 않는다 (1.9s)
+2026-10-16T00:15:25.3029590Z   ✓  186 [보관된-원작-PC] › tests/e2e/game.spec.ts:54:1 › 도망 선택도 실패 판정을 거쳐 생포 엔딩으로 끝난다 (2.8s)
+2026-10-16T00:15:26.8222221Z   ✓  187 [보관된-원작-PC] › tests/e2e/game.spec.ts:61:1 › 더블클릭은 단 한 번의 선택만 저장한다 (1.5s)
+2026-10-16T00:15:28.7224994Z   ✓  188 [보관된-원작-PC] › tests/e2e/game.spec.ts:69:1 › 자동 저장 실패는 다음 장면을 표시하지 않고 재시도·JSON 내보내기를 제공한다 (1.9s)
+2026-10-16T00:15:30.8181468Z   ✓  189 [보관된-원작-PC] › tests/e2e/game.spec.ts:93:1 › JSON 내보내기·가져오기를 통해 실제 진행 상태를 복원한다 (2.1s)
+2026-10-16T00:15:32.1356084Z   ✓  190 [보관된-원작-PC] › tests/e2e/game.spec.ts:105:1 › 변조 JSON과 저장된 손상 데이터를 덮어쓰지 않는다 (1.3s)
+2026-10-16T00:15:33.2204889Z   ✓  191 [보관된-원작-PC] › tests/e2e/game.spec.ts:115:1 › 320px 이상에서 가로 넘침이 없고 선택 버튼을 키보드로 실행한다 (1.1s)
+2026-10-16T00:15:34.7183585Z   ✓  192 [보관된-원작-PC] › tests/e2e/game.spec.ts:126:1 › 콘텐츠 로딩 실패는 재시도 화면을 제공하며 기존 저장을 보존한다 (1.5s)
+2026-10-16T00:15:35.8823006Z   ✓  193 [보관된-원작-PC] › tests/e2e/reading.spec.ts:16:1 › 읽을 시간을 주며 연대기 → 본문 → 대사를 자동으로 한 줄씩 표시하고 마지막 대사 뒤 선택지를 공개한다 (1.1s)
+2026-10-16T00:15:37.3269833Z   ✓  194 [보관된-원작-PC] › tests/e2e/reading.spec.ts:54:1 › 내용 클릭은 다음 한 줄만 즉시 표시하며 새 줄의 읽기 시간이 지난 뒤 자동 진행을 이어간다 (1.4s)
+2026-10-16T00:15:38.5809360Z   ✓  195 [보관된-원작-PC] › tests/e2e/reading.spec.ts:79:1 › 스킵은 한 번에 표시하고 새 장면에서는 다시 읽기, 연대기를 먼저 보여준다 (1.2s)
+2026-10-16T00:15:39.7298849Z   ✓  196 [보관된-원작-PC] › tests/e2e/reading.spec.ts:113:1 › 전체 기록 열람 중에는 읽기를 멈추고 닫으면 이어간다 (1.1s)
+2026-10-16T00:15:41.0621430Z   ✓  197 [보관된-원작-PC] › tests/e2e/reading.spec.ts:130:1 › 새로고침·표시 중 새 회차에도 저장을 보호하고 이전 타이머를 취소한다 (1.3s)
+2026-10-16T00:15:42.2118667Z   ✓  198 [보관된-원작-PC] › tests/e2e/responsive.spec.ts:4:1 › 320·360·390·430·768·1280px에서 화면 너비에 따라 레이아웃이 바뀐다 (1.1s)
+2026-10-16T00:15:43.4682250Z   ✓  199 [보관된-원작-PC] › tests/e2e/text-size.spec.ts:12:1 › 현재 크기보다 작아지지 않으며 모든 글자를 키워도 작은 화면의 조작과 선택 팝업을 유지한다 (1.2s)
+2026-10-16T00:15:45.3711718Z   ✓  200 [보관된-원작-PC] › tests/e2e/text-size.spec.ts:45:1 › 글자 크기는 새로고침과 타이틀에서도 유지되고 잘못된 화면 설정은 게임 저장을 바꾸지 않는다 (1.9s)
+2026-10-16T00:15:46.4426509Z   ✓  201 [보관된-원작-PC] › tests/e2e/v11.spec.ts:14:1 › 새 콘텐츠·장소·전체 대사·선택 설명과 반응형 인생 화면 (1.0s)
+2026-10-16T00:15:49.8419498Z   ✓  202 [보관된-원작-PC] › tests/e2e/v11.spec.ts:29:1 › 3회 연속 선택·실제 연대기·분기 비노출·저장 복원·새 결과 위치 (3.4s)
+2026-10-16T00:15:51.5133054Z   ✓  203 [보관된-원작-PC] › tests/e2e/v11.spec.ts:50:1 › 사이드카 404·불량 JSON에서도 본편 진행과 설명은 유지된다 (1.7s)
+2026-10-16T00:15:53.8482839Z   ✓  204 [보관된-원작-PC] › tests/e2e/v11.spec.ts:61:1 › v1.0 전체 세이브를 백업 후 이관하고 RNG·원장은 유지한다 (2.3s)
+2026-10-16T00:15:57.6647024Z   ✓  205 [보관된-원작-PC] › tests/e2e/v11.spec.ts:71:1 › 표시 데이터 응답이 멈춰도 본편은 제한 시간 뒤 시작한다 (3.8s)
+2026-10-16T00:15:59.3249661Z   ✓  206 [보관된-원작-PC] › tests/e2e/v11.spec.ts:77:1 › 조기 사망 엔딩 및 더블클릭 방지 (1.6s)
+2026-10-16T00:16:00.4372498Z   ✓  207 [보관된-원작-PC] › tests/e2e/v11.spec.ts:87:1 › 긴 본문과 9개 이상 대사를 생략 없이 표시한다 (1.1s)
+2026-10-16T00:16:17.1945965Z   ✓  208 [보관된-원작-PC] › tests/e2e/v11.spec.ts:99:1 › 정상 엔딩까지 원클릭으로 진행하며 최근 기록은 최대 3개 (16.7s)
+2026-10-16T00:16:19.1438205Z   ✓  209 [보관된-원작-모바일] › tests/e2e/chat.spec.ts:12:1 › 타이틀에서 시작한 뒤 이름을 제거하고 새로고침에서도 제목을 반복하지 않는다 (1.2s)
+2026-10-16T00:16:20.1417608Z   ✓  210 [보관된-원작-모바일] › tests/e2e/chat.spec.ts:24:1 › 정사각 초상화·4칸 상태·연대기 배경/NPC 전환과 작은 이미지 용량 (980ms)
+2026-10-16T00:16:21.1767677Z   ✓  211 [보관된-원작-모바일] › tests/e2e/chat.spec.ts:47:1 › 선택 팝업 위에 최근 기록이 보이며 잠시 내리고 다시 열어도 원장이 바뀌지 않는다 (1.0s)
+2026-10-16T00:16:23.1993268Z   ✓  212 [보관된-원작-모바일] › tests/e2e/chat.spec.ts:64:1 › 위로 스크롤하거나 이전 사건 버튼을 누르면 실제 방문 사건만 한 개씩 불러온다 (2.0s)
+2026-10-16T00:16:24.3314901Z   ✓  213 [보관된-원작-모바일] › tests/e2e/chat.spec.ts:83:1 › 하단 일시정지·재생이 읽기만 제어하며 인물/설정 메뉴에서 저장을 보호한다 (1.1s)
+2026-10-16T00:16:25.2310682Z   ✓  214 [보관된-원작-모바일] › tests/e2e/chat.spec.ts:102:1 › 짧은 모바일 화면에서도 상태판·조작부·최근 기록이 선택 팝업 밖에 남는다 (886ms)
+2026-10-16T00:16:26.2249061Z   ✓  215 [보관된-원작-모바일] › tests/e2e/chat.spec.ts:114:1 › 실제 공격 실패 뒤 미나의 화남·황당 표정을 대사 순서에 맞춰 표시한다 (978ms)
+2026-10-16T00:16:30.3496733Z   ✓  216 [보관된-원작-모바일] › tests/e2e/game.spec.ts:27:1 › 공격·고백·재판·엔딩, 새로고침과 새 회차 도감 유지 (4.1s)
+2026-10-16T00:16:32.2298086Z   ✓  217 [보관된-원작-모바일] › tests/e2e/game.spec.ts:45:1 › 생포 엔딩까지 진행하고 브라우저 뒤로가기로 원장이 되돌아가지 않는다 (1.9s)
+2026-10-16T00:16:34.9588576Z   ✓  218 [보관된-원작-모바일] › tests/e2e/game.spec.ts:54:1 › 도망 선택도 실패 판정을 거쳐 생포 엔딩으로 끝난다 (2.7s)
+2026-10-16T00:16:36.4203945Z   ✓  219 [보관된-원작-모바일] › tests/e2e/game.spec.ts:61:1 › 더블클릭은 단 한 번의 선택만 저장한다 (1.4s)
+2026-10-16T00:16:38.2736510Z   ✓  220 [보관된-원작-모바일] › tests/e2e/game.spec.ts:69:1 › 자동 저장 실패는 다음 장면을 표시하지 않고 재시도·JSON 내보내기를 제공한다 (1.8s)
+2026-10-16T00:16:40.2764350Z   ✓  221 [보관된-원작-모바일] › tests/e2e/game.spec.ts:93:1 › JSON 내보내기·가져오기를 통해 실제 진행 상태를 복원한다 (2.0s)
+2026-10-16T00:16:41.5206201Z   ✓  222 [보관된-원작-모바일] › tests/e2e/game.spec.ts:105:1 › 변조 JSON과 저장된 손상 데이터를 덮어쓰지 않는다 (1.2s)
+2026-10-16T00:16:42.5639727Z   ✓  223 [보관된-원작-모바일] › tests/e2e/game.spec.ts:115:1 › 320px 이상에서 가로 넘침이 없고 선택 버튼을 키보드로 실행한다 (1.0s)
+2026-10-16T00:16:44.0141315Z   ✓  224 [보관된-원작-모바일] › tests/e2e/game.spec.ts:126:1 › 콘텐츠 로딩 실패는 재시도 화면을 제공하며 기존 저장을 보존한다 (1.4s)
+2026-10-16T00:16:45.0700577Z   ✓  225 [보관된-원작-모바일] › tests/e2e/reading.spec.ts:16:1 › 읽을 시간을 주며 연대기 → 본문 → 대사를 자동으로 한 줄씩 표시하고 마지막 대사 뒤 선택지를 공개한다 (1.0s)
+2026-10-16T00:16:46.4743387Z   ✓  226 [보관된-원작-모바일] › tests/e2e/reading.spec.ts:54:1 › 내용 클릭은 다음 한 줄만 즉시 표시하며 새 줄의 읽기 시간이 지난 뒤 자동 진행을 이어간다 (1.4s)
+2026-10-16T00:16:47.6605424Z   ✓  227 [보관된-원작-모바일] › tests/e2e/reading.spec.ts:79:1 › 스킵은 한 번에 표시하고 새 장면에서는 다시 읽기, 연대기를 먼저 보여준다 (1.2s)
+2026-10-16T00:16:48.7764836Z   ✓  228 [보관된-원작-모바일] › tests/e2e/reading.spec.ts:113:1 › 전체 기록 열람 중에는 읽기를 멈추고 닫으면 이어간다 (1.1s)
+2026-10-16T00:16:50.0597599Z   ✓  229 [보관된-원작-모바일] › tests/e2e/reading.spec.ts:130:1 › 새로고침·표시 중 새 회차에도 저장을 보호하고 이전 타이머를 취소한다 (1.3s)
+2026-10-16T00:16:51.1814277Z   ✓  230 [보관된-원작-모바일] › tests/e2e/responsive.spec.ts:4:1 › 320·360·390·430·768·1280px에서 화면 너비에 따라 레이아웃이 바뀐다 (1.1s)
+2026-10-16T00:16:52.4272409Z   ✓  231 [보관된-원작-모바일] › tests/e2e/text-size.spec.ts:12:1 › 현재 크기보다 작아지지 않으며 모든 글자를 키워도 작은 화면의 조작과 선택 팝업을 유지한다 (1.2s)
+2026-10-16T00:16:54.1756997Z   ✓  232 [보관된-원작-모바일] › tests/e2e/text-size.spec.ts:45:1 › 글자 크기는 새로고침과 타이틀에서도 유지되고 잘못된 화면 설정은 게임 저장을 바꾸지 않는다 (1.7s)
+2026-10-16T00:16:55.1286561Z   ✓  233 [보관된-원작-모바일] › tests/e2e/v11.spec.ts:14:1 › 새 콘텐츠·장소·전체 대사·선택 설명과 반응형 인생 화면 (926ms)
+2026-10-16T00:16:58.3947495Z   ✓  234 [보관된-원작-모바일] › tests/e2e/v11.spec.ts:29:1 › 3회 연속 선택·실제 연대기·분기 비노출·저장 복원·새 결과 위치 (3.2s)
+2026-10-16T00:16:59.9346070Z   ✓  235 [보관된-원작-모바일] › tests/e2e/v11.spec.ts:50:1 › 사이드카 404·불량 JSON에서도 본편 진행과 설명은 유지된다 (1.5s)
+2026-10-16T00:17:02.1400921Z   ✓  236 [보관된-원작-모바일] › tests/e2e/v11.spec.ts:61:1 › v1.0 전체 세이브를 백업 후 이관하고 RNG·원장은 유지한다 (2.2s)
+2026-10-16T00:17:05.9414847Z   ✓  237 [보관된-원작-모바일] › tests/e2e/v11.spec.ts:71:1 › 표시 데이터 응답이 멈춰도 본편은 제한 시간 뒤 시작한다 (3.8s)
+2026-10-16T00:17:07.5311865Z   ✓  238 [보관된-원작-모바일] › tests/e2e/v11.spec.ts:77:1 › 조기 사망 엔딩 및 더블클릭 방지 (1.6s)
+2026-10-16T00:17:08.5665425Z   ✓  239 [보관된-원작-모바일] › tests/e2e/v11.spec.ts:87:1 › 긴 본문과 9개 이상 대사를 생략 없이 표시한다 (1.0s)
+2026-10-16T00:17:25.2260562Z   ✓  240 [보관된-원작-모바일] › tests/e2e/v11.spec.ts:99:1 › 정상 엔딩까지 원클릭으로 진행하며 최근 기록은 최대 3개 (16.6s)
+2026-10-16T00:17:25.3989875Z
+2026-10-16T00:17:25.3996245Z   2 skipped
+2026-10-16T00:17:25.3998192Z   238 passed (10.9m)
+2026-10-16T00:17:25.5177316Z
+2026-10-16T00:17:25.5177784Z > demon-king-phase1@0.1.0 build
+2026-10-16T00:17:25.5178457Z > npm run typecheck && npm run validate:content && npm run simulate:all && vite build
+2026-10-16T00:17:25.5178876Z
+2026-10-16T00:17:25.6189191Z
+2026-10-16T00:17:25.6189769Z > demon-king-phase1@0.1.0 typecheck
+2026-10-16T00:17:25.6190187Z > tsc --noEmit
+2026-10-16T00:17:25.6190346Z
+2026-10-16T00:17:26.2378506Z
+2026-10-16T00:17:26.2379124Z > demon-king-phase1@0.1.0 validate:content
+2026-10-16T00:17:26.2379949Z > tsx scripts/validate-content.ts && tsx scripts/validate-compact.ts && npm run validate:tree
+2026-10-16T00:17:26.2380707Z
+2026-10-16T00:17:26.6123314Z 구조 검증 통과: 장면 98, 선택 340, 엔딩 34
+2026-10-16T00:17:26.6126415Z 표시 검증 통과: 요약 98, 대화 장면 29, 대사 116, 설명 340
+2026-10-16T00:17:27.0037550Z 최소 선택지 검사 통과: 공개 일반 사건 44개, 준비본 65개(정적 검사), 엔딩 20개는 별도 유형
+2026-10-16T00:17:27.0045620Z 축소판 구조/표시 검증 통과: 44사건, 119선택, 20엔딩, 후속 서술/문단/독립 연대기/결말 연출
+2026-10-16T00:17:27.1174278Z
+2026-10-16T00:17:27.1174791Z > demon-king-phase1@0.1.0 validate:tree
+2026-10-16T00:17:27.1175705Z > node scripts/validate-tree.mjs src/content/generated/ending-tree.json && tsx scripts/verify-ending-tree.ts
+2026-10-16T00:17:27.1176264Z
+2026-10-16T00:17:27.1500459Z OK: 20 verified route exemplars; 101 graph nodes
+2026-10-16T00:17:27.7112877Z 엔딩 트리20경로/101노드: 실제 조건·판정·중간 저장·20엔딩 재현 통과
+2026-10-16T00:17:27.8268603Z
+2026-10-16T00:17:27.8269236Z > demon-king-phase1@0.1.0 simulate:all
+2026-10-16T00:17:27.8269720Z > tsx scripts/simulate-all-routes.ts
+2026-10-16T00:17:27.8269961Z
+2026-10-16T00:17:33.6763961Z 전체 경로 검증 통과 (현재 콘텐츠 v1.1 전체, 실제 판정 상태를 보존하는 동등 상태 병합)
+2026-10-16T00:17:33.6764635Z {
+2026-10-16T00:17:33.6764990Z   "states": 8175,
+2026-10-16T00:17:33.6765378Z   "transitions": 30668,
+2026-10-16T00:17:33.6765829Z   "terminalPaths": 4935390988,
+2026-10-16T00:17:33.6766256Z   "maxDepth": 25,
+2026-10-16T00:17:33.6766644Z   "endings": {
+2026-10-16T00:17:33.6767015Z     "end_blade": 1,
+2026-10-16T00:17:33.6767401Z     "end_cells_bride": 1,
+2026-10-16T00:17:33.6767833Z     "end_contempt": 4,
+2026-10-16T00:17:33.6768250Z     "end_magic_tax": 1,
+2026-10-16T00:17:33.6768727Z     "end_bench_revolution": 3,
+2026-10-16T00:17:33.6769202Z     "end_spoon_escape": 8,
+2026-10-16T00:17:33.6769621Z     "end_archive_arson": 4,
+2026-10-16T00:17:33.6770063Z     "end_electoral_fraud": 33,
+2026-10-16T00:17:33.6770556Z     "end_foreign_customs": 37,
+2026-10-16T00:17:33.6774633Z     "end_insurance_cells": 5988,
+2026-10-16T00:17:33.6775193Z     "end_local_fraud": 381,
+2026-10-16T00:17:33.6775642Z     "end_fake_evidence": 381,
+2026-10-16T00:17:33.6776195Z     "end_banquet_spoons": 3927,
+2026-10-16T00:17:33.6776691Z     "end_procurement_trial": 5794,
+2026-10-16T00:17:33.6777187Z     "end_counterfeit_docs": 9821,
+2026-10-16T00:17:33.6777618Z     "end_vote_ledger": 57913,
+2026-10-16T00:17:33.6778098Z     "end_fake_pedigree": 4027,
+2026-10-16T00:17:33.6779009Z     "end_wall_vs_demon": 38883,
+2026-10-16T00:17:33.6779582Z     "end_false_scandal": 387844,
+2026-10-16T00:17:33.6780120Z     "end_mana_deepfake": 1188386,
+2026-10-16T00:17:33.6780498Z     "end_throne_chair": 462781,
+2026-10-16T00:17:33.6780789Z     "end_ruined_by_wealth": 9129123,
+2026-10-16T00:17:33.6781104Z     "end_archive_repeat": 4719025,
+2026-10-16T00:17:33.6781437Z     "end_conspiracy_channel": 20523015,
+2026-10-16T00:17:33.6781749Z     "end_archivist_legacy": 158182911,
+2026-10-16T00:17:33.6782057Z     "end_no_title": 1113181065,
+2026-10-16T00:17:33.6782339Z     "end_expensive_paper": 1113181065,
+2026-10-16T00:17:33.6782926Z     "end_pension_king": 1113181065,
+2026-10-16T00:17:33.6784066Z     "end_collective_reform": 40945509,
+2026-10-16T00:17:33.6784653Z     "end_slow_reform": 954998154,
+2026-10-16T00:17:33.6785212Z     "end_unforced_truce": 67115812,
+2026-10-16T00:17:33.6785813Z     "end_auction_lord": 277870734,
+2026-10-16T00:17:33.6786380Z     "end_winning_villain": 26188746,
+2026-10-16T00:17:33.6786944Z     "end_market_gardener": 34008546
+2026-10-16T00:17:33.6787418Z   },
+2026-10-16T00:17:33.6787761Z   "reachableNodes": 98,
+2026-10-16T00:17:33.6788157Z   "warnings": []
+2026-10-16T00:17:33.6788508Z }
+2026-10-16T00:17:33.8868023Z 축소 완결판 전체 경로 검증 통과
+2026-10-16T00:17:33.8868901Z {
+2026-10-16T00:17:33.8869655Z   "states": 417,
+2026-10-16T00:17:33.8870265Z   "transitions": 1084,
+2026-10-16T00:17:33.8870835Z   "terminalPaths": 91664,
+2026-10-16T00:17:33.8871264Z   "maxDepth": 15,
+2026-10-16T00:17:33.8871634Z   "endings": {
+2026-10-16T00:17:33.8871990Z     "ending_escape": 36,
+2026-10-16T00:17:33.8872377Z     "ending_fire": 54,
+2026-10-16T00:17:33.8872746Z     "ending_throne": 18,
+2026-10-16T00:17:33.8873185Z     "ending_love_scandal": 18,
+2026-10-16T00:17:33.8873591Z     "ending_ledger": 1506,
+2026-10-16T00:17:33.8874494Z     "ending_paid_defeat": 72,
+2026-10-16T00:17:33.8875164Z     "ending_double_license": 24,
+2026-10-16T00:17:33.8875610Z     "ending_peace": 50900,
+2026-10-16T00:17:33.8876061Z     "ending_reform": 21008,
+2026-10-16T00:17:33.8876327Z     "ending_office": 11972,
+2026-10-16T00:17:33.8876592Z     "ending_common_enemy": 456,
+2026-10-16T00:17:33.8876847Z     "ending_taxpayer": 504,
+2026-10-16T00:17:33.8877106Z     "ending_mina_renounced": 36,
+2026-10-16T00:17:33.8877538Z     "ending_mina_wedding": 36,
+2026-10-16T00:17:33.8877857Z     "ending_mother_petition": 502,
+2026-10-16T00:17:33.8878118Z     "ending_king": 468,
+2026-10-16T00:17:33.8878350Z     "ending_bankrupt": 3012,
+2026-10-16T00:17:33.8878601Z     "ending_true_demon": 468,
+2026-10-16T00:17:33.8878886Z     "ending_confession_unanswered": 72,
+2026-10-16T00:17:33.8879187Z     "ending_retirement_47": 502
+2026-10-16T00:17:33.8879438Z   },
+2026-10-16T00:17:33.8879633Z   "reachableNodes": 44,
+2026-10-16T00:17:33.8879853Z   "warnings": []
+2026-10-16T00:17:33.8880052Z }
+2026-10-16T00:17:34.1018851Z vite v8.3.4 building client environment for production...
+2026-10-16T00:17:34.1168326Z transforming...
+2026-10-16T00:17:34.1728737Z ✓ 167 modules transformed.
+2026-10-16T00:17:34.2386544Z rendering chunks...
+2026-10-16T00:17:34.2806241Z computing gzip size...
+2026-10-16T00:17:34.2875001Z dist/index.html                   0.56 kB │ gzip:   0.40 kB
+2026-10-16T00:17:34.2875675Z dist/assets/index-CLpl51MU.css   26.02 kB │ gzip:   5.93 kB
+2026-10-16T00:17:34.2876225Z dist/assets/index-DuG6ZygF.js   491.34 kB │ gzip: 133.61 kB
+2026-10-16T00:17:34.2876487Z
+2026-10-16T00:17:34.2881695Z ✓ built in 181ms
+2026-10-16T00:17:34.3259615Z ##[group]Run actions/upload-pages-artifact@v4
+2026-10-16T00:17:34.3259948Z with:
+2026-10-16T00:17:34.3260140Z   path: dist
+2026-10-16T00:17:34.3260337Z   name: github-pages
+2026-10-16T00:17:34.3260580Z   retention-days: 1
+2026-10-16T00:17:34.3260784Z env:
+2026-10-16T00:17:34.3260974Z   PLAYWRIGHT_CHANNEL: chromium
+2026-10-16T00:17:34.3261232Z   VITE_BASE_PATH: /demon-king-life/
+2026-10-16T00:17:34.3261499Z ##[endgroup]
+2026-10-16T00:17:34.3332316Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run]
+2026-10-16T00:17:34.3358862Z ##[group]Run echo ::group::Archive artifact
+2026-10-16T00:17:34.3359212Z echo ::group::Archive artifact
+2026-10-16T00:17:34.3359482Z tar \
+2026-10-16T00:17:34.3359720Z   --dereference --hard-dereference \
+2026-10-16T00:17:34.3360036Z   --directory "$INPUT_PATH" \
+2026-10-16T00:17:34.3360334Z   -cvf "$RUNNER_TEMP/artifact.tar" \
+2026-10-16T00:17:34.3360665Z   --exclude=.git \
+2026-10-16T00:17:34.3360911Z   --exclude=.github \
+2026-10-16T00:17:34.3361153Z   --exclude=".[^/]*" \
+2026-10-16T00:17:34.3361387Z   .
+2026-10-16T00:17:34.3361765Z echo ::endgroup::
+2026-10-16T00:17:34.3388281Z shell: /usr/bin/sh -e {0}
+2026-10-16T00:17:34.3388527Z env:
+2026-10-16T00:17:34.3388738Z   PLAYWRIGHT_CHANNEL: chromium
+2026-10-16T00:17:34.3389010Z   VITE_BASE_PATH: /demon-king-life/
+2026-10-16T00:17:34.3389280Z   INPUT_PATH: dist
+2026-10-16T00:17:34.3389486Z ##[endgroup]
+2026-10-16T00:17:34.3431969Z ##[group]Archive artifact
+2026-10-16T00:17:34.3448996Z ./
+2026-10-16T00:17:34.3449355Z ./art/
+2026-10-16T00:17:34.3449779Z ./art/background-v1.webp
+2026-10-16T00:17:34.3452520Z ./art/portraits/
+2026-10-16T00:17:34.3453125Z ./art/portraits/auditor-middle-tired-v2.webp
+2026-10-16T00:17:34.3454020Z ./art/portraits/mina-old-confused-v2.webp
+2026-10-16T00:17:34.3454714Z ./art/portraits/erisia-old-neutral-v2.webp
+2026-10-16T00:17:34.3455406Z ./art/portraits/king-mature-neutral-v2.webp
+2026-10-16T00:17:34.3456106Z ./art/portraits/king-mature-confused-v2.webp
+2026-10-16T00:17:34.3456787Z ./art/portraits/erisia-mature-angry-v2.webp
+2026-10-16T00:17:34.3457459Z ./art/portraits/erisia-old-sad-v2.webp
+2026-10-16T00:17:34.3458136Z ./art/portraits/auditor-mature-angry-v2.webp
+2026-10-16T00:17:34.3458787Z ./art/portraits/king-old-confused-v2.webp
+2026-10-16T00:17:34.3459418Z ./art/portraits/erisia-old-tired-v2.webp
+2026-10-16T00:17:34.3460069Z ./art/portraits/player-old-neutral-v2.webp
+2026-10-16T00:17:34.3460706Z ./art/portraits/erisia-old-joy-v2.webp
+2026-10-16T00:17:34.3464512Z ./art/portraits/mina-early-joy-v2.webp
+2026-10-16T00:17:34.3484525Z ./art/portraits/auditor-old-tired-v2.webp
+2026-10-16T00:17:34.3504526Z ./art/portraits/erisia-middle-neutral-v2.webp
+2026-10-16T00:17:34.3505238Z ./art/portraits/player-old-angry-v2.webp
+2026-10-16T00:17:34.3505911Z ./art/portraits/auditor-mature-joy-v2.webp
+2026-10-16T00:17:34.3506622Z ./art/portraits/player-early-confused-v2.webp
+2026-10-16T00:17:34.3507289Z ./art/portraits/gallery.html
+2026-10-16T00:17:34.3507877Z ./art/portraits/king-early-tired-v2.webp
+2026-10-16T00:17:34.3508531Z ./art/portraits/player-mature-joy-v2.webp
+2026-10-16T00:17:34.3509323Z ./art/portraits/auditor-mature-tired-v2.webp
+2026-10-16T00:17:34.3509982Z ./art/portraits/mina-middle-angry-v2.webp
+2026-10-16T00:17:34.3510663Z ./art/portraits/auditor-middle-confused-v2.webp
+2026-10-16T00:17:34.3511355Z ./art/portraits/auditor-early-angry-v2.webp
+2026-10-16T00:17:34.3512033Z ./art/portraits/king-middle-confused-v2.webp
+2026-10-16T00:17:34.3512683Z ./art/portraits/king-early-angry-v2.webp
+2026-10-16T00:17:34.3513316Z ./art/portraits/player-mature-sad-v2.webp
+2026-10-16T00:17:34.3514157Z ./art/portraits/mina-early-tired-v2.webp
+2026-10-16T00:17:34.3514792Z ./art/portraits/king-old-neutral-v2.webp
+2026-10-16T00:17:34.3515423Z ./art/portraits/mina-middle-tired-v2.webp
+2026-10-16T00:17:34.3516113Z ./art/portraits/king-mature-joy-v2.webp
+2026-10-16T00:17:34.3517029Z ./art/portraits/player-middle-neutral-v2.webp
+2026-10-16T00:17:34.3517757Z ./art/portraits/auditor-middle-angry-v2.webp
+2026-10-16T00:17:34.3518478Z ./art/portraits/auditor-mature-confused-v2.webp
+2026-10-16T00:17:34.3519172Z ./art/portraits/mina-middle-neutral-v2.webp
+2026-10-16T00:17:34.3519867Z ./art/portraits/player-middle-confused-v2.webp
+2026-10-16T00:17:34.3520536Z ./art/portraits/mina-middle-sad-v2.webp
+2026-10-16T00:17:34.3521158Z ./art/portraits/king-middle-sad-v2.webp
+2026-10-16T00:17:34.3521787Z ./art/portraits/auditor-early-sad-v2.webp
+2026-10-16T00:17:34.3522411Z ./art/portraits/erisia-middle-joy-v2.webp
+2026-10-16T00:17:34.3523050Z ./art/portraits/king-mature-tired-v2.webp
+2026-10-16T00:17:34.3523898Z ./art/portraits/erisia-middle-angry-v2.webp
+2026-10-16T00:17:34.3524550Z ./art/portraits/mina-middle-joy-v2.webp
+2026-10-16T00:17:34.3525186Z ./art/portraits/king-early-neutral-v2.webp
+2026-10-16T00:17:34.3525826Z ./art/portraits/player-middle-joy-v2.webp
+2026-10-16T00:17:34.3526470Z ./art/portraits/erisia-old-angry-v2.webp
+2026-10-16T00:17:34.3527132Z ./art/portraits/mina-mature-confused-v2.webp
+2026-10-16T00:17:34.3527807Z ./art/portraits/erisia-mature-tired-v2.webp
+2026-10-16T00:17:34.3528681Z ./art/portraits/mina-mature-neutral-v2.webp
+2026-10-16T00:17:34.3529363Z ./art/portraits/erisia-mature-confused-v2.webp
+2026-10-16T00:17:34.3530049Z ./art/portraits/player-old-tired-v2.webp
+2026-10-16T00:17:34.3530726Z ./art/portraits/auditor-mature-neutral-v2.webp
+2026-10-16T00:17:34.3531394Z ./art/portraits/auditor-early-joy-v2.webp
+2026-10-16T00:17:34.3532059Z ./art/portraits/player-early-neutral-v2.webp
+2026-10-16T00:17:34.3532694Z ./art/portraits/king-early-joy-v2.webp
+2026-10-16T00:17:34.3533343Z ./art/portraits/mina-middle-confused-v2.webp
+2026-10-16T00:17:34.3534234Z ./art/portraits/player-early-joy-v2.webp
+2026-10-16T00:17:34.3534906Z ./art/portraits/auditor-early-neutral-v2.webp
+2026-10-16T00:17:34.3535563Z ./art/portraits/king-middle-joy-v2.webp
+2026-10-16T00:17:34.3536189Z ./art/portraits/player-old-joy-v2.webp
+2026-10-16T00:17:34.3536790Z ./art/portraits/mina-old-sad-v2.webp
+2026-10-16T00:17:34.3537420Z ./art/portraits/auditor-old-confused-v2.webp
+2026-10-16T00:17:34.3538083Z ./art/portraits/king-middle-neutral-v2.webp
+2026-10-16T00:17:34.3538780Z ./art/portraits/player-mature-neutral-v2.webp
+2026-10-16T00:17:34.3539449Z ./art/portraits/mina-early-neutral-v2.webp
+2026-10-16T00:17:34.3540122Z ./art/portraits/erisia-middle-confused-v2.webp
+2026-10-16T00:17:34.3540797Z ./art/portraits/auditor-early-tired-v2.webp
+2026-10-16T00:17:34.3541474Z ./art/portraits/erisia-early-confused-v2.webp
+2026-10-16T00:17:34.3542135Z ./art/portraits/king-early-confused-v2.webp
+2026-10-16T00:17:34.3542786Z ./art/portraits/erisia-mature-joy-v2.webp
+2026-10-16T00:17:34.3543399Z ./art/portraits/king-old-tired-v2.webp
+2026-10-16T00:17:34.3544229Z ./art/portraits/king-mature-sad-v2.webp
+2026-10-16T00:17:34.3544840Z ./art/portraits/mina-old-joy-v2.webp
+2026-10-16T00:17:34.3545461Z ./art/portraits/player-middle-angry-v2.webp
+2026-10-16T00:17:34.3546142Z ./art/portraits/erisia-early-neutral-v2.webp
+2026-10-16T00:17:34.3546795Z ./art/portraits/player-old-sad-v2.webp
+2026-10-16T00:17:34.3547486Z ./art/portraits/mina-old-angry-v2.webp
+2026-10-16T00:17:34.3548134Z ./art/portraits/mina-early-confused-v2.webp
+2026-10-16T00:17:34.3548780Z ./art/portraits/player-early-sad-v2.webp
+2026-10-16T00:17:34.3549449Z ./art/portraits/auditor-early-confused-v2.webp
+2026-10-16T00:17:34.3550128Z ./art/portraits/mina-mature-angry-v2.webp
+2026-10-16T00:17:34.3550772Z ./art/portraits/auditor-middle-sad-v2.webp
+2026-10-16T00:17:34.3551439Z ./art/portraits/player-old-confused-v2.webp
+2026-10-16T00:17:34.3552101Z ./art/portraits/auditor-old-neutral-v2.webp
+2026-10-16T00:17:34.3552730Z ./art/portraits/erisia-early-sad-v2.webp
+2026-10-16T00:17:34.3553356Z ./art/portraits/mina-mature-joy-v2.webp
+2026-10-16T00:17:34.3554194Z ./art/portraits/player-mature-angry-v2.webp
+2026-10-16T00:17:34.3554913Z ./art/portraits/auditor-middle-neutral-v2.webp
+2026-10-16T00:17:34.3555756Z ./art/portraits/mina-old-neutral-v2.webp
+2026-10-16T00:17:34.3556407Z ./art/portraits/player-early-tired-v2.webp
+2026-10-16T00:17:34.3557052Z ./art/portraits/player-middle-sad-v2.webp
+2026-10-16T00:17:34.3557718Z ./art/portraits/erisia-middle-sad-v2.webp
+2026-10-16T00:17:34.3558383Z ./art/portraits/player-mature-confused-v2.webp
+2026-10-16T00:17:34.3559050Z ./art/portraits/auditor-old-angry-v2.webp
+2026-10-16T00:17:34.3559682Z ./art/portraits/auditor-old-sad-v2.webp
+2026-10-16T00:17:34.3560323Z ./art/portraits/player-mature-tired-v2.webp
+2026-10-16T00:17:34.3561071Z ./art/portraits/erisia-mature-neutral-v2.webp
+2026-10-16T00:17:34.3561732Z ./art/portraits/king-old-angry-v2.webp
+2026-10-16T00:17:34.3562350Z ./art/portraits/mina-early-angry-v2.webp
+2026-10-16T00:17:34.3562947Z ./art/portraits/king-old-sad-v2.webp
+2026-10-16T00:17:34.3563564Z ./art/portraits/king-early-sad-v2.webp
+2026-10-16T00:17:34.3564403Z ./art/portraits/erisia-middle-tired-v2.webp
+2026-10-16T00:17:34.3565123Z ./art/portraits/mina-old-tired-v2.webp
+2026-10-16T00:17:34.3565745Z ./art/portraits/auditor-old-joy-v2.webp
+2026-10-16T00:17:34.3566381Z ./art/portraits/player-middle-tired-v2.webp
+2026-10-16T00:17:34.3567020Z ./art/portraits/mina-early-sad-v2.webp
+2026-10-16T00:17:34.3567799Z ./art/portraits/erisia-early-joy-v2.webp
+2026-10-16T00:17:34.3568455Z ./art/portraits/erisia-early-angry-v2.webp
+2026-10-16T00:17:34.3569110Z ./art/portraits/erisia-old-confused-v2.webp
+2026-10-16T00:17:34.3569757Z ./art/portraits/king-middle-tired-v2.webp
+2026-10-16T00:17:34.3570409Z ./art/portraits/auditor-mature-sad-v2.webp
+2026-10-16T00:17:34.3571060Z ./art/portraits/erisia-mature-sad-v2.webp
+2026-10-16T00:17:34.3571706Z ./art/portraits/erisia-early-tired-v2.webp
+2026-10-16T00:17:34.3572362Z ./art/portraits/king-mature-angry-v2.webp
+2026-10-16T00:17:34.3573000Z ./art/portraits/auditor-middle-joy-v2.webp
+2026-10-16T00:17:34.3573613Z ./art/portraits/king-old-joy-v2.webp
+2026-10-16T00:17:34.3574431Z ./art/portraits/king-middle-angry-v2.webp
+2026-10-16T00:17:34.3575077Z ./art/portraits/mina-mature-tired-v2.webp
+2026-10-16T00:17:34.3575713Z ./art/portraits/mina-mature-sad-v2.webp
+2026-10-16T00:17:34.3576357Z ./art/portraits/player-early-angry-v2.webp
+2026-10-16T00:17:34.3576869Z ./stories/
+2026-10-16T00:17:34.3577322Z ./stories/demon-king-legacy-phase1/
+2026-10-16T00:17:34.3578068Z ./stories/demon-king-legacy-phase1/VERIFICATION_REPORT.txt
+2026-10-16T00:17:34.3578876Z ./stories/demon-king-legacy-phase1/story.json
+2026-10-16T00:17:34.3579577Z ./stories/demon-king-legacy-phase1/endings.json
+2026-10-16T00:17:34.3580289Z ./stories/demon-king-legacy-phase1/chapters/
+2026-10-16T00:17:34.3581102Z ./stories/demon-king-legacy-phase1/chapters/01-example.json
+2026-10-16T00:17:34.3581917Z ./stories/demon-king-legacy-phase1/characters.json
+2026-10-16T00:17:34.3582506Z ./stories/demon-king/
+2026-10-16T00:17:34.3583057Z ./stories/demon-king/VERIFICATION_REPORT.txt
+2026-10-16T00:17:34.3583850Z ./stories/demon-king/story.json
+2026-10-16T00:17:34.3584419Z ./stories/demon-king/endings.json
+2026-10-16T00:17:34.3585015Z ./stories/demon-king/presentation.json
+2026-10-16T00:17:34.3585617Z ./stories/demon-king/chapters/
+2026-10-16T00:17:34.3586225Z ./stories/demon-king/chapters/03_accounts.json
+2026-10-16T00:17:34.3586925Z ./stories/demon-king/chapters/01-example.json
+2026-10-16T00:17:34.3587593Z ./stories/demon-king/chapters/04_afterlife.json
+2026-10-16T00:17:34.3588246Z ./stories/demon-king/chapters/02_twists.json
+2026-10-16T00:17:34.3588854Z ./stories/demon-king/chapters/01_youth.json
+2026-10-16T00:17:34.3589437Z ./stories/demon-king/characters.json
+2026-10-16T00:17:34.3603413Z ./stories/demon-king-compact/
+2026-10-16T00:17:34.3604372Z ./stories/demon-king-compact/ending_cinematics.json
+2026-10-16T00:17:34.3604932Z ./stories/demon-king-compact/story.json
+2026-10-16T00:17:34.3605296Z ./stories/demon-king-compact/endings.json
+2026-10-16T00:17:34.3605658Z ./stories/demon-king-compact/chapters/
+2026-10-16T00:17:34.3606079Z ./stories/demon-king-compact/chapters/03_v45_expansion.json
+2026-10-16T00:17:34.3606751Z ./stories/demon-king-compact/chapters/02_ending_routes.json
+2026-10-16T00:17:34.3607235Z ./stories/demon-king-compact/chapters/01_complete.json
+2026-10-16T00:17:34.3607638Z ./stories/demon-king-compact/characters.json
+2026-10-16T00:17:34.3607930Z ./assets/
+2026-10-16T00:17:34.3608183Z ./assets/scene_art_manifest_v4_5.json
+2026-10-16T00:17:34.3608482Z ./assets/assets.json
+2026-10-16T00:17:34.3608758Z ./assets/ending_art_manifest_v4_4.json
+2026-10-16T00:17:34.3609055Z ./assets/index-DuG6ZygF.js
+2026-10-16T00:17:34.3609382Z ./assets/main_screen_illustration_policy.json
+2026-10-16T00:17:34.3609759Z ./assets/scene_illustration_overrides_v3_6.json
+2026-10-16T00:17:34.3610085Z ./assets/index-CLpl51MU.css
+2026-10-16T00:17:34.3610350Z ./assets/illustrations/
+2026-10-16T00:17:34.3610632Z ./assets/illustrations/event_cg_v4_5/
+2026-10-16T00:17:34.3611040Z ./assets/illustrations/event_cg_v4_5/cg_mina_royal_hall.webp
+2026-10-16T00:17:34.3611524Z ./assets/illustrations/event_cg_v4_5/cg_public_hearing.webp
+2026-10-16T00:17:34.3611981Z ./assets/illustrations/event_cg_v4_5/cg_birth_registry.webp
+2026-10-16T00:17:34.3612350Z ./assets/illustrations/events/
+2026-10-16T00:17:34.3612682Z ./assets/illustrations/events/royal_banquet.webp
+2026-10-16T00:17:34.3613239Z ./assets/illustrations/events/mina_romance.webp
+2026-10-16T00:17:34.3613640Z ./assets/illustrations/events/demon_protest.webp
+2026-10-16T00:17:34.3614330Z ./assets/illustrations/events/second_demon.webp
+2026-10-16T00:17:34.3614730Z ./assets/illustrations/events/mina_retirement.webp
+2026-10-16T00:17:34.3615122Z ./assets/illustrations/events/final_sunset.webp
+2026-10-16T00:17:34.3615494Z ./assets/illustrations/events/royal_trial.webp
+2026-10-16T00:17:34.3615867Z ./assets/illustrations/events/queens_letter.webp
+2026-10-16T00:17:34.3616209Z ./assets/illustrations/characters/
+2026-10-16T00:17:34.3616604Z ./assets/illustrations/characters/protagonist_toddler.webp
+2026-10-16T00:17:34.3617066Z ./assets/illustrations/characters/protagonist_mature.webp
+2026-10-16T00:17:34.3617472Z ./assets/illustrations/characters/rao.webp
+2026-10-16T00:17:34.3617825Z ./assets/illustrations/characters/kyle.webp
+2026-10-16T00:17:34.3618188Z ./assets/illustrations/characters/dark_nun.webp
+2026-10-16T00:17:34.3618573Z ./assets/illustrations/characters/registrar.webp
+2026-10-16T00:17:34.3618930Z ./assets/illustrations/characters/yuri.webp
+2026-10-16T00:17:34.3619290Z ./assets/illustrations/characters/elysia.webp
+2026-10-16T00:17:34.3619697Z ./assets/illustrations/characters/protagonist_middle.webp
+2026-10-16T00:17:34.3620097Z ./assets/illustrations/characters/seria.webp
+2026-10-16T00:17:34.3620453Z ./assets/illustrations/characters/rina.webp
+2026-10-16T00:17:34.3620794Z ./assets/illustrations/characters/mina.webp
+2026-10-16T00:17:34.3621137Z ./assets/illustrations/characters/father.webp
+2026-10-16T00:17:34.3621535Z ./assets/illustrations/characters/protagonist_old.webp
+2026-10-16T00:17:34.3621927Z ./assets/illustrations/characters/auditor.webp
+2026-10-16T00:17:34.3622336Z ./assets/illustrations/characters/protagonist_school.webp
+2026-10-16T00:17:34.3622732Z ./assets/illustrations/characters/jero.webp
+2026-10-16T00:17:34.3623087Z ./assets/illustrations/characters/mother.webp
+2026-10-16T00:17:34.3623490Z ./assets/illustrations/characters/protagonist_baby.webp
+2026-10-16T00:17:34.3624144Z ./assets/illustrations/characters/protagonist_child.webp
+2026-10-16T00:17:34.3624540Z ./assets/illustrations/characters/king.webp
+2026-10-16T00:17:34.3624914Z ./assets/illustrations/characters/protagonist.webp
+2026-10-16T00:17:34.3625279Z ./assets/illustrations/ending_v4_3/
+2026-10-16T00:17:34.3625641Z ./assets/illustrations/ending_v4_3/river_bench.webp
+2026-10-16T00:17:34.3626049Z ./assets/illustrations/ending_v4_3/empty_treasury.webp
+2026-10-16T00:17:34.3626455Z ./assets/illustrations/ending_v4_3/mother_letter.webp
+2026-10-16T00:17:34.3626859Z ./assets/illustrations/ending_v4_3/truth_hearing.webp
+2026-10-16T00:17:34.3627246Z ./assets/illustrations/ending_v4_3/crown_self.webp
+2026-10-16T00:17:34.3627782Z ./assets/illustrations/ending_v4_3/sealed_demon.webp
+2026-10-16T00:17:34.3628214Z ./assets/illustrations/ending_v4_3/retirement_coins.webp
+2026-10-16T00:17:34.3628659Z ./assets/illustrations/ending_v4_3/double_certificate.webp
+2026-10-16T00:17:34.3629101Z ./assets/illustrations/ending_v4_3/wedding_lanterns.webp
+2026-10-16T00:17:34.3629525Z ./assets/illustrations/ending_v4_3/tax_celebration.webp
+2026-10-16T00:17:34.3629937Z ./assets/illustrations/ending_v4_3/festival_defeat.webp
+2026-10-16T00:17:34.3630336Z ./assets/illustrations/ending_v4_3/rain_shelter.webp
+2026-10-16T00:17:34.3630662Z ./assets/illustrations/ui/
+2026-10-16T00:17:34.3630960Z ./assets/illustrations/ui/reputation.webp
+2026-10-16T00:17:34.3631301Z ./assets/illustrations/ui/affection.webp
+2026-10-16T00:17:34.3631632Z ./assets/illustrations/ui/unlock.webp
+2026-10-16T00:17:34.3631976Z ./assets/illustrations/ui/achievements.webp
+2026-10-16T00:17:34.3632313Z ./assets/illustrations/ui/money.webp
+2026-10-16T00:17:34.3632641Z ./assets/illustrations/ui/settings.webp
+2026-10-16T00:17:34.3632967Z ./assets/illustrations/ui/save.webp
+2026-10-16T00:17:34.3633295Z ./assets/illustrations/ui/return_title.webp
+2026-10-16T00:17:34.3633631Z ./assets/illustrations/event_cg_v4_6/
+2026-10-16T00:17:34.3634396Z ./assets/illustrations/event_cg_v4_6/exam.webp
+2026-10-16T00:17:34.3634796Z ./assets/illustrations/event_cg_v4_6/prison.webp
+2026-10-16T00:17:34.3635191Z ./assets/illustrations/event_cg_v4_6/farewell.webp
+2026-10-16T00:17:34.3635606Z ./assets/illustrations/event_cg_v4_6/confession.webp
+2026-10-16T00:17:34.3636047Z ./assets/illustrations/event_cg_v4_6/confession_chaos.webp
+2026-10-16T00:17:34.3636473Z ./assets/illustrations/event_cg_v4_6/settlement.webp
+2026-10-16T00:17:34.3636895Z ./assets/illustrations/event_cg_v4_6/exam_confession.webp
+2026-10-16T00:17:34.3637317Z ./assets/illustrations/event_cg_v4_6/princess.webp
+2026-10-16T00:17:34.3637704Z ./assets/illustrations/event_cg_v4_6/child.webp
+2026-10-16T00:17:34.3638074Z ./assets/illustrations/event_cg_v4_6/audit.webp
+2026-10-16T00:17:34.3638466Z ./assets/illustrations/event_cg_v4_6/invoice.webp
+2026-10-16T00:17:34.3638854Z ./assets/illustrations/event_cg_v4_6/petition.webp
+2026-10-16T00:17:34.3639251Z ./assets/illustrations/event_cg_v4_6/exam_attack.webp
+2026-10-16T00:17:34.3639624Z ./assets/illustrations/backgrounds/
+2026-10-16T00:17:34.3639971Z ./assets/illustrations/backgrounds/market.webp
+2026-10-16T00:17:34.3640347Z ./assets/illustrations/backgrounds/palace.webp
+2026-10-16T00:17:34.3640727Z ./assets/illustrations/backgrounds/harbor.webp
+2026-10-16T00:17:34.3641090Z ./assets/illustrations/backgrounds/prison.webp
+2026-10-16T00:17:34.3641458Z ./assets/illustrations/backgrounds/village.webp
+2026-10-16T00:17:34.3641828Z ./assets/illustrations/backgrounds/forest.webp
+2026-10-16T00:17:34.3642189Z ./assets/illustrations/backgrounds/tavern.webp
+2026-10-16T00:17:34.3642573Z ./assets/illustrations/backgrounds/throne_room.webp
+2026-10-16T00:17:34.3642929Z ./assets/illustrations/event_cg/
+2026-10-16T00:17:34.3643298Z ./assets/illustrations/event_cg/mina_wooden_sword.webp
+2026-10-16T00:17:34.3643868Z ./assets/illustrations/ending_v4_6/
+2026-10-16T00:17:34.3644242Z ./assets/illustrations/ending_v4_6/ending_peace.webp
+2026-10-16T00:17:34.3644700Z ./assets/illustrations/ending_v4_6/ending_mother_petition.webp
+2026-10-16T00:17:34.3645187Z ./assets/illustrations/ending_v4_6/ending_mina_renounced.webp
+2026-10-16T00:17:34.3645642Z ./assets/illustrations/ending_v4_6/ending_bankrupt.webp
+2026-10-16T00:17:34.3646129Z ./assets/illustrations/ending_v4_6/ending_confession_unanswered.webp
+2026-10-16T00:17:34.3646633Z ./assets/illustrations/ending_v4_6/ending_retirement_47.webp
+2026-10-16T00:17:34.3647071Z ./assets/illustrations/ending_v4_6/ending_escape.webp
+2026-10-16T00:17:34.3647487Z ./assets/illustrations/ending_v4_6/ending_ledger.webp
+2026-10-16T00:17:34.3647923Z ./assets/illustrations/ending_v4_6/ending_common_enemy.webp
+2026-10-16T00:17:34.3648351Z ./assets/illustrations/ending_v4_6/ending_reform.webp
+2026-10-16T00:17:34.3648903Z ./assets/illustrations/ending_v4_6/ending_true_demon.webp
+2026-10-16T00:17:34.3649323Z ./assets/illustrations/ending_v4_6/ending_fire.webp
+2026-10-16T00:17:34.3649754Z ./assets/illustrations/ending_v4_6/ending_love_scandal.webp
+2026-10-16T00:17:34.3650227Z ./assets/illustrations/ending_v4_6/ending_double_license.webp
+2026-10-16T00:17:34.3650657Z ./assets/illustrations/ending_v4_6/ending_king.webp
+2026-10-16T00:17:34.3651077Z ./assets/illustrations/ending_v4_6/ending_mina_wedding.webp
+2026-10-16T00:17:34.3651516Z ./assets/illustrations/ending_v4_6/ending_throne.webp
+2026-10-16T00:17:34.3651942Z ./assets/illustrations/ending_v4_6/ending_taxpayer.webp
+2026-10-16T00:17:34.3652354Z ./assets/illustrations/ending_v4_6/ending_office.webp
+2026-10-16T00:17:34.3652783Z ./assets/illustrations/ending_v4_6/ending_paid_defeat.webp
+2026-10-16T00:17:34.3653169Z ./assets/illustrations/expressions/
+2026-10-16T00:17:34.3653510Z ./assets/illustrations/expressions/smug.webp
+2026-10-16T00:17:34.3654230Z ./assets/illustrations/expressions/sad.webp
+2026-10-16T00:17:34.3654614Z ./assets/illustrations/expressions/tired.webp
+2026-10-16T00:17:34.3654993Z ./assets/illustrations/expressions/confused.webp
+2026-10-16T00:17:34.3655373Z ./assets/illustrations/expressions/neutral.webp
+2026-10-16T00:17:34.3655896Z ./assets/illustrations/expressions/angry.webp
+2026-10-16T00:17:34.3656260Z ./assets/illustrations/expressions/happy.webp
+2026-10-16T00:17:34.3656637Z ./assets/illustrations/expressions/surprised.webp
+2026-10-16T00:17:34.3657046Z ./assets/illustrations/expressions/embarrassed.webp
+2026-10-16T00:17:34.3657439Z ./assets/illustrations/expressions/thinking.webp
+2026-10-16T00:17:34.3657733Z ./index.html
+2026-10-16T00:17:34.3658154Z ##[endgroup]
+2026-10-16T00:17:34.3670259Z ##[end-action id=__actions_upload-pages-artifact.__run;outcome=success;conclusion=success;duration_ms=33]
+2026-10-16T00:17:34.3674591Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run_2]
+2026-10-16T00:17:34.3680263Z ##[end-action id=__actions_upload-pages-artifact.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-16T00:17:34.3682946Z ##[start-action display=Archive artifact;id=__actions_upload-pages-artifact.__run_3]
+2026-10-16T00:17:34.3686954Z ##[end-action id=__actions_upload-pages-artifact.__run_3;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-16T00:17:34.3688960Z ##[start-action display=Upload artifact;id=__actions_upload-pages-artifact.upload-artifact]
+2026-10-16T00:17:34.3745845Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+2026-10-16T00:17:34.3746259Z with:
+2026-10-16T00:17:34.3746458Z   name: github-pages
+2026-10-16T00:17:34.3746717Z   path: /home/runner/work/_temp/artifact.tar
+2026-10-16T00:17:34.3747004Z   retention-days: 1
+2026-10-16T00:17:34.3747221Z   if-no-files-found: error
+2026-10-16T00:17:34.3747455Z   compression-level: 6
+2026-10-16T00:17:34.3747670Z   overwrite: false
+2026-10-16T00:17:34.3747902Z   include-hidden-files: false
+2026-10-16T00:17:34.3748143Z env:
+2026-10-16T00:17:34.3748346Z   PLAYWRIGHT_CHANNEL: chromium
+2026-10-16T00:17:34.3748608Z   VITE_BASE_PATH: /demon-king-life/
+2026-10-16T00:17:34.3748868Z ##[endgroup]
+2026-10-16T00:17:34.5486687Z (node:14718) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-16T00:17:34.5487568Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-16T00:17:34.5555207Z With the provided path, there will be 1 file uploaded
+2026-10-16T00:17:34.5560579Z Artifact name is valid!
+2026-10-16T00:17:34.5561497Z Root directory input is valid!
+2026-10-16T00:17:34.9292164Z Beginning upload of artifact content to blob storage
+2026-10-16T00:17:35.2121103Z (node:14718) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-16T00:17:36.2265305Z Uploaded bytes 7643624
+2026-10-16T00:17:36.3070023Z Finished uploading artifact content to blob storage!
+2026-10-16T00:17:36.3071083Z SHA256 digest of uploaded artifact zip is baa0fe9ee03b25970906581b7b6fbf083f3f28085fb0ce863b61d10ea57d8952
+2026-10-16T00:17:36.3073061Z Finalizing artifact upload
+2026-10-16T00:17:36.5866827Z Artifact github-pages.zip successfully finalized. Artifact ID 12015474915
+2026-10-16T00:17:36.5868486Z Artifact github-pages has been successfully uploaded! Final size is 7643624 bytes. Artifact ID is 12015474915
+2026-10-16T00:17:36.5875347Z Artifact download URL: https://github.com/jilzu001/demon-king-life/actions/runs/38827449351/artifacts/12015474915
+2026-10-16T00:17:36.6001977Z ##[end-action id=__actions_upload-pages-artifact.upload-artifact;outcome=success;conclusion=success;duration_ms=2231]
+2026-10-16T00:17:36.6104795Z Post job cleanup.
+2026-10-16T00:17:36.7234935Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-f0c8774faea8f22a6cf4c63ad97faa8329727801d7cf559971def07cb32338d0, not saving cache.
+2026-10-16T00:17:36.7381940Z Post job cleanup.
+2026-10-16T00:17:36.8241930Z [command]/usr/bin/git version
+2026-10-16T00:17:36.8288225Z git version 2.55.0
+2026-10-16T00:17:36.8331985Z Temporarily overriding HOME='/home/runner/work/_temp/8c2dd833-c5b8-438a-b247-b306e6438bf5' before making global git config changes
+2026-10-16T00:17:36.8334074Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-16T00:17:36.8338398Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/demon-king-life/demon-king-life
+2026-10-16T00:17:36.8374531Z Removing SSH command configuration
+2026-10-16T00:17:36.8382128Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-16T00:17:36.8421808Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-16T00:17:36.8677151Z Removing HTTP extra header
+2026-10-16T00:17:36.8682991Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-16T00:17:36.8724253Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-16T00:17:36.8972752Z Removing includeIf entries pointing to credentials config files
+2026-10-16T00:17:36.8981284Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-16T00:17:36.9035169Z includeif.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git.path
+2026-10-16T00:17:36.9055195Z includeif.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git/worktrees/*.path
+2026-10-16T00:17:36.9056242Z includeif.gitdir:/github/workspace/.git.path
+2026-10-16T00:17:36.9057220Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-16T00:17:36.9085563Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git.path
+2026-10-16T00:17:36.9087073Z /home/runner/work/_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config
+2026-10-16T00:17:36.9096118Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git.path /home/runner/work/_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config
+2026-10-16T00:17:36.9167272Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git/worktrees/*.path
+2026-10-16T00:17:36.9203589Z /home/runner/work/_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config
+2026-10-16T00:17:36.9220666Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/demon-king-life/demon-king-life/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config
+2026-10-16T00:17:36.9297423Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-16T00:17:36.9338393Z /github/runner_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config
+2026-10-16T00:17:36.9355627Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config
+2026-10-16T00:17:36.9405938Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-16T00:17:36.9427189Z /github/runner_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config
+2026-10-16T00:17:36.9437303Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config
+2026-10-16T00:17:36.9487623Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-16T00:17:36.9748047Z Removing credentials config '/home/runner/work/_temp/git-credentials-16a49e92-00a3-498e-8ca6-de2772a40037.config'
+2026-10-16T00:17:36.9923167Z Cleaning up orphan processes
+2026-10-16T00:17:37.0261944Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
