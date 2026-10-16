@@ -1,0 +1,15 @@
+{
+  "root": "http://127.0.0.1:4177/demon-king-life/",
+  "result": [
+    {
+      "file": "assets/index-DHq2jJuI.js",
+      "status": 200,
+      "sha256": "96686e531329aa36beff5bc184195cad9b2952026e8e302d395054ff4279b101"
+    },
+    {
+      "file": "assets/index-Cp3mqIvN.css",
+      "status": 200,
+      "sha256": "d8b2ec880e18881a02694cd34967803598a79debfda514bd04b387135494a439"
+    }
+  ]
+}

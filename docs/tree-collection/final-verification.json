@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-16",
+  "codeCommit": "dee69111b564c1c08320832f85b9771e40274a06",
+  "actionsRun": 38835968106,
+  "buildJob": 116765055694,
+  "deployJob": 116768383560,
+  "ci": {
+    "unitPassed": 271,
+    "browserPassed": 242,
+    "skippedPcTouchOnly": 2,
+    "check": "success",
+    "pages": "success"
+  },
+  "publicTree": {
+    "passed": 18,
+    "skippedPcTouchOnly": 2
+  },
+  "graph": {
+    "scenes": 44,
+    "choices": 119,
+    "nodes": 140,
+    "edges": 344,
+    "endings": 20
+  },
+  "choicePathReplayAndResume": 119,
+  "compactTerminalPaths": 91664,
+  "protectedRuntimeDiff": [],
+  "writing": "23/65 unchanged"
+}

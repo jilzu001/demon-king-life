@@ -1,0 +1,16 @@
+[
+  {
+    "width": 320,
+    "currentEdges": 2,
+    "collectedEdges": 5,
+    "overlapNodes": 2,
+    "falseHighlightedEdges": 0
+  },
+  {
+    "width": 1280,
+    "currentEdges": 2,
+    "collectedEdges": 5,
+    "overlapNodes": 2,
+    "falseHighlightedEdges": 0
+  }
+]

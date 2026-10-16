@@ -1,0 +1,16 @@
+{
+  "root": "https://jilzu001.github.io/demon-king-life/",
+  "codeCommit": "dee69111b564c1c08320832f85b9771e40274a06",
+  "result": [
+    {
+      "file": "assets/index-DHq2jJuI.js",
+      "status": 200,
+      "sha256": "96686e531329aa36beff5bc184195cad9b2952026e8e302d395054ff4279b101"
+    },
+    {
+      "file": "assets/index-Cp3mqIvN.css",
+      "status": 200,
+      "sha256": "d8b2ec880e18881a02694cd34967803598a79debfda514bd04b387135494a439"
+    }
+  ]
+}

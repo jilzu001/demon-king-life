@@ -1,0 +1,993 @@
+{
+  "verifiedAt": "2026-10-16T01:37:16.823Z",
+  "reachableChoiceResults": 119,
+  "actualReplayedChoicePaths": 119,
+  "missing": [],
+  "witnesses": {
+    "step:birth:family_accept:out_family_accept": [
+      "family_accept"
+    ],
+    "step:birth:family_appeal:out_family_appeal": [
+      "family_appeal"
+    ],
+    "step:birth:family_invoice:out_family_invoice": [
+      "family_invoice"
+    ],
+    "step:birth:explore_route_v45_birth_tax:enter_v45_birth_tax": [
+      "explore_route_v45_birth_tax"
+    ],
+    "step:child:trust_mina:out_trust_mina": [
+      "family_accept",
+      "trust_mina"
+    ],
+    "step:child:mina_contract:out_mina_contract": [
+      "family_accept",
+      "mina_contract"
+    ],
+    "step:child:mina_rival:out_mina_rival": [
+      "family_accept",
+      "mina_rival"
+    ],
+    "step:birth_tax:birth_tax_1:out_birth_tax_1": [
+      "explore_route_v45_birth_tax",
+      "birth_tax_1"
+    ],
+    "step:birth_tax:birth_tax_2:out_birth_tax_2": [
+      "explore_route_v45_birth_tax",
+      "birth_tax_2"
+    ],
+    "step:birth_tax:birth_tax_3:out_birth_tax_3": [
+      "explore_route_v45_birth_tax",
+      "birth_tax_3"
+    ],
+    "step:exam:attack:out_attack": [
+      "family_accept",
+      "trust_mina",
+      "attack"
+    ],
+    "step:exam:refuse:out_refuse": [
+      "family_accept",
+      "trust_mina",
+      "refuse"
+    ],
+    "step:exam:invoice:out_invoice": [
+      "family_accept",
+      "trust_mina",
+      "invoice"
+    ],
+    "step:exam:confess:out_confess": [
+      "family_accept",
+      "trust_mina",
+      "confess"
+    ],
+    "step:prison:forgive:out_forgive": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive"
+    ],
+    "step:prison:resent:out_resent": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "resent"
+    ],
+    "step:prison:escape_prison:out_escape_prison": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "escape_prison"
+    ],
+    "step:petition:keep_records:out_keep_records": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "keep_records"
+    ],
+    "step:petition:go_public:out_go_public": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "go_public"
+    ],
+    "step:petition:burn_office:out_burn_office": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "burn_office"
+    ],
+    "step:invoice:accept_invite:out_accept_invite": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "accept_invite"
+    ],
+    "step:invoice:bring_mina:out_bring_mina": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "bring_mina"
+    ],
+    "step:invoice:threaten_king:out_threaten_king": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "threaten_king"
+    ],
+    "step:confession:confess_sincere:out_confess_sincere": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere"
+    ],
+    "step:confession:confess_attack:out_confess_attack": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_attack"
+    ],
+    "step:confession:confess_absurd:out_confess_absurd": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_absurd"
+    ],
+    "step:princess:ally:out_ally": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally"
+    ],
+    "step:princess:tell_mina:out_tell_mina": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "tell_mina"
+    ],
+    "step:princess:sell_secret:out_sell_secret": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "sell_secret"
+    ],
+    "step:princess:explore_route_v45_mina_bridge:enter_v45_mina_bridge": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "explore_route_v45_mina_bridge"
+    ],
+    "step:princess:explore_route_paid_defeat:enter_route_paid_defeat": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "accept_invite",
+      "explore_route_paid_defeat"
+    ],
+    "step:confession_afterm:support_mina:out_support_mina": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "support_mina"
+    ],
+    "step:confession_afterm:leave_mina:out_leave_mina": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "leave_mina"
+    ],
+    "step:confession_chaos:own_scandal:out_own_scandal": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_absurd",
+      "own_scandal"
+    ],
+    "step:confession_chaos:embrace_fame:out_embrace_fame": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_absurd",
+      "embrace_fame"
+    ],
+    "step:princess:explore_route_double_license:enter_route_double_license": [
+      "family_accept",
+      "mina_rival",
+      "refuse",
+      "keep_records",
+      "explore_route_double_license"
+    ],
+    "step:audit:public_audit:out_public_audit": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit"
+    ],
+    "step:audit:private_deal:out_private_deal": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "private_deal"
+    ],
+    "step:audit:steal_ledger:out_steal_ledger": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "steal_ledger"
+    ],
+    "step:mina_bridge:mina_bridge_1:out_mina_bridge_1": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "explore_route_v45_mina_bridge",
+      "mina_bridge_1"
+    ],
+    "step:mina_bridge:mina_bridge_2:out_mina_bridge_2": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "explore_route_v45_mina_bridge",
+      "mina_bridge_2"
+    ],
+    "step:mina_bridge:mina_bridge_3:out_mina_bridge_3": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "explore_route_v45_mina_bridge",
+      "mina_bridge_3"
+    ],
+    "step:audit:explore_route_common_enemy:enter_route_common_enemy": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "keep_records",
+      "ally",
+      "explore_route_common_enemy"
+    ],
+    "step:audit:explore_route_taxpayer:enter_route_taxpayer": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "accept_invite",
+      "ally",
+      "explore_route_taxpayer"
+    ],
+    "step:setup_route_paid_defeat:commit_route_paid_defeat:out_commit_route_paid_defeat": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "accept_invite",
+      "explore_route_paid_defeat",
+      "commit_route_paid_defeat"
+    ],
+    "step:setup_route_paid_defeat:decline_route_paid_defeat:out_decline_route_paid_defeat": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "accept_invite",
+      "explore_route_paid_defeat",
+      "decline_route_paid_defeat"
+    ],
+    "step:princess:explore_route_mina_renounced:enter_route_mina_renounced": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "support_mina",
+      "explore_route_mina_renounced"
+    ],
+    "step:princess:explore_route_mina_wedding:enter_route_mina_wedding": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "support_mina",
+      "explore_route_mina_wedding"
+    ],
+    "step:setup_route_double_license:commit_route_double_license:out_commit_route_double_license": [
+      "family_accept",
+      "mina_rival",
+      "refuse",
+      "keep_records",
+      "explore_route_double_license",
+      "commit_route_double_license"
+    ],
+    "step:setup_route_double_license:decline_route_double_license:out_decline_route_double_license": [
+      "family_accept",
+      "mina_rival",
+      "refuse",
+      "keep_records",
+      "explore_route_double_license",
+      "decline_route_double_license"
+    ],
+    "step:audit:explore_route_mother_petition:enter_route_mother_petition": [
+      "family_appeal",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "explore_route_mother_petition"
+    ],
+    "step:hearing:fight_case:out_fight_case": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "fight_case"
+    ],
+    "step:hearing:walk_away:out_walk_away": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "walk_away"
+    ],
+    "step:hearing:explore_route_king:enter_route_king": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_king"
+    ],
+    "step:hearing:explore_route_bankrupt:enter_route_bankrupt": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_bankrupt"
+    ],
+    "step:hearing:explore_route_true_demon:enter_route_true_demon": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_true_demon"
+    ],
+    "step:hearing:explore_route_v45_old_mina:enter_v45_old_mina": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_v45_old_mina"
+    ],
+    "step:settlement:take_money:out_take_money": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "private_deal",
+      "take_money"
+    ],
+    "step:settlement:reject_money:out_reject_money": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "private_deal",
+      "reject_money"
+    ],
+    "step:settlement:buy_office:out_buy_office": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "private_deal",
+      "buy_office"
+    ],
+    "step:settlement:explore_route_v45_orphan_registry:enter_v45_orphan_registry": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "private_deal",
+      "explore_route_v45_orphan_registry"
+    ],
+    "step:setup_route_common_enemy:commit_route_common_enemy:out_commit_route_common_enemy": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "keep_records",
+      "ally",
+      "explore_route_common_enemy",
+      "commit_route_common_enemy"
+    ],
+    "step:setup_route_common_enemy:decline_route_common_enemy:out_decline_route_common_enemy": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "keep_records",
+      "ally",
+      "explore_route_common_enemy",
+      "decline_route_common_enemy"
+    ],
+    "step:setup_route_taxpayer:commit_route_taxpayer:out_commit_route_taxpayer": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "accept_invite",
+      "ally",
+      "explore_route_taxpayer",
+      "commit_route_taxpayer"
+    ],
+    "step:setup_route_taxpayer:decline_route_taxpayer:out_decline_route_taxpayer": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "accept_invite",
+      "ally",
+      "explore_route_taxpayer",
+      "decline_route_taxpayer"
+    ],
+    "step:bridge_route_paid_defeat:route_paid_defeat_coach:out_route_paid_defeat_coach": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "accept_invite",
+      "explore_route_paid_defeat",
+      "commit_route_paid_defeat",
+      "route_paid_defeat_coach"
+    ],
+    "step:bridge_route_paid_defeat:route_paid_defeat_expand:out_route_paid_defeat_expand": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "accept_invite",
+      "explore_route_paid_defeat",
+      "commit_route_paid_defeat",
+      "route_paid_defeat_expand"
+    ],
+    "step:setup_route_mina_renounced:commit_route_mina_renounced:out_commit_route_mina_renounced": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "support_mina",
+      "explore_route_mina_renounced",
+      "commit_route_mina_renounced"
+    ],
+    "step:setup_route_mina_renounced:decline_route_mina_renounced:out_decline_route_mina_renounced": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "support_mina",
+      "explore_route_mina_renounced",
+      "decline_route_mina_renounced"
+    ],
+    "step:setup_route_mina_wedding:commit_route_mina_wedding:out_commit_route_mina_wedding": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "support_mina",
+      "explore_route_mina_wedding",
+      "commit_route_mina_wedding"
+    ],
+    "step:setup_route_mina_wedding:decline_route_mina_wedding:out_decline_route_mina_wedding": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "support_mina",
+      "explore_route_mina_wedding",
+      "decline_route_mina_wedding"
+    ],
+    "step:princess:explore_route_confession_unanswered:enter_route_confession_unanswered": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "leave_mina",
+      "keep_records",
+      "explore_route_confession_unanswered"
+    ],
+    "step:bridge_route_double_license:route_double_license_claim:out_route_double_license_claim": [
+      "family_accept",
+      "mina_rival",
+      "refuse",
+      "keep_records",
+      "explore_route_double_license",
+      "commit_route_double_license",
+      "route_double_license_claim"
+    ],
+    "step:bridge_route_double_license:route_double_license_audit:out_route_double_license_audit": [
+      "family_accept",
+      "mina_rival",
+      "refuse",
+      "keep_records",
+      "explore_route_double_license",
+      "commit_route_double_license",
+      "route_double_license_audit"
+    ],
+    "step:setup_route_mother_petition:commit_route_mother_petition:out_commit_route_mother_petition": [
+      "family_appeal",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "explore_route_mother_petition",
+      "commit_route_mother_petition"
+    ],
+    "step:setup_route_mother_petition:decline_route_mother_petition:out_decline_route_mother_petition": [
+      "family_appeal",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "explore_route_mother_petition",
+      "decline_route_mother_petition"
+    ],
+    "step:hearing:explore_route_retirement_47:enter_route_retirement_47": [
+      "family_invoice",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_retirement_47"
+    ],
+    "step:quiet:end_peace:out_end_peace": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "walk_away",
+      "end_peace"
+    ],
+    "step:quiet:peace_open:out_peace_open": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "walk_away",
+      "peace_open"
+    ],
+    "step:setup_route_king:commit_route_king:out_commit_route_king": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_king",
+      "commit_route_king"
+    ],
+    "step:setup_route_king:decline_route_king:out_decline_route_king": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_king",
+      "decline_route_king"
+    ],
+    "step:setup_route_bankrupt:commit_route_bankrupt:out_commit_route_bankrupt": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_bankrupt",
+      "commit_route_bankrupt"
+    ],
+    "step:setup_route_bankrupt:decline_route_bankrupt:out_decline_route_bankrupt": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_bankrupt",
+      "decline_route_bankrupt"
+    ],
+    "step:setup_route_true_demon:commit_route_true_demon:out_commit_route_true_demon": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_true_demon",
+      "commit_route_true_demon"
+    ],
+    "step:setup_route_true_demon:decline_route_true_demon:out_decline_route_true_demon": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_true_demon",
+      "decline_route_true_demon"
+    ],
+    "step:old_mina:old_mina_1:out_old_mina_1": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_v45_old_mina",
+      "old_mina_1"
+    ],
+    "step:old_mina:old_mina_2:out_old_mina_2": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_v45_old_mina",
+      "old_mina_2"
+    ],
+    "step:old_mina:old_mina_3:out_old_mina_3": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_v45_old_mina",
+      "old_mina_3"
+    ],
+    "step:final_trial:end_reform:out_end_reform": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "private_deal",
+      "reject_money",
+      "end_reform"
+    ],
+    "step:final_trial:reform_read:out_reform_read": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "private_deal",
+      "reject_money",
+      "reform_read"
+    ],
+    "step:office:end_office:out_end_office": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "private_deal",
+      "buy_office",
+      "end_office"
+    ],
+    "step:office:office_close:out_office_close": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "private_deal",
+      "buy_office",
+      "office_close"
+    ],
+    "step:orphan_registry:orphan_registry_1:out_orphan_registry_1": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "private_deal",
+      "explore_route_v45_orphan_registry",
+      "orphan_registry_1"
+    ],
+    "step:orphan_registry:orphan_registry_2:out_orphan_registry_2": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "private_deal",
+      "explore_route_v45_orphan_registry",
+      "orphan_registry_2"
+    ],
+    "step:orphan_registry:orphan_registry_3:out_orphan_registry_3": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "private_deal",
+      "explore_route_v45_orphan_registry",
+      "orphan_registry_3"
+    ],
+    "step:bridge_route_common_enemy:route_common_enemy_publish:out_route_common_enemy_publish": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "keep_records",
+      "ally",
+      "explore_route_common_enemy",
+      "commit_route_common_enemy",
+      "route_common_enemy_publish"
+    ],
+    "step:bridge_route_common_enemy:route_common_enemy_testify:out_route_common_enemy_testify": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "keep_records",
+      "ally",
+      "explore_route_common_enemy",
+      "commit_route_common_enemy",
+      "route_common_enemy_testify"
+    ],
+    "step:bridge_route_taxpayer:route_taxpayer_receipt:out_route_taxpayer_receipt": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "accept_invite",
+      "ally",
+      "explore_route_taxpayer",
+      "commit_route_taxpayer",
+      "route_taxpayer_receipt"
+    ],
+    "step:bridge_route_taxpayer:route_taxpayer_photo:out_route_taxpayer_photo": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "accept_invite",
+      "ally",
+      "explore_route_taxpayer",
+      "commit_route_taxpayer",
+      "route_taxpayer_photo"
+    ],
+    "step:bridge_route_mina_renounced:route_mina_renounced_stay:out_route_mina_renounced_stay": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "support_mina",
+      "explore_route_mina_renounced",
+      "commit_route_mina_renounced",
+      "route_mina_renounced_stay"
+    ],
+    "step:bridge_route_mina_renounced:route_mina_renounced_leave:out_route_mina_renounced_leave": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "support_mina",
+      "explore_route_mina_renounced",
+      "commit_route_mina_renounced",
+      "route_mina_renounced_leave"
+    ],
+    "step:bridge_route_mina_wedding:route_mina_wedding_challenge:out_route_mina_wedding_challenge": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "support_mina",
+      "explore_route_mina_wedding",
+      "commit_route_mina_wedding",
+      "route_mina_wedding_challenge"
+    ],
+    "step:bridge_route_mina_wedding:route_mina_wedding_wait:out_route_mina_wedding_wait": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "support_mina",
+      "explore_route_mina_wedding",
+      "commit_route_mina_wedding",
+      "route_mina_wedding_wait"
+    ],
+    "step:setup_route_confession_unanswered:commit_route_confession_unanswered:out_commit_route_confession_unanswered": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "leave_mina",
+      "keep_records",
+      "explore_route_confession_unanswered",
+      "commit_route_confession_unanswered"
+    ],
+    "step:setup_route_confession_unanswered:decline_route_confession_unanswered:out_decline_route_confession_unanswered": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "leave_mina",
+      "keep_records",
+      "explore_route_confession_unanswered",
+      "decline_route_confession_unanswered"
+    ],
+    "step:bridge_route_mother_petition:route_mother_petition_read:out_route_mother_petition_read": [
+      "family_appeal",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "explore_route_mother_petition",
+      "commit_route_mother_petition",
+      "route_mother_petition_read"
+    ],
+    "step:bridge_route_mother_petition:route_mother_petition_display:out_route_mother_petition_display": [
+      "family_appeal",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "explore_route_mother_petition",
+      "commit_route_mother_petition",
+      "route_mother_petition_display"
+    ],
+    "step:setup_route_retirement_47:commit_route_retirement_47:out_commit_route_retirement_47": [
+      "family_invoice",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_retirement_47",
+      "commit_route_retirement_47"
+    ],
+    "step:setup_route_retirement_47:decline_route_retirement_47:out_decline_route_retirement_47": [
+      "family_invoice",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_retirement_47",
+      "decline_route_retirement_47"
+    ],
+    "step:bridge_route_king:route_king_abolish:out_route_king_abolish": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_king",
+      "commit_route_king",
+      "route_king_abolish"
+    ],
+    "step:bridge_route_king:route_king_resign:out_route_king_resign": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_king",
+      "commit_route_king",
+      "route_king_resign"
+    ],
+    "step:bridge_route_bankrupt:route_bankrupt_protect:out_route_bankrupt_protect": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_bankrupt",
+      "commit_route_bankrupt",
+      "route_bankrupt_protect"
+    ],
+    "step:bridge_route_bankrupt:route_bankrupt_publish:out_route_bankrupt_publish": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_bankrupt",
+      "commit_route_bankrupt",
+      "route_bankrupt_publish"
+    ],
+    "step:bridge_route_true_demon:route_true_demon_evacuate:out_route_true_demon_evacuate": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_true_demon",
+      "commit_route_true_demon",
+      "route_true_demon_evacuate"
+    ],
+    "step:bridge_route_true_demon:route_true_demon_negotiate:out_route_true_demon_negotiate": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_true_demon",
+      "commit_route_true_demon",
+      "route_true_demon_negotiate"
+    ],
+    "step:bridge_route_confession_unanswered:route_confession_unanswered_listen:out_route_confession_unanswered_listen": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "leave_mina",
+      "keep_records",
+      "explore_route_confession_unanswered",
+      "commit_route_confession_unanswered",
+      "route_confession_unanswered_listen"
+    ],
+    "step:bridge_route_confession_unanswered:route_confession_unanswered_smile:out_route_confession_unanswered_smile": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "confess_sincere",
+      "leave_mina",
+      "keep_records",
+      "explore_route_confession_unanswered",
+      "commit_route_confession_unanswered",
+      "route_confession_unanswered_smile"
+    ],
+    "step:bridge_route_retirement_47:route_retirement_47_collect:out_route_retirement_47_collect": [
+      "family_invoice",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_retirement_47",
+      "commit_route_retirement_47",
+      "route_retirement_47_collect"
+    ],
+    "step:bridge_route_retirement_47:route_retirement_47_refuse:out_route_retirement_47_refuse": [
+      "family_invoice",
+      "trust_mina",
+      "attack",
+      "forgive",
+      "ally",
+      "public_audit",
+      "explore_route_retirement_47",
+      "commit_route_retirement_47",
+      "route_retirement_47_refuse"
+    ]
+  },
+  "seed": 0,
+  "codeCommit": "dee69111b564c1c08320832f85b9771e40274a06",
+  "actualRestoredChoicePaths": 119
+}
