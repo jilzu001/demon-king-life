@@ -1,0 +1,108 @@
+
+Running 4 tests using 1 worker
+
+(node:132556) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [공개-PC] › tests\e2e\tree-compact.spec.ts:127:1 › 노드 글자 위의 휠·드래그는 포커스로 카메라를 재설정하지 않고 떼기 전 상세를 열지 않는다 (2.2s)
+(node:143544) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  -  2 [공개-PC] › tests\e2e\tree-compact.spec.ts:150:1 › 노드에서 시작한 실제 터치 연속 드래그·핀치·한 손가락 잔류·취소 후 탭을 구분한다
+(node:142676) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  3 [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:127:1 › 노드 글자 위의 휠·드래그는 포커스로 카메라를 재설정하지 않고 떼기 전 상세를 열지 않는다 (2.2s)
+(node:144228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  4 [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:150:1 › 노드에서 시작한 실제 터치 연속 드래그·핀치·한 손가락 잔류·취소 후 탭을 구분한다 (2.0s)
+
+
+  1) [공개-PC] › tests\e2e\tree-compact.spec.ts:127:1 › 노드 글자 위의 휠·드래그는 포커스로 카메라를 재설정하지 않고 떼기 전 상세를 열지 않는다
+
+    Error: expect(received).toBeCloseTo(expected, precision)
+
+    Expected: -2133.0196457970883
+    Received: -2135.5196457970883
+
+    Expected precision:    0
+    Expected difference: < 0.5
+    Received difference:   2.5
+
+      135 |   await page.mouse.move(x + 25, y + 70, { steps: 10 }); await page.mouse.up();
+      136 |   expect(Number(await view.getAttribute('data-camera-scale'))).toBe(scale);
+    > 137 |   expect(Number(await view.getAttribute('data-camera-x'))).toBeCloseTo(startX + 25, 0);
+          |                                                            ^
+      138 |   expect(Number(await view.getAttribute('data-camera-y'))).toBeCloseTo(startY + 70, 0);
+      139 |   await expect(page.locator('.tree-detail')).toBeHidden();
+      140 |   const v = (await view.boundingBox())!, b = (await node.boundingBox())!;
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\tree-compact.spec.ts:137:60
+
+    Error Context: test-results\tree-compact-노드-글자-위의-휠·드래-02713-라를-재설정하지-않고-떼기-전-상세를-열지-않는다-공개-PC\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tree-compact-노드-글자-위의-휠·드래-02713-라를-재설정하지-않고-떼기-전-상세를-열지-않는다-공개-PC\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tree-compact-노드-글자-위의-휠·드래-02713-라를-재설정하지-않고-떼기-전-상세를-열지-않는다-공개-PC\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:127:1 › 노드 글자 위의 휠·드래그는 포커스로 카메라를 재설정하지 않고 떼기 전 상세를 열지 않는다
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1.8221188003905089
+    Received: 1
+
+      132 |   const scale = Number(await view.getAttribute('data-camera-scale')), startX = Number(await view.getAttribute('data-camera-x')), startY = Number(await view.getAttribute('data-camera-y'));
+      133 |   await page.mouse.down();
+    > 134 |   expect(Number(await view.getAttribute('data-camera-scale'))).toBe(scale);
+          |                                                                ^
+      135 |   await page.mouse.move(x + 25, y + 70, { steps: 10 }); await page.mouse.up();
+      136 |   expect(Number(await view.getAttribute('data-camera-scale'))).toBe(scale);
+      137 |   expect(Number(await view.getAttribute('data-camera-x'))).toBeCloseTo(startX + 25, 0);
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\tree-compact.spec.ts:134:64
+
+    Error Context: test-results\tree-compact-노드-글자-위의-휠·드래-02713-라를-재설정하지-않고-떼기-전-상세를-열지-않는다-공개-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tree-compact-노드-글자-위의-휠·드래-02713-라를-재설정하지-않고-떼기-전-상세를-열지-않는다-공개-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tree-compact-노드-글자-위의-휠·드래-02713-라를-재설정하지-않고-떼기-전-상세를-열지-않는다-공개-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:150:1 › 노드에서 시작한 실제 터치 연속 드래그·핀치·한 손가락 잔류·취소 후 탭을 구분한다
+
+    Error: expect(received).toBeCloseTo(expected, precision)
+
+    Expected: 80
+    Received: 12
+
+    Expected precision:    0
+    Expected difference: < 0.5
+    Received difference:   68
+
+      157 |   for (const dy of [12, 30, 55, 80]) await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [finger(target.x, target.y + dy)] });
+      158 |   await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+    > 159 |   expect(Number(await target.view.getAttribute('data-camera-y')) - startY).toBeCloseTo(80, 0);
+          |                                                                            ^
+      160 |   await expect(page.locator('.tree-detail')).toBeHidden();
+      161 |   // 250ms 기다리지 않고 바로 다음 탭을 할 수 있어야 한다.
+      162 |   await page.touchscreen.tap(target.x, target.y + 80); await expect(page.locator('.tree-detail')).toBeVisible();
+        at C:\Users\jilzu\OneDrive\Codex\make_game_test\demon-king\tests\e2e\tree-compact.spec.ts:159:76
+
+    Error Context: test-results\tree-compact-노드에서-시작한-실제-터치-연속-드래그·핀치·한-손가락-잔류·취소-후-탭을-구분한다-공개-모바일-320\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\tree-compact-노드에서-시작한-실제-터치-연속-드래그·핀치·한-손가락-잔류·취소-후-탭을-구분한다-공개-모바일-320\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tree-compact-노드에서-시작한-실제-터치-연속-드래그·핀치·한-손가락-잔류·취소-후-탭을-구분한다-공개-모바일-320\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [공개-PC] › tests\e2e\tree-compact.spec.ts:127:1 › 노드 글자 위의 휠·드래그는 포커스로 카메라를 재설정하지 않고 떼기 전 상세를 열지 않는다
+    [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:127:1 › 노드 글자 위의 휠·드래그는 포커스로 카메라를 재설정하지 않고 떼기 전 상세를 열지 않는다
+    [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:150:1 › 노드에서 시작한 실제 터치 연속 드래그·핀치·한 손가락 잔류·취소 후 탭을 구분한다
+  1 skipped

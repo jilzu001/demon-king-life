@@ -35,11 +35,11 @@ export function openEndingTree(options: {
   world.append(lines);
   for (const node of tree.nodes) {
     const point = layout.positions.get(node.id)!;
-    const open = button('', () => { if (!suppressClick) select(node); });
+    const open = button('', () => select(node));
     open.className = 'tree-node'; open.dataset.treeNode = node.id; open.dataset.treeType = node.type;
     open.style.left = `${point.x}px`; open.style.top = `${point.y}px`; world.append(open); nodeButtons.set(node.id, open);
     open.addEventListener('focus', () => {
-      if (closed || !viewport.clientWidth) return;
+      if (closed || pointers.size || gestureMoved || !viewport.clientWidth) return;
       const b = open.getBoundingClientRect(), v = viewport.getBoundingClientRect();
       if (b.left < v.left || b.right > v.right || b.top < v.top || b.bottom > v.bottom) center(node);
     });
@@ -50,13 +50,13 @@ export function openEndingTree(options: {
   const detail = element('aside', undefined, 'tree-detail'); detail.hidden = true; detail.tabIndex = -1; detail.setAttribute('aria-label', '사건과 선택 상세');
   const body = element('div', undefined, 'tree-body'); body.append(viewport, detail);
   const help = element('details', undefined, 'tree-help');
-  help.append(element('summary', '검증 예시 경로 · 조작 안내'), element('p', '엔딩마다 한 가지 검증된 수집 예시이며 전체 분기는 아닙니다. 결과는 조건·판정에 따릅니다. 금색은 현재 회차와 일치하는 선택입니다. 배경 드래그·휠/두 손가락·미니맵으로 이동하며 노드 위치는 바뀌지 않습니다.'));
+  help.append(element('summary', '검증 예시 경로 · 조작 안내'), element('p', '엔딩마다 한 가지 검증된 수집 예시이며 전체 분기는 아닙니다. 결과는 조건·판정에 따릅니다. 금색은 현재 회차와 일치하는 선택입니다. 노드와 배경 어디서나 드래그·휠/두 손가락·미니맵으로 이동하며 노드 위치는 바뀌지 않습니다.'));
   const announcement = element('p', '', 'tree-announcement'); announcement.setAttribute('aria-live', 'polite');
   const zoomLabel = element('output', '', 'tree-zoom');
   const target = element('select'); target.setAttribute('aria-label', '목표 엔딩');
   const spoilerLabel = element('label', undefined, 'tree-spoiler-label'), spoiler = element('input'); spoiler.type = 'checkbox'; spoiler.dataset.treeSpoilers = 'true';
   spoilerLabel.append(spoiler, document.createTextNode('힌트·스포일러 경로 표시'));
-  let selected: TreeNode | undefined, goal = '', closed = false, suppressClick = false, clickTimer: ReturnType<typeof setTimeout> | undefined;
+  let selected: TreeNode | undefined, goal = '', closed = false;
   let lastSize = { width: 0, height: 0 };
   function publicLabel(node: TreeNode) {
     const status = visitStatus(node, options.state);
@@ -150,38 +150,62 @@ export function openEndingTree(options: {
   dialog.append(header, controls, spoilerLabel, help, body, announcement);
   spoiler.addEventListener('change', () => { updateLabels(); if (selected) select(selected); });
   const pointers = new Map<number, { x: number; y: number; startX: number; startY: number }>();
+  let gestureMoved = false, tapNode: TreeNode | undefined;
   let pinch: { distance: number; scale: number; world: { x: number; y: number } } | undefined;
   function point(event: PointerEvent) { const b = viewport.getBoundingClientRect(); return { x: event.clientX - b.left, y: event.clientY - b.top }; }
   function resetPinch() {
     const [a, b] = [...pointers.values()];
     pinch = a && b ? { distance: Math.max(1, Math.hypot(a.x - b.x, a.y - b.y)), scale: camera.scale, world: camera.worldFromScreen((a.x + b.x) / 2, (a.y + b.y) / 2) } : undefined;
   }
+  const fromMinimap = (event: Event) => event.target instanceof Node && map.contains(event.target);
+  // 터치는 노드에 암묵적으로 캡처된다. 처음부터 지도가 캡처해 이동 중 소유권 변경을 피한다.
   viewport.addEventListener('pointerdown', event => {
-    if (event.button !== 0) return;
-    const p = point(event); pointers.set(event.pointerId, { ...p, startX: p.x, startY: p.y }); resetPinch();
-    if (pointers.size > 1) suppressClick = true;
-  });
+    if (event.button !== 0 || fromMinimap(event)) return;
+    event.preventDefault();
+    if (!pointers.size) {
+      gestureMoved = false;
+      const id = event.target instanceof Element ? event.target.closest<HTMLElement>('.tree-node')?.dataset.treeNode : undefined;
+      tapNode = id ? byTreeId.get(id) : undefined;
+    }
+    const p = point(event); pointers.set(event.pointerId, { ...p, startX: p.x, startY: p.y });
+    if (pointers.size > 1) { gestureMoved = true; tapNode = undefined; }
+    resetPinch(); viewport.focus({ preventScroll: true });
+    try { viewport.setPointerCapture(event.pointerId); } catch { /* 종료된 포인터 */ }
+  }, true);
   viewport.addEventListener('pointermove', event => {
     const before = pointers.get(event.pointerId); if (!before) return;
-    const p = point(event);
-    if (Math.hypot(p.x - before.startX, p.y - before.startY) > 8 || pointers.size > 1) suppressClick = true;
+    event.preventDefault(); const p = point(event), wasMoved = gestureMoved;
+    if (Math.hypot(p.x - before.startX, p.y - before.startY) > 8 || pointers.size > 1) gestureMoved = true;
     pointers.set(event.pointerId, { ...before, ...p });
-    if (!suppressClick) return;
-    try { viewport.setPointerCapture(event.pointerId); } catch { /* 합성 이벤트/종료된 포인터 */ }
+    if (!gestureMoved) return;
     if (pointers.size >= 2 && pinch) {
       const [a, b] = [...pointers.values()];
       camera.scale = Math.max(camera.minScale, Math.min(camera.maxScale, pinch.scale * Math.hypot(a!.x - b!.x, a!.y - b!.y) / pinch.distance));
       camera.tx = (a!.x + b!.x) / 2 - pinch.world.x * camera.scale; camera.ty = (a!.y + b!.y) / 2 - pinch.world.y * camera.scale;
-    } else camera.panBy(p.x - before.x, p.y - before.y);
+    } else camera.panBy(p.x - (wasMoved ? before.x : before.startX), p.y - (wasMoved ? before.y : before.startY));
     draw();
-  });
+  }, true);
   const release = (event: PointerEvent) => {
+    if (!pointers.has(event.pointerId)) return;
+    event.preventDefault();
+    const tapped = event.type === 'pointerup' && pointers.size === 1 && !gestureMoved ? tapNode : undefined;
+    if (event.type === 'pointercancel') { gestureMoved = true; tapNode = undefined; }
     pointers.delete(event.pointerId); resetPinch();
     try { if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId); } catch { /* 이미 해제됨 */ }
-    if (!pointers.size) { clearTimeout(clickTimer); clickTimer = setTimeout(() => { suppressClick = false; }, 250); }
+    if (!pointers.size) { gestureMoved = false; tapNode = undefined; }
+    if (tapped) select(tapped);
   };
-  viewport.addEventListener('pointerup', release); viewport.addEventListener('pointercancel', release); viewport.addEventListener('lostpointercapture', event => { pointers.delete(event.pointerId); resetPinch(); });
-  viewport.addEventListener('wheel', event => { event.preventDefault(); const b = viewport.getBoundingClientRect(); camera.zoomAt(event.clientX - b.left, event.clientY - b.top, Math.exp(-Math.max(-300, Math.min(300, event.deltaY)) * .002)); draw(); }, { passive: false });
+  viewport.addEventListener('pointerup', release, true); viewport.addEventListener('pointercancel', release, true);
+  viewport.addEventListener('lostpointercapture', event => {
+    // 자식 노드의 캡처 해제는 버블링된다. 지도에 남아 있는 정상 포인터를 지우지 않는다.
+    if (event.target !== viewport || !pointers.delete(event.pointerId)) return;
+    gestureMoved = true; tapNode = undefined; resetPinch();
+  });
+  // 포인터 탭은 위 pointerup에서 한 번만 처리한다. 키보드/보조기술의 click(detail=0)은 유지한다.
+  viewport.addEventListener('click', event => {
+    if (event.detail !== 0) { event.preventDefault(); event.stopImmediatePropagation(); }
+  }, true);
+  viewport.addEventListener('wheel', event => { event.preventDefault(); const b = viewport.getBoundingClientRect(); camera.zoomAt(event.clientX - b.left, event.clientY - b.top, Math.exp(-Math.max(-300, Math.min(300, event.deltaY)) * .002)); draw(); }, { passive: false, capture: true });
   viewport.addEventListener('keydown', event => {
     const moves: Record<string, [number, number]> = { ArrowLeft: [60, 0], ArrowRight: [-60, 0], ArrowUp: [0, 60], ArrowDown: [0, -60] };
     if (moves[event.key]) { event.preventDefault(); camera.panBy(...moves[event.key]!); draw(); }
@@ -204,7 +228,7 @@ export function openEndingTree(options: {
   });
   const onPop = () => { if (history.state?.endingTreeToken !== token) finish(false); };
   function finish(pop = true) {
-    if (closed) return; closed = true; observer.disconnect(); clearTimeout(clickTimer); pointers.clear();
+    if (closed) return; closed = true; observer.disconnect(); pointers.clear();
     window.removeEventListener('popstate', onPop); dialog.close(); dialog.remove();
     if (pop && history.state?.endingTreeToken === token) history.back();
     options.opener.focus({ preventScroll: true }); options.onClose();

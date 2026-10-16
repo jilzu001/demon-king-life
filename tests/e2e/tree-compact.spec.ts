@@ -112,3 +112,68 @@ test('실제 획득 엔딩은 트리에서도 동일 WebP·전체 결말을 표�
   expect(await page.locator('.tree-detail .ending-full-text').textContent()).toBe(ending.body.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean).join(''));
   await expect(page.locator('.ending-tree-dialog img')).toHaveCount(1); expect(await snapshot(page)).toEqual(before);
 });
+
+async function focusGestureNode(page: Page) {
+  const tree = page.locator('.ending-tree-dialog');
+  await page.getByLabel('목표 엔딩', { exact: true }).selectOption('ending_fire');
+  await tree.getByRole('button', { name: '목표 엔딩 찾기', exact: true }).click();
+  await tree.getByRole('button', { name: '상세 접기', exact: true }).click();
+  const view = page.locator('.tree-viewport');
+  const node = page.locator('[data-tree-node="ending:ending_fire"]');
+  const b = (await node.boundingBox())!;
+  return { view, node, x: b.x + b.width / 2, y: b.y + b.height / 2 };
+}
+
+test('노드 글자 위의 휠·드래그는 포커스로 카메라를 재설정하지 않고 떼기 전 상세를 열지 않는다', async ({ page }) => {
+  await open(page, true); const before = await snapshot(page), positions = await fixed(page);
+  const { view, node, x, y } = await focusGestureNode(page);
+  await page.mouse.move(x, y); await page.mouse.wheel(0, -300);
+  await expect.poll(async () => Number(await view.getAttribute('data-camera-scale'))).toBeGreaterThan(1.5);
+  const scale = Number(await view.getAttribute('data-camera-scale')), startX = Number(await view.getAttribute('data-camera-x')), startY = Number(await view.getAttribute('data-camera-y'));
+  await page.mouse.down();
+  expect(Number(await view.getAttribute('data-camera-scale'))).toBe(scale);
+  await page.mouse.move(x + 25, y + 70, { steps: 10 }); await page.mouse.up();
+  expect(Number(await view.getAttribute('data-camera-scale'))).toBe(scale);
+  expect(Number(await view.getAttribute('data-camera-x'))).toBeCloseTo(startX + 25, 0);
+  expect(Number(await view.getAttribute('data-camera-y'))).toBeCloseTo(startY + 70, 0);
+  await expect(page.locator('.tree-detail')).toBeHidden();
+  const v = (await view.boundingBox())!, b = (await node.boundingBox())!;
+  const tapX = Math.max(v.x + 15, Math.min(v.x + v.width - 15, b.x + b.width / 2));
+  const tapY = Math.max(v.y + 15, Math.min(v.y + v.height - 15, b.y + b.height / 2));
+  await page.mouse.move(tapX, tapY); await page.mouse.down(); await expect(page.locator('.tree-detail')).toBeHidden();
+  await page.mouse.move(tapX + 2, tapY + 2); await page.mouse.up(); await expect(page.locator('.tree-detail')).toBeVisible();
+  await page.locator('.tree-detail').getByRole('button', { name: '상세 접기', exact: true }).click();
+  await node.focus(); await page.keyboard.press('Enter'); await expect(page.locator('.tree-detail')).toBeVisible();
+  expect(await snapshot(page)).toEqual(before); expect(await fixed(page)).toEqual(positions);
+});
+
+test('노드에서 시작한 실제 터치 연속 드래그·핀치·한 손가락 잔류·취소 후 탭을 구분한다', async ({ page, context }) => {
+  test.skip(!test.info().project.use.isMobile, '실제 터치는 모바일 프로젝트에서 검사');
+  await open(page, true); const before = await snapshot(page), positions = await fixed(page);
+  let target = await focusGestureNode(page); const cdp = await context.newCDPSession(page);
+  const startY = Number(await target.view.getAttribute('data-camera-y'));
+  const finger = (x: number, y: number, id = 1) => ({ x, y, id });
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [finger(target.x, target.y)] });
+  for (const dy of [12, 30, 55, 80]) await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [finger(target.x, target.y + dy)] });
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  expect(Number(await target.view.getAttribute('data-camera-y')) - startY).toBeCloseTo(80, 0);
+  await expect(page.locator('.tree-detail')).toBeHidden();
+  // 250ms 기다리지 않고 바로 다음 탭을 할 수 있어야 한다.
+  await page.touchscreen.tap(target.x, target.y + 80); await expect(page.locator('.tree-detail')).toBeVisible();
+  await page.locator('.tree-detail').getByRole('button', { name: '상세 접기', exact: true }).click();
+  target = await focusGestureNode(page);
+  const scale = Number(await target.view.getAttribute('data-camera-scale'));
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [finger(target.x - 20, target.y), finger(target.x + 20, target.y, 2)] });
+  for (const dx of [30, 42, 55]) await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [finger(target.x - dx, target.y), finger(target.x + dx, target.y, 2)] });
+  await expect.poll(async () => Number(await target.view.getAttribute('data-camera-scale'))).toBeGreaterThan(scale * 1.8);
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [finger(target.x - 55, target.y)] });
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [finger(target.x - 45, target.y + 15)] });
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  await expect(page.locator('.tree-detail')).toBeHidden();
+  target = await focusGestureNode(page);
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [finger(target.x, target.y)] });
+  await cdp.send('Input.dispatchTouchEvent', { type: 'touchCancel', touchPoints: [] });
+  await expect(page.locator('.tree-detail')).toBeHidden();
+  await page.touchscreen.tap(target.x, target.y); await expect(page.locator('.tree-detail')).toBeVisible();
+  expect(await snapshot(page)).toEqual(before); expect(await fixed(page)).toEqual(positions); await cdp.detach();
+});
