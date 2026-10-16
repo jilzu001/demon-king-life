@@ -751,7 +751,9 @@
         "status": "NOT_GENERATED",
         "imageFile": null,
         "priority": "later"
-      }
+      },
+      "currentTitle": "십이만 금화의 진실",
+      "promptCorrection": "원문 브리프 제목의 백이십만은 오기다. 향후 고화질 교체는 본문·정사의12만 기준으로 한다."
     },
     {
       "kind": "ending",

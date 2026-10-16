@@ -30,6 +30,7 @@
   ],
   "saveRestored": true,
   "unlockedAfterLastCard": true,
-  "endingArt": "제작 대기: 이미지 요청 없음",
+  "endingArt": "/phase1-test/assets/illustrations/ending_v50/ending_end_business_theatre.webp",
+  "displayWidth": 175,
   "errors": []
 }

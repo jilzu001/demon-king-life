@@ -1,0 +1,38 @@
+[
+  {
+    "viewport": 320,
+    "parentOrigin": "http://127.0.0.1:9840/blog",
+    "src": "https://jilzu001.github.io/demon-king-life/assets/illustrations/event_cg_v50/birth_registry_reused.webp",
+    "naturalWidth": 960,
+    "width": 274,
+    "height": 205.5,
+    "documentFits": true
+  },
+  {
+    "viewport": 390,
+    "parentOrigin": "http://127.0.0.1:9840/blog",
+    "src": "https://jilzu001.github.io/demon-king-life/assets/illustrations/event_cg_v50/birth_registry_reused.webp",
+    "naturalWidth": 960,
+    "width": 320,
+    "height": 240,
+    "documentFits": true
+  },
+  {
+    "viewport": 430,
+    "parentOrigin": "http://127.0.0.1:9840/blog",
+    "src": "https://jilzu001.github.io/demon-king-life/assets/illustrations/event_cg_v50/birth_registry_reused.webp",
+    "naturalWidth": 960,
+    "width": 320,
+    "height": 240,
+    "documentFits": true
+  },
+  {
+    "viewport": 1280,
+    "parentOrigin": "http://127.0.0.1:9840/blog",
+    "src": "https://jilzu001.github.io/demon-king-life/assets/illustrations/event_cg_v50/birth_registry_reused.webp",
+    "naturalWidth": 960,
+    "width": 362.65625,
+    "height": 271.984375,
+    "documentFits": true
+  }
+]

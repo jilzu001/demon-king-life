@@ -1,0 +1,107 @@
+{
+  "codeCommit": "b24eb4f4ac9dfb068a8e1e5726fbf1c5940a3677",
+  "localCheck": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "unitPassed": 291,
+    "browserPassed": 158,
+    "pcSkippedTouchOnly": 2,
+    "totalPassed": 449
+  },
+  "content": {
+    "scenes": 47,
+    "choices": 106,
+    "outcomes": 106,
+    "endings": 32,
+    "terminalPaths": 864,
+    "conditionalChronicleLines": 40,
+    "conditionalRecapLines": 43,
+    "simulation": {
+      "states": 118,
+      "transitions": 184,
+      "terminalPaths": 864,
+      "maxDepth": 7,
+      "endings": {
+        "end_exile_map": 36,
+        "end_exile_treaty": 36,
+        "end_exile_class": 18,
+        "end_exile_diaspora": 18,
+        "end_resistance_march": 36,
+        "end_resistance_network": 36,
+        "end_resistance_confess": 18,
+        "end_resistance_debate": 18,
+        "end_evidence_injunction": 36,
+        "end_evidence_archive": 36,
+        "end_evidence_witness": 18,
+        "end_evidence_memory": 18,
+        "end_collective_fund": 36,
+        "end_collective_individual": 36,
+        "end_collective_repeal": 18,
+        "end_collective_imperfect": 18,
+        "end_business_safety": 36,
+        "end_business_standard": 36,
+        "end_business_theatre": 18,
+        "end_business_license": 18,
+        "end_power_truth": 36,
+        "end_power_inquiry": 36,
+        "end_power_democracy": 18,
+        "end_power_small": 18,
+        "end_rescue_patients": 36,
+        "end_rescue_accord": 36,
+        "end_rescue_graduation": 18,
+        "end_rescue_speech": 18,
+        "end_letters_together": 36,
+        "end_letters_partners": 36,
+        "end_letters_unsent": 18,
+        "end_letters_thanks": 18
+      },
+      "reachableNodes": 47,
+      "warnings": []
+    }
+  },
+  "cg": {
+    "zipFiles": 48,
+    "sceneBindings": 16,
+    "endingBindings": 32,
+    "preferredExistingBindings": 15,
+    "activeCroppedFallbacks": 28,
+    "newAiGeneration": 0,
+    "physicalWebpFilesInV50Folders": 66,
+    "activeUrls": 48,
+    "distinctImageSources": 43,
+    "requiredStorySlotsCovered": 44
+  },
+  "daily": {
+    "oneSentenceVariants": 88,
+    "actualYearIntervalsOnly": true,
+    "engineRngUnchanged": true,
+    "sameSeedAndRouteStable": true,
+    "reserveCommonVariants": 6
+  },
+  "productionBase": "/demon-king-life/",
+  "server": {
+    "runId": 38882730448,
+    "url": "https://github.com/jilzu001/demon-king-life/actions/runs/38882730448",
+    "status": "success",
+    "unitPassed": 291,
+    "browserPassed": 158,
+    "totalPassed": 449,
+    "touchOnlyPcSkipped": 2,
+    "buildAndDeploy": "success"
+  },
+  "publicVerification": {
+    "url": "https://jilzu001.github.io/demon-king-life/",
+    "browserPassed": 27,
+    "touchOnlyPcSkipped": 1,
+    "httpFiles": 75,
+    "cgHttp200": 63,
+    "buildByteMatch": true,
+    "httpParentIframeWidthsPassed": [
+      320,
+      390,
+      430,
+      1280
+    ]
+  },
+  "localPreview": "http://127.0.0.1:4177/demon-king-life/"
+}

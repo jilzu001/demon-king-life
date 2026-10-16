@@ -52,3 +52,5 @@
 | end_letters_partners | ending_end_letters_partners.webp · 30,206 | assets/illustrations/ending_v50/ending_end_letters_partners.webp · 30,206 | 170×145 / 표시≤170px | 장면의 주행동·배경을 확인한 저해상도 대체본 |
 | end_letters_unsent | ending_end_letters_unsent.webp · 30,268 | assets/illustrations/ending_v50/end_letters_unsent_preferred.webp · 80,546 | 173×145 / 표시≤960px | 혼자 오래된 편지를 읽는 노년 주인공 CG 우선 |
 | end_letters_thanks | ending_end_letters_thanks.webp · 29,284 | assets/illustrations/ending_v50/ending_end_letters_thanks.webp · 29,284 | 179×145 / 표시≤179px | 장면의 주행동·배경을 확인한 저해상도 대체본 |
+
+전체 v5폴더의 물리 WebP는66개다(동봉48+기존 재사용·파생18). 실제 연결 URL48개/서로 다른 원본43개이며 미선택 ZIP 후보와 선호 파일의 파생 원본도 보존한다. 모든66파일의 이름·바이트·SHA256·실제 연결 ID는 [art-file-inventory.json](art-file-inventory.json)에 있다.

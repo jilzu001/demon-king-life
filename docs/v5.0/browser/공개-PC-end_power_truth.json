@@ -1,0 +1,36 @@
+{
+  "endingId": "end_power_truth",
+  "choices": [
+    "birth_appeal",
+    "child_pact",
+    "exam_fee",
+    "gate_to_power",
+    "route_power_open_1",
+    "route_power_middle_a_1",
+    "route_power_final_a_1"
+  ],
+  "nodes": [
+    "birth",
+    "child",
+    "exam",
+    "gate_money",
+    "route_power_opening",
+    "route_power_middle_a",
+    "route_power_final_a"
+  ],
+  "age": 58,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "gate_money",
+    "route_power_opening",
+    "route_power_middle_a",
+    "route_power_final_a"
+  ],
+  "saveRestored": true,
+  "unlockedAfterLastCard": true,
+  "endingArt": "/demon-king-life/assets/illustrations/ending_v50/end_power_truth_preferred.webp",
+  "displayWidth": 960,
+  "errors": []
+}

@@ -1,0 +1,36 @@
+{
+  "endingId": "end_rescue_accord",
+  "choices": [
+    "birth_appeal",
+    "child_pact",
+    "exam_mina",
+    "gate_to_rescue",
+    "route_rescue_open_1",
+    "route_rescue_middle_a_1",
+    "route_rescue_final_a_2"
+  ],
+  "nodes": [
+    "birth",
+    "child",
+    "exam",
+    "gate_mina",
+    "route_rescue_opening",
+    "route_rescue_middle_a",
+    "route_rescue_final_a"
+  ],
+  "age": 60,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "gate_mina",
+    "route_rescue_opening",
+    "route_rescue_middle_a",
+    "route_rescue_final_a"
+  ],
+  "saveRestored": true,
+  "unlockedAfterLastCard": true,
+  "endingArt": "/demon-king-life/assets/illustrations/ending_v50/end_rescue_accord_preferred.webp",
+  "displayWidth": 960,
+  "errors": []
+}

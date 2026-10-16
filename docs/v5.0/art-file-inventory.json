@@ -1,0 +1,565 @@
+{
+  "installedWebpFiles": 66,
+  "activeUrls": 48,
+  "zipCandidateFiles": 48,
+  "files": [
+    {
+      "path": "assets/illustrations/event_cg_v50/birth_registry_reused.webp",
+      "bytes": 84720,
+      "sha256": "5325ab15e9a3babdd286597cfd197ccd3f1013da44c42a95463c8cb736652769",
+      "zipCandidate": true,
+      "activeBindings": [
+        "birth"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/border_inn_new.webp",
+      "bytes": 77330,
+      "sha256": "95e41eddad72eb756fe2ec69a0d7c0aafdc0ed1097900e718bb11998cb5ff003",
+      "zipCandidate": true,
+      "activeBindings": [
+        "route_exile_opening"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/evidence_court_reused.webp",
+      "bytes": 51508,
+      "sha256": "0bb75881bbc383fdc8c7b759073fe01e9039ca989758563757f4eec037a8e0dd",
+      "zipCandidate": false,
+      "activeBindings": [
+        "route_evidence_final_a"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/false_wanted_printshop_new.webp",
+      "bytes": 105184,
+      "sha256": "44090ae7c4a7bd683288783f10c6299c631b625b7393f173bae7a3a5086ee532",
+      "zipCandidate": true,
+      "activeBindings": [
+        "route_resistance_middle_b"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/hero_exam_reused.webp",
+      "bytes": 93950,
+      "sha256": "1d894d07d9f4a0d30c89cf41eed054d925f72d3ca861a4cbb23db19795587732",
+      "zipCandidate": true,
+      "activeBindings": [
+        "exam"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/letters_reflection_reused.webp",
+      "bytes": 67650,
+      "sha256": "c3d7c62c5f7591f6bb9aaebca82fece58263ab25620b9513791b811c1d69ce2c",
+      "zipCandidate": false,
+      "activeBindings": [
+        "route_letters_final_a"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/mina_royal_hall_reused.webp",
+      "bytes": 73794,
+      "sha256": "bc39cbadef227832a8e6c121397454fa679484f8aee3be04a7e7f53fd7a0bf56",
+      "zipCandidate": true,
+      "activeBindings": [
+        "gate_mina"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/power_budget_preferred.webp",
+      "bytes": 83202,
+      "sha256": "d937fa1e17370b9efd4809bd8ce603465c08e044457254b74e918ec51724f3a1",
+      "zipCandidate": false,
+      "activeBindings": [
+        "route_power_opening"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/public_trial_reused.webp",
+      "bytes": 61234,
+      "sha256": "c40383aaff1a6b585345cd8618937d2d84330686d0e191786949b0320d19e3f3",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/rescue_offer_reused.webp",
+      "bytes": 74360,
+      "sha256": "aa04f875b1e884a715b48717407aa08d11d65f54ba7fba75e7f2edf97a8045c2",
+      "zipCandidate": false,
+      "activeBindings": [
+        "route_rescue_final_a"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/scene_route_business_opening.webp",
+      "bytes": 51946,
+      "sha256": "e822c7498a6c69413a20816a7d7c9c663baa6d9f3371be7e9806c27da534c2d7",
+      "zipCandidate": true,
+      "activeBindings": [
+        "route_business_opening"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/scene_route_collective_final_b.webp",
+      "bytes": 35114,
+      "sha256": "d910901ba2c5cddd1be2864bb748946efbc3816a0d2c4fbc0d1a68389769e908",
+      "zipCandidate": true,
+      "activeBindings": [
+        "route_collective_final_b"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/scene_route_collective_opening.webp",
+      "bytes": 45222,
+      "sha256": "813bbbc2e58535c967f8c15a72f306752069711a3547fe591c77cfaf2c6916a4",
+      "zipCandidate": true,
+      "activeBindings": [
+        "route_collective_opening"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/scene_route_evidence_opening.webp",
+      "bytes": 35902,
+      "sha256": "1c19a79bbb5850374a0903b5768128a2562ad9806cd3debc18f027a17c684f9b",
+      "zipCandidate": true,
+      "activeBindings": [
+        "route_evidence_opening"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/scene_route_exile_final_b.webp",
+      "bytes": 32766,
+      "sha256": "2fa3e48e1b309dec94772cda1041a7d8fd3f58d9e9c5a8aa13d062ddc213c219",
+      "zipCandidate": true,
+      "activeBindings": [
+        "route_exile_final_b"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/scene_route_letters_final_a.webp",
+      "bytes": 37116,
+      "sha256": "a33f6107e6444fcf28267dde3ea10668aeeacaf7473eade33802ec4819bd796a",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/scene_route_letters_opening.webp",
+      "bytes": 32706,
+      "sha256": "9e641a603889a0511569e11bf799e60ed254fa725fd71e54e7d4b7b5f5ca7769",
+      "zipCandidate": true,
+      "activeBindings": [
+        "route_letters_opening"
+      ]
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/scene_route_power_opening.webp",
+      "bytes": 43330,
+      "sha256": "b77adbc510a75c2eadedfbd686f3b118e18a0c84a8f4e39b75e59306d188c8ad",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/scene_route_rescue_final_a.webp",
+      "bytes": 37954,
+      "sha256": "dd1dda03d3890c79fa9722439a49dafc83dc67f1ce55625de2748a4334c2bebe",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/event_cg_v50/scene_route_rescue_opening.webp",
+      "bytes": 47290,
+      "sha256": "70ab3addd92e01f6f2378032fd810ec9c079ecb8aa8bede434373c27a9a8622e",
+      "zipCandidate": true,
+      "activeBindings": [
+        "route_rescue_opening"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/audit_evidence_preferred.webp",
+      "bytes": 71722,
+      "sha256": "45bdc2a8e58ecba8dcc7ba7d1c1cfe3010b7cd11e38f0be2884382dcd3c32b23",
+      "zipCandidate": false,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/ending_v50/budget_inquiry_preferred.webp",
+      "bytes": 52352,
+      "sha256": "825b3d80cd29460165afcc2f70835eefeb28cb52f7279271ad82bf295cc80087",
+      "zipCandidate": false,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/ending_v50/end_business_standard_preferred.webp",
+      "bytes": 79582,
+      "sha256": "abebebd368fdc2c5d181eb2654e025ad13d0c73d312b9b4c0f3c11ac2634e44d",
+      "zipCandidate": false,
+      "activeBindings": [
+        "end_business_standard"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/end_collective_individual_preferred.webp",
+      "bytes": 84564,
+      "sha256": "6409dcfe8e36e842addd2c0cc86111d52956aa1a190320c8ab73ca0cd3a6bcd5",
+      "zipCandidate": false,
+      "activeBindings": [
+        "end_collective_individual"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/end_evidence_memory_preferred.webp",
+      "bytes": 51508,
+      "sha256": "0bb75881bbc383fdc8c7b759073fe01e9039ca989758563757f4eec037a8e0dd",
+      "zipCandidate": false,
+      "activeBindings": [
+        "end_evidence_memory"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/end_exile_diaspora_preferred.webp",
+      "bytes": 80546,
+      "sha256": "320db265a1463ebd18ef31e4f07bf3625d8cd7291221aea023053c299628eeb6",
+      "zipCandidate": false,
+      "activeBindings": [
+        "end_exile_diaspora"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/end_exile_treaty_preferred.webp",
+      "bytes": 79582,
+      "sha256": "abebebd368fdc2c5d181eb2654e025ad13d0c73d312b9b4c0f3c11ac2634e44d",
+      "zipCandidate": false,
+      "activeBindings": [
+        "end_exile_treaty"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/end_letters_together_preferred.webp",
+      "bytes": 101702,
+      "sha256": "a1ec3d6459644359016c3d7ff0b2e4c54ac230d7c60b60fb91bc09d7907298c2",
+      "zipCandidate": false,
+      "activeBindings": [
+        "end_letters_together"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/end_letters_unsent_preferred.webp",
+      "bytes": 80546,
+      "sha256": "320db265a1463ebd18ef31e4f07bf3625d8cd7291221aea023053c299628eeb6",
+      "zipCandidate": false,
+      "activeBindings": [
+        "end_letters_unsent"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/end_power_inquiry_preferred.webp",
+      "bytes": 52352,
+      "sha256": "825b3d80cd29460165afcc2f70835eefeb28cb52f7279271ad82bf295cc80087",
+      "zipCandidate": false,
+      "activeBindings": [
+        "end_power_inquiry"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/end_power_truth_preferred.webp",
+      "bytes": 71722,
+      "sha256": "45bdc2a8e58ecba8dcc7ba7d1c1cfe3010b7cd11e38f0be2884382dcd3c32b23",
+      "zipCandidate": false,
+      "activeBindings": [
+        "end_power_truth"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/end_rescue_accord_preferred.webp",
+      "bytes": 74360,
+      "sha256": "aa04f875b1e884a715b48717407aa08d11d65f54ba7fba75e7f2edf97a8045c2",
+      "zipCandidate": false,
+      "activeBindings": [
+        "end_rescue_accord"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/end_resistance_confess_preferred.webp",
+      "bytes": 51508,
+      "sha256": "0bb75881bbc383fdc8c7b759073fe01e9039ca989758563757f4eec037a8e0dd",
+      "zipCandidate": false,
+      "activeBindings": [
+        "end_resistance_confess"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_business_license.webp",
+      "bytes": 41554,
+      "sha256": "4dbb9b050120404a56b773a1b4df8561cd72f031257642de3d2cf20bbc437709",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_business_license"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_business_safety.webp",
+      "bytes": 36230,
+      "sha256": "cfe40e7f1ef2d75404a2e2441576736385ce102f15d837d323dadd0a2895332c",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_business_safety"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_business_standard.webp",
+      "bytes": 37914,
+      "sha256": "18614f25bdcfb3f1cb25536b90fca7142975c29988299275a14c4a511de6cba7",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_business_theatre.webp",
+      "bytes": 34074,
+      "sha256": "4d8ba723a9ab94390ac40b2b787e4306e1c8953bcd03004021078b3845e5a133",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_business_theatre"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_collective_fund.webp",
+      "bytes": 40934,
+      "sha256": "454fdcdc0c890b8f30add9c21dd1d20b795026ebd9707830aa5ad39ffcbc10b3",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_collective_fund"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_collective_imperfect.webp",
+      "bytes": 27854,
+      "sha256": "dcb7bc5939b66c97e10099f4f2348ab5b39ca5201f8f0fe1b9f6f8b62f32774f",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_collective_imperfect"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_collective_individual.webp",
+      "bytes": 36154,
+      "sha256": "c0f0ae4b6f47fe4c11fd69f2c67d6ea313b677cc49de3d7cc9e6601dbc9d09a0",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_collective_repeal.webp",
+      "bytes": 34670,
+      "sha256": "49d352b94f13be8a172f3d13d45eee2aaa824c291f16580629be48291f494ce0",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_collective_repeal"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_evidence_archive.webp",
+      "bytes": 32530,
+      "sha256": "5c9c7d6f1cf4051c7f4269d7ce43e46d6aacd10d680bab55780b520569cf57ca",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_evidence_archive"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_evidence_injunction.webp",
+      "bytes": 33418,
+      "sha256": "22ecd944ed4103b7314404e5af051ff62a3db682b18040aa673a39916cf88698",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_evidence_injunction"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_evidence_memory.webp",
+      "bytes": 34264,
+      "sha256": "2343594e76fdf63a406e0ed1775b5ab3532792448daf866235af643089c644c2",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_evidence_witness.webp",
+      "bytes": 33864,
+      "sha256": "ee2d189556ec3d5e08c2f1b420881211e15930a867fff83adae56b9f070fcbd2",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_evidence_witness"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_exile_class.webp",
+      "bytes": 48448,
+      "sha256": "1eb74c36cab1de284f74334b7a2389646cef87fc23f81c38b5d5f94a3570bd76",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_exile_class"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_exile_diaspora.webp",
+      "bytes": 36324,
+      "sha256": "217e8cf09899643128a0a98e660b019889ad6c8770739c876420e8c935fa48e6",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_exile_map.webp",
+      "bytes": 25514,
+      "sha256": "00cbd60f52f7cece63b01f8356d687d03e17d3c28b374589634af5e35aa58d62",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_exile_map"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_exile_treaty.webp",
+      "bytes": 37580,
+      "sha256": "d330b6df407a8c5c37d9e5df7f198b6aa0f6ee91cb818597c8272535c78fa2af",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_letters_partners.webp",
+      "bytes": 30206,
+      "sha256": "b5da5649f693f98456271c91e9f3a146e4360a442cc7a66aabafffd566a4aaf2",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_letters_partners"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_letters_thanks.webp",
+      "bytes": 29284,
+      "sha256": "14475b6f9070701db836b92dc4f91f8db59eaf1d143bc6f63c41bc85e95964d3",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_letters_thanks"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_letters_together.webp",
+      "bytes": 39566,
+      "sha256": "95bb650c2f4a8d3b5866dd1c4370d42e5ce35cb6e5ab69a6f5d8294815025136",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_letters_unsent.webp",
+      "bytes": 30268,
+      "sha256": "0cea63d367bb5c78de8525f94eb766132e88a773501c4906aaec7e9a9cd080dc",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_power_democracy.webp",
+      "bytes": 33536,
+      "sha256": "58d7bc97771242f10e2027683319c07d7937d28528f64eb764f84a7cec4245b2",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_power_democracy"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_power_inquiry.webp",
+      "bytes": 30710,
+      "sha256": "92944e366ac8ec262074bd8d6dc57c3ac582b69261f1c41b2e3483b78a16a4cf",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_power_small.webp",
+      "bytes": 30000,
+      "sha256": "33b356a9e4b690db01b0618eb1744de1238fdac4606c309bb273fdb8d30545ad",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_power_small"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_power_truth.webp",
+      "bytes": 33254,
+      "sha256": "83c7e8c2358b9187f7012fedc5d2a58d717af9e220894af1922057472e75da9a",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_rescue_accord.webp",
+      "bytes": 38316,
+      "sha256": "32f0b80a380972ebe221aae53af501550e1288e8aca3dd2d014199aec089cca4",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_rescue_graduation.webp",
+      "bytes": 39270,
+      "sha256": "edccc6a6cc5a6722dc5233ee0946f522e32e714929ac6dfcade593feed401d18",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_rescue_graduation"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_rescue_patients.webp",
+      "bytes": 37518,
+      "sha256": "25d507aee97fc026ca175a5aecb7021664f9711991affe4bd84733214d68965e",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_rescue_patients"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_rescue_speech.webp",
+      "bytes": 39004,
+      "sha256": "850a4ce5145fe9d756ac982fe2ed304508285925f9fdb4fcdb27a9c34f30e9bb",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_rescue_speech"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_resistance_confess.webp",
+      "bytes": 36714,
+      "sha256": "7f33373e036b681fd3a33216cc391b300b8703a5f3d101d47c0a44ef02dfa8ed",
+      "zipCandidate": true,
+      "activeBindings": []
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_resistance_debate.webp",
+      "bytes": 35314,
+      "sha256": "10be7f7752101ef499d2c744f8bfa8d5fae812b998b5064413a6686d3383e0f0",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_resistance_debate"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_resistance_march.webp",
+      "bytes": 42320,
+      "sha256": "a3ff96d2e2119a3df565bfc25022041ae40c2cd3162a3b47bf930f229774b43d",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_resistance_march"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/ending_end_resistance_network.webp",
+      "bytes": 34710,
+      "sha256": "433f05cea17446c3b1b45e1285960107e057ab4457bca9f5448c0ac17f31aebe",
+      "zipCandidate": true,
+      "activeBindings": [
+        "end_resistance_network"
+      ]
+    },
+    {
+      "path": "assets/illustrations/ending_v50/treaty_meeting_preferred.webp",
+      "bytes": 79582,
+      "sha256": "abebebd368fdc2c5d181eb2654e025ad13d0c73d312b9b4c0f3c11ac2634e44d",
+      "zipCandidate": false,
+      "activeBindings": []
+    }
+  ]
+}
