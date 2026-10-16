@@ -1,0 +1,117 @@
+
+> demon-king-phase1@0.1.0 build
+> npm run typecheck && npm run validate:content && npm run simulate:all && vite build
+
+
+> demon-king-phase1@0.1.0 typecheck
+> tsc --noEmit
+
+
+> demon-king-phase1@0.1.0 validate:content
+> tsx scripts/validate-content.ts && tsx scripts/validate-compact.ts && npm run validate:tree
+
+구조 검증 통과: 장면 98, 선택 340, 엔딩 34
+표시 검증 통과: 요약 98, 대화 장면 29, 대사 116, 설명 340
+최소 선택지 검사 통과: 공개 일반 사건 44개, 준비본 65개(정적 검사), 엔딩 20개는 별도 유형
+축소판 구조/표시 검증 통과: 44사건, 119선택, 20엔딩, 후속 서술/문단/독립 연대기/결말 연출
+
+> demon-king-phase1@0.1.0 validate:tree
+> node scripts/validate-tree.mjs src/content/generated/ending-tree.json && tsx scripts/verify-ending-tree.ts
+
+OK: complete DAG with 20 verified route exemplars; 140 graph nodes
+전체 분기 트리20검증경로/140노드: 실제 조건·판정·중간 저장·20엔딩 재현 통과
+
+> demon-king-phase1@0.1.0 simulate:all
+> tsx scripts/simulate-all-routes.ts
+
+전체 경로 검증 통과 (현재 콘텐츠 v1.1 전체, 실제 판정 상태를 보존하는 동등 상태 병합)
+{
+  "states": 8175,
+  "transitions": 30668,
+  "terminalPaths": 4935390988,
+  "maxDepth": 25,
+  "endings": {
+    "end_blade": 1,
+    "end_cells_bride": 1,
+    "end_contempt": 4,
+    "end_magic_tax": 1,
+    "end_bench_revolution": 3,
+    "end_spoon_escape": 8,
+    "end_archive_arson": 4,
+    "end_electoral_fraud": 33,
+    "end_foreign_customs": 37,
+    "end_insurance_cells": 5988,
+    "end_local_fraud": 381,
+    "end_fake_evidence": 381,
+    "end_banquet_spoons": 3927,
+    "end_procurement_trial": 5794,
+    "end_counterfeit_docs": 9821,
+    "end_vote_ledger": 57913,
+    "end_fake_pedigree": 4027,
+    "end_wall_vs_demon": 38883,
+    "end_false_scandal": 387844,
+    "end_mana_deepfake": 1188386,
+    "end_throne_chair": 462781,
+    "end_ruined_by_wealth": 9129123,
+    "end_archive_repeat": 4719025,
+    "end_conspiracy_channel": 20523015,
+    "end_archivist_legacy": 158182911,
+    "end_no_title": 1113181065,
+    "end_expensive_paper": 1113181065,
+    "end_pension_king": 1113181065,
+    "end_collective_reform": 40945509,
+    "end_slow_reform": 954998154,
+    "end_unforced_truce": 67115812,
+    "end_auction_lord": 277870734,
+    "end_winning_villain": 26188746,
+    "end_market_gardener": 34008546
+  },
+  "reachableNodes": 98,
+  "warnings": []
+}
+축소 완결판 전체 경로 검증 통과
+{
+  "states": 417,
+  "transitions": 1084,
+  "terminalPaths": 91664,
+  "maxDepth": 15,
+  "endings": {
+    "ending_escape": 36,
+    "ending_fire": 54,
+    "ending_throne": 18,
+    "ending_love_scandal": 18,
+    "ending_ledger": 1506,
+    "ending_paid_defeat": 72,
+    "ending_double_license": 24,
+    "ending_peace": 50900,
+    "ending_reform": 21008,
+    "ending_office": 11972,
+    "ending_common_enemy": 456,
+    "ending_taxpayer": 504,
+    "ending_mina_renounced": 36,
+    "ending_mina_wedding": 36,
+    "ending_mother_petition": 502,
+    "ending_king": 468,
+    "ending_bankrupt": 3012,
+    "ending_true_demon": 468,
+    "ending_confession_unanswered": 72,
+    "ending_retirement_47": 502
+  },
+  "reachableNodes": 44,
+  "warnings": []
+}
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 168 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.56 kB │ gzip:   0.40 kB
+dist/assets/index-Cp3mqIvN.css   26.92 kB │ gzip:   6.05 kB
+dist/assets/index-DHq2jJuI.js   561.34 kB │ gzip: 139.67 kB
+
+✓ built in 743ms
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.

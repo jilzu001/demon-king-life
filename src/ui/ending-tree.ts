@@ -3,7 +3,7 @@ import type { EndingGalleryEntry } from '../content/ending-gallery';
 import { element, button } from './dom';
 import { renderEndingDetail } from './ending-gallery';
 import { TreeCamera, minimapTransform } from './tree-camera';
-import { tree, byTreeId, layoutTree, nodeWidth, nodeHeight, stepsTo, visitStatus, lastVisitedFork, type TreeNode } from './ending-tree-layout';
+import { tree, byTreeId, layoutTree, nodeWidth, nodeHeight, stepsTo, visitStatus, lastVisitedFork, collectedRouteNodes, collectedRoutes, historyTreeIds, routeEdges, edgeKey, resumeSource, type TreeNode } from './ending-tree-layout';
 import '../styles/ending-tree.css';
 
 const NS = 'http://www.w3.org/2000/svg';
@@ -14,8 +14,15 @@ function svg<K extends keyof SVGElementTagNameMap>(name: K, attrs: Record<string
 }
 export function openEndingTree(options: {
   story: Story; entries: EndingGalleryEntry[]; discovered: ReadonlySet<string>; state?: GameState | null;
-  opener: HTMLElement; onResume: (nodeId: string) => void; onClose: () => void;
+  pastRuns?: readonly GameState[]; historyNotice?: string;
+  opener: HTMLElement; onResume: (nodeId: string, source?: GameState) => void; onClose: () => void;
 }) {
+  const pastRuns = options.pastRuns ?? [];
+  const collectedSources = options.state?.ended ? [options.state, ...pastRuns] : pastRuns;
+  const collected = collectedRouteNodes(options.discovered, collectedSources);
+  const collectedEdges = new Set(collectedRoutes(options.discovered, collectedSources).flatMap(routeEdges));
+  const currentEdges = new Set(options.state ? routeEdges(historyTreeIds(options.state)) : []);
+  const sourceFor = (node: TreeNode) => resumeSource(node, options.state, pastRuns);
   const layout = layoutTree(), camera = new TreeCamera(), token = crypto.randomUUID();
   const dialog = element('dialog', undefined, 'ending-tree-dialog'); dialog.setAttribute('aria-label', '엔딩 분기 트리');
   const header = element('header', undefined, 'tree-header');
@@ -26,11 +33,12 @@ export function openEndingTree(options: {
   const lines = svg('svg', { width: layout.bounds.width, height: layout.bounds.height }); lines.classList.add('tree-lines'); lines.setAttribute('aria-hidden', 'true');
   const nodeButtons = new Map<string, HTMLButtonElement>(), edgeElements = new Map<string, SVGPathElement>();
   const map = svg('svg', { viewBox: '0 0 180 110' }); map.classList.add('tree-minimap'); map.setAttribute('aria-label', '미니맵: 누르거나 드래그해 이동'); map.setAttribute('role', 'img');
+  const miniNodes = new Map<string, SVGCircleElement>();
   const mapMath = minimapTransform(layout.bounds, 180, 110);
   for (const edge of tree.edges) {
     const from = layout.positions.get(edge.from)!, to = layout.positions.get(edge.to)!;
     const path = svg('path', { d: `M${from.x + nodeWidth} ${from.y + nodeHeight / 2} C${from.x + nodeWidth + 25} ${from.y + nodeHeight / 2},${to.x - 25} ${to.y + nodeHeight / 2},${to.x} ${to.y + nodeHeight / 2}` });
-    lines.append(path); edgeElements.set(edge.to, path);
+    lines.append(path); edgeElements.set(edgeKey(edge.from, edge.to), path); path.dataset.treeEdge = edgeKey(edge.from, edge.to);
   }
   world.append(lines);
   for (const node of tree.nodes) {
@@ -44,13 +52,17 @@ export function openEndingTree(options: {
       if (b.left < v.left || b.right > v.right || b.top < v.top || b.bottom > v.bottom) center(node);
     });
     const dot = mapMath.project(point.x + nodeWidth / 2, point.y + nodeHeight / 2);
-    map.append(svg('circle', { cx: dot.x, cy: dot.y, r: node.type === 'ending' ? 2 : 1.2, class: node.type === 'ending' ? 'mini-ending' : 'mini-node' }));
+    const marker = svg('circle', { cx: dot.x, cy: dot.y, r: node.type === 'ending' ? 2 : 1.2, class: node.type === 'ending' ? 'mini-ending' : 'mini-node', 'data-tree-mini': node.id });
+    map.append(marker); miniNodes.set(node.id, marker);
   }
   const mapRect = svg('rect', { class: 'mini-viewport' }); map.append(mapRect); viewport.append(world, map);
   const detail = element('aside', undefined, 'tree-detail'); detail.hidden = true; detail.tabIndex = -1; detail.setAttribute('aria-label', '사건과 선택 상세');
   const body = element('div', undefined, 'tree-body'); body.append(viewport, detail);
   const help = element('details', undefined, 'tree-help');
-  help.append(element('summary', '검증 예시 경로 · 조작 안내'), element('p', '엔딩마다 한 가지 검증된 수집 예시이며 전체 분기는 아닙니다. 결과는 조건·판정에 따릅니다. 금색은 현재 회차와 일치하는 선택입니다. 노드와 배경 어디서나 드래그·휠/두 손가락·미니맵으로 이동하며 노드 위치는 바뀌지 않습니다.'));
+  const legend = element('summary');
+  legend.append(element('span', '수집', 'tree-key-collected'), document.createTextNode(' · '), element('span', '현재', 'tree-key-current'), document.createTextNode(' · '), element('span', '목표', 'tree-key-target'), document.createTextNode(' · 조작 안내'));
+  help.append(legend, element('p', '청록색은 수집 경로(실제 기록 우선, 없으면 검증 예시), 금색은 현재 회차의 실제 선택, 파란색은 목표의 검증 예시입니다. 경로가 겹치면 청록색 왼쪽 테두리와 금색으로 함께 표시합니다. 44개 사건·119개 선택·20개 엔딩의 전체 연결을 표시하며 합류 사건은 공유합니다. 연결선은 가능한 목적지이며 조건·과거 선택에 따라 실제 통과 여부가 달라집니다. 실제 진행 기록이 있는 사건만 선택 직전부터 이어할 수 있습니다. 노드와 배경 어디서나 드래그·휠/두 손가락·미니맵으로 이동하며 노드 위치는 바뀌지 않습니다.'));
+  if (options.historyNotice) help.append(element('p', options.historyNotice));
   const announcement = element('p', '', 'tree-announcement'); announcement.setAttribute('aria-live', 'polite');
   const zoomLabel = element('output', '', 'tree-zoom');
   const target = element('select'); target.setAttribute('aria-label', '목표 엔딩');
@@ -65,7 +77,7 @@ export function openEndingTree(options: {
       const index = options.entries.findIndex(entry => entry.id === node.endingId);
       return options.discovered.has(node.endingId!) || spoiler.checked ? options.entries[index]!.title : `미발견 엔딩 ${String(index + 1).padStart(2, '0')}`;
     }
-    return status.selected || status.resumable || spoiler.checked ? `${node.age}세 · ${node.sceneTitle}` : '미방문 분기';
+    return status.selected || sourceFor(node) || collected.has(node.id) || spoiler.checked ? `${node.age}세 · ${node.sceneTitle}` : '미방문 분기';
   }
   function updateLabels() {
     const savedTarget = target.value; target.replaceChildren();
@@ -75,11 +87,19 @@ export function openEndingTree(options: {
     const goalNodes = new Set(goal ? spoiler.checked ? tree.routes[goal] : [`ending:${goal}`] : []);
     for (const node of tree.nodes) {
       const open = nodeButtons.get(node.id)!, status = visitStatus(node, options.state);
-      const choice = node.type === 'step' && (status.selected || spoiler.checked) ? node.choiceText! : node.type === 'ending' ? (options.discovered.has(node.endingId!) ? '획득한 엔딩' : '잠금') : status.resumable ? '방문한 사건 · 다른 선택 가능' : '';
+      const choice = node.type === 'step' && (status.selected || collected.has(node.id) || pastRuns.some(run => visitStatus(node, run).selected) || spoiler.checked) ? node.choiceText! : node.type === 'ending' ? (options.discovered.has(node.endingId!) ? '획득한 엔딩' : '잠금') : sourceFor(node) ? '방문한 사건 · 다른 선택 가능' : '';
       open.replaceChildren(element('span', publicLabel(node)), element('small', choice)); open.setAttribute('aria-label', `${publicLabel(node)} ${choice}`);
-      open.classList.toggle('is-visited', status.selected); open.classList.toggle('is-target', goalNodes.has(node.id));
-      open.classList.toggle('is-dimmed', Boolean(goal) && !goalNodes.has(node.id)); open.classList.toggle('is-selected', selected?.id === node.id);
-      edgeElements.get(node.id)?.classList.toggle('is-target', goalNodes.has(node.id));
+      open.classList.toggle('is-collected', collected.has(node.id)); open.classList.toggle('is-visited', status.selected); open.classList.toggle('is-target', goalNodes.has(node.id));
+      open.classList.toggle('is-dimmed', Boolean(goal) && !goalNodes.has(node.id) && !collected.has(node.id) && !status.selected); open.classList.toggle('is-selected', selected?.id === node.id);
+      miniNodes.get(node.id)?.classList.toggle('mini-collected', collected.has(node.id));
+      miniNodes.get(node.id)?.classList.toggle('mini-current', status.selected);
+      miniNodes.get(node.id)?.classList.toggle('mini-target', goalNodes.has(node.id));
+    }
+    const goalEdges = new Set(goal && spoiler.checked ? routeEdges(tree.routes[goal] ?? []) : []);
+    for (const [key, line] of edgeElements) {
+      line.classList.toggle('is-collected', collectedEdges.has(key));
+      line.classList.toggle('is-visited', currentEdges.has(key));
+      line.classList.toggle('is-target', goalEdges.has(key));
     }
   }
   function draw() {
@@ -101,10 +121,10 @@ export function openEndingTree(options: {
     camera.centerWorld(p.x + nodeWidth / 2, p.y + nodeHeight / 2, viewport.clientWidth, viewport.clientHeight); draw();
   }
   function confirmResume(node: TreeNode) {
-    if (!visitStatus(node, options.state).resumable) return;
+    const source = sourceFor(node); if (!source) return;
     const question = element('section', undefined, 'tree-resume-confirm'); question.setAttribute('role', 'group'); question.setAttribute('aria-label', '재선택 확인');
-    question.append(element('p', '현재 회차를 백업하고 이 사건의 선택 직전부터 이어할까요? 이후 기록은 새 선택에 따라 바뀌며 획득한 엔딩은 유지됩니다.'));
-    question.append(button('확인 · 여기부터 재선택', () => { if (!visitStatus(node, options.state).resumable) return; finish(); options.onResume(node.nodeId!); }), button('취소', () => question.remove()));
+    question.append(element('p', `${source === options.state ? '현재 회차' : '이전 회차의 실제 기록'}에서 선택 직전으로 돌아갑니다. 현재 회차를 백업하고 이 사건의 선택 직전부터 이어할까요? 이후 기록은 새 선택에 따라 바뀌며 획득한 엔딩은 유지됩니다.`));
+    question.append(button('확인 · 여기부터 재선택', () => { if (sourceFor(node) !== source) return; finish(); options.onResume(node.nodeId!, source === options.state ? undefined : source); }), button('취소', () => question.remove()));
     detail.querySelector('.tree-resume-confirm')?.remove(); detail.append(question); question.querySelector('button')?.focus();
   }
   function select(node: TreeNode) {
@@ -120,21 +140,23 @@ export function openEndingTree(options: {
           for (const step of stepsTo(node)) path.append(element('li', `${step.age}세 · ${step.sceneTitle} → ${step.choiceText}`));
           detail.append(path);
         } else detail.append(element('p', '선택 순서는 힌트·스포일러 표시를 켜면 볼 수 있습니다.'));
-        const fork = lastVisitedFork(node.endingId!, options.state);
+        const fork = lastVisitedFork(node.endingId!, options.state) ?? pastRuns.map(run => lastVisitedFork(node.endingId!, run)).find(Boolean);
         if (fork) detail.append(element('p', `다시 선택할 수 있는 마지막 방문 분기: ${fork.age}세 · ${fork.sceneTitle}`), button('방문 분기 보기', () => { center(fork); select(fork); }));
-        else detail.append(element('p', '현재 회차에서 이어갈 공통 방문 분기가 없습니다. 새 회차에서 수집할 수 있습니다.'));
+        else detail.append(element('p', '실제 저장 기록에서 이어갈 방문 분기를 찾지 못했습니다. 획득 정보만으로 과거 상태를 복원하지 않습니다.'));
       }
     } else if (node.type === 'step') {
-      detail.append(element('p', status.selected ? '이 회차에서 실제 선택한 분기' : status.resumable ? '방문한 사건 · 이 선택 결과는 아직 선택하지 않았습니다.' : '이 회차에서 방문하지 않은 분기'));
-      if (status.selected || spoiler.checked) {
+      detail.append(element('p', status.selected ? '이 회차에서 실제 선택한 분기' : sourceFor(node) ? '실제 방문 기록이 있는 사건 · 여기서 다른 선택을 할 수 있습니다.' : collected.has(node.id) ? '수집한 엔딩의 검증 예시 경로' : '이 회차에서 방문하지 않은 분기'));
+      if (status.selected || collected.has(node.id) || pastRuns.some(run => visitStatus(node, run).selected) || spoiler.checked) {
         const scene = options.story.nodes[node.nodeId!]!, choice = scene.choices.find(choice => choice.id === node.choiceId)!;
         const outcome = choice.outcomes.find(outcome => outcome.id === node.outcomeId)!;
         detail.append(element('p', choice.text), element('p', choice.description ?? ''), element('p', outcome.narrative ?? ''));
         const condition = element('details'), text = element('pre', JSON.stringify({ enabledWhen: choice.enabledWhen, when: outcome.when, weight: outcome.weight }, null, 2));
         condition.append(element('summary', '선택·판정 조건'), text); detail.append(condition);
       } else detail.append(element('p', '힌트·스포일러 표시를 켜면 선택 정보를 볼 수 있습니다.'));
-      if (status.resumable) detail.append(button('이 사건부터 재선택', () => confirmResume(node)));
-    } else detail.append(element('p', '출생부터 시작하는 검증된 엔딩 수집 예시입니다. 트리 조작으로 사건이 진행되거나 엔딩이 해금되지는 않습니다.'));
+      const source = sourceFor(node);
+      if (source) detail.append(button(source === options.state ? '이 사건부터 재선택' : '이전 회차 · 이 사건부터 재선택', () => confirmResume(node)));
+      else if (collected.has(node.id)) detail.append(element('p', '엔딩 획득 정보는 있지만 이 분기의 실제 회차 저장이 없어 여기서 이어할 수 없습니다. 새 회차부터 진행 기록을 별도로 보관합니다.'));
+    } else detail.append(element('p', '출생부터 모든 사건·선택·엔딩 연결을 표시합니다. 조건을 무시한 경로 이동이나 트리 조작만으로 엔딩이 해금되지는 않습니다.'));
     detail.focus({ preventScroll: true });
   }
   const find = () => {

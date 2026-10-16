@@ -177,3 +177,74 @@ test('노드에서 시작한 실제 터치 연속 드래그·핀치·한 손가�
   await page.touchscreen.tap(target.x, target.y); await expect(page.locator('.tree-detail')).toBeVisible();
   expect(await snapshot(page)).toEqual(before); expect(await fixed(page)).toEqual(positions); await cdp.detach();
 });
+
+const historyKey = 'existence-sim:v1:tree-history:demon-king:compact';
+const graph = JSON.parse(readFileSync('src/content/generated/ending-tree.json', 'utf8')) as { nodes: { id: string; nodeId?: string; choiceId?: string }[]; edges: unknown[]; routes: Record<string, string[]> };
+async function storageSnapshot(page: Page) { return page.evaluate(() => JSON.stringify(Object.keys(localStorage).sort().map(key => [key, localStorage.getItem(key)]))); }
+async function chooseId(page: Page, id: string) {
+  if (await page.locator('#reading-skip').isEnabled()) await page.locator('#reading-skip').click();
+  await page.clock.runFor(400); await page.locator(`[data-choice="${id}"]`).click(); await page.clock.runFor(400);
+  if (await page.locator('#reading-skip').isEnabled()) await page.locator('#reading-skip').click();
+}
+async function selectStep(page: Page, nodeId: string, choiceId: string) {
+  const id = graph.nodes.find(node => node.nodeId === nodeId && node.choiceId === choiceId)!.id;
+  const node = page.locator(`[data-tree-node="${id}"]`); await node.focus(); await node.click();
+}
+test('전체44사건119선택과 합류선344개를 표시하며 구 획득ID만으로 과거 회차를 꾸미지 않는다', async ({ page }) => {
+  await page.addInitScript(([key]) => localStorage.setItem(key!, JSON.stringify({ saveSchemaVersion: 1, discoveredEndings: { 'demon-king': ['ending_fire'] } })), [metaKey]);
+  await open(page, true); const before = await storageSnapshot(page), tree = page.locator('.ending-tree-dialog');
+  await expect(tree.locator('.tree-node')).toHaveCount(140); await expect(tree.locator('[data-tree-type="step"]')).toHaveCount(119);
+  await expect(tree.locator('.tree-lines path')).toHaveCount(344);
+  await expect(tree.locator('.tree-node.is-collected')).toHaveCount(graph.routes.ending_fire!.length);
+  await expect(tree.locator('.tree-node.is-visited')).toHaveCount(1);
+  await expect(tree.locator('.mini-collected')).toHaveCount(graph.routes.ending_fire!.length);
+  await selectStep(page, 'exam', 'refuse');
+  await expect(tree.locator('.tree-detail')).toContainText('실제 회차 저장이 없어');
+  await expect(tree.getByRole('button', { name: /이 사건부터 재선택/ })).toHaveCount(0);
+  await page.locator('[data-tree-spoilers]').check();
+  for (const node of graph.nodes.filter(node => node.choiceId)) await expect(tree.locator(`[data-tree-node="${node.id}"] small`)).not.toBeEmpty();
+  await expect(tree.locator('img')).toHaveCount(0); expect(await storageSnapshot(page)).toBe(before);
+});
+
+test('실제 엔딩 획득→새 회차→과거 분기 복원→다른 선택→새로고침에서 도감·능력·원장을 보존한다', async ({ page }) => {
+  await open(page, true); await page.keyboard.press('Escape'); await page.locator('.menu-dialog').getByRole('button', { name: '닫기', exact: true }).click();
+  for (const id of ['family_accept', 'trust_mina', 'refuse', 'burn_office']) await chooseId(page, id);
+  for (let guard = 0; guard < 15 && !await page.locator('[data-ending-phase="3"]').count(); guard++) await page.getByRole('button', { name: '이어서', exact: true }).click();
+  await expect(page.locator('[data-ending-phase="3"]')).toBeVisible();
+  const completed = await snapshot(page), oldRun = JSON.parse(completed[0]!);
+  await page.getByRole('button', { name: '도감 보기', exact: true }).click();
+  await page.locator('.menu-dialog').getByRole('button', { name: '새 회차 시작', exact: true }).click();
+  const fresh = await snapshot(page); expect(JSON.parse(fresh[0]!).history).toHaveLength(0); expect(fresh[1]).toBe(completed[1]);
+  const archive = JSON.parse((await page.evaluate(key => localStorage.getItem(key), historyKey))!); expect(archive.runs[0]).toEqual(oldRun);
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click(); await page.locator('[data-ending-tree-open]').click();
+  const tree = page.locator('.ending-tree-dialog'), before = await storageSnapshot(page);
+  await expect(tree.locator('.tree-node.is-collected')).toHaveCount(graph.routes.ending_fire!.length);
+  await selectStep(page, 'exam', 'refuse');
+  mkdirSync('docs/tree-collection', { recursive: true });
+  await page.screenshot({ path: `docs/tree-collection/${test.info().project.name}-collected.png` });
+  await tree.getByRole('button', { name: '이전 회차 · 이 사건부터 재선택', exact: true }).click(); expect(await storageSnapshot(page)).toBe(before);
+  await tree.getByRole('button', { name: '취소', exact: true }).click(); expect(await storageSnapshot(page)).toBe(before);
+  await tree.getByRole('button', { name: '이전 회차 · 이 사건부터 재선택', exact: true }).click();
+  await page.evaluate(() => {
+    const original = Storage.prototype.setItem; let once = true;
+    Storage.prototype.setItem = function(key: string, value: string) {
+      if (once && key === 'existence-sim:v1:backup:before-reselect:demon-king:compact') { once = false; throw new Error('백업 검사 실패'); }
+      return original.call(this, key, value);
+    };
+  });
+  await tree.getByRole('button', { name: '확인 · 여기부터 재선택', exact: true }).click();
+  await expect(page.locator('[role="alert"]')).toContainText('백업 검사 실패'); expect(await snapshot(page)).toEqual(fresh);
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click();
+  await page.locator('[data-ending-tree-open]').click(); await selectStep(page, 'exam', 'refuse');
+  await tree.getByRole('button', { name: '이전 회차 · 이 사건부터 재선택', exact: true }).click();
+  await tree.getByRole('button', { name: '확인 · 여기부터 재선택', exact: true }).click(); await expect(tree).toHaveCount(0);
+  const resumed = JSON.parse((await snapshot(page))[0]!); expect(resumed.currentNodeId).toBe('exam'); expect(resumed.history).toEqual(oldRun.history.slice(0, 2));
+  expect(resumed.rng.seed).toBe(oldRun.rng.seed); expect(resumed.ended).toBe(false); expect(resumed.runId).not.toBe(oldRun.runId);
+  expect(await page.evaluate(() => localStorage.getItem('existence-sim:v1:backup:before-reselect:demon-king:compact'))).toBe(fresh[0]);
+  await chooseId(page, 'attack'); const chosen = await snapshot(page); expect(JSON.parse(chosen[0]!).history.at(-1).choiceId).toBe('attack'); expect(chosen[1]).toBe(completed[1]);
+  await page.reload(); expect(await snapshot(page)).toEqual(chosen);
+  await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click(); await expect(page.locator('.ending-gallery-locked')).toHaveCount(19);
+  await page.locator('[data-ending-tree-open]').click();
+  await expect(page.locator('.tree-node.is-collected')).toHaveCount(graph.routes.ending_fire!.length);
+  await expect(page.locator('.tree-node.is-visited')).toHaveCount(4);
+});

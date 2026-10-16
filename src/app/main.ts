@@ -23,6 +23,7 @@ import { endingGalleryEntries, galleryEndingIds } from '../content/ending-galler
 import { routeBody, routeYears } from '../content/route-years';
 import { renderEndingGallery, renderEndingDetail } from '../ui/ending-gallery';
 import { openEndingTree } from '../ui/ending-tree';
+import { archiveTreeRun, loadPastTreeSources } from '../persistence/tree-history';
 import { resumeAtVisitedNode, backupBeforeReselect, loadReselectBackup, RESELECT_BACKUP_KEY } from '../persistence/reselect';
 
 const root = document.querySelector<HTMLDivElement>('#app')!;
@@ -142,17 +143,22 @@ function commit(next: GameState, nextReceipt: TransitionReceipt | null = null, c
   }
   pending = null; pendingReceipt = null; pendingStory = null; errorText = '';
 }
-function resumeFromEvent(nodeId?: string) {
-  if (busy || pending || !story || !state || !compactMode) return;
+function resumeFromEvent(nodeId?: string, source?: GameState) {
+  if (busy || pending || !story || (!state && !source) || !compactMode) return;
   busy = true;
   try {
     const runId = crypto.randomUUID();
-    const next = nodeId ? resumeAtVisitedNode(story, state, nodeId, runId) : loadReselectBackup(window.localStorage, story, runId);
+    const next = nodeId ? resumeAtVisitedNode(story, source ?? state!, nodeId, runId) : loadReselectBackup(window.localStorage, story, runId);
     // 원장을 교체하기 전에 현재 회차 백업이 성공했는지 확인한다.
-    backupBeforeReselect(window.localStorage, state);
+    if (state) {
+      archiveTreeRun(window.localStorage, story, state);
+      backupBeforeReselect(window.localStorage, state);
+    }
     pendingResumeRun = next.runId;
     compatibilityNotice = '';
     commit(next);
+    titleVisible = false;
+    try { sessionStorage.setItem(titleKey, '1'); } catch { /* 화면 표시 설정만 실패한다. */ }
     openMenu = null; historyExpanded.clear();
   } catch (error) { notify(error); }
   finally { busy = false; render(); }
@@ -180,6 +186,7 @@ function newRun() {
   if (busy || !activeStory) return;
   busy = true;
   try {
+    if (compactMode && state && story && isCompact(story.manifest)) archiveTreeRun(window.localStorage, story, state);
     const seed = crypto.getRandomValues(new Uint32Array(1))[0]!;
     commit(createRun(activeStory, seed, crypto.randomUUID()), null, activeStory);
     titleVisible = false;
@@ -576,6 +583,7 @@ function renderSettings(save: HTMLElement) {
       const text = new TextDecoder('utf-8', { fatal: true }).decode(await file.arrayBuffer());
       const resolved = resolveCompatibleSave(activeStory, legacyStory, text);
       backupBeforeImport(window.localStorage, compactMode ? compactSlot : undefined);
+      if (compactMode && state && story && isCompact(story.manifest)) archiveTreeRun(window.localStorage, story, state);
       commit(resolved.state, null, resolved.story); compatibilityNotice = resolved.notice; openMenu = null;
     } catch (error) { notify(error); }
     finally { busy = false; render(); }
@@ -589,8 +597,9 @@ function renderSettings(save: HTMLElement) {
       if (!discovered.has(id)) return;
       endingDetailId = id; render();
     }, Object.keys((activeStory ?? story).endings).filter(id => galleryEndingIds.includes(id)).length, opener => {
-      disposeTree = openEndingTree({ story: activeStory ?? story!, entries: endingGalleryEntries(activeStory ?? story!), discovered, state,
-        opener, onResume: nodeId => resumeFromEvent(nodeId), onClose: () => { disposeTree = () => {}; } });
+      const past = loadPastTreeSources(window.localStorage, activeStory ?? story!);
+      disposeTree = openEndingTree({ pastRuns: past.runs, historyNotice: past.notice, story: activeStory ?? story!, entries: endingGalleryEntries(activeStory ?? story!), discovered, state,
+        opener, onResume: (nodeId, source) => resumeFromEvent(nodeId, source), onClose: () => { disposeTree = () => {}; } });
     }));
     for (const id of discovered) if (!galleryEndingIds.includes(id) && allEndings[id]) save.append(element('p', `이전 예제에서 발견 · ${allEndings[id]!.title}`));
     return;

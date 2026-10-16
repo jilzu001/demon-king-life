@@ -19,17 +19,28 @@
 .ending-tree-dialog .tree-world { position:absolute; inset:0 auto auto 0; transform-origin:0 0; }
 .ending-tree-dialog .tree-lines { position:absolute; overflow:visible; pointer-events:none; }
 .ending-tree-dialog .tree-lines path { fill:none; stroke:#65758c; stroke-width:2; }
+.ending-tree-dialog .tree-lines path.is-collected { stroke:#66d5b1; stroke-width:3; }
+.ending-tree-dialog .tree-lines path.is-visited { stroke:#e3bf7e; stroke-width:3.5; }
 .ending-tree-dialog .tree-lines path.is-target { stroke:#8fc9ff; stroke-width:4; }
 .ending-tree-dialog .tree-node { position:absolute; width:236px; height:84px; min-height:84px; padding:6px 8px; border:1px solid #8193ab; border-radius:8px; background:#26364a; color:inherit; text-align:left; cursor:pointer; overflow:hidden; touch-action:none; }
 .ending-tree-dialog .tree-node span,.ending-tree-dialog .tree-node small { display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; line-height:1.3; }
 .ending-tree-dialog .tree-node small { font-size:.8em; }
+.ending-tree-dialog .tree-node.is-collected { border-color:#66d5b1; border-left-width:5px; background:#203c37; }
 .ending-tree-dialog .tree-node.is-visited { border-color:#e3bf7e; background:#423927; }
+.ending-tree-dialog .tree-node.is-collected.is-visited { border-left-color:#66d5b1; }
 .ending-tree-dialog .tree-node.is-target { outline:3px solid #8fc9ff; }
 .ending-tree-dialog .tree-node.is-selected { box-shadow:0 0 0 5px #f9fafb; }
 .ending-tree-dialog .tree-node.is-dimmed { opacity:.3; }
 .ending-tree-dialog .tree-minimap { position:absolute; right:8px; bottom:8px; width:min(180px,42%); height:auto; aspect-ratio:180/110; background:#172334ed; border:1px solid #9facc0; border-radius:5px; touch-action:none; cursor:crosshair; }
 .ending-tree-dialog .mini-node { fill:#a9b5c7; }
-.ending-tree-dialog .mini-ending { fill:#dfc18a; }
+.ending-tree-dialog .mini-ending { fill:#a9b5c7; }
+.ending-tree-dialog .mini-collected { fill:#66d5b1; }
+.ending-tree-dialog .mini-current { fill:#e3bf7e; }
+.ending-tree-dialog .mini-current.mini-collected { stroke:#66d5b1; stroke-width:.8; }
+.ending-tree-dialog .mini-target { stroke:#8fc9ff; stroke-width:1; }
+.ending-tree-dialog .tree-key-collected { color:color-mix(in srgb, #66d5b1 var(--text-brightness, 100%), #707070); }
+.ending-tree-dialog .tree-key-current { color:color-mix(in srgb, #e3bf7e var(--text-brightness, 100%), #707070); }
+.ending-tree-dialog .tree-key-target { color:color-mix(in srgb, #8fc9ff var(--text-brightness, 100%), #707070); }
 .ending-tree-dialog .mini-viewport { fill:#85c9ff35; stroke:#b8e1ff; stroke-width:1.2; pointer-events:none; }
 .ending-tree-dialog .tree-detail { flex:0 0 min(350px,35%); overflow:auto; overscroll-behavior:contain; padding:8px; border:1px solid #738093; border-radius:8px; min-width:0; }
 .ending-tree-dialog .tree-detail[hidden] { display:none; }

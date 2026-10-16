@@ -33,5 +33,14 @@ for (const path of paths) {
       `${path.endingId}: 현재 사건·선택 문구와 트리 불일치`);
   }
 }
-ensure(covered.size === generated.nodes.length, '실제 검증 경로에 없는 트리 노드');
-console.log(`엔딩 트리20경로/${generated.nodes.length}노드: 실제 조건·판정·중간 저장·20엔딩 재현 통과`);
+const steps = generated.nodes.filter(node => node.type === 'step');
+let expected = 0;
+for (const scene of Object.values(story.nodes)) for (const choice of scene.choices) for (const outcome of choice.outcomes) {
+  expected++;
+  const node = steps.find(node => node.nodeId === scene.id && node.choiceId === choice.id && node.outcomeId === outcome.id);
+  ensure(node && node.toKind === outcome.to.kind && node.toId === outcome.to.id, '전체 선택/결과 누락 또는 잘못된 연결');
+  const targets = outcome.to.kind === 'ending' ? [`ending:${outcome.to.id}`] : steps.filter(step => step.nodeId === outcome.to.id).map(step => step.id);
+  ensure(targets.length > 0 && targets.every(to => generated.edges.some(edge => edge.from === node.id && edge.to === to)), '전체 목적지 연결 누락');
+}
+ensure(steps.length === expected && generated.sceneCount === Object.keys(story.nodes).length, '전체 사건/결과 수 불일치');
+console.log(`전체 분기 트리20검증경로/${generated.nodes.length}노드: 실제 조건·판정·중간 저장·20엔딩 재현 통과`);

@@ -1,0 +1,30 @@
+
+Running 20 tests using 1 worker
+
+(node:149236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [공개-PC] › tests\e2e\tree-compact.spec.ts:13:1 › 트리 기본 잠금/카메라 드래그·휠·미니맵/노드 고정/원장 불변/닫기 포커스 (3.1s)
+  ok  2 [공개-PC] › tests\e2e\tree-compact.spec.ts:35:1 › 힌트는 명시적으로 켜야 보이며 잠긴 엔딩 그림/결말은 계속 숨기고 재열기/ESC/뒤로가기를 지원한다 (2.0s)
+  ok  3 [공개-PC] › tests\e2e\tree-compact.spec.ts:48:1 › 실제 방문 분기 재선택은 확인 전 저장을 바꾸지 않고 확인 후 기존 백업으로 복원된다 (2.6s)
+  -   4 [공개-PC] › tests\e2e\tree-compact.spec.ts:65:1 › 모바일 실제 두 손가락 핀치는 카메라만 확대하고 노드/게임 원장을 유지한다
+  ok  5 [공개-PC] › tests\e2e\tree-compact.spec.ts:76:1 › 320/360/390/430/1280px·150% 글자에서 트리 컨트롤과 미니맵·전체 보기·노드 탭을 유지한다 (3.6s)
+  ok  6 [공개-PC] › tests\e2e\tree-compact.spec.ts:98:1 › 실제 획득 엔딩은 트리에서도 동일 WebP·전체 결말을 표시하며 나머지19개는 잠근다 (2.5s)
+  ok  7 [공개-PC] › tests\e2e\tree-compact.spec.ts:127:1 › 노드 글자 위의 휠·드래그는 포커스로 카메라를 재설정하지 않고 떼기 전 상세를 열지 않는다 (2.0s)
+  -   8 [공개-PC] › tests\e2e\tree-compact.spec.ts:150:1 › 노드에서 시작한 실제 터치 연속 드래그·핀치·한 손가락 잔류·취소 후 탭을 구분한다
+  ok  9 [공개-PC] › tests\e2e\tree-compact.spec.ts:193:1 › 전체44사건119선택과 합류선344개를 표시하며 구 획득ID만으로 과거 회차를 꾸미지 않는다 (3.2s)
+  ok 10 [공개-PC] › tests\e2e\tree-compact.spec.ts:209:1 › 실제 엔딩 획득→새 회차→과거 분기 복원→다른 선택→새로고침에서 도감·능력·원장을 보존한다 (4.1s)
+(node:148992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 11 [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:13:1 › 트리 기본 잠금/카메라 드래그·휠·미니맵/노드 고정/원장 불변/닫기 포커스 (2.7s)
+  ok 12 [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:35:1 › 힌트는 명시적으로 켜야 보이며 잠긴 엔딩 그림/결말은 계속 숨기고 재열기/ESC/뒤로가기를 지원한다 (1.5s)
+  ok 13 [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:48:1 › 실제 방문 분기 재선택은 확인 전 저장을 바꾸지 않고 확인 후 기존 백업으로 복원된다 (2.4s)
+  ok 14 [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:65:1 › 모바일 실제 두 손가락 핀치는 카메라만 확대하고 노드/게임 원장을 유지한다 (1.1s)
+  ok 15 [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:76:1 › 320/360/390/430/1280px·150% 글자에서 트리 컨트롤과 미니맵·전체 보기·노드 탭을 유지한다 (3.4s)
+  ok 16 [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:98:1 › 실제 획득 엔딩은 트리에서도 동일 WebP·전체 결말을 표시하며 나머지19개는 잠근다 (2.6s)
+  ok 17 [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:127:1 › 노드 글자 위의 휠·드래그는 포커스로 카메라를 재설정하지 않고 떼기 전 상세를 열지 않는다 (2.4s)
+  ok 18 [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:150:1 › 노드에서 시작한 실제 터치 연속 드래그·핀치·한 손가락 잔류·취소 후 탭을 구분한다 (2.4s)
+  ok 19 [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:193:1 › 전체44사건119선택과 합류선344개를 표시하며 구 획득ID만으로 과거 회차를 꾸미지 않는다 (3.0s)
+  ok 20 [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:209:1 › 실제 엔딩 획득→새 회차→과거 분기 복원→다른 선택→새로고침에서 도감·능력·원장을 보존한다 (3.8s)
+
+  2 skipped
+  18 passed (53.4s)

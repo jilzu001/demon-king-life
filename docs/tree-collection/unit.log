@@ -1,0 +1,9 @@
+
+ RUN  v5.0.4 C:/Users/jilzu/OneDrive/Codex/make_game_test/demon-king
+
+
+ Test Files  2 passed (2)
+      Tests  11 passed (11)
+   Start at  10:35:17
+   Duration  1.60s (tests 42%, import 40%, transform 17%, worker 1%)
+
