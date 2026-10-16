@@ -47,17 +47,17 @@ it('일치하는 실제 방문 분기에만 재선택을 허용하고 같은 사
   expect(JSON.stringify(JSON.parse(snapshot))).toBe(snapshot);
 });
 
-it('대표 경로에 없던 선택까지 모든119개와 결과344연결을 빠짐없이 표시하며 배치가 겹치지 않는다', () => {
+it('대표 경로에 없던 선택까지 모든195개와 사건합류395연결을 빠짐없이 표시하며 배치가 겹치지 않는다', () => {
   const steps = tree.nodes.filter(node => node.type === 'step');
-  expect(new Set(steps.map(node => node.nodeId)).size).toBe(44); expect(steps).toHaveLength(119); expect(tree.edges).toHaveLength(344);
+  expect(new Set(steps.map(node => node.nodeId)).size).toBe(72); expect(steps).toHaveLength(195); expect(tree.edges).toHaveLength(395);
   for (const scene of Object.values(story.nodes)) for (const choice of scene.choices) for (const outcome of choice.outcomes) {
     const step = steps.find(node => node.nodeId === scene.id && node.choiceId === choice.id && node.outcomeId === outcome.id)!;
     expect(step).toBeDefined();
-    const targets = outcome.to.kind === 'ending' ? [`ending:${outcome.to.id}`] : steps.filter(node => node.nodeId === outcome.to.id).map(node => node.id);
+    const targets = outcome.to.kind === 'ending' ? [`ending:${outcome.to.id}`] : [`scene:${outcome.to.id}`];
     for (const to of targets) expect(tree.edges).toContainEqual({ from: step.id, to });
   }
-  const layout = layoutTree(); expect(layout.positions.size).toBe(140);
-  expect(new Set([...layout.positions.values()].map(point => `${point.x},${point.y}`)).size).toBe(140);
+  const layout = layoutTree(); expect(layout.positions.size).toBe(288);
+  expect(new Set([...layout.positions.values()].map(point => `${point.x},${point.y}`)).size).toBe(288);
   for (const edge of tree.edges) expect(layout.positions.get(edge.to)!.x).toBeGreaterThan(layout.positions.get(edge.from)!.x);
   expect(tree.nodes.some(node => !Object.values(tree.routes).some(route => route.includes(node.id)))).toBe(true);
 });

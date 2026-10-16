@@ -1,13 +1,13 @@
 import { readFileSync } from 'node:fs';
 import { loadStory } from '../src/content/load';
-import { readExampleStory } from './read-story';
+import { preV48Story } from '../src/content/compact-previous';
 import { choose, createRun } from '../src/engine/transition';
 import type { GameState } from '../src/engine/types';
 
 // 현재 UI에서 실제 구판 저장을 불러와 각 선택을 클릭하기 위한 검수 자료.
 const previous = await loadStory(async path => JSON.parse(readFileSync(path === 'chapters/01_complete.json'
   ? 'backups/before-v3.8/01_complete.json' : `backups/before-v4.4/${path}`, 'utf8')));
-const current = await readExampleStory('demon-king-compact');
+const current = preV48Story;
 const audited = await loadStory(async path => JSON.parse(readFileSync(`backups/before-v4.4/${path}`, 'utf8')));
 const states: Record<string, GameState> = {};
 const queue = [createRun(previous, 17, 'v38-old-save')];

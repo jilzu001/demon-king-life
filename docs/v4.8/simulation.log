@@ -1,0 +1,80 @@
+
+> demon-king-phase1@0.1.0 simulate:all
+> tsx scripts/simulate-all-routes.ts
+
+전체 경로 검증 통과 (현재 콘텐츠 v1.1 전체, 실제 판정 상태를 보존하는 동등 상태 병합)
+{
+  "states": 8175,
+  "transitions": 30668,
+  "terminalPaths": 4935390988,
+  "maxDepth": 25,
+  "endings": {
+    "end_blade": 1,
+    "end_cells_bride": 1,
+    "end_contempt": 4,
+    "end_magic_tax": 1,
+    "end_bench_revolution": 3,
+    "end_spoon_escape": 8,
+    "end_archive_arson": 4,
+    "end_electoral_fraud": 33,
+    "end_foreign_customs": 37,
+    "end_insurance_cells": 5988,
+    "end_local_fraud": 381,
+    "end_fake_evidence": 381,
+    "end_banquet_spoons": 3927,
+    "end_procurement_trial": 5794,
+    "end_counterfeit_docs": 9821,
+    "end_vote_ledger": 57913,
+    "end_fake_pedigree": 4027,
+    "end_wall_vs_demon": 38883,
+    "end_false_scandal": 387844,
+    "end_mana_deepfake": 1188386,
+    "end_throne_chair": 462781,
+    "end_ruined_by_wealth": 9129123,
+    "end_archive_repeat": 4719025,
+    "end_conspiracy_channel": 20523015,
+    "end_archivist_legacy": 158182911,
+    "end_no_title": 1113181065,
+    "end_expensive_paper": 1113181065,
+    "end_pension_king": 1113181065,
+    "end_collective_reform": 40945509,
+    "end_slow_reform": 954998154,
+    "end_unforced_truce": 67115812,
+    "end_auction_lord": 277870734,
+    "end_winning_villain": 26188746,
+    "end_market_gardener": 34008546
+  },
+  "reachableNodes": 98,
+  "warnings": []
+}
+축소 완결판 전체 경로 검증 통과
+{
+  "states": 551,
+  "transitions": 1340,
+  "terminalPaths": 93392,
+  "maxDepth": 16,
+  "endings": {
+    "ending_escape": 144,
+    "ending_fire": 162,
+    "ending_throne": 18,
+    "ending_love_scandal": 18,
+    "ending_ledger": 1614,
+    "ending_common_enemy": 672,
+    "ending_mother_petition": 718,
+    "ending_reform": 21116,
+    "ending_office": 12080,
+    "ending_bankrupt": 3120,
+    "ending_paid_defeat": 180,
+    "ending_taxpayer": 612,
+    "ending_retirement_47": 610,
+    "ending_mina_renounced": 144,
+    "ending_confession_unanswered": 180,
+    "ending_mina_wedding": 144,
+    "ending_double_license": 24,
+    "ending_peace": 50900,
+    "ending_king": 468,
+    "ending_true_demon": 468
+  },
+  "reachableNodes": 72,
+  "warnings": []
+}

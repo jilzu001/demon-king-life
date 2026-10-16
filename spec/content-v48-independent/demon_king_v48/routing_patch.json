@@ -1,0 +1,40 @@
+{
+  "targetStory": "demon-king-compact",
+  "schemaVersion": 1,
+  "replaceOutcomeDestinations": [
+    {
+      "existingNode": "exam",
+      "existingChoice": "attack",
+      "existingOutcome": "out_attack",
+      "newTo": "v48_attack_gate",
+      "retainExistingEffects": true,
+      "legacyContinuation": "prison"
+    },
+    {
+      "existingNode": "exam",
+      "existingChoice": "refuse",
+      "existingOutcome": "out_refuse",
+      "newTo": "v48_refuse_gate",
+      "retainExistingEffects": true,
+      "legacyContinuation": "petition"
+    },
+    {
+      "existingNode": "exam",
+      "existingChoice": "invoice",
+      "existingOutcome": "out_invoice",
+      "newTo": "v48_invoice_gate",
+      "retainExistingEffects": true,
+      "legacyContinuation": "invoice"
+    },
+    {
+      "existingNode": "exam",
+      "existingChoice": "confess",
+      "existingOutcome": "out_confess",
+      "newTo": "v48_confess_gate",
+      "retainExistingEffects": true,
+      "legacyContinuation": "confession"
+    }
+  ],
+  "manifestAppendChapter": "chapters/04_v48_independent_life_routes.json",
+  "preserveChoiceAndOutcomeIds": true
+}

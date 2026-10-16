@@ -97,7 +97,7 @@ test('320/360/390/430/1280px·150% 글자에서 트리 컨트롤과 미니맵·�
 
 test('실제 획득 엔딩은 트리에서도 동일 WebP·전체 결말을 표시하며 나머지19개는 잠근다', async ({ page }) => {
   await open(page, true); await page.keyboard.press('Escape'); await page.locator('.menu-dialog').getByRole('button', { name: '닫기', exact: true }).click();
-  for (const id of ['family_accept', 'trust_mina', 'refuse', 'burn_office']) {
+  for (const id of ['family_accept', 'trust_mina', 'refuse', 'v48_refuse_legacy', 'burn_office']) {
     await page.locator('#reading-skip').click(); await page.clock.runFor(400); await page.locator(`[data-choice="${id}"]`).click();
     await page.clock.runFor(400); await page.locator('#reading-skip').click();
   }
@@ -190,13 +190,13 @@ async function selectStep(page: Page, nodeId: string, choiceId: string) {
   const id = graph.nodes.find(node => node.nodeId === nodeId && node.choiceId === choiceId)!.id;
   const node = page.locator(`[data-tree-node="${id}"]`); await node.focus(); await node.click();
 }
-test('전체44사건119선택과 합류선344개를 표시하며 구 획득ID만으로 과거 회차를 꾸미지 않는다', async ({ page }) => {
+test('전체72사건195선택과 합류선395개를 표시하며 구 획득ID만으로 과거 회차를 꾸미지 않는다', async ({ page }) => {
   await page.addInitScript(([key]) => localStorage.setItem(key!, JSON.stringify({ saveSchemaVersion: 1, discoveredEndings: { 'demon-king': ['ending_fire'] } })), [metaKey]);
   await open(page, true); const before = await storageSnapshot(page), tree = page.locator('.ending-tree-dialog');
-  await expect(tree.locator('.tree-node')).toHaveCount(140); await expect(tree.locator('[data-tree-type="step"]')).toHaveCount(119);
-  await expect(tree.locator('.tree-lines path')).toHaveCount(344);
+  await expect(tree.locator('.tree-node')).toHaveCount(288); await expect(tree.locator('[data-tree-type="step"]')).toHaveCount(195);
+  await expect(tree.locator('.tree-lines path')).toHaveCount(395);
   await expect(tree.locator('.tree-node.is-collected')).toHaveCount(graph.routes.ending_fire!.length);
-  await expect(tree.locator('.tree-node.is-visited')).toHaveCount(1);
+  await expect(tree.locator('.tree-node.is-visited')).toHaveCount(2);
   await expect(tree.locator('.mini-collected')).toHaveCount(graph.routes.ending_fire!.length);
   await selectStep(page, 'exam', 'refuse');
   await expect(tree.locator('.tree-detail')).toContainText('실제 회차 저장이 없어');
@@ -208,7 +208,7 @@ test('전체44사건119선택과 합류선344개를 표시하며 구 획득ID만
 
 test('실제 엔딩 획득→새 회차→과거 분기 복원→다른 선택→새로고침에서 도감·능력·원장을 보존한다', async ({ page }) => {
   await open(page, true); await page.keyboard.press('Escape'); await page.locator('.menu-dialog').getByRole('button', { name: '닫기', exact: true }).click();
-  for (const id of ['family_accept', 'trust_mina', 'refuse', 'burn_office']) await chooseId(page, id);
+  for (const id of ['family_accept', 'trust_mina', 'refuse', 'v48_refuse_legacy', 'burn_office']) await chooseId(page, id);
   for (let guard = 0; guard < 15 && !await page.locator('[data-ending-phase="3"]').count(); guard++) await page.getByRole('button', { name: '이어서', exact: true }).click();
   await expect(page.locator('[data-ending-phase="3"]')).toBeVisible();
   const completed = await snapshot(page), oldRun = JSON.parse(completed[0]!);
@@ -246,5 +246,5 @@ test('실제 엔딩 획득→새 회차→과거 분기 복원→다른 선택�
   await page.getByRole('button', { name: '저장 관리 · 엔딩 도감', exact: true }).click(); await expect(page.locator('.ending-gallery-locked')).toHaveCount(19);
   await page.locator('[data-ending-tree-open]').click();
   await expect(page.locator('.tree-node.is-collected')).toHaveCount(graph.routes.ending_fire!.length);
-  await expect(page.locator('.tree-node.is-visited')).toHaveCount(4);
+  await expect(page.locator('.tree-node.is-visited')).toHaveCount(8);
 });

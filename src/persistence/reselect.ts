@@ -2,12 +2,13 @@ import { choose, createRun } from '../engine/transition';
 import { ensure, type GameState, type Story } from '../engine/types';
 import { decodeSave } from './migrate';
 import type { StoragePort } from './save';
-import { decodeCompatibleCompact } from './compact-compatible';
+import { decodeCompatibleCompact, compactStoryForState } from './compact-compatible';
 
 export const RESELECT_BACKUP_KEY = 'existence-sim:v1:backup:before-reselect:demon-king:compact';
 
 // 상태를 역산하지 않고, 같은 seed로 선택 직전까지 실제 선택 원장을 재현한다.
 export function resumeAtVisitedNode(story: Story, source: GameState, nodeId: string, runId: string): GameState {
+  story = compactStoryForState(story, source.storyVersion);
   const verified = decodeSave(story, JSON.stringify(source));
   ensure(verified.enteredNodeIds.includes(nodeId), '방문하지 않은 사건에서는 이어할 수 없습니다.');
   const selected = verified.history.findIndex(entry => entry.nodeId === nodeId);

@@ -1,13 +1,14 @@
 {
   "schemaVersion": 1,
   "id": "demon-king",
-  "version": "2.3.0-compact",
+  "version": "2.4.0-compact",
   "title": "가짜 마왕의 일생",
   "entryNodeId": "birth",
   "chapters": [
     "chapters/01_complete.json",
     "chapters/02_ending_routes.json",
-    "chapters/03_v45_expansion.json"
+    "chapters/03_v45_expansion.json",
+    "chapters/04_v48_independent_life_routes.json"
   ],
   "charactersFile": "characters.json",
   "endingsFile": "endings.json",

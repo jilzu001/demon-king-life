@@ -1,7 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
-const paths = JSON.parse(readFileSync('docs/v4.4/routes/actual-paths.json', 'utf8')) as {
+const paths = JSON.parse(readFileSync('docs/v4.5/actual-ending-paths.json', 'utf8')) as {
   endingId: string; title: string; choices: string[]; age: number; artwork: string; body: string;
 }[];
 const currentEndings = JSON.parse(readFileSync('public/stories/demon-king-compact/endings.json', 'utf8')).endings as { id: string; body: string }[];

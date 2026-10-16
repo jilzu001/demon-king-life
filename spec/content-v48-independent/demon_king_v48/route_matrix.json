@@ -1,0 +1,90 @@
+[
+  {
+    "route": "v48_attack_exile",
+    "axis": "전투·도주",
+    "entry": "v48_attack_exile_entry",
+    "middle": "v48_attack_exile_middle",
+    "final": "v48_attack_exile_final",
+    "ending_options": [
+      "ending_common_enemy",
+      "ending_mother_petition"
+    ]
+  },
+  {
+    "route": "v48_attack_shadow",
+    "axis": "전투·도주",
+    "entry": "v48_attack_shadow_entry",
+    "middle": "v48_attack_shadow_middle",
+    "final": "v48_attack_shadow_final",
+    "ending_options": [
+      "ending_escape",
+      "ending_fire"
+    ]
+  },
+  {
+    "route": "v48_refuse_court",
+    "axis": "법·개혁",
+    "entry": "v48_refuse_court_entry",
+    "middle": "v48_refuse_court_middle",
+    "final": "v48_refuse_court_final",
+    "ending_options": [
+      "ending_reform",
+      "ending_office"
+    ]
+  },
+  {
+    "route": "v48_refuse_collective",
+    "axis": "법·개혁",
+    "entry": "v48_refuse_collective_entry",
+    "middle": "v48_refuse_collective_middle",
+    "final": "v48_refuse_collective_final",
+    "ending_options": [
+      "ending_bankrupt",
+      "ending_mother_petition"
+    ]
+  },
+  {
+    "route": "v48_invoice_business",
+    "axis": "돈·권력",
+    "entry": "v48_invoice_business_entry",
+    "middle": "v48_invoice_business_middle",
+    "final": "v48_invoice_business_final",
+    "ending_options": [
+      "ending_paid_defeat",
+      "ending_taxpayer"
+    ]
+  },
+  {
+    "route": "v48_invoice_budget",
+    "axis": "돈·권력",
+    "entry": "v48_invoice_budget_entry",
+    "middle": "v48_invoice_budget_middle",
+    "final": "v48_invoice_budget_final",
+    "ending_options": [
+      "ending_retirement_47",
+      "ending_ledger"
+    ]
+  },
+  {
+    "route": "v48_confess_rescue",
+    "axis": "미나·관계",
+    "entry": "v48_confess_rescue_entry",
+    "middle": "v48_confess_rescue_middle",
+    "final": "v48_confess_rescue_final",
+    "ending_options": [
+      "ending_mina_renounced",
+      "ending_common_enemy"
+    ]
+  },
+  {
+    "route": "v48_confess_distance",
+    "axis": "미나·관계",
+    "entry": "v48_confess_distance_entry",
+    "middle": "v48_confess_distance_middle",
+    "final": "v48_confess_distance_final",
+    "ending_options": [
+      "ending_confession_unanswered",
+      "ending_mina_wedding"
+    ]
+  }
+]

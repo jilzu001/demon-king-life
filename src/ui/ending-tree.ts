@@ -38,6 +38,7 @@ export function openEndingTree(options: {
   for (const edge of tree.edges) {
     const from = layout.positions.get(edge.from)!, to = layout.positions.get(edge.to)!;
     const path = svg('path', { d: `M${from.x + nodeWidth} ${from.y + nodeHeight / 2} C${from.x + nodeWidth + 25} ${from.y + nodeHeight / 2},${to.x - 25} ${to.y + nodeHeight / 2},${to.x} ${to.y + nodeHeight / 2}` });
+    if (edge.legacyVersion) { path.classList.add('is-legacy'); const title=svg('title'); title.textContent='구 회차2.3 전용 연결 · 새 회차는 인생 진입 사건을 거칩니다.';path.append(title); }
     lines.append(path); edgeElements.set(edgeKey(edge.from, edge.to), path); path.dataset.treeEdge = edgeKey(edge.from, edge.to);
   }
   world.append(lines);
@@ -61,7 +62,7 @@ export function openEndingTree(options: {
   const help = element('details', undefined, 'tree-help');
   const legend = element('summary');
   legend.append(element('span', '수집', 'tree-key-collected'), document.createTextNode(' · '), element('span', '현재', 'tree-key-current'), document.createTextNode(' · '), element('span', '목표', 'tree-key-target'), document.createTextNode(' · 조작 안내'));
-  help.append(legend, element('p', '청록색은 수집 경로(실제 기록 우선, 없으면 검증 예시), 금색은 현재 회차의 실제 선택, 파란색은 목표의 검증 예시입니다. 경로가 겹치면 청록색 왼쪽 테두리와 금색으로 함께 표시합니다. 44개 사건·119개 선택·20개 엔딩의 전체 연결을 표시하며 합류 사건은 공유합니다. 연결선은 가능한 목적지이며 조건·과거 선택에 따라 실제 통과 여부가 달라집니다. 실제 진행 기록이 있는 사건만 선택 직전부터 이어할 수 있습니다. 노드와 배경 어디서나 드래그·휠/두 손가락·미니맵으로 이동하며 노드 위치는 바뀌지 않습니다.'));
+  help.append(legend, element('p', '청록색은 수집 경로(실제 기록 우선, 없으면 검증 예시), 금색은 현재 회차의 실제 선택, 파란색은 목표의 검증 예시입니다. 경로가 겹치면 청록색 왼쪽 테두리와 금색으로 함께 표시합니다. 72개 사건·195개 선택·20개 엔딩의 전체 연결이며 실제 합류는 하나의 사건 노드로 공유합니다. 점선은 구 회차 전용 연결입니다. 검색·사건 노드의 접기/펼치기는 저장을 바꾸지 않습니다. 연결선은 가능한 목적지이며 조건·과거 선택에 따라 실제 통과 여부가 달라집니다. 실제 진행 기록이 있는 사건만 선택 직전부터 이어할 수 있습니다. 노드와 배경 어디서나 드래그·휠/두 손가락·미니맵으로 이동하며 노드 위치는 바뀌지 않습니다.'));
   if (options.historyNotice) help.append(element('p', options.historyNotice));
   const announcement = element('p', '', 'tree-announcement'); announcement.setAttribute('aria-live', 'polite');
   const zoomLabel = element('output', '', 'tree-zoom');
@@ -69,34 +70,44 @@ export function openEndingTree(options: {
   const spoilerLabel = element('label', undefined, 'tree-spoiler-label'), spoiler = element('input'); spoiler.type = 'checkbox'; spoiler.dataset.treeSpoilers = 'true';
   spoilerLabel.append(spoiler, document.createTextNode('힌트·스포일러 경로 표시'));
   let selected: TreeNode | undefined, goal = '', closed = false;
+  const collapsed = new Set<string>();
+  function revealAll() { collapsed.clear(); updateLabels(); }
+  function visibleNodes() {
+    const seen = new Set<string>(['origin']), queue = ['origin'];
+    for (const id of queue) if (!collapsed.has(id)) for (const edge of tree.edges.filter(edge=>edge.from===id)) if(!seen.has(edge.to)) { seen.add(edge.to);queue.push(edge.to); }
+    return seen;
+  }
   let lastSize = { width: 0, height: 0 };
   function publicLabel(node: TreeNode) {
-    const status = visitStatus(node, options.state);
     if (node.type === 'origin') return '0세 · 출생신고';
     if (node.type === 'ending') {
       const index = options.entries.findIndex(entry => entry.id === node.endingId);
       return options.discovered.has(node.endingId!) || spoiler.checked ? options.entries[index]!.title : `미발견 엔딩 ${String(index + 1).padStart(2, '0')}`;
     }
-    return status.selected || sourceFor(node) || collected.has(node.id) || spoiler.checked ? `${node.age}세 · ${node.sceneTitle}` : '미방문 분기';
+    return `${node.age}세 · ${node.sceneTitle}`;
   }
   function updateLabels() {
     const savedTarget = target.value; target.replaceChildren();
     target.append(new Option('목표 엔딩 선택', ''));
     for (const entry of options.entries) target.append(new Option(publicLabel(byTreeId.get(`ending:${entry.id}`)!), entry.id));
     target.value = savedTarget;
+    const visible = visibleNodes();
     const goalNodes = new Set(goal ? spoiler.checked ? tree.routes[goal] : [`ending:${goal}`] : []);
     for (const node of tree.nodes) {
       const open = nodeButtons.get(node.id)!, status = visitStatus(node, options.state);
-      const choice = node.type === 'step' && (status.selected || collected.has(node.id) || pastRuns.some(run => visitStatus(node, run).selected) || spoiler.checked) ? node.choiceText! : node.type === 'ending' ? (options.discovered.has(node.endingId!) ? '획득한 엔딩' : '잠금') : sourceFor(node) ? '방문한 사건 · 다른 선택 가능' : '';
+      const choice = node.type === 'scene' ? `사건 · ${options.story.nodes[node.nodeId!]?.choices.length ?? 0}개 선택${collapsed.has(node.id) ? ' · 접힘' : ''}` : node.type === 'step' ? node.choiceText! : node.type === 'ending' ? (options.discovered.has(node.endingId!) ? '획득한 엔딩' : '잠금') : sourceFor(node) ? '방문한 사건 · 다른 선택 가능' : '';
+      open.hidden = !visible.has(node.id);
       open.replaceChildren(element('span', publicLabel(node)), element('small', choice)); open.setAttribute('aria-label', `${publicLabel(node)} ${choice}`);
       open.classList.toggle('is-collected', collected.has(node.id)); open.classList.toggle('is-visited', status.selected); open.classList.toggle('is-target', goalNodes.has(node.id));
       open.classList.toggle('is-dimmed', Boolean(goal) && !goalNodes.has(node.id) && !collected.has(node.id) && !status.selected); open.classList.toggle('is-selected', selected?.id === node.id);
+      const dot=miniNodes.get(node.id)!; dot.style.display=visible.has(node.id)?'':'none';
       miniNodes.get(node.id)?.classList.toggle('mini-collected', collected.has(node.id));
       miniNodes.get(node.id)?.classList.toggle('mini-current', status.selected);
       miniNodes.get(node.id)?.classList.toggle('mini-target', goalNodes.has(node.id));
     }
     const goalEdges = new Set(goal && spoiler.checked ? routeEdges(tree.routes[goal] ?? []) : []);
     for (const [key, line] of edgeElements) {
+      const [from,to] = key.split('→'); line.style.display=visible.has(from!)&&visible.has(to!)&&!collapsed.has(from!)?'':'none';
       line.classList.toggle('is-collected', collectedEdges.has(key));
       line.classList.toggle('is-visited', currentEdges.has(key));
       line.classList.toggle('is-target', goalEdges.has(key));
@@ -144,15 +155,22 @@ export function openEndingTree(options: {
         if (fork) detail.append(element('p', `다시 선택할 수 있는 마지막 방문 분기: ${fork.age}세 · ${fork.sceneTitle}`), button('방문 분기 보기', () => { center(fork); select(fork); }));
         else detail.append(element('p', '실제 저장 기록에서 이어갈 방문 분기를 찾지 못했습니다. 획득 정보만으로 과거 상태를 복원하지 않습니다.'));
       }
+    } else if (node.type === 'scene') {
+      const scene=options.story.nodes[node.nodeId!]!;
+      detail.append(element('p', visitStatus(node,options.state).selected ? '현재 회차에서 방문한 사건' : sourceFor(node) ? '지난 회차에서 방문한 사건' : '미방문 사건 · 연결은 조건에 따라 달라집니다.'));
+      detail.append(element('p',scene.body));
+      const list=element('ul'); for(const choice of scene.choices) list.append(element('li',choice.text));detail.append(list);
+      detail.append(button(collapsed.has(node.id)?'이 분기 펼치기':'이 분기 접기',()=>{ collapsed.has(node.id)?collapsed.delete(node.id):collapsed.add(node.id);updateLabels();select(node); }));
+      const source=sourceFor(node); if(source) detail.append(button(source===options.state?'이 사건부터 재선택':'이전 회차 · 이 사건부터 재선택',()=>confirmResume(node)));
     } else if (node.type === 'step') {
       detail.append(element('p', status.selected ? '이 회차에서 실제 선택한 분기' : sourceFor(node) ? '실제 방문 기록이 있는 사건 · 여기서 다른 선택을 할 수 있습니다.' : collected.has(node.id) ? '수집한 엔딩의 검증 예시 경로' : '이 회차에서 방문하지 않은 분기'));
-      if (status.selected || collected.has(node.id) || pastRuns.some(run => visitStatus(node, run).selected) || spoiler.checked) {
+      {
         const scene = options.story.nodes[node.nodeId!]!, choice = scene.choices.find(choice => choice.id === node.choiceId)!;
         const outcome = choice.outcomes.find(outcome => outcome.id === node.outcomeId)!;
         detail.append(element('p', choice.text), element('p', choice.description ?? ''), element('p', outcome.narrative ?? ''));
         const condition = element('details'), text = element('pre', JSON.stringify({ enabledWhen: choice.enabledWhen, when: outcome.when, weight: outcome.weight }, null, 2));
         condition.append(element('summary', '선택·판정 조건'), text); detail.append(condition);
-      } else detail.append(element('p', '힌트·스포일러 표시를 켜면 선택 정보를 볼 수 있습니다.'));
+      }
       const source = sourceFor(node);
       if (source) detail.append(button(source === options.state ? '이 사건부터 재선택' : '이전 회차 · 이 사건부터 재선택', () => confirmResume(node)));
       else if (collected.has(node.id)) detail.append(element('p', '엔딩 획득 정보는 있지만 이 분기의 실제 회차 저장이 없어 여기서 이어할 수 없습니다. 새 회차부터 진행 기록을 별도로 보관합니다.'));
@@ -160,14 +178,26 @@ export function openEndingTree(options: {
     detail.focus({ preventScroll: true });
   }
   const find = () => {
-    goal = target.value; updateLabels();
+    collapsed.clear(); goal = target.value; updateLabels();
     if (!goal) { announcement.textContent = '목표 엔딩을 선택해 주세요.'; return; }
     const node = byTreeId.get(`ending:${goal}`)!; center(node); select(node); announcement.textContent = `${publicLabel(node)} 위치로 이동했습니다.`;
   };
   const enlarge = button('+', () => { camera.zoomAt(viewport.clientWidth / 2, viewport.clientHeight / 2, 1.25); draw(); }); enlarge.setAttribute('aria-label', '확대');
   const reduce = button('−', () => { camera.zoomAt(viewport.clientWidth / 2, viewport.clientHeight / 2, .8); draw(); }); reduce.setAttribute('aria-label', '축소');
   const findButton = button('찾기', find); findButton.setAttribute('aria-label', '목표 엔딩 찾기');
-  controls.append(button('전체 보기', fit), enlarge, reduce, zoomLabel, target, findButton);
+  const search=element('input');search.type='search';search.placeholder='사건·선택 검색';search.setAttribute('aria-label','사건·선택 검색');
+  let searchIndex=0;
+  const searchNext=()=>{
+    const term=search.value.trim().toLocaleLowerCase(); if(!term)return;
+    const matches=tree.nodes.filter(node=>`${node.id} ${node.type==='ending'?publicLabel(node):`${node.sceneTitle??''} ${node.choiceText??''}`}`.toLocaleLowerCase().includes(term));
+    if(!matches.length){announcement.textContent='검색 결과가 없습니다.';return;}
+    revealAll();const node=matches[searchIndex++%matches.length]!;center(node);select(node);announcement.textContent=`검색 결과 ${((searchIndex-1)%matches.length)+1}/${matches.length}`;
+  };
+  search.addEventListener('input',()=>{searchIndex=0;});search.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();searchNext();}});
+  const cameraControls=element('div',undefined,'tree-control-group tree-camera-controls');cameraControls.append(button('전체 보기',fit),enlarge,reduce,zoomLabel);
+  const targetControls=element('div',undefined,'tree-control-group');targetControls.append(target,findButton);
+  const searchControls=element('div',undefined,'tree-control-group');const expandAll=button('펼치기',revealAll);expandAll.setAttribute('aria-label','모두 펼치기');searchControls.append(search,button('검색',searchNext),expandAll);
+  controls.append(cameraControls,targetControls,searchControls);
   const closeButton = button('닫기', () => finish()); header.append(heading, closeButton);
   dialog.append(header, controls, spoilerLabel, help, body, announcement);
   spoiler.addEventListener('change', () => { updateLabels(); if (selected) select(selected); });

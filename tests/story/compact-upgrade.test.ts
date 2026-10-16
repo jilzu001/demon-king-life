@@ -25,7 +25,7 @@ it('기존13사건28선택/7엔딩을 보호하며 고백과 v3.8 신규 선택�
 it('기존147종단 경로의 모든 중간 저장과100시드를 원장/상태/RNG 변경 없이 검증한다', () => {
   let terminals = 0;
   const visit = (state: GameState) => {
-    expect(decodeCompatibleCompact(story, JSON.stringify(state))).toEqual({ ...state, storyVersion: story.manifest.version });
+    expect(decodeCompatibleCompact(story, JSON.stringify(state))).toEqual({ ...state, storyVersion: '2.3.0-compact' });
     if (state.ended) { terminals++; return; }
     for (const choice of previousCompactStory.nodes[state.currentNodeId!]!.choices) visit(choose(previousCompactStory, state, state.currentNodeId!, choice.id).nextState);
   };
@@ -34,7 +34,7 @@ it('기존147종단 경로의 모든 중간 저장과100시드를 원장/상태/
   for (let seed = 1; seed <= 100; seed++) {
     let old = createRun(previousCompactStory, seed, `seed-${seed}`);
     for (const id of ['family_accept', 'trust_mina', 'attack', 'forgive', 'ally', 'public_audit', 'walk_away', 'end_peace']) old = choose(previousCompactStory, old, old.currentNodeId!, id).nextState;
-    expect(decodeCompatibleCompact(story, JSON.stringify(old))).toEqual({ ...old, storyVersion: story.manifest.version });
+    expect(decodeCompatibleCompact(story, JSON.stringify(old))).toEqual({ ...old, storyVersion: '2.3.0-compact' });
   }
 });
 it('구 버전으로 위장한 신 선택 원장과 변조 상태는 이관하지 않는다', () => {
@@ -52,6 +52,6 @@ it('구 원문 백업은 덮어쓰지 않으며 구 재선택 백업도 엄격�
   expect(JSON.parse(backup).run).toBe(raw);
   values.set(runKey(compactSlot), JSON.stringify(createRun(previousCompactStory, 7, 'other'))); backupBeforeCompactUpgrade(storage);
   expect(values.get(COMPACT_V37_BACKUP_KEY)).toBe(backup);
-  expect(loadReselectBackup(storage, story, 'restored')).toEqual({ ...old, storyVersion: story.manifest.version, runId: 'restored' });
+  expect(loadReselectBackup(storage, story, 'restored')).toEqual({ ...old, storyVersion: '2.3.0-compact', runId: 'restored' });
 });
 

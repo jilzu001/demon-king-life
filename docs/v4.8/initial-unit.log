@@ -1,0 +1,655 @@
+
+> demon-king-phase1@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.4 C:/Users/jilzu/OneDrive/Codex/make_game_test/demon-king
+
+ ❯ tests/story/ending-routes.test.ts (23 tests | 23 failed) 194ms
+   × v4.5 허용 문안 외 기존43개 선택 계약·16사건 구조·8결말·초기상태를 보존한다 20ms
+   × 기존5328개 종단과 모든 중간 저장은 상태·원장·난수를 그대로 복원한다 8ms
+   × ending_escape: 새 게임의 실제 선택과 중간 저장으로 도달한다 20ms
+   × ending_fire: 새 게임의 실제 선택과 중간 저장으로 도달한다 9ms
+   × ending_throne: 새 게임의 실제 선택과 중간 저장으로 도달한다 7ms
+   × ending_ledger: 새 게임의 실제 선택과 중간 저장으로 도달한다 13ms
+   × ending_peace: 새 게임의 실제 선택과 중간 저장으로 도달한다 6ms
+   × ending_reform: 새 게임의 실제 선택과 중간 저장으로 도달한다 8ms
+   × ending_office: 새 게임의 실제 선택과 중간 저장으로 도달한다 10ms
+   × ending_love_scandal: 새 게임의 실제 선택과 중간 저장으로 도달한다 7ms
+   × ending_mina_renounced: 새 게임의 실제 선택과 중간 저장으로 도달한다 7ms
+   × ending_mina_wedding: 새 게임의 실제 선택과 중간 저장으로 도달한다 7ms
+   × ending_confession_unanswered: 새 게임의 실제 선택과 중간 저장으로 도달한다 10ms
+   × ending_common_enemy: 새 게임의 실제 선택과 중간 저장으로 도달한다 6ms
+   × ending_double_license: 새 게임의 실제 선택과 중간 저장으로 도달한다 10ms
+   × ending_retirement_47: 새 게임의 실제 선택과 중간 저장으로 도달한다 7ms
+   × ending_paid_defeat: 새 게임의 실제 선택과 중간 저장으로 도달한다 6ms
+   × ending_taxpayer: 새 게임의 실제 선택과 중간 저장으로 도달한다 5ms
+   × ending_king: 새 게임의 실제 선택과 중간 저장으로 도달한다 8ms
+   × ending_bankrupt: 새 게임의 실제 선택과 중간 저장으로 도달한다 4ms
+   × ending_true_demon: 새 게임의 실제 선택과 중간 저장으로 도달한다 4ms
+   × ending_mother_petition: 새 게임의 실제 선택과 중간 저장으로 도달한다 6ms
+   × 준비 사건 거절은 해금하지 않고 기존 흐름으로 복귀하며 조건 누락·관계 악화 시 우회할 수 없다 2ms
+ ❯ tests/story/story-art-v45.test.ts (7 tests | 4 failed) 153ms
+   × 103개 기존 선택의 조건·결과ID·가중치·효과·목적지는 그대로이며 허용된4본문/4결과만 수정한다 22ms
+   × 확장65개 중4본문/12결과와6세 범위만 바뀌며 실제44사건/119선택에 연결된다 23ms
+   × 회상은실제선택·방문·보유플래그를모두요구하고여러조건도한문장만선택한다 7ms
+   × CG는실제장면·나이·동행결과에만연결하고미나는은발기준초상화를유지한다 2ms
+ ❯ tests/story/ending-tree.test.ts (4 tests | 1 failed) 240ms
+   × 대표 경로에 없던 선택까지 모든119개와 결과344연결을 빠짐없이 표시하며 배치가 겹치지 않는다 16ms
+ ❯ tests/story/compact-upgrade.test.ts (4 tests | 2 failed) 57ms
+   × 기존147종단 경로의 모든 중간 저장과100시드를 원장/상태/RNG 변경 없이 검증한다 22ms
+   × 구 원문 백업은 덮어쓰지 않으며 구 재선택 백업도 엄격한 이관으로 복원한다 15ms
+ ❯ tests/story/compact.test.ts (6 tests | 4 failed) 833ms
+   ❯ 축소 완결판 계약과 원작 보호 (6)
+     × 출생 나이로 시작하고 이후 시간 역행 없이 저장을 재현한다 16ms
+     × 44개 사건과20개 엔딩 및91664개 종단 경로가 모두 도달한다 800ms
+     × 별도 저장 슬롯과 도감은 원작 데이터를 건드리지 않으며 마지막 화면에서만 해금한다 3ms
+     × 선택한 경로의 사건만 시간순으로 회상하고 부족한 기록을 채우지 않는다 3ms
+ ❯ tests/persistence/tree-history.test.ts (7 tests | 2 failed) 1341ms
+   × 기존 재선택/가져오기/구버전 백업을 검증해 읽고 원본을 변경하지 않는다 11ms
+   × 과거 실제 원장에서 선택 직전 상태·난수를 재현하고 현재 회차를 우선한다 3ms
+ ❯ tests/story/choices-v38.test.ts (103 tests | 100 failed) 2220ms
+   × 시드 1: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 5ms
+   × 시드 2: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 3: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 4: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 5: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 6: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 7: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 8: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 9: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 10: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 11: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 12: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 13: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 14: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 15: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 16: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 17: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 18: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 19: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 20: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 21: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 22: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 23: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 24: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 25: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 26: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 27: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 28: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 29: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 30: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 31: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 32: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 33: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 34: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 35: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 36: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 2ms
+   × 시드 37: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 38: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 39: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 40: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 41: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 42: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 43: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 44: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 45: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 46: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 47: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 48: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 49: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 50: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 51: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 52: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 53: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 54: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 55: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 56: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 57: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 58: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 59: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 60: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 61: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 62: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 63: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 64: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 65: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 66: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 67: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 68: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 69: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 70: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 71: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 72: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 73: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 74: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 75: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 76: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 77: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 78: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 79: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 80: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 81: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 82: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 83: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 84: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 85: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 86: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 87: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 88: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 89: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 90: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 91: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 92: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 93: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 94: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 95: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 96: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 97: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 98: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 1ms
+   × 시드 99: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+   × 시드 100: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 136 ⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/story/choices-v38.test.ts > 시드 1: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 2: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 3: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 4: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 5: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 6: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 7: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 8: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 9: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 10: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 11: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 12: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 13: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 14: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 15: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 16: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 17: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 18: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 19: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 20: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 21: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 22: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 23: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 24: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 25: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 26: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 27: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 28: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 29: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 30: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 31: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 32: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 33: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 34: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 35: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 36: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 37: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 38: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 39: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 40: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 41: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 42: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 43: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 44: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 45: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 46: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 47: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 48: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 49: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 50: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 51: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 52: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 53: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 54: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 55: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 56: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 57: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 58: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 59: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 60: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 61: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 62: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 63: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 64: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 65: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 66: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 67: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 68: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 69: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 70: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 71: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 72: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 73: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 74: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 75: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 76: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 77: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 78: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 79: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 80: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 81: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 82: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 83: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 84: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 85: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 86: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 87: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 88: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 89: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 90: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 91: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 92: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 93: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 94: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 95: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 96: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 97: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 98: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 99: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+ FAIL  tests/story/choices-v38.test.ts > 시드 100: 신규 선택별 고유 서술·플래그와 진행·저장·재선택을 검증한다
+GameError: 호환되지 않는 스토리/버전입니다. 자동 이관하지 않습니다.
+ ❯ ensure src/engine/types.ts:31:25
+     29| }
+     30| export function ensure(condition: unknown, message: string): asserts c…
+     31|   if (!condition) throw new GameError(message);
+       |                         ^
+     32| }
+     33|
+ ❯ assertState src/engine/invariants.ts:32:3
+ ❯ transition src/engine/transition.ts:27:3
+ ❯ choose src/engine/transition.ts:68:10
+ ❯ tests/story/choices-v38.test.ts:80:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/136]⎯
+
+ FAIL  tests/story/compact-upgrade.test.ts > 기존147종단 경로의 모든 중간 저장과100시드를 원장/상태/RNG 변경 없이 검증한다
+AssertionError: expected { age: +0, player: { …(7) }, …(13) } to deeply equal { age: +0, player: { …(7) }, …(13) }
+
+- Expected
++ Received
+
+@@ -55,7 +55,7 @@
+      "state": 17,
+    },
+    "runId": "old-paths",
+    "saveSchemaVersion": 1,
+    "storyId": "demon-king",
+-   "storyVersion": "2.4.0-compact",
++   "storyVersion": "2.3.0-compact",
+  }
+
+ ❯ visit tests/story/compact-upgrade.test.ts:28:67
+     26|   let terminals = 0;
+     27|   const visit = (state: GameState) => {
+     28|     expect(decodeCompatibleCompact(story, JSON.stringify(state))).toEq…
+       |                                                                   ^
+     29|     if (state.ended) { terminals++; return; }
+     30|     for (const choice of previousCompactStory.nodes[state.currentNodeI…
+ ❯ tests/story/compact-upgrade.test.ts:32:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/136]⎯
+
+ FAIL  tests/story/compact-upgrade.test.ts > 구 원문 백업은 덮어쓰지 않으며 구 재선택 백업도 엄격한 이관으로 복원한다
+AssertionError: expected { age: +0, player: { …(7) }, …(13) } to deeply equal { age: +0, player: { …(7) }, …(13) }
+
+- Expected
++ Received
+
+@@ -55,7 +55,7 @@
+      "state": 4,
+    },
+    "runId": "restored",
+    "saveSchemaVersion": 1,
+    "storyId": "demon-king",
+-   "storyVersion": "2.4.0-compact",
++   "storyVersion": "2.3.0-compact",
+  }
+
+ ❯ tests/story/compact-upgrade.test.ts:55:58
+     53|   values.set(runKey(compactSlot), JSON.stringify(createRun(previousCom…
+     54|   expect(values.get(COMPACT_V37_BACKUP_KEY)).toBe(backup);
+     55|   expect(loadReselectBackup(storage, story, 'restored')).toEqual({ ...…
+       |                                                          ^
+     56| });
+     57|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/136]⎯
+
+ FAIL  tests/story/compact.test.ts > 축소 완결판 계약과 원작 보호 > 출생 나이로 시작하고 이후 시간 역행 없이 저장을 재현한다
+GameError: 존재하지 않는 선택입니다.
+ ❯ ensure src/engine/types.ts:31:25
+     29| }
+     30| export function ensure(condition: unknown, message: string): asserts c…
+     31|   if (!condition) throw new GameError(message);
+       |                         ^
+     32| }
+     33|
+ ❯ transition src/engine/transition.ts:32:3
+ ❯ choose src/engine/transition.ts:68:10
+ ❯ run tests/story/compact.test.ts:17:33
+ ❯ tests/story/compact.test.ts:24:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/136]⎯
+
+ FAIL  tests/story/compact.test.ts > 축소 완결판 계약과 원작 보호 > 44개 사건과20개 엔딩 및91664개 종단 경로가 모두 도달한다
+AssertionError: expected 72 to be 44 // Object.is equality
+
+- Expected
++ Received
+
+- 44
++ 72
+
+ ❯ tests/story/compact.test.ts:30:35
+     28|   it('44개 사건과20개 엔딩 및91664개 종단 경로가 모두 도달한다', () => {
+     29|     const report = simulateAll(story);
+     30|     expect(report.reachableNodes).toBe(44); expect(Object.keys(report.…
+       |                                   ^
+     31|     expect(report.terminalPaths).toBe(91664); expect(report.warnings).…
+     32|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/136]⎯
+
+ FAIL  tests/story/compact.test.ts > 축소 완결판 계약과 원작 보호 > 별도 저장 슬롯과 도감은 원작 데이터를 건드리지 않으며 마지막 화면에서만 해금한다
+GameError: 존재하지 않는 선택입니다.
+ ❯ ensure src/engine/types.ts:31:25
+     29| }
+     30| export function ensure(condition: unknown, message: string): asserts c…
+     31|   if (!condition) throw new GameError(message);
+       |                         ^
+     32| }
+     33|
+ ❯ transition src/engine/transition.ts:32:3
+ ❯ choose src/engine/transition.ts:68:10
+ ❯ run tests/story/compact.test.ts:17:33
+ ❯ tests/story/compact.test.ts:44:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/136]⎯
+
+ FAIL  tests/story/compact.test.ts > 축소 완결판 계약과 원작 보호 > 선택한 경로의 사건만 시간순으로 회상하고 부족한 기록을 채우지 않는다
+GameError: 존재하지 않는 선택입니다.
+ ❯ ensure src/engine/types.ts:31:25
+     29| }
+     30| export function ensure(condition: unknown, message: string): asserts c…
+     31|   if (!condition) throw new GameError(message);
+       |                         ^
+     32| }
+     33|
+ ❯ transition src/engine/transition.ts:32:3
+ ❯ choose src/engine/transition.ts:68:10
+ ❯ run tests/story/compact.test.ts:17:33
+ ❯ tests/story/compact.test.ts:53:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/136]⎯
+
+ FAIL  tests/story/ending-routes.test.ts > v4.5 허용 문안 외 기존43개 선택 계약·16사건 구조·8결말·초기상태를 보존한다
+AssertionError: expected [ { id: 'attack', …(3) }, …(3) ] to deeply equal [ { id: 'attack', …(3) }, …(3) ]
+
+- Expected
++ Received
+
+@@ -12,11 +12,11 @@
+            },
+          ],
+          "id": "out_attack",
+          "result": "mixed",
+          "to": {
+-           "id": "prison",
++           "id": "v48_attack_gate",
+            "kind": "node",
+          },
+          "weight": 1,
+        },
+      ],
+@@ -35,11 +35,11 @@
+            },
+          ],
+          "id": "out_refuse",
+          "result": "mixed",
+          "to": {
+-           "id": "petition",
++           "id": "v48_refuse_gate",
+            "kind": "node",
+          },
+          "weight": 1,
+        },
+      ],
+@@ -58,11 +58,11 @@
+            },
+          ],
+          "id": "out_invoice",
+          "result": "mixed",
+          "to": {
+-           "id": "invoice",
++           "id": "v48_invoice_gate",
+            "kind": "node",
+          },
+          "weight": 1,
+        },
+      ],
+@@ -81,11 +81,11 @@
+            },
+          ],
+          "id": "out_confess",
+          "result": "mixed",
+          "to": {
+-           "id": "confession",
++           "id": "v48_confess_gate",
+            "kind": "node",
+          },
+          "weight": 1,
+        },
+      ],
+
+ ❯ tests/story/ending-routes.test.ts:21:141
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/136]⎯
+
+ FAIL  tests/story/ending-routes.test.ts > 기존5328개 종단과 모든 중간 저장은 상태·원장·난수를 그대로 복원한다
+GameError: 호환되지 않는 스토리/버전입니다. 자동 이관하지 않습니다.
+ ❯ ensure src/engine/types.ts:31:25
+     29| }
+     30| export function ensure(condition: unknown, message: string): asserts c…
+     31|   if (!condition) throw new GameError(message);
+       |                         ^
+     32| }
+     33|
+ ❯ assertState src/engine/invariants.ts:32:3
+ ❯ decodeSave src/persistence/migrate.ts:16:3
+ ❯ visit tests/story/ending-routes.test.ts:31:12
+ ❯ tests/story/ending-routes.test.ts:35:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/136]⎯
+
+ FAIL  tests/story/ending-routes.test.ts > ending_escape: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_fire: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_throne: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_ledger: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_peace: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_reform: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_office: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_love_scandal: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_mina_renounced: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_mina_wedding: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_confession_unanswered: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_common_enemy: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_double_license: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_retirement_47: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_paid_defeat: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_taxpayer: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_king: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_bankrupt: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_true_demon: 새 게임의 실제 선택과 중간 저장으로 도달한다
+ FAIL  tests/story/ending-routes.test.ts > ending_mother_petition: 새 게임의 실제 선택과 중간 저장으로 도달한다
+GameError: 존재하지 않는 선택입니다.
+ ❯ ensure src/engine/types.ts:31:25
+     29| }
+     30| export function ensure(condition: unknown, message: string): asserts c…
+     31|   if (!condition) throw new GameError(message);
+       |                         ^
+     32| }
+     33|
+ ❯ transition src/engine/transition.ts:32:3
+ ❯ choose src/engine/transition.ts:68:10
+ ❯ tests/story/ending-routes.test.ts:41:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/136]⎯
+
+ FAIL  tests/story/ending-routes.test.ts > 준비 사건 거절은 해금하지 않고 기존 흐름으로 복귀하며 조건 누락·관계 악화 시 우회할 수 없다
+GameError: 존재하지 않는 선택입니다.
+ ❯ ensure src/engine/types.ts:31:25
+     29| }
+     30| export function ensure(condition: unknown, message: string): asserts c…
+     31|   if (!condition) throw new GameError(message);
+       |                         ^
+     32| }
+     33|
+ ❯ transition src/engine/transition.ts:32:3
+ ❯ choose src/engine/transition.ts:68:10
+ ❯ tests/story/ending-routes.test.ts:53:64
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/136]⎯
+
+ FAIL  tests/story/ending-tree.test.ts > 대표 경로에 없던 선택까지 모든119개와 결과344연결을 빠짐없이 표시하며 배치가 겹치지 않는다
+AssertionError: expected 72 to be 44 // Object.is equality
+
+- Expected
++ Received
+
+- 44
++ 72
+
+ ❯ tests/story/ending-tree.test.ts:52:56
+     50| it('대표 경로에 없던 선택까지 모든119개와 결과344연결을 빠짐없이 표시하며 배치가 겹치지 않는다', () => {
+     51|   const steps = tree.nodes.filter(node => node.type === 'step');
+     52|   expect(new Set(steps.map(node => node.nodeId)).size).toBe(44); expec…
+       |                                                        ^
+     53|   for (const scene of Object.values(story.nodes)) for (const choice of…
+     54|     const step = steps.find(node => node.nodeId === scene.id && node.c…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/136]⎯
+
+ FAIL  tests/story/story-art-v45.test.ts > 103개 기존 선택의 조건·결과ID·가중치·효과·목적지는 그대로이며 허용된4본문/4결과만 수정한다
+AssertionError: expected { id: 'out_attack', weight: 1, …(4) } to deeply equal { id: 'out_attack', weight: 1, …(4) }
+
+- Expected
++ Received
+
+@@ -14,10 +14,10 @@
+  당신은 대답 대신 말했다.
+
+  “사랑해.” 감독관은 이를 공격 후 협박으로 기록했다.",
+    "result": "mixed",
+    "to": {
+-     "id": "prison",
++     "id": "v48_attack_gate",
+      "kind": "node",
+    },
+    "weight": 1,
+  }
+
+ ❯ tests/story/story-art-v45.test.ts:37:59
+     35|       for (const outcome of choice.outcomes) {
+     36|         const next = actual.outcomes.find(o => o.id === outcome.id)!;
+     37|         expect({ ...next, narrative: outcome.narrative }).toEqual(outc…
+       |                                                           ^
+     38|         expect(next.narrative).toBe(rewrittenOutcomes.includes(`${node…
+     39|           ? target.choices.find((c: { id: string }) => c.id === choice…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/136]⎯
+
+ FAIL  tests/story/story-art-v45.test.ts > 확장65개 중4본문/12결과와6세 범위만 바뀌며 실제44사건/119선택에 연결된다
+AssertionError: expected [ 'birth', 'child', 'exam', …(69) ] to have a length of 44 but got 72
+
+- Expected
++ Received
+
+- 44
++ 72
+
+ ❯ tests/story/story-art-v45.test.ts:52:65
+     50|   const now = read('content/events_v2_9.json').events;
+     51|   const input = read(`${source}/content/events_v2_9.json`).events;
+     52|   expect(now.length).toBe(65); expect(Object.keys(story.nodes)).toHave…
+       |                                                                 ^
+     53|   const updated = ['birth_tax', 'mina_bridge', 'orphan_registry', 'old…
+     54|   for (const e of before) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/136]⎯
+
+ FAIL  tests/story/story-art-v45.test.ts > 회상은실제선택·방문·보유플래그를모두요구하고여러조건도한문장만선택한다
+GameError: 존재하지 않는 선택입니다.
+ ❯ ensure src/engine/types.ts:31:25
+     29| }
+     30| export function ensure(condition: unknown, message: string): asserts c…
+     31|   if (!condition) throw new GameError(message);
+       |                         ^
+     32| }
+     33|
+ ❯ transition src/engine/transition.ts:32:3
+ ❯ choose src/engine/transition.ts:68:10
+ ❯ run tests/story/story-art-v45.test.ts:20:33
+ ❯ tests/story/story-art-v45.test.ts:84:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/136]⎯
+
+ FAIL  tests/story/story-art-v45.test.ts > CG는실제장면·나이·동행결과에만연결하고미나는은발기준초상화를유지한다
+GameError: 존재하지 않는 선택입니다.
+ ❯ ensure src/engine/types.ts:31:25
+     29| }
+     30| export function ensure(condition: unknown, message: string): asserts c…
+     31|   if (!condition) throw new GameError(message);
+       |                         ^
+     32| }
+     33|
+ ❯ transition src/engine/transition.ts:32:3
+ ❯ choose src/engine/transition.ts:68:10
+ ❯ run tests/story/story-art-v45.test.ts:20:33
+ ❯ tests/story/story-art-v45.test.ts:104:17
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/136]⎯
+
+ FAIL  tests/persistence/tree-history.test.ts > 기존 재선택/가져오기/구버전 백업을 검증해 읽고 원본을 변경하지 않는다
+AssertionError: expected '2.3.0-compact' to be '2.4.0-compact' // Object.is equality
+
+Expected: "2.4.0-compact"
+Received: "2.3.0-compact"
+
+ ❯ tests/persistence/tree-history.test.ts:47:40
+     45|   const result = loadPastTreeSources(storage, story);
+     46|   expect(result.notice).toBe(''); expect(result.runs).toHaveLength(2);
+     47|   expect(result.runs[1]!.storyVersion).toBe(story.manifest.version);
+       |                                        ^
+     48|   expect(keys.map(key => storage.getItem(key))).toEqual(before);
+     49|   const different = play(['family_appeal', 'trust_mina']);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/136]⎯
+
+ FAIL  tests/persistence/tree-history.test.ts > 과거 실제 원장에서 선택 직전 상태·난수를 재현하고 현재 회차를 우선한다
+GameError: 존재하지 않는 선택입니다.
+ ❯ ensure src/engine/types.ts:31:25
+     29| }
+     30| export function ensure(condition: unknown, message: string): asserts c…
+     31|   if (!condition) throw new GameError(message);
+       |                         ^
+     32| }
+     33|
+ ❯ transition src/engine/transition.ts:32:3
+ ❯ choose src/engine/transition.ts:68:10
+ ❯ play tests/persistence/tree-history.test.ts:16:39
+ ❯ tests/persistence/tree-history.test.ts:74:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/136]⎯
+
+
+ Test Files  7 failed | 11 passed (18)
+      Tests  136 failed | 135 passed (271)
+   Start at  15:08:07
+   Duration  9.90s (tests 42%, import 37%, transform 21%, worker 1%)
+

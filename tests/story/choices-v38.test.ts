@@ -1,7 +1,7 @@
 import { it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { loadStory } from '../../src/content/load';
-import { readExampleStory } from '../../scripts/read-story';
+import { preV48Story } from '../../src/content/compact-previous';
 import { assertCompactChoiceMinimum } from '../../src/content/compact-contract';
 import { choose, createRun } from '../../src/engine/transition';
 import { evaluate } from '../../src/engine/conditions';
@@ -10,7 +10,7 @@ import { resumeAtVisitedNode } from '../../src/persistence/reselect';
 import type { GameState } from '../../src/engine/types';
 
 const read = (path: string) => JSON.parse(readFileSync(path, 'utf8'));
-const current = await readExampleStory('demon-king-compact');
+const current = preV48Story; // v3.8 구 회차의 무변경 계약을 검사한다.
 const baseline = read('backups/before-v3.8/01_complete.json');
 const previous = await loadStory(async path => path === 'story.json' ? read('backups/before-v4.4/story.json') : path === 'chapters/01_complete.json' ? baseline : read(`backups/before-v4.4/${path}`));
 const v38 = await loadStory(async path => read(`backups/before-v4.4/${path}`));

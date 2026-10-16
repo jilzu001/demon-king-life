@@ -22,9 +22,9 @@ for (const path of paths) {
   ensure(JSON.stringify(state.history) === JSON.stringify(path.history), `${path.endingId}: 실제 선택/판정 원장 불일치`);
   const route = generated.routes[path.endingId as keyof typeof generated.routes];
   route.forEach(id => covered.add(id));
-  ensure(route?.length === state.history.length + 2, `${path.endingId}: 트리 길이 불일치`);
+  ensure(route?.length === state.history.length * 2 + 2, `${path.endingId}: 트리 길이 불일치`);
   for (const [index, entry] of state.history.entries()) {
-    const node = generated.nodes.find(node => node.id === route[index + 1]);
+    const node = generated.nodes.find(node => node.id === route[index * 2 + 2]);
     ensure(node?.nodeId === entry.nodeId && node.choiceId === entry.choiceId && node.outcomeId === entry.outcomeId
       && node.age === entry.age && node.toKind === entry.toKind && node.toId === entry.toId,
       `${path.endingId}: 현재 데이터/트리 선택 불일치`);
@@ -39,7 +39,7 @@ for (const scene of Object.values(story.nodes)) for (const choice of scene.choic
   expected++;
   const node = steps.find(node => node.nodeId === scene.id && node.choiceId === choice.id && node.outcomeId === outcome.id);
   ensure(node && node.toKind === outcome.to.kind && node.toId === outcome.to.id, '전체 선택/결과 누락 또는 잘못된 연결');
-  const targets = outcome.to.kind === 'ending' ? [`ending:${outcome.to.id}`] : steps.filter(step => step.nodeId === outcome.to.id).map(step => step.id);
+  const targets = outcome.to.kind === 'ending' ? [`ending:${outcome.to.id}`] : [`scene:${outcome.to.id}`];
   ensure(targets.length > 0 && targets.every(to => generated.edges.some(edge => edge.from === node.id && edge.to === to)), '전체 목적지 연결 누락');
 }
 ensure(steps.length === expected && generated.sceneCount === Object.keys(story.nodes).length, '전체 사건/결과 수 불일치');

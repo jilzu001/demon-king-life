@@ -1,0 +1,11 @@
+
+Running 2 tests using 1 worker
+
+(node:155912) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [공개-PC] › tests\e2e\tree-compact.spec.ts:76:1 › 320/360/390/430/1280px·150% 글자에서 트리 컨트롤과 미니맵·전체 보기·노드 탭을 유지한다 (5.9s)
+(node:156872) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 [공개-모바일-320] › tests\e2e\tree-compact.spec.ts:76:1 › 320/360/390/430/1280px·150% 글자에서 트리 컨트롤과 미니맵·전체 보기·노드 탭을 유지한다 (5.8s)
+
+  2 passed (15.8s)

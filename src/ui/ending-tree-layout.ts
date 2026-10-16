@@ -1,10 +1,10 @@
 import generated from '../content/generated/ending-tree.json';
 import type { GameState, HistoryEntry } from '../engine/types';
 export type TreeNode = {
-  id: string; type: 'origin' | 'step' | 'ending'; parentId: string | null; depth: number; routeIds: string[];
+  id: string; type: 'origin' | 'scene' | 'step' | 'ending'; parentId: string | null; depth: number; routeIds: string[];
   nodeId?: string; age?: number; sceneTitle?: string; choiceId?: string; choiceText?: string; outcomeId?: string; endingId?: string;
 };
-export const tree = generated as { nodes: TreeNode[]; edges: { from: string; to: string }[]; routes: Record<string, string[]> };
+export const tree = generated as { nodes: TreeNode[]; edges: { from: string; to: string; legacyVersion?: string }[]; routes: Record<string, string[]> };
 export const byTreeId = new Map(tree.nodes.map(node => [node.id, node]));
 export const nodeWidth = 236, nodeHeight = 84;
 export function layoutTree() {
@@ -38,13 +38,14 @@ const same = (node: TreeNode, entry: HistoryEntry) => node.nodeId === entry.node
 export function visitStatus(node: TreeNode, state?: GameState | null) {
   if (!state) return { selected: false, resumable: false };
   if (node.type === 'origin') return { selected: true, resumable: false };
+  if (node.type === 'scene') return { selected: state.enteredNodeIds.includes(node.nodeId!), resumable: state.enteredNodeIds.includes(node.nodeId!) };
   if (node.type === 'ending') return { selected: state.ended && state.endingId === node.endingId, resumable: false };
   return { selected: state.history.some(entry => same(node, entry)), resumable: state.enteredNodeIds.includes(node.nodeId!) };
 }
 export function lastVisitedFork(endingId: string, state?: GameState | null) {
   return (tree.routes[endingId] ?? []).map(id => byTreeId.get(id)!).filter(node => node.type === 'step' && visitStatus(node, state).resumable).at(-1);
 }
-export const historyTreeIds = (state: GameState) => ['origin', ...state.history.map(entry => `step:${entry.nodeId}:${entry.choiceId}:${entry.outcomeId}`), ...(state.endingId ? [`ending:${state.endingId}`] : [])];
+export const historyTreeIds = (state: GameState) => ['origin', ...state.history.flatMap(entry => [`scene:${entry.nodeId}`, `step:${entry.nodeId}:${entry.choiceId}:${entry.outcomeId}`]), ...(state.endingId ? [`ending:${state.endingId}`] : state.currentNodeId ? [`scene:${state.currentNodeId}`] : [])];
 export const edgeKey = (from: string, to: string) => `${from}→${to}`;
 export const routeEdges = (ids: readonly string[]) => ids.slice(1).map((to, index) => edgeKey(ids[index]!, to));
 export function collectedRoutes(discovered: ReadonlySet<string>, past: readonly GameState[] = []) {

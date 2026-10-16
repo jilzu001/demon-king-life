@@ -5,6 +5,7 @@
       "family_accept",
       "trust_mina",
       "attack",
+      "v48_attack_legacy",
       "escape_prison"
     ],
     "title": "계단 열일곱 개의 마왕",
@@ -32,6 +33,14 @@
         "choiceId": "attack",
         "outcomeId": "out_attack",
         "toKind": "node",
+        "toId": "v48_attack_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_attack_gate",
+        "choiceId": "v48_attack_legacy",
+        "outcomeId": "out_v48_attack_legacy",
+        "toKind": "node",
         "toId": "prison"
       },
       {
@@ -54,6 +63,7 @@
       "family_accept",
       "trust_mina",
       "refuse",
+      "v48_refuse_legacy",
       "burn_office"
     ],
     "title": "불타 버린 진실",
@@ -81,6 +91,14 @@
         "choiceId": "refuse",
         "outcomeId": "out_refuse",
         "toKind": "node",
+        "toId": "v48_refuse_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_refuse_gate",
+        "choiceId": "v48_refuse_legacy",
+        "outcomeId": "out_v48_refuse_legacy",
+        "toKind": "node",
         "toId": "petition"
       },
       {
@@ -103,6 +121,7 @@
       "family_accept",
       "trust_mina",
       "invoice",
+      "v48_invoice_legacy",
       "threaten_king"
     ],
     "title": "왕에게 삿대질한 마왕",
@@ -130,6 +149,14 @@
         "choiceId": "invoice",
         "outcomeId": "out_invoice",
         "toKind": "node",
+        "toId": "v48_invoice_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_invoice_gate",
+        "choiceId": "v48_invoice_legacy",
+        "outcomeId": "out_v48_invoice_legacy",
+        "toKind": "node",
         "toId": "invoice"
       },
       {
@@ -152,6 +179,7 @@
       "family_accept",
       "trust_mina",
       "attack",
+      "v48_attack_legacy",
       "forgive",
       "ally",
       "steal_ledger"
@@ -180,6 +208,14 @@
         "nodeId": "exam",
         "choiceId": "attack",
         "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "v48_attack_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_attack_gate",
+        "choiceId": "v48_attack_legacy",
+        "outcomeId": "out_v48_attack_legacy",
         "toKind": "node",
         "toId": "prison"
       },
@@ -219,6 +255,7 @@
       "family_accept",
       "trust_mina",
       "attack",
+      "v48_attack_legacy",
       "forgive",
       "ally",
       "public_audit",
@@ -249,6 +286,14 @@
         "nodeId": "exam",
         "choiceId": "attack",
         "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "v48_attack_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_attack_gate",
+        "choiceId": "v48_attack_legacy",
+        "outcomeId": "out_v48_attack_legacy",
         "toKind": "node",
         "toId": "prison"
       },
@@ -304,6 +349,7 @@
       "family_accept",
       "trust_mina",
       "attack",
+      "v48_attack_legacy",
       "forgive",
       "ally",
       "public_audit",
@@ -335,6 +381,14 @@
         "nodeId": "exam",
         "choiceId": "attack",
         "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "v48_attack_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_attack_gate",
+        "choiceId": "v48_attack_legacy",
+        "outcomeId": "out_v48_attack_legacy",
         "toKind": "node",
         "toId": "prison"
       },
@@ -398,6 +452,7 @@
       "family_accept",
       "trust_mina",
       "attack",
+      "v48_attack_legacy",
       "forgive",
       "ally",
       "public_audit",
@@ -429,6 +484,14 @@
         "nodeId": "exam",
         "choiceId": "attack",
         "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "v48_attack_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_attack_gate",
+        "choiceId": "v48_attack_legacy",
+        "outcomeId": "out_v48_attack_legacy",
         "toKind": "node",
         "toId": "prison"
       },
@@ -492,6 +555,7 @@
       "family_accept",
       "trust_mina",
       "confess",
+      "v48_confess_legacy",
       "confess_absurd",
       "embrace_fame"
     ],
@@ -519,6 +583,14 @@
         "nodeId": "exam",
         "choiceId": "confess",
         "outcomeId": "out_confess",
+        "toKind": "node",
+        "toId": "v48_confess_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_confess_gate",
+        "choiceId": "v48_confess_legacy",
+        "outcomeId": "out_v48_confess_legacy",
         "toKind": "node",
         "toId": "confession"
       },
@@ -550,6 +622,7 @@
       "family_accept",
       "trust_mina",
       "confess",
+      "v48_confess_legacy",
       "confess_sincere",
       "support_mina",
       "explore_route_mina_renounced",
@@ -580,6 +653,14 @@
         "nodeId": "exam",
         "choiceId": "confess",
         "outcomeId": "out_confess",
+        "toKind": "node",
+        "toId": "v48_confess_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_confess_gate",
+        "choiceId": "v48_confess_legacy",
+        "outcomeId": "out_v48_confess_legacy",
         "toKind": "node",
         "toId": "confession"
       },
@@ -635,6 +716,7 @@
       "family_accept",
       "trust_mina",
       "confess",
+      "v48_confess_legacy",
       "confess_sincere",
       "support_mina",
       "explore_route_mina_wedding",
@@ -665,6 +747,14 @@
         "nodeId": "exam",
         "choiceId": "confess",
         "outcomeId": "out_confess",
+        "toKind": "node",
+        "toId": "v48_confess_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_confess_gate",
+        "choiceId": "v48_confess_legacy",
+        "outcomeId": "out_v48_confess_legacy",
         "toKind": "node",
         "toId": "confession"
       },
@@ -720,6 +810,7 @@
       "family_accept",
       "trust_mina",
       "confess",
+      "v48_confess_legacy",
       "confess_sincere",
       "leave_mina",
       "keep_records",
@@ -751,6 +842,14 @@
         "nodeId": "exam",
         "choiceId": "confess",
         "outcomeId": "out_confess",
+        "toKind": "node",
+        "toId": "v48_confess_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_confess_gate",
+        "choiceId": "v48_confess_legacy",
+        "outcomeId": "out_v48_confess_legacy",
         "toKind": "node",
         "toId": "confession"
       },
@@ -814,6 +913,7 @@
       "family_accept",
       "trust_mina",
       "refuse",
+      "v48_refuse_legacy",
       "keep_records",
       "tell_mina",
       "explore_route_common_enemy",
@@ -844,6 +944,14 @@
         "nodeId": "exam",
         "choiceId": "refuse",
         "outcomeId": "out_refuse",
+        "toKind": "node",
+        "toId": "v48_refuse_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_refuse_gate",
+        "choiceId": "v48_refuse_legacy",
+        "outcomeId": "out_v48_refuse_legacy",
         "toKind": "node",
         "toId": "petition"
       },
@@ -899,6 +1007,7 @@
       "family_accept",
       "mina_rival",
       "refuse",
+      "v48_refuse_legacy",
       "keep_records",
       "explore_route_double_license",
       "commit_route_double_license",
@@ -928,6 +1037,14 @@
         "nodeId": "exam",
         "choiceId": "refuse",
         "outcomeId": "out_refuse",
+        "toKind": "node",
+        "toId": "v48_refuse_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_refuse_gate",
+        "choiceId": "v48_refuse_legacy",
+        "outcomeId": "out_v48_refuse_legacy",
         "toKind": "node",
         "toId": "petition"
       },
@@ -975,6 +1092,7 @@
       "family_invoice",
       "trust_mina",
       "attack",
+      "v48_attack_legacy",
       "forgive",
       "ally",
       "public_audit",
@@ -1006,6 +1124,14 @@
         "nodeId": "exam",
         "choiceId": "attack",
         "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "v48_attack_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_attack_gate",
+        "choiceId": "v48_attack_legacy",
+        "outcomeId": "out_v48_attack_legacy",
         "toKind": "node",
         "toId": "prison"
       },
@@ -1069,6 +1195,7 @@
       "family_accept",
       "trust_mina",
       "invoice",
+      "v48_invoice_legacy",
       "accept_invite",
       "explore_route_paid_defeat",
       "commit_route_paid_defeat",
@@ -1098,6 +1225,14 @@
         "nodeId": "exam",
         "choiceId": "invoice",
         "outcomeId": "out_invoice",
+        "toKind": "node",
+        "toId": "v48_invoice_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_invoice_gate",
+        "choiceId": "v48_invoice_legacy",
+        "outcomeId": "out_v48_invoice_legacy",
         "toKind": "node",
         "toId": "invoice"
       },
@@ -1145,6 +1280,7 @@
       "family_accept",
       "trust_mina",
       "invoice",
+      "v48_invoice_legacy",
       "accept_invite",
       "ally",
       "explore_route_taxpayer",
@@ -1175,6 +1311,14 @@
         "nodeId": "exam",
         "choiceId": "invoice",
         "outcomeId": "out_invoice",
+        "toKind": "node",
+        "toId": "v48_invoice_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_invoice_gate",
+        "choiceId": "v48_invoice_legacy",
+        "outcomeId": "out_v48_invoice_legacy",
         "toKind": "node",
         "toId": "invoice"
       },
@@ -1230,6 +1374,7 @@
       "family_accept",
       "trust_mina",
       "attack",
+      "v48_attack_legacy",
       "forgive",
       "ally",
       "public_audit",
@@ -1261,6 +1406,14 @@
         "nodeId": "exam",
         "choiceId": "attack",
         "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "v48_attack_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_attack_gate",
+        "choiceId": "v48_attack_legacy",
+        "outcomeId": "out_v48_attack_legacy",
         "toKind": "node",
         "toId": "prison"
       },
@@ -1324,6 +1477,7 @@
       "family_accept",
       "trust_mina",
       "attack",
+      "v48_attack_legacy",
       "forgive",
       "ally",
       "public_audit",
@@ -1355,6 +1509,14 @@
         "nodeId": "exam",
         "choiceId": "attack",
         "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "v48_attack_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_attack_gate",
+        "choiceId": "v48_attack_legacy",
+        "outcomeId": "out_v48_attack_legacy",
         "toKind": "node",
         "toId": "prison"
       },
@@ -1418,6 +1580,7 @@
       "family_accept",
       "trust_mina",
       "attack",
+      "v48_attack_legacy",
       "forgive",
       "ally",
       "public_audit",
@@ -1449,6 +1612,14 @@
         "nodeId": "exam",
         "choiceId": "attack",
         "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "v48_attack_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_attack_gate",
+        "choiceId": "v48_attack_legacy",
+        "outcomeId": "out_v48_attack_legacy",
         "toKind": "node",
         "toId": "prison"
       },
@@ -1512,6 +1683,7 @@
       "family_appeal",
       "trust_mina",
       "attack",
+      "v48_attack_legacy",
       "forgive",
       "ally",
       "explore_route_mother_petition",
@@ -1542,6 +1714,14 @@
         "nodeId": "exam",
         "choiceId": "attack",
         "outcomeId": "out_attack",
+        "toKind": "node",
+        "toId": "v48_attack_gate"
+      },
+      {
+        "age": 20,
+        "nodeId": "v48_attack_gate",
+        "choiceId": "v48_attack_legacy",
+        "outcomeId": "out_v48_attack_legacy",
         "toKind": "node",
         "toId": "prison"
       },

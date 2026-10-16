@@ -1,0 +1,28 @@
+{
+  "contentScenes": 28,
+  "choices": 76,
+  "outcomes": 76,
+  "originalExamChoicesPreserved": 4,
+  "independentRoutes": 8,
+  "illustrationPromptCount": 20,
+  "existingEndingsReferenced": [
+    "ending_bankrupt",
+    "ending_common_enemy",
+    "ending_confession_unanswered",
+    "ending_escape",
+    "ending_fire",
+    "ending_ledger",
+    "ending_mina_renounced",
+    "ending_mina_wedding",
+    "ending_mother_petition",
+    "ending_office",
+    "ending_paid_defeat",
+    "ending_reform",
+    "ending_retirement_47",
+    "ending_taxpayer"
+  ],
+  "structuralChecks": "passed; engine integration and reachability not tested",
+  "repositoryIntegration": "NOT APPLIED",
+  "actualImagesCreated": 0,
+  "conditionalFinaleChoices": 16
+}

@@ -44,7 +44,7 @@ it('기존 재선택/가져오기/구버전 백업을 검증해 읽고 원본을
   const before = keys.map(key => storage.getItem(key));
   const result = loadPastTreeSources(storage, story);
   expect(result.notice).toBe(''); expect(result.runs).toHaveLength(2);
-  expect(result.runs[1]!.storyVersion).toBe(story.manifest.version);
+  expect(result.runs[1]!.storyVersion).toBe('2.3.0-compact');
   expect(keys.map(key => storage.getItem(key))).toEqual(before);
   const different = play(['family_appeal', 'trust_mina']);
   storage.setItem(backupKey(compactSlot), JSON.stringify({ run: JSON.stringify(different), meta: null }));
@@ -71,7 +71,7 @@ it('보관 쓰기 실패 시 이전 보관함과 현재 회차를 보존한다',
 });
 
 it('과거 실제 원장에서 선택 직전 상태·난수를 재현하고 현재 회차를 우선한다', () => {
-  const past = play(['family_accept', 'trust_mina', 'refuse', 'burn_office']);
+  const past = play(['family_accept', 'trust_mina', 'refuse', 'v48_refuse_legacy', 'burn_office']);
   const current = createRun(story, 23, 'fresh'), before = JSON.stringify([past, current]);
   const node = tree.routes.ending_fire!.map(id => byTreeId.get(id)!).find(node => node.nodeId === 'exam')!;
   expect(resumeSource(node, current, [])).toBeUndefined(); expect(resumeSource(node, current, [past])).toBe(past);

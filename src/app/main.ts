@@ -5,7 +5,7 @@ import { choose, createRun } from '../engine/transition';
 import { ensure, type GameState, type Meta, type TransitionReceipt } from '../engine/types';
 import { SaveStore } from '../persistence/save';
 import { backupBeforeImport, resolveCompatibleSave, backupKey } from '../persistence/compatibility';
-import { backupBeforeCompactUpgrade } from '../persistence/compact-compatible';
+import { backupBeforeCompactUpgrade, compactStoryForState } from '../persistence/compact-compatible';
 import type { PresentedStory } from '../content/presentation';
 import { lifeEvents, confirmedChoice, resultLabels } from '../ui/history';
 import { renderNarrative } from '../ui/narrative';
@@ -148,15 +148,15 @@ function resumeFromEvent(nodeId?: string, source?: GameState) {
   busy = true;
   try {
     const runId = crypto.randomUUID();
-    const next = nodeId ? resumeAtVisitedNode(story, source ?? state!, nodeId, runId) : loadReselectBackup(window.localStorage, story, runId);
+    const next = nodeId ? resumeAtVisitedNode(activeStory ?? story, source ?? state!, nodeId, runId) : loadReselectBackup(window.localStorage, activeStory ?? story, runId);
     // 원장을 교체하기 전에 현재 회차 백업이 성공했는지 확인한다.
     if (state) {
-      archiveTreeRun(window.localStorage, story, state);
+      archiveTreeRun(window.localStorage, activeStory ?? story, state);
       backupBeforeReselect(window.localStorage, state);
     }
     pendingResumeRun = next.runId;
     compatibilityNotice = '';
-    commit(next);
+    commit(next, null, compactStoryForState(activeStory ?? story, next.storyVersion));
     titleVisible = false;
     try { sessionStorage.setItem(titleKey, '1'); } catch { /* 화면 표시 설정만 실패한다. */ }
     openMenu = null; historyExpanded.clear();
@@ -186,7 +186,7 @@ function newRun() {
   if (busy || !activeStory) return;
   busy = true;
   try {
-    if (compactMode && state && story && isCompact(story.manifest)) archiveTreeRun(window.localStorage, story, state);
+    if (compactMode && state && story && isCompact(story.manifest)) archiveTreeRun(window.localStorage, activeStory ?? story, state);
     const seed = crypto.getRandomValues(new Uint32Array(1))[0]!;
     commit(createRun(activeStory, seed, crypto.randomUUID()), null, activeStory);
     titleVisible = false;
@@ -583,7 +583,7 @@ function renderSettings(save: HTMLElement) {
       const text = new TextDecoder('utf-8', { fatal: true }).decode(await file.arrayBuffer());
       const resolved = resolveCompatibleSave(activeStory, legacyStory, text);
       backupBeforeImport(window.localStorage, compactMode ? compactSlot : undefined);
-      if (compactMode && state && story && isCompact(story.manifest)) archiveTreeRun(window.localStorage, story, state);
+      if (compactMode && state && story && isCompact(story.manifest)) archiveTreeRun(window.localStorage, activeStory ?? story, state);
       commit(resolved.state, null, resolved.story); compatibilityNotice = resolved.notice; openMenu = null;
     } catch (error) { notify(error); }
     finally { busy = false; render(); }

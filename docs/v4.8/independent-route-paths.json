@@ -1,0 +1,1346 @@
+[
+  {
+    "route": "v48_attack_exile",
+    "middleChoice": "v48_attack_exile_protect",
+    "endingId": "ending_common_enemy",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_exile_enter",
+      "v48_attack_exile_witness",
+      "v48_attack_exile_protect",
+      "v48_attack_exile_end_a"
+    ]
+  },
+  {
+    "route": "v48_attack_exile",
+    "middleChoice": "v48_attack_exile_record",
+    "endingId": "ending_common_enemy",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_exile_enter",
+      "v48_attack_exile_witness",
+      "v48_attack_exile_record",
+      "v48_attack_exile_end_a"
+    ]
+  },
+  {
+    "route": "v48_attack_exile",
+    "middleChoice": "v48_attack_exile_record",
+    "endingId": "ending_mother_petition",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_exile_enter",
+      "v48_attack_exile_witness",
+      "v48_attack_exile_record",
+      "v48_attack_exile_end_b"
+    ]
+  },
+  {
+    "route": "v48_attack_exile",
+    "middleChoice": "v48_attack_exile_delegate",
+    "endingId": "ending_mother_petition",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_exile_enter",
+      "v48_attack_exile_witness",
+      "v48_attack_exile_delegate",
+      "v48_attack_exile_end_b"
+    ]
+  },
+  {
+    "route": "v48_attack_exile",
+    "middleChoice": "v48_attack_exile_protect",
+    "endingId": "ending_common_enemy",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_exile_enter",
+      "v48_attack_exile_act",
+      "v48_attack_exile_protect",
+      "v48_attack_exile_end_a"
+    ]
+  },
+  {
+    "route": "v48_attack_exile",
+    "middleChoice": "v48_attack_exile_record",
+    "endingId": "ending_common_enemy",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_exile_enter",
+      "v48_attack_exile_act",
+      "v48_attack_exile_record",
+      "v48_attack_exile_end_a"
+    ]
+  },
+  {
+    "route": "v48_attack_exile",
+    "middleChoice": "v48_attack_exile_record",
+    "endingId": "ending_mother_petition",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_exile_enter",
+      "v48_attack_exile_act",
+      "v48_attack_exile_record",
+      "v48_attack_exile_end_b"
+    ]
+  },
+  {
+    "route": "v48_attack_exile",
+    "middleChoice": "v48_attack_exile_delegate",
+    "endingId": "ending_mother_petition",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_exile_enter",
+      "v48_attack_exile_act",
+      "v48_attack_exile_delegate",
+      "v48_attack_exile_end_b"
+    ]
+  },
+  {
+    "route": "v48_attack_exile",
+    "middleChoice": "v48_attack_exile_protect",
+    "endingId": "ending_common_enemy",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_exile_enter",
+      "v48_attack_exile_cost",
+      "v48_attack_exile_protect",
+      "v48_attack_exile_end_a"
+    ]
+  },
+  {
+    "route": "v48_attack_exile",
+    "middleChoice": "v48_attack_exile_record",
+    "endingId": "ending_common_enemy",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_exile_enter",
+      "v48_attack_exile_cost",
+      "v48_attack_exile_record",
+      "v48_attack_exile_end_a"
+    ]
+  },
+  {
+    "route": "v48_attack_exile",
+    "middleChoice": "v48_attack_exile_record",
+    "endingId": "ending_mother_petition",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_exile_enter",
+      "v48_attack_exile_cost",
+      "v48_attack_exile_record",
+      "v48_attack_exile_end_b"
+    ]
+  },
+  {
+    "route": "v48_attack_exile",
+    "middleChoice": "v48_attack_exile_delegate",
+    "endingId": "ending_mother_petition",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_exile_enter",
+      "v48_attack_exile_cost",
+      "v48_attack_exile_delegate",
+      "v48_attack_exile_end_b"
+    ]
+  },
+  {
+    "route": "v48_attack_shadow",
+    "middleChoice": "v48_attack_shadow_protect",
+    "endingId": "ending_escape",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_shadow_enter",
+      "v48_attack_shadow_witness",
+      "v48_attack_shadow_protect",
+      "v48_attack_shadow_end_a"
+    ]
+  },
+  {
+    "route": "v48_attack_shadow",
+    "middleChoice": "v48_attack_shadow_record",
+    "endingId": "ending_escape",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_shadow_enter",
+      "v48_attack_shadow_witness",
+      "v48_attack_shadow_record",
+      "v48_attack_shadow_end_a"
+    ]
+  },
+  {
+    "route": "v48_attack_shadow",
+    "middleChoice": "v48_attack_shadow_record",
+    "endingId": "ending_fire",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_shadow_enter",
+      "v48_attack_shadow_witness",
+      "v48_attack_shadow_record",
+      "v48_attack_shadow_end_b"
+    ]
+  },
+  {
+    "route": "v48_attack_shadow",
+    "middleChoice": "v48_attack_shadow_delegate",
+    "endingId": "ending_fire",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_shadow_enter",
+      "v48_attack_shadow_witness",
+      "v48_attack_shadow_delegate",
+      "v48_attack_shadow_end_b"
+    ]
+  },
+  {
+    "route": "v48_attack_shadow",
+    "middleChoice": "v48_attack_shadow_protect",
+    "endingId": "ending_escape",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_shadow_enter",
+      "v48_attack_shadow_act",
+      "v48_attack_shadow_protect",
+      "v48_attack_shadow_end_a"
+    ]
+  },
+  {
+    "route": "v48_attack_shadow",
+    "middleChoice": "v48_attack_shadow_record",
+    "endingId": "ending_escape",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_shadow_enter",
+      "v48_attack_shadow_act",
+      "v48_attack_shadow_record",
+      "v48_attack_shadow_end_a"
+    ]
+  },
+  {
+    "route": "v48_attack_shadow",
+    "middleChoice": "v48_attack_shadow_record",
+    "endingId": "ending_fire",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_shadow_enter",
+      "v48_attack_shadow_act",
+      "v48_attack_shadow_record",
+      "v48_attack_shadow_end_b"
+    ]
+  },
+  {
+    "route": "v48_attack_shadow",
+    "middleChoice": "v48_attack_shadow_delegate",
+    "endingId": "ending_fire",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_shadow_enter",
+      "v48_attack_shadow_act",
+      "v48_attack_shadow_delegate",
+      "v48_attack_shadow_end_b"
+    ]
+  },
+  {
+    "route": "v48_attack_shadow",
+    "middleChoice": "v48_attack_shadow_protect",
+    "endingId": "ending_escape",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_shadow_enter",
+      "v48_attack_shadow_cost",
+      "v48_attack_shadow_protect",
+      "v48_attack_shadow_end_a"
+    ]
+  },
+  {
+    "route": "v48_attack_shadow",
+    "middleChoice": "v48_attack_shadow_record",
+    "endingId": "ending_escape",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_shadow_enter",
+      "v48_attack_shadow_cost",
+      "v48_attack_shadow_record",
+      "v48_attack_shadow_end_a"
+    ]
+  },
+  {
+    "route": "v48_attack_shadow",
+    "middleChoice": "v48_attack_shadow_record",
+    "endingId": "ending_fire",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_shadow_enter",
+      "v48_attack_shadow_cost",
+      "v48_attack_shadow_record",
+      "v48_attack_shadow_end_b"
+    ]
+  },
+  {
+    "route": "v48_attack_shadow",
+    "middleChoice": "v48_attack_shadow_delegate",
+    "endingId": "ending_fire",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "attack",
+      "v48_attack_shadow_enter",
+      "v48_attack_shadow_cost",
+      "v48_attack_shadow_delegate",
+      "v48_attack_shadow_end_b"
+    ]
+  },
+  {
+    "route": "v48_refuse_court",
+    "middleChoice": "v48_refuse_court_protect",
+    "endingId": "ending_reform",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_court_enter",
+      "v48_refuse_court_witness",
+      "v48_refuse_court_protect",
+      "v48_refuse_court_end_a"
+    ]
+  },
+  {
+    "route": "v48_refuse_court",
+    "middleChoice": "v48_refuse_court_record",
+    "endingId": "ending_reform",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_court_enter",
+      "v48_refuse_court_witness",
+      "v48_refuse_court_record",
+      "v48_refuse_court_end_a"
+    ]
+  },
+  {
+    "route": "v48_refuse_court",
+    "middleChoice": "v48_refuse_court_record",
+    "endingId": "ending_office",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_court_enter",
+      "v48_refuse_court_witness",
+      "v48_refuse_court_record",
+      "v48_refuse_court_end_b"
+    ]
+  },
+  {
+    "route": "v48_refuse_court",
+    "middleChoice": "v48_refuse_court_delegate",
+    "endingId": "ending_office",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_court_enter",
+      "v48_refuse_court_witness",
+      "v48_refuse_court_delegate",
+      "v48_refuse_court_end_b"
+    ]
+  },
+  {
+    "route": "v48_refuse_court",
+    "middleChoice": "v48_refuse_court_protect",
+    "endingId": "ending_reform",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_court_enter",
+      "v48_refuse_court_act",
+      "v48_refuse_court_protect",
+      "v48_refuse_court_end_a"
+    ]
+  },
+  {
+    "route": "v48_refuse_court",
+    "middleChoice": "v48_refuse_court_record",
+    "endingId": "ending_reform",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_court_enter",
+      "v48_refuse_court_act",
+      "v48_refuse_court_record",
+      "v48_refuse_court_end_a"
+    ]
+  },
+  {
+    "route": "v48_refuse_court",
+    "middleChoice": "v48_refuse_court_record",
+    "endingId": "ending_office",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_court_enter",
+      "v48_refuse_court_act",
+      "v48_refuse_court_record",
+      "v48_refuse_court_end_b"
+    ]
+  },
+  {
+    "route": "v48_refuse_court",
+    "middleChoice": "v48_refuse_court_delegate",
+    "endingId": "ending_office",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_court_enter",
+      "v48_refuse_court_act",
+      "v48_refuse_court_delegate",
+      "v48_refuse_court_end_b"
+    ]
+  },
+  {
+    "route": "v48_refuse_court",
+    "middleChoice": "v48_refuse_court_protect",
+    "endingId": "ending_reform",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_court_enter",
+      "v48_refuse_court_cost",
+      "v48_refuse_court_protect",
+      "v48_refuse_court_end_a"
+    ]
+  },
+  {
+    "route": "v48_refuse_court",
+    "middleChoice": "v48_refuse_court_record",
+    "endingId": "ending_reform",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_court_enter",
+      "v48_refuse_court_cost",
+      "v48_refuse_court_record",
+      "v48_refuse_court_end_a"
+    ]
+  },
+  {
+    "route": "v48_refuse_court",
+    "middleChoice": "v48_refuse_court_record",
+    "endingId": "ending_office",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_court_enter",
+      "v48_refuse_court_cost",
+      "v48_refuse_court_record",
+      "v48_refuse_court_end_b"
+    ]
+  },
+  {
+    "route": "v48_refuse_court",
+    "middleChoice": "v48_refuse_court_delegate",
+    "endingId": "ending_office",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_court_enter",
+      "v48_refuse_court_cost",
+      "v48_refuse_court_delegate",
+      "v48_refuse_court_end_b"
+    ]
+  },
+  {
+    "route": "v48_refuse_collective",
+    "middleChoice": "v48_refuse_collective_protect",
+    "endingId": "ending_bankrupt",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_collective_enter",
+      "v48_refuse_collective_witness",
+      "v48_refuse_collective_protect",
+      "v48_refuse_collective_end_a"
+    ]
+  },
+  {
+    "route": "v48_refuse_collective",
+    "middleChoice": "v48_refuse_collective_record",
+    "endingId": "ending_bankrupt",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_collective_enter",
+      "v48_refuse_collective_witness",
+      "v48_refuse_collective_record",
+      "v48_refuse_collective_end_a"
+    ]
+  },
+  {
+    "route": "v48_refuse_collective",
+    "middleChoice": "v48_refuse_collective_record",
+    "endingId": "ending_mother_petition",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_collective_enter",
+      "v48_refuse_collective_witness",
+      "v48_refuse_collective_record",
+      "v48_refuse_collective_end_b"
+    ]
+  },
+  {
+    "route": "v48_refuse_collective",
+    "middleChoice": "v48_refuse_collective_delegate",
+    "endingId": "ending_mother_petition",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_collective_enter",
+      "v48_refuse_collective_witness",
+      "v48_refuse_collective_delegate",
+      "v48_refuse_collective_end_b"
+    ]
+  },
+  {
+    "route": "v48_refuse_collective",
+    "middleChoice": "v48_refuse_collective_protect",
+    "endingId": "ending_bankrupt",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_collective_enter",
+      "v48_refuse_collective_act",
+      "v48_refuse_collective_protect",
+      "v48_refuse_collective_end_a"
+    ]
+  },
+  {
+    "route": "v48_refuse_collective",
+    "middleChoice": "v48_refuse_collective_record",
+    "endingId": "ending_bankrupt",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_collective_enter",
+      "v48_refuse_collective_act",
+      "v48_refuse_collective_record",
+      "v48_refuse_collective_end_a"
+    ]
+  },
+  {
+    "route": "v48_refuse_collective",
+    "middleChoice": "v48_refuse_collective_record",
+    "endingId": "ending_mother_petition",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_collective_enter",
+      "v48_refuse_collective_act",
+      "v48_refuse_collective_record",
+      "v48_refuse_collective_end_b"
+    ]
+  },
+  {
+    "route": "v48_refuse_collective",
+    "middleChoice": "v48_refuse_collective_delegate",
+    "endingId": "ending_mother_petition",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_collective_enter",
+      "v48_refuse_collective_act",
+      "v48_refuse_collective_delegate",
+      "v48_refuse_collective_end_b"
+    ]
+  },
+  {
+    "route": "v48_refuse_collective",
+    "middleChoice": "v48_refuse_collective_protect",
+    "endingId": "ending_bankrupt",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_collective_enter",
+      "v48_refuse_collective_cost",
+      "v48_refuse_collective_protect",
+      "v48_refuse_collective_end_a"
+    ]
+  },
+  {
+    "route": "v48_refuse_collective",
+    "middleChoice": "v48_refuse_collective_record",
+    "endingId": "ending_bankrupt",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_collective_enter",
+      "v48_refuse_collective_cost",
+      "v48_refuse_collective_record",
+      "v48_refuse_collective_end_a"
+    ]
+  },
+  {
+    "route": "v48_refuse_collective",
+    "middleChoice": "v48_refuse_collective_record",
+    "endingId": "ending_mother_petition",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_collective_enter",
+      "v48_refuse_collective_cost",
+      "v48_refuse_collective_record",
+      "v48_refuse_collective_end_b"
+    ]
+  },
+  {
+    "route": "v48_refuse_collective",
+    "middleChoice": "v48_refuse_collective_delegate",
+    "endingId": "ending_mother_petition",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "refuse",
+      "v48_refuse_collective_enter",
+      "v48_refuse_collective_cost",
+      "v48_refuse_collective_delegate",
+      "v48_refuse_collective_end_b"
+    ]
+  },
+  {
+    "route": "v48_invoice_business",
+    "middleChoice": "v48_invoice_business_protect",
+    "endingId": "ending_paid_defeat",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_business_enter",
+      "v48_invoice_business_witness",
+      "v48_invoice_business_protect",
+      "v48_invoice_business_end_a"
+    ]
+  },
+  {
+    "route": "v48_invoice_business",
+    "middleChoice": "v48_invoice_business_record",
+    "endingId": "ending_paid_defeat",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_business_enter",
+      "v48_invoice_business_witness",
+      "v48_invoice_business_record",
+      "v48_invoice_business_end_a"
+    ]
+  },
+  {
+    "route": "v48_invoice_business",
+    "middleChoice": "v48_invoice_business_record",
+    "endingId": "ending_taxpayer",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_business_enter",
+      "v48_invoice_business_witness",
+      "v48_invoice_business_record",
+      "v48_invoice_business_end_b"
+    ]
+  },
+  {
+    "route": "v48_invoice_business",
+    "middleChoice": "v48_invoice_business_delegate",
+    "endingId": "ending_taxpayer",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_business_enter",
+      "v48_invoice_business_witness",
+      "v48_invoice_business_delegate",
+      "v48_invoice_business_end_b"
+    ]
+  },
+  {
+    "route": "v48_invoice_business",
+    "middleChoice": "v48_invoice_business_protect",
+    "endingId": "ending_paid_defeat",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_business_enter",
+      "v48_invoice_business_act",
+      "v48_invoice_business_protect",
+      "v48_invoice_business_end_a"
+    ]
+  },
+  {
+    "route": "v48_invoice_business",
+    "middleChoice": "v48_invoice_business_record",
+    "endingId": "ending_paid_defeat",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_business_enter",
+      "v48_invoice_business_act",
+      "v48_invoice_business_record",
+      "v48_invoice_business_end_a"
+    ]
+  },
+  {
+    "route": "v48_invoice_business",
+    "middleChoice": "v48_invoice_business_record",
+    "endingId": "ending_taxpayer",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_business_enter",
+      "v48_invoice_business_act",
+      "v48_invoice_business_record",
+      "v48_invoice_business_end_b"
+    ]
+  },
+  {
+    "route": "v48_invoice_business",
+    "middleChoice": "v48_invoice_business_delegate",
+    "endingId": "ending_taxpayer",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_business_enter",
+      "v48_invoice_business_act",
+      "v48_invoice_business_delegate",
+      "v48_invoice_business_end_b"
+    ]
+  },
+  {
+    "route": "v48_invoice_business",
+    "middleChoice": "v48_invoice_business_protect",
+    "endingId": "ending_paid_defeat",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_business_enter",
+      "v48_invoice_business_cost",
+      "v48_invoice_business_protect",
+      "v48_invoice_business_end_a"
+    ]
+  },
+  {
+    "route": "v48_invoice_business",
+    "middleChoice": "v48_invoice_business_record",
+    "endingId": "ending_paid_defeat",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_business_enter",
+      "v48_invoice_business_cost",
+      "v48_invoice_business_record",
+      "v48_invoice_business_end_a"
+    ]
+  },
+  {
+    "route": "v48_invoice_business",
+    "middleChoice": "v48_invoice_business_record",
+    "endingId": "ending_taxpayer",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_business_enter",
+      "v48_invoice_business_cost",
+      "v48_invoice_business_record",
+      "v48_invoice_business_end_b"
+    ]
+  },
+  {
+    "route": "v48_invoice_business",
+    "middleChoice": "v48_invoice_business_delegate",
+    "endingId": "ending_taxpayer",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_business_enter",
+      "v48_invoice_business_cost",
+      "v48_invoice_business_delegate",
+      "v48_invoice_business_end_b"
+    ]
+  },
+  {
+    "route": "v48_invoice_budget",
+    "middleChoice": "v48_invoice_budget_protect",
+    "endingId": "ending_retirement_47",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_budget_enter",
+      "v48_invoice_budget_witness",
+      "v48_invoice_budget_protect",
+      "v48_invoice_budget_end_a"
+    ]
+  },
+  {
+    "route": "v48_invoice_budget",
+    "middleChoice": "v48_invoice_budget_record",
+    "endingId": "ending_retirement_47",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_budget_enter",
+      "v48_invoice_budget_witness",
+      "v48_invoice_budget_record",
+      "v48_invoice_budget_end_a"
+    ]
+  },
+  {
+    "route": "v48_invoice_budget",
+    "middleChoice": "v48_invoice_budget_record",
+    "endingId": "ending_ledger",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_budget_enter",
+      "v48_invoice_budget_witness",
+      "v48_invoice_budget_record",
+      "v48_invoice_budget_end_b"
+    ]
+  },
+  {
+    "route": "v48_invoice_budget",
+    "middleChoice": "v48_invoice_budget_delegate",
+    "endingId": "ending_ledger",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_budget_enter",
+      "v48_invoice_budget_witness",
+      "v48_invoice_budget_delegate",
+      "v48_invoice_budget_end_b"
+    ]
+  },
+  {
+    "route": "v48_invoice_budget",
+    "middleChoice": "v48_invoice_budget_protect",
+    "endingId": "ending_retirement_47",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_budget_enter",
+      "v48_invoice_budget_act",
+      "v48_invoice_budget_protect",
+      "v48_invoice_budget_end_a"
+    ]
+  },
+  {
+    "route": "v48_invoice_budget",
+    "middleChoice": "v48_invoice_budget_record",
+    "endingId": "ending_retirement_47",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_budget_enter",
+      "v48_invoice_budget_act",
+      "v48_invoice_budget_record",
+      "v48_invoice_budget_end_a"
+    ]
+  },
+  {
+    "route": "v48_invoice_budget",
+    "middleChoice": "v48_invoice_budget_record",
+    "endingId": "ending_ledger",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_budget_enter",
+      "v48_invoice_budget_act",
+      "v48_invoice_budget_record",
+      "v48_invoice_budget_end_b"
+    ]
+  },
+  {
+    "route": "v48_invoice_budget",
+    "middleChoice": "v48_invoice_budget_delegate",
+    "endingId": "ending_ledger",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_budget_enter",
+      "v48_invoice_budget_act",
+      "v48_invoice_budget_delegate",
+      "v48_invoice_budget_end_b"
+    ]
+  },
+  {
+    "route": "v48_invoice_budget",
+    "middleChoice": "v48_invoice_budget_protect",
+    "endingId": "ending_retirement_47",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_budget_enter",
+      "v48_invoice_budget_cost",
+      "v48_invoice_budget_protect",
+      "v48_invoice_budget_end_a"
+    ]
+  },
+  {
+    "route": "v48_invoice_budget",
+    "middleChoice": "v48_invoice_budget_record",
+    "endingId": "ending_retirement_47",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_budget_enter",
+      "v48_invoice_budget_cost",
+      "v48_invoice_budget_record",
+      "v48_invoice_budget_end_a"
+    ]
+  },
+  {
+    "route": "v48_invoice_budget",
+    "middleChoice": "v48_invoice_budget_record",
+    "endingId": "ending_ledger",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_budget_enter",
+      "v48_invoice_budget_cost",
+      "v48_invoice_budget_record",
+      "v48_invoice_budget_end_b"
+    ]
+  },
+  {
+    "route": "v48_invoice_budget",
+    "middleChoice": "v48_invoice_budget_delegate",
+    "endingId": "ending_ledger",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "invoice",
+      "v48_invoice_budget_enter",
+      "v48_invoice_budget_cost",
+      "v48_invoice_budget_delegate",
+      "v48_invoice_budget_end_b"
+    ]
+  },
+  {
+    "route": "v48_confess_rescue",
+    "middleChoice": "v48_confess_rescue_protect",
+    "endingId": "ending_mina_renounced",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_rescue_enter",
+      "v48_confess_rescue_witness",
+      "v48_confess_rescue_protect",
+      "v48_confess_rescue_end_a"
+    ]
+  },
+  {
+    "route": "v48_confess_rescue",
+    "middleChoice": "v48_confess_rescue_record",
+    "endingId": "ending_mina_renounced",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_rescue_enter",
+      "v48_confess_rescue_witness",
+      "v48_confess_rescue_record",
+      "v48_confess_rescue_end_a"
+    ]
+  },
+  {
+    "route": "v48_confess_rescue",
+    "middleChoice": "v48_confess_rescue_record",
+    "endingId": "ending_common_enemy",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_rescue_enter",
+      "v48_confess_rescue_witness",
+      "v48_confess_rescue_record",
+      "v48_confess_rescue_end_b"
+    ]
+  },
+  {
+    "route": "v48_confess_rescue",
+    "middleChoice": "v48_confess_rescue_delegate",
+    "endingId": "ending_common_enemy",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_rescue_enter",
+      "v48_confess_rescue_witness",
+      "v48_confess_rescue_delegate",
+      "v48_confess_rescue_end_b"
+    ]
+  },
+  {
+    "route": "v48_confess_rescue",
+    "middleChoice": "v48_confess_rescue_protect",
+    "endingId": "ending_mina_renounced",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_rescue_enter",
+      "v48_confess_rescue_act",
+      "v48_confess_rescue_protect",
+      "v48_confess_rescue_end_a"
+    ]
+  },
+  {
+    "route": "v48_confess_rescue",
+    "middleChoice": "v48_confess_rescue_record",
+    "endingId": "ending_mina_renounced",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_rescue_enter",
+      "v48_confess_rescue_act",
+      "v48_confess_rescue_record",
+      "v48_confess_rescue_end_a"
+    ]
+  },
+  {
+    "route": "v48_confess_rescue",
+    "middleChoice": "v48_confess_rescue_record",
+    "endingId": "ending_common_enemy",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_rescue_enter",
+      "v48_confess_rescue_act",
+      "v48_confess_rescue_record",
+      "v48_confess_rescue_end_b"
+    ]
+  },
+  {
+    "route": "v48_confess_rescue",
+    "middleChoice": "v48_confess_rescue_delegate",
+    "endingId": "ending_common_enemy",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_rescue_enter",
+      "v48_confess_rescue_act",
+      "v48_confess_rescue_delegate",
+      "v48_confess_rescue_end_b"
+    ]
+  },
+  {
+    "route": "v48_confess_rescue",
+    "middleChoice": "v48_confess_rescue_protect",
+    "endingId": "ending_mina_renounced",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_rescue_enter",
+      "v48_confess_rescue_cost",
+      "v48_confess_rescue_protect",
+      "v48_confess_rescue_end_a"
+    ]
+  },
+  {
+    "route": "v48_confess_rescue",
+    "middleChoice": "v48_confess_rescue_record",
+    "endingId": "ending_mina_renounced",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_rescue_enter",
+      "v48_confess_rescue_cost",
+      "v48_confess_rescue_record",
+      "v48_confess_rescue_end_a"
+    ]
+  },
+  {
+    "route": "v48_confess_rescue",
+    "middleChoice": "v48_confess_rescue_record",
+    "endingId": "ending_common_enemy",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_rescue_enter",
+      "v48_confess_rescue_cost",
+      "v48_confess_rescue_record",
+      "v48_confess_rescue_end_b"
+    ]
+  },
+  {
+    "route": "v48_confess_rescue",
+    "middleChoice": "v48_confess_rescue_delegate",
+    "endingId": "ending_common_enemy",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_rescue_enter",
+      "v48_confess_rescue_cost",
+      "v48_confess_rescue_delegate",
+      "v48_confess_rescue_end_b"
+    ]
+  },
+  {
+    "route": "v48_confess_distance",
+    "middleChoice": "v48_confess_distance_protect",
+    "endingId": "ending_confession_unanswered",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_distance_enter",
+      "v48_confess_distance_witness",
+      "v48_confess_distance_protect",
+      "v48_confess_distance_end_a"
+    ]
+  },
+  {
+    "route": "v48_confess_distance",
+    "middleChoice": "v48_confess_distance_record",
+    "endingId": "ending_confession_unanswered",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_distance_enter",
+      "v48_confess_distance_witness",
+      "v48_confess_distance_record",
+      "v48_confess_distance_end_a"
+    ]
+  },
+  {
+    "route": "v48_confess_distance",
+    "middleChoice": "v48_confess_distance_record",
+    "endingId": "ending_mina_wedding",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_distance_enter",
+      "v48_confess_distance_witness",
+      "v48_confess_distance_record",
+      "v48_confess_distance_end_b"
+    ]
+  },
+  {
+    "route": "v48_confess_distance",
+    "middleChoice": "v48_confess_distance_delegate",
+    "endingId": "ending_mina_wedding",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_distance_enter",
+      "v48_confess_distance_witness",
+      "v48_confess_distance_delegate",
+      "v48_confess_distance_end_b"
+    ]
+  },
+  {
+    "route": "v48_confess_distance",
+    "middleChoice": "v48_confess_distance_protect",
+    "endingId": "ending_confession_unanswered",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_distance_enter",
+      "v48_confess_distance_act",
+      "v48_confess_distance_protect",
+      "v48_confess_distance_end_a"
+    ]
+  },
+  {
+    "route": "v48_confess_distance",
+    "middleChoice": "v48_confess_distance_record",
+    "endingId": "ending_confession_unanswered",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_distance_enter",
+      "v48_confess_distance_act",
+      "v48_confess_distance_record",
+      "v48_confess_distance_end_a"
+    ]
+  },
+  {
+    "route": "v48_confess_distance",
+    "middleChoice": "v48_confess_distance_record",
+    "endingId": "ending_mina_wedding",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_distance_enter",
+      "v48_confess_distance_act",
+      "v48_confess_distance_record",
+      "v48_confess_distance_end_b"
+    ]
+  },
+  {
+    "route": "v48_confess_distance",
+    "middleChoice": "v48_confess_distance_delegate",
+    "endingId": "ending_mina_wedding",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_distance_enter",
+      "v48_confess_distance_act",
+      "v48_confess_distance_delegate",
+      "v48_confess_distance_end_b"
+    ]
+  },
+  {
+    "route": "v48_confess_distance",
+    "middleChoice": "v48_confess_distance_protect",
+    "endingId": "ending_confession_unanswered",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_distance_enter",
+      "v48_confess_distance_cost",
+      "v48_confess_distance_protect",
+      "v48_confess_distance_end_a"
+    ]
+  },
+  {
+    "route": "v48_confess_distance",
+    "middleChoice": "v48_confess_distance_record",
+    "endingId": "ending_confession_unanswered",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_distance_enter",
+      "v48_confess_distance_cost",
+      "v48_confess_distance_record",
+      "v48_confess_distance_end_a"
+    ]
+  },
+  {
+    "route": "v48_confess_distance",
+    "middleChoice": "v48_confess_distance_record",
+    "endingId": "ending_mina_wedding",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_distance_enter",
+      "v48_confess_distance_cost",
+      "v48_confess_distance_record",
+      "v48_confess_distance_end_b"
+    ]
+  },
+  {
+    "route": "v48_confess_distance",
+    "middleChoice": "v48_confess_distance_delegate",
+    "endingId": "ending_mina_wedding",
+    "choices": [
+      "family_accept",
+      "trust_mina",
+      "confess",
+      "v48_confess_distance_enter",
+      "v48_confess_distance_cost",
+      "v48_confess_distance_delegate",
+      "v48_confess_distance_end_b"
+    ]
+  }
+]

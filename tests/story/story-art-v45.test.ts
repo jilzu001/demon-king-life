@@ -1,7 +1,7 @@
 import { it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { loadStory } from '../../src/content/load';
-import { readExampleStory } from '../../scripts/read-story';
+import { preV48Story } from '../../src/content/compact-previous';
 import { createRun, choose } from '../../src/engine/transition';
 import { decodeSave } from '../../src/persistence/migrate';
 import { routeYears, storyEcho } from '../../src/content/route-years';
@@ -11,7 +11,7 @@ import { annualVariants, annualLedgerKey } from '../../src/content/annual-varian
 
 const read = (path: string) => JSON.parse(readFileSync(path, 'utf8'));
 const source = 'spec/content-v4.5-story-art';
-const story = await readExampleStory('demon-king-compact');
+const story = preV48Story; // 구 회차 계약 회귀. v4.8 신규 실행은 independent-routes.test.ts에서 검사한다.
 const old = await loadStory(async path => read(`backups/before-v4.5/${path}`));
 const rewrittenBodies = ['child', 'petition', 'invoice', 'office'];
 const rewrittenOutcomes = ['invoice/bring_mina', 'exam/confess', 'confession/confess_sincere', 'settlement/reject_money'];

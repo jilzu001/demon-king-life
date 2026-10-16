@@ -1,0 +1,27 @@
+
+Running 18 tests using 1 worker
+
+(node:152492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [공개-PC] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_attack_exile: 실제 독립 생애·중년 조건·두 결말·도감 (8.0s)
+  ok  2 [공개-PC] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_attack_shadow: 실제 독립 생애·중년 조건·두 결말·도감 (5.9s)
+  ok  3 [공개-PC] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_refuse_court: 실제 독립 생애·중년 조건·두 결말·도감 (6.3s)
+  ok  4 [공개-PC] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_refuse_collective: 실제 독립 생애·중년 조건·두 결말·도감 (6.4s)
+  ok  5 [공개-PC] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_invoice_business: 실제 독립 생애·중년 조건·두 결말·도감 (6.0s)
+  ok  6 [공개-PC] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_invoice_budget: 실제 독립 생애·중년 조건·두 결말·도감 (6.0s)
+  ok  7 [공개-PC] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_confess_rescue: 실제 독립 생애·중년 조건·두 결말·도감 (6.0s)
+  ok  8 [공개-PC] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_confess_distance: 실제 독립 생애·중년 조건·두 결말·도감 (5.9s)
+  ok  9 [공개-PC] › tests\e2e\independent-compact.spec.ts:50:1 › v4.8 트리 검색·사건 합류·접기/펼치기·과거 경로 색과 저장 불변 (3.3s)
+(node:158128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 10 [공개-모바일-320] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_attack_exile: 실제 독립 생애·중년 조건·두 결말·도감 (7.2s)
+  ok 11 [공개-모바일-320] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_attack_shadow: 실제 독립 생애·중년 조건·두 결말·도감 (5.9s)
+  ok 12 [공개-모바일-320] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_refuse_court: 실제 독립 생애·중년 조건·두 결말·도감 (5.8s)
+  ok 13 [공개-모바일-320] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_refuse_collective: 실제 독립 생애·중년 조건·두 결말·도감 (5.7s)
+  ok 14 [공개-모바일-320] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_invoice_business: 실제 독립 생애·중년 조건·두 결말·도감 (5.9s)
+  ok 15 [공개-모바일-320] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_invoice_budget: 실제 독립 생애·중년 조건·두 결말·도감 (6.0s)
+  ok 16 [공개-모바일-320] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_confess_rescue: 실제 독립 생애·중년 조건·두 결말·도감 (6.2s)
+  ok 17 [공개-모바일-320] › tests\e2e\independent-compact.spec.ts:25:28 › v4.8/v48_confess_distance: 실제 독립 생애·중년 조건·두 결말·도감 (6.2s)
+  ok 18 [공개-모바일-320] › tests\e2e\independent-compact.spec.ts:50:1 › v4.8 트리 검색·사건 합류·접기/펼치기·과거 경로 색과 저장 불변 (3.3s)
+
+  18 passed (1.9m)

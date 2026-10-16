@@ -1,3 +1,5 @@
+import { preV48Story } from '../../src/content/compact-previous';
+import { decodeCompatibleCompact } from '../../src/persistence/compact-compatible';
 import { it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { readExampleStory } from '../../scripts/read-story';
@@ -11,24 +13,24 @@ import { lifeEvents } from '../../src/ui/history';
 const read = (path: string) => JSON.parse(readFileSync(path, 'utf8'));
 const story = await readExampleStory('demon-king-compact');
 const old = await loadStory(async path => read(`backups/before-v4.4/${path}`));
-const paths = read('docs/v4.4/routes/actual-paths.json') as { endingId: string; choices: string[] }[];
+const paths = read('docs/v4.5/actual-ending-paths.json') as { endingId: string; choices: string[] }[];
 
 it('v4.5 허용 문안 외 기존43개 선택 계약·16사건 구조·8결말·초기상태를 보존한다', () => {
   let count = 0;
   for (const node of Object.values(old.nodes)) {
-    const current = story.nodes[node.id]!;
+    const current = preV48Story.nodes[node.id]!;
     expect({ ...current, body: node.body, chronicleSummary: node.chronicleSummary, choices: node.choices }).toEqual(node);
     expect(current.choices.slice(0, node.choices.length).map(c => ({ ...c, outcomes: c.outcomes.map(({ narrative: _text, ...o }) => o) }))).toEqual(node.choices.map(c => ({ ...c, outcomes: c.outcomes.map(({ narrative: _text, ...o }) => o) }))); count += node.choices.length;
   }
   expect(count).toBe(43);
-  for (const e of Object.values(old.endings)) expect(story.endings[e.id]).toEqual(e);
-  expect(story.characters).toEqual(old.characters); expect(story.manifest.initialState).toEqual(old.manifest.initialState);
-  expect(story.manifest.version).toBe(old.manifest.version);
+  for (const e of Object.values(old.endings)) expect(preV48Story.endings[e.id]).toEqual(e);
+  expect(preV48Story.characters).toEqual(old.characters); expect(preV48Story.manifest.initialState).toEqual(old.manifest.initialState);
+  expect(preV48Story.manifest.version).toBe(old.manifest.version);
 });
 it('기존5328개 종단과 모든 중간 저장은 상태·원장·난수를 그대로 복원한다', () => {
   let terminals = 0;
   const visit = (state: ReturnType<typeof createRun>) => {
-    expect(decodeSave(story, JSON.stringify(state))).toEqual(state);
+    expect(decodeCompatibleCompact(story, JSON.stringify(state))).toEqual(state);
     if (state.ended) { terminals++; return; }
     for (const c of old.nodes[state.currentNodeId!]!.choices) visit(choose(old, state, state.currentNodeId!, c.id).nextState);
   };

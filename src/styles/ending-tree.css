@@ -58,3 +58,16 @@
 }
 
 .ending-tree-dialog .tree-help[open] { max-height:min(20dvh,140px); overflow:auto; flex-shrink:0; }
+
+.ending-tree-dialog .tree-node[hidden] { display:none; }
+.ending-tree-dialog .tree-node[data-tree-type="scene"] { border-width:2px; background:#263f50; }
+.ending-tree-dialog .tree-node[data-tree-type="scene"].is-visited { background:#423927; }
+.ending-tree-dialog .tree-node[data-tree-type="scene"].is-collected { border-left-color:#66d5b1; }
+.ending-tree-dialog .tree-lines path.is-legacy { stroke-dasharray:6 5; }
+.ending-tree-dialog .tree-controls input { min-height:44px; min-width:0; width:160px; flex:1 1 140px; padding:8px; box-sizing:border-box; background:#273443; color:inherit; border:1px solid #738093; border-radius:6px; font:inherit; }
+@media(max-width:700px) { .ending-tree-dialog .tree-help[open] { max-height:12dvh; } }
+
+.ending-tree-dialog .tree-control-group { display:flex; align-items:center; gap:6px; flex:1 1 250px; min-width:0; }
+.ending-tree-dialog .tree-camera-controls { flex:0 0 auto; }
+.ending-tree-dialog .tree-control-group input { flex:1 1 100px; width:100px; }
+@media(max-width:700px) { .ending-tree-dialog .tree-control-group { flex:0 0 100%; } }

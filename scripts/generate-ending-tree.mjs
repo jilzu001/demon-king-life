@@ -14,6 +14,7 @@ const stepId = (node, choice, outcome) => `step:${node}:${choice}:${outcome}`;
 const nodes = [{ id: 'origin', type: 'origin', depth: 0, parentId: null, routeIds: [] }];
 const choicesByScene = new Map();
 for (const scene of scenes) {
+  nodes.push({id: `scene:${scene.id}`, type: 'scene', nodeId: scene.id, age:scene.age, sceneTitle:scene.title, depth:0, parentId:null, routeIds:[]});
   const ids = [];
   for (const choice of scene.choices) for (const outcome of choice.outcomes) {
     const id = stepId(scene.id, choice.id, outcome.id); ids.push(id);
@@ -24,12 +25,16 @@ for (const scene of scenes) {
   choicesByScene.set(scene.id, ids);
 }
 for (const ending of endings) nodes.push({ id: `ending:${ending.id}`, type: 'ending', endingId: ending.id, parentId: null, depth: 0, routeIds: [] });
-const edges = (choicesByScene.get(story.entryNodeId) ?? []).map(to => ({ from: 'origin', to }));
+const edges = [{from:'origin', to:`scene:${story.entryNodeId}`}];
+for (const scene of scenes) edges.push(...choicesByScene.get(scene.id).map(to=>({from:`scene:${scene.id}`,to})));
 for (const node of nodes.filter(node => node.type === 'step')) {
-  const next = node.toKind === 'ending' ? [`ending:${node.toId}`] : choicesByScene.get(node.toId);
+  const next = [node.toKind === 'ending' ? `ending:${node.toId}` : `scene:${node.toId}`];
   if (!next?.length) throw Error(`목적지 없음: ${node.id}`);
   edges.push(...next.map(to => ({ from: node.id, to })));
 }
+// 구 회차는 같은 시험 선택에서 게이트를 거치지 않았다. 실제 저장 경로만 버전 조건부 간선으로 보존한다.
+const legacy = {attack:'prison',refuse:'petition',invoice:'invoice',confess:'confession'};
+for(const node of nodes.filter(node=>node.type==='step' && node.nodeId==='exam')) if(legacy[node.choiceId]) edges.push({from:node.id,to:`scene:${legacy[node.choiceId]}`,legacyVersion:'2.3.0-compact'});
 const byId = new Map(nodes.map(node => [node.id, node]));
 if (byId.size !== nodes.length) throw Error('중복 노드');
 const degree = new Map(nodes.map(node => [node.id, edges.filter(edge => edge.to === node.id).length]));
@@ -46,7 +51,7 @@ for (const node of queue) {
 if (visited !== nodes.length || queue[0]?.id !== 'origin' || nodes.some(node => node.id !== 'origin' && !node.parentId)) throw Error('순환 또는 단절된 분기');
 const routes = {};
 for (const path of paths) {
-  const ids = ['origin', ...path.history.map(entry => stepId(entry.nodeId, entry.choiceId, entry.outcomeId)), `ending:${path.endingId}`];
+  const ids = ['origin', ...path.history.flatMap(entry => [`scene:${entry.nodeId}`,stepId(entry.nodeId, entry.choiceId, entry.outcomeId)]), `ending:${path.endingId}`];
   if (routes[path.endingId]) throw Error('중복 엔딩');
   for (let i = 0; i < ids.length; i++) {
     const node = byId.get(ids[i]); if (!node) throw Error('검증 경로 누락');

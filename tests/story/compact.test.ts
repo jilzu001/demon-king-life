@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { readExampleStory } from '../../scripts/read-story';
+import { preV48Story } from '../../src/content/compact-previous';
 import { createRun, choose } from '../../src/engine/transition';
 import { simulateAll } from '../../src/content/simulate';
 import { decodeSave } from '../../src/persistence/migrate';
@@ -10,8 +10,8 @@ import { memoryEvents, memoryArtKey } from '../../src/ui/compact-ending';
 import { narrativeLines } from '../../src/ui/narrative';
 import { lifeEvents } from '../../src/ui/history';
 
-const story = await readExampleStory('demon-king-compact');
-const raw = JSON.parse(readFileSync('public/stories/demon-king-compact/chapters/01_complete.json', 'utf8'));
+const story = preV48Story; // 구 회차 계약 회귀. v4.8 신규 실행은 independent-routes.test.ts에서 검사한다.
+const raw = JSON.parse(readFileSync('backups/before-v4.8/chapters/01_complete.json', 'utf8'));
 function run(ids: string[]) {
   let state = createRun(story, 17, 'compact-test');
   for (const id of ids) state = choose(story, state, state.currentNodeId!, id).nextState;

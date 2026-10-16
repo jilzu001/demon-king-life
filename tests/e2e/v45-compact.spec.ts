@@ -13,7 +13,9 @@ async function ready(page: Page) {
 async function pick(page: Page, id: string, finish = true) {
   await ready(page); await page.locator(`[data-choice="${id}"]`).click();
   await expect(page.locator('#choice-aftermath')).toBeVisible();
-  if (finish) { await page.clock.runFor(400); await page.locator('#reading-skip').click(); await expect(page.locator('#choice-aftermath')).toHaveCount(0); }
+  if (finish) { await page.clock.runFor(400); await page.locator('#reading-skip').click(); await expect(page.locator('#choice-aftermath')).toHaveCount(0);
+    if (['attack','refuse','invoice','confess'].includes(id)) await pick(page, `v48_${id}_legacy`);
+  }
 }
 const shared = ['family_accept', 'trust_mina', 'attack', 'forgive', 'ally', 'public_audit'];
 const cases = [

@@ -37,6 +37,8 @@ async function select(page: Page, id: string) {
   await expect(page.locator('#choice-aftermath')).toBeVisible();
   await expect(page.locator('#current-event')).toHaveCount(0); await page.clock.runFor(400);
   await page.locator('#reading-skip').click(); await expect(page.locator('#choice-aftermath')).toHaveCount(0);
+  // 기존 경로 회귀도 새 게이트의 legacy 선택을 실제 클릭한다.
+  if (['attack','refuse','invoice','confess'].includes(id)) await select(page, `v48_${id}_legacy`);
 }
 test.beforeEach(async ({ page }) => {
   const time = new Date('2026-10-14T00:00:00Z'); await page.clock.install({ time }); await page.clock.pauseAt(time);
