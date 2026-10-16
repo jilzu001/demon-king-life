@@ -11,9 +11,11 @@ const story = await readExampleStory('demon-king-compact');
 ensure(story.manifest.version === '5.0.0', 'v5.0 실행 콘텐츠가 아닙니다.');
 const root = 'spec/content-v50-freedom/demon_king_v50/';
 const read = (file: string) => JSON.parse(readFileSync(file, 'utf8'));
-// 배포 파일이 ChatGPT 원문과 바이트 단위로 같은지 검사한다.
+// 금액 제목 오기1곳 외 원문 바이트를 보호한다. 본문/선택/효과/ID는 바꾸지 않는다.
 for (const file of ['story.json', 'characters.json', 'endings.json', ...story.manifest.chapters]) {
-  ensure(readFileSync(`public/stories/demon-king-compact/${file}`).equals(readFileSync(`${root}content/${file}`)), `${file}: 원문 변경`);
+  const source=readFileSync(`${root}content/${file}`);
+  const expected=file==='endings.json' ? Buffer.from(source.toString('utf8').replace('"title": "백이십만 금화의 진실"','"title": "십이만 금화의 진실"')) : source;
+  ensure(readFileSync(`public/stories/demon-king-compact/${file}`).equals(expected), `${file}: 허용하지 않은 원문 변경`);
 }
 const examples = read(`${root}docs/EXAMPLE_ROUTES.json`).routes as Record<string, { choices: string[]; nodes: string[] }>;
 const matrix = read(`${root}docs/ROUTE_MATRIX.json`).routes as {id:string;sceneIds:string[];endingIds:string[]}[];

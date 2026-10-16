@@ -1,12 +1,18 @@
 {
   "newAiGeneration": 0,
-  "reusedBriefs": 2,
-  "pendingBriefs": 42,
+  "requiredCg": 44,
+  "activeRequiredCg": 44,
+  "missingImageFiles": 0,
+  "highResolutionReplacementQueue": 28,
+  "note": "사용자 추가 ZIP48개를 검수하고 기존 고화질15개 연결을 우선했다. 신규 이미지 파일 제작 대기는0이며 현재 사용 중인 저해상도 크롭28개의 향후 고화질 교체 프롬프트를 유지한다. 코덱스 AI 생성0.",
   "items": [
     {
       "kind": "scene",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "route_exile_opening",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/event_cg_v50/border_inn_new.webp",
+      "displayWidth": 960,
+      "qualityNote": "동봉 독립 장면 일러스트",
       "brief": {
         "nodeId": "route_exile_opening",
         "title": "국경 여관의 작은 밤",
@@ -24,8 +30,11 @@
     },
     {
       "kind": "scene",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "route_resistance_middle_b",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/event_cg_v50/false_wanted_printshop_new.webp",
+      "displayWidth": 960,
+      "qualityNote": "동봉 독립 장면 일러스트",
       "brief": {
         "nodeId": "route_resistance_middle_b",
         "title": "거짓 전단을 만드는 인쇄소",
@@ -43,8 +52,11 @@
     },
     {
       "kind": "scene",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "route_evidence_opening",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_evidence_opening.webp",
+      "displayWidth": 265,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 265×173px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "nodeId": "route_evidence_opening",
         "title": "서기관과 세렌이 지키는 봉인 서류",
@@ -62,8 +74,11 @@
     },
     {
       "kind": "scene",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "route_collective_opening",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_collective_opening.webp",
+      "displayWidth": 214,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 214×173px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "nodeId": "route_collective_opening",
         "title": "일흔세 명의 원고",
@@ -81,8 +96,11 @@
     },
     {
       "kind": "scene",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "route_business_opening",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_business_opening.webp",
+      "displayWidth": 212,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 212×173px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "nodeId": "route_business_opening",
         "title": "예약제 토벌 체험장",
@@ -100,8 +118,11 @@
     },
     {
       "kind": "scene",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "route_power_opening",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/event_cg_v50/power_budget_preferred.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "nodeId": "route_power_opening",
         "title": "세렌의 첫 예산 감사",
@@ -119,8 +140,11 @@
     },
     {
       "kind": "scene",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "route_rescue_opening",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_rescue_opening.webp",
+      "displayWidth": 277,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 277×173px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "nodeId": "route_rescue_opening",
         "title": "범람한 다리의 첫 구조",
@@ -138,8 +162,11 @@
     },
     {
       "kind": "scene",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "route_letters_opening",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_letters_opening.webp",
+      "displayWidth": 263,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 263×143px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "nodeId": "route_letters_opening",
         "title": "답을 재촉하지 않는 편지",
@@ -157,8 +184,11 @@
     },
     {
       "kind": "scene",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "route_exile_final_b",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_exile_final_b.webp",
+      "displayWidth": 292,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 292×143px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "nodeId": "route_exile_final_b",
         "title": "폐교 명령 앞의 교실",
@@ -176,8 +206,11 @@
     },
     {
       "kind": "scene",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "route_collective_final_b",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_collective_final_b.webp",
+      "displayWidth": 327,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 327×143px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "nodeId": "route_collective_final_b",
         "title": "예외 조항을 두고 다투는 의원들",
@@ -195,8 +228,11 @@
     },
     {
       "kind": "scene",
-      "status": "covered-by-reviewed-existing-art",
+      "id": "route_rescue_final_a",
+      "status": "active-standalone-or-verified-reuse",
       "artPath": "assets/illustrations/event_cg_v50/rescue_offer_reused.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "nodeId": "route_rescue_final_a",
         "title": "구호소 운영권 협의",
@@ -214,8 +250,11 @@
     },
     {
       "kind": "scene",
-      "status": "covered-by-reviewed-existing-art",
+      "id": "route_letters_final_a",
+      "status": "active-standalone-or-verified-reuse",
       "artPath": "assets/illustrations/event_cg_v50/letters_reflection_reused.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "nodeId": "route_letters_final_a",
         "title": "오래 기다린 선택, 두 개의 자리",
@@ -233,8 +272,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_exile_map",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_exile_map.webp",
+      "displayWidth": 173,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 173×112px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_exile_map",
         "title": "지도 끝에 그은 이름",
@@ -253,8 +295,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_exile_treaty",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/ending_v50/end_exile_treaty_preferred.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "endingId": "end_exile_treaty",
         "title": "협정문의 공백",
@@ -273,8 +318,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_exile_class",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_exile_class.webp",
+      "displayWidth": 175,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 175×145px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_exile_class",
         "title": "칠판 밖의 나라",
@@ -293,8 +341,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_exile_diaspora",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/ending_v50/end_exile_diaspora_preferred.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "endingId": "end_exile_diaspora",
         "title": "이름 없는 졸업식",
@@ -313,8 +364,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_resistance_march",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_resistance_march.webp",
+      "displayWidth": 176,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 176×145px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_resistance_march",
         "title": "칼 없는 반란",
@@ -333,8 +387,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_resistance_network",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_resistance_network.webp",
+      "displayWidth": 170,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 170×145px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_resistance_network",
         "title": "창문마다 켜진 불",
@@ -353,8 +410,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_resistance_confess",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/ending_v50/end_resistance_confess_preferred.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "endingId": "end_resistance_confess",
         "title": "범죄를 기록한 활자",
@@ -373,8 +433,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_resistance_debate",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_resistance_debate.webp",
+      "displayWidth": 179,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 179×145px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_resistance_debate",
         "title": "마왕을 팔던 가게",
@@ -393,8 +456,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_evidence_injunction",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_evidence_injunction.webp",
+      "displayWidth": 173,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 173×138px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_evidence_injunction",
         "title": "빈칸이 된 직업",
@@ -413,8 +479,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_evidence_archive",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_evidence_archive.webp",
+      "displayWidth": 174,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 174×138px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_evidence_archive",
         "title": "열세 번째 쪽",
@@ -433,8 +502,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_evidence_witness",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_evidence_witness.webp",
+      "displayWidth": 175,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 175×138px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_evidence_witness",
         "title": "증인이 살던 집",
@@ -453,8 +525,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_evidence_memory",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/ending_v50/end_evidence_memory_preferred.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "endingId": "end_evidence_memory",
         "title": "서류보다 오래 남은 목소리",
@@ -473,8 +548,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_collective_fund",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_collective_fund.webp",
+      "displayWidth": 176,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 176×138px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_collective_fund",
         "title": "삼천 명의 원고",
@@ -493,8 +571,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_collective_individual",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/ending_v50/end_collective_individual_preferred.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "endingId": "end_collective_individual",
         "title": "대표 원고의 마지막 날",
@@ -513,8 +594,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_collective_repeal",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_collective_repeal.webp",
+      "displayWidth": 173,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 173×138px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_collective_repeal",
         "title": "법전을 고친 사람들",
@@ -533,8 +617,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_collective_imperfect",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_collective_imperfect.webp",
+      "displayWidth": 179,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 179×138px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_collective_imperfect",
         "title": "반쪽짜리 승리",
@@ -553,8 +640,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_business_safety",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_business_safety.webp",
+      "displayWidth": 173,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 173×140px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_business_safety",
         "title": "합격하지 않아도 되는 시험",
@@ -573,8 +663,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_business_standard",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/ending_v50/end_business_standard_preferred.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "endingId": "end_business_standard",
         "title": "마왕이 만든 안전 규정",
@@ -593,8 +686,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_business_theatre",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_business_theatre.webp",
+      "displayWidth": 175,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 175×140px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_business_theatre",
         "title": "마지막 악역의 커튼콜",
@@ -613,8 +709,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_business_license",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_business_license.webp",
+      "displayWidth": 171,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 171×140px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_business_license",
         "title": "허구를 팔 수 있는 권리",
@@ -633,8 +732,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_power_truth",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/ending_v50/end_power_truth_preferred.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "endingId": "end_power_truth",
         "title": "백이십만 금화의 진실",
@@ -653,8 +755,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_power_inquiry",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/ending_v50/end_power_inquiry_preferred.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "endingId": "end_power_inquiry",
         "title": "잘못 세어진 인생",
@@ -673,8 +778,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_power_democracy",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_power_democracy.webp",
+      "displayWidth": 173,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 173×140px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_power_democracy",
         "title": "왕관 없는 회계장부",
@@ -693,8 +801,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_power_small",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_power_small.webp",
+      "displayWidth": 179,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 179×140px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_power_small",
         "title": "왕국 최초의 예산 수업",
@@ -713,8 +824,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_rescue_patients",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_rescue_patients.webp",
+      "displayWidth": 173,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 173×145px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_rescue_patients",
         "title": "용사가 열어둔 문",
@@ -733,8 +847,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_rescue_accord",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/ending_v50/end_rescue_accord_preferred.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "endingId": "end_rescue_accord",
         "title": "갑옷 밖의 약속",
@@ -753,8 +870,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_rescue_graduation",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_rescue_graduation.webp",
+      "displayWidth": 175,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 175×145px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_rescue_graduation",
         "title": "누구나 배울 수 있는 용기",
@@ -773,8 +893,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_rescue_speech",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_rescue_speech.webp",
+      "displayWidth": 171,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 171×145px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_rescue_speech",
         "title": "한 명도 빠뜨리지 않는 영웅",
@@ -793,8 +916,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_letters_together",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/ending_v50/end_letters_together_preferred.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "endingId": "end_letters_together",
         "title": "선택한 두 사람",
@@ -813,8 +939,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_letters_partners",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_letters_partners.webp",
+      "displayWidth": 170,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 170×145px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_letters_partners",
         "title": "두 개의 집, 한 개의 약속",
@@ -833,8 +962,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_letters_unsent",
+      "status": "active-standalone-or-verified-reuse",
+      "artPath": "assets/illustrations/ending_v50/end_letters_unsent_preferred.webp",
+      "displayWidth": 960,
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
       "brief": {
         "endingId": "end_letters_unsent",
         "title": "보내지 않은 마지막 편지",
@@ -853,8 +985,11 @@
     },
     {
       "kind": "ending",
-      "status": "awaiting-illustration",
-      "artPath": null,
+      "id": "end_letters_thanks",
+      "status": "active-cropped-fallback-needs-highres",
+      "artPath": "assets/illustrations/ending_v50/ending_end_letters_thanks.webp",
+      "displayWidth": 179,
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 179×145px; 인물 노화·세부 동작은 고해상도 재검수 대상",
       "brief": {
         "endingId": "end_letters_thanks",
         "title": "대답 대신 남긴 인사",
@@ -871,8 +1006,5 @@
         "priority": "later"
       }
     }
-  ],
-  "newBriefsGenerated": 0,
-  "newBriefsUnproduced": 44,
-  "note": "원래 신규 제작 브리프44개는 모두 미제작이다. 이 중 사건2개는 검수한 기존 그림 재사용으로 표시할 수 있으며, 남은 신규 제작 대기42개(사건10+엔딩32)의 개별 원문 프롬프트를 보존한다."
+  ]
 }

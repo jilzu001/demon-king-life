@@ -1,4 +1,5 @@
 import { isFreedom } from './compact-contract';
+import freedomArtwork from './generated/ending-art-v50.json';
 import catalog from '../../spec/content-v4.5-story-art/content/ending_gallery_v4_4.json';
 import artwork from './generated/ending-art-v46.json';
 import { validateSchema } from './schema';
@@ -15,6 +16,7 @@ for (const entry of catalog.endings) {
 }
 
 export const galleryEndingIds = catalog.endings.map(entry => entry.id);
+export const endingArtworkInfo = (id: string) => freedomArtwork.rules.find(rule => rule.endingId === id);
 export function endingGalleryEntries(story?: Story): EndingGalleryEntry[] {
   if (story && isFreedom(story.manifest)) return Object.values(story.endings).map(ending => ({ id:ending.id,title:ending.title,description:ending.body.split(/\n\s*\n/)[0]!.trim(),fullText:ending.body,kind:'new' as const }));
   return catalog.endings.map(entry => ({
@@ -26,6 +28,8 @@ export function endingGalleryEntries(story?: Story): EndingGalleryEntry[] {
   }));
 }
 export function endingArtworkPath(endingId: string): string | undefined {
+  const freedom = endingArtworkInfo(endingId);
+  if (freedom) return /^assets\/illustrations\/ending_v50\/[a-z0-9_]+\.webp$/.test(freedom.path) ? freedom.path : undefined;
   if (!Object.hasOwn(artwork.artByEndingId, endingId)) return undefined;
   const path = artwork.artByEndingId[endingId as keyof typeof artwork.artByEndingId];
   return /^assets\/illustrations\/[a-z0-9_/]+\.webp$/.test(path) && !path.includes('..') ? path : undefined;

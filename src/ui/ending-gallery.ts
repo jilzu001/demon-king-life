@@ -1,5 +1,5 @@
 import type { EndingGalleryEntry } from '../content/ending-gallery';
-import { endingArtworkUrl } from '../content/ending-gallery';
+import { endingArtworkUrl, endingArtworkInfo } from '../content/ending-gallery';
 import { element, button } from './dom';
 import { narrativeLines } from './narrative';
 
@@ -8,11 +8,17 @@ export function renderEndingArtwork(entry: Pick<EndingGalleryEntry, 'id' | 'titl
   if (!source) return undefined;
   const figure = element('figure', undefined, 'ending-art'); figure.dataset.endingArt = entry.id;
   const image = element('img'); image.alt = `${entry.title} 엔딩 일러스트`; image.loading = 'eager'; image.decoding = 'async';
+  const info = endingArtworkInfo(entry.id);
+  if (info) {
+    image.width=info.width; image.height=info.height;
+    image.style.maxWidth=`min(100%, ${info.displayWidth}px)`;
+    figure.dataset.artOrigin=info.origin;
+  }
   image.addEventListener('error', () => {
     figure.replaceWith(element('p', '일러스트를 불러올 수 없어 글로 표시합니다.', 'subtle ending-art-fallback'));
   }, { once: true });
   image.src = source;
-  figure.append(image, element('figcaption', source.includes('/ending_v4_6/') ? '승인 그림체로 제작한 전용 엔딩 일러스트' : entry.kind === 'new' ? '기준 초상화로 구성한 회상 이미지 · 임시 아트' : '기존 장면을 재사용한 임시 일러스트', 'subtle'));
+  figure.append(image, element('figcaption', info ? info.qualityNote.split(';')[0]! : source.includes('/ending_v4_6/') ? '승인 그림체로 제작한 전용 엔딩 일러스트' : entry.kind === 'new' ? '기준 초상화로 구성한 회상 이미지 · 임시 아트' : '기존 장면을 재사용한 임시 일러스트', 'subtle'));
   return figure;
 }
 

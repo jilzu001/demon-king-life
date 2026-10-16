@@ -1,4 +1,5 @@
 import { freedomChronicle } from './freedom-memory';
+import { freedomDaily } from './freedom-daily';
 import annual from '../../spec/content-v4.5-story-art/content/annual_life_records_v4_2.json';
 import echoes from '../../spec/content-v4.5-story-art/content/conditional_story_echoes_v4_5.json';
 import type { GameState, Story } from '../engine/types';
@@ -9,7 +10,7 @@ import { annualVariants } from './annual-variants';
 // 원장의 불변 seed와 나이로 고정하므로 렌더링·새로고침·저장 복원으로 재추첨되지 않는다.
 export function routeYears(story: Story, state: GameState, nodeId: string) {
   if (!isCompact(story.manifest)) return [];
-  if (isFreedom(story.manifest)) return freedomChronicle(story,state,nodeId).map((line,index)=>({id:`v5-chronicle:${nodeId}:${index}`,age:line.age,text:line.text}));
+  if (isFreedom(story.manifest)) return [...freedomDaily(story,state,nodeId),...freedomChronicle(story,state,nodeId).map((line,index)=>({id:`v5-chronicle:${nodeId}:${index}`,age:line.age,text:line.text}))];
   const index = state.enteredNodeIds.indexOf(nodeId);
   if (index < 1) return [];
   const from = story.nodes[state.enteredNodeIds[index - 1]!]!.age;

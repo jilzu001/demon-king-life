@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// 전체 선택/판정 결과를 합류 가능한 DAG로 만든다. 20개 실제 검증 경로는 별도로 유지한다.
+// 전체 선택/판정 결과를 합류 가능한 DAG로 만든다. 실제 엔딩 검증 경로는 별도로 유지한다.
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 const repo = path.resolve(process.argv[2] ?? '.');

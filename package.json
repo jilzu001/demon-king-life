@@ -12,7 +12,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "validate:content": "tsx scripts/validate-content.ts && tsx scripts/validate-compact.ts && tsx scripts/verify-freedom.ts && npm run validate:tree",
+    "validate:content": "tsx scripts/validate-content.ts && tsx scripts/validate-compact.ts && tsx scripts/verify-freedom.ts && node scripts/verify-art-v50.mjs && npm run validate:tree",
     "validate:tree": "node scripts/validate-tree.mjs src/content/generated/ending-tree.json && tsx scripts/verify-ending-tree.ts",
     "simulate:all": "tsx scripts/simulate-all-routes.ts",
     "build": "npm run typecheck && npm run validate:content && npm run simulate:all && vite build",

@@ -1,0 +1,948 @@
+{
+  "schemaVersion": 1,
+  "method": "PIL exact rectangles, remove captions, resize Lanczos, mild UnsharpMask, encode WebP quality 78",
+  "sourceEventSheet": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+  "sourceEndingSheet": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+  "croppedEvents": [
+    {
+      "id": "v50-route_evidence_opening",
+      "nodeId": "route_evidence_opening",
+      "age": 25,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_evidence_opening.webp",
+      "width": 768,
+      "height": 501,
+      "alt": "서기관과 세렌이 지키는 봉인 서류",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        270,
+        25,
+        535,
+        198
+      ],
+      "sourceCropResolution": {
+        "width": 265,
+        "height": 173
+      },
+      "bytes": 35902,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_collective_opening",
+      "nodeId": "route_collective_opening",
+      "age": 25,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_collective_opening.webp",
+      "width": 768,
+      "height": 621,
+      "alt": "일흔세 명의 원고",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        543,
+        25,
+        757,
+        198
+      ],
+      "sourceCropResolution": {
+        "width": 214,
+        "height": 173
+      },
+      "bytes": 45222,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_business_opening",
+      "nodeId": "route_business_opening",
+      "age": 25,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_business_opening.webp",
+      "width": 768,
+      "height": 627,
+      "alt": "예약제 토벌 체험장",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        764,
+        25,
+        976,
+        198
+      ],
+      "sourceCropResolution": {
+        "width": 212,
+        "height": 173
+      },
+      "bytes": 51946,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_power_opening",
+      "nodeId": "route_power_opening",
+      "age": 25,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_power_opening.webp",
+      "width": 768,
+      "height": 507,
+      "alt": "세렌의 첫 예산 감사",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        983,
+        25,
+        1245,
+        198
+      ],
+      "sourceCropResolution": {
+        "width": 262,
+        "height": 173
+      },
+      "bytes": 43330,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_rescue_opening",
+      "nodeId": "route_rescue_opening",
+      "age": 24,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_rescue_opening.webp",
+      "width": 768,
+      "height": 480,
+      "alt": "범람한 다리의 첫 구조",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        1253,
+        25,
+        1530,
+        198
+      ],
+      "sourceCropResolution": {
+        "width": 277,
+        "height": 173
+      },
+      "bytes": 47290,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_letters_opening",
+      "nodeId": "route_letters_opening",
+      "age": 24,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_letters_opening.webp",
+      "width": 768,
+      "height": 418,
+      "alt": "답을 재촉하지 않는 편지",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        8,
+        252,
+        271,
+        395
+      ],
+      "sourceCropResolution": {
+        "width": 263,
+        "height": 143
+      },
+      "bytes": 32706,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_exile_final_b",
+      "nodeId": "route_exile_final_b",
+      "age": 60,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_exile_final_b.webp",
+      "width": 768,
+      "height": 376,
+      "alt": "폐교 명령 앞의 교실",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        280,
+        252,
+        572,
+        395
+      ],
+      "sourceCropResolution": {
+        "width": 292,
+        "height": 143
+      },
+      "bytes": 32766,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_collective_final_b",
+      "nodeId": "route_collective_final_b",
+      "age": 62,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_collective_final_b.webp",
+      "width": 768,
+      "height": 336,
+      "alt": "예외 조항을 두고 다투는 의원들",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        582,
+        252,
+        909,
+        395
+      ],
+      "sourceCropResolution": {
+        "width": 327,
+        "height": 143
+      },
+      "bytes": 35114,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_rescue_final_a",
+      "nodeId": "route_rescue_final_a",
+      "age": 60,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_rescue_final_a.webp",
+      "width": 768,
+      "height": 383,
+      "alt": "구호소 운영권 협의",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        917,
+        252,
+        1204,
+        395
+      ],
+      "sourceCropResolution": {
+        "width": 287,
+        "height": 143
+      },
+      "bytes": 37954,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_letters_final_a",
+      "nodeId": "route_letters_final_a",
+      "age": 59,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_letters_final_a.webp",
+      "width": 768,
+      "height": 344,
+      "alt": "오래 기다린 선택, 두 개의 자리",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        1210,
+        252,
+        1529,
+        395
+      ],
+      "sourceCropResolution": {
+        "width": 319,
+        "height": 143
+      },
+      "bytes": 37116,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    }
+  ],
+  "croppedEndings": [
+    {
+      "id": "v50-end_exile_map",
+      "endingId": "end_exile_map",
+      "artPath": "assets/illustrations/ending_v50/ending_end_exile_map.webp",
+      "width": 720,
+      "height": 466,
+      "alt": "지도 끝에 그은 이름",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        104,
+        305,
+        277,
+        417
+      ],
+      "sourceCropResolution": {
+        "width": 173,
+        "height": 112
+      },
+      "bytes": 25514,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_exile_treaty",
+      "endingId": "end_exile_treaty",
+      "artPath": "assets/illustrations/ending_v50/ending_end_exile_treaty.webp",
+      "width": 720,
+      "height": 600,
+      "alt": "협정문의 공백",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        281,
+        272,
+        455,
+        417
+      ],
+      "sourceCropResolution": {
+        "width": 174,
+        "height": 145
+      },
+      "bytes": 37580,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_exile_class",
+      "endingId": "end_exile_class",
+      "artPath": "assets/illustrations/ending_v50/ending_end_exile_class.webp",
+      "width": 720,
+      "height": 597,
+      "alt": "칠판 밖의 나라",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        460,
+        272,
+        635,
+        417
+      ],
+      "sourceCropResolution": {
+        "width": 175,
+        "height": 145
+      },
+      "bytes": 48448,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_exile_diaspora",
+      "endingId": "end_exile_diaspora",
+      "artPath": "assets/illustrations/ending_v50/ending_end_exile_diaspora.webp",
+      "width": 720,
+      "height": 611,
+      "alt": "이름 없는 졸업식",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        641,
+        272,
+        812,
+        417
+      ],
+      "sourceCropResolution": {
+        "width": 171,
+        "height": 145
+      },
+      "bytes": 36324,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_resistance_march",
+      "endingId": "end_resistance_march",
+      "artPath": "assets/illustrations/ending_v50/ending_end_resistance_march.webp",
+      "width": 720,
+      "height": 593,
+      "alt": "칼 없는 반란",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        818,
+        272,
+        994,
+        417
+      ],
+      "sourceCropResolution": {
+        "width": 176,
+        "height": 145
+      },
+      "bytes": 42320,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_resistance_network",
+      "endingId": "end_resistance_network",
+      "artPath": "assets/illustrations/ending_v50/ending_end_resistance_network.webp",
+      "width": 720,
+      "height": 614,
+      "alt": "창문마다 켜진 불",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        1000,
+        272,
+        1170,
+        417
+      ],
+      "sourceCropResolution": {
+        "width": 170,
+        "height": 145
+      },
+      "bytes": 34710,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_resistance_confess",
+      "endingId": "end_resistance_confess",
+      "artPath": "assets/illustrations/ending_v50/ending_end_resistance_confess.webp",
+      "width": 720,
+      "height": 603,
+      "alt": "범죄를 기록한 활자",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        1175,
+        272,
+        1348,
+        417
+      ],
+      "sourceCropResolution": {
+        "width": 173,
+        "height": 145
+      },
+      "bytes": 36714,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_resistance_debate",
+      "endingId": "end_resistance_debate",
+      "artPath": "assets/illustrations/ending_v50/ending_end_resistance_debate.webp",
+      "width": 720,
+      "height": 583,
+      "alt": "마왕을 팔던 가게",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        1353,
+        272,
+        1532,
+        417
+      ],
+      "sourceCropResolution": {
+        "width": 179,
+        "height": 145
+      },
+      "bytes": 35314,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_evidence_injunction",
+      "endingId": "end_evidence_injunction",
+      "artPath": "assets/illustrations/ending_v50/ending_end_evidence_injunction.webp",
+      "width": 720,
+      "height": 574,
+      "alt": "빈칸이 된 직업",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        104,
+        462,
+        277,
+        600
+      ],
+      "sourceCropResolution": {
+        "width": 173,
+        "height": 138
+      },
+      "bytes": 33418,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_evidence_archive",
+      "endingId": "end_evidence_archive",
+      "artPath": "assets/illustrations/ending_v50/ending_end_evidence_archive.webp",
+      "width": 720,
+      "height": 571,
+      "alt": "열세 번째 쪽",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        281,
+        462,
+        455,
+        600
+      ],
+      "sourceCropResolution": {
+        "width": 174,
+        "height": 138
+      },
+      "bytes": 32530,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_evidence_witness",
+      "endingId": "end_evidence_witness",
+      "artPath": "assets/illustrations/ending_v50/ending_end_evidence_witness.webp",
+      "width": 720,
+      "height": 568,
+      "alt": "증인이 살던 집",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        460,
+        462,
+        635,
+        600
+      ],
+      "sourceCropResolution": {
+        "width": 175,
+        "height": 138
+      },
+      "bytes": 33864,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_evidence_memory",
+      "endingId": "end_evidence_memory",
+      "artPath": "assets/illustrations/ending_v50/ending_end_evidence_memory.webp",
+      "width": 720,
+      "height": 581,
+      "alt": "서류보다 오래 남은 목소리",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        641,
+        462,
+        812,
+        600
+      ],
+      "sourceCropResolution": {
+        "width": 171,
+        "height": 138
+      },
+      "bytes": 34264,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_collective_fund",
+      "endingId": "end_collective_fund",
+      "artPath": "assets/illustrations/ending_v50/ending_end_collective_fund.webp",
+      "width": 720,
+      "height": 565,
+      "alt": "삼천 명의 원고",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        818,
+        462,
+        994,
+        600
+      ],
+      "sourceCropResolution": {
+        "width": 176,
+        "height": 138
+      },
+      "bytes": 40934,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_collective_individual",
+      "endingId": "end_collective_individual",
+      "artPath": "assets/illustrations/ending_v50/ending_end_collective_individual.webp",
+      "width": 720,
+      "height": 584,
+      "alt": "대표 원고의 마지막 날",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        1000,
+        462,
+        1170,
+        600
+      ],
+      "sourceCropResolution": {
+        "width": 170,
+        "height": 138
+      },
+      "bytes": 36154,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_collective_repeal",
+      "endingId": "end_collective_repeal",
+      "artPath": "assets/illustrations/ending_v50/ending_end_collective_repeal.webp",
+      "width": 720,
+      "height": 574,
+      "alt": "법전을 고친 사람들",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        1175,
+        462,
+        1348,
+        600
+      ],
+      "sourceCropResolution": {
+        "width": 173,
+        "height": 138
+      },
+      "bytes": 34670,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_collective_imperfect",
+      "endingId": "end_collective_imperfect",
+      "artPath": "assets/illustrations/ending_v50/ending_end_collective_imperfect.webp",
+      "width": 720,
+      "height": 555,
+      "alt": "반쪽짜리 승리",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        1353,
+        462,
+        1532,
+        600
+      ],
+      "sourceCropResolution": {
+        "width": 179,
+        "height": 138
+      },
+      "bytes": 27854,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_business_safety",
+      "endingId": "end_business_safety",
+      "artPath": "assets/illustrations/ending_v50/ending_end_business_safety.webp",
+      "width": 720,
+      "height": 583,
+      "alt": "합격하지 않아도 되는 시험",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        104,
+        645,
+        277,
+        785
+      ],
+      "sourceCropResolution": {
+        "width": 173,
+        "height": 140
+      },
+      "bytes": 36230,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_business_standard",
+      "endingId": "end_business_standard",
+      "artPath": "assets/illustrations/ending_v50/ending_end_business_standard.webp",
+      "width": 720,
+      "height": 579,
+      "alt": "마왕이 만든 안전 규정",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        281,
+        645,
+        455,
+        785
+      ],
+      "sourceCropResolution": {
+        "width": 174,
+        "height": 140
+      },
+      "bytes": 37914,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_business_theatre",
+      "endingId": "end_business_theatre",
+      "artPath": "assets/illustrations/ending_v50/ending_end_business_theatre.webp",
+      "width": 720,
+      "height": 576,
+      "alt": "마지막 악역의 커튼콜",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        460,
+        645,
+        635,
+        785
+      ],
+      "sourceCropResolution": {
+        "width": 175,
+        "height": 140
+      },
+      "bytes": 34074,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_business_license",
+      "endingId": "end_business_license",
+      "artPath": "assets/illustrations/ending_v50/ending_end_business_license.webp",
+      "width": 720,
+      "height": 589,
+      "alt": "허구를 팔 수 있는 권리",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        641,
+        645,
+        812,
+        785
+      ],
+      "sourceCropResolution": {
+        "width": 171,
+        "height": 140
+      },
+      "bytes": 41554,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_power_truth",
+      "endingId": "end_power_truth",
+      "artPath": "assets/illustrations/ending_v50/ending_end_power_truth.webp",
+      "width": 720,
+      "height": 573,
+      "alt": "백이십만 금화의 진실",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        818,
+        645,
+        994,
+        785
+      ],
+      "sourceCropResolution": {
+        "width": 176,
+        "height": 140
+      },
+      "bytes": 33254,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_power_inquiry",
+      "endingId": "end_power_inquiry",
+      "artPath": "assets/illustrations/ending_v50/ending_end_power_inquiry.webp",
+      "width": 720,
+      "height": 593,
+      "alt": "잘못 세어진 인생",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        1000,
+        645,
+        1170,
+        785
+      ],
+      "sourceCropResolution": {
+        "width": 170,
+        "height": 140
+      },
+      "bytes": 30710,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_power_democracy",
+      "endingId": "end_power_democracy",
+      "artPath": "assets/illustrations/ending_v50/ending_end_power_democracy.webp",
+      "width": 720,
+      "height": 583,
+      "alt": "왕관 없는 회계장부",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        1175,
+        645,
+        1348,
+        785
+      ],
+      "sourceCropResolution": {
+        "width": 173,
+        "height": 140
+      },
+      "bytes": 33536,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_power_small",
+      "endingId": "end_power_small",
+      "artPath": "assets/illustrations/ending_v50/ending_end_power_small.webp",
+      "width": 720,
+      "height": 563,
+      "alt": "왕국 최초의 예산 수업",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        1353,
+        645,
+        1532,
+        785
+      ],
+      "sourceCropResolution": {
+        "width": 179,
+        "height": 140
+      },
+      "bytes": 30000,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_rescue_patients",
+      "endingId": "end_rescue_patients",
+      "artPath": "assets/illustrations/ending_v50/ending_end_rescue_patients.webp",
+      "width": 720,
+      "height": 603,
+      "alt": "용사가 열어둔 문",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        104,
+        821,
+        277,
+        966
+      ],
+      "sourceCropResolution": {
+        "width": 173,
+        "height": 145
+      },
+      "bytes": 37518,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_rescue_accord",
+      "endingId": "end_rescue_accord",
+      "artPath": "assets/illustrations/ending_v50/ending_end_rescue_accord.webp",
+      "width": 720,
+      "height": 600,
+      "alt": "갑옷 밖의 약속",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        281,
+        821,
+        455,
+        966
+      ],
+      "sourceCropResolution": {
+        "width": 174,
+        "height": 145
+      },
+      "bytes": 38316,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_rescue_graduation",
+      "endingId": "end_rescue_graduation",
+      "artPath": "assets/illustrations/ending_v50/ending_end_rescue_graduation.webp",
+      "width": 720,
+      "height": 597,
+      "alt": "누구나 배울 수 있는 용기",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        460,
+        821,
+        635,
+        966
+      ],
+      "sourceCropResolution": {
+        "width": 175,
+        "height": 145
+      },
+      "bytes": 39270,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_rescue_speech",
+      "endingId": "end_rescue_speech",
+      "artPath": "assets/illustrations/ending_v50/ending_end_rescue_speech.webp",
+      "width": 720,
+      "height": 611,
+      "alt": "한 명도 빠뜨리지 않는 영웅",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        641,
+        821,
+        812,
+        966
+      ],
+      "sourceCropResolution": {
+        "width": 171,
+        "height": 145
+      },
+      "bytes": 39004,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_letters_together",
+      "endingId": "end_letters_together",
+      "artPath": "assets/illustrations/ending_v50/ending_end_letters_together.webp",
+      "width": 720,
+      "height": 593,
+      "alt": "선택한 두 사람",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        818,
+        821,
+        994,
+        966
+      ],
+      "sourceCropResolution": {
+        "width": 176,
+        "height": 145
+      },
+      "bytes": 39566,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_letters_partners",
+      "endingId": "end_letters_partners",
+      "artPath": "assets/illustrations/ending_v50/ending_end_letters_partners.webp",
+      "width": 720,
+      "height": 614,
+      "alt": "두 개의 집, 한 개의 약속",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        1000,
+        821,
+        1170,
+        966
+      ],
+      "sourceCropResolution": {
+        "width": 170,
+        "height": 145
+      },
+      "bytes": 30206,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_letters_unsent",
+      "endingId": "end_letters_unsent",
+      "artPath": "assets/illustrations/ending_v50/ending_end_letters_unsent.webp",
+      "width": 720,
+      "height": 603,
+      "alt": "보내지 않은 마지막 편지",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        1175,
+        821,
+        1348,
+        966
+      ],
+      "sourceCropResolution": {
+        "width": 173,
+        "height": 145
+      },
+      "bytes": 30268,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    },
+    {
+      "id": "v50-end_letters_thanks",
+      "endingId": "end_letters_thanks",
+      "artPath": "assets/illustrations/ending_v50/ending_end_letters_thanks.webp",
+      "width": 720,
+      "height": 583,
+      "alt": "대답 대신 남긴 인사",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_wide_high_resolution_collage_mosaic_artwork_an.png",
+      "sourceCrop": [
+        1353,
+        821,
+        1532,
+        966
+      ],
+      "sourceCropResolution": {
+        "width": 179,
+        "height": 145
+      },
+      "bytes": 29284,
+      "qualityNote": "저해상도 합본 크롭 확대본; 엔딩 전용 고해상도 일러스트가 아니며 인물 디자인 오류 가능"
+    }
+  ],
+  "numberOfStoryAssets": 44,
+  "numberOfReusedAdditionalAssets": 4,
+  "sourceQualityNotice": "crude thumbnails ~170..330px original width; game display sizes upsampled only; no detail restoration",
+  "visualReview": "present contact sheet for human check; no substitute for viewing each full image"
+}

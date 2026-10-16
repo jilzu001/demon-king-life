@@ -26,7 +26,7 @@ export const sceneIllustrations: Record<string, { asset: string; after?: string;
   confession_chaos: { asset: 'mina', after: '미나가 검을 내려놓았다.' },
 };
 type SceneContext = { body: string; age: number; state?: GameState };
-export type StoryArtwork = { id: string; path: string; width: number; height: number; label: string };
+export type StoryArtwork = { id: string; path: string; width: number; height: number; label: string; displayWidth?: number; qualityNote?: string; origin?: string };
 function mappedArtwork(rule: typeof sceneArt.rules[number]): StoryArtwork {
   return { id: rule.id, path: rule.artPath, width: rule.width, height: rule.height, label: rule.alt };
 }
@@ -93,10 +93,12 @@ export function renderStoryArtwork(asset: StoryArtwork, eager = false): HTMLElem
   const figure = element('figure', undefined, 'story-illustration');
   figure.dataset.assetId = asset.id;
   figure.style.setProperty('--illustration-ratio', String(asset.width / asset.height));
-  figure.style.setProperty('--asset-natural-width', `${asset.width}px`);
+  figure.style.setProperty('--asset-natural-width', `${asset.displayWidth ?? asset.width}px`);
+  if (asset.origin) figure.dataset.artOrigin=asset.origin;
   const image = element('img');
   image.width = asset.width; image.height = asset.height;
   image.alt = asset.label; image.loading = eager ? 'eager' : 'lazy'; image.decoding = 'async';
+  if (asset.qualityNote) image.title=asset.qualityNote;
   // 이미지가 실패하면 프레임도 제거한다. 본문/선택/게임 원장은 그대로 남는다.
   image.addEventListener('error', () => figure.remove(), { once: true });
   image.src = `${import.meta.env.BASE_URL}${asset.path}`;

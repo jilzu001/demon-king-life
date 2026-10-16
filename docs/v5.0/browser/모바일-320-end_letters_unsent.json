@@ -1,0 +1,35 @@
+{
+  "endingId": "end_letters_unsent",
+  "choices": [
+    "birth_appeal",
+    "child_pact",
+    "exam_mina",
+    "gate_to_letters",
+    "route_letters_open_3",
+    "route_letters_middle_b_1",
+    "route_letters_final_b_1"
+  ],
+  "nodes": [
+    "birth",
+    "child",
+    "exam",
+    "gate_mina",
+    "route_letters_opening",
+    "route_letters_middle_b",
+    "route_letters_final_b"
+  ],
+  "age": 61,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "gate_mina",
+    "route_letters_opening",
+    "route_letters_middle_b",
+    "route_letters_final_b"
+  ],
+  "saveRestored": true,
+  "unlockedAfterLastCard": true,
+  "endingArt": "제작 대기: 이미지 요청 없음",
+  "errors": []
+}

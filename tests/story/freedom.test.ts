@@ -11,6 +11,7 @@ import { freedomSlot, compactSlot } from '../../src/content/compact-contract';
 import { freedomChronicle, endingRecapLines, endingFullText } from '../../src/content/freedom-memory';
 import { endingGalleryEntries, endingArtworkPath } from '../../src/content/ending-gallery';
 import { routeBody, routeYears } from '../../src/content/route-years';
+import { freedomDaily } from '../../src/content/freedom-daily';
 import { collectedRouteNodes, collectedRoutes, historyTreeIds, routeEdges, tree, byTreeId, resumeSource, layoutTree } from '../../src/ui/ending-tree-layout';
 import { illustrationAsset, outcomeArtwork } from '../../src/ui/illustrations';
 import { memoryEvents } from '../../src/ui/compact-ending';
@@ -79,7 +80,7 @@ it('조건부 연대기는 실제 과거만 반영하고 미래 플래그·미�
     for(const [i,id] of state.enteredNodeIds.entries()) {
       const then=play(path.choices.slice(0,i));
       expect(freedomChronicle(story,state,id)).toEqual(freedomChronicle(story,then,id));
-      expect(routeYears(story,state,id).map(line=>line.text)).toEqual(freedomChronicle(story,state,id).map(line=>line.text));
+      expect(routeYears(story,state,id).filter(line=>line.id.startsWith('v5-chronicle:')).map(line=>line.text)).toEqual(freedomChronicle(story,state,id).map(line=>line.text));
       expect(routeBody(story,state,id)).toContain(story.nodes[id]!.body);
     }
     expect(JSON.stringify(state)).toBe(before);
@@ -87,16 +88,16 @@ it('조건부 연대기는 실제 과거만 반영하고 미래 플래그·미�
   }
 });
 
-it('새 도감은 실제32개 데이터이며 구20개 그림을 잘못 연결하지 않는다',()=>{
+it('새 도감은 실제32개 데이터와 검수된32개 이미지 연결을 사용한다',()=>{
   const entries=endingGalleryEntries(story);expect(entries).toHaveLength(32);
   for(const entry of entries) {
     expect(entry.fullText).toBe(story.endings[entry.id]!.body);expect(entry.description.length).toBeGreaterThan(0);
-    expect(endingArtworkPath(entry.id)).toBeUndefined();
+    expect(endingArtworkPath(entry.id)).toMatch(/^assets\/illustrations\/ending_v50\/.+\.webp$/);
   }
   expect(endingGalleryEntries(old)).toHaveLength(20);
 });
 
-it('검수6개 그림만 실제 방문에서 연결하고 미제작 사건/구판 결과 CG를 누출하지 않는다',()=>{
+it('기존 검수6개 연결을 보호하고 미방문/미등록 사건과 구판 결과 CG를 누출하지 않는다',()=>{
   const audit=JSON.parse(readFileSync('docs/v5.0/illustration-audit.json','utf8')) as {assets:{nodeId:string;selected:boolean;artPath?:string;path?:string;bytes:number}[]};
   for(const art of audit.assets.filter(item=>item.selected)) {
     const path=paths.find(path=>path.nodes.includes(art.nodeId))!;const state=play(path.choices);
@@ -107,4 +108,35 @@ it('검수6개 그림만 실제 방문에서 연결하고 미제작 사건/구�
   const state=play(paths[0]!.choices);
   expect(illustrationAsset('child','scene',{state,age:12,body:story.nodes.child!.body})).toBeUndefined();
   for(const entry of state.history) expect(outcomeArtwork(state,entry)).toBeUndefined();
+});
+
+it('모든 실제 사건 사이를 해마다 일상1개로 채우고 조건부 연대기·현재 사건과 구분한다',()=>{
+  for(const path of paths) {
+    const state=play(path.choices), before=JSON.stringify(state);
+    const days=state.enteredNodeIds.flatMap(id=>freedomDaily(story,state,id));
+    expect(new Set(days.map(day=>day.age)).size).toBe(days.length);
+    const sceneAges=state.enteredNodeIds.map(id=>story.nodes[id]!.age);
+    expect(days.every(day=>!sceneAges.includes(day.age)&&!/[\r\n]/.test(day.text))).toBe(true);
+    expect([...new Set([...sceneAges,...days.map(day=>day.age)])].sort((a,b)=>a-b)).toEqual(Array.from({length:state.age+1},(_,i)=>i));
+    for(const [index,id] of state.enteredNodeIds.entries()) {
+      const earlier=play(path.choices.slice(0,index));
+      expect(freedomDaily(story,state,id)).toEqual(freedomDaily(story,earlier,id));
+      const restored=resumeAtVisitedNode(story,state,id,'reselected');
+      expect(freedomDaily(story,state,id)).toEqual(freedomDaily(story,restored,id));
+    }
+    expect(JSON.stringify(state)).toBe(before);
+    expect(freedomDaily(story,state,'not-visited')).toEqual([]);
+    expect(days.filter(day=>day.age<12).every(day=>!day.text.includes('미나'))).toBe(true);
+  }
+});
+
+it('일상 추첨은 다른 시드에서 다양하며 같은 저장·JSON복원에서 같고 RNG를 소비하지 않는다',()=>{
+  const texts=new Set<string>();
+  for(let seed=0;seed<100;seed++) {
+    let state=createRun(story,seed,'daily');state=choose(story,state,'birth','birth_appeal').nextState;
+    const before=JSON.stringify(state),days=freedomDaily(story,state,'child');texts.add(days[0]!.text);
+    expect(freedomDaily(story,decodeSave(story,before),'child')).toEqual(days);expect(JSON.stringify(state)).toBe(before);
+    for(let i=1;i<days.length;i++) if(days[i-1]!.id.split(':')[1]===days[i]!.id.split(':')[1])expect(days[i]!.text).not.toBe(days[i-1]!.text);
+  }
+  expect(texts.size).toBeGreaterThanOrEqual(4);
 });

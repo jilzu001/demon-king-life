@@ -1,0 +1,31 @@
+{
+  "version": "5.0-full-art-cropped-fallback",
+  "totalNewStoryIllustrations": 44,
+  "newStoryStandaloneCG": 2,
+  "newStoryContactSheetCroppedSceneCG": 10,
+  "newStoryContactSheetCroppedEndingCG": 32,
+  "reusedOlderSingleSceneCG": 4,
+  "actualWebpFiles": 48,
+  "missingImageFiles": 0,
+  "highResolutionIndependentlyRenderedStoryCG": 2,
+  "lowResolutionFallbackStoryCG": 42,
+  "cropResolutionRange": {
+    "minWidth": 170,
+    "maxWidth": 327,
+    "minHeight": 112,
+    "maxHeight": 173
+  },
+  "fallbackByteRange": {
+    "min": 25514,
+    "max": 51946,
+    "median": 36028
+  },
+  "important": "합본 이미지 42컷을 잘라 업스케일한 저해상도 대체본임. 확대해도 선명도가 개선된 것은 아님. 글자 라벨은 크롭에서 제거했지만 인물·상황 세부 오류는 가능하며 사용자 승인 아님.",
+  "inputSources": [
+    "a_large_composite_grid_image_like_a_gallery_sheet.png",
+    "a_wide_high_resolution_collage_mosaic_artwork_an.png"
+  ],
+  "deploymentStatus": "코덱스 미적용, 웹게임 실기능 테스트 미실시",
+  "existingUserSaves": "기존 세이브 물리적 보존 및 새 버전 슬롯 분리 필요",
+  "audio": "BGM 없음"
+}

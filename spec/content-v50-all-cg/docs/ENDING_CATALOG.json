@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 1,
+  "endings": [
+    {
+      "endingId": "end_exile_map",
+      "title": "지도 끝에 그은 이름",
+      "route": "exile",
+      "category": "도주"
+    },
+    {
+      "endingId": "end_exile_treaty",
+      "title": "협정문의 공백",
+      "route": "exile",
+      "category": "도주"
+    },
+    {
+      "endingId": "end_exile_class",
+      "title": "칠판 밖의 나라",
+      "route": "exile",
+      "category": "도주"
+    },
+    {
+      "endingId": "end_exile_diaspora",
+      "title": "이름 없는 졸업식",
+      "route": "exile",
+      "category": "도주"
+    },
+    {
+      "endingId": "end_resistance_march",
+      "title": "칼 없는 반란",
+      "route": "resistance",
+      "category": "도주"
+    },
+    {
+      "endingId": "end_resistance_network",
+      "title": "창문마다 켜진 불",
+      "route": "resistance",
+      "category": "도주"
+    },
+    {
+      "endingId": "end_resistance_confess",
+      "title": "범죄를 기록한 활자",
+      "route": "resistance",
+      "category": "도주"
+    },
+    {
+      "endingId": "end_resistance_debate",
+      "title": "마왕을 팔던 가게",
+      "route": "resistance",
+      "category": "도주"
+    },
+    {
+      "endingId": "end_evidence_injunction",
+      "title": "빈칸이 된 직업",
+      "route": "evidence",
+      "category": "법"
+    },
+    {
+      "endingId": "end_evidence_archive",
+      "title": "열세 번째 쪽",
+      "route": "evidence",
+      "category": "법"
+    },
+    {
+      "endingId": "end_evidence_witness",
+      "title": "증인이 살던 집",
+      "route": "evidence",
+      "category": "법"
+    },
+    {
+      "endingId": "end_evidence_memory",
+      "title": "서류보다 오래 남은 목소리",
+      "route": "evidence",
+      "category": "법"
+    },
+    {
+      "endingId": "end_collective_fund",
+      "title": "삼천 명의 원고",
+      "route": "collective",
+      "category": "법"
+    },
+    {
+      "endingId": "end_collective_individual",
+      "title": "대표 원고의 마지막 날",
+      "route": "collective",
+      "category": "법"
+    },
+    {
+      "endingId": "end_collective_repeal",
+      "title": "법전을 고친 사람들",
+      "route": "collective",
+      "category": "법"
+    },
+    {
+      "endingId": "end_collective_imperfect",
+      "title": "반쪽짜리 승리",
+      "route": "collective",
+      "category": "법"
+    },
+    {
+      "endingId": "end_business_safety",
+      "title": "합격하지 않아도 되는 시험",
+      "route": "business",
+      "category": "돈"
+    },
+    {
+      "endingId": "end_business_standard",
+      "title": "마왕이 만든 안전 규정",
+      "route": "business",
+      "category": "돈"
+    },
+    {
+      "endingId": "end_business_theatre",
+      "title": "마지막 악역의 커튼콜",
+      "route": "business",
+      "category": "돈"
+    },
+    {
+      "endingId": "end_business_license",
+      "title": "허구를 팔 수 있는 권리",
+      "route": "business",
+      "category": "돈"
+    },
+    {
+      "endingId": "end_power_truth",
+      "title": "백이십만 금화의 진실",
+      "route": "power",
+      "category": "돈"
+    },
+    {
+      "endingId": "end_power_inquiry",
+      "title": "잘못 세어진 인생",
+      "route": "power",
+      "category": "돈"
+    },
+    {
+      "endingId": "end_power_democracy",
+      "title": "왕관 없는 회계장부",
+      "route": "power",
+      "category": "돈"
+    },
+    {
+      "endingId": "end_power_small",
+      "title": "왕국 최초의 예산 수업",
+      "route": "power",
+      "category": "돈"
+    },
+    {
+      "endingId": "end_rescue_patients",
+      "title": "용사가 열어둔 문",
+      "route": "rescue",
+      "category": "미나"
+    },
+    {
+      "endingId": "end_rescue_accord",
+      "title": "갑옷 밖의 약속",
+      "route": "rescue",
+      "category": "미나"
+    },
+    {
+      "endingId": "end_rescue_graduation",
+      "title": "누구나 배울 수 있는 용기",
+      "route": "rescue",
+      "category": "미나"
+    },
+    {
+      "endingId": "end_rescue_speech",
+      "title": "한 명도 빠뜨리지 않는 영웅",
+      "route": "rescue",
+      "category": "미나"
+    },
+    {
+      "endingId": "end_letters_together",
+      "title": "선택한 두 사람",
+      "route": "letters",
+      "category": "미나"
+    },
+    {
+      "endingId": "end_letters_partners",
+      "title": "두 개의 집, 한 개의 약속",
+      "route": "letters",
+      "category": "미나"
+    },
+    {
+      "endingId": "end_letters_unsent",
+      "title": "보내지 않은 마지막 편지",
+      "route": "letters",
+      "category": "미나"
+    },
+    {
+      "endingId": "end_letters_thanks",
+      "title": "대답 대신 남긴 인사",
+      "route": "letters",
+      "category": "미나"
+    }
+  ]
+}

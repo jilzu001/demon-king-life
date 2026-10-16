@@ -2,57 +2,195 @@
   "rules": [
     {
       "id": "v50-birth_registry_reused",
-      "nodeId": "birth",
-      "age": 0,
       "path": "assets/illustrations/event_cg_v50/birth_registry_reused.webp",
       "width": 960,
       "height": 720,
-      "label": "출생신고에서 부모가 검은 머리 아기를 안고 서기관에게 항의하는 장면"
+      "label": "출생신고에서 부모가 검은 머리 아기를 안고 서기관에게 항의하는 장면",
+      "origin": "reused-from-prior-chat",
+      "qualityNote": "동봉 독립 장면 일러스트",
+      "displayWidth": 960,
+      "nodeId": "birth",
+      "age": 0
     },
     {
       "id": "v50-hero_exam_reused",
-      "nodeId": "exam",
-      "age": 20,
       "path": "assets/illustrations/event_cg_v50/hero_exam_reused.webp",
       "width": 960,
       "height": 720,
-      "label": "20세 용사 시험장에서 남성 주인공과 은백색 머리의 미나가 마주한 장면"
+      "label": "20세 용사 시험장에서 남성 주인공과 은백색 머리의 미나가 마주한 장면",
+      "origin": "reused-from-prior-chat",
+      "qualityNote": "동봉 독립 장면 일러스트",
+      "displayWidth": 960,
+      "nodeId": "exam",
+      "age": 20
     },
     {
       "id": "v50-mina_royal_hall_reused",
-      "nodeId": "gate_mina",
-      "age": 21,
       "path": "assets/illustrations/event_cg_v50/mina_royal_hall_reused.webp",
       "width": 960,
       "height": 720,
-      "label": "검은 머리 남성과 은백색 머리 미나가 왕궁 문 앞에 함께 선 장면"
+      "label": "검은 머리 남성과 은백색 머리 미나가 왕궁 문 앞에 함께 선 장면",
+      "origin": "reused-from-prior-chat",
+      "qualityNote": "동봉 독립 장면 일러스트",
+      "displayWidth": 960,
+      "nodeId": "gate_mina",
+      "age": 21
     },
     {
-      "id": "v50-evidence_court_reused",
-      "nodeId": "route_evidence_final_a",
-      "age": 60,
+      "id": "v50-public_trial_reused",
       "path": "assets/illustrations/event_cg_v50/evidence_court_reused.webp",
       "width": 960,
       "height": 720,
-      "label": "노년 주인공이 판사에게 실제 증언과 문서를 제출하는 법정"
+      "label": "노년의 주인공이 재판장에게 기록과 증언을 제출하는 장면",
+      "origin": "reused-verified-existing",
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
+      "displayWidth": 960,
+      "nodeId": "route_evidence_final_a",
+      "age": 60
     },
     {
-      "id": "v50-rescue_offer_reused",
-      "nodeId": "route_rescue_final_a",
-      "age": 60,
+      "id": "v50-route_exile_opening",
+      "path": "assets/illustrations/event_cg_v50/border_inn_new.webp",
+      "width": 960,
+      "height": 720,
+      "label": "국경 여관에서 피난민 모녀를 위해 숙박 등록을 요청하는 검은 머리의 청년",
+      "origin": "generated-in-chat-pending-user-visual-approval",
+      "qualityNote": "동봉 독립 장면 일러스트",
+      "displayWidth": 960,
+      "nodeId": "route_exile_opening",
+      "age": 24
+    },
+    {
+      "id": "v50-route_resistance_middle_b",
+      "path": "assets/illustrations/event_cg_v50/false_wanted_printshop_new.webp",
+      "width": 960,
+      "height": 720,
+      "label": "거짓 수배 전단을 살펴보는 주인공과 죄책감을 느끼는 인쇄공",
+      "origin": "generated-in-chat-pending-user-visual-approval",
+      "qualityNote": "동봉 독립 장면 일러스트",
+      "displayWidth": 960,
+      "nodeId": "route_resistance_middle_b",
+      "age": 34
+    },
+    {
+      "id": "v50-route_evidence_opening",
+      "path": "assets/illustrations/event_cg_v50/scene_route_evidence_opening.webp",
+      "width": 768,
+      "height": 501,
+      "label": "은퇴를 앞둔 서기관과 주인공이 출생신고 문서를 확인하는 장면",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 265×173px; 인물 노화·세부 동작은 고해상도 재검수 대상",
+      "displayWidth": 265,
+      "nodeId": "route_evidence_opening",
+      "age": 25
+    },
+    {
+      "id": "v50-route_collective_opening",
+      "path": "assets/illustrations/event_cg_v50/scene_route_collective_opening.webp",
+      "width": 768,
+      "height": 621,
+      "label": "일흔세 명의 원고",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 214×173px; 인물 노화·세부 동작은 고해상도 재검수 대상",
+      "displayWidth": 214,
+      "nodeId": "route_collective_opening",
+      "age": 25
+    },
+    {
+      "id": "v50-route_business_opening",
+      "path": "assets/illustrations/event_cg_v50/scene_route_business_opening.webp",
+      "width": 768,
+      "height": 627,
+      "label": "예약제 토벌 체험장",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 212×173px; 인물 노화·세부 동작은 고해상도 재검수 대상",
+      "displayWidth": 212,
+      "nodeId": "route_business_opening",
+      "age": 25
+    },
+    {
+      "id": "v50-route_power_opening",
+      "path": "assets/illustrations/event_cg_v50/power_budget_preferred.webp",
+      "width": 960,
+      "height": 720,
+      "label": "주인공과 금발 에리시아가 왕실 예산의 숫자를 살피는 장면",
+      "origin": "reused-verified-existing",
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
+      "displayWidth": 960,
+      "nodeId": "route_power_opening",
+      "age": 25
+    },
+    {
+      "id": "v50-route_rescue_opening",
+      "path": "assets/illustrations/event_cg_v50/scene_route_rescue_opening.webp",
+      "width": 768,
+      "height": 480,
+      "label": "범람한 다리의 첫 구조",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 277×173px; 인물 노화·세부 동작은 고해상도 재검수 대상",
+      "displayWidth": 277,
+      "nodeId": "route_rescue_opening",
+      "age": 24
+    },
+    {
+      "id": "v50-route_letters_opening",
+      "path": "assets/illustrations/event_cg_v50/scene_route_letters_opening.webp",
+      "width": 768,
+      "height": 418,
+      "label": "답을 재촉하지 않는 편지",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 263×143px; 인물 노화·세부 동작은 고해상도 재검수 대상",
+      "displayWidth": 263,
+      "nodeId": "route_letters_opening",
+      "age": 24
+    },
+    {
+      "id": "v50-route_exile_final_b",
+      "path": "assets/illustrations/event_cg_v50/scene_route_exile_final_b.webp",
+      "width": 768,
+      "height": 376,
+      "label": "폐교 명령 앞의 교실",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 292×143px; 인물 노화·세부 동작은 고해상도 재검수 대상",
+      "displayWidth": 292,
+      "nodeId": "route_exile_final_b",
+      "age": 60
+    },
+    {
+      "id": "v50-route_collective_final_b",
+      "path": "assets/illustrations/event_cg_v50/scene_route_collective_final_b.webp",
+      "width": 768,
+      "height": 336,
+      "label": "예외 조항을 두고 다투는 의원들",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "qualityNote": "저해상도 합본 크롭 대체본 · 원래 327×143px; 인물 노화·세부 동작은 고해상도 재검수 대상",
+      "displayWidth": 327,
+      "nodeId": "route_collective_final_b",
+      "age": 62
+    },
+    {
+      "id": "v50-route_rescue_final_a",
       "path": "assets/illustrations/event_cg_v50/rescue_offer_reused.webp",
       "width": 960,
       "height": 720,
-      "label": "장년의 은발 미나와 주인공이 구호소의 지원 조건을 논의하는 장면"
+      "label": "구호소 운영권 협의",
+      "origin": "reused-verified-existing",
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
+      "displayWidth": 960,
+      "nodeId": "route_rescue_final_a",
+      "age": 60
     },
     {
-      "id": "v50-letters_reflection_reused",
-      "nodeId": "route_letters_final_a",
-      "age": 59,
+      "id": "v50-route_letters_final_a",
       "path": "assets/illustrations/event_cg_v50/letters_reflection_reused.webp",
       "width": 960,
       "height": 720,
-      "label": "노년의 주인공과 은발 미나가 서로의 삶과 관계를 이야기하는 장면"
+      "label": "오래 기다린 선택, 두 개의 자리",
+      "origin": "reused-verified-existing",
+      "qualityNote": "검수한 기존 독립 일러스트 재사용",
+      "displayWidth": 960,
+      "nodeId": "route_letters_final_a",
+      "age": 59
     }
   ]
 }

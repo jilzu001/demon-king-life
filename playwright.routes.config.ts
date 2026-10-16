@@ -1,6 +1,6 @@
 import { defineConfig } from '@playwright/test';
 
-// 같은 실제20개 플레이 검사를 로컬 빌드/공개 배포 URL에 실행한다.
+// 같은 현재 판 실제 플레이 검사를 로컬 빌드/공개 배포 URL에 실행한다.
 if (!process.env.ROUTES_BASE_URL) throw new Error('ROUTES_BASE_URL에 검증할 게임 주소가 필요합니다.');
 export default defineConfig({
   testDir: 'tests/e2e', testMatch: process.env.ROUTES_TREE_ONLY ? /tree-compact\.spec\.ts/ : /(?:freedom-compact|tree-compact)\.spec\.ts/,

@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "v50-birth_registry_reused",
+      "nodeId": "birth",
+      "age": 0,
+      "artPath": "assets/illustrations/event_cg_v50/birth_registry_reused.webp",
+      "width": 960,
+      "height": 720,
+      "alt": "출생신고에서 부모가 검은 머리 아기를 안고 서기관에게 항의하는 장면",
+      "origin": "reused-from-prior-chat",
+      "originalSource": "아기_등록을_둘러싼_왕국의_소동.png",
+      "bytes": 84720
+    },
+    {
+      "id": "v50-hero_exam_reused",
+      "nodeId": "exam",
+      "age": 20,
+      "artPath": "assets/illustrations/event_cg_v50/hero_exam_reused.webp",
+      "width": 960,
+      "height": 720,
+      "alt": "20세 용사 시험장에서 남성 주인공과 은백색 머리의 미나가 마주한 장면",
+      "origin": "reused-from-prior-chat",
+      "originalSource": "대성당의_기사_시험_대치씬.png",
+      "bytes": 93950
+    },
+    {
+      "id": "v50-mina_royal_hall_reused",
+      "nodeId": "gate_mina",
+      "age": 21,
+      "artPath": "assets/illustrations/event_cg_v50/mina_royal_hall_reused.webp",
+      "width": 960,
+      "height": 720,
+      "alt": "검은 머리 남성과 은백색 머리 미나가 왕궁 문 앞에 함께 선 장면",
+      "origin": "reused-from-prior-chat",
+      "originalSource": "왕궁에_입장하는_은빛_기사와_동행자.png",
+      "bytes": 73794
+    },
+    {
+      "id": "v50-public_trial_reused",
+      "nodeId": "route_evidence_final_a",
+      "age": 60,
+      "artPath": "assets/illustrations/event_cg_v50/public_trial_reused.webp",
+      "width": 960,
+      "height": 540,
+      "alt": "왕국의 공개 법정에서 검은 머리 주인공이 서류를 내밀며 진실을 주장하는 장면",
+      "origin": "reused-from-prior-chat",
+      "originalSource": "성당_법정의_격렬한_선언.png",
+      "bytes": 61234
+    },
+    {
+      "id": "v50-route_exile_opening",
+      "nodeId": "route_exile_opening",
+      "artPath": "assets/illustrations/event_cg_v50/border_inn_new.webp",
+      "width": 960,
+      "height": 720,
+      "alt": "국경 여관에서 피난민 모녀를 위해 숙박 등록을 요청하는 검은 머리의 청년",
+      "origin": "generated-in-chat-pending-user-visual-approval",
+      "originalSource": "눈_내리는_밤의_여관_등록대.png",
+      "bytes": 77330
+    },
+    {
+      "id": "v50-route_resistance_middle_b",
+      "nodeId": "route_resistance_middle_b",
+      "artPath": "assets/illustrations/event_cg_v50/false_wanted_printshop_new.webp",
+      "width": 960,
+      "height": 720,
+      "alt": "거짓 수배 전단을 살펴보는 주인공과 죄책감을 느끼는 인쇄공",
+      "origin": "generated-in-chat-pending-user-visual-approval",
+      "originalSource": "황혼의_인쇄소와_수상한_전단지.png",
+      "bytes": 105184
+    },
+    {
+      "id": "v50-route_evidence_opening",
+      "nodeId": "route_evidence_opening",
+      "age": 25,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_evidence_opening.webp",
+      "width": 768,
+      "height": 501,
+      "alt": "서기관과 세렌이 지키는 봉인 서류",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        270,
+        25,
+        535,
+        198
+      ],
+      "sourceCropResolution": {
+        "width": 265,
+        "height": 173
+      },
+      "bytes": 35902,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_collective_opening",
+      "nodeId": "route_collective_opening",
+      "age": 25,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_collective_opening.webp",
+      "width": 768,
+      "height": 621,
+      "alt": "일흔세 명의 원고",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        543,
+        25,
+        757,
+        198
+      ],
+      "sourceCropResolution": {
+        "width": 214,
+        "height": 173
+      },
+      "bytes": 45222,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_business_opening",
+      "nodeId": "route_business_opening",
+      "age": 25,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_business_opening.webp",
+      "width": 768,
+      "height": 627,
+      "alt": "예약제 토벌 체험장",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        764,
+        25,
+        976,
+        198
+      ],
+      "sourceCropResolution": {
+        "width": 212,
+        "height": 173
+      },
+      "bytes": 51946,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_power_opening",
+      "nodeId": "route_power_opening",
+      "age": 25,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_power_opening.webp",
+      "width": 768,
+      "height": 507,
+      "alt": "세렌의 첫 예산 감사",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        983,
+        25,
+        1245,
+        198
+      ],
+      "sourceCropResolution": {
+        "width": 262,
+        "height": 173
+      },
+      "bytes": 43330,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_rescue_opening",
+      "nodeId": "route_rescue_opening",
+      "age": 24,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_rescue_opening.webp",
+      "width": 768,
+      "height": 480,
+      "alt": "범람한 다리의 첫 구조",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        1253,
+        25,
+        1530,
+        198
+      ],
+      "sourceCropResolution": {
+        "width": 277,
+        "height": 173
+      },
+      "bytes": 47290,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_letters_opening",
+      "nodeId": "route_letters_opening",
+      "age": 24,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_letters_opening.webp",
+      "width": 768,
+      "height": 418,
+      "alt": "답을 재촉하지 않는 편지",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        8,
+        252,
+        271,
+        395
+      ],
+      "sourceCropResolution": {
+        "width": 263,
+        "height": 143
+      },
+      "bytes": 32706,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_exile_final_b",
+      "nodeId": "route_exile_final_b",
+      "age": 60,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_exile_final_b.webp",
+      "width": 768,
+      "height": 376,
+      "alt": "폐교 명령 앞의 교실",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        280,
+        252,
+        572,
+        395
+      ],
+      "sourceCropResolution": {
+        "width": 292,
+        "height": 143
+      },
+      "bytes": 32766,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_collective_final_b",
+      "nodeId": "route_collective_final_b",
+      "age": 62,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_collective_final_b.webp",
+      "width": 768,
+      "height": 336,
+      "alt": "예외 조항을 두고 다투는 의원들",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        582,
+        252,
+        909,
+        395
+      ],
+      "sourceCropResolution": {
+        "width": 327,
+        "height": 143
+      },
+      "bytes": 35114,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_rescue_final_a",
+      "nodeId": "route_rescue_final_a",
+      "age": 60,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_rescue_final_a.webp",
+      "width": 768,
+      "height": 383,
+      "alt": "구호소 운영권 협의",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        917,
+        252,
+        1204,
+        395
+      ],
+      "sourceCropResolution": {
+        "width": 287,
+        "height": 143
+      },
+      "bytes": 37954,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    },
+    {
+      "id": "v50-route_letters_final_a",
+      "nodeId": "route_letters_final_a",
+      "age": 59,
+      "artPath": "assets/illustrations/event_cg_v50/scene_route_letters_final_a.webp",
+      "width": 768,
+      "height": 344,
+      "alt": "오래 기다린 선택, 두 개의 자리",
+      "origin": "cropped-generated-contact-sheet-low-resolution",
+      "originalSource": "a_large_composite_grid_image_like_a_gallery_sheet.png",
+      "sourceCrop": [
+        1210,
+        252,
+        1529,
+        395
+      ],
+      "sourceCropResolution": {
+        "width": 319,
+        "height": 143
+      },
+      "bytes": 37116,
+      "qualityNote": "저해상도 합본 크롭 확대본; 원본 단독 CG와 화질 동등하지 않음"
+    }
+  ],
+  "note": "12개 신규 사건 CG 모두 있음(단독 2, 합본 크롭 10); 기존 재사용 4개. 추가 엔딩 CG 32개는 모두 저해상도 합본 크롭 대체본. 단독 고해상도 그림으로 오인하지 말 것."
+}
