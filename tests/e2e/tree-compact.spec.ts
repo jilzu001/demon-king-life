@@ -14,7 +14,13 @@ test('트리 기본 잠금/카메라 드래그·휠·미니맵/노드 고정/원
   await open(page, true); const state = await snapshot(page), positions = await fixed(page);
   const tree = page.locator('.ending-tree-dialog'), view = page.locator('.tree-viewport');
   await expect(tree.locator('[data-tree-type="ending"]')).toHaveCount(32); await expect(tree.locator('img')).toHaveCount(0);
-  for (const ending of endings) expect(await tree.innerText()).not.toContain(ending.title);
+  // 사건/선택 문구와 엔딩 제목이 같을 수 있다. 잠금은 엔딩 노드와 목표 목록에서 검사한다.
+  const locked = await tree.locator('[data-tree-type="ending"]').allTextContents();
+  const targets = await page.getByLabel('목표 엔딩', { exact: true }).innerText();
+  for (const ending of endings) {
+    expect(locked.every(label => !label.includes(ending.title))).toBe(true);
+    expect(targets).not.toContain(ending.title);
+  }
   const box = (await view.boundingBox())!, point = { x: box.x + 30, y: box.y + 25 };
   const initial = await view.getAttribute('data-camera-x');
   await page.mouse.move(point.x, point.y); await page.mouse.down(); await page.mouse.move(point.x + 70, point.y + 40, { steps: 8 }); await page.mouse.up();
