@@ -6,10 +6,10 @@ import { ensure, type HistoryEntry } from '../src/engine/types';
 import generated from '../src/content/generated/ending-tree.json';
 
 const story = await readExampleStory('demon-king-compact');
-const paths = JSON.parse(readFileSync('docs/v4.5/actual-ending-paths.json', 'utf8')) as {
+const paths = JSON.parse(readFileSync(story.manifest.version === '5.0.0' ? 'docs/v5.0/actual-ending-paths.json' : 'docs/v4.5/actual-ending-paths.json', 'utf8')) as {
   endingId: string; choices: string[]; age: number; history: HistoryEntry[];
 }[];
-ensure(paths.length === 20 && Object.keys(generated.routes).length === 20, '트리의 엔딩 경로 수가 다릅니다.');
+ensure(paths.length === Object.keys(story.endings).length && Object.keys(generated.routes).length === paths.length, '트리의 엔딩 경로 수가 다릅니다.');
 ensure(generated.storyVersion === story.manifest.version, '트리/실행 스토리 버전 불일치');
 const covered = new Set<string>();
 for (const path of paths) {
@@ -43,4 +43,4 @@ for (const scene of Object.values(story.nodes)) for (const choice of scene.choic
   ensure(targets.length > 0 && targets.every(to => generated.edges.some(edge => edge.from === node.id && edge.to === to)), '전체 목적지 연결 누락');
 }
 ensure(steps.length === expected && generated.sceneCount === Object.keys(story.nodes).length, '전체 사건/결과 수 불일치');
-console.log(`전체 분기 트리20검증경로/${generated.nodes.length}노드: 실제 조건·판정·중간 저장·20엔딩 재현 통과`);
+console.log(`전체 분기 트리${paths.length}검증경로/${generated.nodes.length}노드: 실제 조건·판정·중간 저장·${paths.length}엔딩 재현 통과`);

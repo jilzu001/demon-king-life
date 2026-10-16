@@ -11,7 +11,7 @@ import { routeYears } from '../../src/content/route-years';
 import { lifeEvents } from '../../src/ui/history';
 
 const read = (path: string) => JSON.parse(readFileSync(path, 'utf8'));
-const story = await readExampleStory('demon-king-compact');
+const story = await readExampleStory('demon-king-v48-archive');
 const old = await loadStory(async path => read(`backups/before-v4.4/${path}`));
 const paths = read('docs/v4.5/actual-ending-paths.json') as { endingId: string; choices: string[] }[];
 

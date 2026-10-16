@@ -1,0 +1,2594 @@
+[
+  {
+    "endingId": "end_business_license",
+    "title": "허구를 팔 수 있는 권리",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_fee",
+      "gate_to_business",
+      "route_business_open_3",
+      "route_business_middle_b_1",
+      "route_business_final_b_2"
+    ],
+    "age": 63,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_fee",
+        "outcomeId": "out_exam_fee",
+        "toKind": "node",
+        "toId": "gate_money"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_money",
+        "choiceId": "gate_to_business",
+        "outcomeId": "out_gate_to_business",
+        "toKind": "node",
+        "toId": "route_business_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_business_opening",
+        "choiceId": "route_business_open_3",
+        "outcomeId": "out_route_business_open_3",
+        "toKind": "node",
+        "toId": "route_business_middle_b"
+      },
+      {
+        "age": 37,
+        "nodeId": "route_business_middle_b",
+        "choiceId": "route_business_middle_b_1",
+        "outcomeId": "out_route_business_middle_b_1",
+        "toKind": "node",
+        "toId": "route_business_final_b"
+      },
+      {
+        "age": 63,
+        "nodeId": "route_business_final_b",
+        "choiceId": "route_business_final_b_2",
+        "outcomeId": "out_route_business_final_b_2",
+        "toKind": "ending",
+        "toId": "end_business_license"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_money",
+      "route_business_opening",
+      "route_business_middle_b",
+      "route_business_final_b"
+    ]
+  },
+  {
+    "endingId": "end_business_safety",
+    "title": "합격하지 않아도 되는 시험",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_fee",
+      "gate_to_business",
+      "route_business_open_1",
+      "route_business_middle_a_1",
+      "route_business_final_a_1"
+    ],
+    "age": 62,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_fee",
+        "outcomeId": "out_exam_fee",
+        "toKind": "node",
+        "toId": "gate_money"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_money",
+        "choiceId": "gate_to_business",
+        "outcomeId": "out_gate_to_business",
+        "toKind": "node",
+        "toId": "route_business_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_business_opening",
+        "choiceId": "route_business_open_1",
+        "outcomeId": "out_route_business_open_1",
+        "toKind": "node",
+        "toId": "route_business_middle_a"
+      },
+      {
+        "age": 36,
+        "nodeId": "route_business_middle_a",
+        "choiceId": "route_business_middle_a_1",
+        "outcomeId": "out_route_business_middle_a_1",
+        "toKind": "node",
+        "toId": "route_business_final_a"
+      },
+      {
+        "age": 62,
+        "nodeId": "route_business_final_a",
+        "choiceId": "route_business_final_a_1",
+        "outcomeId": "out_route_business_final_a_1",
+        "toKind": "ending",
+        "toId": "end_business_safety"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_money",
+      "route_business_opening",
+      "route_business_middle_a",
+      "route_business_final_a"
+    ]
+  },
+  {
+    "endingId": "end_business_standard",
+    "title": "마왕이 만든 안전 규정",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_fee",
+      "gate_to_business",
+      "route_business_open_1",
+      "route_business_middle_a_1",
+      "route_business_final_a_2"
+    ],
+    "age": 62,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_fee",
+        "outcomeId": "out_exam_fee",
+        "toKind": "node",
+        "toId": "gate_money"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_money",
+        "choiceId": "gate_to_business",
+        "outcomeId": "out_gate_to_business",
+        "toKind": "node",
+        "toId": "route_business_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_business_opening",
+        "choiceId": "route_business_open_1",
+        "outcomeId": "out_route_business_open_1",
+        "toKind": "node",
+        "toId": "route_business_middle_a"
+      },
+      {
+        "age": 36,
+        "nodeId": "route_business_middle_a",
+        "choiceId": "route_business_middle_a_1",
+        "outcomeId": "out_route_business_middle_a_1",
+        "toKind": "node",
+        "toId": "route_business_final_a"
+      },
+      {
+        "age": 62,
+        "nodeId": "route_business_final_a",
+        "choiceId": "route_business_final_a_2",
+        "outcomeId": "out_route_business_final_a_2",
+        "toKind": "ending",
+        "toId": "end_business_standard"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_money",
+      "route_business_opening",
+      "route_business_middle_a",
+      "route_business_final_a"
+    ]
+  },
+  {
+    "endingId": "end_business_theatre",
+    "title": "마지막 악역의 커튼콜",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_fee",
+      "gate_to_business",
+      "route_business_open_3",
+      "route_business_middle_b_1",
+      "route_business_final_b_1"
+    ],
+    "age": 63,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_fee",
+        "outcomeId": "out_exam_fee",
+        "toKind": "node",
+        "toId": "gate_money"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_money",
+        "choiceId": "gate_to_business",
+        "outcomeId": "out_gate_to_business",
+        "toKind": "node",
+        "toId": "route_business_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_business_opening",
+        "choiceId": "route_business_open_3",
+        "outcomeId": "out_route_business_open_3",
+        "toKind": "node",
+        "toId": "route_business_middle_b"
+      },
+      {
+        "age": 37,
+        "nodeId": "route_business_middle_b",
+        "choiceId": "route_business_middle_b_1",
+        "outcomeId": "out_route_business_middle_b_1",
+        "toKind": "node",
+        "toId": "route_business_final_b"
+      },
+      {
+        "age": 63,
+        "nodeId": "route_business_final_b",
+        "choiceId": "route_business_final_b_1",
+        "outcomeId": "out_route_business_final_b_1",
+        "toKind": "ending",
+        "toId": "end_business_theatre"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_money",
+      "route_business_opening",
+      "route_business_middle_b",
+      "route_business_final_b"
+    ]
+  },
+  {
+    "endingId": "end_collective_fund",
+    "title": "삼천 명의 원고",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_object",
+      "gate_to_collective",
+      "route_collective_open_1",
+      "route_collective_middle_a_1",
+      "route_collective_final_a_1"
+    ],
+    "age": 61,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_object",
+        "outcomeId": "out_exam_object",
+        "toKind": "node",
+        "toId": "gate_reform"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_reform",
+        "choiceId": "gate_to_collective",
+        "outcomeId": "out_gate_to_collective",
+        "toKind": "node",
+        "toId": "route_collective_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_collective_opening",
+        "choiceId": "route_collective_open_1",
+        "outcomeId": "out_route_collective_open_1",
+        "toKind": "node",
+        "toId": "route_collective_middle_a"
+      },
+      {
+        "age": 39,
+        "nodeId": "route_collective_middle_a",
+        "choiceId": "route_collective_middle_a_1",
+        "outcomeId": "out_route_collective_middle_a_1",
+        "toKind": "node",
+        "toId": "route_collective_final_a"
+      },
+      {
+        "age": 61,
+        "nodeId": "route_collective_final_a",
+        "choiceId": "route_collective_final_a_1",
+        "outcomeId": "out_route_collective_final_a_1",
+        "toKind": "ending",
+        "toId": "end_collective_fund"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_reform",
+      "route_collective_opening",
+      "route_collective_middle_a",
+      "route_collective_final_a"
+    ]
+  },
+  {
+    "endingId": "end_collective_imperfect",
+    "title": "반쪽짜리 승리",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_object",
+      "gate_to_collective",
+      "route_collective_open_3",
+      "route_collective_middle_b_1",
+      "route_collective_final_b_2"
+    ],
+    "age": 62,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_object",
+        "outcomeId": "out_exam_object",
+        "toKind": "node",
+        "toId": "gate_reform"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_reform",
+        "choiceId": "gate_to_collective",
+        "outcomeId": "out_gate_to_collective",
+        "toKind": "node",
+        "toId": "route_collective_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_collective_opening",
+        "choiceId": "route_collective_open_3",
+        "outcomeId": "out_route_collective_open_3",
+        "toKind": "node",
+        "toId": "route_collective_middle_b"
+      },
+      {
+        "age": 40,
+        "nodeId": "route_collective_middle_b",
+        "choiceId": "route_collective_middle_b_1",
+        "outcomeId": "out_route_collective_middle_b_1",
+        "toKind": "node",
+        "toId": "route_collective_final_b"
+      },
+      {
+        "age": 62,
+        "nodeId": "route_collective_final_b",
+        "choiceId": "route_collective_final_b_2",
+        "outcomeId": "out_route_collective_final_b_2",
+        "toKind": "ending",
+        "toId": "end_collective_imperfect"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_reform",
+      "route_collective_opening",
+      "route_collective_middle_b",
+      "route_collective_final_b"
+    ]
+  },
+  {
+    "endingId": "end_collective_individual",
+    "title": "대표 원고의 마지막 날",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_object",
+      "gate_to_collective",
+      "route_collective_open_1",
+      "route_collective_middle_a_1",
+      "route_collective_final_a_2"
+    ],
+    "age": 61,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_object",
+        "outcomeId": "out_exam_object",
+        "toKind": "node",
+        "toId": "gate_reform"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_reform",
+        "choiceId": "gate_to_collective",
+        "outcomeId": "out_gate_to_collective",
+        "toKind": "node",
+        "toId": "route_collective_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_collective_opening",
+        "choiceId": "route_collective_open_1",
+        "outcomeId": "out_route_collective_open_1",
+        "toKind": "node",
+        "toId": "route_collective_middle_a"
+      },
+      {
+        "age": 39,
+        "nodeId": "route_collective_middle_a",
+        "choiceId": "route_collective_middle_a_1",
+        "outcomeId": "out_route_collective_middle_a_1",
+        "toKind": "node",
+        "toId": "route_collective_final_a"
+      },
+      {
+        "age": 61,
+        "nodeId": "route_collective_final_a",
+        "choiceId": "route_collective_final_a_2",
+        "outcomeId": "out_route_collective_final_a_2",
+        "toKind": "ending",
+        "toId": "end_collective_individual"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_reform",
+      "route_collective_opening",
+      "route_collective_middle_a",
+      "route_collective_final_a"
+    ]
+  },
+  {
+    "endingId": "end_collective_repeal",
+    "title": "법전을 고친 사람들",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_object",
+      "gate_to_collective",
+      "route_collective_open_3",
+      "route_collective_middle_b_1",
+      "route_collective_final_b_1"
+    ],
+    "age": 62,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_object",
+        "outcomeId": "out_exam_object",
+        "toKind": "node",
+        "toId": "gate_reform"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_reform",
+        "choiceId": "gate_to_collective",
+        "outcomeId": "out_gate_to_collective",
+        "toKind": "node",
+        "toId": "route_collective_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_collective_opening",
+        "choiceId": "route_collective_open_3",
+        "outcomeId": "out_route_collective_open_3",
+        "toKind": "node",
+        "toId": "route_collective_middle_b"
+      },
+      {
+        "age": 40,
+        "nodeId": "route_collective_middle_b",
+        "choiceId": "route_collective_middle_b_1",
+        "outcomeId": "out_route_collective_middle_b_1",
+        "toKind": "node",
+        "toId": "route_collective_final_b"
+      },
+      {
+        "age": 62,
+        "nodeId": "route_collective_final_b",
+        "choiceId": "route_collective_final_b_1",
+        "outcomeId": "out_route_collective_final_b_1",
+        "toKind": "ending",
+        "toId": "end_collective_repeal"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_reform",
+      "route_collective_opening",
+      "route_collective_middle_b",
+      "route_collective_final_b"
+    ]
+  },
+  {
+    "endingId": "end_evidence_archive",
+    "title": "열세 번째 쪽",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_object",
+      "gate_to_evidence",
+      "route_evidence_open_1",
+      "route_evidence_middle_a_1",
+      "route_evidence_final_a_2"
+    ],
+    "age": 60,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_object",
+        "outcomeId": "out_exam_object",
+        "toKind": "node",
+        "toId": "gate_reform"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_reform",
+        "choiceId": "gate_to_evidence",
+        "outcomeId": "out_gate_to_evidence",
+        "toKind": "node",
+        "toId": "route_evidence_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_evidence_opening",
+        "choiceId": "route_evidence_open_1",
+        "outcomeId": "out_route_evidence_open_1",
+        "toKind": "node",
+        "toId": "route_evidence_middle_a"
+      },
+      {
+        "age": 38,
+        "nodeId": "route_evidence_middle_a",
+        "choiceId": "route_evidence_middle_a_1",
+        "outcomeId": "out_route_evidence_middle_a_1",
+        "toKind": "node",
+        "toId": "route_evidence_final_a"
+      },
+      {
+        "age": 60,
+        "nodeId": "route_evidence_final_a",
+        "choiceId": "route_evidence_final_a_2",
+        "outcomeId": "out_route_evidence_final_a_2",
+        "toKind": "ending",
+        "toId": "end_evidence_archive"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_reform",
+      "route_evidence_opening",
+      "route_evidence_middle_a",
+      "route_evidence_final_a"
+    ]
+  },
+  {
+    "endingId": "end_evidence_injunction",
+    "title": "빈칸이 된 직업",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_object",
+      "gate_to_evidence",
+      "route_evidence_open_1",
+      "route_evidence_middle_a_1",
+      "route_evidence_final_a_1"
+    ],
+    "age": 60,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_object",
+        "outcomeId": "out_exam_object",
+        "toKind": "node",
+        "toId": "gate_reform"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_reform",
+        "choiceId": "gate_to_evidence",
+        "outcomeId": "out_gate_to_evidence",
+        "toKind": "node",
+        "toId": "route_evidence_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_evidence_opening",
+        "choiceId": "route_evidence_open_1",
+        "outcomeId": "out_route_evidence_open_1",
+        "toKind": "node",
+        "toId": "route_evidence_middle_a"
+      },
+      {
+        "age": 38,
+        "nodeId": "route_evidence_middle_a",
+        "choiceId": "route_evidence_middle_a_1",
+        "outcomeId": "out_route_evidence_middle_a_1",
+        "toKind": "node",
+        "toId": "route_evidence_final_a"
+      },
+      {
+        "age": 60,
+        "nodeId": "route_evidence_final_a",
+        "choiceId": "route_evidence_final_a_1",
+        "outcomeId": "out_route_evidence_final_a_1",
+        "toKind": "ending",
+        "toId": "end_evidence_injunction"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_reform",
+      "route_evidence_opening",
+      "route_evidence_middle_a",
+      "route_evidence_final_a"
+    ]
+  },
+  {
+    "endingId": "end_evidence_memory",
+    "title": "서류보다 오래 남은 목소리",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_object",
+      "gate_to_evidence",
+      "route_evidence_open_3",
+      "route_evidence_middle_b_1",
+      "route_evidence_final_b_2"
+    ],
+    "age": 59,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_object",
+        "outcomeId": "out_exam_object",
+        "toKind": "node",
+        "toId": "gate_reform"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_reform",
+        "choiceId": "gate_to_evidence",
+        "outcomeId": "out_gate_to_evidence",
+        "toKind": "node",
+        "toId": "route_evidence_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_evidence_opening",
+        "choiceId": "route_evidence_open_3",
+        "outcomeId": "out_route_evidence_open_3",
+        "toKind": "node",
+        "toId": "route_evidence_middle_b"
+      },
+      {
+        "age": 37,
+        "nodeId": "route_evidence_middle_b",
+        "choiceId": "route_evidence_middle_b_1",
+        "outcomeId": "out_route_evidence_middle_b_1",
+        "toKind": "node",
+        "toId": "route_evidence_final_b"
+      },
+      {
+        "age": 59,
+        "nodeId": "route_evidence_final_b",
+        "choiceId": "route_evidence_final_b_2",
+        "outcomeId": "out_route_evidence_final_b_2",
+        "toKind": "ending",
+        "toId": "end_evidence_memory"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_reform",
+      "route_evidence_opening",
+      "route_evidence_middle_b",
+      "route_evidence_final_b"
+    ]
+  },
+  {
+    "endingId": "end_evidence_witness",
+    "title": "증인이 살던 집",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_object",
+      "gate_to_evidence",
+      "route_evidence_open_3",
+      "route_evidence_middle_b_1",
+      "route_evidence_final_b_1"
+    ],
+    "age": 59,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_object",
+        "outcomeId": "out_exam_object",
+        "toKind": "node",
+        "toId": "gate_reform"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_reform",
+        "choiceId": "gate_to_evidence",
+        "outcomeId": "out_gate_to_evidence",
+        "toKind": "node",
+        "toId": "route_evidence_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_evidence_opening",
+        "choiceId": "route_evidence_open_3",
+        "outcomeId": "out_route_evidence_open_3",
+        "toKind": "node",
+        "toId": "route_evidence_middle_b"
+      },
+      {
+        "age": 37,
+        "nodeId": "route_evidence_middle_b",
+        "choiceId": "route_evidence_middle_b_1",
+        "outcomeId": "out_route_evidence_middle_b_1",
+        "toKind": "node",
+        "toId": "route_evidence_final_b"
+      },
+      {
+        "age": 59,
+        "nodeId": "route_evidence_final_b",
+        "choiceId": "route_evidence_final_b_1",
+        "outcomeId": "out_route_evidence_final_b_1",
+        "toKind": "ending",
+        "toId": "end_evidence_witness"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_reform",
+      "route_evidence_opening",
+      "route_evidence_middle_b",
+      "route_evidence_final_b"
+    ]
+  },
+  {
+    "endingId": "end_exile_class",
+    "title": "칠판 밖의 나라",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_flee",
+      "gate_to_exile",
+      "route_exile_open_3",
+      "route_exile_middle_b_1",
+      "route_exile_final_b_1"
+    ],
+    "age": 60,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_flee",
+        "outcomeId": "out_exam_flee",
+        "toKind": "node",
+        "toId": "gate_fugitive"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_fugitive",
+        "choiceId": "gate_to_exile",
+        "outcomeId": "out_gate_to_exile",
+        "toKind": "node",
+        "toId": "route_exile_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_exile_opening",
+        "choiceId": "route_exile_open_3",
+        "outcomeId": "out_route_exile_open_3",
+        "toKind": "node",
+        "toId": "route_exile_middle_b"
+      },
+      {
+        "age": 34,
+        "nodeId": "route_exile_middle_b",
+        "choiceId": "route_exile_middle_b_1",
+        "outcomeId": "out_route_exile_middle_b_1",
+        "toKind": "node",
+        "toId": "route_exile_final_b"
+      },
+      {
+        "age": 60,
+        "nodeId": "route_exile_final_b",
+        "choiceId": "route_exile_final_b_1",
+        "outcomeId": "out_route_exile_final_b_1",
+        "toKind": "ending",
+        "toId": "end_exile_class"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_fugitive",
+      "route_exile_opening",
+      "route_exile_middle_b",
+      "route_exile_final_b"
+    ]
+  },
+  {
+    "endingId": "end_exile_diaspora",
+    "title": "이름 없는 졸업식",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_flee",
+      "gate_to_exile",
+      "route_exile_open_3",
+      "route_exile_middle_b_1",
+      "route_exile_final_b_2"
+    ],
+    "age": 60,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_flee",
+        "outcomeId": "out_exam_flee",
+        "toKind": "node",
+        "toId": "gate_fugitive"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_fugitive",
+        "choiceId": "gate_to_exile",
+        "outcomeId": "out_gate_to_exile",
+        "toKind": "node",
+        "toId": "route_exile_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_exile_opening",
+        "choiceId": "route_exile_open_3",
+        "outcomeId": "out_route_exile_open_3",
+        "toKind": "node",
+        "toId": "route_exile_middle_b"
+      },
+      {
+        "age": 34,
+        "nodeId": "route_exile_middle_b",
+        "choiceId": "route_exile_middle_b_1",
+        "outcomeId": "out_route_exile_middle_b_1",
+        "toKind": "node",
+        "toId": "route_exile_final_b"
+      },
+      {
+        "age": 60,
+        "nodeId": "route_exile_final_b",
+        "choiceId": "route_exile_final_b_2",
+        "outcomeId": "out_route_exile_final_b_2",
+        "toKind": "ending",
+        "toId": "end_exile_diaspora"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_fugitive",
+      "route_exile_opening",
+      "route_exile_middle_b",
+      "route_exile_final_b"
+    ]
+  },
+  {
+    "endingId": "end_exile_map",
+    "title": "지도 끝에 그은 이름",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_flee",
+      "gate_to_exile",
+      "route_exile_open_1",
+      "route_exile_middle_a_1",
+      "route_exile_final_a_1"
+    ],
+    "age": 58,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_flee",
+        "outcomeId": "out_exam_flee",
+        "toKind": "node",
+        "toId": "gate_fugitive"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_fugitive",
+        "choiceId": "gate_to_exile",
+        "outcomeId": "out_gate_to_exile",
+        "toKind": "node",
+        "toId": "route_exile_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_exile_opening",
+        "choiceId": "route_exile_open_1",
+        "outcomeId": "out_route_exile_open_1",
+        "toKind": "node",
+        "toId": "route_exile_middle_a"
+      },
+      {
+        "age": 33,
+        "nodeId": "route_exile_middle_a",
+        "choiceId": "route_exile_middle_a_1",
+        "outcomeId": "out_route_exile_middle_a_1",
+        "toKind": "node",
+        "toId": "route_exile_final_a"
+      },
+      {
+        "age": 58,
+        "nodeId": "route_exile_final_a",
+        "choiceId": "route_exile_final_a_1",
+        "outcomeId": "out_route_exile_final_a_1",
+        "toKind": "ending",
+        "toId": "end_exile_map"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_fugitive",
+      "route_exile_opening",
+      "route_exile_middle_a",
+      "route_exile_final_a"
+    ]
+  },
+  {
+    "endingId": "end_exile_treaty",
+    "title": "협정문의 공백",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_flee",
+      "gate_to_exile",
+      "route_exile_open_1",
+      "route_exile_middle_a_1",
+      "route_exile_final_a_2"
+    ],
+    "age": 58,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_flee",
+        "outcomeId": "out_exam_flee",
+        "toKind": "node",
+        "toId": "gate_fugitive"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_fugitive",
+        "choiceId": "gate_to_exile",
+        "outcomeId": "out_gate_to_exile",
+        "toKind": "node",
+        "toId": "route_exile_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_exile_opening",
+        "choiceId": "route_exile_open_1",
+        "outcomeId": "out_route_exile_open_1",
+        "toKind": "node",
+        "toId": "route_exile_middle_a"
+      },
+      {
+        "age": 33,
+        "nodeId": "route_exile_middle_a",
+        "choiceId": "route_exile_middle_a_1",
+        "outcomeId": "out_route_exile_middle_a_1",
+        "toKind": "node",
+        "toId": "route_exile_final_a"
+      },
+      {
+        "age": 58,
+        "nodeId": "route_exile_final_a",
+        "choiceId": "route_exile_final_a_2",
+        "outcomeId": "out_route_exile_final_a_2",
+        "toKind": "ending",
+        "toId": "end_exile_treaty"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_fugitive",
+      "route_exile_opening",
+      "route_exile_middle_a",
+      "route_exile_final_a"
+    ]
+  },
+  {
+    "endingId": "end_letters_partners",
+    "title": "두 개의 집, 한 개의 약속",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_mina",
+      "gate_to_letters",
+      "route_letters_open_1",
+      "route_letters_middle_a_1",
+      "route_letters_final_a_2"
+    ],
+    "age": 59,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_mina",
+        "outcomeId": "out_exam_mina",
+        "toKind": "node",
+        "toId": "gate_mina"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_mina",
+        "choiceId": "gate_to_letters",
+        "outcomeId": "out_gate_to_letters",
+        "toKind": "node",
+        "toId": "route_letters_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_letters_opening",
+        "choiceId": "route_letters_open_1",
+        "outcomeId": "out_route_letters_open_1",
+        "toKind": "node",
+        "toId": "route_letters_middle_a"
+      },
+      {
+        "age": 35,
+        "nodeId": "route_letters_middle_a",
+        "choiceId": "route_letters_middle_a_1",
+        "outcomeId": "out_route_letters_middle_a_1",
+        "toKind": "node",
+        "toId": "route_letters_final_a"
+      },
+      {
+        "age": 59,
+        "nodeId": "route_letters_final_a",
+        "choiceId": "route_letters_final_a_2",
+        "outcomeId": "out_route_letters_final_a_2",
+        "toKind": "ending",
+        "toId": "end_letters_partners"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_mina",
+      "route_letters_opening",
+      "route_letters_middle_a",
+      "route_letters_final_a"
+    ]
+  },
+  {
+    "endingId": "end_letters_thanks",
+    "title": "대답 대신 남긴 인사",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_mina",
+      "gate_to_letters",
+      "route_letters_open_3",
+      "route_letters_middle_b_1",
+      "route_letters_final_b_2"
+    ],
+    "age": 61,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_mina",
+        "outcomeId": "out_exam_mina",
+        "toKind": "node",
+        "toId": "gate_mina"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_mina",
+        "choiceId": "gate_to_letters",
+        "outcomeId": "out_gate_to_letters",
+        "toKind": "node",
+        "toId": "route_letters_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_letters_opening",
+        "choiceId": "route_letters_open_3",
+        "outcomeId": "out_route_letters_open_3",
+        "toKind": "node",
+        "toId": "route_letters_middle_b"
+      },
+      {
+        "age": 34,
+        "nodeId": "route_letters_middle_b",
+        "choiceId": "route_letters_middle_b_1",
+        "outcomeId": "out_route_letters_middle_b_1",
+        "toKind": "node",
+        "toId": "route_letters_final_b"
+      },
+      {
+        "age": 61,
+        "nodeId": "route_letters_final_b",
+        "choiceId": "route_letters_final_b_2",
+        "outcomeId": "out_route_letters_final_b_2",
+        "toKind": "ending",
+        "toId": "end_letters_thanks"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_mina",
+      "route_letters_opening",
+      "route_letters_middle_b",
+      "route_letters_final_b"
+    ]
+  },
+  {
+    "endingId": "end_letters_together",
+    "title": "선택한 두 사람",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_mina",
+      "gate_to_letters",
+      "route_letters_open_1",
+      "route_letters_middle_a_1",
+      "route_letters_final_a_1"
+    ],
+    "age": 59,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_mina",
+        "outcomeId": "out_exam_mina",
+        "toKind": "node",
+        "toId": "gate_mina"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_mina",
+        "choiceId": "gate_to_letters",
+        "outcomeId": "out_gate_to_letters",
+        "toKind": "node",
+        "toId": "route_letters_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_letters_opening",
+        "choiceId": "route_letters_open_1",
+        "outcomeId": "out_route_letters_open_1",
+        "toKind": "node",
+        "toId": "route_letters_middle_a"
+      },
+      {
+        "age": 35,
+        "nodeId": "route_letters_middle_a",
+        "choiceId": "route_letters_middle_a_1",
+        "outcomeId": "out_route_letters_middle_a_1",
+        "toKind": "node",
+        "toId": "route_letters_final_a"
+      },
+      {
+        "age": 59,
+        "nodeId": "route_letters_final_a",
+        "choiceId": "route_letters_final_a_1",
+        "outcomeId": "out_route_letters_final_a_1",
+        "toKind": "ending",
+        "toId": "end_letters_together"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_mina",
+      "route_letters_opening",
+      "route_letters_middle_a",
+      "route_letters_final_a"
+    ]
+  },
+  {
+    "endingId": "end_letters_unsent",
+    "title": "보내지 않은 마지막 편지",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_mina",
+      "gate_to_letters",
+      "route_letters_open_3",
+      "route_letters_middle_b_1",
+      "route_letters_final_b_1"
+    ],
+    "age": 61,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_mina",
+        "outcomeId": "out_exam_mina",
+        "toKind": "node",
+        "toId": "gate_mina"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_mina",
+        "choiceId": "gate_to_letters",
+        "outcomeId": "out_gate_to_letters",
+        "toKind": "node",
+        "toId": "route_letters_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_letters_opening",
+        "choiceId": "route_letters_open_3",
+        "outcomeId": "out_route_letters_open_3",
+        "toKind": "node",
+        "toId": "route_letters_middle_b"
+      },
+      {
+        "age": 34,
+        "nodeId": "route_letters_middle_b",
+        "choiceId": "route_letters_middle_b_1",
+        "outcomeId": "out_route_letters_middle_b_1",
+        "toKind": "node",
+        "toId": "route_letters_final_b"
+      },
+      {
+        "age": 61,
+        "nodeId": "route_letters_final_b",
+        "choiceId": "route_letters_final_b_1",
+        "outcomeId": "out_route_letters_final_b_1",
+        "toKind": "ending",
+        "toId": "end_letters_unsent"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_mina",
+      "route_letters_opening",
+      "route_letters_middle_b",
+      "route_letters_final_b"
+    ]
+  },
+  {
+    "endingId": "end_power_democracy",
+    "title": "왕관 없는 회계장부",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_fee",
+      "gate_to_power",
+      "route_power_open_3",
+      "route_power_middle_b_1",
+      "route_power_final_b_1"
+    ],
+    "age": 60,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_fee",
+        "outcomeId": "out_exam_fee",
+        "toKind": "node",
+        "toId": "gate_money"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_money",
+        "choiceId": "gate_to_power",
+        "outcomeId": "out_gate_to_power",
+        "toKind": "node",
+        "toId": "route_power_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_power_opening",
+        "choiceId": "route_power_open_3",
+        "outcomeId": "out_route_power_open_3",
+        "toKind": "node",
+        "toId": "route_power_middle_b"
+      },
+      {
+        "age": 38,
+        "nodeId": "route_power_middle_b",
+        "choiceId": "route_power_middle_b_1",
+        "outcomeId": "out_route_power_middle_b_1",
+        "toKind": "node",
+        "toId": "route_power_final_b"
+      },
+      {
+        "age": 60,
+        "nodeId": "route_power_final_b",
+        "choiceId": "route_power_final_b_1",
+        "outcomeId": "out_route_power_final_b_1",
+        "toKind": "ending",
+        "toId": "end_power_democracy"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_money",
+      "route_power_opening",
+      "route_power_middle_b",
+      "route_power_final_b"
+    ]
+  },
+  {
+    "endingId": "end_power_inquiry",
+    "title": "잘못 세어진 인생",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_fee",
+      "gate_to_power",
+      "route_power_open_1",
+      "route_power_middle_a_1",
+      "route_power_final_a_2"
+    ],
+    "age": 58,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_fee",
+        "outcomeId": "out_exam_fee",
+        "toKind": "node",
+        "toId": "gate_money"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_money",
+        "choiceId": "gate_to_power",
+        "outcomeId": "out_gate_to_power",
+        "toKind": "node",
+        "toId": "route_power_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_power_opening",
+        "choiceId": "route_power_open_1",
+        "outcomeId": "out_route_power_open_1",
+        "toKind": "node",
+        "toId": "route_power_middle_a"
+      },
+      {
+        "age": 39,
+        "nodeId": "route_power_middle_a",
+        "choiceId": "route_power_middle_a_1",
+        "outcomeId": "out_route_power_middle_a_1",
+        "toKind": "node",
+        "toId": "route_power_final_a"
+      },
+      {
+        "age": 58,
+        "nodeId": "route_power_final_a",
+        "choiceId": "route_power_final_a_2",
+        "outcomeId": "out_route_power_final_a_2",
+        "toKind": "ending",
+        "toId": "end_power_inquiry"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_money",
+      "route_power_opening",
+      "route_power_middle_a",
+      "route_power_final_a"
+    ]
+  },
+  {
+    "endingId": "end_power_small",
+    "title": "왕국 최초의 예산 수업",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_fee",
+      "gate_to_power",
+      "route_power_open_3",
+      "route_power_middle_b_1",
+      "route_power_final_b_2"
+    ],
+    "age": 60,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_fee",
+        "outcomeId": "out_exam_fee",
+        "toKind": "node",
+        "toId": "gate_money"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_money",
+        "choiceId": "gate_to_power",
+        "outcomeId": "out_gate_to_power",
+        "toKind": "node",
+        "toId": "route_power_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_power_opening",
+        "choiceId": "route_power_open_3",
+        "outcomeId": "out_route_power_open_3",
+        "toKind": "node",
+        "toId": "route_power_middle_b"
+      },
+      {
+        "age": 38,
+        "nodeId": "route_power_middle_b",
+        "choiceId": "route_power_middle_b_1",
+        "outcomeId": "out_route_power_middle_b_1",
+        "toKind": "node",
+        "toId": "route_power_final_b"
+      },
+      {
+        "age": 60,
+        "nodeId": "route_power_final_b",
+        "choiceId": "route_power_final_b_2",
+        "outcomeId": "out_route_power_final_b_2",
+        "toKind": "ending",
+        "toId": "end_power_small"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_money",
+      "route_power_opening",
+      "route_power_middle_b",
+      "route_power_final_b"
+    ]
+  },
+  {
+    "endingId": "end_power_truth",
+    "title": "백이십만 금화의 진실",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_fee",
+      "gate_to_power",
+      "route_power_open_1",
+      "route_power_middle_a_1",
+      "route_power_final_a_1"
+    ],
+    "age": 58,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_fee",
+        "outcomeId": "out_exam_fee",
+        "toKind": "node",
+        "toId": "gate_money"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_money",
+        "choiceId": "gate_to_power",
+        "outcomeId": "out_gate_to_power",
+        "toKind": "node",
+        "toId": "route_power_opening"
+      },
+      {
+        "age": 25,
+        "nodeId": "route_power_opening",
+        "choiceId": "route_power_open_1",
+        "outcomeId": "out_route_power_open_1",
+        "toKind": "node",
+        "toId": "route_power_middle_a"
+      },
+      {
+        "age": 39,
+        "nodeId": "route_power_middle_a",
+        "choiceId": "route_power_middle_a_1",
+        "outcomeId": "out_route_power_middle_a_1",
+        "toKind": "node",
+        "toId": "route_power_final_a"
+      },
+      {
+        "age": 58,
+        "nodeId": "route_power_final_a",
+        "choiceId": "route_power_final_a_1",
+        "outcomeId": "out_route_power_final_a_1",
+        "toKind": "ending",
+        "toId": "end_power_truth"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_money",
+      "route_power_opening",
+      "route_power_middle_a",
+      "route_power_final_a"
+    ]
+  },
+  {
+    "endingId": "end_rescue_accord",
+    "title": "갑옷 밖의 약속",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_mina",
+      "gate_to_rescue",
+      "route_rescue_open_1",
+      "route_rescue_middle_a_1",
+      "route_rescue_final_a_2"
+    ],
+    "age": 60,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_mina",
+        "outcomeId": "out_exam_mina",
+        "toKind": "node",
+        "toId": "gate_mina"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_mina",
+        "choiceId": "gate_to_rescue",
+        "outcomeId": "out_gate_to_rescue",
+        "toKind": "node",
+        "toId": "route_rescue_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_rescue_opening",
+        "choiceId": "route_rescue_open_1",
+        "outcomeId": "out_route_rescue_open_1",
+        "toKind": "node",
+        "toId": "route_rescue_middle_a"
+      },
+      {
+        "age": 34,
+        "nodeId": "route_rescue_middle_a",
+        "choiceId": "route_rescue_middle_a_1",
+        "outcomeId": "out_route_rescue_middle_a_1",
+        "toKind": "node",
+        "toId": "route_rescue_final_a"
+      },
+      {
+        "age": 60,
+        "nodeId": "route_rescue_final_a",
+        "choiceId": "route_rescue_final_a_2",
+        "outcomeId": "out_route_rescue_final_a_2",
+        "toKind": "ending",
+        "toId": "end_rescue_accord"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_mina",
+      "route_rescue_opening",
+      "route_rescue_middle_a",
+      "route_rescue_final_a"
+    ]
+  },
+  {
+    "endingId": "end_rescue_graduation",
+    "title": "누구나 배울 수 있는 용기",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_mina",
+      "gate_to_rescue",
+      "route_rescue_open_3",
+      "route_rescue_middle_b_1",
+      "route_rescue_final_b_1"
+    ],
+    "age": 61,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_mina",
+        "outcomeId": "out_exam_mina",
+        "toKind": "node",
+        "toId": "gate_mina"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_mina",
+        "choiceId": "gate_to_rescue",
+        "outcomeId": "out_gate_to_rescue",
+        "toKind": "node",
+        "toId": "route_rescue_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_rescue_opening",
+        "choiceId": "route_rescue_open_3",
+        "outcomeId": "out_route_rescue_open_3",
+        "toKind": "node",
+        "toId": "route_rescue_middle_b"
+      },
+      {
+        "age": 35,
+        "nodeId": "route_rescue_middle_b",
+        "choiceId": "route_rescue_middle_b_1",
+        "outcomeId": "out_route_rescue_middle_b_1",
+        "toKind": "node",
+        "toId": "route_rescue_final_b"
+      },
+      {
+        "age": 61,
+        "nodeId": "route_rescue_final_b",
+        "choiceId": "route_rescue_final_b_1",
+        "outcomeId": "out_route_rescue_final_b_1",
+        "toKind": "ending",
+        "toId": "end_rescue_graduation"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_mina",
+      "route_rescue_opening",
+      "route_rescue_middle_b",
+      "route_rescue_final_b"
+    ]
+  },
+  {
+    "endingId": "end_rescue_patients",
+    "title": "용사가 열어둔 문",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_mina",
+      "gate_to_rescue",
+      "route_rescue_open_1",
+      "route_rescue_middle_a_1",
+      "route_rescue_final_a_1"
+    ],
+    "age": 60,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_mina",
+        "outcomeId": "out_exam_mina",
+        "toKind": "node",
+        "toId": "gate_mina"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_mina",
+        "choiceId": "gate_to_rescue",
+        "outcomeId": "out_gate_to_rescue",
+        "toKind": "node",
+        "toId": "route_rescue_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_rescue_opening",
+        "choiceId": "route_rescue_open_1",
+        "outcomeId": "out_route_rescue_open_1",
+        "toKind": "node",
+        "toId": "route_rescue_middle_a"
+      },
+      {
+        "age": 34,
+        "nodeId": "route_rescue_middle_a",
+        "choiceId": "route_rescue_middle_a_1",
+        "outcomeId": "out_route_rescue_middle_a_1",
+        "toKind": "node",
+        "toId": "route_rescue_final_a"
+      },
+      {
+        "age": 60,
+        "nodeId": "route_rescue_final_a",
+        "choiceId": "route_rescue_final_a_1",
+        "outcomeId": "out_route_rescue_final_a_1",
+        "toKind": "ending",
+        "toId": "end_rescue_patients"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_mina",
+      "route_rescue_opening",
+      "route_rescue_middle_a",
+      "route_rescue_final_a"
+    ]
+  },
+  {
+    "endingId": "end_rescue_speech",
+    "title": "한 명도 빠뜨리지 않는 영웅",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_mina",
+      "gate_to_rescue",
+      "route_rescue_open_3",
+      "route_rescue_middle_b_1",
+      "route_rescue_final_b_2"
+    ],
+    "age": 61,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_mina",
+        "outcomeId": "out_exam_mina",
+        "toKind": "node",
+        "toId": "gate_mina"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_mina",
+        "choiceId": "gate_to_rescue",
+        "outcomeId": "out_gate_to_rescue",
+        "toKind": "node",
+        "toId": "route_rescue_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_rescue_opening",
+        "choiceId": "route_rescue_open_3",
+        "outcomeId": "out_route_rescue_open_3",
+        "toKind": "node",
+        "toId": "route_rescue_middle_b"
+      },
+      {
+        "age": 35,
+        "nodeId": "route_rescue_middle_b",
+        "choiceId": "route_rescue_middle_b_1",
+        "outcomeId": "out_route_rescue_middle_b_1",
+        "toKind": "node",
+        "toId": "route_rescue_final_b"
+      },
+      {
+        "age": 61,
+        "nodeId": "route_rescue_final_b",
+        "choiceId": "route_rescue_final_b_2",
+        "outcomeId": "out_route_rescue_final_b_2",
+        "toKind": "ending",
+        "toId": "end_rescue_speech"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_mina",
+      "route_rescue_opening",
+      "route_rescue_middle_b",
+      "route_rescue_final_b"
+    ]
+  },
+  {
+    "endingId": "end_resistance_confess",
+    "title": "범죄를 기록한 활자",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_flee",
+      "gate_to_resistance",
+      "route_resistance_open_3",
+      "route_resistance_middle_b_1",
+      "route_resistance_final_b_1"
+    ],
+    "age": 57,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_flee",
+        "outcomeId": "out_exam_flee",
+        "toKind": "node",
+        "toId": "gate_fugitive"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_fugitive",
+        "choiceId": "gate_to_resistance",
+        "outcomeId": "out_gate_to_resistance",
+        "toKind": "node",
+        "toId": "route_resistance_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_resistance_opening",
+        "choiceId": "route_resistance_open_3",
+        "outcomeId": "out_route_resistance_open_3",
+        "toKind": "node",
+        "toId": "route_resistance_middle_b"
+      },
+      {
+        "age": 34,
+        "nodeId": "route_resistance_middle_b",
+        "choiceId": "route_resistance_middle_b_1",
+        "outcomeId": "out_route_resistance_middle_b_1",
+        "toKind": "node",
+        "toId": "route_resistance_final_b"
+      },
+      {
+        "age": 57,
+        "nodeId": "route_resistance_final_b",
+        "choiceId": "route_resistance_final_b_1",
+        "outcomeId": "out_route_resistance_final_b_1",
+        "toKind": "ending",
+        "toId": "end_resistance_confess"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_fugitive",
+      "route_resistance_opening",
+      "route_resistance_middle_b",
+      "route_resistance_final_b"
+    ]
+  },
+  {
+    "endingId": "end_resistance_debate",
+    "title": "마왕을 팔던 가게",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_flee",
+      "gate_to_resistance",
+      "route_resistance_open_3",
+      "route_resistance_middle_b_1",
+      "route_resistance_final_b_2"
+    ],
+    "age": 57,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_flee",
+        "outcomeId": "out_exam_flee",
+        "toKind": "node",
+        "toId": "gate_fugitive"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_fugitive",
+        "choiceId": "gate_to_resistance",
+        "outcomeId": "out_gate_to_resistance",
+        "toKind": "node",
+        "toId": "route_resistance_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_resistance_opening",
+        "choiceId": "route_resistance_open_3",
+        "outcomeId": "out_route_resistance_open_3",
+        "toKind": "node",
+        "toId": "route_resistance_middle_b"
+      },
+      {
+        "age": 34,
+        "nodeId": "route_resistance_middle_b",
+        "choiceId": "route_resistance_middle_b_1",
+        "outcomeId": "out_route_resistance_middle_b_1",
+        "toKind": "node",
+        "toId": "route_resistance_final_b"
+      },
+      {
+        "age": 57,
+        "nodeId": "route_resistance_final_b",
+        "choiceId": "route_resistance_final_b_2",
+        "outcomeId": "out_route_resistance_final_b_2",
+        "toKind": "ending",
+        "toId": "end_resistance_debate"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_fugitive",
+      "route_resistance_opening",
+      "route_resistance_middle_b",
+      "route_resistance_final_b"
+    ]
+  },
+  {
+    "endingId": "end_resistance_march",
+    "title": "칼 없는 반란",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_flee",
+      "gate_to_resistance",
+      "route_resistance_open_1",
+      "route_resistance_middle_a_1",
+      "route_resistance_final_a_1"
+    ],
+    "age": 59,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_flee",
+        "outcomeId": "out_exam_flee",
+        "toKind": "node",
+        "toId": "gate_fugitive"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_fugitive",
+        "choiceId": "gate_to_resistance",
+        "outcomeId": "out_gate_to_resistance",
+        "toKind": "node",
+        "toId": "route_resistance_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_resistance_opening",
+        "choiceId": "route_resistance_open_1",
+        "outcomeId": "out_route_resistance_open_1",
+        "toKind": "node",
+        "toId": "route_resistance_middle_a"
+      },
+      {
+        "age": 35,
+        "nodeId": "route_resistance_middle_a",
+        "choiceId": "route_resistance_middle_a_1",
+        "outcomeId": "out_route_resistance_middle_a_1",
+        "toKind": "node",
+        "toId": "route_resistance_final_a"
+      },
+      {
+        "age": 59,
+        "nodeId": "route_resistance_final_a",
+        "choiceId": "route_resistance_final_a_1",
+        "outcomeId": "out_route_resistance_final_a_1",
+        "toKind": "ending",
+        "toId": "end_resistance_march"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_fugitive",
+      "route_resistance_opening",
+      "route_resistance_middle_a",
+      "route_resistance_final_a"
+    ]
+  },
+  {
+    "endingId": "end_resistance_network",
+    "title": "창문마다 켜진 불",
+    "choices": [
+      "birth_appeal",
+      "child_pact",
+      "exam_flee",
+      "gate_to_resistance",
+      "route_resistance_open_1",
+      "route_resistance_middle_a_1",
+      "route_resistance_final_a_2"
+    ],
+    "age": 59,
+    "history": [
+      {
+        "age": 0,
+        "nodeId": "birth",
+        "choiceId": "birth_appeal",
+        "outcomeId": "out_birth_appeal",
+        "toKind": "node",
+        "toId": "child"
+      },
+      {
+        "age": 12,
+        "nodeId": "child",
+        "choiceId": "child_pact",
+        "outcomeId": "out_child_pact",
+        "toKind": "node",
+        "toId": "exam"
+      },
+      {
+        "age": 20,
+        "nodeId": "exam",
+        "choiceId": "exam_flee",
+        "outcomeId": "out_exam_flee",
+        "toKind": "node",
+        "toId": "gate_fugitive"
+      },
+      {
+        "age": 21,
+        "nodeId": "gate_fugitive",
+        "choiceId": "gate_to_resistance",
+        "outcomeId": "out_gate_to_resistance",
+        "toKind": "node",
+        "toId": "route_resistance_opening"
+      },
+      {
+        "age": 24,
+        "nodeId": "route_resistance_opening",
+        "choiceId": "route_resistance_open_1",
+        "outcomeId": "out_route_resistance_open_1",
+        "toKind": "node",
+        "toId": "route_resistance_middle_a"
+      },
+      {
+        "age": 35,
+        "nodeId": "route_resistance_middle_a",
+        "choiceId": "route_resistance_middle_a_1",
+        "outcomeId": "out_route_resistance_middle_a_1",
+        "toKind": "node",
+        "toId": "route_resistance_final_a"
+      },
+      {
+        "age": 59,
+        "nodeId": "route_resistance_final_a",
+        "choiceId": "route_resistance_final_a_2",
+        "outcomeId": "out_route_resistance_final_a_2",
+        "toKind": "ending",
+        "toId": "end_resistance_network"
+      }
+    ],
+    "nodes": [
+      "birth",
+      "child",
+      "exam",
+      "gate_fugitive",
+      "route_resistance_opening",
+      "route_resistance_middle_a",
+      "route_resistance_final_a"
+    ]
+  }
+]

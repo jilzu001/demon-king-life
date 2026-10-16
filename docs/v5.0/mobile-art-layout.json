@@ -1,0 +1,32 @@
+[
+  {
+    "viewport": 320,
+    "width": 274,
+    "height": 205.5,
+    "naturalWidth": 960,
+    "naturalHeight": 720,
+    "visible": true,
+    "documentFits": true,
+    "src": "http://127.0.0.1:4181/demon-king-life/assets/illustrations/event_cg_v50/letters_reflection_reused.webp"
+  },
+  {
+    "viewport": 390,
+    "width": 320,
+    "height": 240,
+    "naturalWidth": 960,
+    "naturalHeight": 720,
+    "visible": true,
+    "documentFits": true,
+    "src": "http://127.0.0.1:4181/demon-king-life/assets/illustrations/event_cg_v50/letters_reflection_reused.webp"
+  },
+  {
+    "viewport": 430,
+    "width": 320,
+    "height": 240,
+    "naturalWidth": 960,
+    "naturalHeight": 720,
+    "visible": true,
+    "documentFits": true,
+    "src": "http://127.0.0.1:4181/demon-king-life/assets/illustrations/event_cg_v50/letters_reflection_reused.webp"
+  }
+]

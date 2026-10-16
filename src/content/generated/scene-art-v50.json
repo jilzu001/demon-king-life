@@ -1,0 +1,58 @@
+{
+  "rules": [
+    {
+      "id": "v50-birth_registry_reused",
+      "nodeId": "birth",
+      "age": 0,
+      "path": "assets/illustrations/event_cg_v50/birth_registry_reused.webp",
+      "width": 960,
+      "height": 720,
+      "label": "출생신고에서 부모가 검은 머리 아기를 안고 서기관에게 항의하는 장면"
+    },
+    {
+      "id": "v50-hero_exam_reused",
+      "nodeId": "exam",
+      "age": 20,
+      "path": "assets/illustrations/event_cg_v50/hero_exam_reused.webp",
+      "width": 960,
+      "height": 720,
+      "label": "20세 용사 시험장에서 남성 주인공과 은백색 머리의 미나가 마주한 장면"
+    },
+    {
+      "id": "v50-mina_royal_hall_reused",
+      "nodeId": "gate_mina",
+      "age": 21,
+      "path": "assets/illustrations/event_cg_v50/mina_royal_hall_reused.webp",
+      "width": 960,
+      "height": 720,
+      "label": "검은 머리 남성과 은백색 머리 미나가 왕궁 문 앞에 함께 선 장면"
+    },
+    {
+      "id": "v50-evidence_court_reused",
+      "nodeId": "route_evidence_final_a",
+      "age": 60,
+      "path": "assets/illustrations/event_cg_v50/evidence_court_reused.webp",
+      "width": 960,
+      "height": 720,
+      "label": "노년 주인공이 판사에게 실제 증언과 문서를 제출하는 법정"
+    },
+    {
+      "id": "v50-rescue_offer_reused",
+      "nodeId": "route_rescue_final_a",
+      "age": 60,
+      "path": "assets/illustrations/event_cg_v50/rescue_offer_reused.webp",
+      "width": 960,
+      "height": 720,
+      "label": "장년의 은발 미나와 주인공이 구호소의 지원 조건을 논의하는 장면"
+    },
+    {
+      "id": "v50-letters_reflection_reused",
+      "nodeId": "route_letters_final_a",
+      "age": 59,
+      "path": "assets/illustrations/event_cg_v50/letters_reflection_reused.webp",
+      "width": 960,
+      "height": 720,
+      "label": "노년의 주인공과 은발 미나가 서로의 삶과 관계를 이야기하는 장면"
+    }
+  ]
+}

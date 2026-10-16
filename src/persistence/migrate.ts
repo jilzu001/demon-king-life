@@ -2,7 +2,7 @@ import { canonical, parseJson } from '../content/json';
 import { assertState } from '../engine/invariants';
 import { choose, createRun } from '../engine/transition';
 import { ensure, type GameState, type Story } from '../engine/types';
-import { isCompact } from '../content/compact-contract';
+import { isCompact, isFreedom } from '../content/compact-contract';
 
 // 폐기된154개 연간 선택 플래그의 이름만 인식한다. 구 선택/콜백 데이터는 로딩하지 않는다.
 export function deprecatedAnnualFlag(flag: string): boolean {
@@ -21,7 +21,7 @@ export function decodeSave(story: Story, text: string): GameState {
     ensure(result.transitionReceipt.outcomeId === entry.outcomeId, '저장된 판정이 seed 재현 결과와 다릅니다.');
     replay = result.nextState;
   }
-  const comparable = isCompact(story.manifest) ? { ...state, flags: state.flags.filter(flag => !deprecatedAnnualFlag(flag)) } : state;
+  const comparable = isCompact(story.manifest) && !isFreedom(story.manifest) ? { ...state, flags: state.flags.filter(flag => !deprecatedAnnualFlag(flag)) } : state;
   ensure(canonical(replay) === canonical(comparable), '세이브 상태가 기록된 실제 선택 결과와 다릅니다.');
   return state;
 }

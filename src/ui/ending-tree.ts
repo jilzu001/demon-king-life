@@ -62,7 +62,7 @@ export function openEndingTree(options: {
   const help = element('details', undefined, 'tree-help');
   const legend = element('summary');
   legend.append(element('span', '수집', 'tree-key-collected'), document.createTextNode(' · '), element('span', '현재', 'tree-key-current'), document.createTextNode(' · '), element('span', '목표', 'tree-key-target'), document.createTextNode(' · 조작 안내'));
-  help.append(legend, element('p', '청록색은 수집 경로(실제 기록 우선, 없으면 검증 예시), 금색은 현재 회차의 실제 선택, 파란색은 목표의 검증 예시입니다. 경로가 겹치면 청록색 왼쪽 테두리와 금색으로 함께 표시합니다. 72개 사건·195개 선택·20개 엔딩의 전체 연결이며 실제 합류는 하나의 사건 노드로 공유합니다. 점선은 구 회차 전용 연결입니다. 검색·사건 노드의 접기/펼치기는 저장을 바꾸지 않습니다. 연결선은 가능한 목적지이며 조건·과거 선택에 따라 실제 통과 여부가 달라집니다. 실제 진행 기록이 있는 사건만 선택 직전부터 이어할 수 있습니다. 노드와 배경 어디서나 드래그·휠/두 손가락·미니맵으로 이동하며 노드 위치는 바뀌지 않습니다.'));
+  help.append(legend, element('p', `청록색은 수집 경로(실제 기록 우선, 없으면 검증 예시), 금색은 현재 회차의 실제 선택, 파란색은 목표의 검증 예시입니다. 경로가 겹치면 청록색 왼쪽 테두리와 금색으로 함께 표시합니다. ${Object.keys(options.story.nodes).length}개 사건·${Object.values(options.story.nodes).reduce((sum, node) => sum + node.choices.length, 0)}개 선택·${options.entries.length}개 엔딩의 전체 연결이며 실제 합류는 하나의 사건 노드로 공유합니다. 점선은 구 회차 전용 연결입니다. 검색·사건 노드의 접기/펼치기는 저장을 바꾸지 않습니다. 연결선은 가능한 목적지이며 조건·과거 선택에 따라 실제 통과 여부가 달라집니다. 실제 진행 기록이 있는 사건만 선택 직전부터 이어할 수 있습니다. 노드와 배경 어디서나 드래그·휠/두 손가락·미니맵으로 이동하며 노드 위치는 바뀌지 않습니다.`));
   if (options.historyNotice) help.append(element('p', options.historyNotice));
   const announcement = element('p', '', 'tree-announcement'); announcement.setAttribute('aria-live', 'polite');
   const zoomLabel = element('output', '', 'tree-zoom');

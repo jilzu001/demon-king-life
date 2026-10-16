@@ -16,7 +16,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     env:
       PLAYWRIGHT_CHANNEL: chromium
       VITE_BASE_PATH: /demon-king-life/

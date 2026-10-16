@@ -1,3 +1,4 @@
+import freedomArt from '../content/generated/scene-art-v50.json';
 import manifest from '../../spec/content-v3.6-story-engine-art/assets/assets.json';
 import policy from '../../spec/content-v3.6-story-engine-art/assets/main_screen_illustration_policy.json';
 import overrides from '../../spec/content-v3.6-story-engine-art/assets/scene_illustration_overrides_v3_6.json';
@@ -32,6 +33,7 @@ function mappedArtwork(rule: typeof sceneArt.rules[number]): StoryArtwork {
 type EventArt = StoryArtwork & { nodeId: string; age: number; choiceId?: string; outcomeId?: string };
 const eventRules: EventArt[] = eventArt.rules;
 export function outcomeArtwork(state: GameState, entry: HistoryEntry): StoryArtwork | undefined {
+  if (state.storyVersion==='5.0.0') return undefined;
   const actual = state.history.some(record => record.nodeId === entry.nodeId && record.choiceId === entry.choiceId && record.outcomeId === entry.outcomeId && record.age === entry.age);
   if (!actual) return undefined;
   const event = eventRules.find(rule => rule.nodeId === entry.nodeId && rule.age === entry.age && rule.choiceId === entry.choiceId && rule.outcomeId === entry.outcomeId);
@@ -49,6 +51,10 @@ export function illustrationAsset(id: string, kind: 'scene' | 'ending' = 'scene'
     const art = path && installedArtwork(path);
     return art ? { ...art, label: endingGalleryEntries().find(entry => entry.id === id)?.title ?? id }
       : manifest.assets.find(asset => asset.path === path);
+  }
+  if (context?.state?.storyVersion==='5.0.0') {
+    if (!context.state.enteredNodeIds.includes(id)) return undefined;
+    return freedomArt.rules.find(rule=>rule.nodeId===id && rule.age===context.age);
   }
   if (context?.state?.enteredNodeIds.includes(id)) {
     const rule = sceneArt.rules.find(rule => rule.when.nodeId === id && rule.when.age === context.age && rule.usage.includes('main-scene'));
@@ -82,7 +88,7 @@ export function renderIllustration(id: string, kind: 'scene' | 'ending' = 'scene
   return asset ? renderStoryArtwork(asset, eager) : undefined;
 }
 export function renderStoryArtwork(asset: StoryArtwork, eager = false): HTMLElement | undefined {
-  if (!/^assets\/illustrations\/(characters|backgrounds|events|event_cg|event_cg_v4_5|event_cg_v4_6)\/[a-z0-9_]+\.webp$/.test(asset.path)) return undefined;
+  if (!/^assets\/illustrations\/(characters|backgrounds|events|event_cg|event_cg_v4_5|event_cg_v4_6|event_cg_v50)\/[a-z0-9_]+\.webp$/.test(asset.path)) return undefined;
   const actual = installedArtwork(asset.path); if (actual) asset = { ...asset, width: actual.width, height: actual.height };
   const figure = element('figure', undefined, 'story-illustration');
   figure.dataset.assetId = asset.id;

@@ -36,10 +36,10 @@ describe('본문 일러스트의 콘텐츠 보호와 실제 에셋', () => {
   });
   it('캐릭터/초기 상태와 기존7엔딩의 연출을 유지한다', () => {
     for (const file of ['characters.json']) {
-      expect(readFileSync(`public/stories/demon-king-compact/${file}`)).toEqual(readFileSync(`spec/content-v2.6-compact-timeline/${file}`));
+      expect(readFileSync(`public/stories/demon-king-v48-archive/${file}`)).toEqual(readFileSync(`spec/content-v2.6-compact-timeline/${file}`));
     }
     const read = (root: string, file: string) => JSON.parse(readFileSync(`${root}/${file}`, 'utf8'));
-    const current = 'public/stories/demon-king-compact'; const old = 'spec/content-v2.6-compact-timeline';
+    const current = 'public/stories/demon-king-v48-archive'; const old = 'spec/content-v2.6-compact-timeline';
     expect(read(current, 'story.json').initialState).toEqual(read(old, 'story.json').initialState);
     const cinemas = read(current, 'ending_cinematics.json').endings;
     expect(cinemas).toEqual(read('backups/before-v4.5', 'ending_cinematics.json').endings);
@@ -50,7 +50,7 @@ describe('본문 일러스트의 콘텐츠 보호와 실제 에셋', () => {
     }
   });
   it('실제 사건만 연결하고 등록되지 않은 사건·별칭·잘못된 키에는 그림을 배정하지 않는다', () => {
-    const nodes = JSON.parse(readFileSync('public/stories/demon-king-compact/chapters/01_complete.json', 'utf8')).nodes;
+    const nodes = JSON.parse(readFileSync('public/stories/demon-king-v48-archive/chapters/01_complete.json', 'utf8')).nodes;
     for (const id of Object.keys(sceneIllustrations)) expect(nodes.some((n: { id: string }) => n.id === id)).toBe(true);
     for (const id of ['audit', 'settlement', 'exam_confession', 'constructor', '__proto__']) expect(illustrationAsset(id)).toBeUndefined();
     expect(illustrationAsset('exam')?.id).toBe('mina');

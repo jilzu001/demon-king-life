@@ -1,3 +1,4 @@
+import { isFreedom } from '../content/compact-contract';
 import { choose, createRun } from '../engine/transition';
 import { ensure, type GameState, type Story } from '../engine/types';
 import { decodeSave } from './migrate';
@@ -5,6 +6,7 @@ import type { StoragePort } from './save';
 import { decodeCompatibleCompact, compactStoryForState } from './compact-compatible';
 
 export const RESELECT_BACKUP_KEY = 'existence-sim:v1:backup:before-reselect:demon-king:compact';
+export const reselectBackupKey = (story: Story) => isFreedom(story.manifest) ? 'existence-sim:v1:backup:before-reselect:demon-king:v5' : RESELECT_BACKUP_KEY;
 
 // 상태를 역산하지 않고, 같은 seed로 선택 직전까지 실제 선택 원장을 재현한다.
 export function resumeAtVisitedNode(story: Story, source: GameState, nodeId: string, runId: string): GameState {
@@ -25,12 +27,12 @@ export function resumeAtVisitedNode(story: Story, source: GameState, nodeId: str
 
 export function backupBeforeReselect(storage: StoragePort, state: GameState): void {
   const text = JSON.stringify(state);
-  storage.setItem(RESELECT_BACKUP_KEY, text);
-  ensure(storage.getItem(RESELECT_BACKUP_KEY) === text, '재선택 전 회차 백업에 실패했습니다. 현재 회차를 유지합니다.');
+  storage.setItem(state.storyVersion === '5.0.0' ? 'existence-sim:v1:backup:before-reselect:demon-king:v5' : RESELECT_BACKUP_KEY, text);
+  ensure(storage.getItem(state.storyVersion === '5.0.0' ? 'existence-sim:v1:backup:before-reselect:demon-king:v5' : RESELECT_BACKUP_KEY) === text, '재선택 전 회차 백업에 실패했습니다. 현재 회차를 유지합니다.');
 }
 
 export function loadReselectBackup(storage: StoragePort, story: Story, runId: string): GameState {
-  const text = storage.getItem(RESELECT_BACKUP_KEY);
+  const text = storage.getItem(reselectBackupKey(story));
   ensure(text, '복원할 재선택 전 회차가 없습니다.');
   const restored = decodeCompatibleCompact(story, text);
   return { ...restored, runId };

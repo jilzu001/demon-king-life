@@ -1,10 +1,11 @@
+import { endingFullText } from '../content/freedom-memory';
 import { loadBrowserStory } from '../content/load';
 import { MAX_JSON_BYTES, parseJson } from '../content/json';
 import { evaluate } from '../engine/conditions';
 import { choose, createRun } from '../engine/transition';
 import { ensure, type GameState, type Meta, type TransitionReceipt } from '../engine/types';
 import { SaveStore } from '../persistence/save';
-import { backupBeforeImport, resolveCompatibleSave, backupKey } from '../persistence/compatibility';
+import { backupBeforeImport, resolveCompatibleSave, backupKey, FREEDOM_PREVIOUS_BACKUP_KEY } from '../persistence/compatibility';
 import { backupBeforeCompactUpgrade, compactStoryForState } from '../persistence/compact-compatible';
 import type { PresentedStory } from '../content/presentation';
 import { lifeEvents, confirmedChoice, resultLabels } from '../ui/history';
@@ -16,7 +17,7 @@ import { illustrateNarrative, readingCompanions, outcomeArtwork, renderStoryArtw
 import { portraitUrl, portraitCharacters, dialogueEmotion, type PortraitCharacter, type PortraitEmotion } from '../ui/portraits';
 import { canonicalPortrait } from '../ui/visual-identity';
 import '../styles/main.css';
-import { isCompact, compactSlot } from '../content/compact-contract';
+import { isCompact, isFreedom, compactSlot, compactSaveSlot } from '../content/compact-contract';
 import { loadCompactProgress, compactProgressKey, type CompactProgress } from '../ui/compact-progress';
 import { renderCompactEnding } from '../ui/compact-ending';
 import { endingGalleryEntries, galleryEndingIds } from '../content/ending-gallery';
@@ -24,7 +25,7 @@ import { routeBody, routeYears } from '../content/route-years';
 import { renderEndingGallery, renderEndingDetail } from '../ui/ending-gallery';
 import { openEndingTree } from '../ui/ending-tree';
 import { archiveTreeRun, loadPastTreeSources } from '../persistence/tree-history';
-import { resumeAtVisitedNode, backupBeforeReselect, loadReselectBackup, RESELECT_BACKUP_KEY } from '../persistence/reselect';
+import { resumeAtVisitedNode, backupBeforeReselect, loadReselectBackup, reselectBackupKey } from '../persistence/reselect';
 
 const root = document.querySelector<HTMLDivElement>('#app')!;
 // 원작 UI는 로컬 회귀 검사 모드에서만 유지한다. 공개 빌드는 모든 주소에서 최신 판이다.
@@ -124,9 +125,18 @@ function exportRun() {
     download(raw, 'demon-king-save.json');
   } catch (error) { notify(error); }
 }
+function galleryEntriesFor(context: PresentedStory) {
+  const entries=endingGalleryEntries(context);
+  if(!isFreedom(context.manifest))return entries;
+  const past=loadPastTreeSources(window.localStorage,context).runs;
+  return entries.map(entry=>{
+    const source=state?.endingId===entry.id?state:past.find(run=>run.endingId===entry.id);
+    return source?{...entry,fullText:endingFullText(context,source)}:entry;
+  });
+}
 function makeStore(context: PresentedStory) {
-  const known = new Set([...Object.keys(activeStory?.endings ?? context.endings), ...Object.keys(legacyStory?.endings ?? {}), ...(isCompact(context.manifest) ? galleryEndingIds : [])]);
-  return new SaveStore(context, () => window.localStorage, known, isCompact(context.manifest) ? compactSlot : context.manifest.id);
+  const known = new Set([...Object.keys(activeStory?.endings ?? context.endings), ...Object.keys(isFreedom(context.manifest) ? {} : legacyStory?.endings ?? {}), ...(isCompact(context.manifest) && !isFreedom(context.manifest) ? galleryEndingIds : [])]);
+  return new SaveStore(context, () => window.localStorage, known, isCompact(context.manifest) ? compactSaveSlot(context.manifest) : context.manifest.id);
 }
 function commit(next: GameState, nextReceipt: TransitionReceipt | null = null, context = story) {
   ensure(context, '저장소가 준비되지 않았습니다.');
@@ -374,7 +384,7 @@ function renderTitle(layout: HTMLElement) {
   title.append(element('p', '한 사람의 선택, 한 번의 일생', 'eyebrow'), element('h1', '가짜 마왕의 일생'), element('p', '선택은 행동의 시도입니다. 당신의 일생을 읽고, 다음 행동을 고르세요.', 'title-intro'));
   const start = button(state ? '이어하기' : '시작하기', enterGame, !story || (!state && Boolean(errorText))); start.dataset.enter = 'true'; title.append(start);
   if (compactMode) title.append(button('새로하기', newRun, !activeStory || busy || Boolean(pending)));
-  title.append(element('p', compactMode && story ? `축소 완결판 · ${Object.keys(story.nodes).length}개 사건 · ${Object.keys(story.endings).length}개 결말` : '원작 · 98개 장면 · 34개 결말', 'subtle'));
+  title.append(element('p', compactMode && story ? `${isFreedom(story.manifest) ? 'v5.0 · 8개의 독립 인생' : '축소 완결판'} · ${Object.keys(story.nodes).length}개 사건 · ${Object.keys(story.endings).length}개 결말` : '원작 · 98개 장면 · 34개 결말', 'subtle'));
   const settings = button('설정', () => { openMenu = 'settings'; render(); }, !story); settings.setAttribute('aria-label', '저장 관리 · 엔딩 도감'); title.append(settings);
   layout.append(title);
 }
@@ -565,7 +575,8 @@ function renderSettings(save: HTMLElement) {
   const tools = element('div', undefined, 'tools');
   const exportButton = button('회차 JSON 내보내기', exportRun, busy); exportButton.dataset.whenReady = 'normal'; tools.append(exportButton);
   const restart = button(state ? '새 회차 시작' : '기존 회차를 교체하고 시작', newRun, busy || Boolean(pending)); restart.dataset.whenReady = 'normal'; tools.append(restart);
-  let backup: string | null = null; try { backup = window.localStorage.getItem(backupKey(compactMode ? compactSlot : undefined)); } catch { /* 저장 오류는 기존 오류 영역에서 안내한다. */ }
+  let backup: string | null = null; try { backup = window.localStorage.getItem(compactMode && activeStory && isFreedom(activeStory.manifest) ? FREEDOM_PREVIOUS_BACKUP_KEY : backupKey(compactMode && activeStory ? compactSaveSlot(activeStory.manifest) : undefined)); } catch { /* 저장 오류는 기존 오류 영역에서 안내한다. */ }
+  if (backup && isFreedom(story.manifest)) tools.append(element('p', '이전 판의 회차와 엔딩 수집 기록은 원래 저장소에 보존했습니다. v5.0은 별도 회차로 진행하며, 아래에서 이전 회차 원문을 내보낼 수 있습니다.', 'subtle'));
   if (backup) tools.append(button('업데이트 전 회차 JSON 내보내기', () => {
     try {
       const original = parseJson(backup!, '이전 저장 백업') as { run: string | null };
@@ -582,7 +593,7 @@ function renderSettings(save: HTMLElement) {
       ensure(file.size <= MAX_JSON_BYTES, '파일 크기 제한(1MB)을 초과했습니다.');
       const text = new TextDecoder('utf-8', { fatal: true }).decode(await file.arrayBuffer());
       const resolved = resolveCompatibleSave(activeStory, legacyStory, text);
-      backupBeforeImport(window.localStorage, compactMode ? compactSlot : undefined);
+      backupBeforeImport(window.localStorage, compactMode && activeStory ? compactSaveSlot(activeStory.manifest) : undefined);
       if (compactMode && state && story && isCompact(story.manifest)) archiveTreeRun(window.localStorage, activeStory ?? story, state);
       commit(resolved.state, null, resolved.story); compatibilityNotice = resolved.notice; openMenu = null;
     } catch (error) { notify(error); }
@@ -593,15 +604,15 @@ function renderSettings(save: HTMLElement) {
   const discovered = new Set(meta.discoveredEndings[story.manifest.id] ?? []);
   const allEndings = { ...legacyStory?.endings, ...activeStory?.endings };
   if (compactMode && isCompact(story.manifest)) {
-    save.append(renderEndingGallery(endingGalleryEntries(activeStory ?? story), discovered, id => {
+    save.append(renderEndingGallery(galleryEntriesFor(activeStory ?? story), discovered, id => {
       if (!discovered.has(id)) return;
       endingDetailId = id; render();
-    }, Object.keys((activeStory ?? story).endings).filter(id => galleryEndingIds.includes(id)).length, opener => {
+    }, Object.keys((activeStory ?? story).endings).length, opener => {
       const past = loadPastTreeSources(window.localStorage, activeStory ?? story!);
-      disposeTree = openEndingTree({ pastRuns: past.runs, historyNotice: past.notice, story: activeStory ?? story!, entries: endingGalleryEntries(activeStory ?? story!), discovered, state,
+      disposeTree = openEndingTree({ pastRuns: past.runs, historyNotice: past.notice, story: activeStory ?? story!, entries: galleryEntriesFor(activeStory ?? story!), discovered, state,
         opener, onResume: (nodeId, source) => resumeFromEvent(nodeId, source), onClose: () => { disposeTree = () => {}; } });
     }));
-    for (const id of discovered) if (!galleryEndingIds.includes(id) && allEndings[id]) save.append(element('p', `이전 예제에서 발견 · ${allEndings[id]!.title}`));
+    for (const id of discovered) if (!isFreedom((activeStory ?? story).manifest) && !galleryEndingIds.includes(id) && allEndings[id]) save.append(element('p', `이전 예제에서 발견 · ${allEndings[id]!.title}`));
     return;
   }
   const collection = element('ul');
@@ -698,7 +709,7 @@ function renderMenu(layout: HTMLElement) {
   const menuKind = openMenu;
   const detail = menuKind === 'settings' && compactMode && activeStory && endingDetailId
     && (meta.discoveredEndings[activeStory.manifest.id] ?? []).includes(endingDetailId)
-    ? endingGalleryEntries(activeStory).find(entry => entry.id === endingDetailId) : undefined;
+    ? galleryEntriesFor(activeStory).find(entry => entry.id === endingDetailId) : undefined;
   const title = element('h2', detail ? '엔딩 도감 상세' : menuKind === 'history' ? '전체 인생 기록' : menuKind === 'people' ? '인물 관계 · 재산 · 법적 기록' : '저장 관리 · 엔딩 도감'); title.id = 'menu-title';
   dialog.setAttribute('aria-labelledby', title.id);
   const close = () => {
@@ -713,7 +724,7 @@ function renderMenu(layout: HTMLElement) {
   else if (story && state) {
     if (compactMode) {
       dialog.append(element('p', '지나온 사건의 선택 직전부터 이어합니다. 이후 기록은 새 선택으로 바뀌며 발견한 엔딩은 유지됩니다.', 'subtle'));
-      let hasBackup = false; try { hasBackup = localStorage.getItem(RESELECT_BACKUP_KEY) !== null; } catch { /* 회차는 그대로 유지한다. */ }
+      let hasBackup = false; try { hasBackup = localStorage.getItem(reselectBackupKey(activeStory ?? story!)) !== null; } catch { /* 회차는 그대로 유지한다. */ }
       if (hasBackup) dialog.append(button('재선택 전 회차 복원', () => resumeFromEvent(), busy || Boolean(pending)));
     }
     for (const event of lifeEvents(story, state)) {
@@ -750,8 +761,11 @@ async function boot() {
       loadBrowserStory(import.meta.env.BASE_URL, compactMode ? 'demon-king-compact' : 'demon-king'), loadBrowserStory(import.meta.env.BASE_URL, 'demon-king-legacy-phase1'),
     ]);
     story = activeStory; store = makeStore(story);
-    backupBeforeImport(window.localStorage, compactMode ? compactSlot : undefined);
-    if (compactMode) backupBeforeCompactUpgrade(window.localStorage);
+    backupBeforeImport(window.localStorage, compactMode && activeStory ? compactSaveSlot(activeStory.manifest) : undefined);
+    if (compactMode) {
+      if (isFreedom(activeStory.manifest)) backupBeforeImport(window.localStorage, compactSlot, FREEDOM_PREVIOUS_BACKUP_KEY);
+      else backupBeforeCompactUpgrade(window.localStorage);
+    }
     meta = store.loadMeta();
     const raw = store.raw();
     if (raw) {

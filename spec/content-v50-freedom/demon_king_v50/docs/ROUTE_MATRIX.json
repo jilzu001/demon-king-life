@@ -1,0 +1,141 @@
+{
+  "version": "5.0.0",
+  "routes": [
+    {
+      "id": "exile",
+      "category": "도주",
+      "sceneIds": [
+        "route_exile_opening",
+        "route_exile_middle_a",
+        "route_exile_middle_b",
+        "route_exile_final_a",
+        "route_exile_final_b"
+      ],
+      "endingIds": [
+        "end_exile_map",
+        "end_exile_treaty",
+        "end_exile_class",
+        "end_exile_diaspora"
+      ]
+    },
+    {
+      "id": "resistance",
+      "category": "도주",
+      "sceneIds": [
+        "route_resistance_opening",
+        "route_resistance_middle_a",
+        "route_resistance_middle_b",
+        "route_resistance_final_a",
+        "route_resistance_final_b"
+      ],
+      "endingIds": [
+        "end_resistance_march",
+        "end_resistance_network",
+        "end_resistance_confess",
+        "end_resistance_debate"
+      ]
+    },
+    {
+      "id": "evidence",
+      "category": "법",
+      "sceneIds": [
+        "route_evidence_opening",
+        "route_evidence_middle_a",
+        "route_evidence_middle_b",
+        "route_evidence_final_a",
+        "route_evidence_final_b"
+      ],
+      "endingIds": [
+        "end_evidence_injunction",
+        "end_evidence_archive",
+        "end_evidence_witness",
+        "end_evidence_memory"
+      ]
+    },
+    {
+      "id": "collective",
+      "category": "법",
+      "sceneIds": [
+        "route_collective_opening",
+        "route_collective_middle_a",
+        "route_collective_middle_b",
+        "route_collective_final_a",
+        "route_collective_final_b"
+      ],
+      "endingIds": [
+        "end_collective_fund",
+        "end_collective_individual",
+        "end_collective_repeal",
+        "end_collective_imperfect"
+      ]
+    },
+    {
+      "id": "business",
+      "category": "돈",
+      "sceneIds": [
+        "route_business_opening",
+        "route_business_middle_a",
+        "route_business_middle_b",
+        "route_business_final_a",
+        "route_business_final_b"
+      ],
+      "endingIds": [
+        "end_business_safety",
+        "end_business_standard",
+        "end_business_theatre",
+        "end_business_license"
+      ]
+    },
+    {
+      "id": "power",
+      "category": "돈",
+      "sceneIds": [
+        "route_power_opening",
+        "route_power_middle_a",
+        "route_power_middle_b",
+        "route_power_final_a",
+        "route_power_final_b"
+      ],
+      "endingIds": [
+        "end_power_truth",
+        "end_power_inquiry",
+        "end_power_democracy",
+        "end_power_small"
+      ]
+    },
+    {
+      "id": "rescue",
+      "category": "미나",
+      "sceneIds": [
+        "route_rescue_opening",
+        "route_rescue_middle_a",
+        "route_rescue_middle_b",
+        "route_rescue_final_a",
+        "route_rescue_final_b"
+      ],
+      "endingIds": [
+        "end_rescue_patients",
+        "end_rescue_accord",
+        "end_rescue_graduation",
+        "end_rescue_speech"
+      ]
+    },
+    {
+      "id": "letters",
+      "category": "미나",
+      "sceneIds": [
+        "route_letters_opening",
+        "route_letters_middle_a",
+        "route_letters_middle_b",
+        "route_letters_final_a",
+        "route_letters_final_b"
+      ],
+      "endingIds": [
+        "end_letters_together",
+        "end_letters_partners",
+        "end_letters_unsent",
+        "end_letters_thanks"
+      ]
+    }
+  ]
+}

@@ -1,19 +1,20 @@
 {
   "schemaVersion": 1,
   "id": "demon-king",
-  "version": "2.4.0-compact",
-  "title": "가짜 마왕의 일생",
+  "version": "5.0.0",
+  "title": "가짜 마왕의 일생: 이름을 돌려받는 법",
   "entryNodeId": "birth",
   "chapters": [
-    "chapters/01_complete.json",
-    "chapters/02_ending_routes.json",
-    "chapters/03_v45_expansion.json",
-    "chapters/04_v48_independent_life_routes.json"
+    "chapters/01_common.json",
+    "chapters/02_fugitive.json",
+    "chapters/03_reform.json",
+    "chapters/04_money.json",
+    "chapters/05_mina.json"
   ],
   "charactersFile": "characters.json",
   "endingsFile": "endings.json",
   "initialState": {
-    "age": 20,
+    "age": 0,
     "player": {
       "species": "human",
       "combat": 2,

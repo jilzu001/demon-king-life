@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "v50-birth_registry_reused",
+      "nodeId": "birth",
+      "age": 0,
+      "artPath": "assets/illustrations/event_cg_v50/birth_registry_reused.webp",
+      "width": 960,
+      "height": 720,
+      "alt": "출생신고에서 부모가 검은 머리 아기를 안고 서기관에게 항의하는 장면",
+      "origin": "reused-from-prior-chat",
+      "originalSource": "아기_등록을_둘러싼_왕국의_소동.png",
+      "bytes": 84720
+    },
+    {
+      "id": "v50-hero_exam_reused",
+      "nodeId": "exam",
+      "age": 20,
+      "artPath": "assets/illustrations/event_cg_v50/hero_exam_reused.webp",
+      "width": 960,
+      "height": 720,
+      "alt": "20세 용사 시험장에서 남성 주인공과 은백색 머리의 미나가 마주한 장면",
+      "origin": "reused-from-prior-chat",
+      "originalSource": "대성당의_기사_시험_대치씬.png",
+      "bytes": 93950
+    },
+    {
+      "id": "v50-mina_royal_hall_reused",
+      "nodeId": "gate_mina",
+      "age": 21,
+      "artPath": "assets/illustrations/event_cg_v50/mina_royal_hall_reused.webp",
+      "width": 960,
+      "height": 720,
+      "alt": "검은 머리 남성과 은백색 머리 미나가 왕궁 문 앞에 함께 선 장면",
+      "origin": "reused-from-prior-chat",
+      "originalSource": "왕궁에_입장하는_은빛_기사와_동행자.png",
+      "bytes": 73794
+    },
+    {
+      "id": "v50-public_trial_reused",
+      "nodeId": "route_evidence_final_a",
+      "age": 60,
+      "artPath": "assets/illustrations/event_cg_v50/public_trial_reused.webp",
+      "width": 960,
+      "height": 540,
+      "alt": "왕국의 공개 법정에서 검은 머리 주인공이 서류를 내밀며 진실을 주장하는 장면",
+      "origin": "reused-from-prior-chat",
+      "originalSource": "성당_법정의_격렬한_선언.png",
+      "bytes": 61234
+    }
+  ],
+  "note": "이 4장은 신규 생성이 아닌 기존 대화에서 생성된 장면별 이미지를 재사용·재압축한 파일이다. GitHub 기존 그림과 시각 비교 후 중복·부적합 자산은 재사용하지 않는다."
+}

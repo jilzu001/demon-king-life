@@ -1,0 +1,20 @@
+{
+  "checked": true,
+  "nodes": 47,
+  "choices": 106,
+  "outcomes": 106,
+  "endings": 32,
+  "enumeratedChoicePaths": 864,
+  "reachableScenes": 47,
+  "reachableEndings": 32,
+  "checks": [
+    "unique scene/ending/choice IDs",
+    "all destination IDs exist",
+    "no age regression",
+    "all scenes have at least two choices",
+    "all scenes reachable from birth",
+    "all endings reachable from birth",
+    "no directed cycle"
+  ],
+  "note": "정적 그래프 검사. 실제 npm/브라우저/저장 호환 테스트는 Codex에서 필수."
+}

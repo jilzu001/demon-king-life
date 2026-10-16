@@ -14,6 +14,6 @@ export async function readExampleStory(directory = 'demon-king') {
   };
   const story: PresentedStory = await loadStory(read);
   if (directory === 'demon-king') story.presentation = validatePresentation(story, await read('presentation.json'));
-  if (directory === 'demon-king-compact') story.cinematics = validateCinematics(story, await read('ending_cinematics.json'));
+  if (['demon-king-compact', 'demon-king-v48-archive'].includes(directory)) story.cinematics = validateCinematics(story, await read('ending_cinematics.json'));
   return story;
 }

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "characters": [
+    {
+      "id": "mina",
+      "name": "미나",
+      "role": "hero_and_rescuer",
+      "traits": [
+        "은백색 긴 머리와 푸른 눈",
+        "전투력 8402",
+        "12세 첫 만남",
+        "남의 명령보다 자신의 책임을 중시함",
+        "사랑과 혼인은 자신의 동의로만 결정"
+      ]
+    },
+    {
+      "id": "erisia",
+      "name": "에리시아",
+      "role": "princess_budget_reformer",
+      "traits": [
+        "왕녀",
+        "재정과 정치적 책임을 중시",
+        "혼인은 서사적 보상이 아님"
+      ]
+    },
+    {
+      "id": "king",
+      "name": "국왕",
+      "role": "ruler",
+      "traits": [
+        "제도의 체면을 우선",
+        "예산과 책임에 모순"
+      ]
+    },
+    {
+      "id": "auditor",
+      "name": "세렌",
+      "role": "public_auditor",
+      "traits": [
+        "확인된 지출과 추측을 구분",
+        "증거 보전과 수치의 정확성 중시"
+      ]
+    }
+  ]
+}

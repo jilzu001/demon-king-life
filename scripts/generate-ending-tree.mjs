@@ -7,7 +7,8 @@ const output = path.resolve(process.argv[3] ?? path.join(repo, 'src/content/gene
 const read = async file => JSON.parse(await readFile(file, 'utf8'));
 const root = path.join(repo, 'public/stories/demon-king-compact');
 const story = await read(path.join(root, 'story.json'));
-const paths = await read(path.join(repo, 'docs/v4.5/actual-ending-paths.json'));
+const pathsFile = story.version === '5.0.0' ? 'docs/v5.0/actual-ending-paths.json' : 'docs/v4.5/actual-ending-paths.json';
+const paths = await read(path.join(repo, pathsFile));
 const endings = (await read(path.join(root, story.endingsFile))).endings;
 const scenes = (await Promise.all(story.chapters.map(file => read(path.join(root, file))))).flatMap(chapter => chapter.nodes);
 const stepId = (node, choice, outcome) => `step:${node}:${choice}:${outcome}`;
@@ -34,7 +35,7 @@ for (const node of nodes.filter(node => node.type === 'step')) {
 }
 // 구 회차는 같은 시험 선택에서 게이트를 거치지 않았다. 실제 저장 경로만 버전 조건부 간선으로 보존한다.
 const legacy = {attack:'prison',refuse:'petition',invoice:'invoice',confess:'confession'};
-for(const node of nodes.filter(node=>node.type==='step' && node.nodeId==='exam')) if(legacy[node.choiceId]) edges.push({from:node.id,to:`scene:${legacy[node.choiceId]}`,legacyVersion:'2.3.0-compact'});
+for(const node of nodes.filter(node=>story.version !== '5.0.0' && node.type==='step' && node.nodeId==='exam')) if(legacy[node.choiceId]) edges.push({from:node.id,to:`scene:${legacy[node.choiceId]}`,legacyVersion:'2.3.0-compact'});
 const byId = new Map(nodes.map(node => [node.id, node]));
 if (byId.size !== nodes.length) throw Error('중복 노드');
 const degree = new Map(nodes.map(node => [node.id, edges.filter(edge => edge.to === node.id).length]));
@@ -60,9 +61,9 @@ for (const path of paths) {
   }
   routes[path.endingId] = ids;
 }
-if (Object.keys(routes).length !== 20 || endings.length !== 20) throw Error('20엔딩 불일치');
+if (Object.keys(routes).length !== endings.length) throw Error('실제 엔딩 수 불일치');
 const out = { schemaVersion: 2, usage: 'complete-choice-outcome-dag; conditional-edges-require-state',
-  generatedFrom: ['docs/v4.5/actual-ending-paths.json', 'public/stories/demon-king-compact/story.json'],
+  generatedFrom: [pathsFile, 'public/stories/demon-king-compact/story.json'],
   storyVersion: story.version, endingCount: endings.length, sceneCount: scenes.length,
   choiceCount: scenes.reduce((sum, scene) => sum + scene.choices.length, 0), nodes, edges, routes };
 await mkdir(path.dirname(output), { recursive: true });

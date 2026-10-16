@@ -1,17 +1,18 @@
 import { MAX_JSON_BYTES, parseJson } from '../content/json';
 import { ensure, GameError, type GameState, type Story } from '../engine/types';
 import { decodeCompatibleCompact, COMPACT_V37_BACKUP_KEY } from './compact-compatible';
-import { compactSlot } from '../content/compact-contract';
+import { compactSaveSlot, isFreedom } from '../content/compact-contract';
 import { backupKey } from './compatibility';
-import { RESELECT_BACKUP_KEY } from './reselect';
+import { reselectBackupKey } from './reselect';
 import type { StoragePort } from './save';
 
 export const TREE_HISTORY_KEY = 'existence-sim:v1:tree-history:demon-king:compact';
+export const treeHistoryKey = (story: Story) => isFreedom(story.manifest) ? 'existence-sim:v1:tree-history:demon-king:v5' : TREE_HISTORY_KEY;
 const bucket = (run: GameState) => run.endingId ?? '@in-progress';
 
 // 기존 회차/도감 스키마와 분리한다. 엔딩마다 최근 실제 회차 하나와 최근 미완주 회차 하나를 보관한다.
 export function loadTreeRuns(storage: StoragePort, story: Story): GameState[] {
-  const raw = storage.getItem(TREE_HISTORY_KEY);
+  const raw = storage.getItem(treeHistoryKey(story));
   if (raw === null) return [];
   const data = parseJson(raw, '지난 분기 기록') as { version?: unknown; runs?: unknown } | null;
   ensure(data?.version === 1 && Array.isArray(data.runs), '지난 분기 기록의 형식이 올바르지 않습니다.');
@@ -28,16 +29,16 @@ export function archiveTreeRun(storage: StoragePort, story: Story, source: GameS
   const runs = [verified, ...loadTreeRuns(storage, story).filter(run => bucket(run) !== bucket(verified))];
   const text = JSON.stringify({ version: 1, runs });
   ensure(new TextEncoder().encode(text).length <= MAX_JSON_BYTES, '지난 분기 기록의 용량 한도를 초과했습니다. 현재 회차를 유지합니다.');
-  const previous = storage.getItem(TREE_HISTORY_KEY);
+  const previous = storage.getItem(treeHistoryKey(story));
   if (previous === text) return;
   try {
-    storage.setItem(TREE_HISTORY_KEY, text);
-    ensure(storage.getItem(TREE_HISTORY_KEY) === text, '지난 분기 기록 확인 실패');
+    storage.setItem(treeHistoryKey(story), text);
+    ensure(storage.getItem(treeHistoryKey(story)) === text, '지난 분기 기록 확인 실패');
   } catch (error) {
     let restored = true;
     try {
-      if (storage.getItem(TREE_HISTORY_KEY) !== previous) previous === null ? storage.removeItem(TREE_HISTORY_KEY) : storage.setItem(TREE_HISTORY_KEY, previous);
-      ensure(storage.getItem(TREE_HISTORY_KEY) === previous, '분기 보관함 복구 확인 실패');
+      if (storage.getItem(treeHistoryKey(story)) !== previous) previous === null ? storage.removeItem(treeHistoryKey(story)) : storage.setItem(treeHistoryKey(story), previous);
+      ensure(storage.getItem(treeHistoryKey(story)) === previous, '분기 보관함 복구 확인 실패');
     }
     catch { restored = false; }
     throw new GameError(`지난 분기 보관 실패: ${error instanceof Error ? error.message : String(error)}. 현재 회차는 교체하지 않았습니다.${restored ? '' : ' 분기 보관함 복구도 실패했습니다.'}`);
@@ -49,7 +50,9 @@ export function loadPastTreeSources(storage: StoragePort, story: Story): { runs:
   const runs: GameState[] = [];
   let damaged = false;
   try { runs.push(...loadTreeRuns(storage, story)); } catch { damaged = true; }
-  for (const [key, wrapped] of [[RESELECT_BACKUP_KEY, false], [backupKey(compactSlot), true], [COMPACT_V37_BACKUP_KEY, true]] as const) {
+  const backups: [string, boolean][] = [[reselectBackupKey(story), false], [backupKey(compactSaveSlot(story.manifest)), true]];
+  if (!isFreedom(story.manifest)) backups.push([COMPACT_V37_BACKUP_KEY, true]);
+  for (const [key, wrapped] of backups) {
     try {
       const raw = storage.getItem(key); if (raw === null) continue;
       const text = wrapped ? (parseJson(raw, '이전 회차 백업') as { run?: unknown } | null)?.run : raw;

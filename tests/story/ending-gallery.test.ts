@@ -11,7 +11,7 @@ import { SaveStore, META_KEY } from '../../src/persistence/save';
 import { compactSlot } from '../../src/content/compact-contract';
 import { createRun } from '../../src/engine/transition';
 
-const story = await readExampleStory('demon-king-compact');
+const story = await readExampleStory('demon-king-v48-archive');
 it('20개 도감/엔딩이 검수된 전용 WebP20개와 동일 공개 매핑을 사용한다', () => {
   const entries = endingGalleryEntries(story);
   expect(entries).toHaveLength(20); expect(new Set(entries.map(e => e.id)).size).toBe(20);

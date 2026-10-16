@@ -1,0 +1,35 @@
+{
+  "endingId": "end_exile_treaty",
+  "choices": [
+    "birth_appeal",
+    "child_pact",
+    "exam_flee",
+    "gate_to_exile",
+    "route_exile_open_1",
+    "route_exile_middle_a_1",
+    "route_exile_final_a_2"
+  ],
+  "nodes": [
+    "birth",
+    "child",
+    "exam",
+    "gate_fugitive",
+    "route_exile_opening",
+    "route_exile_middle_a",
+    "route_exile_final_a"
+  ],
+  "age": 58,
+  "memories": [
+    "birth",
+    "child",
+    "exam",
+    "gate_fugitive",
+    "route_exile_opening",
+    "route_exile_middle_a",
+    "route_exile_final_a"
+  ],
+  "saveRestored": true,
+  "unlockedAfterLastCard": true,
+  "endingArt": "제작 대기: 이미지 요청 없음",
+  "errors": []
+}

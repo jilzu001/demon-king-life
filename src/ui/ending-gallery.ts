@@ -41,7 +41,7 @@ export function renderEndingGallery(entries: EndingGalleryEntry[], discovered: R
 export function renderEndingDetail(entry: EndingGalleryEntry): HTMLElement {
   const section = element('section', undefined, 'ending-detail'); section.dataset.endingDetailId = entry.id;
   section.append(element('h3', entry.title));
-  const artwork = renderEndingArtwork(entry); if (artwork) section.append(artwork);
+  const artwork = renderEndingArtwork(entry); if (artwork) section.append(artwork); else section.append(element('p','이 엔딩의 일러스트는 제작 대기 중입니다.','subtle ending-art-pending'));
   section.append(element('p', entry.description, 'ending-description'), element('h4', '전체 결말'));
   const prose = element('div', undefined, 'ending-full-text');
   for (const paragraph of narrativeLines(entry.fullText)) prose.append(element('p', paragraph));

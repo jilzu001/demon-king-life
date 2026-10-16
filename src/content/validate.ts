@@ -3,14 +3,14 @@ import { validateCondition } from '../engine/conditions';
 import { validateEffect } from '../engine/effects';
 import { assertWorld } from '../engine/invariants';
 import { ensure, type Manifest, type Scene, type Character, type Ending, type Story } from '../engine/types';
-import { isCompact, adaptCompactChapter, adaptCompactEndings } from './compact-contract';
+import { isCompact, isFreedom, adaptCompactChapter, adaptCompactEndings } from './compact-contract';
 
 export function safeContentPath(path: string): string {
   ensure(/^[a-z0-9_./-]+\.json$/.test(path) && !path.split('/').some(p => p === '..' || p === '.' || !p), `허용되지 않은 콘텐츠 파일 경로: ${path}`);
   return path;
 }
 export function assembleStory(manifestData: unknown, chapters: unknown[], characterData: unknown, endingData: unknown): Story {
-  if (isCompact(manifestData as Manifest)) {
+  if (isCompact(manifestData as Manifest) && !isFreedom(manifestData as Manifest)) {
     chapters = chapters.map(adaptCompactChapter); endingData = adaptCompactEndings(endingData);
   }
   validateSchema('story', manifestData); validateSchema('characters', characterData); validateSchema('endings', endingData);

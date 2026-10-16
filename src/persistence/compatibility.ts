@@ -4,13 +4,13 @@ import type { PresentedStory } from '../content/presentation';
 import { ensure, type GameState } from '../engine/types';
 import { decodeSave } from './migrate';
 import { META_KEY, runKey, type StoragePort } from './save';
-import { isCompact } from '../content/compact-contract';
+import { isCompact, isFreedom } from '../content/compact-contract';
 import { decodeCompatibleCompact, compactStoryForState } from './compact-compatible';
 
 export const BACKUP_KEY = 'existence-sim:v1:backup:before-content-v1.1';
+export const FREEDOM_PREVIOUS_BACKUP_KEY = 'existence-sim:v1:backup:before-v5:demon-king:compact';
 export const backupKey = (slotId = 'demon-king') => slotId === 'demon-king' ? BACKUP_KEY : `existence-sim:v1:backup:before-import:${slotId}`;
-export function backupBeforeImport(storage: StoragePort, slotId = 'demon-king'): void {
-  const key = backupKey(slotId);
+export function backupBeforeImport(storage: StoragePort, slotId = 'demon-king', key = backupKey(slotId)): void {
   const run = storage.getItem(runKey(slotId)); const meta = storage.getItem(slotId === 'demon-king' ? META_KEY : `${META_KEY}:${slotId}`);
   if ((run !== null || meta !== null) && storage.getItem(key) === null) {
     const backup = JSON.stringify({ run, meta });
@@ -23,6 +23,7 @@ export function resolveCompatibleSave(active: PresentedStory, legacy: PresentedS
   const save = data as GameState;
   ensure(save.storyId === active.manifest.id, '다른 스토리의 세이브입니다.');
   if (save.storyVersion === active.manifest.version) return { story: active, state: decodeSave(active, text), notice: '' };
+  ensure(!isFreedom(active.manifest), '이 저장은 이전 판의 기록입니다. 원문은 보존되며 v5.0 회차와 합치지 않습니다.');
   if (isCompact(active.manifest) && ['2.2.0-compact', '2.3.0-compact'].includes(save.storyVersion)) {
     const state = decodeCompatibleCompact(active, text);
     return { story: compactStoryForState(active, state.storyVersion), state, notice: '기존 회차는 실제 선택·상태·난수와 경로를 그대로 이어갑니다. 새 회차부터 독립 인생 경로가 적용됩니다.' };

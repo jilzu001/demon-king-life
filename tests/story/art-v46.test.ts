@@ -7,7 +7,7 @@ import { illustrationAsset, outcomeArtwork } from '../../src/ui/illustrations';
 import { createRun, choose } from '../../src/engine/transition';
 import { readExampleStory } from '../../scripts/read-story';
 
-const story = await readExampleStory('demon-king-compact');
+const story = await readExampleStory('demon-king-v48-archive');
 it('검수 후 설치한 실제 WebP만 연결하고 파일 크기·해시·메타와 공개 자산 목록이 일치한다', () => {
   const ledger = JSON.parse(readFileSync('docs/v4.6/art-installed.json', 'utf8')) as { id: string; path: string; width: number; height: number; bytes: number; sha256: string }[];
   const index = JSON.parse(readFileSync('public/assets/assets.json', 'utf8')).assets as { path: string; width: number; height: number; bytes: number }[];

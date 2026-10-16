@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+vi.mock('../../src/content/generated/ending-tree.json', async () => ({ default: (await import('../../backups/before-v5.0/ending-tree-v48.json')).default }));
 import { it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { readExampleStory } from '../../scripts/read-story';
@@ -9,7 +11,7 @@ import { backupKey } from '../../src/persistence/compatibility';
 import { compactSlot } from '../../src/content/compact-contract';
 import { collectedRouteNodes, resumeSource, tree, byTreeId } from '../../src/ui/ending-tree-layout';
 import { MemoryStorage } from '../fixtures';
-const story = await readExampleStory('demon-king-compact');
+const story = await readExampleStory('demon-king-v48-archive');
 const paths = JSON.parse(readFileSync('docs/v4.5/actual-ending-paths.json', 'utf8')) as { endingId: string; choices: string[] }[];
 function play(choices: string[], id = 'source') {
   let run = createRun(story, 17, id);

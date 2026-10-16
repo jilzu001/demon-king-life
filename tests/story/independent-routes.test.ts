@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+vi.mock('../../src/content/generated/ending-tree.json', async () => ({ default: (await import('../../backups/before-v5.0/ending-tree-v48.json')).default }));
 import { it, expect } from 'vitest';
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { readExampleStory } from '../../scripts/read-story';
@@ -9,7 +11,7 @@ import { decodeCompatibleCompact, compactStoryForState } from '../../src/persist
 import { resumeAtVisitedNode } from '../../src/persistence/reselect';
 import { simulationKey } from '../../src/content/simulation-key';
 import { byTreeId, historyTreeIds, routeEdges, tree, visitStatus } from '../../src/ui/ending-tree-layout';
-const story = await readExampleStory('demon-king-compact');
+const story = await readExampleStory('demon-king-v48-archive');
 const root = 'spec/content-v48-independent/demon_king_v48/';
 const read = (file: string) => JSON.parse(readFileSync(file, 'utf8'));
 const source = read(`${root}04_v48_independent_life_routes.json`) as {nodes: typeof story.nodes[string][]};

@@ -1,0 +1,119 @@
+{
+  "files": [
+    {
+      "path": "README_FIRST.md",
+      "bytes": 3348,
+      "sha256": "4b7a219c8336ff7f3f6d67e0871aa040ea1246d3c35ee3d58ec40104b06b45b0"
+    },
+    {
+      "path": "content/chapters/01_common.json",
+      "bytes": 18252,
+      "sha256": "0306ed77f1c711064a2f57c428d1e3b58361c9cd7df75097b1a727b1c8e3ce89"
+    },
+    {
+      "path": "content/chapters/02_fugitive.json",
+      "bytes": 30072,
+      "sha256": "59f412656c16d62939f6fb2e7a816bb50f582a3540e0206741bd5e4d7b1a5ca4"
+    },
+    {
+      "path": "content/chapters/03_reform.json",
+      "bytes": 29982,
+      "sha256": "d40ae6a91b51d0c98e7fc96f0b2fa55d77ae1e69c548a8d6e7cd3b5f94cad639"
+    },
+    {
+      "path": "content/chapters/04_money.json",
+      "bytes": 30077,
+      "sha256": "7deed3d3851e83719d5d215e724095901d7744e751f1f8df94c57f8b8c4bd6a9"
+    },
+    {
+      "path": "content/chapters/05_mina.json",
+      "bytes": 29964,
+      "sha256": "a321c10d8d2a57d870d65ad33bd3d339a0926acf0aa66af8df50e32c64417175"
+    },
+    {
+      "path": "content/characters.json",
+      "bytes": 1032,
+      "sha256": "dd19e46d631fae789bf102cfb85aa396ad521daa07307646d579aa53d85f178f"
+    },
+    {
+      "path": "content/endings.json",
+      "bytes": 93644,
+      "sha256": "33eb2793a6630ca7e4e0c817fa087d3d236b3336d269287d508e5b42cd6c9a70"
+    },
+    {
+      "path": "content/story.json",
+      "bytes": 1353,
+      "sha256": "7c371f7979c1042ef10a1d9082adf0ca2586c1d2d4831640287cb116d9fbf630"
+    },
+    {
+      "path": "docs/CODEX_PROMPT.md",
+      "bytes": 11982,
+      "sha256": "73d95943f183c87c86189e04ff89a07c738bcd5031d0e4c102186b028c18783c"
+    },
+    {
+      "path": "docs/ENDING_CATALOG.json",
+      "bytes": 4873,
+      "sha256": "14f54c970ef7c06173d2c877e848ba87aaaeb86395eab167930744683c7c9276"
+    },
+    {
+      "path": "docs/EXAMPLE_ROUTES.json",
+      "bytes": 14735,
+      "sha256": "7681b187dc2c17dc1651489bf26ffbfd6bba76bb17ae1a42363155daf6c031ab"
+    },
+    {
+      "path": "docs/ILLUSTRATION_BRIEFS.json",
+      "bytes": 84837,
+      "sha256": "1a9eaf8f5e0969f80bfb5709c1cd7e2280c896f0351e78e3feb52b32b36f1671"
+    },
+    {
+      "path": "docs/ILLUSTRATION_CHECKLIST.md",
+      "bytes": 1771,
+      "sha256": "b100a0bab6cbcd7b221aff363e66d5f75c840e9a0b3d6171fe2ed50bd128e3f6"
+    },
+    {
+      "path": "docs/ROUTE_MATRIX.json",
+      "bytes": 3343,
+      "sha256": "4df82f2d7b9e257ca8df019ece8c9d547c4f64299b18e35ca129f2718c8ac3f4"
+    },
+    {
+      "path": "docs/STRUCTURAL_CHECK.json",
+      "bytes": 545,
+      "sha256": "4cf4f8f6721d8353d0c1b8b80e79ec5735c7885be11b55e5a876954cc0c7fedd"
+    },
+    {
+      "path": "docs/reference/approved_birth_reference.png",
+      "bytes": 209791,
+      "sha256": "78c7ee0f2129c421122439528edf52681b5f411d44d7d8aa6452abeea1ae3738"
+    },
+    {
+      "path": "illustrations/asset_mapping.json",
+      "bytes": 2150,
+      "sha256": "4cd9c30cd7cbee76dbc2045c054a46159b488f8d8a633b1f510053b3eb609d24"
+    },
+    {
+      "path": "illustrations/birth_registry_reused.webp",
+      "bytes": 84720,
+      "sha256": "5325ab15e9a3babdd286597cfd197ccd3f1013da44c42a95463c8cb736652769"
+    },
+    {
+      "path": "illustrations/hero_exam_reused.webp",
+      "bytes": 93950,
+      "sha256": "1d894d07d9f4a0d30c89cf41eed054d925f72d3ca861a4cbb23db19795587732"
+    },
+    {
+      "path": "illustrations/mina_royal_hall_reused.webp",
+      "bytes": 73794,
+      "sha256": "bc39cbadef227832a8e6c121397454fa679484f8aee3be04a7e7f53fd7a0bf56"
+    },
+    {
+      "path": "illustrations/public_trial_reused.webp",
+      "bytes": 61234,
+      "sha256": "c40383aaff1a6b585345cd8618937d2d84330686d0e191786949b0320d19e3f3"
+    },
+    {
+      "path": "preview/index.html",
+      "bytes": 165626,
+      "sha256": "ae9cf6b2897fd45acfca3273c8d0766f0b37ae156f0593355c1690fdce47a7f5"
+    }
+  ]
+}

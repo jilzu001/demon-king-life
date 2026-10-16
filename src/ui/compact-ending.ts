@@ -1,3 +1,6 @@
+import { isFreedom } from '../content/compact-contract';
+import { endingRecapLines } from '../content/freedom-memory';
+import { narrativeLines } from './narrative';
 import type { GameState } from '../engine/types';
 import type { PresentedStory } from '../content/presentation';
 import { element, button } from './dom';
@@ -34,7 +37,7 @@ export function renderCompactEnding(layout: HTMLElement, story: PresentedStory, 
   scene.setAttribute('aria-label', '삶의 결말');
   const content = element('div', undefined, 'cinematic-content');
   if (phase === 0) {
-    content.append(element('p', cinematic.finalScene, 'cinematic-text'));
+    for (const paragraph of isFreedom(story.manifest) ? narrativeLines(ending.body) : [cinematic.finalScene]) content.append(element('p', paragraph, 'cinematic-text'));
     const illustration = renderEndingArtwork(artworkEntry);
     if (illustration) content.append(illustration);
   }
@@ -54,7 +57,10 @@ export function renderCompactEnding(layout: HTMLElement, story: PresentedStory, 
     if (image) content.append(image);
     content.append(element('p', `${entry.age}세 · ${node.title}`, 'cinematic-memory-title'), element('p', choice.text, 'cinematic-text'));
   }
-  if (phase === 2) content.append(element('p', cinematic.reflection, 'cinematic-text cinematic-reflection'));
+  if (phase === 2) {
+    content.append(element('p', cinematic.reflection, 'cinematic-text cinematic-reflection'));
+    if (isFreedom(story.manifest)) for (const text of endingRecapLines(story,state)) content.append(element('p',text,'cinematic-text cinematic-reflection'));
+  }
   if (phase === 3) {
     const illustration = renderEndingArtwork(artworkEntry);
     if (illustration) content.append(illustration);

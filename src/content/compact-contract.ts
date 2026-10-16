@@ -10,7 +10,7 @@ export function assertCompactChoiceMinimum(story: Story): void {
 
 export const compactSlot = 'demon-king:compact';
 export function isCompact(manifest: Manifest): boolean {
-  return manifest?.id === 'demon-king' && manifest.entryNodeId === 'birth' && ['2.2.0-compact', '2.3.0-compact', '2.4.0-compact'].includes(manifest.version);
+  return manifest?.id === 'demon-king' && manifest.entryNodeId === 'birth' && ['2.2.0-compact', '2.3.0-compact', '2.4.0-compact', '5.0.0'].includes(manifest.version);
 }
 // 원본 ZIP을 수정하지 않는다. 축소판의 결말 분류 별칭만 기존 계약에 맞춘다.
 export function adaptCompactChapter<T>(data: T): T {
@@ -27,3 +27,7 @@ export function adaptCompactEndings<T>(data: T): T {
   for (const ending of copy.endings) if (ending.kind === 'good') ending.kind = 'happy';
   return copy;
 }
+
+export const freedomSlot = 'demon-king:v5';
+export const isFreedom = (manifest: Manifest) => manifest.id === 'demon-king' && manifest.version === '5.0.0';
+export const compactSaveSlot = (manifest: Manifest) => isFreedom(manifest) ? freedomSlot : compactSlot;

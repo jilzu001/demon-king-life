@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+vi.mock('../../src/content/generated/ending-tree.json', async () => ({ default: (await import('../../backups/before-v5.0/ending-tree-v48.json')).default }));
 import { it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { readExampleStory } from '../../scripts/read-story';
@@ -5,7 +7,7 @@ import { choose, createRun } from '../../src/engine/transition';
 import { TreeCamera, minimapTransform } from '../../src/ui/tree-camera';
 import { tree, layoutTree, byTreeId, visitStatus, lastVisitedFork } from '../../src/ui/ending-tree-layout';
 
-const story = await readExampleStory('demon-king-compact');
+const story = await readExampleStory('demon-king-v48-archive');
 it('제공 카메라 역변환/팬/포인터 줌/미니맵 수학과 모바일 전체 맞춤을 유지한다', () => {
   const camera = new TreeCamera(); camera.panBy(20, -30);
   expect(camera.worldFromScreen(140, 50)).toEqual({ x: 120, y: 80 });

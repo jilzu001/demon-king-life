@@ -8,7 +8,7 @@ import { loadReselectBackup, RESELECT_BACKUP_KEY } from '../../src/persistence/r
 import { compactSlot } from '../../src/content/compact-contract';
 import { runKey } from '../../src/persistence/save';
 import type { GameState } from '../../src/engine/types';
-const story = await readExampleStory('demon-king-compact');
+const story = await readExampleStory('demon-king-v48-archive');
 const audited = await loadStory(async path => JSON.parse(readFileSync(`backups/before-v4.4/${path}`, 'utf8')));
 it('기존13사건28선택/7엔딩을 보호하며 고백과 v3.8 신규 선택만 덧붙인다', () => {
   for (const [id, old] of Object.entries(previousCompactStory.nodes)) {

@@ -1,3 +1,4 @@
+import { isFreedom } from './compact-contract';
 import catalog from '../../spec/content-v4.5-story-art/content/ending_gallery_v4_4.json';
 import artwork from './generated/ending-art-v46.json';
 import { validateSchema } from './schema';
@@ -15,6 +16,7 @@ for (const entry of catalog.endings) {
 
 export const galleryEndingIds = catalog.endings.map(entry => entry.id);
 export function endingGalleryEntries(story?: Story): EndingGalleryEntry[] {
+  if (story && isFreedom(story.manifest)) return Object.values(story.endings).map(ending => ({ id:ending.id,title:ending.title,description:ending.body.split(/\n\s*\n/)[0]!.trim(),fullText:ending.body,kind:'new' as const }));
   return catalog.endings.map(entry => ({
     id: entry.id, title: story?.endings[entry.id]?.title ?? entry.title,
     description: entry.description,

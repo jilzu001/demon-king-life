@@ -1,0 +1,489 @@
+{
+  "schemaVersion": 1,
+  "nodes": [
+    {
+      "id": "birth",
+      "kind": "scene",
+      "age": 0,
+      "title": "첫째 날, 나라가 정한 이름",
+      "body": "왕국력 800년, 당신은 인간으로 태어났다. 집은 비가 오면 지붕이 샜고 아버지는 누더기 소매로 새는 곳을 막았다. 출생신고소의 서기관은 안경을 고쳐 쓰며 이름을 확인했다.\n\n“종족, 인간. 건강, 양호. 직업, 마왕.”\n\n“잠깐만요.” 어머니가 아기를 더 꼭 안았다. “직업은 자라서 정하는 거 아닌가요?”\n\n서기관은 대답 대신 다른 서류를 꺼냈다. 거기에는 아기가 태어나기 사흘 전의 날짜가 찍혀 있었다. ‘국방 정책상 차기 위협 대상 지정’.\n\n아버지가 물었다. “우리 아이는 아직 울 줄밖에 모르는데요?”\n\n“울음은 위협 분류에서 제외하겠습니다.”\n\n어머니는 서기관의 깃펜을 내려놓았다. 어른 세 명 사이에 아직 말하지 못하는 아이 한 명이 있었다.",
+      "choices": [
+        {
+          "id": "birth_appeal",
+          "text": "부모는 출생 등록에 공식 이의를 신청한다.",
+          "outcomes": [
+            {
+              "id": "out_birth_appeal",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "child"
+              },
+              "narrative": "접수증은 얻었다. 정정은 보장받지 못했다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "family_appealed"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "birth_salary",
+          "text": "부모는 마왕의 급여와 안전 책임을 묻는다.",
+          "outcomes": [
+            {
+              "id": "out_birth_salary",
+              "weight": 1,
+              "result": "neutral",
+              "to": {
+                "kind": "node",
+                "id": "child"
+              },
+              "narrative": "서기관은 지급 규정부터 찾아보겠다고 했다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "family_salary_question"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "birth_copy",
+          "text": "부모는 서명하기 전 모든 서류를 복사해 보관한다.",
+          "outcomes": [
+            {
+              "id": "out_birth_copy",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "child"
+              },
+              "narrative": "아버지의 주머니가 작은 종이들로 두꺼워졌다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "family_original_copy"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "chronicleSummary": "첫째 날, 나라가 정한 이름"
+    },
+    {
+      "id": "child",
+      "kind": "scene",
+      "age": 12,
+      "title": "열두 살, 나무칼과 이름표",
+      "body": "열두 살이 되자 미나가 나무칼 두 자루를 들고 찾아왔다. 그녀는 당신보다 빨리 달리고, 멀리 뛰고, 싸울 때도 절대로 뒤를 보지 않았다. 당신이 가진 재주는 글씨를 똑바로 쓰는 것과, 잃어버린 물건을 마지막으로 본 자리를 기억하는 것이었다.\n\n미나가 말했다. “나 용사가 될 거야.”\n\n“그럼 마왕을 잡아야 해?”\n\n“시험 규정에는 그렇게 써 있어.”\n\n“내 이름도 써 있어?”\n\n미나는 오래된 시험지를 펼쳐 한참 바라봤다. “있네.”\n\n두 사람은 해가 질 때까지 칼을 휘두르지 않았다. 미나는 무엇을 지킬 사람인지 생각했고 당신은 누가 적을 정할 권리가 있는지 생각했다.",
+      "choices": [
+        {
+          "id": "child_pact",
+          "text": "미나와 누구도 다치게 하지 않는 약속을 쓴다.",
+          "outcomes": [
+            {
+              "id": "out_child_pact",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "exam"
+              },
+              "narrative": "미나는 나무칼 손잡이에 짧은 선을 새겼다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "mina_pact"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "child_names",
+          "text": "왕국 명부에 적힌 다른 아이들의 이름을 조사한다.",
+          "outcomes": [
+            {
+              "id": "out_child_names",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "exam"
+              },
+              "narrative": "당신은 자신만의 이야기가 아니라는 것을 처음 알았다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "child_names"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "child_train",
+          "text": "미나와 끝까지 대련하며 스스로를 지킬 방법을 배운다.",
+          "outcomes": [
+            {
+              "id": "out_child_train",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "exam"
+              },
+              "narrative": "전투력은 크게 오르지 않았지만 도망치는 길은 외웠다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "child_training"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "chronicleSummary": "열두 살, 나무칼과 이름표"
+    },
+    {
+      "id": "exam",
+      "kind": "scene",
+      "age": 20,
+      "title": "스무 살, 시험 문제가 된 사람",
+      "body": "용사 시험 실기장은 사람으로 가득했다. 당신은 피고석처럼 생긴 나무 울타리 안에 서 있었고, 미나는 갑옷을 입고 당신 맞은편에 섰다.\n\n감독관이 외쳤다. “공인 용사 실기 과제, 국가 지정 마왕 제압!”\n\n“제가 왜 시험 문제입니까?” 당신이 물었다.\n\n“어릴 때부터 국가가 관리한 마왕이니까.”\n\n“관리는 누가 받았는데요?”\n\n감독관은 답하지 않았다. 미나는 칼을 들었다가 내렸다. 여덟 해 동안 알았던 얼굴을 오늘부터 적으로 부르라는 명령이 그녀의 손끝에 걸려 있었다.\n\n여기서부터 당신의 인생은 한 사건으로 돌아오지 않는다. 무엇을 지킬지 선택해야 한다.",
+      "choices": [
+        {
+          "id": "exam_flee",
+          "text": "시험장을 벗어나 스스로 살아남을 길을 찾는다.",
+          "outcomes": [
+            {
+              "id": "out_exam_flee",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "gate_fugitive"
+              },
+              "narrative": "당신은 미나를 공격하지 않고 울타리를 넘어섰다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "exam_fled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "exam_object",
+          "text": "시험의 근거를 묻고 법적 책임을 추적한다.",
+          "outcomes": [
+            {
+              "id": "out_exam_object",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "gate_reform"
+              },
+              "narrative": "감독관은 당신을 제압할 수 있었지만 질문을 지우지는 못했다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "exam_objected"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "exam_fee",
+          "text": "마왕 출연료를 청구하고 돈의 흐름을 추적한다.",
+          "outcomes": [
+            {
+              "id": "out_exam_fee",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "gate_money"
+              },
+              "narrative": "당신이 내민 청구서 때문에 시험은 잠시 멈췄다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "exam_fee"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "exam_mina",
+          "text": "미나에게 칼을 내려놓으라고 부탁한다.",
+          "outcomes": [
+            {
+              "id": "out_exam_mina",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "gate_mina"
+              },
+              "narrative": "당신은 그녀의 선택을 대신하지 않고 기다렸다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "exam_mina"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "chronicleSummary": "스무 살, 시험 문제가 된 사람"
+    },
+    {
+      "id": "gate_fugitive",
+      "kind": "scene",
+      "age": 21,
+      "title": "왕국 밖과 왕국 안의 거리",
+      "body": "당신은 도망자가 됐다. 왕국은 포고문에 당신이 용사 시험을 파괴했다고 썼다. 실제로 부서진 것은 시험장의 얇은 울타리였다. 국경에서 만난 사람들은 당신이 유명한지보다 오늘 밤 잘 곳이 있는지 궁금해했다. 이제 도망치는 삶과 되돌아가 싸우는 삶 중 하나를 선택할 수 있었다.",
+      "choices": [
+        {
+          "id": "gate_to_exile",
+          "text": "국경의 피난민들과 남는다",
+          "outcomes": [
+            {
+              "id": "out_gate_to_exile",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "route_exile_opening"
+              },
+              "narrative": "당신은 혼자 숨는 대신, 국가가 버린 다른 이름들을 외우기로 했다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "route_exile"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gate_to_resistance",
+          "text": "국가가 시킨 폭력을 거부하고 저항한다",
+          "outcomes": [
+            {
+              "id": "out_gate_to_resistance",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "route_resistance_opening"
+              },
+              "narrative": "전투력으로는 아무도 이길 수 없기에, 누구도 죽이지 않는 저항을 택했다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "route_resistance"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "chronicleSummary": "왕국 밖과 왕국 안의 거리"
+    },
+    {
+      "id": "gate_reform",
+      "kind": "scene",
+      "age": 21,
+      "title": "접수번호가 된 항의",
+      "body": "민원 창구 직원이 접수증을 밀었다. “본인의 마왕 지정에 항의하는 거군요. 신분을 확인해 주세요.” 당신은 마왕 증명서를 내밀었다. 직원은 절차상 문제가 없다고 말했다. 당신은 그 말이 왜 이렇게 절망적으로 들리는지 궁금했다. 원본 하나를 지키는 일과 사람들과 힘을 모으는 일, 길은 둘이었다.",
+      "choices": [
+        {
+          "id": "gate_to_evidence",
+          "text": "한 장의 원본을 끝까지 지킨다",
+          "outcomes": [
+            {
+              "id": "out_gate_to_evidence",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "route_evidence_opening"
+              },
+              "narrative": "재판보다 중요한 것은 그 재판에 제출할 원본이 남는 일이었다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "route_evidence"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gate_to_collective",
+          "text": "자신만이 아니라 다른 피해자들과 싸운다",
+          "outcomes": [
+            {
+              "id": "out_gate_to_collective",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "route_collective_opening"
+              },
+              "narrative": "당신의 사건을 한 사람의 비극으로 만들지 않기로 했다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "route_collective"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "chronicleSummary": "접수번호가 된 항의"
+    },
+    {
+      "id": "gate_money",
+      "kind": "scene",
+      "age": 21,
+      "title": "예산서 가장 아래의 주석",
+      "body": "시험 출연료는 지급되지 않았다. 대신 왕실에서 초청장이 왔다. ‘국가 지정 위협 인물의 역할 재협의’. 당신은 마왕 역할이 나라에 얼마를 벌어 주었는지 궁금해졌다. 계약서를 스스로 만드는 삶과 장부를 조사해 국가를 바꾸는 삶 중 하나를 선택할 수 있었다.",
+      "choices": [
+        {
+          "id": "gate_to_business",
+          "text": "유료 마왕 토벌 체험을 사업으로 만든다",
+          "outcomes": [
+            {
+              "id": "out_gate_to_business",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "route_business_opening"
+              },
+              "narrative": "국가가 만든 역할을 처음으로 자신의 계약서에 적었다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "route_business"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gate_to_power",
+          "text": "왕국의 장부와 권력을 추적한다",
+          "outcomes": [
+            {
+              "id": "out_gate_to_power",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "route_power_opening"
+              },
+              "narrative": "당신을 괴물로 삼아 움직인 돈의 방향을 좇기로 했다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "route_power"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "chronicleSummary": "예산서 가장 아래의 주석"
+    },
+    {
+      "id": "gate_mina",
+      "kind": "scene",
+      "age": 21,
+      "title": "검을 내려놓은 뒤",
+      "body": "미나는 시험장에서 칼을 내려놓았다. 그녀가 용사 시험에서 합격할지는 알 수 없었다. 당신이 고백했기 때문도, 명령을 내렸기 때문도 아니었다. 그녀가 사람을 시험 문제로 대하지 않겠다고 스스로 결정했기 때문이다. 두 사람 앞에는 같이 사람을 구하는 삶과 서로의 마음을 정직하게 바라보는 삶이 있었다.",
+      "choices": [
+        {
+          "id": "gate_to_rescue",
+          "text": "미나와 함께 다른 사람을 구하는 길을 걷는다",
+          "outcomes": [
+            {
+              "id": "out_gate_to_rescue",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "route_rescue_opening"
+              },
+              "narrative": "미나의 자격증보다, 실제로 도움을 기다리는 사람을 먼저 보았다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "route_rescue"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gate_to_letters",
+          "text": "고백 뒤에도 미나의 선택을 기다린다",
+          "outcomes": [
+            {
+              "id": "out_gate_to_letters",
+              "weight": 1,
+              "result": "mixed",
+              "to": {
+                "kind": "node",
+                "id": "route_letters_opening"
+              },
+              "narrative": "사랑을 말했다고 답을 빚처럼 요구하지 않기로 했다.",
+              "effects": [
+                {
+                  "op": "addToSet",
+                  "path": "flags",
+                  "value": "route_letters"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "chronicleSummary": "검을 내려놓은 뒤"
+    }
+  ]
+}

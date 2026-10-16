@@ -1,0 +1,1 @@
+이전 2.4.0-compact UI 검사 원본을 보존한다. 실행판은 v5.0이며 이전 ID·20개 엔딩 기대값을 새 콘텐츠에 강제하지 않는다. 이전 데이터·단위 검사는 demon-king-v48-archive와 동결 트리로 계속 실행한다. v5.0 실제 UI 검사는 tests/e2e/freedom-compact.spec.ts 및 tree-compact.spec.ts를 사용한다.
